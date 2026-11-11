@@ -14,7 +14,10 @@
 
 <div class="card flush">
 <div class="card-head">
-<div class="row" style="gap:12px"><span class="label">Official result</span><span class="pill">{{ v.result }}</span>{% if v.info.two_thirds %}<span class="tag soft">Needed two-thirds</span>{% endif %}</div>
+<div class="stack" style="gap:8px">
+<div class="row" style="gap:12px"><span class="label">Official result</span><span class="pill">{{ v.result }}{% if v.info.result_note %}*{% endif %}</span>{% if v.info.two_thirds %}<span class="tag soft">Needed two-thirds</span>{% endif %}</div>
+{% if v.info.result_note %}<p class="small" style="color:var(--text-2);max-width:520px">* {{ v.info.result_note }}</p>{% endif %}
+</div>
 <a class="small strong" href="{{ v.source }}">Official record: Clerk of the House, Roll Call {{ v.roll }}{% if v.time %}, {{ v.time }} ET{% endif %}</a>
 </div>
 <div class="card-body">

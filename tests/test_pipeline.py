@@ -52,6 +52,7 @@ class Roll317(unittest.TestCase):
         v = self.result["votes"][0]
         self.assertEqual(v["info"]["name"], "Impeachment of Peter Brian Hegseth, Secretary of Defense")
         self.assertEqual(v["info"]["outcome"], "Sent to committee")
+        self.assertEqual(v["info"]["result_note"], "The motion passed. That sent the measure to a committee instead of a direct vote.")
         self.assertFalse(v["info"]["routine"])
         self.assertIn(("close", "Close vote"), v["tags"])
         self.assertIn(("broke", "1 Republican broke ranks"), v["tags"])

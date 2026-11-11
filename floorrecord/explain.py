@@ -128,6 +128,22 @@ OUTCOMES = {
     "discharge": ("Forced to the floor", "Left in committee"),
     "consider": ("Taken up", "Not taken up"),
 }
+# What the official word "Passed" or "Failed" actually did, for votes that were on a motion or a step
+# and not on the measure itself. Shown beside the official result, marked with an asterisk.
+RESULT_NOTES = {
+    "refer": ("motion", "That sent the measure to a committee instead of a direct vote.", "That kept the measure on the floor."),
+    "table": ("motion", "That set the measure aside without a direct vote.", "That kept the measure alive."),
+    "discharge": ("motion", "That pulled the measure out of committee so it can get a vote.", "That left the measure in committee."),
+    "previous_question": ("motion", "That ended debate. It was not the vote on the measure itself.", "That kept debate open."),
+    "rule": ("resolution", "That set the terms of debate. It was not the vote on the measure itself.", "That blocked debate from starting."),
+    "recommit": ("motion", "That sent the bill back to committee.", "That let the bill go on to its final vote."),
+    "amendment": ("amendment", "That added the change to the bill. It was not the vote on the bill itself.", "The change was not added to the bill."),
+    "consider": ("motion", "That let the House take the measure up.", "That kept the House from taking the measure up."),
+    "veto_override": ("override", "That passed the bill over the President's veto.", "That left the President's veto in place."),
+    "concur": ("motion", "That accepted the Senate's changes.", "That rejected the Senate's changes."),
+    "suspend_concur": ("motion", "That accepted the Senate's version.", "That did not accept the Senate's version."),
+    "adjourn": ("motion", "That ended the day's session.", "That kept the House in session."),
+}
 # Two-or-three-word labels for the two sides, used under the big numbers ("To set it aside").
 SIDES = {
     "passage": ("pass it", "reject it"), "suspend_pass": ("pass it", "reject it"),
@@ -261,6 +277,12 @@ def explain(vote, bills):
         outcome = OUTCOMES[kind][0 if carried(vote["result"]) else 1]
     else:
         outcome = vote["result"] or "Recorded"
+    result_note = ""
+    if kind in RESULT_NOTES:
+        thing, if_yes, if_no = RESULT_NOTES[kind]
+        ok = carried(vote["result"])
+        verb = ("passed" if ok else "failed") if thing != "amendment" else ("was adopted" if ok else "was rejected")
+        result_note = f"The {thing} {verb}. {if_yes if ok else if_no}"
     question = "Fast-track vote needing two-thirds" if kind in FAST_TRACK else vote["question"]
     fine = " · ".join(x for x in [label, question, f"Roll Call {vote['roll']}"] if x)
     return {
@@ -268,7 +290,7 @@ def explain(vote, bills):
         "yea": yea, "nay": nay, "procedural": procedural, "two_thirds": two_thirds,
         "label": label, "title": title,
         "name": name, "outcome": outcome, "gist": GIST.get(kind, ""), "plain": GIST.get(kind, ""), "fine": fine,
-        "routine": kind in ROUTINE, "source": "rules",
+        "routine": kind in ROUTINE, "source": "rules", "result_note": result_note,
         "yea_short": SIDES.get(kind, ("vote yes", "vote no"))[0], "nay_short": SIDES.get(kind, ("vote yes", "vote no"))[1],
     }
 
