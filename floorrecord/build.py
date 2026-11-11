@@ -55,6 +55,7 @@ TOPIC_NAMES = {
     "Social Welfare": "Social programs", "Taxation": "Taxes", "Transportation and Public Works": "Transportation",
     "Water Resources Development": "Water", "Arts, Culture, Religion": "Arts, culture and religion",
     "Social Sciences and History": "History and social science", "Sports and Recreation": "Sports and recreation",
+    "Congress": "How Congress runs", "Native Americans": "Native American affairs", "Families": "Families and children",
 }
 
 

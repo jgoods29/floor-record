@@ -330,6 +330,16 @@ Official summary (Congressional Research Service), may be empty: {summary}
 """
 
 
+
+def _reply_text(raw):
+    """The text of a Messages API reply. A reply can hold several blocks, and the first is not always text."""
+    blocks = json.loads(raw).get("content") or []
+    text = "".join(b.get("text", "") for b in blocks if b.get("type") == "text")
+    if not text:
+        kinds = ", ".join(str(b.get("type")) for b in blocks) or "none"
+        raise ValueError(f"no text in the reply (blocks: {kinds})")
+    return text
+
 def ai_summaries(votes, cfg, log=print):
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     cache = read_json(DATA / "summaries.json", {})
@@ -360,7 +370,7 @@ def ai_summaries(votes, cfg, log=print):
         try:
             raw = fetch("https://api.anthropic.com/v1/messages", data=body, tries=2, headers={
                 "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"})
-            text = json.loads(raw)["content"][0]["text"]
+            text = _reply_text(raw)
             found = re.search(r"\{.*\}", text, re.S)
             parsed_json = json.loads(found.group(0))
             cache[slug] = {
@@ -431,7 +441,7 @@ def ai_vote_lines(votes, cfg, log=print):
         try:
             raw = fetch("https://api.anthropic.com/v1/messages", data=body, tries=2, headers={
                 "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"})
-            text = json.loads(raw)["content"][0]["text"]
+            text = _reply_text(raw)
             out = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
             name, plain = str(out["name"]).strip().rstrip("."), str(out["plain"]).strip()
             if not name or len(name) > 90 or len(plain) > 400:
