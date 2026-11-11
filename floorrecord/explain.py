@@ -107,6 +107,108 @@ HEADLINES = {
 }
 
 
+
+OUTCOMES = {
+    "passage": ("Passed", "Failed"),
+    "suspend_pass": ("Passed", "Failed"),
+    "suspend_agree": ("Approved", "Not approved"),
+    "suspend_concur": ("Senate version accepted", "Senate version not accepted"),
+    "veto_override": ("Veto overridden", "Veto stands"),
+    "previous_question": ("Debate ended", "Debate kept open"),
+    "refer": ("Sent to committee", "Kept on the floor"),
+    "table": ("Set aside", "Kept alive"),
+    "recommit": ("Sent back to committee", "Not sent back"),
+    "amendment": ("Amendment adopted", "Amendment rejected"),
+    "concur": ("Senate changes accepted", "Senate changes rejected"),
+    "conference": ("Final version approved", "Final version rejected"),
+    "resolution": ("Approved", "Rejected"),
+    "rule": ("Debate rules approved", "Debate rules blocked"),
+    "adjourn": ("Adjourned", "Not adjourned"),
+    "journal": ("Approved", "Not approved"),
+    "discharge": ("Forced to the floor", "Left in committee"),
+    "consider": ("Taken up", "Not taken up"),
+}
+# Two-or-three-word labels for the two sides, used under the big numbers ("To set it aside").
+SIDES = {
+    "passage": ("pass it", "reject it"), "suspend_pass": ("pass it", "reject it"),
+    "suspend_agree": ("approve it", "reject it"), "suspend_concur": ("accept it", "reject it"),
+    "veto_override": ("override the veto", "let the veto stand"),
+    "previous_question": ("end debate", "keep debating"),
+    "refer": ("set it aside", "keep it alive"), "table": ("set it aside", "keep it alive"),
+    "recommit": ("send it back", "move ahead"), "amendment": ("add the change", "reject the change"),
+    "concur": ("accept the changes", "reject the changes"), "conference": ("approve it", "reject it"),
+    "resolution": ("approve it", "reject it"), "rule": ("approve the rules", "block the rules"),
+    "adjourn": ("end the session", "keep working"), "journal": ("approve it", "not approve it"),
+    "discharge": ("force a vote", "leave it in committee"), "consider": ("take it up", "not take it up"),
+}
+# One short sentence on what kind of step this was, shown under the name. Empty for a plain pass/fail vote.
+GIST = {
+    "suspend_pass": "", "passage": "", "resolution": "", "suspend_agree": "",
+    "refer": "The House voted on sending this to a committee instead of deciding it directly.",
+    "table": "The House voted on setting this aside without a direct vote.",
+    "discharge": "The House voted on pulling this out of committee so it can get a vote.",
+    "previous_question": "A step to end debate before the real vote.",
+    "rule": "A step that sets the terms of debate before the real vote.",
+    "recommit": "A last attempt to send the bill back to committee before the final vote.",
+    "amendment": "A proposed change to the bill.",
+    "veto_override": "An attempt to pass the bill over the President's veto.",
+    "concur": "A vote on accepting the Senate's changes.",
+    "suspend_concur": "A vote on accepting the Senate's version.",
+    "conference": "A vote on the final compromise worked out with the Senate.",
+    "consider": "A vote on whether to take this up at all.",
+    "adjourn": "A vote on ending the day's session.",
+    "journal": "A routine vote approving the previous day's record.",
+}
+# Housekeeping steps that are hidden from the home page and topic lists by default.
+ROUTINE = {"rule", "previous_question", "adjourn", "journal", "recommit", "consider"}
+FAST_TRACK = {"suspend_pass", "suspend_agree", "suspend_concur"}
+
+
+def _clip(text, limit=78):
+    text = " ".join((text or "").split()).rstrip(".")
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(",;:")
+    return cut + "…"
+
+
+def short_name(desc, label, bill_title=""):
+    """The most recognisable honest name for a measure, built only from its official title."""
+    t = " ".join((bill_title if bill_title and len(bill_title) <= 90 else desc or "").split())
+    if not t:
+        return label or "House vote"
+    m = re.match(r"(?:Providing for|Relating to) (?:the |further )?consideration of (?:the )?[^(]*\(([^)]+)\)\s*(.*)", t, re.I)
+    if m:
+        ref, rest = m.group(1), m.group(2)
+        first = re.split(r";| and providing| and for other", rest)[0].strip()
+        first = re.sub(r"^(the|an?)\s+", "", first, flags=re.I)
+        more = " and more" if re.search(r";\s*(and )?providing|;\s*\(", rest) else ""
+        if first and not re.match(r"(to|making|providing|relating)\b", first, re.I) and len(first) <= 70:
+            return f"{first}{more}"
+        return f"{ref}{more}"
+    m = re.match(r"(?:Providing for|Relating to) (?:the |further )?consideration of the (?:bills?|joint resolutions?|resolutions?) ((?:H|S)\.[ A-Za-z.]*\d+)(.*)", t)
+    if m:
+        return m.group(1) + (" and more" if re.search(r"\d,|;| and (?:H|S)\.", m.group(2)) else "")
+    m = re.search(r"disapprov\w*.*?rule (?:submitted|issued) by the (.+?) relating to", t, re.I)
+    if m:
+        agency = m.group(1).replace("Bureau of Consumer Financial Protection", "Consumer Financial Protection Bureau")
+        return _clip(f"Overturning a rule from the {agency}")
+    m = re.match(r"Impeaching (.+?), for high crimes", t)
+    if m:
+        return _clip(f"Impeachment of {m.group(1)}", 90)
+    m = re.search(r"War Powers Resolution,? to remove (?:the )?United States Armed Forces from (.+)", t)
+    if m:
+        return _clip(f"War powers: removing U.S. forces from {m.group(1)}", 90)
+    t = re.sub(r"\s*\([^)]{12,}\)", "", t)  # drop spelled-out acronyms, e.g. "REFUEL (Recycling ...)"
+    if len(t) <= 80:
+        return t.rstrip(".")
+    if re.match(r"To [a-z]", t):
+        return _clip("A bill " + t[0].lower() + t[1:])
+    if re.match(r"An Act to ", t):
+        return _clip("A bill " + t[7:])
+    return _clip(t)
+
+
 def carried(result):
     r = (result or "").lower()
     return r.startswith("passed") or r.startswith("agreed")
@@ -146,10 +248,28 @@ def explain(vote, bills):
     else:
         headline = f"{vote['question']}: {label or title}".strip(": ")
     two_thirds = vote["type"].strip().startswith("2/3") or kind in ("suspend_pass", "suspend_agree", "suspend_concur", "veto_override")
+    bill_title = (bills.get(bill_slug(*parsed)) or {}).get("title", "") if parsed else ""
+    name = short_name(vote["desc"], label, bill_title)
+    if kind == "amendment":
+        author = " ".join((vote.get("amendment_author") or "").split())
+        who = re.match(r"^(.+?) (?:Part \w+ )?(?:Substitute )?Amendment(?: No\. ?\d+)?$", author)
+        if who:
+            name = _clip(f"Amendment by {who.group(1)} to {name}", 90)
+        else:
+            name = _clip(f"{author} to {name}" if author else f"Amendment to {name}", 90)
+    if kind in OUTCOMES:
+        outcome = OUTCOMES[kind][0 if carried(vote["result"]) else 1]
+    else:
+        outcome = vote["result"] or "Recorded"
+    question = "Fast-track vote needing two-thirds" if kind in FAST_TRACK else vote["question"]
+    fine = " · ".join(x for x in [label, question, f"Roll Call {vote['roll']}"] if x)
     return {
         "kind": kind, "headline": headline, "what": what or f"Members voted on this question: {vote['question']}.",
         "yea": yea, "nay": nay, "procedural": procedural, "two_thirds": two_thirds,
         "label": label, "title": title,
+        "name": name, "outcome": outcome, "gist": GIST.get(kind, ""), "plain": GIST.get(kind, ""), "fine": fine,
+        "routine": kind in ROUTINE, "source": "rules",
+        "yea_short": SIDES.get(kind, ("vote yes", "vote no"))[0], "nay_short": SIDES.get(kind, ("vote yes", "vote no"))[1],
     }
 
 
@@ -232,3 +352,89 @@ def ai_summaries(votes, cfg, log=print):
     write_json(DATA / "summaries.json", cache, compact=False)
     log(f"AI summaries: {made} new, {len(cache)} on file")
     return cache
+
+
+VOTE_PROMPT = """You write plain-English labels for votes in the U.S. House for a non-partisan public website.
+Readers do not follow politics. Use ONLY the official facts below. Do not add background, motives, predictions,
+praise or criticism, and do not say who "won". Use everyday words; no bill numbers and no procedural jargon.
+
+Return JSON with two keys:
+"name": at most 7 words naming what the vote was about, the way a careful newspaper would label it
+        (for example "Farm Bill" or "Impeachment of the Defense Secretary"). No verbs about the outcome.
+"plain": one or two sentences, at most 45 words in total, saying what the House decided and, if the facts
+         below say so, what the measure would do.
+
+Official facts
+- Official title: {title}
+- Official summary (may be empty): {summary}
+- What kind of vote this was: {what}
+- A Yea vote was a vote to: {yea}
+- A Nay vote was a vote to: {nay}
+- Result: {result}, {yeas} Yea to {nays} Nay
+- Republicans: {r_yea} Yea, {r_nay} Nay. Democrats: {d_yea} Yea, {d_nay} Nay.
+"""
+
+
+def ai_vote_lines(votes, cfg, log=print):
+    """Optional AI-written name and one-line explanation for each vote, cached in data/ai_votes.json."""
+    key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    cache = read_json(DATA / "ai_votes.json", {})
+    if not key:
+        log("AI vote lines: ANTHROPIC_API_KEY not set, skipping")
+        return cache
+    bills = read_json(DATA / "bills.json", {})
+    todo = []
+    for v in reversed(votes):  # newest first, substantive votes before housekeeping
+        if v["id"] in cache or v.get("kind") != "standard":
+            continue
+        info = explain(v, bills)
+        parsed = parse_legis(v["legis"])
+        bill = bills.get(bill_slug(*parsed), {}) if parsed else {}
+        if not (bill.get("title") or v["desc"]):
+            continue  # nothing official to describe it with
+        todo.append((info["routine"], v, info, bill))
+    todo.sort(key=lambda t: t[0])
+    made = failed = 0
+    for _, v, info, bill in todo[: cfg.get("ai_max_new_vote_lines_per_run", 150)]:
+        party = v.get("by_party", {})
+        body = json.dumps({
+            "model": cfg.get("ai_model", "claude-haiku-5-5"), "max_tokens": 300,
+            "messages": [{"role": "user", "content": VOTE_PROMPT.format(
+                title=bill.get("title") or v["desc"], summary=(bill.get("official_summary") or "")[:6000],
+                what=info["what"], yea=info["yea"], nay=info["nay"], result=v["result"],
+                yeas=v["totals"].get("yea", 0), nays=v["totals"].get("nay", 0),
+                r_yea=party.get("R", {}).get("yea", 0), r_nay=party.get("R", {}).get("nay", 0),
+                d_yea=party.get("D", {}).get("yea", 0), d_nay=party.get("D", {}).get("nay", 0))}],
+        }).encode()
+        try:
+            raw = fetch("https://api.anthropic.com/v1/messages", data=body, tries=2, headers={
+                "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"})
+            text = json.loads(raw)["content"][0]["text"]
+            out = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
+            name, plain = str(out["name"]).strip().rstrip("."), str(out["plain"]).strip()
+            if not name or len(name) > 90 or len(plain) > 400:
+                raise ValueError("answer outside the allowed length")
+            cache[v["id"]] = {"name": name, "plain": plain, "model": cfg.get("ai_model", "")}
+            made += 1
+        except Exception as err:
+            failed += 1
+            log(f"  ! AI line for {v['id']} failed: {err}")
+            if failed >= 5 and made == 0:
+                log("  ! stopping AI lines for this run after repeated failures")
+                break
+    write_json(DATA / "ai_votes.json", cache, compact=False)
+    log(f"AI vote lines: {made} new, {len(cache)} on file, {max(0, len(todo) - made)} still waiting")
+    return cache
+
+
+def apply_wording(info, vote_id, ai_votes, editorial):
+    """Choose the wording shown for a vote: a person's approved text first, then AI, then the rules."""
+    human = (editorial.get("votes") or {}).get(vote_id)
+    if human:
+        info.update({k: human[k] for k in ("name", "outcome", "plain") if human.get(k)})
+        info["source"] = "editor"
+    elif vote_id in ai_votes:
+        info["name"] = ai_votes[vote_id]["name"]
+        info["plain"] = ai_votes[vote_id]["plain"]
+        info["source"] = "ai"
+    return info

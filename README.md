@@ -22,11 +22,20 @@ Add these under **Settings → Secrets and variables → Actions → New reposit
 
 | Secret | What it adds | Where to get it |
 | --- | --- | --- |
-| `CONGRESS_API_KEY` | Proper bill titles, sponsors, issue areas (which turns on the "By issue" breakdown) and official summaries | Free sign-up at https://api.congress.gov/sign-up/ |
-| `ANTHROPIC_API_KEY` | Short AI-written summaries of what each bill does, always labelled as AI-written | A paid key from https://console.anthropic.com |
+| `CONGRESS_API_KEY` | Proper bill titles, sponsors, topics (which turns on the topic picker on each profile), official summaries, and the bills each member introduced or signed onto | Free sign-up at https://api.congress.gov/sign-up/ |
+| `ANTHROPIC_API_KEY` | AI-written plain names and one-line explanations for votes, and short bill summaries, always labelled as AI-written | A paid key from https://platform.claude.com |
 
-AI summaries are only written for bills that have an official Congressional Research Service summary to work from,
-so they need `CONGRESS_API_KEY` too.
+AI bill summaries are only written for bills that have an official Congressional Research Service summary to work
+from, so they need `CONGRESS_API_KEY` too.
+
+## Featured votes and approved wording
+
+`editorial.json` is the one file a person edits by hand:
+
+- `pins` lists votes to feature at the top of the home page. A pin lasts 90 days; after that the automatic rule
+  (recent, close, or many members crossing party lines) takes over.
+- `votes` sets an approved name, outcome word and one-line explanation for a vote. Approved wording always wins over
+  AI or automatic wording, and it is the only wording besides the automatic kind that the home page's big votes use.
 
 ## Settings
 
@@ -59,6 +68,7 @@ python -m http.server --directory site
 - The Senate, and years before 2025
 - News coverage links on bill pages
 - District facts and "find my representative by zip code"
+- Member photos
 
 ## A note on the test file
 

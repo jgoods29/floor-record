@@ -12,8 +12,9 @@
 </head>
 <body data-root="{{ root }}">
 <header class="top">
+<div class="stripe" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></div>
 <div class="wrap">
-<a class="brand" href="{{ root }}">{{ site.site_name }}</a>
+<a class="brand" href="{{ root }}"><span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>{{ site.site_name }}</a>
 <nav class="nav" aria-label="Main">
 <a href="{{ root }}votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a>
 <a href="{{ root }}members/"{% if section == 'members' %} aria-current="page"{% endif %}>Members</a>

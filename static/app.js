@@ -1,9 +1,13 @@
-/* Floor Record: search, filters, tabs, the member vote log and the leaderboard. No dependencies. */
+/* Floor Record: search, filters, tabs, topic picker, bill lists and the leaderboard. No dependencies. */
 (function () {
   var root = document.body.getAttribute('data-root') || '';
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function getJSON(url) { return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+  function each(list, fn) { Array.prototype.forEach.call(list, fn); }
   var WORDS = { yea: 'Yea', nay: 'Nay', present: 'Present', nv: 'Did not vote' };
+  function word(pos) { return WORDS[pos] || String(pos).replace('other:', ''); }
+  var cache = {};
+  function once(url) { return cache[url] || (cache[url] = getJSON(url)); }
 
   // ---- site search
   var box = document.getElementById('site-search'), out = document.getElementById('search-results'), index = null;
@@ -15,7 +19,7 @@
       var hits = index.filter(function (it) { return terms.every(function (t) { return it.k.indexOf(t) !== -1; }); }).slice(0, 8);
       out.innerHTML = hits.length ? hits.map(function (it) {
         return '<a role="option" href="' + root + esc(it.u) + '"><span>' + esc(it.t) + '</span><span class="small muted">' + esc(it.s) + '</span></a>';
-      }).join('') : '<div class="none">Nothing matches. Try a last name, a state or a bill number.</div>';
+      }).join('') : '<div class="none">Nothing matches. Try a last name, a state or a bill name.</div>';
       out.classList.add('open');
     };
     box.addEventListener('focus', function () { if (!index) getJSON(root + 'search.json').then(function (d) { index = d; run(); }).catch(function () {}); });
@@ -25,43 +29,121 @@
   }
 
   // ---- simple list filters
-  Array.prototype.forEach.call(document.querySelectorAll('input[data-filter]'), function (input) {
+  each(document.querySelectorAll('input[data-filter]'), function (input) {
     var items = document.querySelectorAll(input.getAttribute('data-filter'));
     var groups = input.getAttribute('data-groups') ? document.querySelectorAll(input.getAttribute('data-groups')) : [];
     input.addEventListener('input', function () {
       var terms = input.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
-      Array.prototype.forEach.call(items, function (el) {
+      each(items, function (el) {
         var text = (el.getAttribute('data-text') || el.textContent).toLowerCase();
         el.classList.toggle('hide', !terms.every(function (t) { return text.indexOf(t) !== -1; }));
       });
-      Array.prototype.forEach.call(groups, function (g) { g.classList.toggle('hide', !g.querySelector('.chip:not(.hide)')); });
+      each(groups, function (g) { g.classList.toggle('hide', !g.querySelector('[data-text]:not(.hide)')); });
+    });
+  });
+
+  // ---- show or hide routine procedural votes
+  each(document.querySelectorAll('[data-routine-toggle]'), function (boxEl) {
+    boxEl.addEventListener('change', function () {
+      var scope = boxEl.closest('[data-routine-scope]');
+      if (scope) scope.classList.toggle('hide-routine', !boxEl.checked);
+    });
+  });
+
+  // ---- jump to a state
+  each(document.querySelectorAll('select[data-jump]'), function (sel) {
+    sel.addEventListener('change', function () {
+      var target = sel.value && document.getElementById(sel.value);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
   // ---- tabs
-  Array.prototype.forEach.call(document.querySelectorAll('[data-tab]'), function (btn) {
+  each(document.querySelectorAll('[data-tab]'), function (btn) {
     btn.addEventListener('click', function () {
-      var scope = btn.closest('.card');
-      Array.prototype.forEach.call(scope.querySelectorAll('[data-tab]'), function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
-      Array.prototype.forEach.call(scope.querySelectorAll('[data-pane]'), function (p) { p.classList.toggle('hide', p.getAttribute('data-pane') !== btn.getAttribute('data-tab')); });
+      var scope = btn.closest('[data-tabs]') || btn.closest('.card');
+      each(scope.querySelectorAll('[data-tab]'), function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      each(scope.querySelectorAll('[data-pane]'), function (p) { p.classList.toggle('hide', p.getAttribute('data-pane') !== btn.getAttribute('data-tab')); });
     });
   });
 
-  // ---- a member's full vote log
+  // ---- long bill lists
+  each(document.querySelectorAll('[data-show-extra]'), function (btn) {
+    btn.addEventListener('click', function () {
+      each(btn.parentNode.querySelectorAll('[data-extra]'), function (el) { el.classList.remove('hide'); });
+      btn.classList.add('hide');
+    });
+  });
+  var coBtn = document.getElementById('co-all'), coRows = document.getElementById('co-rows');
+  if (coBtn && coRows) {
+    coBtn.addEventListener('click', function () {
+      coBtn.disabled = true; coBtn.textContent = 'Loading…';
+      getJSON(coBtn.getAttribute('data-src')).then(function (bills) {
+        coRows.innerHTML = bills.map(function (b) {
+          return '<a class="vrow" href="' + esc(b[4]) + '"><span class="main"><span class="name">' + esc(b[0]) + '</span><span class="fine">' + esc(b[1]) +
+            (b[6] ? ' · Introduced ' + esc(b[6]) : '') + (b[5] ? ' · ' + esc(b[5]) : '') + '</span></span><span class="tag status' + (b[3] ? ' moved' : '') + '">' + esc(b[2]) + '</span></a>';
+        }).join('');
+      }).catch(function () { coBtn.disabled = false; coBtn.textContent = 'Could not load. Try again'; });
+    });
+  }
+
+  // ---- a member's votes: the full log and the topic picker
+  // votes-index.json rows: [id, date, roll, name, outcome, yeas, nays, routine, topicKey, finePrint, yeaMeans, nayMeans]
+  function memberData(src) { return Promise.all([once(root + 'votes-index.json'), once(src)]); }
+  function phrase(v, pos) {
+    if (pos === 'yea') return 'Voted to ' + v[10] + '.';
+    if (pos === 'nay') return 'Voted to ' + v[11] + '.';
+    if (pos === 'present') return 'Voted present.';
+    if (pos === 'nv') return 'Did not vote.';
+    return 'Voted for ' + word(pos) + '.';
+  }
+  function voteRow(v, m) {
+    return '<a class="vrow" href="' + root + 'votes/' + esc(v[0]) + '/"><span class="when">' + esc(v[1]) + '</span><span class="main"><span class="tags"><span class="name">' + esc(v[3]) + '</span>' +
+      (m[2] === 0 ? '<span class="tag broke">Broke with the party</span>' : '') + '</span><span class="plain">' + esc(phrase(v, m[1])) + '</span><span class="fine">' + esc(v[9]) + '</span></span>' +
+      '<span class="end"><span class="pos">' + esc(word(m[1])) + '</span><span style="font-size:14px;color:var(--muted)">' + esc(v[4]) + ', ' + v[5] + ' to ' + v[6] + '</span></span></a>';
+  }
+
   var allBtn = document.getElementById('all-votes'), log = document.getElementById('vote-log');
   if (allBtn && log) {
     allBtn.addEventListener('click', function () {
       allBtn.disabled = true; allBtn.textContent = 'Loading…';
-      Promise.all([getJSON(root + 'votes-index.json'), getJSON(allBtn.getAttribute('data-src'))]).then(function (res) {
+      memberData(allBtn.getAttribute('data-src')).then(function (res) {
         var votes = res[0], mine = res[1];
         log.innerHTML = mine.slice().reverse().map(function (m) {
-          var v = votes[m[0]], pos = WORDS[m[1]] || String(m[1]).replace('other:', '');
-          return '<tr><td class="small muted" style="white-space:nowrap">' + esc(v[1]) + '</td><td class="small muted">' + esc(v[2]) + '</td><td><a href="' + root + 'votes/' + esc(v[0]) + '/">' + esc(v[3]) + '</a>' +
-            (m[2] === 0 ? ' <span class="tag">Broke with party</span>' : '') + '</td><td class="strong">' + esc(pos) + '</td><td class="small">' + esc(v[4]) + ', ' + v[5] + '–' + v[6] + '</td></tr>';
+          var v = votes[m[0]];
+          return '<tr><td class="small muted" style="white-space:nowrap">' + esc(v[1]) + '</td><td><a href="' + root + 'votes/' + esc(v[0]) + '/">' + esc(v[3]) + '</a>' +
+            (m[2] === 0 ? ' <span class="tag broke">Broke with the party</span>' : '') + (v[7] ? ' <span class="tag proc">Procedural step</span>' : '') +
+            '</td><td class="strong">' + esc(word(m[1])) + '</td><td class="small">' + esc(v[4]) + ', ' + v[5] + '–' + v[6] + '</td></tr>';
         }).join('');
         allBtn.classList.add('hide');
       }).catch(function () { allBtn.disabled = false; allBtn.textContent = 'Could not load. Try again'; });
     });
+  }
+
+  var topicBar = document.querySelector('[data-topics]'), topicRows = document.getElementById('topic-rows');
+  if (topicBar && topicRows) {
+    var first = topicRows.innerHTML, summary = document.getElementById('topic-summary'), hidden = document.getElementById('topic-hidden');
+    var firstSummary = summary.textContent, firstHidden = hidden.textContent, more = document.getElementById('more-topics');
+    var pick = function (key, label) {
+      each(topicBar.querySelectorAll('[data-topic]'), function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-topic') === key ? 'true' : 'false'); });
+      if (more && !topicBar.querySelector('[data-topic="' + key + '"]')) more.value = key; else if (more) more.value = '';
+      if (!key) { topicRows.innerHTML = first; summary.textContent = firstSummary; hidden.textContent = firstHidden; return; }
+      summary.textContent = 'Loading…';
+      memberData(topicBar.getAttribute('data-src')).then(function (res) {
+        var votes = res[0], mine = res[1], shown = [], routine = 0;
+        for (var i = mine.length - 1; i >= 0; i--) {
+          var v = votes[mine[i][0]];
+          if (v[8] !== key) continue;
+          if (v[7]) { routine++; continue; }
+          shown.push(voteRow(v, mine[i]));
+        }
+        topicRows.innerHTML = shown.join('') || '<p class="muted" style="padding:24px 28px;margin:0">No votes on this topic yet.</p>';
+        summary.textContent = shown.length + (shown.length === 1 ? ' vote on ' : ' votes on ') + label.toLowerCase();
+        hidden.textContent = routine ? routine + (routine === 1 ? ' procedural vote hidden' : ' procedural votes hidden') : '';
+      }).catch(function () { summary.textContent = 'Could not load. Try again.'; });
+    };
+    each(topicBar.querySelectorAll('[data-topic]'), function (b) { b.addEventListener('click', function () { pick(b.getAttribute('data-topic'), b.textContent); }); });
+    if (more) more.addEventListener('change', function () { if (more.value) pick(more.value, more.options[more.selectedIndex].text); });
   }
 
   // ---- leaderboard
@@ -84,16 +166,16 @@
           '<td class="strong">' + pct(r.ap) + '</td><td>' + (r.br == null ? '' : r.br) + '</td><td>' + r.vc.toLocaleString() + '</td><td>' + pct(r.at) + '</td></tr>';
       }).join('');
       count.textContent = 'Showing ' + list.length + ' of ' + rows.length + ' ranked members.';
-      Array.prototype.forEach.call(table.querySelectorAll('th button'), function (b) {
+      each(table.querySelectorAll('th button'), function (b) {
         var base = b.getAttribute('data-label') || b.textContent; b.setAttribute('data-label', base);
         b.textContent = base + (b.getAttribute('data-sort') === key ? (dir < 0 ? ' ↓' : ' ↑') : '');
       });
     };
-    Array.prototype.forEach.call(table.querySelectorAll('th button'), function (b) {
+    each(table.querySelectorAll('th button'), function (b) {
       b.addEventListener('click', function () { var k = b.getAttribute('data-sort'); if (k === key) dir = -dir; else { key = k; dir = k === 'sort' ? 1 : -1; } draw(); });
     });
-    Array.prototype.forEach.call(document.querySelectorAll('[data-party]'), function (b) {
-      b.addEventListener('click', function () { party = b.getAttribute('data-party'); Array.prototype.forEach.call(document.querySelectorAll('[data-party]'), function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); }); draw(); });
+    each(document.querySelectorAll('[data-party]'), function (b) {
+      b.addEventListener('click', function () { party = b.getAttribute('data-party'); each(document.querySelectorAll('[data-party]'), function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); }); draw(); });
     });
     stateSel.addEventListener('change', draw); nameBox.addEventListener('input', draw);
     draw();

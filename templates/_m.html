@@ -1,14 +1,24 @@
-{% macro badge(p) %}<span class="party {{ p }}" title="{{ {'R':'Republican','D':'Democrat'}.get(p, 'Independent') }}">{{ p }}</span>{% endmacro %}
+{% macro badge(p, sm=false) %}<span class="party {{ p }}{% if sm %} sm{% endif %}" title="{{ {'R':'Republican','D':'Democrat'}.get(p, 'Independent') }}">{{ p }}</span>{% endmacro %}
 {% macro pctv(v) %}{% if v is none %}n/a{% else %}{{ '%.1f'|format(v) }}%{% endif %}{% endmacro %}
 {% macro vword(v) %}{{ {'yea':'Yea','nay':'Nay','present':'Present','nv':'Did not vote'}.get(v, v|replace('other:','')) }}{% endmacro %}
+{% macro tags(v, skip=()) %}{% for kind, text in v.tags %}{% if kind not in skip %}<span class="tag {{ kind }}">{{ text }}</span>{% endif %}{% endfor %}{% endmacro %}
+{% macro vrow(v, root) %}
+<a class="vrow" href="{{ root }}votes/{{ v.id }}/"{% if v.info.routine %} data-routine{% endif %} data-text="{{ (v.info.name ~ ' ' ~ v.info.fine ~ ' ' ~ v.info.title)|lower }}">
+<span class="when">{{ v.date|nicedate }}</span>
+<span class="main"><span class="tags"><span class="name">{{ v.info.name }}</span>{{ tags(v, ('split',)) }}</span>
+{% if v.info.plain %}<span class="plain">{{ v.info.plain }}</span>{% endif %}
+<span class="fine">{{ v.info.fine }}</span></span>
+<span class="end">{% if v.kind == 'standard' %}<b>{{ v.info.outcome }}</b><span>{{ v.totals.yea }} to {{ v.totals.nay }}</span>{% else %}<b>{{ v.result or 'Recorded' }}</b>{% endif %}</span>
+</a>
+{% endmacro %}
 {% macro votetile(v, root) %}
 <a class="card" href="{{ root }}votes/{{ v.id }}/">
-<span class="label">{{ v.date|nicedate }} · Roll Call {{ v.roll }}</span>
-<span class="h3">{{ v.info.headline }}</span>
-{% if v.info.title and v.info.title != v.info.headline %}<span class="muted" style="font-size:15px">{{ v.info.title|truncate(110) }}</span>{% endif %}
+<span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ tags(v, ('split', 'proc')) }}</span>
+<span class="headline-sm">{{ v.info.name }}{% if v.kind == 'standard' %}: {{ v.info.outcome|lower }}{% endif %}</span>
+{% if v.info.plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.info.plain }}</span>{% endif %}
 {% if v.kind == 'standard' %}
-<span class="row nums" style="gap: 8px 20px; margin-top: 6px"><span class="big" style="font-size:40px">{{ v.totals.yea }}</span><span class="big dim" style="font-size:40px">{{ v.totals.nay }}</span><span class="tag soft">{{ v.result }}</span>{% if v.split %}<span class="tag soft">Party-split</span>{% endif %}</span>
-<span class="bar" aria-hidden="true"><span style="flex: {{ v.totals.yea }}"></span><span class="n" style="flex: {{ v.totals.nay }}"></span><span class="x" style="flex: {{ v.totals.nv + v.totals.present }}"></span></span>
+<span class="row nums" style="gap: 8px 14px; align-items: baseline; margin-top: 4px"><span class="big" style="font-size:40px">{{ v.totals.yea }}</span><span class="big dim" style="font-size:40px">{{ v.totals.nay }}</span></span>
 {% endif %}
+<span class="fine">{{ v.info.fine }}</span>
 </a>
 {% endmacro %}

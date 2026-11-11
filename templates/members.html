@@ -1,16 +1,20 @@
 {% extends "base.html" %}{% import "_m.html" as m %}
 {% block title %}House members · {{ site.site_name }}{% endblock %}
 {% block main %}
-<div class="wrap page">
-<div class="stack">
-<div class="eyebrow"><span>U.S. House of Representatives</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
+<div class="wrap page" style="gap:40px">
+<div class="stack" style="gap:16px">
 <h1 class="h1">Members</h1>
-<p class="lede">Everyone who has cast a House vote in this Congress, grouped by state.</p>
-<div class="row"><label class="small muted" for="member-filter">Filter</label><input class="field" id="member-filter" type="search" placeholder="A name or state" style="width: 280px" data-filter="#member-list .chip" data-groups="#member-list section"></div>
+<p class="lede">Everyone who has voted in the U.S. House this Congress, listed by state and district. Select a name to see how they vote.</p>
+<div class="row" style="padding-top:8px">
+<label class="fieldset" for="member-filter">Find a member<input class="field" id="member-filter" type="search" placeholder="Type a name or state" style="width:300px" data-filter="#member-list .person" data-groups="#member-list .state"></label>
+<label class="fieldset" for="state-jump">Jump to a state<select class="field" id="state-jump" style="width:auto" data-jump><option value="">Choose a state</option>{% for state, group in states %}<option value="state-{{ state }}">{{ state_names.get(state, state) }}</option>{% endfor %}</select></label>
 </div>
-<div id="member-list" class="stack" style="gap:36px">
-{% for state, group in states %}<section class="stack" style="gap:14px"><h2 class="h3">{{ state_names.get(state, state) }}</h2>
-<div class="chips">{% for p in group %}<a class="chip" href="{{ root }}members/{{ p.bioguide }}/" data-text="{{ p.name|lower }} {{ state_names.get(state, state)|lower }} {{ state|lower }}">{{ m.badge(p.party) }}{{ p.name }} <span class="small muted">{{ p.seat }}</span></a>{% endfor %}</div></section>{% endfor %}
+</div>
+<div id="member-list">
+{% for state, group in states %}<section class="state" id="state-{{ state }}">
+<div><h2 class="h3" style="font-size:24px">{{ state_names.get(state, state) }}</h2><span class="small muted">{{ group|length }} {{ 'member' if group|length == 1 else 'members' }}</span></div>
+<div class="people">{% for p in group %}<div class="person" data-text="{{ p.name|lower }} {{ state_names.get(state, state)|lower }} {{ state|lower }}"><span class="dist">{{ p.dist_label }}</span><a href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }}</a>{{ m.badge(p.party, true) }}{% if p.left %}<span class="fine">left office</span>{% endif %}</div>{% endfor %}</div>
+</section>{% endfor %}
 </div>
 </div>
 {% endblock %}

@@ -9,7 +9,7 @@
 <div class="row"><label class="small muted" for="bill-filter">Filter</label><input class="field" id="bill-filter" type="search" placeholder="A number or word" style="width: 280px" data-filter="#bill-rows tr"></div>
 </div>
 <div class="card flush scroll"><table>
-<thead><tr><th>Measure</th><th>Title</th><th>Votes</th><th>Latest vote</th></tr></thead>
-<tbody id="bill-rows">{% for b in bills %}<tr><td style="white-space:nowrap"><a class="strong" href="{{ root }}bills/{{ b.slug }}/">{{ b.label }}</a></td><td>{{ b.title|truncate(150) }}</td><td>{{ b.votes|length }}</td><td class="small muted" style="white-space:nowrap">{{ b.votes[0].date|nicedate }}</td></tr>{% endfor %}</tbody></table></div>
+<thead><tr><th>Bill</th><th>Number</th><th>Votes</th><th>Latest vote</th></tr></thead>
+<tbody id="bill-rows">{% for b in bills %}<tr><td><a class="strong" href="{{ root }}bills/{{ b.slug }}/">{{ b.name }}</a>{% if b.topic %}<br><span class="small muted">{{ b.topic }}</span>{% endif %}</td><td class="small muted" style="white-space:nowrap">{{ b.label }}</td><td>{{ b.votes|length }}</td><td class="small muted" style="white-space:nowrap">{{ b.votes[0].date|nicedate }}</td></tr>{% endfor %}</tbody></table></div>
 </div>
 {% endblock %}

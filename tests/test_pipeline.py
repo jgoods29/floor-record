@@ -47,6 +47,16 @@ class Roll317(unittest.TestCase):
         self.assertEqual(len(independents), 1)
         self.assertEqual(independents[0]["all"]["counted"], 0)  # no party position to compare with
 
+    def test_plain_wording_and_featured(self):
+        from floorrecord.stats import pick_featured
+        v = self.result["votes"][0]
+        self.assertEqual(v["info"]["name"], "Impeachment of Peter Brian Hegseth, Secretary of Defense")
+        self.assertEqual(v["info"]["outcome"], "Sent to committee")
+        self.assertFalse(v["info"]["routine"])
+        self.assertIn(("close", "Close vote"), v["tags"])
+        self.assertIn(("broke", "1 Republican broke ranks"), v["tags"])
+        self.assertEqual([f["id"] for f in pick_featured(self.result["votes"])], ["2026-317"])
+
     def test_explanation(self):
         info = explain(self.vote, {})
         self.assertEqual(info["kind"], "refer")
@@ -73,6 +83,24 @@ class Questions(unittest.TestCase):
             self.assertEqual(classify(question), kind, question)
         self.assertEqual(classify("On Agreeing to the Resolution", "Providing for consideration of H.R. 1013"), "rule")
         self.assertEqual(classify("On Agreeing to the Resolution", "Honoring someone"), "resolution")
+
+    def test_plain_names(self):
+        from floorrecord.explain import short_name
+        self.assertEqual(short_name("Retire through Ownership Act", "S. 2403"), "Retire through Ownership Act")
+        self.assertEqual(short_name("Impeaching Peter Brian Hegseth, Secretary of Defense, for high crimes and misdemeanors", "H.Res. 1655"),
+                         "Impeachment of Peter Brian Hegseth, Secretary of Defense")
+        self.assertEqual(short_name("Providing for consideration of the bill (H.R. 471) the Fix Our Forests Act; and providing for consideration of the bill (S. 5) the Laken Riley Act", "H.Res. 53"),
+                         "Fix Our Forests Act and more")
+        self.assertEqual(short_name("Nuclear REFUEL (Recycling Efficient Fuels Utilizing Expedited Licensing) Act", "H.R. 3978"), "Nuclear REFUEL Act")
+        self.assertEqual(short_name("", "H.R. 12"), "H.R. 12")
+        self.assertLessEqual(len(short_name("To amend " + "the very long name of a statute " * 8, "H.R. 1")), 80)
+
+    def test_bill_status(self):
+        from floorrecord.build import bill_status
+        self.assertEqual(bill_status("Referred to the House Committee on Agriculture."), ("In committee", False))
+        self.assertEqual(bill_status("Became Public Law No: 119-38."), ("Became law", True))
+        self.assertEqual(bill_status("Received in the Senate and Read twice and referred to the Committee on the Judiciary."), ("Passed the House", True))
+        self.assertEqual(bill_status("Motion to reconsider laid on the table Agreed to without objection.")[0], "Voted on in the House")
 
     def test_non_bills(self):
         self.assertIsNone(parse_legis("QUORUM"))

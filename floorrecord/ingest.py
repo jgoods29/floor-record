@@ -303,6 +303,61 @@ def ingest_bills(votes, congress, log=print, limit=400):
     return bills
 
 
+def _legislation_rows(payload, key, congress):
+    rows = []
+    for item in payload.get(key) or []:
+        kind = (item.get("type") or "").lower()
+        if item.get("congress") != congress or kind not in BILL_LABELS or not item.get("number"):
+            continue  # skips amendments and earlier Congresses
+        action = item.get("latestAction") or {}
+        rows.append([kind, int(item["number"]), (item.get("title") or "")[:220], item.get("introducedDate") or "",
+                     action.get("actionDate") or "", (action.get("text") or "")[:200],
+                     (item.get("policyArea") or {}).get("name") or ""])
+    return rows
+
+
+def ingest_member_bills(bioguides, congress, log=print, per_run=150, max_age_days=7):
+    """What each member introduced and signed onto this Congress, from Congress.gov. Optional.
+
+    Refreshes the stalest members first and stops after `per_run` members, so one run stays well
+    inside the API's hourly limit; the whole House is covered within a few runs.
+    """
+    key = os.environ.get("CONGRESS_API_KEY", "").strip()
+    if not key:
+        log("Member bills: CONGRESS_API_KEY not set, skipping")
+        return
+    folder = DATA / "member_bills"
+    folder.mkdir(parents=True, exist_ok=True)
+    today = date.today()
+    ages = []
+    for b in sorted(bioguides):
+        have = read_json(folder / f"{b}.json")
+        age = (today - date.fromisoformat(have["fetched"])).days if have else 10 ** 6
+        if age >= max_age_days:
+            ages.append((-age, b))
+    done = 0
+    for _, b in sorted(ages)[:per_run]:
+        rec = {"fetched": today.isoformat(), "sponsored": [], "cosponsored": []}
+        try:
+            for field, path, pages in (("sponsored", "sponsored-legislation", 2), ("cosponsored", "cosponsored-legislation", 4)):
+                payload_key = "sponsoredLegislation" if field == "sponsored" else "cosponsoredLegislation"
+                for page in range(pages):
+                    payload = _api(f"/member/{b}/{path}", key, limit=250, offset=page * 250)
+                    items = payload.get(payload_key) or []
+                    rec[field] += _legislation_rows(payload, payload_key, congress)
+                    # Lists come newest first; stop once a page reaches an earlier Congress or runs out.
+                    if len(items) < 250 or any((i.get("congress") or congress) < congress for i in items):
+                        break
+                    time.sleep(0.15)
+        except Exception as err:
+            log(f"  ! bills for {b}: {err}")
+            continue
+        write_json(folder / f"{b}.json", rec)
+        done += 1
+        time.sleep(0.15)
+    log(f"Member bills: {done} members refreshed, {len(ages) - done} still waiting")
+
+
 def main():
     cfg = config()
     ingest_house(cfg["years"])
@@ -312,8 +367,10 @@ def main():
         sys.exit(1)
     ingest_members(votes)
     ingest_bills(votes, cfg["congress"])
-    from .explain import ai_summaries
+    ingest_member_bills({p[0] for v in votes for p in v["positions"]}, cfg["congress"])
+    from .explain import ai_summaries, ai_vote_lines
     ai_summaries(votes, cfg)
+    ai_vote_lines(votes, cfg)
     print(f"Done: {len(votes)} roll calls on file.")
 
 

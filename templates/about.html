@@ -8,7 +8,7 @@
 <section class="stack"><h2 class="h2">Where the data comes from</h2><div class="grid two">
 <div class="card stack" style="gap:8px"><span class="h3">Votes</span><p>Every roll call comes from the <a href="https://clerk.house.gov/Votes">Office of the Clerk of the U.S. House</a>. We download each official record and count from it directly. If our count ever differs from the Clerk's published total, the page says so.</p></div>
 <div class="card stack" style="gap:8px"><span class="h3">Members</span><p>Names, districts and terms come from the public-domain <a href="https://github.com/unitedstates/congress-legislators">congress-legislators</a> project, maintained by volunteers and news organisations.</p></div>
-<div class="card stack" style="gap:8px"><span class="h3">Bills</span><p>Titles, sponsors, policy areas and official summaries come from the Library of Congress through <a href="https://www.congress.gov">Congress.gov</a>.</p></div>
+<div class="card stack" style="gap:8px"><span class="h3">Bills and topics</span><p>Titles, sponsors, topics, official summaries, and the bills each member introduced or signed onto come from the Library of Congress through <a href="https://www.congress.gov">Congress.gov</a>. Topic names are reworded for everyday readers.</p></div>
 <div class="card stack" style="gap:8px"><span class="h3">Updates</span><p>The site checks for new votes several times a day. This copy covers {{ nvotes|comma }} roll calls from {{ span }} and was last updated {{ updated }}.</p></div>
 </div></section>
 
@@ -21,9 +21,22 @@
 <p><strong>Left out.</strong> Quorum calls and the election of the Speaker are listed but not counted in any statistic. Members with fewer than {{ min_votes }} roll calls are not ranked. Delegates from D.C. and the territories can vote only on some amendments, so they have pages but are not ranked.</p>
 </div></section>
 
-<section class="stack"><h2 class="h2">Plain-English explanations</h2><div class="card stack" style="gap:16px">
+<section class="stack"><h2 class="h2">Plain-English wording</h2><div class="card stack" style="gap:16px">
+<p><strong>Names.</strong> Each vote is listed under the most recognisable name in the official record, such as "Retire through Ownership Act," with the bill number and formal wording in small print beneath it.</p>
 <p><strong>What a Yea or Nay meant.</strong> These lines come from fixed rules about House procedure. For example, a Yea on a motion to refer always means "send it to committee." They never guess at what a bill contains.</p>
-<p><strong>AI-written summaries.</strong> Where a page says "AI-written," the summary of what a bill does was drafted by an AI model using only the bill's official title and the Congressional Research Service summary. It is labelled every time, shown next to the official text, and can contain mistakes.</p>
+<p><strong>AI-written wording.</strong> Where a page says "written by AI," the short name or summary was drafted by an AI model using only official facts: the title, the Congressional Research Service summary where one exists, the kind of vote, and the tally. It is labelled, shown beside the official wording, and can contain mistakes.</p>
+<p><strong>The big votes.</strong> Votes featured at the top of the home page are recent votes that were close or where many members crossed party lines. Their headlines are either the automatic wording or wording a person has checked. Unreviewed AI text is never used there.</p>
+<p><strong>Routine procedural votes.</strong> Steps such as setting the terms of debate are part of the record and are counted in every statistic, but they are hidden from the front page and topic lists unless you ask to see them.</p>
+</div></section>
+
+<section class="stack"><h2 class="h2">Words you will see</h2><div class="card stack" style="gap:16px">
+<p><strong>Bill.</strong> A proposed law. It must pass the House and the Senate and be signed by the President.</p>
+<p><strong>Resolution.</strong> A formal statement or decision by the House. Most resolutions do not become law.</p>
+<p><strong>Amendment.</strong> A proposed change to a bill.</p>
+<p><strong>Fast-track vote.</strong> A quicker process with no amendments, used for bills expected to be widely supported. It needs two-thirds of those voting. The official name is "suspension of the rules."</p>
+<p><strong>In committee.</strong> A bill has been filed and assigned to a smaller group of members to study. Most bills never leave this stage.</p>
+<p><strong>Signed onto.</strong> A member formally added their name in support of someone else's bill. The official word is "cosponsored."</p>
+<p><strong>Broke ranks.</strong> On a vote where the two parties took opposite sides, a member voted against most of their own party.</p>
 </div></section>
 
 <section class="stack"><h2 class="h2">Corrections</h2><div class="card"><p>{% if site.contact_email %}Found a mistake? Write to <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a> ({{ site.contact_email }}). Corrections are made in public.{% else %}If you find a mistake, please report it through this site's code repository. Corrections are made in public.{% endif %}</p></div></section>

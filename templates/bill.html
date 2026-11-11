@@ -1,12 +1,13 @@
 {% extends "base.html" %}{% import "_m.html" as m %}
-{% block title %}{{ b.label }}: {{ b.title|truncate(70) }} · {{ site.site_name }}{% endblock %}
+{% block title %}{{ b.name }} ({{ b.label }}) · {{ site.site_name }}{% endblock %}
 {% block source %}Votes come from the Clerk of the House. Titles, sponsors and official summaries come from the Library of Congress. <a href="{{ b.congress_url }}">See the official record on Congress.gov</a>.{% endblock %}
 {% block main %}
 <div class="wrap page">
 <div class="stack">
 <div class="eyebrow"><a href="{{ root }}bills/" style="text-decoration:none;color:inherit">Bills</a><span aria-hidden="true">·</span><span>{{ b.kind_name }}</span></div>
-<div class="row" style="gap:8px 12px"><span class="h3">{{ b.label }}</span>{% if b.rec.policy_area %}<span class="tag soft">{{ b.rec.policy_area }}</span>{% endif %}</div>
-<h1 class="h1" style="font-size:clamp(30px,4.4vw,52px)">{{ b.title }}</h1>
+<h1 class="h1" style="font-size:clamp(30px,4.4vw,52px)">{{ b.name }}</h1>
+<div class="tags"><span class="tag split">{{ b.label }}</span>{% if b.topic %}<span class="tag proc">{{ b.topic }}</span>{% endif %}</div>
+{% if b.title != b.name %}<p class="fine" style="font-size:14px;max-width:760px">Official title: {{ b.title }}</p>{% endif %}
 </div>
 
 <div class="row" style="align-items:flex-start;gap:28px">

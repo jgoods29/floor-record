@@ -1,0 +1,21 @@
+{
+  "_about": "Wording a person has approved. 'pins' puts votes at the top of the home page for 90 days. 'votes' sets the name, outcome and one-line explanation for a vote, and always wins over AI or automatic wording.",
+  "pins": ["2026-317", "2026-320", "2026-307"],
+  "votes": {
+    "2026-317": {
+      "name": "Hegseth impeachment",
+      "outcome": "Blocked",
+      "plain": "The House voted to send the impeachment of the Defense Secretary to a committee instead of voting on it. One Republican sided with Democrats to keep it alive."
+    },
+    "2026-320": {
+      "name": "Veterans' disability pay",
+      "outcome": "Vote forced",
+      "plain": "The House pulled a bill out of committee that would let veterans with combat-related disabilities collect both disability and retirement pay."
+    },
+    "2026-307": {
+      "name": "Iran war powers",
+      "outcome": "Passed",
+      "plain": "The House directed the President to remove U.S. armed forces from hostilities with Iran."
+    }
+  }
+}

@@ -105,12 +105,39 @@ def compute(votes, members, bills, cfg):
                     absent.append(bioguide)
             p["log"].append((len(out_votes), v, with_party))
         t = vote["totals"]
+        margin = abs(t.get("yea", 0) - t.get("nay", 0))
+        if standard and info["kind"] not in ("adjourn", "journal"):
+            sides = ""
+            if split:
+                yes = "Republicans" if pos["R"] == "yea" else "Democrats"
+                no = "Democrats" if yes == "Republicans" else "Republicans"
+                sides = f"Most {yes} voted yes and most {no} voted no."
+            elif pos["R"] and pos["R"] == pos["D"]:
+                sides = f"Most members of both parties voted {'yes' if pos['R'] == 'yea' else 'no'}."
+            info["sides"] = sides
+            info["plain"] = " ".join(x for x in [info["gist"], sides] if x)
+        vote_party = {b: party for b, party, _, _ in vote["positions"]}
+        by_party = defaultdict(int)
+        for b in breakers:
+            by_party[vote_party[b]] += 1
+        tags = []
+        if standard and margin <= 15:
+            tags.append(("close", "Close vote"))
+        if split:
+            tags.append(("split", "Parties split"))
+        for party, n in sorted(by_party.items(), key=lambda kv: -kv[1]):
+            # "Broke ranks" only means something when the parties were on opposite sides.
+            if split and 1 <= n <= 80:
+                word = PARTY_NAMES[party] + ("" if n == 1 else "s")
+                tags.append(("broke", f"{n} {word} broke ranks"))
+        if info["procedural"]:
+            tags.append(("proc", "Procedural step"))
         out_votes.append({
             **{k: vote[k] for k in ("id", "year", "roll", "date", "time", "question", "legis", "desc", "type",
                                     "result", "kind", "totals", "by_party", "tally_matches", "source",
                                     "amendment", "amendment_author")},
             "info": info, "slug": slug, "issue": issue, "party_pos": pos, "split": split,
-            "margin": abs(t.get("yea", 0) - t.get("nay", 0)),
+            "margin": margin, "tags": tags, "broke_by_party": dict(by_party),
             "breakers": breakers, "absent": absent, "positions": vote["positions"],
         })
 
@@ -146,3 +173,35 @@ def compute(votes, members, bills, cfg):
         "medians": {"split_with_pct": medians, "attendance_pct": round(median(att), 1) if att else None},
         "min_votes": min_votes,
     }
+
+
+def pick_featured(votes, pins=(), count=3, window_days=120):
+    """The 'big votes' for the home page: pinned votes first, then recent votes that were close or
+    saw many members cross party lines. Routine housekeeping votes never qualify."""
+    from datetime import date
+    by_id = {v["id"]: v for v in votes}
+    if not votes:
+        return []
+    latest = max(date.fromisoformat(v["date"]) for v in votes)
+    # A pin holds its place for 90 days, so the top of the home page cannot go stale.
+    chosen = [by_id[p] for p in pins if p in by_id and (latest - date.fromisoformat(by_id[p]["date"])).days <= 90]
+    scored = []
+    for v in votes:
+        if v in chosen or v["kind"] != "standard" or v["info"]["routine"]:
+            continue
+        age = (latest - date.fromisoformat(v["date"])).days
+        crossed = len(v["breakers"])
+        if age > window_days or not (v["margin"] <= 25 or (v["split"] and crossed >= 10)):
+            continue
+        score = max(0, 40 - v["margin"]) + min(crossed, 40) * 0.75 + max(0.0, 30 - age / 3) + (0 if v["info"]["procedural"] else 8)
+        scored.append((score, v["date"], v["roll"], v))
+    scored.sort(key=lambda x: x[:3], reverse=True)
+    seen = {v["slug"] for v in chosen if v["slug"]}
+    for _, _, _, v in scored:
+        if len(chosen) >= count:
+            break
+        if (v["slug"] and v["slug"] in seen) or v["info"]["name"] in seen:
+            continue  # one card per measure, and no near-identical twins
+        seen.update({v["slug"], v["info"]["name"]})
+        chosen.append(v)
+    return chosen[:max(count, 3)]
