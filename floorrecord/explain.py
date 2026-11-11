@@ -340,6 +340,42 @@ def _reply_text(raw):
         raise ValueError(f"no text in the reply (blocks: {kinds})")
     return text
 
+
+def _ask(prompt, cfg, key, max_tokens):
+    """One request to the Messages API, returning the reply text.
+
+    Current Claude models think before answering unless told not to, and that thinking counts toward
+    max_tokens. These are short rewriting jobs, so thinking is switched off. A model that does not
+    accept that setting gets a second try with thinking left on and plenty of room for it.
+    """
+    headers = {"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"}
+    base = {"model": cfg.get("ai_model", "claude-haiku-5-5"), "messages": [{"role": "user", "content": prompt}]}
+    attempts = [
+        dict(base, max_tokens=max_tokens, thinking={"type": "disabled"}, output_config={"effort": "low"}),
+        dict(base, max_tokens=max_tokens + 6000),
+    ]
+    last = None
+    for body in attempts:
+        try:
+            raw = fetch("https://api.anthropic.com/v1/messages", data=json.dumps(body).encode(), tries=2,
+                        headers=headers, timeout=90)
+            return _reply_text(raw)
+        except Exception as err:  # try the next shape of request
+            last = err
+    raise last
+
+
+def _in_parallel(jobs, work, workers=4):
+    """Run work(job) for each job on a few threads. Yields (job, result or exception)."""
+    from concurrent.futures import ThreadPoolExecutor
+    def safe(job):
+        try:
+            return job, work(job)
+        except Exception as err:
+            return job, err
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        yield from pool.map(safe, jobs)
+
 def ai_summaries(votes, cfg, log=print):
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     cache = read_json(DATA / "summaries.json", {})
@@ -359,28 +395,21 @@ def ai_summaries(votes, cfg, log=print):
             continue
         todo.append(slug)
     made = 0
-    for slug in todo[: cfg.get("ai_max_new_summaries_per_run", 40)]:
+
+    def summarise(slug):
         bill = bills[slug]
-        body = json.dumps({
-            "model": cfg.get("ai_model", "claude-haiku-5-5"),
-            "max_tokens": 500,
-            "messages": [{"role": "user", "content": PROMPT.format(
-                title=bill.get("title", ""), summary=bill.get("official_summary", "")[:12000])}],
-        }).encode()
-        try:
-            raw = fetch("https://api.anthropic.com/v1/messages", data=body, tries=2, headers={
-                "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"})
-            text = _reply_text(raw)
-            found = re.search(r"\{.*\}", text, re.S)
-            parsed_json = json.loads(found.group(0))
-            cache[slug] = {
-                "one_sentence": str(parsed_json["one_sentence"]).strip(),
-                "short": str(parsed_json["short"]).strip(),
-                "model": cfg.get("ai_model", ""),
-            }
+        text = _ask(PROMPT.format(title=bill.get("title", ""), summary=bill.get("official_summary", "")[:12000]),
+                    cfg, key, 700)
+        out = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
+        return {"one_sentence": str(out["one_sentence"]).strip(), "short": str(out["short"]).strip(),
+                "model": cfg.get("ai_model", "")}
+
+    for slug, result in _in_parallel(todo[: cfg.get("ai_max_new_summaries_per_run", 40)], summarise):
+        if isinstance(result, Exception):
+            log(f"  ! AI summary for {slug} failed: {result}")
+        else:
+            cache[slug] = result
             made += 1
-        except Exception as err:
-            log(f"  ! AI summary for {slug} failed: {err}")
     write_json(DATA / "summaries.json", cache, compact=False)
     log(f"AI summaries: {made} new, {len(cache)} on file")
     return cache
@@ -427,33 +456,36 @@ def ai_vote_lines(votes, cfg, log=print):
         todo.append((info["routine"], v, info, bill))
     todo.sort(key=lambda t: t[0])
     made = failed = 0
-    for _, v, info, bill in todo[: cfg.get("ai_max_new_vote_lines_per_run", 150)]:
+
+    def label(job):
+        _, v, info, bill = job
         party = v.get("by_party", {})
-        body = json.dumps({
-            "model": cfg.get("ai_model", "claude-haiku-5-5"), "max_tokens": 300,
-            "messages": [{"role": "user", "content": VOTE_PROMPT.format(
-                title=bill.get("title") or v["desc"], summary=(bill.get("official_summary") or "")[:6000],
-                what=info["what"], yea=info["yea"], nay=info["nay"], result=v["result"],
-                yeas=v["totals"].get("yea", 0), nays=v["totals"].get("nay", 0),
-                r_yea=party.get("R", {}).get("yea", 0), r_nay=party.get("R", {}).get("nay", 0),
-                d_yea=party.get("D", {}).get("yea", 0), d_nay=party.get("D", {}).get("nay", 0))}],
-        }).encode()
-        try:
-            raw = fetch("https://api.anthropic.com/v1/messages", data=body, tries=2, headers={
-                "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"})
-            text = _reply_text(raw)
-            out = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
-            name, plain = str(out["name"]).strip().rstrip("."), str(out["plain"]).strip()
-            if not name or len(name) > 90 or len(plain) > 400:
-                raise ValueError("answer outside the allowed length")
-            cache[v["id"]] = {"name": name, "plain": plain, "model": cfg.get("ai_model", "")}
-            made += 1
-        except Exception as err:
-            failed += 1
-            log(f"  ! AI line for {v['id']} failed: {err}")
-            if failed >= 5 and made == 0:
-                log("  ! stopping AI lines for this run after repeated failures")
-                break
+        text = _ask(VOTE_PROMPT.format(
+            title=bill.get("title") or v["desc"], summary=(bill.get("official_summary") or "")[:6000],
+            what=info["what"], yea=info["yea"], nay=info["nay"], result=v["result"],
+            yeas=v["totals"].get("yea", 0), nays=v["totals"].get("nay", 0),
+            r_yea=party.get("R", {}).get("yea", 0), r_nay=party.get("R", {}).get("nay", 0),
+            d_yea=party.get("D", {}).get("yea", 0), d_nay=party.get("D", {}).get("nay", 0)), cfg, key, 400)
+        out = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
+        name, plain = str(out["name"]).strip().rstrip("."), str(out["plain"]).strip()
+        if not name or len(name) > 90 or len(plain) > 400:
+            raise ValueError("answer outside the allowed length")
+        return {"name": name, "plain": plain, "model": cfg.get("ai_model", "")}
+
+    batch = todo[: cfg.get("ai_max_new_vote_lines_per_run", 150)]
+    # A small first batch, so a wrong key or model fails fast instead of 150 times.
+    for chunk in (batch[:4], batch[4:]):
+        for job, result in _in_parallel(chunk, label):
+            if isinstance(result, Exception):
+                failed += 1
+                if failed <= 5:
+                    log(f"  ! AI line for {job[1]['id']} failed: {result}")
+            else:
+                cache[job[1]["id"]] = result
+                made += 1
+        if made == 0 and failed:
+            log("  ! stopping AI lines for this run after the first batch failed")
+            break
     write_json(DATA / "ai_votes.json", cache, compact=False)
     log(f"AI vote lines: {made} new, {len(cache)} on file, {max(0, len(todo) - made)} still waiting")
     return cache
