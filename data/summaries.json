@@ -1,7 +1,27 @@
 {
+ "hr-1013": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would allow 403(b) retirement plans, which cover certain employees of public schools, charities, and churches, to invest in collective investment trusts and insurance company separate accounts.",
+  "short": "The bill would let 403(b) retirement plans invest in collective investment trusts. These are pooled investment assets held by a bank or trust company. The bill would also let these plans invest in insurance company separate accounts. 403(b) plans are retirement plans designed for certain employees of public schools, charities, and churches."
+ },
+ "hr-10326": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The PROOF Act would require states to give the Department of Justice information it needs to investigate or prosecute alleged fraud in certain federally funded programs.",
+  "short": "The bill covers programs including Medicaid, the Supplemental Nutrition Assistance Program (SNAP), Temporary Assistance for Needy Families (TANF), certain coronavirus-related federal payments and grants to states, and other programs the Department of Justice identifies as vulnerable to fraud. Federal agencies could use the information obtained only for law enforcement purposes related to fraud, and not for unrelated administrative or commercial purposes. The Department of Justice would have to report annually to Congress on the number of information requests made, the programs involved, and the number of fraud investigations started and convictions obtained using that information."
+ },
+ "hr-2140": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would extend through fiscal year 2029 a program in which the Environmental Protection Agency provides grants, rebates, or loans to help replace or upgrade diesel engines with pollution control technology.",
+  "short": "The Diesel Emissions Reduction Act of 2025 would reauthorize a diesel emissions reduction program through fiscal year 2029. Under the program, the Environmental Protection Agency provides grants, rebates, or loans. The funding can be used for replacing diesel engines or retrofitting them with pollution control technologies."
+ },
  "hr-8897": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would direct the Transportation Security Administration to run a pilot program with alternative security screening for airline passengers traveling with children aged 12 and under.",
   "short": "The bill directs the Transportation Security Administration (TSA) to establish a pilot program testing alternative security screening for passengers traveling with children who are 12 years old or younger. Under the bill, TSA would set up alternative screening lanes and approaches intended to make travel easier for these passengers. The pilot would run at a minimum of five airports, with priority given to airports that have a high volume of passengers traveling with children."
+ },
+ "hres-1498": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution would formally censure Representative Chuck Edwards of North Carolina, a formal statement of disapproval by the House.",
+  "short": "The resolution would censure Representative Chuck Edwards of North Carolina. Its official title refers to allegations relating to him, but the available summary does not describe those allegations. The summary contains no further provisions."
  }
 }
