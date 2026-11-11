@@ -16,6 +16,7 @@ from .explain import explain
 from .ingest import bill_slug, parse_legis
 
 PARTIES = ("R", "D")
+DELEGATE_SEATS = {"DC", "PR", "GU", "VI", "AS", "MP"}
 PARTY_NAMES = {"R": "Republican", "D": "Democrat", "I": "Independent"}
 
 
@@ -118,7 +119,9 @@ def compute(votes, members, bills, cfg):
         finish(p["all"])
         p["by_year"] = {y: finish(s) for y, s in sorted(p["by_year"].items(), reverse=True)}
         p["by_issue"] = {k: finish(s) for k, s in sorted(p["by_issue"].items(), key=lambda kv: -kv[1]["eligible"])}
-        p["ranked"] = p["all"]["eligible"] >= min_votes
+        # Delegates from DC and the territories can vote only on some amendments, so they are not ranked.
+        p["delegate"] = p["state"] in DELEGATE_SEATS
+        p["ranked"] = p["all"]["eligible"] >= min_votes and not p["delegate"]
         p["party_name"] = PARTY_NAMES.get(p["party"], "Independent")
         d = p.get("district")
         p["seat"] = f"{p['state']}-{d}" if d not in (None, "") and d != 0 else (f"{p['state']} at large" if d == 0 else p["state"])

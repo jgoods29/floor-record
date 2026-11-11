@@ -30,7 +30,7 @@
 <p class="small muted" id="lb-count"></p>
 <div class="grid two">
 <div class="card tint stack" style="gap:6px"><span class="strong">What the columns mean</span><span style="font-size:16px;color:var(--text-2)"><strong>With party</strong> and <strong>Against party</strong> count only votes where most Republicans and most Democrats took opposite sides. <strong>Times</strong> is how many of those votes the member broke away on. <strong>Attendance</strong> is the share of all roll calls where the member voted.</span></div>
-<div class="card tint stack" style="gap:6px"><span class="strong">Who is ranked</span><span style="font-size:16px;color:var(--text-2)">Members with at least {{ min_votes }} roll calls in this Congress. Members who arrived recently appear once they pass that mark. Independents have no party position, so their party columns are blank.</span></div>
+<div class="card tint stack" style="gap:6px"><span class="strong">Who is ranked</span><span style="font-size:16px;color:var(--text-2)">Members with at least {{ min_votes }} roll calls in this Congress. Members who arrived recently appear once they pass that mark. Independents have no party position, so their party columns are blank. Delegates from D.C. and the territories can vote only on some amendments, so they are not ranked.</span></div>
 </div>
 </div>
 <script id="lb-data" type="application/json">{{ rows|tojson }}</script>
