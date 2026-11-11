@@ -1,0 +1,321 @@
+"""Collect official data.
+
+Sources
+- House roll calls: Office of the Clerk, https://clerk.house.gov/evs/{year}/roll{NNN}.xml
+- Members: the public-domain unitedstates/congress-legislators project
+- Bills (optional, needs CONGRESS_API_KEY): the Library of Congress API, https://api.congress.gov
+
+Run:  python -m floorrecord.ingest
+Only new roll calls are downloaded; everything already in data/ is kept.
+"""
+import os
+import re
+import sys
+import time
+import xml.etree.ElementTree as ET
+from datetime import date, datetime
+
+from .common import DATA, NotFound, config, fetch, read_json, write_json
+
+CLERK_URL = "https://clerk.house.gov/evs/{year}/roll{roll:03d}.xml"
+LEGIS_URL = "https://raw.githubusercontent.com/unitedstates/congress-legislators/gh-pages/legislators-{which}.json"
+CONGRESS_API = "https://api.congress.gov/v3"
+
+VOTE_WORDS = {
+    "yea": "yea", "aye": "yea",
+    "nay": "nay", "no": "nay",
+    "present": "present",
+    "not voting": "nv",
+}
+
+BILL_TYPES = {
+    "H R": "hr", "H RES": "hres", "H J RES": "hjres", "H CON RES": "hconres",
+    "S": "s", "S RES": "sres", "S J RES": "sjres", "S CON RES": "sconres",
+}
+BILL_LABELS = {
+    "hr": "H.R.", "hres": "H.Res.", "hjres": "H.J.Res.", "hconres": "H.Con.Res.",
+    "s": "S.", "sres": "S.Res.", "sjres": "S.J.Res.", "sconres": "S.Con.Res.",
+}
+
+
+def parse_legis(legis):
+    """'H RES 1655' -> ('hres', 1655). Returns None for QUORUM, JOURNAL, etc."""
+    m = re.match(r"^\s*([A-Z ]+?)\s+(\d+)\s*$", legis or "")
+    if not m:
+        return None
+    kind = BILL_TYPES.get(re.sub(r"\s+", " ", m.group(1)).strip())
+    if not kind:
+        return None
+    return kind, int(m.group(2))
+
+
+def bill_slug(kind, number):
+    return f"{kind}-{number}"
+
+
+def bill_label(kind, number):
+    return f"{BILL_LABELS[kind]} {number}"
+
+
+def _text(node, path, default=""):
+    found = node.find(path)
+    if found is None or found.text is None:
+        return default
+    return found.text.strip()
+
+
+def _int(value):
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return 0
+
+
+def parse_roll_call(xml_bytes, year):
+    """Turn one Clerk XML file into a compact dict. Raises ValueError if it is not a roll call."""
+    root = ET.fromstring(xml_bytes)
+    meta = root.find("vote-metadata")
+    if meta is None or not _text(meta, "rollcall-num"):
+        raise ValueError("not a roll call document")
+    roll = int(_text(meta, "rollcall-num"))
+    raw_date = _text(meta, "action-date")
+    try:
+        iso_date = datetime.strptime(raw_date, "%d-%b-%Y").date().isoformat()
+    except ValueError:
+        iso_date = f"{year}-01-01"
+    time_node = meta.find("action-time")
+    clock = (time_node.text or "").strip() if time_node is not None else ""
+
+    official = {}
+    by_party = {}
+    totals = meta.find("vote-totals")
+    if totals is not None:
+        for row in totals.findall("totals-by-party"):
+            party = _text(row, "party")
+            if not party:
+                continue
+            by_party[party[0].upper()] = {
+                "yea": _int(_text(row, "yea-total")), "nay": _int(_text(row, "nay-total")),
+                "present": _int(_text(row, "present-total")), "nv": _int(_text(row, "not-voting-total")),
+            }
+        tv = totals.find("totals-by-vote")
+        if tv is not None:
+            official = {
+                "yea": _int(_text(tv, "yea-total")), "nay": _int(_text(tv, "nay-total")),
+                "present": _int(_text(tv, "present-total")), "nv": _int(_text(tv, "not-voting-total")),
+            }
+
+    positions = []
+    names = {}
+    other = False
+    for rec in root.iter("recorded-vote"):
+        leg = rec.find("legislator")
+        if leg is None:
+            continue
+        bioguide = leg.get("name-id") or ""
+        if not bioguide:
+            continue
+        word = _text(rec, "vote")
+        vote = VOTE_WORDS.get(word.lower())
+        if vote is None:
+            # e.g. a candidate's name in the election of the Speaker
+            vote = "other:" + word
+            other = True
+        positions.append([bioguide, (leg.get("party") or "?")[:1].upper(), leg.get("state") or "", vote])
+        names[bioguide] = (leg.get("unaccented-name") or leg.text or "").strip()
+
+    counted = {"yea": 0, "nay": 0, "present": 0, "nv": 0}
+    for _, _, _, v in positions:
+        if v in counted:
+            counted[v] += 1
+    if not official:
+        official = dict(counted)
+
+    question = _text(meta, "vote-question")
+    legis = _text(meta, "legis-num")
+    vote_type = _text(meta, "vote-type")
+    kind = "standard"
+    if other or "QUORUM" in vote_type.upper() or legis.upper() == "QUORUM" or "election of the speaker" in question.lower():
+        kind = "special"
+
+    return {
+        "id": f"{year}-{roll}", "year": year, "roll": roll,
+        "congress": _int(_text(meta, "congress")), "session": _text(meta, "session"),
+        "date": iso_date, "time": clock,
+        "question": question, "legis": legis, "desc": _text(meta, "vote-desc"),
+        "amendment": _text(meta, "amendment-num"), "amendment_author": _text(meta, "amendment-author"),
+        "type": vote_type, "result": _text(meta, "vote-result"),
+        "kind": kind,
+        "totals": official, "by_party": by_party,
+        "tally_matches": all(counted[k] == official.get(k, 0) for k in counted) if kind == "standard" else True,
+        "positions": positions, "names": names,
+        "source": CLERK_URL.format(year=year, roll=roll),
+    }
+
+
+def ingest_house(years, log=print):
+    new = 0
+    for year in years:
+        folder = DATA / "votes" / str(year)
+        folder.mkdir(parents=True, exist_ok=True)
+        have = sorted(int(p.stem) for p in folder.glob("*.json"))
+        roll = (have[-1] + 1) if have else 1
+        misses = 0
+        while misses < 2:
+            url = CLERK_URL.format(year=year, roll=roll)
+            try:
+                vote = parse_roll_call(fetch(url), year)
+            except NotFound:
+                misses += 1
+                roll += 1
+                continue
+            except (ValueError, ET.ParseError):
+                # The Clerk sometimes answers a missing roll call with an HTML page.
+                misses += 1
+                roll += 1
+                continue
+            misses = 0
+            write_json(folder / f"{roll:04d}.json", vote)
+            if not vote["tally_matches"]:
+                log(f"  ! {year} roll {roll}: counted positions differ from the official totals")
+            new += 1
+            roll += 1
+            time.sleep(0.25)
+        log(f"House {year}: {len(have)} roll calls on file, {new} new so far")
+    return new
+
+
+def load_votes(years=None):
+    votes = []
+    base = DATA / "votes"
+    if not base.exists():
+        return votes
+    for folder in sorted(base.iterdir()):
+        if not folder.is_dir():
+            continue
+        if years and int(folder.name) not in years:
+            continue
+        for path in sorted(folder.glob("*.json")):
+            votes.append(read_json(path))
+    votes.sort(key=lambda v: (v["date"], v["roll"]))
+    return votes
+
+
+def _member_from_legislator(person):
+    terms = person.get("terms") or []
+    reps = [t for t in terms if t.get("type") == "rep"]
+    if not reps:
+        return None
+    last = reps[-1]
+    name = person.get("name", {})
+    full = name.get("official_full") or " ".join(x for x in [name.get("first"), name.get("last")] if x)
+    party = last.get("party") or ""
+    return {
+        "bioguide": person["id"]["bioguide"],
+        "name": full, "first": name.get("first", ""), "last": name.get("last", ""),
+        "party": {"Republican": "R", "Democrat": "D"}.get(party, "I"),
+        "state": last.get("state", ""), "district": last.get("district"),
+        "since": terms[0].get("start", ""), "house_since": reps[0].get("start", ""),
+        "term_end": last.get("end", ""),
+        "url": last.get("url", ""),
+    }
+
+
+def ingest_members(votes, log=print):
+    """Details for every member who appears in at least one roll call."""
+    needed = set()
+    for v in votes:
+        for bioguide, _, _, _ in v["positions"]:
+            needed.add(bioguide)
+    members = {}
+    for which in ("current", "historical"):
+        if which == "historical" and needed <= set(members):
+            break
+        try:
+            people = __import__("json").loads(fetch(LEGIS_URL.format(which=which), timeout=120))
+        except Exception as err:  # keep going with what the roll calls themselves tell us
+            log(f"  ! could not load {which} legislators: {err}")
+            continue
+        for person in people:
+            bioguide = person.get("id", {}).get("bioguide")
+            if bioguide in needed and bioguide not in members:
+                rec = _member_from_legislator(person)
+                if rec:
+                    members[bioguide] = rec
+    write_json(DATA / "members.json", members)
+    log(f"Members: {len(members)} of {len(needed)} matched to the legislators list")
+    return members
+
+
+def _api(path, key, **params):
+    import json
+    from urllib.parse import urlencode
+    params.update({"api_key": key, "format": "json"})
+    return json.loads(fetch(f"{CONGRESS_API}{path}?{urlencode(params)}"))
+
+
+def ingest_bills(votes, congress, log=print, limit=400):
+    """Titles, sponsors, policy areas and official summaries from Congress.gov. Optional."""
+    key = os.environ.get("CONGRESS_API_KEY", "").strip()
+    bills = read_json(DATA / "bills.json", {})
+    if not key:
+        log("Bills: CONGRESS_API_KEY not set, skipping (pages fall back to the Clerk's titles)")
+        return bills
+    recent_cutoff = date.today().toordinal() - 30
+    wanted = {}
+    for v in votes:
+        parsed = parse_legis(v["legis"])
+        if not parsed:
+            continue
+        slug = bill_slug(*parsed)
+        is_recent = date.fromisoformat(v["date"]).toordinal() >= recent_cutoff
+        if slug not in bills or is_recent:
+            wanted[slug] = parsed
+    done = 0
+    for slug, (kind, number) in list(wanted.items())[:limit]:
+        try:
+            bill = _api(f"/bill/{congress}/{kind}/{number}", key).get("bill", {})
+        except Exception as err:
+            log(f"  ! {slug}: {err}")
+            continue
+        sponsor = (bill.get("sponsors") or [{}])[0]
+        rec = {
+            "title": bill.get("title", ""),
+            "introduced": bill.get("introducedDate", ""),
+            "sponsor": sponsor.get("bioguideId", ""), "sponsor_name": sponsor.get("fullName", ""),
+            "policy_area": (bill.get("policyArea") or {}).get("name", ""),
+            "latest_action": (bill.get("latestAction") or {}).get("text", ""),
+            "latest_action_date": (bill.get("latestAction") or {}).get("actionDate", ""),
+            "official_summary": bills.get(slug, {}).get("official_summary", ""),
+            "fetched": date.today().isoformat(),
+        }
+        try:
+            summaries = _api(f"/bill/{congress}/{kind}/{number}/summaries", key).get("summaries") or []
+            if summaries:
+                rec["official_summary"] = re.sub(r"<[^>]+>", " ", summaries[-1].get("text", "")).strip()
+        except Exception:
+            pass
+        bills[slug] = rec
+        done += 1
+        time.sleep(0.2)
+    write_json(DATA / "bills.json", bills)
+    log(f"Bills: {done} updated, {len(bills)} on file")
+    return bills
+
+
+def main():
+    cfg = config()
+    ingest_house(cfg["years"])
+    votes = load_votes(cfg["years"])
+    if not votes:
+        print("No roll calls found. Check the network connection and the years in config.json.")
+        sys.exit(1)
+    ingest_members(votes)
+    ingest_bills(votes, cfg["congress"])
+    from .explain import ai_summaries
+    ai_summaries(votes, cfg)
+    print(f"Done: {len(votes)} roll calls on file.")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}How we count · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page">
+<div class="stack"><div class="eyebrow"><span>About</span></div><h1 class="h1">How we count</h1>
+<p class="lede">{{ site.site_name }} shows what members of the U.S. House did, with a link to the official record for every number. It does not grade anyone or tell you what to think.</p></div>
+
+<section class="stack"><h2 class="h2">Where the data comes from</h2><div class="grid two">
+<div class="card stack" style="gap:8px"><span class="h3">Votes</span><p>Every roll call comes from the <a href="https://clerk.house.gov/Votes">Office of the Clerk of the U.S. House</a>. We download each official record and count from it directly. If our count ever differs from the Clerk's published total, the page says so.</p></div>
+<div class="card stack" style="gap:8px"><span class="h3">Members</span><p>Names, districts and terms come from the public-domain <a href="https://github.com/unitedstates/congress-legislators">congress-legislators</a> project, maintained by volunteers and news organisations.</p></div>
+<div class="card stack" style="gap:8px"><span class="h3">Bills</span><p>Titles, sponsors, policy areas and official summaries come from the Library of Congress through <a href="https://www.congress.gov">Congress.gov</a>.</p></div>
+<div class="card stack" style="gap:8px"><span class="h3">Updates</span><p>The site checks for new votes several times a day. This copy covers {{ nvotes|comma }} roll calls from {{ span }} and was last updated {{ updated }}.</p></div>
+</div></section>
+
+<section class="stack"><h2 class="h2">What the numbers mean</h2><div class="card stack" style="gap:16px">
+<p><strong>Party position.</strong> On each vote, whichever of Yea or Nay most of a party's voting members chose. If a party split evenly, it had no position on that vote.</p>
+<p><strong>Party-split vote.</strong> A vote where most Republicans and most Democrats took opposite sides.</p>
+<p><strong>With party / against party.</strong> How often a member's Yea or Nay matched their own party's position. The headline figures and the leaderboard count only party-split votes, because near-unanimous votes make everyone look the same.</p>
+<p><strong>Broke with party.</strong> The member voted Yea or Nay and it differed from their party's position on that vote.</p>
+<p><strong>Attendance.</strong> The share of roll calls where a member voted Yea, Nay or Present. Members miss votes for many reasons, including illness and family emergencies; the record does not say why.</p>
+<p><strong>Left out.</strong> Quorum calls and the election of the Speaker are listed but not counted in any statistic. Members with fewer than {{ min_votes }} roll calls are not ranked.</p>
+</div></section>
+
+<section class="stack"><h2 class="h2">Plain-English explanations</h2><div class="card stack" style="gap:16px">
+<p><strong>What a Yea or Nay meant.</strong> These lines come from fixed rules about House procedure. For example, a Yea on a motion to refer always means "send it to committee." They never guess at what a bill contains.</p>
+<p><strong>AI-written summaries.</strong> Where a page says "AI-written," the summary of what a bill does was drafted by an AI model using only the bill's official title and the Congressional Research Service summary. It is labelled every time, shown next to the official text, and can contain mistakes.</p>
+</div></section>
+
+<section class="stack"><h2 class="h2">Corrections</h2><div class="card"><p>{% if site.contact_email %}Found a mistake? Write to <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a> ({{ site.contact_email }}). Corrections are made in public.{% else %}If you find a mistake, please report it through this site's code repository. Corrections are made in public.{% endif %}</p></div></section>
+</div>
+{% endblock %}

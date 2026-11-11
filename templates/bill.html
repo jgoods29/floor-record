@@ -1,0 +1,39 @@
+{% extends "base.html" %}{% import "_m.html" as m %}
+{% block title %}{{ b.label }}: {{ b.title|truncate(70) }} · {{ site.site_name }}{% endblock %}
+{% block source %}Votes come from the Clerk of the House. Titles, sponsors and official summaries come from the Library of Congress. <a href="{{ b.congress_url }}">See the official record on Congress.gov</a>.{% endblock %}
+{% block main %}
+<div class="wrap page">
+<div class="stack">
+<div class="eyebrow"><a href="{{ root }}bills/" style="text-decoration:none;color:inherit">Bills</a><span aria-hidden="true">·</span><span>{{ b.kind_name }}</span></div>
+<div class="row" style="gap:8px 12px"><span class="h3">{{ b.label }}</span>{% if b.rec.policy_area %}<span class="tag soft">{{ b.rec.policy_area }}</span>{% endif %}</div>
+<h1 class="h1" style="font-size:clamp(30px,4.4vw,52px)">{{ b.title }}</h1>
+</div>
+
+<div class="row" style="align-items:flex-start;gap:28px">
+<div class="stack" style="flex:999 1 560px;min-width:0">
+{% if ai %}
+<section class="card tint stack" style="gap:10px"><h2 class="label">In one sentence · AI-written</h2><p style="font-size:20px;line-height:1.4;font-weight:500">{{ ai.one_sentence }}</p></section>
+<section class="card stack" style="gap:12px"><h2 class="h3">The short version</h2><p style="max-width:680px">{{ ai.short }}</p>
+<p class="small muted">Drafted by AI from the official title and the Congressional Research Service summary, then shown as-is. It can contain mistakes. The official summary is below so you can compare.</p></section>
+{% endif %}
+{% if b.rec.official_summary %}
+<section class="card stack" style="gap:12px"><h2 class="h3">Official summary</h2><p style="max-width:680px">{{ b.rec.official_summary|truncate(1800) }}</p><p class="small muted">Written by the Congressional Research Service, a non-partisan office of the Library of Congress.</p></section>
+{% elif not ai %}
+<section class="card stack" style="gap:12px"><h2 class="h3">What it is</h2><p style="max-width:680px">{{ b.title }}</p><p class="small muted">A plain-English summary has not been added yet. <a href="{{ b.congress_url }}">Read the full text on Congress.gov</a>.</p></section>
+{% endif %}
+<section class="stack"><h2 class="h2">House votes on this measure</h2>
+<div class="grid two">{% for v in b.votes %}{{ m.votetile(v, root) }}{% endfor %}</div></section>
+</div>
+
+<aside class="stack" style="flex:1 1 300px">
+{% if sponsor %}<a class="card" href="{{ root }}members/{{ sponsor.bioguide }}/"><span class="label">Sponsor</span><span class="who"><span class="avatar" style="width:44px;height:44px" aria-hidden="true">{{ sponsor.initials }}</span><span><span class="strong" style="font-size:17px">{{ sponsor.name }}</span><span class="small muted">{{ sponsor.party_name }} · {{ sponsor.seat }}</span></span></span></a>
+{% elif b.rec.sponsor_name %}<div class="card stack" style="gap:8px"><span class="label">Sponsor</span><span>{{ b.rec.sponsor_name }}</span></div>{% endif %}
+<div class="card stack" style="gap:8px"><span class="label">Quick facts</span>
+<span><strong>Type:</strong> {{ b.kind_name }}. {{ b.kind_note }}</span>
+{% if b.rec.introduced %}<span><strong>Introduced:</strong> {{ b.rec.introduced|nicedate }}</span>{% endif %}
+{% if b.rec.latest_action %}<span><strong>Latest action{% if b.rec.latest_action_date %}, {{ b.rec.latest_action_date|nicedate }}{% endif %}:</strong> {{ b.rec.latest_action }}</span>{% endif %}
+<span><a href="{{ b.congress_url }}">Official record on Congress.gov</a></span></div>
+</aside>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Bills and resolutions · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page">
+<div class="stack">
+<div class="eyebrow"><span>U.S. House of Representatives</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
+<h1 class="h1">Bills</h1>
+<p class="lede">Every bill and resolution the House has held a recorded vote on, most recent first.</p>
+<div class="row"><label class="small muted" for="bill-filter">Filter</label><input class="field" id="bill-filter" type="search" placeholder="A number or word" style="width: 280px" data-filter="#bill-rows tr"></div>
+</div>
+<div class="card flush scroll"><table>
+<thead><tr><th>Measure</th><th>Title</th><th>Votes</th><th>Latest vote</th></tr></thead>
+<tbody id="bill-rows">{% for b in bills %}<tr><td style="white-space:nowrap"><a class="strong" href="{{ root }}bills/{{ b.slug }}/">{{ b.label }}</a></td><td>{{ b.title|truncate(150) }}</td><td>{{ b.votes|length }}</td><td class="small muted" style="white-space:nowrap">{{ b.votes[0].date|nicedate }}</td></tr>{% endfor %}</tbody></table></div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.site_name }}{% endblock %}</title>
+<meta name="description" content="{% block desc %}{{ site.tagline }}{% endblock %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body data-root="{{ root }}">
+<header class="top">
+<div class="wrap">
+<a class="brand" href="{{ root }}">{{ site.site_name }}</a>
+<nav class="nav" aria-label="Main">
+<a href="{{ root }}votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a>
+<a href="{{ root }}members/"{% if section == 'members' %} aria-current="page"{% endif %}>Members</a>
+<a href="{{ root }}bills/"{% if section == 'bills' %} aria-current="page"{% endif %}>Bills</a>
+<a href="{{ root }}leaderboard/"{% if section == 'leaderboard' %} aria-current="page"{% endif %}>Leaderboard</a>
+</nav>
+<div class="search">
+<label for="site-search">Search</label>
+<input id="site-search" type="search" placeholder="A name, state or bill" autocomplete="off">
+<div class="results" id="search-results" role="listbox" aria-label="Search results"></div>
+</div>
+</div>
+</header>
+<main>
+{% block main %}{% endblock %}
+</main>
+<footer class="wrap" style="padding-bottom: 56px">
+<div class="foot">
+<span class="label">Where this comes from</span>
+<p>{% block source %}Every vote on this site comes from the official record kept by the Clerk of the U.S. House of Representatives.{% endblock %} <a href="{{ root }}about/">How we count</a>. Last updated {{ updated }}.</p>
+</div>
+</footer>
+<script src="{{ root }}static/app.js" defer></script>
+</body>
+</html>

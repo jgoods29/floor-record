@@ -1,0 +1,85 @@
+{% extends "base.html" %}{% import "_m.html" as m %}
+{% block title %}{{ p.name }} ({{ p.party }}-{{ p.state }}) voting record · {{ site.site_name }}{% endblock %}
+{% block desc %}How Rep. {{ p.name }} votes: with or against the party, vote by vote, from the official House record.{% endblock %}
+{% block main %}
+<div class="wrap page">
+<div class="eyebrow"><a href="{{ root }}members/" style="text-decoration:none;color:inherit">Members</a><span aria-hidden="true">·</span><span>House</span><span aria-hidden="true">·</span><span>{{ state_name }}</span></div>
+
+<section class="card row" style="gap:20px 28px">
+<div class="avatar" style="width:96px;height:96px;font-size:38px" aria-hidden="true">{{ p.initials }}</div>
+<div class="stack" style="gap:8px;flex:1 1 320px">
+<h1 class="h1" style="font-size:clamp(34px,4.8vw,56px)">{{ p.name }}</h1>
+<div class="row" style="gap:8px 12px"><span class="party {{ p.party }}" style="width:auto;padding:0 10px">{{ p.party_name }}</span><span>U.S. Representative, {{ seat_long }}</span></div>
+{% if p.house_since %}<div class="small muted">In the House since {{ p.house_since|nicedate }}{% if p.term_end %} · Current term ends {{ p.term_end|nicedate }}{% endif %}</div>{% endif %}
+</div>
+{% if p.url %}<a href="{{ p.url }}">Official website</a>{% endif %}
+</section>
+
+<section class="stack">
+<h2 class="h2">How {{ p.last or p.name }} votes</h2>
+{% if s.split_counted %}
+<div class="card stack" style="gap:14px">
+<span class="strong">When the two parties disagree</span>
+<div class="row" style="gap:8px 48px;align-items:flex-end">
+<div><div class="big lg">{{ m.pctv(s.split_with_pct) }}</div><div class="strong" style="padding-top:8px">Voted with {{ p.party_name }}s</div></div>
+<div><div class="big lg dim">{{ m.pctv(s.split_against_pct) }}</div><div class="strong" style="padding-top:8px">Voted against the party</div></div>
+</div>
+<span class="bar" style="height:12px" role="img" aria-label="{{ m.pctv(s.split_with_pct) }} with the party, {{ m.pctv(s.split_against_pct) }} against"><span style="flex: {{ s.split_with }}"></span><span class="n" style="flex: {{ s.split_against }}"></span></span>
+<p style="color:var(--text-2);max-width:680px">On the {{ s.split_counted|comma }} {{ 'vote' if s.split_counted == 1 else 'votes' }} where most Republicans and most Democrats took opposite sides, {{ p.last or p.name }} sided with the party {{ s.split_with|times }} and against it {{ s.split_against|times }}.</p>
+{% if party_median is not none %}<p class="small muted">The typical House {{ p.party_name }}: {{ m.pctv(party_median) }} with the party.</p>{% endif %}
+</div>
+{% elif p.party not in ('R', 'D') %}
+<div class="card"><p>{{ p.name }} is not a member of either major party, so there is no party position to compare these votes with.</p></div>
+{% else %}
+<div class="card"><p>Not enough party-split votes yet to show a pattern.</p></div>
+{% endif %}
+</section>
+
+{% if breaks %}
+<section class="stack">
+<div class="row between"><h2 class="h2">Votes against the party</h2><span class="small muted">Most recent {{ breaks|length }} of {{ s.against|comma }}</span></div>
+<div class="card flush list">{% for b in breaks %}<div>
+<span class="when">{{ b.v.date|nicedate }}</span>
+<span class="main"><a class="strong" href="{{ root }}votes/{{ b.v.id }}/">{{ b.phrase }}</a><span class="small muted">{{ b.note }} The vote: {{ b.v.result|lower }}, {{ b.v.totals.yea }} to {{ b.v.totals.nay }}.{% if b.v.info.title %} {{ b.v.info.title|truncate(90) }}{% endif %}</span></span>
+<span class="vote">{{ m.vword(b.pos) }}</span>
+</div>{% endfor %}</div>
+</section>
+{% endif %}
+
+<section class="stack">
+<h2 class="h2">Break it down</h2>
+<div class="card stack" style="gap:16px">
+<div class="row" role="group" aria-label="Break down by" style="gap:8px">
+{% if p.by_issue %}<button class="btn" type="button" aria-pressed="true" data-tab="by-issue">By issue</button>{% endif %}
+<button class="btn" type="button" aria-pressed="{{ 'false' if p.by_issue else 'true' }}" data-tab="by-year">By year</button>
+</div>
+{% if p.by_issue %}<div class="scroll" data-pane="by-issue"><table>
+<thead><tr><th>Issue</th><th>Votes</th><th>With party</th><th>Against party</th><th>Attendance</th></tr></thead>
+<tbody>{% for name, st in p.by_issue.items() %}<tr><td class="strong">{{ name }}</td><td>{{ st.eligible }}</td><td>{{ m.pctv(st.with_pct) }}</td><td>{{ m.pctv(st.against_pct) }}</td><td>{{ m.pctv(st.attendance_pct) }}</td></tr>{% endfor %}</tbody></table>
+<p class="small muted" style="padding-top:12px">Each bill is filed under one policy area by the Library of Congress. Small counts can swing a percentage a lot.</p></div>{% endif %}
+<div class="scroll{% if p.by_issue %} hide{% endif %}" data-pane="by-year"><table>
+<thead><tr><th>Year</th><th>With party, split votes</th><th>With party, all votes</th><th>Votes cast</th><th>Attendance</th></tr></thead>
+<tbody>{% for year, st in p.by_year.items() %}<tr><td class="strong">{{ year }}</td><td class="strong">{{ m.pctv(st.split_with_pct) }}</td><td>{{ m.pctv(st.with_pct) }}</td><td>{{ st.cast|comma }} of {{ st.eligible|comma }}</td><td>{{ m.pctv(st.attendance_pct) }}</td></tr>{% endfor %}</tbody></table></div>
+</div>
+</section>
+
+<section class="stack">
+<div class="row between"><h2 class="h2">Recent votes</h2><button class="btn" type="button" id="all-votes" data-src="votes.json">Show all {{ s.eligible|comma }} {{ 'vote' if s.eligible == 1 else 'votes' }}</button></div>
+<div class="card flush scroll"><table>
+<thead><tr><th>Date</th><th>Roll</th><th>What the House voted on</th><th>Vote</th><th>Result</th></tr></thead>
+<tbody id="vote-log">{% for r in recent %}<tr><td class="small muted" style="white-space:nowrap">{{ r.v.date|nicedate }}</td><td class="small muted">{{ r.v.roll }}</td>
+<td><a href="{{ root }}votes/{{ r.v.id }}/">{{ r.v.info.headline }}</a>{% if r.wp == false %} <span class="tag">Broke with party</span>{% endif %}</td>
+<td class="strong">{{ m.vword(r.pos) }}</td><td class="small">{{ r.v.result }}, {{ r.v.totals.yea }}–{{ r.v.totals.nay }}</td></tr>{% endfor %}</tbody></table></div>
+</section>
+
+{% if sponsored %}
+<section class="stack"><h2 class="h2">Measures sponsored that reached a vote</h2>
+<div class="grid two">{% for b in sponsored %}<a class="card" href="{{ root }}bills/{{ b.slug }}/"><span class="h3">{{ b.label }}</span><span style="color:var(--text-2)">{{ b.title|truncate(140) }}</span></a>{% endfor %}</div></section>
+{% endif %}
+
+<section class="foot" style="border-top:1px solid var(--line)">
+<h2 class="h3" style="font-size:16px">Attendance</h2>
+<p>Voted in {{ s.cast|comma }} of {{ s.eligible|comma }} House roll calls ({{ m.pctv(s.attendance_pct) }}){% if att_median is not none %}. The typical member: {{ m.pctv(att_median) }}{% endif %}.</p>
+</section>
+</div>
+{% endblock %}

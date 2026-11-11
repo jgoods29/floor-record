@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% import "_m.html" as m %}
+{% block title %}House members · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page">
+<div class="stack">
+<div class="eyebrow"><span>U.S. House of Representatives</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
+<h1 class="h1">Members</h1>
+<p class="lede">Everyone who has cast a House vote in this Congress, grouped by state.</p>
+<div class="row"><label class="small muted" for="member-filter">Filter</label><input class="field" id="member-filter" type="search" placeholder="A name or state" style="width: 280px" data-filter="#member-list .chip" data-groups="#member-list section"></div>
+</div>
+<div id="member-list" class="stack" style="gap:36px">
+{% for state, group in states %}<section class="stack" style="gap:14px"><h2 class="h3">{{ state_names.get(state, state) }}</h2>
+<div class="chips">{% for p in group %}<a class="chip" href="{{ root }}members/{{ p.bioguide }}/" data-text="{{ p.name|lower }} {{ state_names.get(state, state)|lower }} {{ state|lower }}">{{ m.badge(p.party) }}{{ p.name }} <span class="small muted">{{ p.seat }}</span></a>{% endfor %}</div></section>{% endfor %}
+</div>
+</div>
+{% endblock %}

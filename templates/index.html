@@ -1,0 +1,30 @@
+{% extends "base.html" %}{% import "_m.html" as m %}
+{% block main %}
+<div class="wrap page">
+<div class="stack">
+<div class="eyebrow"><span>U.S. House of Representatives</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
+<h1 class="h1">See how your representative actually votes.</h1>
+<p class="lede">{{ nvotes|comma }} House votes and {{ npeople }} members, explained in plain English and taken straight from the official record.</p>
+<div class="row"><a class="btn go" href="{{ root }}members/">Find a member</a><a class="btn" href="{{ root }}leaderboard/" style="text-decoration:none">Open the leaderboard</a></div>
+</div>
+
+<section class="stack">
+<div class="row between"><h2 class="h2">Latest votes</h2><a href="{{ root }}votes/">All {{ nvotes|comma }} votes</a></div>
+<div class="grid two">{% for v in latest %}{{ m.votetile(v, root) }}{% endfor %}</div>
+</section>
+
+{% if mavericks %}
+<section class="stack">
+<div class="row between"><h2 class="h2">Who breaks with their party most</h2><a href="{{ root }}leaderboard/">Full leaderboard</a></div>
+<div class="card flush scroll"><table>
+<thead><tr><th>Rank</th><th>Member</th><th>Against party</th><th>Times</th><th>Party-split votes</th></tr></thead>
+<tbody>{% for p in mavericks %}<tr>
+<td><span class="rank">{{ loop.index }}</span></td>
+<td><span class="who">{{ m.badge(p.party) }}<span><a class="strong" href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }}</a><span class="small muted">{{ p.party_name }} · {{ p.seat }}</span></span></span></td>
+<td class="strong">{{ m.pctv(p.all.split_against_pct) }}</td><td>{{ p.all.split_against }}</td><td>{{ p.all.split_counted }}</td>
+</tr>{% endfor %}</tbody></table></div>
+<p class="small muted">Counted on votes where most Republicans and most Democrats took opposite sides. Members with fewer than {{ min_votes }} votes are not ranked.</p>
+</section>
+{% endif %}
+</div>
+{% endblock %}
