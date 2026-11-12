@@ -294,3 +294,9 @@ a.numlink:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .big.lg.numlink { text-decoration-thickness: 2px; text-underline-offset: 6px; }
 details[id^="voted-"] { scroll-margin-top: 96px; }
 .rollnote { margin: 0 0 8px; padding: 10px 14px; border-radius: 10px; background: var(--blue-tint); font-size: 15px; }
+
+/* the votes drawing the most attention sit above the topic pills */
+.pilllink.hot { padding: 10px 22px 10px 16px; background: var(--ink); border-color: var(--ink); color: #fff; font-size: 17px; }
+.pilllink.hot:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.pilllink.hot i { width: 9px; height: 9px; border-radius: 50%; background: var(--red); flex: none; }
+@media (max-width: 640px) { .pilllink.hot { font-size: 15px; } }

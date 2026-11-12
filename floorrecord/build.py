@@ -290,7 +290,7 @@ def main():
         for t in all_topics:
             render(f"topics/{t['key']}/index.html", "topic.html", 2, section="topics", t=t, votes=by_topic[t["key"]],
                    nroutine=t["total"] - t["real"])
-    render("index.html", "index.html", 0, section="home", trending=trending, since=since,
+    render("index.html", "index.html", 0, section="home", trending=trending, since=since, featured=featured,
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", votes=newest, featured=featured,
            nroutine=sum(1 for v in votes if v["info"]["routine"]))

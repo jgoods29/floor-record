@@ -14,11 +14,12 @@
 <p class="tries"><span class="muted">Try</span>{% for word in examples %}<button type="button" class="linkish" data-example="{{ word }}">{{ word }}</button>{% endfor %}</p>
 </section>
 
-{% if trending %}
+{% if featured or trending %}
 <section class="center" aria-labelledby="trending-h">
-<h2 class="label" id="trending-h">Popular and trending topics</h2>
-<div class="pills">{% for t in trending %}<a class="pilllink" href="{{ root }}topics/{{ t.key }}/">{{ t.name }}<span>{{ t.real }}</span></a>{% endfor %}</div>
-<p class="small muted">Popular topics first, then what the House has voted on most since {{ since|nicedate }}. The number is how many votes each has had. <a href="{{ root }}topics/">All topics</a></p>
+<h2 class="label" id="trending-h">Trending</h2>
+{% if featured %}<div class="pills">{% for v in featured %}<a class="pilllink hot" href="{{ root }}votes/{{ v.id }}/"><i aria-hidden="true"></i>{{ v.f_name }}: {{ v.info.outcome }}</a>{% endfor %}</div>{% endif %}
+{% if trending %}<div class="pills">{% for t in trending %}<a class="pilllink" href="{{ root }}topics/{{ t.key }}/">{{ t.name }}<span>{{ t.real }}</span></a>{% endfor %}</div>
+<p class="small muted">The votes drawing the most attention, then popular topics and what the House has voted on most since {{ since|nicedate }}. The number is how many votes each topic has had. <a href="{{ root }}topics/">All topics</a></p>{% endif %}
 </section>
 {% endif %}
 
