@@ -6,7 +6,7 @@
 <title>{% block title %}{{ site.site_name }}{% endblock %}</title>
 <meta name="description" content="{% block desc %}{{ site.tagline }}{% endblock %}">
 <link rel="preload" href="{{ root }}static/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{ root }}static/style.css">
+<link rel="stylesheet" href="{{ root }}static/style.css?v={{ asset_v }}">
 </head>
 <body data-root="{{ root }}">
 <header class="top">
@@ -37,6 +37,6 @@
 </div>
 {% if section != 'home' %}<p class="pledge"><span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>Free, and for the people. No tracking, no profit, just knowledge.</p>{% endif %}
 </footer>
-<script src="{{ root }}static/app.js" defer></script>
+<script src="{{ root }}static/app.js?v={{ asset_v }}" defer></script>
 </body>
 </html>

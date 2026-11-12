@@ -221,7 +221,12 @@ def main():
                        lcfirst=lambda t: t)  # outcomes keep their capitals after a colon
     years = sorted({v["year"] for v in votes})
     span = str(years[0]) if len(years) == 1 else f"{years[0]}–{years[-1]}"
+    # A short fingerprint of the styles and script. It is added to their addresses so a visitor's browser
+    # fetches the new files whenever they change, and never pairs a new page with old styles.
+    import hashlib
+    stamp = hashlib.sha256(b"".join(p.read_bytes() for p in sorted((ROOT / "static").glob("*.*")))).hexdigest()[:10]
     shared = {
+        "asset_v": stamp,
         "site": cfg, "span": span, "nvotes": len(votes), "npeople": len(people),
         "updated": nicedate(datetime.now(timezone.utc).date().isoformat()), "min_votes": result["min_votes"],
         "state_names": STATES,
