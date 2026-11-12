@@ -180,13 +180,11 @@ ROUTINE = {"rule", "previous_question", "adjourn", "journal", "recommit", "consi
 FAST_TRACK = {"suspend_pass", "suspend_agree", "suspend_concur"}
 
 
-SMALL_WORDS = {"a", "an", "the", "and", "or", "nor", "but", "of", "to", "in", "on", "at", "by", "for", "from",
-               "with", "as", "vs", "per", "via"}
+SMALL_WORDS = set()  # every word in a title is capitalised, short joining words included
 
 
 def title_case(text):
-    """Headline-style capitals: every word starts with a capital except short joining words in the
-    middle. Words that already carry capitals or digits (H.R., REFUEL, AI, 403(b)) are left alone."""
+    """Headline-style capitals: every word starts with a capital, short joining words included. Words that already carry capitals or digits (H.R., REFUEL, AI, 403(b)) are left alone."""
     words = (text or "").split(" ")
     out, start = [], True
     for w in words:
