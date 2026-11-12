@@ -491,6 +491,18 @@
   "plain": "The House voted 344 to 79 to set aside a resolution to impeach President Donald Trump over an alleged abuse of presidential power by overstepping Congress's power to declare war. Setting it aside ends the resolution.",
   "v": 2
  },
+ "2025-176": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Several Immigration and Military Spending Bills",
+  "plain": "The House voted 219 to 208 to end debate and move to a final vote on a package of measures covering military construction and veterans spending, border reporting, drunk-driving deportation, and a resolution condemning the June 2025 Los Angeles riots. This vote did not decide the measures themselves.",
+  "v": 2
+ },
+ "2025-177": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Four Measures",
+  "plain": "The House voted 217 to 206 to approve the rules for debating four measures, including a military construction and veterans funding bill, a border reporting bill, a bill on driving while intoxicated and deportation, and a resolution condemning the June 2025 Los Angeles riots. This vote set debate time and allowed amendments but did not itself decide those measures.",
+  "v": 2
+ },
  "2025-179": {
   "model": "claude-haiku-5-5",
   "name": "Condemning Attacks on Minnesota Lawmakers",
@@ -1907,6 +1919,18 @@
   "plain": "The House passed a bill, 406 to 9, requiring the U.S. Customs and Border Protection agency to create a plan for identifying and using new technologies to improve border security, and to set up teams to research commercial technologies for that purpose. The plan is due to Congress within 180 days.",
   "v": 2
  },
+ "2025-66": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Digital Asset Rule and Other Bills",
+  "plain": "The House voted 216 to 212 to end debate and move toward a final vote on a package of measures. The package covers a rule on how brokers report digital asset sales, an extension of the time limit for fraud cases under certain unemployment programs, and a temporary government funding extension. This vote was not on the measures themselves.",
+  "v": 2
+ },
+ "2025-67": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Several Bills",
+  "plain": "The House voted 216 to 214 to approve the rules for debating several measures, including one on IRS reporting for digital asset sales, one extending the fraud statute of limitations for certain unemployment programs, and one on continuing government funding. This was a procedural step, not a vote on those measures themselves.",
+  "v": 2
+ },
  "2025-68": {
   "model": "claude-haiku-5-5",
   "name": "Pandemic Unemployment Fraud Enforcement Act",
@@ -2269,8 +2293,9 @@
  },
  "2026-123": {
   "model": "claude-haiku-5-5",
-  "name": "Extending Foreign Surveillance Authority Through 2027",
-  "plain": "The House voted on whether to add an amendment to a bill that would extend certain foreign intelligence surveillance powers through October 20, 2027. The amendment failed, 200 in favor to 220 against."
+  "name": "Extending Foreign Intelligence Surveillance Authority",
+  "plain": "The House voted on whether to add an amendment to a bill that would extend certain foreign intelligence surveillance powers through October 20, 2027. The amendment failed, 200 to 220.",
+  "v": 2
  },
  "2026-124": {
   "model": "claude-haiku-5-5",
@@ -2280,28 +2305,33 @@
  },
  "2026-125": {
   "model": "claude-haiku-5-5",
-  "name": "Faster Broadband Permit Reviews on Public Land",
-  "plain": "The House voted 384 to 9 to pass a bill creating a federal team to speed up reviews of requests to build or change communications equipment on public lands. The team would set review goals and report to Congress on how well it works."
+  "name": "Expediting Federal Broadband Deployment Reviews Act",
+  "plain": "The House voted 384 to 9 to pass a bill creating a government task force to speed up federal reviews of requests to build or change communications facilities on public lands. The task force would set review goals, monitor agencies, and report to Congress on its work.",
+  "v": 2
  },
  "2026-126": {
   "model": "claude-haiku-5-5",
   "name": "Emergency Reporting Act",
-  "plain": "The House voted to pass a bill requiring the Federal Communications Commission to study 9-1-1 outages and communication failures during disasters, hold yearly public hearings, and publish reports with recommendations. The bill passed 386 to 7."
+  "plain": "The House voted to pass the Emergency Reporting Act, 386 to 7. It would require the Federal Communications Commission to study 9-1-1 phone outages, hold yearly public hearings after long communications outages during disasters, and publish reports with recommendations for improving communications reliability.",
+  "v": 2
  },
  "2026-127": {
   "model": "claude-haiku-5-5",
   "name": "Kari's Law Reporting Act",
-  "plain": "The House voted 405 to 5 to pass a bill requiring the Federal Communications Commission to publish a report on how well manufacturers have followed Kari's Law, which lets people dial 9-1-1 directly from multiline office phones, and to recommend any needed improvements."
+  "plain": "The House voted 405 to 5 to pass a bill requiring the Federal Communications Commission to publish a report on how well manufacturers and vendors of multiline phone systems have complied with Kari's Law, which lets people dial 9-1-1 directly without an extra prefix, and to recommend any needed improvements.",
+  "v": 2
  },
  "2026-128": {
   "model": "claude-haiku-5-5",
-  "name": "Rural Health Care Funding Extension",
-  "plain": "The House passed a bill, 406 to 4, to extend through 2030 federal grants that help health care providers and networks serve rural areas. It also requires that the grant money meet the needs of underserved groups and involve them in planning."
+  "name": "Rural Health Care Grants Reauthorization",
+  "plain": "The House voted 406 to 4 to pass a bill extending through 2030 federal grant programs that fund health care services, networks, and small providers in rural areas. The bill also requires that grant money be used to serve underserved groups and involve them in planning.",
+  "v": 2
  },
  "2026-129": {
   "model": "claude-haiku-5-5",
-  "name": "Hydropower Project Construction Deadline Extension",
-  "plain": "The House passed a bill, 394 to 14, that lets federal regulators give hydropower projects licensed before March 2020 more time to start construction, up to six additional years beyond current limits. It also lets regulators reinstate certain expired licenses for those projects."
+  "name": "Hydropower Project Construction Deadline Extensions",
+  "plain": "The House passed a bill, 394 to 14, that would let federal regulators extend construction deadlines for certain hydropower projects licensed before March 13, 2020. Regulators could grant up to six more years beyond current law, and could reinstate some expired licenses.",
+  "v": 2
  },
  "2026-13": {
   "model": "claude-haiku-5-5",
@@ -2323,8 +2353,9 @@
  },
  "2026-132": {
   "model": "claude-haiku-5-5",
-  "name": "Support for Rural Communities Resolution",
-  "plain": "The House voted 220 to 196 to approve a resolution expressing support for rural communities across the United States and recognizing the House's work on their behalf. Passed."
+  "name": "Support for Rural Communities",
+  "plain": "The House voted 220 to 196 to approve a resolution expressing support for rural communities across the United States, and recognizing the House's work in backing them on energy, health care, manufacturing, and broadband.",
+  "v": 2
  },
  "2026-133": {
   "model": "claude-haiku-5-5",
@@ -2334,8 +2365,9 @@
  },
  "2026-134": {
   "model": "claude-haiku-5-5",
-  "name": "Federal Building Energy Standards Rollback",
-  "plain": "The House passed a bill, 215 to 202, that would repeal rules phasing out fossil fuel use in new and major-renovation federal buildings by 2030. It would also bar green-building certification systems from denying federal buildings certification solely because of fossil fuel use."
+  "name": "Reliable Federal Infrastructure Act",
+  "plain": "The House voted 215 to 202 to pass the Reliable Federal Infrastructure Act. It would repeal energy efficiency rules that phased out fossil fuel use in new federal buildings and major renovations by 2030, and it would stop certain green building certification systems from denying federal buildings certification based solely on fossil fuel use.",
+  "v": 2
  },
  "2026-135": {
   "model": "claude-haiku-5-5",
@@ -2345,23 +2377,27 @@
  },
  "2026-136": {
   "model": "claude-haiku-5-5",
-  "name": "FIRE Act on Air Quality and Wildfires",
-  "plain": "The House passed the FIRE Act, 220 to 198. The bill changes how the Clean Air Act treats pollution caused by wildfire-prevention work and certain high-heat or dry weather, and it requires the EPA to update its rules for handling that air data."
+  "name": "FIRE Act on Wildfire Air Pollution Rules",
+  "plain": "The House passed the FIRE Act, 220 to 198. The bill changes how the EPA treats air pollution data affected by wildfires and wildfire-prevention work, including rules for certain high-temperature and dry-weather events.",
+  "v": 2
  },
  "2026-137": {
   "model": "claude-haiku-5-5",
   "name": "HEATS Act on Geothermal Energy Permits",
-  "plain": "The House passed the HEATS Act, 231 to 186. The bill would let certain geothermal energy projects on state and private land skip federal drilling permits and federal environmental and historic preservation reviews, if the operator has a state permit."
+  "plain": "The House passed the HEATS Act, 231 to 186, which would exempt certain geothermal energy drilling on state and private lands from federal drilling permits and from federal environmental and historic preservation reviews.",
+  "v": 2
  },
  "2026-138": {
   "model": "claude-haiku-5-5",
   "name": "IRS Whistleblower Program Improvement Act",
-  "plain": "The House passed a bill, 346 to 10, changing how the IRS handles rewards and protections for people who report tax cheating. Under the bill, whistleblowers could stay anonymous in tax court cases, and the IRS would owe interest if it is late in notifying a whistleblower about an award."
+  "plain": "The House voted to pass a bill changing how IRS whistleblower awards are reviewed, lets whistleblowers stay anonymous in Tax Court cases, and adds interest to late awards and deductions for attorney fees. It passed 346 to 10.",
+  "v": 2
  },
  "2026-139": {
   "model": "claude-haiku-5-5",
-  "name": "Clergy Act: Opting Back Into Social Security and Medicare",
-  "plain": "The House passed the Clergy Act, 350 to 5, using a fast-track process that does not allow amendments. The bill gives members of the clergy who previously opted out of Social Security and Medicare taxes a two-year window to opt back in."
+  "name": "Clergy Social Security and Medicare Opt-Back-In Act",
+  "plain": "The House passed a bill, 350 to 5, that gives clergy members who opted out of Social Security and Medicare taxes for religious reasons a two-year window to opt back in. Once they revoke their exemption, the choice is permanent.",
+  "v": 2
  },
  "2026-14": {
   "model": "claude-haiku-5-5",
@@ -2383,43 +2419,51 @@
  },
  "2026-142": {
   "model": "claude-haiku-5-5",
-  "name": "Foreign Surveillance Law and Central Bank Digital Currency Ban",
-  "plain": "The House passed a bill extending a foreign intelligence surveillance law until 2029, adding limits on FBI searches of Americans' communications, and barring the Federal Reserve from issuing a central bank digital currency. The vote was 235 in favor and 191 against."
+  "name": "Foreign Intelligence Surveillance and Central Bank Digital Currency Bill",
+  "plain": "The House passed the bill 235 to 191. It would extend a foreign intelligence surveillance law to April 30, 2029, add new limits on how the FBI searches collected communications of U.S. persons, and bar the Federal Reserve from issuing a central bank digital currency.",
+  "v": 2
  },
  "2026-143": {
   "model": "claude-haiku-5-5",
-  "name": "Congressional Budget Plan for 2026",
-  "plain": "The House voted 215 to 211 to approve a budget resolution setting federal spending and revenue targets for fiscal year 2026 and later years through 2035. It also directs House and Senate committees to propose changes that would add no more than $70 billion to the deficit."
+  "name": "Federal Budget Resolution for Fiscal Year 2026",
+  "plain": "The House approved a budget plan for the federal government for 2026, with 2027 through 2035 targets, by 215 to 211. The plan includes instructions for future legislation that could add up to $70 billion to the deficit.",
+  "v": 2
  },
  "2026-144": {
   "model": "claude-haiku-5-5",
-  "name": "Farm Bill Amendment",
-  "plain": "The House voted on adding an amendment to the Farm, Food, and National Security Act of 2026, which covers farm programs like crop support, conservation, nutrition assistance, and crop insurance. The amendment failed, 210 in favor to 216 against."
+  "name": "Amendment to the Farm, Food, and National Security Act of 2026",
+  "plain": "The House voted on an amendment to the farm bill, which covers farm programs, nutrition assistance, conservation, and crop insurance. The amendment failed, 210 in favor to 216 against, so it was not added to the bill.",
+  "v": 2
  },
  "2026-145": {
   "model": "claude-haiku-5-5",
-  "name": "Farm Bill Amendment",
-  "plain": "The House voted 384 to 35 to add an amendment to the Farm, Food, and National Security Act of 2026, the farm bill. The bill would reauthorize farm and food programs through 2031, covering areas such as crop support, conservation, nutrition assistance, rural development, and crop insurance."
+  "name": "Amendment to the Farm, Food, and National Security Act of 2026",
+  "plain": "The House voted 384 to 35 to adopt an amendment changing the farm bill, which covers Department of Agriculture programs on crops, conservation, trade, nutrition, farm credit, rural development, research, forestry, energy, crop insurance, livestock, and foreign purchases of U.S. farmland.",
+  "v": 2
  },
  "2026-146": {
   "model": "claude-haiku-5-5",
   "name": "Farm Bill Amendment",
-  "plain": "The House voted 416 to 8 to add an amendment to the Farm, Food, and National Security Act of 2026, the farm bill. The bill covers farm support, conservation, food aid, nutrition assistance, rural programs, crop insurance, and foreign purchases of U.S. farmland."
+  "plain": "The House voted 416 to 8 to add an amendment to the Farm, Food, and National Security Act of 2026, which reauthorizes Department of Agriculture programs through 2031, covering areas such as farm support, conservation, nutrition assistance, and crop insurance.",
+  "v": 2
  },
  "2026-147": {
   "model": "claude-haiku-5-5",
-  "name": "Farm Bill Amendment",
-  "plain": "The House voted on whether to add an amendment to the Farm, Food, and National Security Act of 2026, which covers farm programs, nutrition assistance, conservation, and crop insurance. The amendment failed, 69 in favor and 355 against."
+  "name": "Farm, Food, and National Security Act of 2026 Amendment",
+  "plain": "The House voted on an amendment to the Farm, Food, and National Security Act of 2026, which covers Department of Agriculture programs such as farm support, conservation, nutrition assistance, and crop insurance. The amendment failed, with 69 voting yes and 355 voting no.",
+  "v": 2
  },
  "2026-148": {
   "model": "claude-haiku-5-5",
-  "name": "Amendment to the Farm Bill",
-  "plain": "The House voted 280 to 142 to add an amendment to the farm bill, which sets Department of Agriculture programs for crop support, conservation, nutrition, rural development, crop insurance, and foreign ownership of U.S. farmland through 2031."
+  "name": "Amendment to the Farm, Food, and National Security Act of 2026",
+  "plain": "The House voted 280 to 142 to add an amendment to the farm bill, which covers Department of Agriculture programs such as crop support, conservation, nutrition assistance, rural development, and crop insurance. The bill itself would reauthorize these programs through 2031.",
+  "v": 2
  },
  "2026-149": {
   "model": "claude-haiku-5-5",
-  "name": "Farm Bill Amendment",
-  "plain": "The House voted on adding an amendment to the Farm, Food, and National Security Act of 2026, which covers farm programs, food and nutrition assistance, conservation, and crop insurance. The amendment failed, 187 in favor to 239 against."
+  "name": "Amendment to the Farm, Food, and National Security Act of 2026",
+  "plain": "The House voted on an amendment to the Farm, Food, and National Security Act of 2026, which would update Department of Agriculture programs covering farm support, conservation, nutrition, and crop insurance. The amendment failed, 187 in favor to 239 against.",
+  "v": 2
  },
  "2026-15": {
   "model": "claude-haiku-5-5",
@@ -2430,17 +2474,20 @@
  "2026-150": {
   "model": "claude-haiku-5-5",
   "name": "Amendment to the Farm Bill",
-  "plain": "The House voted to add an amendment to the farm bill, which covers farm programs, food and nutrition assistance, conservation, rural development, and crop insurance. The change was approved, 233 to 194."
+  "plain": "The House voted 233 to 194 to add an amendment to the Farm, Food, and National Security Act of 2026, a bill covering farm programs, food assistance, and related Agriculture Department policies. Most Democrats voted yes, and most Republicans voted no.",
+  "v": 2
  },
  "2026-151": {
   "model": "claude-haiku-5-5",
-  "name": "Farm Bill Amendment",
-  "plain": "The House voted on adding an amendment to the Farm, Food, and National Security Act of 2026, which covers farm programs, food and nutrition assistance, conservation, and rural development. The amendment failed, 186 to 238."
+  "name": "Farm, Food, and National Security Act of 2026 Amendment",
+  "plain": "The House voted on an amendment to the farm bill, which covers farm programs, conservation, nutrition assistance, crop insurance, and rural development. The amendment was rejected, 186 in favor to 238 against.",
+  "v": 2
  },
  "2026-152": {
   "model": "claude-haiku-5-5",
   "name": "Farm Bill Amendment",
-  "plain": "The House voted 215 to 213 to add an amendment to the farm bill, which renews Department of Agriculture programs through 2031 covering crop support, conservation, food aid, nutrition, farm credit, rural development, crop insurance, and foreign ownership of U.S. farmland."
+  "plain": "The House voted 215 to 213 to add an amendment to the farm bill, which renews Department of Agriculture programs covering crop support, conservation, nutrition assistance, rural development, crop insurance, and foreign ownership of U.S. farmland through 2031.",
+  "v": 2
  },
  "2026-153": {
   "model": "claude-haiku-5-5",
@@ -2451,22 +2498,26 @@
  "2026-154": {
   "model": "claude-haiku-5-5",
   "name": "Farm Bill",
-  "plain": "The House passed the Farm, Food, and National Security Act of 2026 by 224 to 200. The bill renews federal farm and food programs through 2031, covering crop support, conservation, nutrition assistance, rural development, crop insurance, and foreign investment in U.S. farmland."
+  "plain": "The House passed the Farm, Food, and National Security Act of 2026 by 224 to 200. The bill renews and changes Department of Agriculture programs through 2031, covering areas such as farm support, conservation, nutrition assistance, crop insurance, and rural development.",
+  "v": 2
  },
  "2026-155": {
   "model": "claude-haiku-5-5",
-  "name": "Extension of Foreign Surveillance Law",
-  "plain": "The House passed a bill extending for about a year, until June 12, 2026, rules for government surveillance of communications from people believed to be outside the United States. The vote was 261 in favor and 111 against."
+  "name": "Extension of Foreign Surveillance Authorities",
+  "plain": "The House passed a bill extending for a period of time certain authorities for surveillance of communications of people believed to be outside the United States, to gather foreign intelligence. The vote was 261 in favor and 111 against, and the bill had to pass with two-thirds support under a fast-track process.",
+  "v": 2
  },
  "2026-156": {
   "model": "claude-haiku-5-5",
   "name": "Save Our Shrimpers Act",
-  "plain": "The House passed the Save Our Shrimpers Act, 391 to 18. The bill would bar federal funds from going to international financial institutions for financing foreign shrimp farming, processing, or exporting, and would require a yearly government report on U.S. leaders' compliance with rules opposing certain commodity financing."
+  "plain": "The House passed the Save Our Shrimpers Act, 391 to 18. The bill would bar federal money from going to international lending institutions for financing shrimp farming, shrimp processing, or shrimp exports abroad, and would require a yearly government report on compliance.",
+  "v": 2
  },
  "2026-157": {
   "model": "claude-haiku-5-5",
   "name": "Combating Organized Retail Crime Act",
-  "plain": "The House passed a bill to expand federal enforcement against organized theft from stores and shipments, including money laundering charges tied to stolen goods and gift cards, and to create a temporary Homeland Security center to coordinate these cases. The vote was 348 in favor and 60 against."
+  "plain": "The House passed the bill 348 to 60. It expands federal prosecution of organized theft from stores and shipments, lets authorities seize related proceeds, adds gift cards to money laundering law, and temporarily creates a Homeland Security coordination center for these crimes.",
+  "v": 2
  },
  "2026-158": {
   "model": "claude-haiku-5-5",
@@ -2494,13 +2545,15 @@
  },
  "2026-161": {
   "model": "claude-haiku-5-5",
-  "name": "Procedural Rule for Farm Bill and Fuel Retailer Measure",
-  "plain": "The House voted 213 to 208 to approve a resolution that removes a requirement tying the text of a fuel retailer choice bill to the farm bill. Both bills were then set up for House consideration."
+  "name": "Removing Text Requirement from Farm Bill Rule",
+  "plain": "The House approved a resolution that removes a requirement to include a separate fuel and retail choice bill's text within the farm bill, by a vote of 213 to 208.",
+  "v": 2
  },
  "2026-162": {
   "model": "claude-haiku-5-5",
-  "name": "Honoring Law Enforcement Officers Killed in the Line of Duty",
-  "plain": "The House approved a resolution expressing support for police and other law enforcement officers and condolences to families of those killed on duty, passing 418 to 2. The measure does not create any new law or spending."
+  "name": "Resolution Honoring Fallen Law Enforcement Officers",
+  "plain": "The House approved a resolution expressing support for police and other law enforcement officers, recognizing their sacrifice, and offering condolences to the families of officers killed in the line of duty. The vote was 418 in favor and 2 against.",
+  "v": 2
  },
  "2026-163": {
   "model": "claude-haiku-5-5",
@@ -2510,23 +2563,27 @@
  },
  "2026-164": {
   "model": "claude-haiku-5-5",
-  "name": "Year-Round Sales of Higher-Ethanol Gasoline",
-  "plain": "The House passed a bill, 218 to 203, that would let gasoline with up to 15% ethanol be sold year-round, and would require the EPA to return some compliance credits to small refineries under certain conditions."
+  "name": "Year-Round Sale of E15 Gasoline",
+  "plain": "The House voted 218 to 203 to pass a bill that would let gasoline blended with up to 15% ethanol be sold year-round, and would change a renewable fuel program so small refineries can get compliance credits back in some cases.",
+  "v": 2
  },
  "2026-165": {
   "model": "claude-haiku-5-5",
-  "name": "Resolution Supporting Law Enforcement Officers",
-  "plain": "The House approved a resolution expressing support for law enforcement officers and recognizing their contributions and sacrifices, by a vote of 243 to 173."
+  "name": "Support for Law Enforcement Officers",
+  "plain": "The House voted 243 to 173 to approve a resolution expressing support for law enforcement officers and recognizing their contributions and sacrifices. Republicans voted in favor, and Democrats were divided, with 29 for it and 173 against it.",
+  "v": 2
  },
  "2026-166": {
   "model": "claude-haiku-5-5",
   "name": "Resolution Countering Antisemitism",
-  "plain": "The House voted 419 to 0 to approve a resolution calling on leaders to condemn and counter antisemitism, honor Jewish-American service members, and commit to letting all Americans worship without fear of violence or persecution."
+  "plain": "The House voted 419 to 0 to approve a resolution calling on elected officials, faith leaders, and civil society leaders to condemn and counter antisemitism. It also honors the contributions of Jewish-American servicemembers and commits to ensuring all Americans can worship without fear of violence or persecution.",
+  "v": 2
  },
  "2026-167": {
   "model": "claude-haiku-5-5",
-  "name": "Urging Release of Detained Religious and Political Figures in China",
-  "plain": "The House voted 414 to 0 to approve a non-binding resolution asking the President to press for the humanitarian release of five people detained in China, including two pastors and Jimmy Lai, during future talks with Chinese President Xi Jinping. It also asks for proof they are alive, access to lawyers and family, and medical care."
+  "name": "Urging Release of Detained Activists and Pastors in China",
+  "plain": "The House voted 414 to 0 to approve a non-binding resolution asking the President to prioritize the release of five people detained by China, including pastors and Jimmy Lai, during future meetings with Chinese President Xi Jinping, and to seek proof of life, legal counsel, family contact and medical care for them.",
+  "v": 2
  },
  "2026-168": {
   "model": "claude-haiku-5-5",
@@ -2536,8 +2593,9 @@
  },
  "2026-169": {
   "model": "claude-haiku-5-5",
-  "name": "Bail Bond Insurance Fraud Bill",
-  "plain": "The House passed a bill 243 to 179 that would treat bail payments, including bail bonds and immigration bail bonds, as insurance business under federal law. This would make such bail providers subject to federal insurance fraud crimes and state insurance licensing and regulation."
+  "name": "Keeping Violent Offenders Off Our Streets Act",
+  "plain": "The House passed a bill, 243 to 179, that would count bail payments, including cash bail from charitable bail funds, as the business of insurance under federal law, making such payments subject to federal insurance fraud crimes and state insurance licensing and regulation.",
+  "v": 2
  },
  "2026-17": {
   "model": "claude-haiku-5-5",
@@ -2547,13 +2605,15 @@
  },
  "2026-170": {
   "model": "claude-haiku-5-5",
-  "name": "Ending U.S. Military Action Against Iran",
-  "plain": "The House voted on a resolution directing the President to remove U.S. forces from hostilities against Iran by March 30, 2026, unless Congress authorizes the action. It would not stop defensive actions against imminent attacks. The measure failed on a 212 to 212 tie."
+  "name": "War Powers Resolution on Iran Hostilities",
+  "plain": "The House voted on a resolution directing the President to remove U.S. Armed Forces from hostilities against Iran by March 30, 2026, unless Congress has authorized the action. The measure failed on a 212-212 tie, so it was not approved.",
+  "v": 2
  },
  "2026-171": {
   "model": "claude-haiku-5-5",
   "name": "Cashless Bail Reporting Act",
-  "plain": "The House passed the Cashless Bail Reporting Act, 308 to 116. The bill would require the Justice Department to publish a yearly list of state and local governments that let people charged with certain serious offenses, such as burglary, murder, rape, looting, or vandalism, be released before trial without cash bail."
+  "plain": "The House voted 308 to 116 to pass the Cashless Bail Reporting Act. It would require the Justice Department to publish a yearly list of state and local governments that allow people charged with certain serious crimes, such as burglary, murder, rape, looting or vandalism, to be released before trial without cash bail.",
+  "v": 2
  },
  "2026-172": {
   "model": "claude-haiku-5-5",
@@ -2564,37 +2624,44 @@
  "2026-173": {
   "model": "claude-haiku-5-5",
   "name": "Monitor Accountability Act",
-  "plain": "The House passed the Monitor Accountability Act, 219 to 204. The bill would require courts to set rules for monitors who oversee state and local governments under settlement agreements, including public notice before appointment, a five-year term limit, public reporting of fees, and a fee cap."
+  "plain": "The House passed the Monitor Accountability Act, 219 to 204. The bill would require courts to set conditions on appointing independent monitors who oversee local and state governments under court settlements, including public notice and comment, a five-year term limit, public reporting of fees, and a fee cap.",
+  "v": 2
  },
  "2026-174": {
   "model": "claude-haiku-5-5",
-  "name": "Military Construction and Veterans Affairs Spending Bill",
-  "plain": "The House voted on adding a change to a bill that provides funding for military construction, Veterans Affairs, and related agencies for the 2027 fiscal year. The change was rejected, 333 to 80."
+  "name": "Amendment to Military Construction and Veterans Affairs Spending Bill",
+  "plain": "The House voted on adding an amendment to the bill that provides funding for military construction, Department of Veterans Affairs programs, and related agencies for fiscal year 2027. The amendment was rejected, 80 in favor and 333 against.",
+  "v": 2
  },
  "2026-175": {
   "model": "claude-haiku-5-5",
-  "name": "Military Construction and Veterans Affairs Funding",
-  "plain": "The House passed a bill providing funding for military construction, veterans programs, and related agencies for the 2027 fiscal year, by a vote of 400 to 15."
+  "name": "Military Construction and Veterans Affairs Funding Bill",
+  "plain": "The House passed a bill providing money for military construction, Department of Veterans Affairs programs, and related agencies for the 2027 fiscal year, by a vote of 400 to 15.",
+  "v": 2
  },
  "2026-176": {
   "model": "claude-haiku-5-5",
-  "name": "Approval of Senate Changes to a Bill",
-  "plain": "The House voted 396 to 13 to approve changes the Senate made to a bill, which then goes on to the next step. The vote needed two-thirds support under a fast-track process, and it passed."
+  "name": "Procedural Resolution on H.R. 6644 Senate Amendment",
+  "plain": "The House voted 396 to 13 to approve a resolution that accepts changes the Senate made to a bill, using a fast-track process requiring two-thirds support. The official facts do not describe what the bill would do.",
+  "v": 2
  },
  "2026-177": {
   "model": "claude-haiku-5-5",
   "name": "Keeping Deposits Local Act",
-  "plain": "The House voted to pass a bill that would let banks accept a larger amount of reciprocal deposits, which are split across a network of banks to keep them fully insured, and would change the health ratings banks need to qualify. The bill passed 405 to 0."
+  "plain": "The House passed the Keeping Deposits Local Act, 405 to 0. The bill would raise the amount banks can accept as reciprocal deposits, set that limit based on each bank's total liabilities, and let banks rated 1, 2, or 3 under the CAMELS scale qualify.",
+  "v": 2
  },
  "2026-178": {
   "model": "claude-haiku-5-5",
   "name": "American Access to Banking Act",
-  "plain": "The House voted to pass a bill asking federal regulators to review and speed up the process for starting new banks and credit unions, including helping applicants with caseworkers and mentors. The measure passed 405 to 4."
+  "plain": "The House passed the American Access to Banking Act, 405 to 4. It would require federal financial regulators to review and simplify how new banks and credit unions apply to open, assign applicants a caseworker on request, and set up outreach plans to help applicants understand the process.",
+  "v": 2
  },
  "2026-179": {
   "model": "claude-haiku-5-5",
   "name": "Community Bank Deposit Access Act",
-  "plain": "The House passed a bill, 393 to 16, that would stop certain custodial deposits at smaller community banks from being classed as brokered deposits, so those banks face less extra oversight. The bill was considered under a fast-track process requiring two-thirds support."
+  "plain": "The House passed a bill, 393 to 16, that would stop treating certain custodial deposits at smaller community banks as brokered deposits, so those banks face less additional oversight. The bill also applies existing interest rate limits to similar banks that accept these deposits.",
+  "v": 2
  },
  "2026-18": {
   "model": "claude-haiku-5-5",
@@ -2605,17 +2672,20 @@
  "2026-180": {
   "model": "claude-haiku-5-5",
   "name": "Veterans Medical Facility Project in St. Louis",
-  "plain": "The House voted 405 to 5 to pass a bill allowing the Department of Veterans Affairs to build a major medical facility in St. Louis, Missouri, including a new bed tower, clinic expansion, administrative building, utility plant, and parking garages, with a set maximum spending limit."
+  "plain": "The House voted 405 to 5 to pass a bill authorizing the Department of Veterans Affairs to carry out a major medical facility project in St. Louis, Missouri, during fiscal year 2026. The project includes a new bed tower, clinical expansion, administrative building, warehouse, utility plant, and parking garages, with a maximum spending limit set by the bill.",
+  "v": 2
  },
  "2026-181": {
   "model": "claude-haiku-5-5",
-  "name": "Lulu's Law on Shark Attack Phone Alerts",
-  "plain": "The House passed Lulu's Law by 401 votes to 6, using a fast-track process that skips amendments. The bill would require the Federal Communications Commission to issue an order allowing emergency alerts to be sent to mobile phones when a shark attack occurs."
+  "name": "Lulu's Law: Shark Attack Emergency Alerts",
+  "plain": "The House passed Lulu's Law by 401 votes to 6. The bill would require the Federal Communications Commission to issue an order allowing emergency alerts to be sent to mobile phones when a shark attack occurs.",
+  "v": 2
  },
  "2026-182": {
   "model": "claude-haiku-5-5",
-  "name": "25th Anniversary of 9/11 Commemorative Coin",
-  "plain": "The House passed a bill directing the Treasury to mint commemorative coins marking the 25th anniversary of the September 11 attacks and the National September 11 Memorial and Museum. Sales of the coins would include a surcharge going to the memorial and museum, unless annual issuance limits are exceeded. The vote was 415 in favor and none opposed."
+  "name": "25th Anniversary of 9/11 Commemorative Coin Act",
+  "plain": "The House passed the bill 415 to 0. It directs the Treasury to mint coins marking the 25th anniversary of the September 11, 2001 attacks and the National September 11 Memorial and Museum, with some sales money going to the museum's upkeep.",
+  "v": 2
  },
  "2026-183": {
   "model": "claude-haiku-5-5",
@@ -2625,8 +2695,9 @@
  },
  "2026-184": {
   "model": "claude-haiku-5-5",
-  "name": "Parental Consent for School Gender Changes Bill",
-  "plain": "The House passed the bill 217 to 198. It would require public elementary and middle schools to get parental consent before changing a student's gender markers, pronouns, preferred name, or sex-based accommodations such as bathrooms and locker rooms, as a condition of receiving certain federal education funds."
+  "name": "Stopping Indoctrination and Protecting Kids Act",
+  "plain": "The House passed the bill 217 to 198. It would require public elementary and middle schools to get parental consent before changing a student's gender markers, pronouns, or preferred name on school forms, or changing sex-based accommodations such as locker rooms or bathrooms, in order to keep certain federal education funds.",
+  "v": 2
  },
  "2026-185": {
   "model": "claude-haiku-5-5",
@@ -2649,7 +2720,8 @@
  "2026-188": {
   "model": "claude-haiku-5-5",
   "name": "Smithsonian American Women's History Museum Act",
-  "plain": "The House voted on whether to pass a bill to create a Smithsonian women's history museum on a National Mall site and limit its focus to biological women. The bill failed, 204 to 216."
+  "plain": "The House voted on whether to pass a bill to create a Smithsonian museum on women's history in the United States on a site near the National Mall, limited to the history of biological women. The bill failed, 204 in favor to 216 against.",
+  "v": 2
  },
  "2026-189": {
   "model": "claude-haiku-5-5",
@@ -2665,23 +2737,27 @@
  },
  "2026-190": {
   "model": "claude-haiku-5-5",
-  "name": "Veterans Gun Background Check Limits",
-  "plain": "The House passed a bill, 216 to 201, that would stop the Department of Veterans Affairs from sending veterans' personal information to the national gun background check system just because someone manages their benefits for them. Exceptions apply if a court finds the veteran is a danger to themselves or others."
+  "name": "Veterans Firearm Background Check Privacy Bill",
+  "plain": "The House passed a bill, 216 to 201, that would stop the Department of Veterans Affairs from sending veterans' personal information to the national gun background check system just because they have a fiduciary managing their benefits, unless a court finds they pose a danger to themselves or others.",
+  "v": 2
  },
  "2026-191": {
   "model": "claude-haiku-5-5",
-  "name": "Veterans Benefits Expansion Act",
-  "plain": "The House passed a bill to expand benefits for veterans and their survivors, including a new monthly allowance for certain disabled veterans, larger survivor payments, and expanded VA home loan eligibility for some reserve and National Guard members. The vote was 235 to 179."
+  "name": "Veterans Benefits Expansion Act of 2026",
+  "plain": "The House passed this bill 235 to 179. It would add a monthly allowance for certain disabled veterans who already receive aid-and-attendance benefits, raise survivor payments (DIC), and expand VA home loan eligibility for some reserve and National Guard members.",
+  "v": 2
  },
  "2026-192": {
   "model": "claude-haiku-5-5",
-  "name": "Battlefield Preservation Grants Extension",
-  "plain": "The House passed a bill extending federal grants through 2036 to help preserve U.S. battlefields and to study sites from the French and Indian War and the Mexican-American War for possible preservation. The vote was 404 in favor and 13 against."
+  "name": "American Battlefield Protection Program Amendments Act",
+  "plain": "The House passed a bill, 404 to 13, that extends through 2036 three National Park Service grant programs for acquiring, restoring and modernizing the interpretation of certain U.S. battlefields, and requires studies of French and Indian War and Mexican-American War sites for possible preservation.",
+  "v": 2
  },
  "2026-193": {
   "model": "claude-haiku-5-5",
-  "name": "Alaska Native Marine Mammal Products Act",
-  "plain": "The House voted 404 to 14 to pass a bill preventing states from banning marine mammal ivory, bone, or baleen legally made by Alaska Natives as traditional handicrafts and clothing."
+  "name": "ARTIST Act on Alaska Native Marine Mammal Products",
+  "plain": "The House passed the ARTIST Act, 404 to 14, with a fast-track process requiring two-thirds support. The bill would stop states from banning marine mammal ivory, bone, or baleen legally made by Alaska Natives as authentic handicrafts and clothing, including their sale and trade across state lines.",
+  "v": 2
  },
  "2026-194": {
   "model": "claude-haiku-5-5",
@@ -2697,8 +2773,9 @@
  },
  "2026-196": {
   "model": "claude-haiku-5-5",
-  "name": "Northwest Straits Marine Conservation Act",
-  "plain": "The House passed a bill to extend for seven years a program that protects and restores marine waters, habitats and species in the Northwest Straits region of Washington state, by a vote of 374 to 49."
+  "name": "Northwest Straits Marine Conservation Initiative Reauthorization Act",
+  "plain": "The House voted 374 to 49 to pass a bill extending for seven years a program that works to protect and restore marine waters, habitats and species in the Northwest Straits region of Washington state. The bill was passed under a fast-track process requiring two-thirds support.",
+  "v": 2
  },
  "2026-197": {
   "model": "claude-haiku-5-5",
@@ -2708,13 +2785,15 @@
  },
  "2026-198": {
   "model": "claude-haiku-5-5",
-  "name": "Child Care Program Sanctions Bill",
-  "plain": "The House passed a bill, 217 to 207, that would require the federal government to impose additional penalties, including cutting off funds, on states that substantially fail to follow rules for the federal child care grant program for low-income working families."
+  "name": "Child Care Program Sanctions for Repeat Violations",
+  "plain": "The House voted 217 to 207 to pass a bill requiring federal sanctions, including disqualifying a state from funds, when a state substantially fails to follow the rules of the Child Care and Development Block Grant program. Currently such sanctions are optional.",
+  "v": 2
  },
  "2026-199": {
   "model": "claude-haiku-5-5",
-  "name": "Removing Forces from Hostilities with Iran",
-  "plain": "The House approved a resolution directing the President to remove U.S. armed forces from hostilities against Iran unless Congress or a declaration of war authorizes them. Forces needed to defend the U.S., an ally, or a partner from imminent attack are exempt if the President follows the War Powers Resolution."
+  "name": "Directing Removal of U.S. Forces from Hostilities with Iran",
+  "plain": "The House voted 215 to 208 to approve a resolution directing the President to remove U.S. Armed Forces from hostilities with Iran, unless Congress or a declaration of war authorizes them, with an exception for forces needed to defend the U.S., an ally, or a partner from imminent attack.",
+  "v": 2
  },
  "2026-2": {
   "model": "claude-haiku-5-5",
@@ -2730,13 +2809,15 @@
  },
  "2026-200": {
   "model": "claude-haiku-5-5",
-  "name": "Ukraine Support Act Floor Procedure",
-  "plain": "The House voted 218 to 204 to bring the Ukraine Support Act (H.R. 2913) to the House floor for debate. The bill would authorize support for Ukraine, and the House would send a message to the Senate that it passed the bill within one week of passage."
+  "name": "Consideration of Ukraine Support Act",
+  "plain": "The House voted 218 to 204 to bring the Ukraine Support Act (H.R. 2913) to the House floor for debate. The measure is described as authorizing support for Ukraine, and the resolution also directs that the Senate be notified of House passage within one week of the bill passing.",
+  "v": 2
  },
  "2026-201": {
   "model": "claude-haiku-5-5",
-  "name": "Ordering Troops Out of Lebanon",
-  "plain": "The House voted on a resolution directing the President to remove U.S. armed forces from Lebanon within seven days. The resolution failed, 92 in favor and 324 against."
+  "name": "Removing U.S. Forces from Lebanon",
+  "plain": "The House voted on a resolution directing the President to remove U.S. armed forces from Lebanon within seven days. The proposal failed, with 92 in favor and 324 opposed.",
+  "v": 2
  },
  "2026-202": {
   "model": "claude-haiku-5-5",
@@ -2746,8 +2827,9 @@
  },
  "2026-203": {
   "model": "claude-haiku-5-5",
-  "name": "Fast-Track Rule for Budget Reconciliation Bill",
-  "plain": "The House voted 213 to 211 to approve a procedural resolution that lets it consider certain rule reports on the same day without a two-thirds vote, through June 5, 2026. The change relates to a budget reconciliation measure."
+  "name": "Same-Day Consideration of Rules Committee Resolutions",
+  "plain": "The House voted 213 to 211 to approve a resolution letting it take up certain procedural measures from the Rules Committee on the same day they are introduced, without the usual two-thirds vote. The waiver applies through June 5, 2026, to measures tied to a budget reconciliation process.",
+  "v": 2
  },
  "2026-204": {
   "model": "claude-haiku-5-5",
@@ -2757,8 +2839,9 @@
  },
  "2026-205": {
   "model": "claude-haiku-5-5",
-  "name": "Agriculture and FDA Spending Bill",
-  "plain": "The House passed the bill by a vote of 213 to 210. It provides funding for the Department of Agriculture, the Food and Drug Administration, and related agencies for 2027, covering farm programs, food nutrition assistance, and rural development."
+  "name": "Agriculture and Food Agency Funding Act, 2027",
+  "plain": "The House passed this bill 213 to 210. It provides money for the Department of Agriculture, the Food and Drug Administration, and related agencies for fiscal year 2027, including nutrition programs such as SNAP and WIC.",
+  "v": 2
  },
  "2026-206": {
   "model": "claude-haiku-5-5",
@@ -2769,17 +2852,20 @@
  "2026-207": {
   "model": "claude-haiku-5-5",
   "name": "Ukraine Support Act",
-  "plain": "The House passed a bill to help Ukraine and some European countries affected by the war with Russia, and to set penalties on Russia. The measure would fund Ukraine's reconstruction, allow certain military support, and impose sanctions and higher tariffs on Russia if the President finds it is waging war or refusing peace. The vote was 226 in favor and 195 against."
+  "plain": "The House voted 226 to 195 to pass the Ukraine Support Act. The bill would provide assistance to Ukraine and certain European countries, and set penalties for Russia and certain foreign persons and companies tied to the war between Russia and Ukraine.",
+  "v": 2
  },
  "2026-208": {
   "model": "claude-haiku-5-5",
   "name": "TRUE Accountability Act",
-  "plain": "The House passed the TRUE Accountability Act, 384 to 0. The bill would require federal agencies to plan for preventing fraud and improper payments in emergency spending, such as money for disasters or pandemics, and to report those plans to Congress."
+  "plain": "The House voted 384 to 0 to pass the TRUE Accountability Act. The bill would require federal agencies to create plans to prevent fraud and improper payments in emergency spending, such as funding for disasters or pandemics.",
+  "v": 2
  },
  "2026-209": {
   "model": "claude-haiku-5-5",
   "name": "Federal Fraud Prevention Workforce Training Act",
-  "plain": "The House passed a bill requiring federal employees who oversee federal programs or grants to take antifraud and improper-payment training every two years, with the program also offered to state, local, and tribal governments. The vote was 393 in favor and none against."
+  "plain": "The House passed the bill 393 to 0, with no votes against. It would require a fraud and improper-payment prevention training program for federal employees who oversee federal programs or federal funding, and make the training available to state, local, and tribal governments.",
+  "v": 2
  },
  "2026-21": {
   "model": "claude-haiku-5-5",
@@ -2801,8 +2887,9 @@
  },
  "2026-212": {
   "model": "claude-haiku-5-5",
-  "name": "Speeding Up Union Contract Negotiations",
-  "plain": "The House voted 220 to 199 to bring a bill to the floor that would speed up how quickly workers and employers must reach union contracts under federal labor law. Nearly all Democrats supported it, and nearly all Republicans opposed it."
+  "name": "Rule for Labor Contract Bill (H.R. 5408)",
+  "plain": "The House voted 220 to 199 to approve the rules for debating a bill that aims to speed up how quickly workplaces reach union contracts under the National Labor Relations Act. The vote moved the bill forward to a House floor debate.",
+  "v": 2
  },
  "2026-213": {
   "model": "claude-haiku-5-5",
@@ -2812,8 +2899,9 @@
  },
  "2026-214": {
   "model": "claude-haiku-5-5",
-  "name": "Secure America Act Funding Bill",
-  "plain": "The House passed the Secure America Act by 214 to 212. The bill provides about $70 billion through 2029 for border security, immigration enforcement, and related work by Homeland Security, Customs and Border Protection, and Immigration and Customs Enforcement."
+  "name": "Secure America Act",
+  "plain": "The House passed the Secure America Act by 214 to 212. The bill would provide about $70 billion through 2029 for border security, immigration enforcement, and related work by the Department of Homeland Security, Customs and Border Protection, and Immigration and Customs Enforcement.",
+  "v": 2
  },
  "2026-215": {
   "model": "claude-haiku-5-5",
@@ -2824,17 +2912,20 @@
  "2026-216": {
   "model": "claude-haiku-5-5",
   "name": "Faster Labor Contracts Act",
-  "plain": "The House passed a bill, 230 to 193, that would set deadlines for employers and newly recognized unions to reach a first contract, with mediation and binding arbitration if talks stall."
+  "plain": "The House passed the Faster Labor Contracts Act, 230 to 193. The bill would set deadlines for employers and newly organized unions to negotiate a first contract, require federal mediation and, if needed, binding arbitration, and have the Government Accountability Office report on how long first contracts take.",
+  "v": 2
  },
  "2026-217": {
   "model": "claude-haiku-5-5",
-  "name": "Student Aid Identity Fraud Checks Bill",
-  "plain": "The House voted 249 to 172 to pass a bill requiring the Education Department to set up a system to detect possible identity fraud on federal student aid applications. Flagged applicants would need their identity verified in person or by live video before their aid is paid out."
+  "name": "No Aid for Ghost Students Act",
+  "plain": "The House passed the No Aid for Ghost Students Act, 249 to 172. It would require the Education Department to screen federal student aid applications for identity fraud and require colleges to verify flagged applicants' identities in person or by live video before disbursing aid.",
+  "v": 2
  },
  "2026-218": {
   "model": "claude-haiku-5-5",
   "name": "Fraud Prevention and Accountability Act",
-  "plain": "The House voted to pass the Fraud Prevention and Accountability Act, 240 to 181. The bill would give the Treasury Department's Bureau of the Fiscal Service new duties to prevent improper payments and create a Treasury inspector general office to audit and investigate federal funds, including pandemic and disaster spending."
+  "plain": "The House passed the Fraud Prevention and Accountability Act, 240 to 181. The bill would create a new Treasury inspector general office to audit and investigate federal funds, including pandemic-related money and large awards, and would have the Treasury's Bureau of the Fiscal Service help prevent improper payments.",
+  "v": 2
  },
  "2026-219": {
   "model": "claude-haiku-5-5",
@@ -2851,52 +2942,62 @@
  "2026-220": {
   "model": "claude-haiku-5-5",
   "name": "Stopping Fraudulent Payments Act",
-  "plain": "The House passed a bill, 218 to 200, to require federal agencies to temporarily hold or review payment requests that show a high risk of fraud or improper payment, and to shield federal employees from personal liability for good-faith actions under the bill."
+  "plain": "The House passed a bill, 218 to 200, to require federal agencies to temporarily pause or check payment requests that show a high risk of fraud or improper payment before they are approved.",
+  "v": 2
  },
  "2026-221": {
   "model": "claude-haiku-5-5",
-  "name": "Extension of Foreign Surveillance Authority",
-  "plain": "The House voted on a fast-track bill to extend, until July 2, 2026, the government's authority to collect communications of non-U.S. persons abroad for foreign intelligence. The bill failed, with 198 in favor and 218 opposed, short of the two-thirds needed under this process."
+  "name": "Extension of Foreign Intelligence Surveillance Act Authorities",
+  "plain": "The House voted on a bill to extend certain foreign intelligence surveillance powers until July 2, 2026. The measure failed, with 198 voting yes and 218 voting no, so it did not pass.",
+  "v": 2
  },
  "2026-222": {
   "model": "claude-haiku-5-5",
   "name": "Condemning Government Fraud and Improper Payments",
-  "plain": "The House approved a non-binding resolution condemning people who try to defraud the federal government. It also expresses the view that fraud-prevention reforms would help the country's finances and that eligibility for federal programs should be checked before payments are made. The vote was 235 in favor and 177 against."
+  "plain": "The House voted 235 to 177 to approve a resolution condemning people who try to defraud the federal government. It also states the House's view that fraud-prevention reforms would help the country's finances and that program eligibility should be checked before payments are made.",
+  "v": 2
  },
  "2026-223": {
   "model": "claude-haiku-5-5",
   "name": "Emergency Conservation Program Improvement Act",
-  "plain": "The House passed a bill, 368 to 19, that expands emergency aid for farmers and private forest owners hit by natural disasters. It lets them get advance payments for repairs and replacements, gives them 180 days to use the funds, and widens eligibility to include some wildfire damage."
+  "plain": "The House passed a bill, 368 to 19, that expands disaster payments for farmers and private forest owners and gives them more time to spend the funds. It also allows advance payments for some repairs and forest restoration work.",
+  "v": 2
  },
  "2026-224": {
   "model": "claude-haiku-5-5",
   "name": "21st Century ROAD to Housing Act",
-  "plain": "The House voted 358 to 32 to pass the 21st Century ROAD to Housing Act, which changes federal housing programs. The measure includes changes to housing counseling oversight, grants for affordable housing and zoning guidance, and environmental review rules for some housing projects."
+  "plain": "The House voted 358 to 32 to accept the Senate's version of the 21st Century ROAD to Housing Act, a bill that changes and creates a range of federal housing programs. The measure passed.",
+  "v": 2
  },
  "2026-225": {
   "model": "claude-haiku-5-5",
   "name": "Small Business Lending Fraud Prevention Act",
-  "plain": "The House passed a bill requiring Small Business Administration employees who handle its loans to certify in writing that they have no conflict of interest, and to disclose any conflict that arises later. The vote was 415 in favor and none against."
+  "plain": "The House passed this bill 415 to 0. It would require Small Business Administration employees who work on SBA loans to certify in writing that they have no conflict of interest, disclose any conflicts that arise later, and understand the rules on conflicts of interest.",
+  "v": 2
  },
  "2026-226": {
   "model": "claude-haiku-5-5",
-  "name": "Small Business Technology Loans Bill",
-  "plain": "The House passed a bill, 414 to 4, that would let the Small Business Administration guarantee loans under its main business loan program for software and cloud computing services that help businesses run operations, process payroll, manage sales and inventory, and use artificial intelligence tools."
+  "name": "Small Business Technological Advancement Act",
+  "plain": "The House passed a bill, 414 to 4, that would let the Small Business Administration guarantee 7(a) business loans used to buy business software or cloud computing services, including tools that use artificial intelligence, for tasks such as payroll, billing, and inventory tracking.",
+  "v": 2
  },
  "2026-227": {
   "model": "claude-haiku-5-5",
   "name": "Financial Exploitation Prevention Act",
-  "plain": "The House passed a bill, 414 to 2, letting investment companies and their agents temporarily delay certain fund redemptions when they reasonably believe an older adult or a person with an impairment is being financially exploited. The delay can last up to 25 days, extendable by a state regulator, agency, or court."
+  "plain": "The House passed the bill 414 to 2. It would let investment companies and their agents delay certain account withdrawals for up to 25 days, with possible extensions, when they reasonably believe an older adult or an impaired adult is being financially exploited.",
+  "v": 2
  },
  "2026-228": {
   "model": "claude-haiku-5-5",
-  "name": "KIDS Act: Online Safety for Minors",
-  "plain": "The House passed the KIDS Act, 267 to 117, under a fast-track process requiring two-thirds support. The bill would require websites with mostly adult content to block minors, give parents tools on social media and video games, and make AI chatbots tell minors they are not human and share crisis hotline information."
+  "name": "KIDS Act (Kids Internet and Digital Safety Act)",
+  "plain": "The House passed the KIDS Act by a vote of 267 to 117. The bill would require certain online platforms to protect minors, including limiting access to harmful sexual content, adding parental controls on social media and video game platforms, and requiring AI chatbots to tell minor users they are talking to an AI and provide crisis hotline information.",
+  "v": 2
  },
  "2026-229": {
   "model": "claude-haiku-5-5",
-  "name": "Terrorism Risk Insurance Program Extension",
-  "plain": "The House passed a bill extending the federal program that shares losses with private insurers for terrorism-related damage through 2034. It also raises the loss threshold that triggers the program starting in 2029 and requires the Treasury Department to publicly explain how it decides whether an attack counts as terrorism."
+  "name": "TRIA Program Reauthorization Act of 2026",
+  "plain": "The House passed the bill 373 to 15 to extend the Terrorism Risk Insurance Program through 2034. The program covers part of insurers' losses from terrorism-related property and casualty claims, and the bill raises the loss threshold for certification starting in 2029.",
+  "v": 2
  },
  "2026-23": {
   "model": "claude-haiku-5-5",
@@ -2918,23 +3019,27 @@
  },
  "2026-232": {
   "model": "claude-haiku-5-5",
-  "name": "Ordering Troops Out of Lebanon",
-  "plain": "The House voted on a measure directing the President to remove U.S. armed forces from fighting in Lebanon within seven days. It did not pass, with 189 in favor and 235 opposed. The measure would not limit support for Lebanese armed forces or protection of diplomatic sites."
+  "name": "War Powers Resolution on Lebanon Hostilities",
+  "plain": "The House voted on whether to approve a resolution directing the President to remove U.S. armed forces from hostilities in Lebanon within seven days. The resolution failed, 189 to 235.",
+  "v": 2
  },
  "2026-233": {
   "model": "claude-haiku-5-5",
   "name": "Ethics Committee Records on Harassment Settlements",
-  "plain": "The House voted to approve a resolution directing the Ethics Committee to keep and publicly release records of money settlements involving sexual harassment. The measure passed 420 to 0, with support from both Republicans and Democrats."
+  "plain": "The House voted to approve a resolution directing the Ethics Committee to preserve and publicly release records of monetary settlements involving sexual harassment. It passed 420 to 0, with support from both Republicans and Democrats.",
+  "v": 2
  },
  "2026-234": {
   "model": "claude-haiku-5-5",
-  "name": "Cold Weather Terrorism Preparedness Bill",
-  "plain": "The House passed a bill by 400 to 7 requiring the Department of Homeland Security to run an exercise preparing for a terrorist attack during extreme cold weather that disrupts critical infrastructure, then report the findings to Congress within 60 days."
+  "name": "Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act",
+  "plain": "The House passed a bill, 400 to 7, requiring the Department of Homeland Security to run an exercise preparing for a terrorist attack during extreme cold weather that damages critical infrastructure, then report the findings to Congress within 60 days afterward.",
+  "v": 2
  },
  "2026-235": {
   "model": "claude-haiku-5-5",
-  "name": "Easier Airport Security Screening for Families with Young Children",
-  "plain": "The House voted to pass a bill of 398 to 12 that directs the TSA to test alternative airport security lanes for travelers with children 12 and under, starting at no fewer than five airports, with priority for busy ones."
+  "name": "Alternative Airport Security Screening for Families with Young Children",
+  "plain": "The House passed a bill, 398 to 12, that would direct the Transportation Security Administration to run a pilot program with alternative security screening lanes for travelers with children 12 and under, at a minimum of five airports.",
+  "v": 2
  },
  "2026-236": {
   "model": "claude-haiku-5-5",
@@ -2950,8 +3055,9 @@
  },
  "2026-238": {
   "model": "claude-haiku-5-5",
-  "name": "Permanent Daylight Saving Time Bill",
-  "plain": "The House passed the Sunshine Protection Act of 2025, 308 to 117. The bill would make daylight saving time the permanent standard time, and states with areas exempt from daylight saving time could choose standard time for those areas."
+  "name": "Sunshine Protection Act of 2025",
+  "plain": "The House passed the Sunshine Protection Act of 2025, 308 to 117, which would make daylight saving time the permanent standard time. States with areas exempt from daylight saving time could choose standard time for those areas.",
+  "v": 2
  },
  "2026-239": {
   "model": "claude-haiku-5-5",
@@ -2968,7 +3074,8 @@
  "2026-240": {
   "model": "claude-haiku-5-5",
   "name": "Protecting Privacy in Purchases Act",
-  "plain": "The House passed the bill 221 to 201. It would bar payment card networks from using merchant codes that single out firearms retailers from general-merchandise or sporting-goods retailers, and would have the Department of Justice enforce it and report on cases each year."
+  "plain": "The House passed a bill, 221 to 201, that would bar payment card networks from using merchant codes that separate firearms retailers from general-merchandise or sporting-goods retailers. The Justice Department would enforce it and report each year on the resulting investigations and cases.",
+  "v": 2
  },
  "2026-241": {
   "model": "claude-haiku-5-5",
@@ -3346,6 +3453,12 @@
   "model": "claude-haiku-5-5",
   "name": "Motion to Table Impeachment of President Trump",
   "plain": "The House voted 232 to 147 to set aside a resolution to impeach President Donald Trump, which would have charged him with abusing presidential powers by allowing immigration and border agencies to act in violation of the Constitution while undermining court oversight. Setting it aside ends the resolution.",
+  "v": 2
+ },
+ "2026-299": {
+  "model": "claude-haiku-5-5",
+  "name": "Rule for Fraud, Environment, and Tax Bills",
+  "plain": "The House voted 214 to 208 to end debate and move toward final votes on several measures, including a bill to create a National Fraud Enforcement Division at the Justice Department and bills on fraud information-sharing and early childhood educator tax deductions. Republicans voted yes and Democrats voted no.",
   "v": 2
  },
  "2026-3": {
