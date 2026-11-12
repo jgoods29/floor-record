@@ -103,6 +103,13 @@ class Questions(unittest.TestCase):
         self.assertEqual(bill_status("Received in the Senate and Read twice and referred to the Committee on the Judiciary."), ("Passed the House", True))
         self.assertEqual(bill_status("Motion to reconsider laid on the table Agreed to without objection.")[0], "Voted on in the House")
 
+    def test_floor_schedule(self):
+        from floorrecord.ingest import parse_floor_schedule
+        week = parse_floor_schedule((FIXTURE.parent / "floor_sample.xml").read_text())
+        self.assertEqual(week["week"], "2026-11-09")
+        self.assertEqual([(i["slug"], i["how"]) for i in week["items"]], [("hr-3074", "fast"), ("hconres-12", "rule")])
+        self.assertTrue(week["items"][0]["doc"].startswith("https://"))
+
     def test_non_bills(self):
         self.assertIsNone(parse_legis("QUORUM"))
         self.assertIsNone(parse_legis(""))

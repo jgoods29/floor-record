@@ -157,6 +157,55 @@ def party_mix(vote):
     return out
 
 
+FLOOR_HOW = {
+    "rule": ("Full debate", "Needs a simple majority to pass. Often the bigger, more argued-over bills."),
+    "fast": ("Fast track", "Needs two-thirds to pass. Usually used for bills most members agree on."),
+    "other": ("On the list", "Posted as possible business for the week."),
+}
+
+
+def upcoming_weeks(raw, votes, bills, measures, topic_keys, today, congress_base):
+    """The House's posted schedule, minus anything already voted on that week."""
+    last_vote = {}
+    for v in votes:
+        if v["slug"]:
+            last_vote[v["slug"]] = max(last_vote.get(v["slug"], ""), v["date"])
+    weeks = []
+    for w in raw.get("weeks") or []:
+        try:
+            start = date.fromisoformat(w["week"])
+        except (KeyError, ValueError):
+            continue
+        if date.fromordinal(start.toordinal() + 6).isoformat() < today:
+            continue
+        items, done = [], 0
+        for it in w.get("items") or []:
+            slug, title = it.get("slug", ""), re.sub(r",?\s*as amended\s*$", "", it.get("title", ""), flags=re.I)
+            if re.match(r"(providing|waiving|relating)\b", title, re.I):
+                continue  # the rule that sets up debate on other bills, not a bill of its own
+            if slug and last_vote.get(slug, "") >= w["week"]:
+                done += 1
+                continue
+            rec = bills.get(slug) or {}
+            topic = topic_name(rec["policy_area"]) if rec.get("policy_area") else ""
+            if slug in measures:
+                url, outside = f"bills/{slug}/", False
+            elif slug:
+                kind, number = slug.rsplit("-", 1)
+                url, outside = f"{congress_base}{CONGRESS_PATH[kind]}/{number}", True
+            else:
+                url, outside = it.get("doc", ""), True
+            label, note = FLOOR_HOW[it.get("how", "other")]
+            items.append({"name": title_case(title) or it.get("label", ""), "label": it.get("label", ""), "url": url,
+                          "outside": outside, "how": it.get("how", "other"), "how_label": label, "how_note": note,
+                          "topic": topic, "topic_key": topic_key(topic) if topic and topic_key(topic) in topic_keys else "",
+                          "doc": it.get("doc", "")})
+        items.sort(key=lambda i: ("rule", "fast", "other").index(i["how"]))
+        weeks.append({"week": w["week"], "updated": w.get("updated", ""), "items": items, "done": done,
+                      "current": start.isoformat() <= today})
+    return weeks
+
+
 def member_line(v, pos):
     """'Voted to pass the bill.' for one member on one vote."""
     if pos == "yea":
@@ -256,6 +305,7 @@ def main():
         "site": cfg, "span": span, "nvotes": len(votes), "npeople": len(people),
         "updated": nicedate(datetime.now(timezone.utc).date().isoformat()), "min_votes": result["min_votes"],
         "state_names": STATES,
+        "reach_states": sorted({p["state"] for p in people.values() if not p["left"]}, key=lambda c: STATES.get(c, c)),
     }
 
     if SITE.exists():
@@ -321,7 +371,17 @@ def main():
         for t in all_topics:
             render(f"topics/{t['key']}/index.html", "topic.html", 2, section="topics", t=t, votes=by_topic[t["key"]],
                    nroutine=t["total"] - t["real"])
-    render("index.html", "index.html", 0, section="home", trending=trending, since=since, featured=featured,
+    congress_root = f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
+    weeks = upcoming_weeks(read_json(DATA / "upcoming.json", {}), votes, bills, measures,
+                           {t["key"] for t in all_topics}, today, congress_root)
+    coming = next((w for w in weeks if w["items"]), None)
+    render("upcoming/index.html", "upcoming.html", 1, section="upcoming", weeks=weeks)
+    render("start/index.html", "start.html", 1, section="start")
+    contacts = [[p["bioguide"], p["name"], p["state"], p["dist_label"], p["party"], members.get(p["bioguide"], {}).get("url", ""),
+                 members.get(p["bioguide"], {}).get("phone", ""), members.get(p["bioguide"], {}).get("contact_form", "")]
+                for p in sorted(people.values(), key=lambda p: (p["state"], p.get("district") or 0, p["sort"])) if not p["left"]]
+    write_json(SITE / "contacts.json", contacts)
+    render("index.html", "index.html", 0, section="home", trending=trending, since=since, featured=featured, coming=coming,
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", votes=newest, featured=featured,
            nroutine=sum(1 for v in votes if v["info"]["routine"]))
@@ -445,7 +505,7 @@ def main():
                        [[b["name"], b["label"], b["status"], int(b["moved"]), b["href"], b["topic"],
                          nicedate(b["introduced"]) if b["introduced"] else ""] for b in co_all])
         my_topics = topics
-        render(f"members/{me}/index.html", "member.html", 2, section="members", p=p, s=p["all"],
+        render(f"members/{me}/index.html", "member.html", 2, section="members", p=p, s=p["all"], contact=members.get(me, {}),
                breaks=breaks, notable=notable, recent=recent, state_name=state_name, seat_long=seat_long,
                has_bills=mb is not None, sponsored=sponsored, cosponsored=cosponsored, co_count=co_count,
                passed_n=p["passed_n"], law_n=p["law_n"],

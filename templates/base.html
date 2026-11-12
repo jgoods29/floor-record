@@ -14,7 +14,9 @@
 <div class="wrap">
 <a class="brand" href="{{ root }}"><span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>{{ site.site_name }}</a>
 <nav class="nav" aria-label="Main">
+<a class="startlink" href="{{ root }}start/"{% if section == 'start' %} aria-current="page"{% endif %}>Start Here</a>
 <a href="{{ root }}votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a>
+<a href="{{ root }}upcoming/"{% if section == 'upcoming' %} aria-current="page"{% endif %}>Coming Up</a>
 <a href="{{ root }}members/"{% if section == 'members' %} aria-current="page"{% endif %}>Members</a>
 <a href="{{ root }}bills/"{% if section == 'bills' %} aria-current="page"{% endif %}>Bills</a>
 <a href="{{ root }}topics/"{% if section == 'topics' %} aria-current="page"{% endif %}>Topics</a>

@@ -180,6 +180,46 @@
     };
     each(topicBar.querySelectorAll('[data-topic]'), function (b) { b.addEventListener('click', function () { pick(b.getAttribute('data-topic'), b.textContent); }); });
     if (more) more.addEventListener('change', function () { if (more.value) pick(more.value, more.options[more.selectedIndex].text); });
+    // arriving from a topic page: #topic=health opens that topic straight away
+    var fromHash = /topic=([\w-]+)/.exec(location.hash);
+    if (fromHash) {
+      var hb = topicBar.querySelector('[data-topic="' + fromHash[1] + '"]'), ho = more && more.querySelector('option[value="' + fromHash[1] + '"]');
+      if (hb) pick(fromHash[1], hb.textContent); else if (ho) pick(fromHash[1], ho.text);
+      var anchor = document.getElementById('topics'); if (anchor && (hb || ho)) anchor.scrollIntoView();
+    }
+  }
+
+  // ---- "tell your representative": pick a state, get everyone who represents it with ways to reach them
+  var reachBoxes = document.querySelectorAll('[data-reach]');
+  if (reachBoxes.length) {
+    var contacts = null, saved = '';
+    try { saved = localStorage.getItem('fr-state') || ''; } catch (e) {}
+    var loadContacts = function () { return contacts || (contacts = getJSON(root + 'contacts.json')); };
+    each(reachBoxes, function (box) {
+      var sel = box.querySelector('[data-reach-state]'), list = box.querySelector('[data-reach-list]');
+      var key = box.getAttribute('data-topic'), label = box.getAttribute('data-topic-name');
+      var draw = function () {
+        var st = sel.value;
+        try { if (st) localStorage.setItem('fr-state', st); } catch (e) {}
+        if (!st) { list.innerHTML = ''; return; }
+        loadContacts().then(function (rows) {
+          var out = [];
+          rows.forEach(function (r) {
+            if (r[2] !== st) return;
+            var page = root + 'members/' + r[0] + '/' + (key ? '#topic=' + key : '');
+            var acts = '';
+            if (r[6]) acts += '<a class="btn go" href="tel:+1' + esc(r[6].replace(/\D/g, '')) + '">Call ' + esc(r[6]) + '</a>';
+            if (r[7] || r[5]) acts += '<a class="btn" rel="noopener" href="' + esc(r[7] || r[5]) + '">' + (r[7] ? 'Send a message' : 'Write on their website') + '</a>';
+            out.push('<div class="reach-row"><div class="who"><span class="dist">' + esc(r[3]) + '</span><span class="nm"><a href="' + page + '">' + esc(r[1]) + '</a><span class="party sm ' + esc(r[4]) + '">' + esc(r[4]) + '</span></span>' +
+              '<a class="small" href="' + page + '">' + (key ? 'See how they voted on ' + esc(label) : 'See how they vote') + '</a></div><div class="reach-acts">' + acts + '</div></div>');
+          });
+          var name = sel.options[sel.selectedIndex].text;
+          list.innerHTML = out.join('') || '<p class="muted" style="padding:16px 20px;margin:0">No current members found for ' + esc(name) + '.</p>';
+        }).catch(function () { list.innerHTML = '<p class="muted" style="padding:16px 20px;margin:0">Could not load. Try again.</p>'; });
+      };
+      sel.addEventListener('change', draw);
+      if (saved && sel.querySelector('option[value="' + saved + '"]')) { sel.value = saved; draw(); }
+    });
   }
 
   // ---- Compare table

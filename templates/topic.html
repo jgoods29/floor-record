@@ -5,11 +5,12 @@
 <div class="stack">
 <div class="eyebrow"><a href="{{ root }}topics/" style="text-decoration:none;color:inherit">Topics</a></div>
 <h1 class="h1">{{ t.name }}</h1>
-<p class="lede">{{ t.real }} House {{ 'vote' if t.real == 1 else 'votes' }} on {{ t.name|lower }} bills in {{ span }}, newest first.</p>
+<p class="lede">{{ t.real }} House {{ 'vote' if t.real == 1 else 'votes' }} on {{ t.name|lower }} bills in {{ span }}, newest first. Care about this? <a href="#reach-h">Tell your representative</a>.</p>
 <div class="row"><label class="fieldset" for="vote-filter">Find a vote<input class="field" id="vote-filter" type="search" placeholder="A bill name or word" style="width: 300px" data-filter="#vote-rows .vrow"></label>
 {% if nroutine %}<label class="check" style="align-self:flex-end"><input type="checkbox" data-routine-toggle id="show-routine">Show routine procedural votes ({{ nroutine }})</label>{% endif %}</div>
 </div>
 <div class="card flush rows" id="vote-rows">{% for v in votes %}{{ m.vrow(v, root) }}{% endfor %}</div>
+{{ m.reach(root, reach_states, state_names, t.name, t.key) }}
 <p class="small muted">To see how one member voted on this topic, open their profile and choose "{{ t.name }}."</p>
 </div>
 {% endblock %}

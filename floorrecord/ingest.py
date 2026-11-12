@@ -218,6 +218,8 @@ def _member_from_legislator(person):
         "since": terms[0].get("start", ""), "house_since": reps[0].get("start", ""),
         "term_end": last.get("end", ""),
         "url": last.get("url", ""),
+        "phone": last.get("phone", ""), "contact_form": last.get("contact_form", ""),
+        "office": last.get("address", ""),
     }
 
 
@@ -247,6 +249,60 @@ def ingest_members(votes, log=print):
     return members
 
 
+FLOOR_URL = "https://docs.house.gov/billsthisweek/{d}/{d}.xml"
+FLOOR_KINDS = (("suspension", "fast"), ("pursuant to a rule", "rule"))
+
+
+def legis_from_label(text):
+    """'H.R. 3074 ' or 'H. Con. Res. 12' -> ('hr', 3074). None when it is not a numbered measure."""
+    return parse_legis(re.sub(r"\s+", " ", (text or "").replace(".", " ")).strip().upper())
+
+
+def parse_floor_schedule(xml_text):
+    """The House's own weekly list of bills that may come to the floor (docs.house.gov)."""
+    root = ET.fromstring(xml_text)
+    items = []
+    for cat in root.iter("category"):
+        kind_text = (cat.get("type") or "").lower()
+        how = next((code for words, code in FLOOR_KINDS if words in kind_text), "other")
+        for it in cat.iter("floor-item"):
+            if (it.get("remove-date") or "").strip():
+                continue
+            label = " ".join((it.findtext("legis-num") or "").split())
+            title = " ".join((it.findtext("floor-text") or "").split())
+            if not label and not title:
+                continue
+            parsed = legis_from_label(label)
+            doc = next((f.get("doc-url", "") for f in it.iter("file") if (f.get("doc-type") or "").upper() == "PDF"), "")
+            items.append({"label": label, "title": title, "how": how, "category": cat.get("type") or "",
+                          "slug": bill_slug(*parsed) if parsed else "", "doc": doc.replace("http://", "https://"),
+                          "added": (it.get("add-date") or "")[:10]})
+    return {"week": (root.get("week-date") or "")[:10], "updated": (root.get("update-date") or "")[:10], "items": items}
+
+
+def ingest_upcoming(log=print, today=None):
+    """This week's and next week's posted floor schedule. Keeps the last good copy if the House site is down."""
+    from datetime import timedelta
+    today = today or date.today()
+    monday = today - timedelta(days=today.weekday())
+    weeks = []
+    for start in (monday, monday + timedelta(days=7)):
+        d = start.strftime("%Y%m%d")
+        try:
+            week = parse_floor_schedule(fetch(FLOOR_URL.format(d=d), timeout=60))
+        except NotFound:
+            continue  # nothing posted for that week (yet)
+        except Exception as err:
+            log(f"  ! floor schedule {d}: {err}")
+            return read_json(DATA / "upcoming.json", {})
+        week["week"] = week["week"] or start.isoformat()
+        weeks.append(week)
+    out = {"fetched": today.isoformat(), "weeks": weeks}
+    write_json(DATA / "upcoming.json", out)
+    log(f"Upcoming: {sum(len(w['items']) for w in weeks)} items posted across {len(weeks)} week(s)")
+    return out
+
+
 def _api(path, key, **params):
     import json
     from urllib.parse import urlencode
@@ -254,7 +310,7 @@ def _api(path, key, **params):
     return json.loads(fetch(f"{CONGRESS_API}{path}?{urlencode(params)}"))
 
 
-def ingest_bills(votes, congress, log=print, limit=400):
+def ingest_bills(votes, congress, log=print, limit=400, also=()):
     """Titles, sponsors, policy areas and official summaries from Congress.gov. Optional."""
     key = os.environ.get("CONGRESS_API_KEY", "").strip()
     bills = read_json(DATA / "bills.json", {})
@@ -271,6 +327,10 @@ def ingest_bills(votes, congress, log=print, limit=400):
         is_recent = date.fromisoformat(v["date"]).toordinal() >= recent_cutoff
         if slug not in bills or is_recent:
             wanted[slug] = parsed
+    for slug in also:  # bills on the posted schedule that have not had a vote yet
+        if slug and (slug not in bills or bills[slug].get("fetched", "") < date.fromordinal(recent_cutoff + 23).isoformat()):
+            kind, number = slug.rsplit("-", 1)
+            wanted[slug] = (kind, int(number))
     done = 0
     for slug, (kind, number) in list(wanted.items())[:limit]:
         try:
@@ -369,7 +429,8 @@ def main():
         print("No roll calls found. Check the network connection and the years in config.json.")
         sys.exit(1)
     ingest_members(votes)
-    ingest_bills(votes, cfg["congress"])
+    upcoming = ingest_upcoming()
+    ingest_bills(votes, cfg["congress"], also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"]])
     ingest_member_bills({p[0] for v in votes for p in v["positions"]}, cfg["congress"])
     from .explain import ai_summaries, ai_vote_lines
     ai_summaries(votes, cfg)

@@ -1,0 +1,31 @@
+{% extends "base.html" %}{% import "_m.html" as m %}
+{% block title %}Coming up for a vote · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page" style="gap:44px">
+<div class="stack">
+<h1 class="h1">Coming up for a vote</h1>
+<p class="lede">Bills the House has said it may vote on soon. This is the moment your voice counts most: before the vote, not after.</p>
+<p class="note">This is the House's own posted list. The schedule can change, bills get added late, and not every bill listed gets a vote.</p>
+</div>
+{% for w in weeks %}
+<section class="stack" style="gap:16px">
+<div class="row" style="justify-content:space-between"><h2 class="h2">{{ 'This week' if w.current else 'Next week' }}</h2><span class="small muted">Week of {{ w.week|nicedate }}{% if w.updated %} · list last changed {{ w.updated|nicedate }}{% endif %}</span></div>
+{% if w['items'] %}<div class="card flush rows">{% for i in w['items'] %}<div class="uprow">
+<div class="stack" style="gap:4px"><a class="up-name" href="{{ i.url if i.outside else root ~ i.url }}"{% if i.outside %} rel="noopener"{% endif %}>{{ i.name }}</a>
+<span class="small muted">{{ i.label }}{% if i.outside %} · opens the official page on Congress.gov{% endif %}{% if i.doc %} · <a href="{{ i.doc }}" rel="noopener">Read the text</a>{% endif %}</span></div>
+<div class="tags">{% if i.topic_key %}<a class="tag soft" href="{{ root }}topics/{{ i.topic_key }}/">{{ i.topic }}</a>{% elif i.topic %}<span class="tag soft">{{ i.topic }}</span>{% endif %}<span class="tag {{ 'status moved' if i.how == 'rule' else 'status' }}" title="{{ i.how_note }}">{{ i.how_label }}</span></div>
+</div>{% endfor %}</div>
+{% else %}<p class="card muted">Nothing left on this week's list.</p>{% endif %}
+{% if w.done %}<p class="small muted">{{ w.done }} {{ 'bill' if w.done == 1 else 'bills' }} from this week's list {{ 'has' if w.done == 1 else 'have' }} already been voted on. <a href="{{ root }}votes/">See how those votes went</a>.</p>{% endif %}
+</section>
+{% else %}
+<p class="card muted" style="font-size:18px">Nothing is posted right now. The House posts its list for the week when it is in session, usually a few days ahead. Check back soon, or <a href="{{ root }}votes/">see the latest votes</a>.</p>
+{% endfor %}
+{% if weeks %}<div class="grid">
+<div class="card stack" style="gap:6px"><span class="tag status moved" style="align-self:flex-start">Full debate</span><span>Needs a simple majority to pass: more than half of the members voting. These are often the bigger, more argued-over bills.</span></div>
+<div class="card stack" style="gap:6px"><span class="tag status" style="align-self:flex-start">Fast track</span><span>Needs two-thirds to pass and gets a short debate. Usually used for bills most members already agree on.</span></div>
+</div>{% endif %}
+{{ m.reach(root, reach_states, state_names) }}
+</div>
+{% endblock %}
+{% block source %}The list of upcoming bills comes from the House's official weekly schedule at docs.house.gov. Every vote on this site comes from the official record kept by the Clerk of the U.S. House of Representatives.{% endblock %}

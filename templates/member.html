@@ -29,7 +29,11 @@
 <div class="row" style="gap:8px 12px"><span class="party {{ p.party }}" style="width:auto;padding:0 10px">{{ p.party_name }}</span><span>{{ 'Delegate' if p.delegate else 'U.S. Representative' }}, {{ seat_long }}</span></div>
 {% if p.house_since %}<div class="small muted">In the House since {{ p.house_since|nicedate }}{% if p.term_end %} · {{ 'Left office' if p.left else 'Current term ends' }} {{ p.term_end|nicedate }}{% endif %}</div>{% endif %}
 </div>
-{% if p.url %}<a href="{{ p.url }}">Official website</a>{% endif %}
+{% if not p.left and (p.url or contact.phone) %}<div class="stack contactbox" style="gap:8px"><span class="label">Reach {{ p.last or p.name }}</span>
+{% if contact.phone %}<a class="btn go" href="tel:+1{{ contact.phone|replace('-', '') }}">Call {{ contact.phone }}</a>{% endif %}
+{% if contact.contact_form or p.url %}<a class="btn" style="text-decoration:none;display:inline-flex;align-items:center" href="{{ contact.contact_form or p.url }}" rel="noopener">{{ 'Send a message' if contact.contact_form else 'Write on their website' }}</a>{% endif %}
+{% if contact.office %}<span class="small muted" style="max-width:240px">{{ contact.office }}</span>{% endif %}</div>
+{% elif p.url %}<a href="{{ p.url }}">Official website</a>{% endif %}
 </section>
 
 <section class="stack" id="topics">

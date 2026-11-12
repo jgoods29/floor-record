@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<floorschedule congress-num="119" week-date="2026-11-09" create-date="2026-11-03T10:11:12.227" orig-publish-date="2026-11-03T10:30:00.000" update-date="2026-11-10T09:25:23.200">
+  <current-status>R</current-status>
+  <category type="Items that may be considered under suspension of the rules" sort-order="1">
+    <floor-items>
+      <floor-item id="1" add-date="2026-11-03T10:11:00.000" remove-date="" sort-order="1" publish-date="2026-11-03T10:30:00.000">
+        <legis-num>H.R. 3074 </legis-num>
+        <floor-text>Sample Savings Act, as amended </floor-text>
+        <files><file doc-url="http://docs.house.gov/billsthisweek/20261109/HR3074_SUS_xml.pdf" doc-type="PDF" /></files>
+      </floor-item>
+      <floor-item id="2" add-date="2026-11-03T10:12:00.000" remove-date="2026-11-05T10:00:00.000" sort-order="2" publish-date="2026-11-03T10:30:00.000">
+        <legis-num>S. 99</legis-num>
+        <floor-text>Withdrawn Example Act</floor-text>
+      </floor-item>
+    </floor-items>
+  </category>
+  <category type="Items that may be considered pursuant to a rule" sort-order="4">
+    <floor-items>
+      <floor-item id="3" add-date="2026-11-05T10:14:00.000" remove-date="" sort-order="1" publish-date="2026-11-05T15:57:00.000">
+        <legis-num>H. Con. Res. 12</legis-num>
+        <floor-text>Sample Budget Resolution</floor-text>
+      </floor-item>
+    </floor-items>
+  </category>
+</floorschedule>

@@ -1,0 +1,61 @@
+{% extends "base.html" %}{% import "_m.html" as m %}
+{% block title %}New here? Start here · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page start" style="gap:64px">
+<div class="stack" style="max-width:780px">
+<span class="label purple">Start here</span>
+<h1 class="h1">Congress, in two minutes.</h1>
+<p class="lede">You do not need to know anything about politics to use this site. Here is everything you need, in plain English.</p>
+</div>
+
+<section class="stack" aria-labelledby="s1">
+<h2 class="h2" id="s1">1. What is Congress?</h2>
+<p class="plain">Congress is the group of people elected to write the country's laws. It has two halves, and a new law needs a yes from both.</p>
+<div class="grid">
+<div class="card stack" style="gap:8px"><span class="h3">The House</span><span class="bignum">435</span><span>voting members. Each one speaks for one area of a state, called a <strong>district</strong>. Everyone is up for election every two years.</span><span class="tag soft" style="align-self:flex-start">This site covers the House</span></div>
+<div class="card stack" style="gap:8px"><span class="h3">The Senate</span><span class="bignum">100</span><span>members, called senators. Every state gets two, no matter its size. Each serves six years.</span><span class="tag soft" style="align-self:flex-start">Coming to this site later</span></div>
+</div>
+</section>
+
+<section class="stack" aria-labelledby="s2">
+<h2 class="h2" id="s2">2. Who is "my representative"?</h2>
+<p class="plain">Wherever you live in the United States, exactly one person in the House represents you. You do not need to have voted for them. Their job is to vote on your behalf, and this site shows you how they have been doing it.</p>
+<div class="row"><a class="btn go" href="{{ root }}members/">Find yours by state</a><a href="https://www.house.gov/representatives/find-your-representative" rel="noopener">Or look them up by ZIP code on house.gov</a></div>
+</section>
+
+<section class="stack" aria-labelledby="s3">
+<h2 class="h2" id="s3">3. How does an idea become a law?</h2>
+<ol class="path">
+<li><span class="num">1</span><span><strong>Someone writes a bill.</strong> A bill is a proposed law. Any member can write one.</span></li>
+<li><span class="num">2</span><span><strong>A committee looks at it.</strong> A small group of members studies it. Most bills stop here and never get a vote.</span></li>
+<li><span class="num">3</span><span><strong>The House votes.</strong> Every member says yes or no, on the record. That record is what this site shows.</span></li>
+<li><span class="num">4</span><span><strong>The Senate votes.</strong> The other half of Congress has to agree to the same bill.</span></li>
+<li><span class="num">5</span><span><strong>The President signs it.</strong> Now it is a law. The President can also say no, which is called a veto.</span></li>
+</ol>
+</section>
+
+<section class="stack" aria-labelledby="s4">
+<h2 class="h2" id="s4">4. How to read a vote</h2>
+<div class="grid words">
+<div class="card"><span class="h3">Yea</span><span>Yes.</span></div>
+<div class="card"><span class="h3">Nay</span><span>No.</span></div>
+<div class="card"><span class="h3">Present</span><span>"I am here, but I am not picking a side."</span></div>
+<div class="card"><span class="h3">Did not vote</span><span>They were not there, or chose not to vote.</span></div>
+</div>
+<p class="plain">Most votes pass when more than half of the members voting say yea. Each party usually votes together, so the votes where a member goes their own way can tell you a lot.</p>
+<p class="plain"><strong>One thing that trips everyone up:</strong> a lot of votes are not about a bill itself. They are about steps along the way, like whether to keep debating or to set a bill aside. On those, a "yea" can mean the opposite of what you would guess. We spell out what yea and nay meant on every vote, and we tuck the routine ones out of the way.</p>
+<div class="row"><a class="btn go" href="{{ root }}votes/">See the latest votes</a><a href="{{ root }}about/">More words you will see</a></div>
+</section>
+
+<section class="stack" aria-labelledby="s5">
+<h2 class="h2" id="s5">5. What can I do with this?</h2>
+<div class="grid steps">
+<a class="card step" href="{{ root }}members/"><span class="h3">Check on your representative</span><span>See every vote they have cast, what bills they wrote, and how often they show up.</span><span class="go">Find a member</span></a>
+<a class="card step" href="{{ root }}topics/"><span class="h3">Follow what you care about</span><span>Pick a topic, like health, taxes or farming, and see only those votes.</span><span class="go">Browse topics</span></a>
+<a class="card step" href="{{ root }}upcoming/"><span class="h3">See what is coming</span><span>Look at the bills the House may vote on next, while there is still time to speak up.</span><span class="go">Coming up</span></a>
+</div>
+</section>
+
+{{ m.reach(root, reach_states, state_names) }}
+</div>
+{% endblock %}
