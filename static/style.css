@@ -375,3 +375,14 @@ button.linkish.on { color: var(--purple-ink); }
 .start a:not(.btn):not(.card) { text-decoration-color: #C9B5F5; }
 .start .search input:focus, .start .field:focus { border-color: var(--purple); outline-color: var(--purple); }
 .nav a.startlink[aria-current="page"] { color: var(--purple); border-bottom-color: var(--purple); }
+
+/* labels you can hover, focus or tap for a plain explanation */
+.tag.tip { position: relative; cursor: pointer; text-decoration: none; }
+.tag.tip:hover, .tag.tip:focus-visible { border-color: var(--purple); color: var(--purple-ink); }
+.tag.tip::after { content: attr(data-tip); position: absolute; right: 0; bottom: calc(100% + 8px); z-index: 5; width: max-content; max-width: min(280px, 78vw); white-space: normal; text-align: left;
+  font-size: 14px; font-weight: 500; line-height: 1.4; letter-spacing: 0; text-transform: none; color: #fff; background: var(--ink); border-radius: 10px; padding: 10px 12px; box-shadow: 0 8px 24px rgba(20,33,61,.18);
+  opacity: 0; visibility: hidden; transition: opacity .12s; pointer-events: none; }
+.tag.tip:hover::after, .tag.tip:focus-visible::after { opacity: 1; visibility: visible; }
+.howcard { scroll-margin-top: 240px; }
+.howcard:target { border-color: var(--purple); box-shadow: 0 0 0 3px #E9DFFD; }
+@media (hover: none) { .tag.tip::after { display: none; } }

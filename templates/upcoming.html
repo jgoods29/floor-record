@@ -13,7 +13,7 @@
 {% if w['items'] %}<div class="card flush rows">{% for i in w['items'] %}<div class="uprow">
 <div class="stack" style="gap:4px"><a class="up-name" href="{{ i.url if i.outside else root ~ i.url }}"{% if i.outside %} rel="noopener"{% endif %}>{{ i.name }}</a>
 <span class="small muted">{{ i.label }}{% if i.outside %} · opens the official page on Congress.gov{% endif %}{% if i.doc %} · <a href="{{ i.doc }}" rel="noopener">Read the text</a>{% endif %}</span></div>
-<div class="tags">{% if i.topic_key %}<a class="tag soft" href="{{ root }}topics/{{ i.topic_key }}/">{{ i.topic }}</a>{% elif i.topic %}<span class="tag soft">{{ i.topic }}</span>{% endif %}<span class="tag {{ 'status moved' if i.how == 'rule' else 'status' }}" title="{{ i.how_note }}">{{ i.how_label }}</span></div>
+<div class="tags">{% if i.topic %}<a class="tag soft tip" href="{{ root }}topics/{% if i.topic_key %}{{ i.topic_key }}/{% endif %}" data-tip="This bill is about {{ i.topic|lower }}. Select to see {{ 'every House vote on this topic' if i.topic_key else 'all topics' }}.">{{ i.topic }}</a>{% endif %}<a class="tag tip {{ 'status moved' if i.how == 'rule' else 'status' }}" href="#how-{{ i.how }}" data-tip="{{ i.how_note }} Select to read more.">{{ i.how_label }}</a></div>
 </div>{% endfor %}</div>
 {% else %}<p class="card muted">Nothing left on this week's list.</p>{% endif %}
 {% if w.done %}<p class="small muted">{{ w.done }} {{ 'bill' if w.done == 1 else 'bills' }} from this week's list {{ 'has' if w.done == 1 else 'have' }} already been voted on. <a href="{{ root }}votes/">See how those votes went</a>.</p>{% endif %}
@@ -21,10 +21,12 @@
 {% else %}
 <p class="card muted" style="font-size:18px">Nothing is posted right now. The House posts its list for the week when it is in session, usually a few days ahead. Check back soon, or <a href="{{ root }}votes/">see the latest votes</a>.</p>
 {% endfor %}
-{% if weeks %}<div class="grid">
-<div class="card stack" style="gap:6px"><span class="tag status moved" style="align-self:flex-start">Full debate</span><span>Needs a simple majority to pass: more than half of the members voting. These are often the bigger, more argued-over bills.</span></div>
-<div class="card stack" style="gap:6px"><span class="tag status" style="align-self:flex-start">Fast track</span><span>Needs two-thirds to pass and gets a short debate. Usually used for bills most members already agree on.</span></div>
-</div>{% endif %}
+{% if weeks %}<section class="stack" style="gap:16px"><h2 class="h2">What the labels mean</h2><div class="grid">
+<div class="card stack howcard" id="how-rule" style="gap:6px"><span class="tag status moved" style="align-self:flex-start">Full debate</span><span>Needs a simple majority to pass: more than half of the members voting. These are often the bigger, more argued-over bills, and members can usually offer changes.</span></div>
+<div class="card stack howcard" id="how-fast" style="gap:6px"><span class="tag status" style="align-self:flex-start">Fast track</span><span>Needs two-thirds to pass and gets a short debate with no changes allowed. Usually used for bills most members already agree on.</span></div>
+<div class="card stack howcard" id="how-other" style="gap:6px"><span class="tag status" style="align-self:flex-start">On the list</span><span>Posted as possible business for the week, without saying yet how it will be handled.</span></div>
+<div class="card stack howcard" style="gap:6px"><span class="tag soft" style="align-self:flex-start">Topic</span><span>What the bill is about, like health or energy. Select a topic to see every House vote on it.</span></div>
+</div></section>{% endif %}
 {{ m.reach(root, reach_states, state_names) }}
 </div>
 {% endblock %}
