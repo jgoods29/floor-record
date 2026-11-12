@@ -378,9 +378,15 @@ def main():
     render("upcoming/index.html", "upcoming.html", 1, section="upcoming", weeks=weeks)
     render("start/index.html", "start.html", 1, section="start")
     contacts = [[p["bioguide"], p["name"], p["state"], p["dist_label"], p["party"], members.get(p["bioguide"], {}).get("url", ""),
-                 members.get(p["bioguide"], {}).get("phone", ""), members.get(p["bioguide"], {}).get("contact_form", "")]
+                 members.get(p["bioguide"], {}).get("phone", ""), members.get(p["bioguide"], {}).get("contact_form", ""), p.get("district") or 0]
                 for p in sorted(people.values(), key=lambda p: (p["state"], p.get("district") or 0, p["sort"])) if not p["left"]]
     write_json(SITE / "contacts.json", contacts)
+    # ZIP code -> district, split by first digit so a lookup downloads one small file and runs in the browser
+    by_digit = defaultdict(dict)
+    for z, where in read_json(DATA / "zip_districts.json", {}).items():
+        by_digit[z[0]][z] = where
+    for digit, rows in by_digit.items():
+        write_json(SITE / "zip" / f"{digit}.json", rows)
     render("why/index.html", "why.html", 1, section="why")
     render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, trending=trending, since=since, featured=featured, coming=coming,
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])

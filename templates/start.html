@@ -20,7 +20,8 @@
 <section class="stack" aria-labelledby="s2">
 <h2 class="h2" id="s2">2. Who is "my representative"?</h2>
 <p class="plain">Wherever you live in the United States, exactly one person in the House represents you. You do not need to have voted for them. Their job is to vote on your behalf, and this site shows you how they have been doing it.</p>
-<div class="row"><a class="btn go" href="{{ root }}members/">Find yours by state</a><a href="https://www.house.gov/representatives/find-your-representative" rel="noopener">Or look them up by ZIP code on house.gov</a></div>
+<div class="zipfind"><label class="fieldset" for="zip-start">Not sure who yours is? Enter your ZIP code</label><div class="search" data-search><input id="zip-start" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5-digit ZIP code"><div class="results" role="listbox" aria-label="Your representative"></div></div></div>
+<div class="row"><a href="{{ root }}members/">Or browse everyone by state</a></div>
 </section>
 
 <section class="stack" aria-labelledby="s3">

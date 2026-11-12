@@ -9,6 +9,46 @@
   var cache = {};
   function once(url) { return cache[url] || (cache[url] = getJSON(url)); }
 
+  // ---- "my representative": found by ZIP code, kept only in this browser
+  function store(key, val) { try { if (val === undefined) return localStorage.getItem(key) || ''; if (val === null) localStorage.removeItem(key); else localStorage.setItem(key, val); } catch (e) {} return ''; }
+  function myRep() { try { return JSON.parse(store('fr-rep') || 'null'); } catch (e) { return null; } }
+  function setMyRep(id, name) { store('fr-rep', id ? JSON.stringify({ id: id, name: name }) : null); showMyRep(); }
+  function contactRows() { return once(root + 'contacts.json'); }
+  // -> { rows: members for that ZIP, where: ['KY3', ...] } or null when the ZIP is not known
+  function byZip(zip) {
+    return Promise.all([once(root + 'zip/' + zip.charAt(0) + '.json'), contactRows()]).then(function (res) {
+      var where = res[0][zip]; if (!where) return null;
+      where = where.split(',');
+      return { where: where, rows: res[1].filter(function (r) { return where.indexOf(r[2] + r[8]) !== -1; }) };
+    });
+  }
+  function showMyRep() {
+    var rep = myRep(), nav = document.querySelector('.nav'), old = document.querySelector('.myrep');
+    if (old) old.parentNode.removeChild(old);
+    if (rep && nav) { var a = document.createElement('a'); a.className = 'myrep'; a.href = root + 'members/' + rep.id + '/'; a.textContent = 'Your Rep: ' + rep.name; nav.insertBefore(a, nav.firstChild); }
+    each(document.querySelectorAll('[data-myrep]'), function (b) { var on = rep && rep.id === b.getAttribute('data-myrep'); b.textContent = on ? 'This is your representative. Undo' : 'This is my representative'; b.classList.toggle('on', !!on); });
+  }
+  showMyRep();
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-myrep]'); if (!b) return;
+    var rep = myRep(), id = b.getAttribute('data-myrep');
+    setMyRep(rep && rep.id === id ? null : id, b.getAttribute('data-name'));
+    yourVote();
+  });
+  // on a vote page, say up front how your own representative voted
+  function yourVote() {
+    var score = document.querySelector('.split3'), old = document.getElementById('your-vote'), rep = myRep();
+    if (old) old.parentNode.removeChild(old);
+    if (!score || !rep) return;
+    var said = { 'voted-yea': 'voted Yea', 'voted-nay': 'voted Nay', 'voted-nv': 'did not vote', 'voted-present': 'voted Present' }, found = '';
+    each(document.querySelectorAll('details[id^="voted-"]'), function (d) { if (d.querySelector('a[href$="members/' + rep.id + '/"]')) found = said[d.id] || 'is listed below'; });
+    if (!found) return;
+    var p = document.createElement('p'); p.id = 'your-vote'; p.className = 'yourvote';
+    p.innerHTML = '<span class="label purple">Your representative</span><span><a href="' + root + 'members/' + esc(rep.id) + '/">' + esc(rep.name) + '</a> <strong>' + found + '</strong> on this.</span>';
+    var card = score.closest('.card') || score; card.parentNode.insertBefore(p, card);
+  }
+  yourVote();
+
   // ---- search boxes (the one in the header and the big one on the home page share an index)
   var index = null, loading = null;
   function loadIndex() { return loading || (loading = getJSON(root + 'search.json').then(function (d) { index = d; return d; })); }
@@ -17,12 +57,26 @@
     if (!box || !out) return;
     var run = function () {
       var q = box.value.trim().toLowerCase();
+      if (/^\d{1,5}$/.test(q)) {  // a ZIP code: show who represents it
+        out.classList.add('open');
+        if (q.length < 5) { out.innerHTML = '<div class="none">Keep typing: a ZIP code has 5 digits.</div>'; return; }
+        byZip(q).then(function (hit) {
+          if (box.value.trim() !== q) return;
+          if (!hit || !hit.rows.length) { out.innerHTML = '<div class="none">We could not match ' + esc(q) + '. Try a nearby ZIP code, or pick your state on the Members page.</div>'; return; }
+          var one = hit.rows.length === 1;
+          if (one) setMyRep(hit.rows[0][0], hit.rows[0][1]);
+          out.innerHTML = '<div class="none">' + (one ? 'Your representative:' : 'ZIP code ' + esc(q) + ' is shared by ' + hit.rows.length + ' districts. One of these is yours:') + '</div>' + hit.rows.map(function (r) {
+            return '<a role="option" href="' + root + 'members/' + esc(r[0]) + '/"><span>' + esc(r[1]) + ' (' + esc(r[4]) + ')</span><span class="small muted">' + esc(r[2]) + ' · ' + esc(r[3]) + '</span></a>';
+          }).join('') + (one ? '' : '<a role="option" rel="noopener" href="https://www.house.gov/representatives/find-your-representative"><span class="small">Settle it with your street address on house.gov</span></a>');
+        }).catch(function () { out.innerHTML = '<div class="none">Could not load. Try again.</div>'; });
+        return;
+      }
       if (!q || !index) { out.classList.remove('open'); return; }
       var terms = q.split(/\s+/);
       var hits = index.filter(function (it) { return terms.every(function (t) { return it.k.indexOf(t) !== -1; }); }).slice(0, 8);
       out.innerHTML = hits.length ? hits.map(function (it) {
         return '<a role="option" href="' + root + esc(it.u) + '"><span>' + esc(it.t) + '</span><span class="small muted">' + esc(it.s) + '</span></a>';
-      }).join('') : '<div class="none">Nothing matches. Try a last name, a state or a bill name.</div>';
+      }).join('') : '<div class="none">Nothing matches. Try your ZIP code, a last name, a state or a bill name.</div>';
       out.classList.add('open');
     };
     box.addEventListener('focus', function () { loadIndex().then(run).catch(function () {}); });
@@ -189,38 +243,48 @@
     }
   }
 
-  // ---- "tell your representative": pick a state, get everyone who represents it with ways to reach them
-  var reachBoxes = document.querySelectorAll('[data-reach]');
-  if (reachBoxes.length) {
-    var contacts = null, saved = '';
-    try { saved = localStorage.getItem('fr-state') || ''; } catch (e) {}
-    var loadContacts = function () { return contacts || (contacts = getJSON(root + 'contacts.json')); };
-    each(reachBoxes, function (box) {
-      var sel = box.querySelector('[data-reach-state]'), list = box.querySelector('[data-reach-list]');
-      var key = box.getAttribute('data-topic'), label = box.getAttribute('data-topic-name');
-      var draw = function () {
-        var st = sel.value;
-        try { if (st) localStorage.setItem('fr-state', st); } catch (e) {}
-        if (!st) { list.innerHTML = ''; return; }
-        loadContacts().then(function (rows) {
-          var out = [];
-          rows.forEach(function (r) {
-            if (r[2] !== st) return;
-            var page = root + 'members/' + r[0] + '/' + (key ? '#topic=' + key : '');
-            var acts = '';
-            if (r[6]) acts += '<a class="btn go" href="tel:+1' + esc(r[6].replace(/\D/g, '')) + '">Call ' + esc(r[6]) + '</a>';
-            if (r[7] || r[5]) acts += '<a class="btn" rel="noopener" href="' + esc(r[7] || r[5]) + '">' + (r[7] ? 'Send a message' : 'Write on their website') + '</a>';
-            out.push('<div class="reach-row"><div class="who"><span class="dist">' + esc(r[3]) + '</span><span class="nm"><a href="' + page + '">' + esc(r[1]) + '</a><span class="party sm ' + esc(r[4]) + '">' + esc(r[4]) + '</span></span>' +
-              '<a class="small" href="' + page + '">' + (key ? 'See how they voted on ' + esc(label) : 'See how they vote') + '</a></div><div class="reach-acts">' + acts + '</div></div>');
-          });
-          var name = sel.options[sel.selectedIndex].text;
-          list.innerHTML = out.join('') || '<p class="muted" style="padding:16px 20px;margin:0">No current members found for ' + esc(name) + '.</p>';
-        }).catch(function () { list.innerHTML = '<p class="muted" style="padding:16px 20px;margin:0">Could not load. Try again.</p>'; });
-      };
-      sel.addEventListener('change', draw);
-      if (saved && sel.querySelector('option[value="' + saved + '"]')) { sel.value = saved; draw(); }
-    });
-  }
+  // ---- "tell your representative": ZIP code or state -> who represents you, with ways to reach them
+  each(document.querySelectorAll('[data-reach]'), function (box) {
+    var sel = box.querySelector('[data-reach-state]'), zip = box.querySelector('[data-reach-zip]'), list = box.querySelector('[data-reach-list]'), msg = box.querySelector('[data-reach-msg]');
+    var key = box.getAttribute('data-topic'), label = box.getAttribute('data-topic-name');
+    var show = function (rows, text) {
+      var rep = myRep();
+      msg.innerHTML = text || '';
+      list.innerHTML = rows.map(function (r) {
+        var page = root + 'members/' + r[0] + '/' + (key ? '#topic=' + key : ''), acts = '', mine = rep && rep.id === r[0];
+        if (r[6]) acts += '<a class="btn go" href="tel:+1' + esc(r[6].replace(/\D/g, '')) + '">Call ' + esc(r[6]) + '</a>';
+        if (r[7] || r[5]) acts += '<a class="btn" rel="noopener" href="' + esc(r[7] || r[5]) + '">' + (r[7] ? 'Send a message' : 'Write on their website') + '</a>';
+        return '<div class="reach-row' + (mine ? ' mine' : '') + '"><div class="who"><span class="dist">' + esc(r[3]) + (mine ? ' · your representative' : '') + '</span><span class="nm"><a href="' + page + '">' + esc(r[1]) + '</a><span class="party sm ' + esc(r[4]) + '">' + esc(r[4]) + '</span></span>' +
+          '<a class="small" href="' + page + '">' + (key ? 'See how they voted on ' + esc(label) : 'See how they vote') + '</a>' +
+          (rows.length > 1 ? '<button type="button" class="linkish small" data-myrep="' + esc(r[0]) + '" data-name="' + esc(r[1]) + '">This is my representative</button>' : '') +
+          '</div><div class="reach-acts">' + acts + '</div></div>';
+      }).join('');
+      showMyRep();
+    };
+    var fail = function () { show([], 'Could not load. Try again.'); };
+    var fromState = function () {
+      var st = sel.value; if (!st) { show([]); return; }
+      store('fr-state', st); zip.value = '';
+      contactRows().then(function (rows) {
+        var mine = rows.filter(function (r) { return r[2] === st; });
+        show(mine, mine.length > 1 ? 'Everyone who represents ' + esc(sel.options[sel.selectedIndex].text) + '. Yours depends on where in the state you live. Enter your ZIP code to narrow it down.' : '');
+      }).catch(fail);
+    };
+    var fromZip = function () {
+      var z = zip.value.replace(/\D/g, ''); if (z.length < 5) { if (!sel.value) show([]); return; }
+      byZip(z).then(function (hit) {
+        if (!hit || !hit.rows.length) { show([], 'We could not match ' + esc(z) + '. Try a nearby ZIP code or choose your state.'); return; }
+        store('fr-zip', z); sel.value = '';
+        if (hit.rows.length === 1) { setMyRep(hit.rows[0][0], hit.rows[0][1]); yourVote(); show(hit.rows, '<strong>This is your representative.</strong>'); }
+        else show(hit.rows, 'ZIP code ' + esc(z) + ' is shared by ' + hit.rows.length + ' districts. <strong>One of these is yours.</strong> To settle it, <a rel="noopener" href="https://www.house.gov/representatives/find-your-representative">enter your street address on house.gov</a>, then mark yours here.');
+      }).catch(fail);
+    };
+    sel.addEventListener('change', fromState);
+    zip.addEventListener('input', fromZip);
+    list.addEventListener('click', function (e) { if (e.target.closest('[data-myrep]')) setTimeout(function () { if (zip.value) fromZip(); else fromState(); }, 0); });
+    var z0 = store('fr-zip'), s0 = store('fr-state');
+    if (z0) { zip.value = z0; fromZip(); } else if (s0 && sel.querySelector('option[value="' + s0 + '"]')) { sel.value = s0; fromState(); }
+  });
 
   // ---- Compare table
   var table = document.getElementById('lb'), dataEl = document.getElementById('lb-data');

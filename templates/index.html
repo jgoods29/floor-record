@@ -7,8 +7,8 @@
 <p class="lede point">They work for you. Here's what they've been doing.</p>
 <p class="lede" style="font-size:18px;margin-top:-8px">Every vote in the U.S. House, explained in plain English and taken straight from the official record.</p>
 <div class="search big" data-search>
-<label class="sr" for="home-search">Search for a member, a state, a bill or a topic</label>
-<input id="home-search" type="search" placeholder="Name, state, bill or topic" autocomplete="off">
+<label class="sr" for="home-search">Search for your ZIP code, a member, a state, a bill or a topic</label>
+<input id="home-search" type="search" placeholder="ZIP code, name, state, bill or topic" autocomplete="off">
 <div class="results" role="listbox" aria-label="Search results"></div>
 </div>
 <p class="tries"><span class="muted">Try</span>{% for word in examples %}<button type="button" class="linkish" data-example="{{ word }}">{{ word }}</button>{% endfor %}</p>
@@ -40,7 +40,7 @@
 <div class="center" style="gap:10px"><h2 class="h2" id="how-h">How to use this site</h2>
 <p class="muted" style="font-size:18px;max-width:620px">{{ site.site_name }} is a free, non-partisan record of what members of Congress do, not what they say. Three steps get you there.</p></div>
 <div class="grid steps">
-<a class="card step" href="{{ root }}members/"><span class="num">1</span><span class="h3">Find your representative</span><span>Search a name or your state above, or browse the full list. Not sure who represents you? Pick your state and look for your district.</span><span class="go">Browse members</span></a>
+<a class="card step" href="{{ root }}members/"><span class="num">1</span><span class="h3">Find your representative</span><span>Type your ZIP code in the search box above and we will show you who represents you. You can also search a name or browse by state.</span><span class="go">Browse members</span></a>
 <a class="card step" href="{{ root }}{{ 'topics/' if has_topics else 'votes/' }}"><span class="num">2</span><span class="h3">See how they voted</span><span>Each profile shows every vote in plain English. Pick a topic you care about, like farming or health, to see only those votes.</span><span class="go">{{ 'Browse topics' if has_topics else 'Browse votes' }}</span></a>
 <a class="card step" href="{{ root }}compare/"><span class="num">3</span><span class="h3">Compare and check</span><span>Put members side by side: who shows up, what bills they wrote, and how they voted. Every number links to the official House record, so you can check it yourself.</span><span class="go">Compare members</span></a>
 </div>

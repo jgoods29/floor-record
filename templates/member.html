@@ -32,7 +32,8 @@
 {% if not p.left and (p.url or contact.phone) %}<div class="stack contactbox" style="gap:8px"><span class="label">Reach {{ p.last or p.name }}</span>
 {% if contact.phone %}<a class="btn go" href="tel:+1{{ contact.phone|replace('-', '') }}">Call {{ contact.phone }}</a>{% endif %}
 {% if contact.contact_form or p.url %}<a class="btn" style="text-decoration:none;display:inline-flex;align-items:center" href="{{ contact.contact_form or p.url }}" rel="noopener">{{ 'Send a message' if contact.contact_form else 'Write on their website' }}</a>{% endif %}
-{% if contact.office %}<span class="small muted" style="max-width:240px">{{ contact.office }}</span>{% endif %}</div>
+{% if contact.office %}<span class="small muted" style="max-width:240px">{{ contact.office }}</span>{% endif %}
+<button type="button" class="linkish" data-myrep="{{ p.bioguide }}" data-name="{{ p.name }}">This is my representative</button></div>
 {% elif p.url %}<a href="{{ p.url }}">Official website</a>{% endif %}
 </section>
 

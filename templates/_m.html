@@ -27,7 +27,10 @@
 <div class="stack" style="gap:8px"><span class="label purple">Speak up</span>
 <h2 class="h2" id="reach-h">Tell your representative what you think{% if topic %} about {{ topic }}{% endif %}</h2>
 <p class="muted" style="font-size:18px;max-width:680px">One person in the House votes on your behalf. A call or a message from someone they represent is counted, and it takes two minutes.</p></div>
-<label class="fieldset" for="reach-state">Where do you live?<select class="field" id="reach-state" style="width:auto;max-width:100%" data-reach-state><option value="">Choose your state</option>{% for st in states %}<option value="{{ st }}">{{ names.get(st, st) }}</option>{% endfor %}</select></label>
-<div class="reach-list" data-reach-list aria-live="polite"></div>
-<p class="small muted">Not sure which district is yours? <a href="https://www.house.gov/representatives/find-your-representative" rel="noopener">Look it up by ZIP code on house.gov</a>. Your state also has two senators: <a href="https://www.senate.gov/senators/senators-contact.htm" rel="noopener">find and contact them on senate.gov</a>. Your state choice is saved only on your own device.</p>
+<div class="reach-find"><label class="fieldset" for="reach-zip">Your ZIP code<input class="field" id="reach-zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5 digits" data-reach-zip></label>
+<span class="muted or">or</span>
+<label class="fieldset" for="reach-state">Your state<select class="field" id="reach-state" data-reach-state><option value="">Choose your state</option>{% for st in states %}<option value="{{ st }}">{{ names.get(st, st) }}</option>{% endfor %}</select></label></div>
+<p class="reach-msg" data-reach-msg aria-live="polite"></p>
+<div class="reach-list" data-reach-list></div>
+<p class="small muted">The lookup happens on your own device. We never see or store your ZIP code. Your state also has two senators: <a href="https://www.senate.gov/senators/senators-contact.htm" rel="noopener">find and contact them on senate.gov</a>.</p>
 </section>{% endmacro %}

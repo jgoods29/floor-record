@@ -6,6 +6,7 @@
 <h1 class="h1">Members</h1>
 <p class="lede">Everyone who has voted in the U.S. House this Congress, listed by state and district. Select a name to see how they vote.</p>
 <p class="newline">Each member speaks for the people of one district, an area of a state. One of them is yours. New here? <a href="{{ root }}start/">Start with the basics</a>. Want to know what is next? <a href="{{ root }}upcoming/">See what is coming up</a>.</p>
+<div class="zipfind"><label class="fieldset" for="zip-members">Not sure who yours is? Enter your ZIP code</label><div class="search" data-search><input id="zip-members" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5-digit ZIP code"><div class="results" role="listbox" aria-label="Your representative"></div></div></div>
 <div class="row" style="padding-top:8px">
 <label class="fieldset" for="member-filter">Find a member<input class="field" id="member-filter" type="search" placeholder="Type a name or state" style="width:300px" data-filter="#member-list .person" data-groups="#member-list .state"></label>
 <label class="fieldset" for="state-jump">Jump to a state<select class="field" id="state-jump" style="width:auto" data-jump><option value="">Choose a state</option>{% for state, group in states %}<option value="state-{{ state }}">{{ state_names.get(state, state) }}</option>{% endfor %}</select></label>

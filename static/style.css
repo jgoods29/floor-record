@@ -352,3 +352,19 @@ a.tag.soft { text-decoration: none; }
 #topics, .reach { scroll-margin-top: 150px; }
 .actwrap { padding-top: 8px; padding-bottom: 64px; }
 .home + .actwrap { padding-top: 0; }
+
+/* finding your own representative */
+.reach-find { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: flex-end; }
+.reach-find .or { padding-bottom: 12px; }
+.reach-find input.field { width: 150px; }
+.reach-msg { margin: 0; font-size: 16px; color: var(--text-2); max-width: 720px; }
+.reach-msg:empty { display: none; }
+.reach-row.mine { background: #F7F3FF; }
+.reach-row.mine .dist { color: var(--purple); }
+.nav a.myrep { color: var(--purple-ink); background: #F1EBFE; border-radius: 999px; padding: 6px 14px; margin: 4px 6px 4px 0; border-bottom: 0; font-weight: 600; align-self: center; }
+.yourvote { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin: 0; padding: 14px 20px; border: 1px solid #DCCBFB; background: #F7F3FF; border-radius: 14px; font-size: 18px; }
+.zipfind { display: flex; flex-direction: column; gap: 6px; max-width: 420px; }
+.zipfind .search { width: 100%; }
+.zipfind .search input { width: 100%; min-height: 52px; font-size: 18px; }
+button.linkish.on { color: var(--purple-ink); }
+.zipfind .results { left: 0; right: auto; width: 100%; }
