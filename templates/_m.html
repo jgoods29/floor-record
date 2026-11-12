@@ -34,3 +34,5 @@
 <div class="reach-list" data-reach-list></div>
 <p class="small muted">The lookup happens on your own device. We never see or store your ZIP code. Your state also has two senators: <a href="https://www.senate.gov/senators/senators-contact.htm" rel="noopener">find and contact them on senate.gov</a>.</p>
 </section>{% endmacro %}
+
+{% macro track(t, sm=false) %}{% if t %}<ol class="track{% if sm %} sm{% endif %}" aria-label="Progress: {{ t.text }}">{% for st in t.steps %}<li class="{{ st.state }}"{% if st.state == 'now' %} aria-current="step"{% endif %}><span>{{ st.label }}</span></li>{% endfor %}</ol>{% endif %}{% endmacro %}

@@ -99,6 +99,7 @@
 </section>
 
 {% if bill %}
+<section class="card trackbox"><span class="label">Where {{ bill.label }} stands now</span>{{ m.track(bill.track) }}<span class="track-text">{{ bill.track.text }} <a class="small" href="{{ root }}bills/{{ v.slug }}/">More about it</a></span></section>
 <section class="grid two">
 <a class="card" href="{{ root }}bills/{{ v.slug }}/" style="min-height:200px"><span class="label" style="color:var(--accent)">The measure</span><span class="h2">{{ bill.name }}</span><span style="color:var(--text-2)">{{ bill.label }}{% if bill.title != bill.name %} · {{ bill.title|truncate(140) }}{% endif %}</span><span class="go">Read more about it</span></a>
 <a class="card" href="{{ root }}votes/" style="min-height:200px"><span class="label" style="color:var(--accent)">More votes</span><span class="h2">All House votes</span><span style="color:var(--text-2)">Browse every recorded vote, newest first.</span><span class="go">See the list</span></a>

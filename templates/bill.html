@@ -7,6 +7,7 @@
 <div class="eyebrow"><a href="{{ root }}bills/" style="text-decoration:none;color:inherit">Bills</a><span aria-hidden="true">·</span><span>{{ b.kind_name }}</span></div>
 <h1 class="h1" style="font-size:clamp(30px,4.4vw,52px)">{{ b.name }}</h1>
 <div class="tags"><span class="tag split">{{ b.label }}</span>{% if b.topic %}<span class="tag proc">{{ b.topic }}</span>{% endif %}</div>
+<div class="trackbox"><span class="label">Where it stands</span>{{ m.track(b.track) }}<span class="track-text">{{ b.track.text }} <a class="small" href="{{ root }}start/#s3">How a bill becomes a law</a></span></div>
 {% if b.title != b.name %}<p class="fine" style="font-size:14px;max-width:760px">Official title: {{ b.title }}</p>{% endif %}
 </div>
 

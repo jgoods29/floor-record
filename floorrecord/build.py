@@ -132,6 +132,68 @@ def bill_status(action):
     return "Introduced", False
 
 
+PASS_Q = re.compile(r"on passage|suspend the rules and (pass|agree)|agreeing to the (concurrent |joint )?resolution|concur", re.I)
+
+
+def bill_track(kind, rec, mvotes=(), scheduled=False):
+    """Where a measure stands, as steps for the chevron tracker. Worked out from the latest official
+    action and from the House votes on file, so it is a guide: the official record has the last word."""
+    a = (rec.get("latest_action") or "").lower()
+    house_first = kind.startswith("h")
+    first, second = ("House", "Senate") if house_first else ("Senate", "House")
+    if kind in ("hres", "sres"):
+        labels = ["Introduced", "Committee", first]
+    elif kind in ("hconres", "sconres"):
+        labels = ["Introduced", "Committee", first, second]
+    else:
+        labels = ["Introduced", "Committee", first, second, "President", "Law"]
+    house = ""
+    for v in sorted(mvotes, key=lambda v: (v["date"], v["roll"]), reverse=True):
+        q = v.get("question") or ""
+        if PASS_Q.search(q) and "amendment" not in q.lower() and "recommit" not in q.lower():
+            house = "passed" if (v.get("result") or "").lower().startswith(("passed", "agreed")) else "failed"
+            break
+    senate_passed = "passed senate" in a or "passed/agreed to in senate" in a
+    in_senate = senate_passed or any(w in a for w in ("received in the senate", "senate legislative calendar", "cloture",
+                                                       "in senate", "senator ")) or ("read twice" in a and house_first)
+    stop, note = None, ""
+    if "became public law" in a or "became private law" in a:
+        done = len(labels)
+    elif "vetoed" in a:
+        done, stop, note = 4, 4, "The President vetoed it."
+    elif "presented to president" in a or "signed by president" in a:
+        done = 4
+    elif house_first:
+        done = 4 if senate_passed and (house == "passed" or in_senate) else 3 if (house == "passed" or in_senate) else None
+    else:
+        done = 4 if house == "passed" else 3 if (mvotes or scheduled or senate_passed or "received in the house" in a or "held at the desk" in a) else None
+    if done is None:
+        sent_back = "motion to refer" in a and "agreed" in a
+        if house == "failed":
+            done, stop, note = 2, 2, "It did not get enough votes in the House."
+        elif (mvotes or scheduled or "calendar" in a or "reported" in a) and not sent_back:
+            done = 2
+        else:
+            done = 1
+    done = min(done, len(labels))
+    steps = []
+    for i, label in enumerate(labels):
+        state = "done" if i < done else "stop" if stop == i else "now" if i == done else "todo"
+        steps.append({"label": label, "state": state})
+    if done >= len(labels):
+        text = "Became law." if labels[-1] == "Law" else f"Passed the {labels[-1]}." if len(labels) == 3 else "Passed both the House and the Senate."
+    elif note:
+        text = note
+    else:
+        here = labels[done]
+        text = {"Committee": "With a committee, which decides whether it moves forward.",
+                "President": "Passed both chambers. Waiting on the President.",
+                "Law": "Signed. Becoming law."}.get(here, f"Waiting on a vote in the {here}.")
+        if done >= 3 and here in ("House", "Senate"):
+            text = f"Passed the {labels[2]}. Now it is the {here}'s turn."
+    return {"steps": steps, "text": text}
+
+
 PARTY_COLORS = {"R": "var(--rep)", "D": "var(--dem)", "I": "var(--ind)"}
 
 
@@ -195,11 +257,12 @@ def upcoming_weeks(raw, votes, bills, measures, topic_keys, today, congress_base
                 url, outside = f"{congress_base}{CONGRESS_PATH[kind]}/{number}", True
             else:
                 url, outside = it.get("doc", ""), True
+            track = measures[slug]["track"] if slug in measures else bill_track(slug.rsplit("-", 1)[0], rec, scheduled=True) if slug else None
             label, note = FLOOR_HOW[it.get("how", "other")]
             items.append({"name": title_case(title) or it.get("label", ""), "label": it.get("label", ""), "url": url,
                           "outside": outside, "how": it.get("how", "other"), "how_label": label, "how_note": note,
                           "topic": topic, "topic_key": topic_key(topic) if topic and topic_key(topic) in topic_keys else "",
-                          "doc": it.get("doc", "")})
+                          "doc": it.get("doc", ""), "track": track})
         items.sort(key=lambda i: ("rule", "fast", "other").index(i["how"]))
         weeks.append({"week": w["week"], "updated": w.get("updated", ""), "items": items, "done": done,
                       "current": start.isoformat() <= today})
@@ -337,6 +400,7 @@ def main():
         m["name"] = title_case(short_name(m["title"], m["label"]))
         m["topic"] = " · ".join(m["votes"][0]["topics"]) if m["votes"] else topic_name(m["rec"].get("policy_area", ""))
         m["kind_name"], m["kind_note"] = KIND_NAMES[m["kind"]]
+        m["track"] = bill_track(m["kind"], m["rec"], m["votes"])
         m["congress_url"] = (f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
                              f"{CONGRESS_PATH[m['kind']]}/{m['number']}")
 
@@ -387,6 +451,37 @@ def main():
         by_digit[z[0]][z] = where
     for digit, rows in by_digit.items():
         write_json(SITE / "zip" / f"{digit}.json", rows)
+    # ---- the big picture: everything on file, from far above
+    real = [v for v in votes if v["kind"] == "standard" and not v["info"]["routine"]]
+    won = sum(1 for v in real if (v.get("result") or "").lower().startswith(("passed", "agreed")))
+    split_n = sum(1 for v in real if v.get("split"))
+    close_n = sum(1 for v in real if any(k == "close" for k, _ in v["tags"]))
+    cast = sum(v["totals"]["yea"] + v["totals"]["nay"] + v["totals"].get("present", 0) for v in votes)
+    seats_n = cast + sum(v["totals"].get("nv", 0) for v in votes)
+    bills_by_topic = defaultdict(int)
+    for m in measures.values():
+        if not any(v["kind"] == "standard" and not v["info"]["routine"] for v in m["votes"]):
+            continue
+        for key in m["votes"][0]["topic_keys"]:
+            bills_by_topic[key] += 1
+    topic_rows = sorted(({"name": t["name"], "key": t["key"], "votes": t["real"], "bills": bills_by_topic.get(t["key"], 0)}
+                         for t in all_topics if t["real"]), key=lambda r: -r["votes"])
+    laws = [m for m in measures.values() if m["kind"] in ("hr", "s", "hjres", "sjres")]
+    def reached(m, n):
+        return sum(1 for st in m["track"]["steps"] if st["state"] == "done") >= n
+    funnel = [("Got a recorded House vote", len(laws)), ("Passed the House", sum(1 for m in laws if reached(m, 3) and (m["kind"].startswith("h") or reached(m, 4)))),
+              ("Passed both House and Senate", sum(1 for m in laws if reached(m, 4))), ("Became law", sum(1 for m in laws if reached(m, 6)))]
+    months = defaultdict(int)
+    for v in votes:
+        months[v["date"][:7]] += 1
+    month_rows = [{"key": k, "n": n, "label": date.fromisoformat(k + "-01").strftime("%b"), "year": k[:4]} for k, n in sorted(months.items())]
+    closest = min(real, key=lambda v: (v["margin"], -v["roll"])) if real else None
+    big = {"real": len(real), "routine": len(votes) - len(real), "won": won, "lost": len(real) - won,
+           "split": split_n, "together": len(real) - split_n, "close": close_n,
+           "turnout": 100.0 * cast / seats_n if seats_n else 0, "bills": len(measures), "laws": funnel[-1][1],
+           "topics": topic_rows, "topic_max": max([r["votes"] for r in topic_rows] or [1]),
+           "funnel": funnel, "months": month_rows, "month_max": max([r["n"] for r in month_rows] or [1]), "closest": closest}
+    render("big-picture/index.html", "overview.html", 1, section="big", big=big)
     render("why/index.html", "why.html", 1, section="why")
     render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, trending=trending, since=since, featured=featured, coming=coming,
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])

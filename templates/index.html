@@ -29,7 +29,7 @@
 <div class="center" style="gap:8px"><h2 class="h2" id="coming-h">Coming up for a vote</h2>
 <p class="muted" style="font-size:18px;max-width:620px">Bills the House may vote on {{ 'this week' if coming.current else 'next week' }}. The best time to speak up is before the vote.</p></div>
 <div class="card flush rows">{% for i in coming['items'][:4] %}<div class="uprow">
-<div class="stack" style="gap:4px"><a class="up-name" href="{{ i.url if i.outside else root ~ i.url }}"{% if i.outside %} rel="noopener"{% endif %}>{{ i.name }}</a><span class="small muted">{{ i.label }}</span></div>
+<div class="stack" style="gap:4px"><a class="up-name" href="{{ i.url if i.outside else root ~ i.url }}"{% if i.outside %} rel="noopener"{% endif %}>{{ i.name }}</a><span class="small muted">{{ i.label }}</span>{{ m.track(i.track, true) }}</div>
 <div class="tags">{% if i.topic %}<a class="tag soft tip" href="{{ root }}topics/{% if i.topic_key %}{{ i.topic_key }}/{% endif %}" data-tip="This bill is about {{ i.topic|lower }}. Select to see {{ 'every House vote on this topic' if i.topic_key else 'all topics' }}.">{{ i.topic }}</a>{% endif %}<a class="tag tip {{ 'status moved' if i.how == 'rule' else 'status' }}" href="{{ root }}upcoming/#how-{{ i.how }}" data-tip="{{ i.how_note }} Select to read more.">{{ i.how_label }}</a></div>
 </div>{% endfor %}</div>
 <p class="center small"><a href="{{ root }}upcoming/">See all {{ coming['items']|length }} and tell your representative what you think</a></p>

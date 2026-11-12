@@ -386,3 +386,51 @@ button.linkish.on { color: var(--purple-ink); }
 .howcard { scroll-margin-top: 240px; }
 .howcard:target { border-color: var(--purple); box-shadow: 0 0 0 3px #E9DFFD; }
 @media (hover: none) { .tag.tip::after { display: none; } }
+
+/* chevron progress tracker: dark = done, purple = where it is now, gray = still ahead */
+.track { list-style: none; margin: 0; padding: 0; display: flex; max-width: 760px; width: 100%; }
+.track li { flex: 1 1 0; min-width: 0; margin-left: -8px; padding: 10px 6px 10px 18px; text-align: center; font-size: 13px; font-weight: 700; white-space: nowrap; background: #E6EAF1; color: var(--muted);
+  clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%, 13px 50%); }
+.track li:first-child { margin-left: 0; padding-left: 10px; border-radius: 8px 0 0 8px; clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%); }
+.track li.done { background: var(--ink); color: #fff; }
+.track li.now { background: var(--purple); color: #fff; }
+.track li.stop { background: #5A6473; color: #fff; text-decoration: line-through; }
+.track li span { display: block; overflow: hidden; text-overflow: ellipsis; }
+.track.sm { max-width: 520px; margin-top: 8px; }
+.track.sm li { font-size: 11px; padding-top: 5px; padding-bottom: 5px; margin-left: -6px; }
+.trackbox { display: flex; flex-direction: column; gap: 10px; }
+.track-text { font-size: 16px; color: var(--text-2); }
+@media (max-width: 640px) { .track li { font-size: 11px; padding: 9px 2px 9px 14px; } .track.sm li { font-size: 10px; padding-left: 12px; } .track li, .track li:first-child { clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 0 100%, 9px 50%); } .track li:first-child { clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 0 100%); } }
+
+/* the big picture: one neutral hue (purple) for every chart; numbers stay in ink */
+.tiles { grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+a.card.tile { gap: 6px; text-decoration: none; }
+.bars { display: flex; flex-direction: column; gap: 2px; padding: 18px 22px; }
+.barrow { display: grid; grid-template-columns: minmax(120px, 230px) minmax(60px, 1fr) minmax(130px, auto); gap: 6px 16px; align-items: center; padding: 8px 6px; border-radius: 8px; text-decoration: none; color: var(--ink); font-size: 15px; }
+a.barrow:hover { background: #F7F3FF; }
+.barrow .bl { font-weight: 600; }
+.barrow .bt { height: 12px; background: var(--tint); border-radius: 4px; overflow: hidden; }
+.barrow .bt span { display: block; height: 100%; min-width: 3px; background: var(--purple); border-radius: 0 4px 4px 0; }
+.barrow .bv { color: var(--text-2); font-size: 14px; white-space: nowrap; }
+.barrow .bv strong { color: var(--ink); }
+.sharebar { display: flex; gap: 2px; height: 14px; }
+.sharebar span { background: var(--purple); border-radius: 4px; min-width: 3px; }
+.sharebar span.rest { background: #C9CFDA; }
+.sharekey { display: flex; flex-direction: column; gap: 4px; font-size: 15px; color: var(--text-2); }
+.sharekey span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--purple); margin-right: 8px; }
+.sharekey span + span::before { background: #C9CFDA; }
+.sharekey strong { color: var(--ink); }
+.cols-chart { display: flex; align-items: flex-end; gap: 2px; height: 240px; padding-top: 22px; }
+.colwrap { flex: 1 1 0; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; }
+.colwrap .colbar { width: min(100%, 24px); min-height: 2px; background: var(--purple); border-radius: 4px 4px 0 0; }
+.colwrap:hover .colbar { background: var(--purple-ink); }
+.colwrap .cn { font-size: 11px; color: var(--text-2); }
+.colwrap .cl { font-size: 11px; color: var(--muted); height: 30px; text-align: center; line-height: 1.25; }
+@media (max-width: 640px) { .barrow { grid-template-columns: 1fr auto; } .barrow .bt { grid-column: 1 / -1; order: 3; } .colwrap .cn { display: none; } .cols-chart { height: 180px; } .colwrap .cl { font-size: 9px; } }
+
+.track li { flex: 1 1 auto; }
+.track li span { overflow: visible; }
+.track.sm { max-width: 560px; }
+.colwrap .barbox { flex: 1 1 0; min-height: 0; width: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; }
+.colwrap .barbox .colbar { flex: none; }
+@media (max-width: 640px) { .track li { font-size: 10.5px; padding-left: 12px; padding-right: 0; margin-left: -6px; } .track.sm li { font-size: 9.5px; } }

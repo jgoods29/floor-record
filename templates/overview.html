@@ -1,0 +1,52 @@
+{% extends "base.html" %}{% import "_m.html" as m %}
+{% block title %}The big picture · {{ site.site_name }}{% endblock %}
+{% macro share(a, b, la, lb) %}{% set tot = (a + b) or 1 %}<div class="sharebar" role="img" aria-label="{{ a }} {{ la }}, {{ b }} {{ lb }}"><span style="flex:{{ a }}" title="{{ a }} {{ la }}"></span><span class="rest" style="flex:{{ b }}" title="{{ b }} {{ lb }}"></span></div>
+<div class="sharekey"><span><strong>{{ a|comma }}</strong> {{ la }} ({{ (100 * a / tot)|round|int }}%)</span><span><strong>{{ b|comma }}</strong> {{ lb }} ({{ (100 * b / tot)|round|int }}%)</span></div>{% endmacro %}
+{% block main %}
+<div class="wrap page start" style="gap:64px">
+<div class="stack" style="max-width:780px">
+<span class="label purple">The big picture</span>
+<h1 class="h1">Everything, from 30,000 feet.</h1>
+<p class="lede">One page on what the U.S. House has been doing: what it votes on, how those votes go, and how far the bills get.</p>
+<p class="note">This covers every recorded House vote in {{ span }}. "Bills" here means bills that got a recorded vote. Thousands more are written and never reach one.</p>
+</div>
+
+<section class="grid tiles" aria-label="Totals">
+<a class="card tile" href="{{ root }}votes/"><span class="bignum">{{ nvotes|comma }}</span><span class="strong">recorded votes</span><span class="small muted">{{ big.real|comma }} on real questions, {{ big.routine|comma }} routine steps</span></a>
+<a class="card tile" href="{{ root }}bills/"><span class="bignum">{{ big.bills|comma }}</span><span class="strong">bills and resolutions voted on</span><span class="small muted">each with its own page</span></a>
+<a class="card tile" href="#funnel-h"><span class="bignum">{{ big.laws|comma }}</span><span class="strong">became law</span><span class="small muted">of the bills the House voted on</span></a>
+<a class="card tile" href="{{ root }}members/"><span class="bignum">{{ '%.0f'|format(big.turnout) }}%</span><span class="strong">average turnout</span><span class="small muted">how often members showed up to vote</span></a>
+</section>
+
+<section class="stack" aria-labelledby="topics-h">
+<div class="stack" style="gap:8px"><h2 class="h2" id="topics-h">What the House votes on</h2>
+<p class="plain">Each bar is a topic. The longer the bar, the more votes it has had. Select a topic to see every vote.</p></div>
+<div class="card bars">{% for t in big.topics %}<a class="barrow" href="{{ root }}topics/{{ t.key }}/" title="{{ t.name }}: {{ t.votes }} votes on {{ t.bills }} bills">
+<span class="bl">{{ t.name }}</span><span class="bt"><span style="width:{{ '%.1f'|format(100 * t.votes / big.topic_max) }}%"></span></span><span class="bv"><strong>{{ t.votes }}</strong> {{ 'vote' if t.votes == 1 else 'votes' }} · {{ t.bills }} {{ 'bill' if t.bills == 1 else 'bills' }}</span></a>{% endfor %}</div>
+<p class="small muted">Routine procedural votes are left out. A bill can count under more than one topic.</p>
+</section>
+
+<section class="stack" aria-labelledby="how-h">
+<div class="stack" style="gap:8px"><h2 class="h2" id="how-h">How the voting has gone</h2>
+<p class="plain">Out of {{ big.real|comma }} votes on real questions:</p></div>
+<div class="grid">
+<div class="card stack" style="gap:12px"><span class="h3">Did it pass?</span>{{ share(big.won, big.lost, 'passed', 'failed') }}<span class="small muted">Most things that reach a vote pass, because leaders usually do not schedule a vote they expect to lose.</span></div>
+<div class="card stack" style="gap:12px"><span class="h3">Did the parties agree?</span>{{ share(big.together, big.split, 'with most of both parties on the same side', 'with the parties on opposite sides') }}<span class="small muted">"Opposite sides" means most Republicans voted one way and most Democrats voted the other.</span></div>
+<div class="card stack" style="gap:12px"><span class="h3">Was it close?</span>{{ share(big.close, big.real - big.close, 'close votes', 'not close') }}{% if big.closest %}<span class="small muted">The closest: <a href="{{ root }}votes/{{ big.closest.id }}/">{{ big.closest.info.name }}</a>, {{ big.closest.totals.yea }} to {{ big.closest.totals.nay }}.</span>{% endif %}</div>
+</div>
+</section>
+
+<section class="stack" aria-labelledby="funnel-h">
+<div class="stack" style="gap:8px"><h2 class="h2" id="funnel-h">How far the bills got</h2>
+<p class="plain">Passing the House is only one step. Here is how many of the bills the House voted on made it through each one.</p></div>
+<div class="card bars">{% for label, n in big.funnel %}<div class="barrow" title="{{ label }}: {{ n }}"><span class="bl">{{ label }}</span><span class="bt"><span style="width:{{ '%.1f'|format(100 * n / (big.funnel[0][1] or 1)) }}%"></span></span><span class="bv"><strong>{{ n|comma }}</strong> {{ 'bill' if n == 1 else 'bills' }}</span></div>{% endfor %}</div>
+<p class="small muted">Counts only measures that can become law, not resolutions that speak for the House alone. Worked out from each bill's latest official action. <a href="{{ root }}start/#s3">How a bill becomes a law</a></p>
+</section>
+
+<section class="stack" aria-labelledby="months-h">
+<div class="stack" style="gap:8px"><h2 class="h2" id="months-h">When the House has been busy</h2>
+<p class="plain">Recorded votes each month. Quiet months usually mean the House was out of session.</p></div>
+<div class="card"><div class="cols-chart" role="img" aria-label="Votes per month">{% for r in big.months %}<div class="colwrap" title="{{ r.label }} {{ r.year }}: {{ r.n }} votes"><span class="barbox"><span class="cn">{{ r.n }}</span><span class="colbar" style="height:{{ '%.1f'|format(88 * r.n / big.month_max) }}%"></span></span><span class="cl">{{ r.label }}{% if loop.first or r.label == 'Jan' %}<br>{{ r.year }}{% endif %}</span></div>{% endfor %}</div></div>
+</section>
+</div>
+{% endblock %}

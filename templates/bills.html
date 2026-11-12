@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% import "_m.html" as m %}
 {% block title %}Bills and resolutions · {{ site.site_name }}{% endblock %}
 {% block main %}
 <div class="wrap page">
@@ -11,6 +11,6 @@
 </div>
 <div class="card flush scroll"><table>
 <thead><tr><th>Bill</th><th>Number</th><th>Votes</th><th>Latest vote</th></tr></thead>
-<tbody id="bill-rows">{% for b in bills %}<tr><td><a class="strong" href="{{ root }}bills/{{ b.slug }}/">{{ b.name }}</a>{% if b.topic %}<br><span class="small muted">{{ b.topic }}</span>{% endif %}</td><td class="small muted" style="white-space:nowrap">{{ b.label }}</td><td>{{ b.votes|length }}</td><td class="small muted" style="white-space:nowrap">{{ b.votes[0].date|nicedate }}</td></tr>{% endfor %}</tbody></table></div>
+<tbody id="bill-rows">{% for b in bills %}<tr><td><a class="strong" href="{{ root }}bills/{{ b.slug }}/">{{ b.name }}</a>{% if b.topic %}<br><span class="small muted">{{ b.topic }}</span>{% endif %}{{ m.track(b.track, true) }}</td><td class="small muted" style="white-space:nowrap">{{ b.label }}</td><td>{{ b.votes|length }}</td><td class="small muted" style="white-space:nowrap">{{ b.votes[0].date|nicedate }}</td></tr>{% endfor %}</tbody></table></div>
 </div>
 {% endblock %}
