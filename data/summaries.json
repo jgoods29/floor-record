@@ -1,8 +1,23 @@
 {
+ "hconres-108": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This concurrent resolution would direct the President to remove U.S. Armed Forces from hostilities in Lebanon within seven days of its adoption.",
+  "short": "The resolution directs the President to withdraw U.S. Armed Forces from hostilities in Lebanon within seven days after the resolution is adopted. It states that it does not prevent or limit security cooperation with the Lebanese Armed Forces. It also states that it does not limit the protection of diplomatic facilities."
+ },
  "hconres-113": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This concurrent resolution would set the federal government's budget framework for fiscal year 2027 and projected spending, revenue, and debt levels for fiscal years 2028 through 2036.",
   "short": "The resolution sets recommended levels for federal revenues, spending, deficits, and debt for fiscal years 2027 through 2036, along with major spending categories. It directs four House committees (Agriculture, Armed Services, Intelligence, and Administration) to submit recommendations for legislation that would increase the deficit by specified amounts, with reports due to the House Budget Committee by September 11, 2026. The resolution also creates a reserve fund to adjust committee allocations for that reconciliation legislation and sets out budget enforcement rules, including treatment of certain agency administrative expenses and additional adjustments for items such as disaster relief and wildfire suppression."
+ },
+ "hconres-84": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This concurrent resolution would direct the President to remove U.S. Armed Forces from Lebanon within seven days of the resolution's adoption.",
+  "short": "The measure is a concurrent resolution under section 5(c) of the War Powers Resolution. It directs the President to remove United States Armed Forces from Lebanon. The removal would be required within seven days of the resolution being adopted."
+ },
+ "hconres-86": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This concurrent resolution would direct the President to remove U.S. Armed Forces from hostilities against Iran unless Congress has authorized such use.",
+  "short": "The resolution directs the President to remove U.S. Armed Forces from hostilities against Iran, unless a declaration of war or a congressional authorization for use of military force against Iran is in place. Forces needed to defend the United States, an ally, or a partner from imminent attack are not covered, provided the President complies with a specified War Powers Resolution provision. That provision generally requires removal within 60 days after the President notifies or is required to notify Congress of such involvement, unless Congress authorizes the use."
  },
  "hconres-89": {
   "model": "claude-haiku-5-5",
@@ -39,10 +54,30 @@
   "one_sentence": "The PROOF Act would require states to give the Department of Justice information it needs to investigate or prosecute alleged fraud in certain federally funded programs.",
   "short": "The bill covers programs including Medicaid, the Supplemental Nutrition Assistance Program (SNAP), Temporary Assistance for Needy Families (TANF), certain coronavirus-related federal payments and grants to states, and other programs the Department of Justice identifies as vulnerable to fraud. Federal agencies could use the information obtained only for law enforcement purposes related to fraud, and not for unrelated administrative or commercial purposes. The Department of Justice would have to report annually to Congress on the number of information requests made, the programs involved, and the number of fraud investigations started and convictions obtained using that information."
  },
+ "hr-1041": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would bar the Department of Veterans Affairs from sending a veteran's or beneficiary's personal information to the national firearms background check system merely because a fiduciary manages their benefits.",
+  "short": "The bill prohibits the Department of Veterans Affairs from transmitting personally identifying information about a veteran or beneficiary to the National Instant Criminal Background Check System (NICS) used by licensed firearms importers and dealers. The prohibition applies solely because the veteran or beneficiary has an appointed fiduciary to manage their benefits. The bill makes an exception where a judicial authority has issued an order or finding that the person is a danger to themselves or others."
+ },
  "hr-1118": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would let General Services Administration multiple award schedule contracts and orders be evaluated on best value instead of lowest overall cost, when the GSA finds that serves the government's interests.",
   "short": "The bill concerns the General Services Administration's multiple award schedule program, which gives federal agencies a simplified way to buy commercial supplies and services. Under the bill, contracts and orders could be judged on best value, meaning non-cost factors can be considered alongside price, rather than only on lowest overall cost. The GSA would make this choice when it determines that it is in the best interests of the federal government."
+ },
+ "hr-1181": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would bar payment card networks from using merchant codes that separately identify firearms retailers from general-merchandise or sporting-goods retailers, with the Justice Department enforcing it.",
+  "short": "The bill prohibits payment card networks from using merchant category codes that distinguish firearms retailers from general-merchandise retailers or sporting-goods retailers. The Department of Justice would be responsible for enforcing the bill. The Department would also report annually on the investigations and cases that result from it."
+ },
+ "hr-1329": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would authorize a Smithsonian American Women's History Museum on a designated National Mall site and dedicate it to the history of biological women in the United States.",
+  "short": "The bill authorizes the Smithsonian American Women's History Museum to be built within the National Mall reserve, designating the undeveloped South Monument site across from the National Museum of African American History and Culture, though the President may pick another site within 180 days of enactment. Administrative control of the site would transfer to the Smithsonian Institution, and any building would need approval from specified federal bodies such as the Commission of Fine Arts. The museum would focus on the history, achievements, and lived experiences of biological women, and it could not depict any biological male as female. Its advisory council would be required to seek guidance from a broad range of sources reflecting diverse political viewpoints and experiences of women."
+ },
+ "hr-139": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would make daylight saving time the permanent standard time nationwide, ending the twice-yearly clock changes.",
+  "short": "The Sunshine Protection Act of 2025 would make daylight saving time the new permanent standard time, so clocks would no longer be set back and forward each year. States that have areas exempt from daylight saving time could choose standard time for those areas instead."
  },
  "hr-1501": {
   "model": "claude-haiku-5-5",
@@ -54,10 +89,30 @@
   "one_sentence": "The bill would extend through fiscal year 2029 a program in which the Environmental Protection Agency provides grants, rebates, or loans to help replace or upgrade diesel engines with pollution control technology.",
   "short": "The Diesel Emissions Reduction Act of 2025 would reauthorize a diesel emissions reduction program through fiscal year 2029. Under the program, the Environmental Protection Agency provides grants, rebates, or loans. The funding can be used for replacing diesel engines or retrofitting them with pollution control technologies."
  },
+ "hr-2478": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would let mutual fund companies and their transfer agents temporarily delay certain redemptions when they reasonably believe an older or impaired adult is being financially exploited.",
+  "short": "The bill sets out procedures for delaying the redemption of certain securities issued by open-end investment companies, such as mutual funds, if the company or its transfer agent reasonably believes the transaction involves financial exploitation. It covers individuals age 65 or older, and adults age 18 or older who cannot protect their own interests due to a mental or physical impairment. The initial delay may last up to 15 days, with an additional 10 days after an exploitation determination, and a state regulator, administrative agency, or court may extend the period. During any delay, the amounts involved must be held in a demand deposit account, and the company must notify the Securities and Exchange Commission if it uses these procedures. The bill also directs the SEC to make recommendations to address the financial exploitation of these adults."
+ },
+ "hr-2860": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would reauthorize for seven years the Northwest Straits Marine Conservation Initiative and its advisory commission, which work to protect and restore marine waters and species in the Northwest Straits region.",
+  "short": "The bill revises and renews for seven years the Northwest Straits Marine Conservation Initiative and its Northwest Straits Advisory Commission. These programs focus on protecting and restoring marine waters, habitats, and species in the waters of the Strait of Juan de Fuca and Puget Sound, from the Canadian border to the south end of Snohomish County in Washington state. The commission would support local marine resources committees, develop restoration and protection recommendations based on science, and serve as a public forum for informal discussions about the region's marine ecosystem."
+ },
+ "hr-2913": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would provide assistance to Ukraine and certain European countries and impose penalties on Russia and certain foreign persons in connection with the war between Russia and Ukraine.",
+  "short": "The bill would create a reconstruction trust fund for Ukraine, direct the U.S. International Development Finance Corporation to prioritize support for Ukraine, and extend certain defense and security assistance authorities through 2027 or 2028. It would also require the State Department to help build the militaries and border forces of Baltic countries. If the President determines that Russia is waging a war of aggression against Ukraine, refusing to negotiate in good faith, or violating a peace agreement, the bill requires sanctions on certain Russian officials, companies, and financial institutions. It would also raise the duty rate on imports from Russia to at least 500 percent of their value."
+ },
  "hr-2978": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The GUARD Act would let state, local, and tribal law enforcement use certain federal grant funds to investigate financial fraud, including scams targeting older adults, and would require federal reporting on these crimes.",
   "short": "The bill allows state, local, and tribal law enforcement agencies and certain federal grant recipients to use grant funds to investigate general financial fraud, elder financial fraud, and \"pig butchering,\" a scam in which victims are gradually pressured into sending increasing amounts of money, often in cryptocurrency, into a fake investment. It also allows federal law enforcement to help these agencies and fusion centers use blockchain tracing tools. Finally, it requires the Financial Crimes Enforcement Network (FinCEN) to report on efforts to combat these scams, including any legislative recommendations, and on current conditions and trends in these crimes across the United States."
+ },
+ "hr-3106": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Department of Homeland Security to run an exercise simulating a terrorist attack during extreme cold weather and report its findings to Congress.",
+  "short": "The bill directs the Department of Homeland Security to develop and conduct an exercise to prepare for a terrorist attack during an extreme cold weather event, such as one caused by a polar vortex. The exercise scenario must involve an attack that causes cascading effects on critical infrastructure, and it must examine how public and private entities can coordinate to reduce those effects and strengthen community resilience. Within 60 days after the exercise, the department must submit an after-action report to Congress with initial findings, plans for applying lessons learned, and any proposed legislative changes."
  },
  "hr-3276": {
   "model": "claude-haiku-5-5",
@@ -94,10 +149,30 @@
   "one_sentence": "This bill would impose sanctions, tariffs, and investment restrictions related to Russia, extend an Iran sanctions law through 2031, and expand a teacher expense tax deduction to early childhood educators.",
   "short": "The bill requires the President to impose visa and property-blocking sanctions on specified persons, including the Russian president and certain Russian military commanders. It also requires higher tariffs of up to 100% on goods from countries that are among the five largest importers of Russian crude oil or natural gas and that knowingly make new purchases of those products after enactment. The bill further prohibits certain exports of U.S. energy products to Russia, new U.S. investments in Russia, purchases of Russian sovereign debt, and trading of securities of Russian government-owned or -affiliated entities on U.S. exchanges. Separately, it extends the Iran Sanctions Act of 1996 through 2031 and makes early childhood educators who serve children under age 6 eligible for the federal educator expense tax deduction."
  },
+ "hr-5362": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would name the Department of Veterans Affairs multispecialty clinic in Marietta, Georgia, after Colonel Michael H. Boyce.",
+  "short": "The bill designates the VA multispecialty clinic in Marietta, Georgia, as the Colonel Michael H. Boyce Department of Veterans Affairs Multispecialty Clinic. It also allows the shorter name Colonel Michael H. Boyce VA Clinic to be used. The provisions concern only the clinic's official designation and do not describe other changes to its services or operations."
+ },
+ "hr-5408": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would set deadlines for employers and newly recognized unions to negotiate a first labor contract, with mediation and, if needed, binding arbitration to finish the agreement.",
+  "short": "After a newly recognized or certified union requests bargaining, the employer must begin talks within 10 days, and both sides must make every reasonable effort to reach and sign a contract. If no agreement is reached after 90 days, either party may request mediation from the Federal Mediation and Conciliation Service, and if mediation fails within 30 days, an arbitration panel would decide the terms, which bind the parties for two years. Employers must keep current wages and conditions during negotiations, and the Government Accountability Office would report to Congress on how long first contracts typically take."
+ },
+ "hr-6047": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would expand several veterans and survivor benefit programs, including a new monthly allowance for certain disabled veterans, higher survivor compensation, and broader eligibility for VA home loans.",
+  "short": "The bill creates a supplemental monthly allowance of $833.33 for veterans already receiving an aid and attendance allowance due to service-connected disabilities or traumatic brain injury. It increases Dependency and Indemnity Compensation, a monthly payment to eligible survivors, by an additional 1% at the next cost-of-living adjustment and an additional 0.5% at the following one. It also widens eligibility for VA home loans to some reserve and National Guard members by counting annual training duty as qualifying active duty, and extends certain loan fee rates and pension limits through September 30, 2036, while raising fees on some refinancing loans and loan assumptions."
+ },
  "hr-6500": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This act would fund federal agencies at FY2026 levels through December 11, 2026, and extend a range of expiring agriculture, trade, cybersecurity, transportation, and veterans programs.",
   "short": "Division A is a continuing resolution that keeps most federal agencies funded at FY2026 levels through December 11, 2026, or until full FY2027 appropriations are enacted, with several specified exceptions such as WIC, Disaster Relief Fund, and wildfire suppression. Division B extends expiring authorities including grain inspection, certain trade preferences for sub-Saharan African countries, Haiti apparel rules, customs user fees, and cybersecurity information-sharing programs. Division C extends federal surface transportation programs and trust fund spending authority through December 11, 2026. Division D extends a series of Department of Veterans Affairs health care, benefits, and housing programs, most through December 11, 2026."
+ },
+ "hr-6644": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The 21st Century ROAD to Housing Act would establish and modify federal housing programs covering counseling, construction, mortgages, manufactured and modular homes, appraisers, and rental assistance.",
+  "short": "The act directs HUD to review housing counseling organizations and to support permitting for point-access block buildings, and it exempts certain rural infill housing projects from environmental review. It creates or expands several programs, including a pilot for smaller mortgages, grants for local housing plans, and a permanent Rental Assistance Demonstration program with a higher conversion limit. It also removes the permanent chassis requirement for manufactured homes, expands appraiser eligibility, and modifies the HOME program's income limits; the official summary is cut off before covering all sections."
  },
  "hr-6955": {
   "model": "claude-haiku-5-5",
@@ -109,10 +184,70 @@
   "one_sentence": "The bill would generally bar members of Congress and their spouses and dependent children from buying stocks, and require public notice before selling them.",
   "short": "Members of Congress and their spouses and dependent children could not purchase covered investments, such as securities issued by publicly traded companies, though some holdings such as widely held funds and certain trust investments are exempt. Before selling a covered investment, a member would have to file public notice with the House Clerk or Senate Secretary between 7 and 14 days in advance, and the notice would be published online. Violations would carry a fee equal to the greater of $2,000 or 10% of the transaction value plus any net gain, and could require selling the investment, with the fee barred from being paid with campaign funds or official allowances."
  },
+ "hr-7128": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would extend the Terrorism Risk Insurance Program through 2034, a federal program that shares some losses insurers pay for terrorism-related property and casualty coverage.",
+  "short": "The bill reauthorizes the Terrorism Risk Insurance Program through 2034. The program covers a portion of the losses private insurers incur for property and casualty insurance coverage for terrorism risk. Beginning in 2029, the bill increases the amount of insurance losses required before an event can be certified under the program. It also gives the Department of the Treasury statutory authority for public notification requirements about how it decides whether an act qualifies as an act of terrorism under the program."
+ },
+ "hr-7401": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require Small Business Administration employees who handle SBA loans to certify in writing that they have no conflict of interest, disclose any later conflicts, and understand the applicable rules.",
+  "short": "The bill requires Small Business Administration employees who take part in originating, reviewing, or approving SBA loans to certify in writing, before they take part, that they have no conflict of interest with respect to the loan. Employees would also have to disclose any conflict that arises after certifying and confirm they understand the conflict-of-interest requirements that apply to them. Federal employees already must disclose financial conflicts and generally step aside from such matters, and the SBA would be required to issue regulations to carry out the bill."
+ },
+ "hr-7618": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill extends three National Park Service battlefield preservation grant programs through fiscal year 2036 and requires studies of additional historic sites for possible preservation.",
+  "short": "The bill extends three National Park Service grant programs that fund the acquisition, interpretation modernization, and restoration of certain U.S. battlefields through fiscal year 2036. Under current law, these grants are authorized only through fiscal year 2028. The bill also requires the National Park Service to prepare or certify studies of locations tied to significant events in the French and Indian War (1754-1763) and the Mexican-American War (1846-1848) for potential preservation."
+ },
+ "hr-7726": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require federal officials to impose additional sanctions, including disqualification from child care grant funds, on states that substantially fail to comply with the Child Care and Development Block Grant program.",
+  "short": "The measure concerns the Child Care and Development Block Grant, which gives states money to support child care for low-income working families. Under the bill, if the Administration for Children and Families finds that a state has failed to comply substantially with program requirements, the agency must impose additional sanctions. One listed sanction is disqualifying the state from receiving program funds. Under current law, these actions are optional rather than required."
+ },
+ "hr-7757": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The KIDS Act would require certain online platforms to add safeguards for minors, including age-based access limits, parental controls, and disclosures from AI chatbots.",
+  "short": "Platforms where more than one-third of content is sexual material harmful to minors would need technology to identify minors and block their access. Social media platforms would have to apply default settings limiting compulsive features and contact from other users, give parents tools to manage a minor's privacy and account settings, and bar ephemeral messaging for minors. Online video game platforms would need to offer parental tools to limit minors' communication and purchases, and AI chatbots would have to tell minor users they are talking to an AI and provide suicide and crisis hotline information. The Federal Trade Commission and state attorneys general would enforce the requirements, and the bill calls for studies and reports on social media's effects on minors."
+ },
+ "hr-7892": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Education Department to set up a fraud detection system for FAFSA applications and require colleges to verify flagged applicants' identities before disbursing federal aid.",
+  "short": "Starting October 1, 2026, the Department of Education would use an identity fraud detection system to review each FAFSA application and flag those showing reasonable suspicion of identity fraud. Flagged applicants and the colleges listed on their applications would be notified that additional identity verification is required. Colleges could not disburse federal student aid to a flagged applicant until the college verifies that person's identity in person or by live video, and the Department would set guidelines for these procedures."
+ },
  "hr-8278": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill would require eight federal financial agencies to assess their supervisory technology, procurement practices, and data sharing, and report to Congress every five years.",
   "short": "The bill requires eight federal financial regulators, including the Federal Reserve Board, the Consumer Financial Protection Bureau, and the FDIC, to assess the technology they use to conduct real-time supervisory reviews of the entities they oversee. The agencies must also review the rules and protocols they follow when buying or developing new technology systems and identify ways to streamline those procedures. Every five years, each agency must report to specified congressional committees on topics including its supervisory technology and planned upgrades, procurement practices, technology development workforce, and data sharing procedures."
+ },
+ "hr-8312": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would give the Treasury Department's Bureau of the Fiscal Service new fraud-prevention duties and create an inspector general office within Treasury to audit and investigate certain federal spending.",
+  "short": "The bill assigns financial integrity, improper payment prevention, and spending transparency functions to the Bureau of the Fiscal Service within the Department of the Treasury. These include running the Do Not Pay system, which lets agencies verify recipient eligibility before payments, and offering a voluntary program for sharing data to detect fraud. It also creates an Office of the Inspector General for Fraud, Accountability, and Recovery within Treasury, which would audit and investigate certain federal funds, including coronavirus response funds, awards of $50,000 or more, and emergency disaster and economic recovery spending. The office would refer suspected federal crimes to the Department of Justice and support prosecutors."
+ },
+ "hr-8428": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require federal employees who oversee federal programs or grants to take antifraud and improper payment prevention training every two years, and make it available to state, local, and tribal governments.",
+  "short": "The bill directs the Office of Management and Budget and the Treasury Department to create and maintain a mandatory antifraud and improper payment prevention training program. Federal employees in oversight, financial, auditing, and grants roles would need to complete it every two years, and the Office of Personnel Management would certify completion. Treasury would also offer the program and technical assistance to state, local, and tribal governments, and agencies could make completion a condition of a federal grant. The curriculum would cover identifying fraud risks, using government-wide data sharing and payee validation tools, and reporting suspected fraud, and Treasury and OMB would report to Congress within two years of enactment."
+ },
+ "hr-8464": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require federal agencies and the Treasury Department to pause, condition, or review payments that show elevated fraud or improper-payment risk before they are certified.",
+  "short": "The bill directs federal agencies to take temporary corrective action on payment voucher requests when there is sufficient reason to believe they carry elevated fraud or improper-payment risk. Such actions must rest on documented fraud-risk indicators, apply only to the risky portion of the payments, and last no longer than needed to verify eligibility or accuracy. The Treasury Department must return vouchers to agencies for corrective action when its Do Not Pay system flags elevated risk, and federal officers and employees are shielded from personal liability for good-faith actions taken under the bill."
+ },
+ "hr-8466": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The TRUE Accountability Act would require federal agencies to create and carry out plans to prevent fraud and improper payments in emergency spending, such as disaster or pandemic funding.",
+  "short": "The bill directs the Office of Management and Budget to issue guidance, reviewed every three years, for agencies to build these plans, using existing Government Accountability Office frameworks. Agencies would submit their plans within one year of enactment, covering risk evaluation, strategies to reduce risk before money is spent, and payment monitoring to catch improper or fraudulent payments. Plans must be revised and resubmitted at least every three years. The Office of Management and Budget would send the plans to Congress each year, along with information on implementation and legislative recommendations for emergency appropriations."
+ },
+ "hr-8595": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would provide funding for U.S. national security, State Department operations, and related foreign affairs programs for fiscal year 2027, which ends September 30, 2027.",
+  "short": "The bill provides fiscal year 2027 appropriations to the State Department for foreign affairs administration, international organizations, and international commissions. It also funds related programs such as the Asia Foundation, the East-West Center, the Eisenhower Exchange Fellowship Program, and the National Endowment for Democracy, as well as commissions including the U.S.-China Economic and Security Review Commission and the Commission on Security and Cooperation in Europe. Additional funding covers international security assistance, bilateral economic assistance, the Peace Corps, the Millennium Challenge Corporation, and export and investment agencies such as the Export-Import Bank. The bill also sets requirements and restrictions on how the funds may be used."
+ },
+ "hr-8646": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would provide fiscal year 2027 funding for the Department of Agriculture, the Food and Drug Administration, and several related agencies.",
+  "short": "The bill gives appropriations to Department of Agriculture programs, including research, statistics, animal and plant health, food safety, farm production and conservation, crop insurance, and rural development. It also funds nutrition programs such as school meals, WIC, and SNAP, along with international food aid programs. Additional funding goes to the Food and Drug Administration, the Commodity Futures Trading Commission, and the Farm Credit Administration. The bill also sets spending requirements and restrictions and includes provisions on animal food regulation, liability for pet-related donations, and construction of the Arkansas Valley Conduit."
  },
  "hr-8800": {
   "model": "claude-haiku-5-5",
@@ -134,10 +269,20 @@
   "one_sentence": "The bill would direct the Transportation Security Administration to run a pilot program with alternative security screening for airline passengers traveling with children aged 12 and under.",
   "short": "The bill directs the Transportation Security Administration (TSA) to establish a pilot program testing alternative security screening for passengers traveling with children who are 12 years old or younger. Under the bill, TSA would set up alternative screening lanes and approaches intended to make travel easier for these passengers. The pilot would run at a minimum of five airports, with priority given to airports that have a high volume of passengers traveling with children."
  },
+ "hr-915": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would allow the Small Business Administration to fund business software and cloud computing services, including AI-based tools, through its 7(a) loan program.",
+  "short": "The measure authorizes the Small Business Administration to finance, under its 7(a) loan program, business software or cloud computing services. Covered tools include those used for business operations, delivering products or services, payroll, human resources, sales and billing, and accounting or inventory tracking. The eligible services may include tools that use artificial intelligence. The 7(a) program is the SBA's main business loan program, which guarantees loans made by participating lenders to small businesses that cannot otherwise obtain reasonable credit terms."
+ },
  "hr-9237": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The Take Care of America's Veterans Act would change veterans' benefits, health care, education, counseling, VA staffing and infrastructure, and community care programs.",
   "short": "The bill would change several veterans' compensation programs, including allowing some retirees with combat-related disabilities to receive both disability pay and military retired pay, and it would raise dependency and indemnity compensation. It would also adjust education and training benefits, such as housing allowances for apprenticeships and information about VA benefits during transition counseling. Health provisions would expand family caregiver support, extend a suicide prevention grant program, and set a standardized screening process for certain mental health care admissions. The bill further revises VA disability ratings for sleep apnea and tinnitus and addresses VA personnel, hiring, and the Veterans Community Care Program."
+ },
+ "hr-9238": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill extends certain foreign intelligence surveillance authorities under Title VII of the Foreign Intelligence Surveillance Act until July 2, 2026.",
+  "short": "The bill extends the authorities of Title VII of the Foreign Intelligence Surveillance Act (FISA) until July 2, 2026. Title VII generally covers methods of collecting foreign intelligence information directed at targets outside the United States. It includes Section 702, which concerns acquiring communications of non-U.S. persons believed to be outside the United States. Information about U.S. persons may be incidentally collected under this authority and later searched under certain circumstances."
  },
  "hr-9340": {
   "model": "claude-haiku-5-5",
@@ -174,10 +319,45 @@
   "one_sentence": "This bill would fund most federal agencies at FY2026 levels through December 4, 2026, or until full FY2027 appropriations are enacted, preventing a shutdown on October 1, 2026.",
   "short": "The bill is a continuing resolution that keeps most federal programs funded at fiscal year 2026 levels, with exceptions for items such as WIC, Small Business Administration loans, the FEMA Disaster Relief Fund, the Indian Health Service, and wildfire suppression. It also extends several expiring programs and authorities, including the National Flood Insurance Program, the TANF program, the livestock mandatory price reporting program, and a freeze on cost-of-living adjustments for Members of Congress. The bill would apply until the earlier of December 4, 2026, or enactment of the relevant FY2027 appropriations act."
  },
+ "hres-1140": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the terms for House floor consideration of H.R. 5408, a bill that would speed up the time it takes for workers and employers to reach a contract under the National Labor Relations Act.",
+  "short": "The measure is a House resolution that provides for consideration of H.R. 5408. According to the official title, that bill concerns accelerating workplace time-to-contract under the National Labor Relations Act. The available summary does not describe the specific provisions of H.R. 5408 itself."
+ },
  "hres-1247": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This resolution sets the terms for the House to consider H.R. 2102, a bill about veterans' disability pay and retired pay for certain disabled retirees.",
   "short": "The measure is a House resolution that provides for consideration of H.R. 2102. The bill itself would amend federal law on military retirement and veterans' benefits so that certain retirees with combat-related disabilities could receive both veterans' disability compensation and retired pay. The official materials provided do not describe the bill's specific provisions in further detail."
+ },
+ "hres-1333": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This House resolution sets terms for floor consideration of four bills covering agriculture appropriations, child care funding, federal student aid fraud checks, and welfare block grant rules.",
+  "short": "The resolution provides for House consideration of four separate bills. H.R. 8646 would make appropriations for Agriculture, Rural Development, Food and Drug Administration, and related agencies for fiscal year 2027. H.R. 7726 would amend the Child Care and Development Block Grant Act to withhold funds from noncompliant states, and H.R. 7892 would require the Education Secretary to use an identity fraud detection system to review each FAFSA. H.R. 8872 would amend the Temporary Assistance for Needy Families program to target funds to low-income families, add program integrity safeguards, require measurement of improper payments, and set goals for reducing fraud and improper payments."
+ },
+ "hres-1335": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This House resolution condemns people who try to defraud the federal government and states the House's view that fraud-prevention reforms and pre-payment eligibility checks would help taxpayers.",
+  "short": "The resolution condemns actors who seek to defraud the U.S. government. It states the House of Representatives' belief that legislative and policy reforms to prevent fraud and improper payments would improve the government's finances and benefit taxpayers. It also expresses the view that federal program eligibility and spending should be verified before payments are issued. The resolution is a statement of opinion and does not itself create or change any program or law."
+ },
+ "hres-1336": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution lets the House consider certain Rules Committee reports on the same day they are presented, without the normally required two-thirds vote, through June 5, 2026.",
+  "short": "The resolution waives a House rule that normally requires a two-thirds vote before a Rules Committee report can be considered on the same day it is presented. The waiver applies to any such resolution reported through the legislative day of June 5, 2026. The covered resolutions relate to a measure providing for reconciliation under title II of S.Con.Res.33."
+ },
+ "hres-1345": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This House rule sets terms for floor debate on four measures addressing federal fraud prevention, payment pauses, a fraud-focused inspector general, and a budget reconciliation bill.",
+  "short": "The resolution provides for House consideration of four measures. H.R. 8312 would establish fraud prevention and program integrity functions and data sharing authorities within the Department of the Treasury and a permanent governmentwide Inspector General for Fraud, Accountability, and Recovery. H.R. 8464 would amend title 31 of the U.S. Code to authorize pausing and segmenting payments. H. Res. 1335 would condemn actors seeking to defraud the federal government and express the sense of the House on fraud and improper payment reforms and verifying program eligibility before payment. S. 2 would provide for reconciliation under title II of S. Con. Res. 33."
+ },
+ "hres-1398": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This is a House rule that sets the terms for floor debate on four measures, including defense and State Department funding bills and a Social Security disability demonstration reauthorization.",
+  "short": "The official title and summary describe a resolution that provides for consideration of four separate items: H.R. 8800, which would authorize fiscal year 2027 Department of Defense, military construction, and Department of Energy defense activities and set military personnel strengths; H.R. 8595, which would make appropriations for national security, State Department, and related programs for fiscal year 2027; H.R. 8884, which would reauthorize demonstration authority for the disability insurance program under title II of the Social Security Act; and H. Res. 1383, which would commemorate the one-year anniversary of the enactment of the Working Families Tax Cuts. The materials provided do not describe the specific provisions, amounts, or effects of the underlying bills."
+ },
+ "hres-1423": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This House resolution sets up floor consideration of four separate bills covering daylight saving time, national security appropriations, veterans' benefits, and firearms retailer payment codes.",
+  "short": "The resolution provides for House consideration of four bills: H.R. 139, which would make daylight saving time permanent; H.R. 8595, which makes appropriations for national security and State Department programs for fiscal year 2027; H.R. 9237, which would amend federal law to improve veterans' benefits and Department of Veterans Affairs administration; and H.R. 1181, which would bar payment card networks and covered entities from requiring or assigning merchant category codes that distinguish firearms retailers from general-merchandise or sporting-goods retailers. The official material does not describe the specific provisions of the four underlying bills beyond their titles."
  },
  "hres-1438": {
   "model": "claude-haiku-5-5",
@@ -209,10 +389,25 @@
   "one_sentence": "This is a procedural resolution that sets the terms for House floor consideration of several bills and joint resolutions, without itself changing any law.",
   "short": "The official title and summary describe a resolution that provides for consideration of five measures: a bill to establish a National Fraud Enforcement Division at the Department of Justice, a bill on information-sharing between federal and state agencies to address fraud in certain federal programs, two joint resolutions disapproving Environmental Protection Agency rules on California engine and vessel pollution standards, and Senate amendments to a bill allowing early childhood educators to take the educator expense deduction. The material does not describe the specific provisions of the underlying bills or resolutions, so it is not possible to say what those measures would do in detail from this text alone."
  },
+ "hres-518": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the procedure for House consideration of H.R. 2913, the Ukraine Support Act, and directs the Clerk to notify the Senate once the House passes it.",
+  "short": "The resolution provides for the House to consider H.R. 2913, the Ukraine Support Act. It also requires the Clerk of the House to send the Senate a message that the House has passed the bill, no later than one week after passage. The official summary does not describe the specific support measures contained in the bill itself."
+ },
+ "s-2": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Secure America Act would provide about $70 billion through fiscal year 2029 to DHS, CBP, and ICE for immigration enforcement, border security, and related activities.",
+  "short": "The act provides funding to the Department of Homeland Security, U.S. Customs and Border Protection, and U.S. Immigration and Customs Enforcement through fiscal year 2029. Funds would cover hiring and training Border Patrol and ICE personnel, including child exploitation investigators, and purchasing border screening and surveillance technology. It also funds immigration enforcement activities, including agreements that let state and local agencies perform certain immigration functions. The act is a reconciliation bill, which Congress considers under expedited procedures that limit filibusters and amendments in the Senate."
+ },
  "s-2403": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The Retire through Ownership Act would let the fiduciary of an Employee Stock Ownership Plan rely on an independent expert's valuation of plan assets that lack a recognized market, if the expert follows specified methods.",
   "short": "The act addresses how Employee Stock Ownership Plans, which are retirement plans where employees hold shares of their employer's stock, determine the value of plan assets. Under the act, a plan fiduciary may rely on a valuation from an independent valuation expert or business appraiser when the assets are not securities with a generally recognized market. The expert or appraiser must follow the methodology in IRS Revenue Ruling 59-60, which lists factors to consider when valuing stock of a closely held business."
+ },
+ "s-254": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The ARTIST Act would stop states from banning the sale, trade, or possession of marine mammal ivory, bone, or baleen legally made by Alaska Natives into handicrafts and clothing.",
+  "short": "The bill, also called Alaska's Right to Ivory Sales and Tradition Act, would prohibit states from banning certain marine mammal products made by Alaska Natives. Covered items include marine mammal ivory, bone, and baleen that are legally produced as authentic Alaska Native handicrafts and clothing. Under the bill, states could not block the interstate commerce, importation, sale, transfer, trade, barter, or possession of these items."
  },
  "s-307": {
   "model": "claude-haiku-5-5",
@@ -223,5 +418,10 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The Local Access to Courts Act would add College Station, Texas, and El Centro, California, to the places where federal court must be held in their respective districts.",
   "short": "The bill adds College Station to the list of locations where federal court must be held in the Galveston Division of the Southern District of Texas. It also adds El Centro to the list of locations where federal court must be held in the Southern District of California."
+ },
+ "s-629": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The act expands and revises federal emergency conservation and forest restoration payment programs for farmers and private forest owners hit by natural disasters.",
+  "short": "The act changes the Emergency Conservation Program and the Emergency Forest Restoration Program, which help agricultural producers and owners of forest land pay for repairs after natural disasters. It allows advance payments for replacing, repairing, or restoring farmland and conservation structures, and for emergency work on private nonindustrial forest land, and gives recipients 180 days to spend the funds instead of 60. It also extends eligibility to certain wildfire damage, including fires not caused naturally that spread through natural causes and fires caused by the federal government."
  }
 }
