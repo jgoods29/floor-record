@@ -33,7 +33,7 @@
 <div class="who-line">{{ v.mix.nv.text }}</div>
 <div class="seats" aria-hidden="true">{% for party, who in seats.nv %}<span class="seat out {{ party }}" title="{{ who }}"></span>{% endfor %}</div></div>
 </div>
-<div class="legend"><span>Select a number to see who voted that way. Each square is one member.</span><span><i class="seat R"></i>Republican</span><span><i class="seat D"></i>Democrat</span>{% if v.by_party.get('I') %}<span><i class="seat I"></i>Independent</span>{% endif %}</div>
+<div class="legend"><span>Select a number to see who voted that way. Each square is one member.</span><span><i class="seat R"></i>Republican</span><span><i class="seat D"></i>Democrat</span>{% if v.by_party.get('I') %}<span><i class="seat I"></i>Independent</span>{% endif %}{% if v.mix.yea.mixed or v.mix.nay.mixed or v.mix.nv.mixed %}<span><i class="seat mixkey"></i>A purple number is a mix of parties</span>{% endif %}</div>
 {% else %}
 <p class="lede">This was a special roll call (such as a quorum call or the election of the Speaker). It is listed for the record but is not counted in any member's statistics.</p>
 {% endif %}

@@ -444,3 +444,7 @@ a.barrow:hover { background: #F7F3FF; }
   .track li, .track.sm li { padding-left: 9px; padding-right: 9px; margin-left: -5px; clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 50%, calc(100% - 7px) 100%, 0 100%, 7px 50%); }
   .track li:first-child, .track.sm li:first-child { margin-left: 0; padding-left: 7px; padding-right: 11px; clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 50%, calc(100% - 7px) 100%, 0 100%); }
 }
+
+/* vote numbers are one solid colour: a party's colour, or purple for a mix of parties */
+.mix { background: none; -webkit-background-clip: border-box; background-clip: border-box; -webkit-text-fill-color: currentColor; }
+.seat.mixkey { background: var(--purple); }

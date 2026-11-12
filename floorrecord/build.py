@@ -208,13 +208,10 @@ def party_mix(vote):
         if not total:
             out[side] = {"style": "", "text": "", "parts": []}
             continue
-        stops, at = [], 0.0
-        for n, p in parts:
-            end = at + 100.0 * n / total
-            stops.append(f"{PARTY_COLORS[p]} {at:.1f}% {end:.1f}%")
-            at = end
+        # one solid colour per number: a party's colour when that party is nearly all of it, purple when it is a mix
+        solid = PARTY_COLORS[parts[0][1]] if parts[0][0] >= 0.9 * total else "var(--purple)"
         words = [f"{n} {PARTY_NAMES[p]}{'' if n == 1 else 's'}" for n, p in parts]
-        out[side] = {"style": f"background-image: linear-gradient(90deg, {', '.join(stops)})",
+        out[side] = {"style": f"color: {solid}", "mixed": solid == "var(--purple)",
                      "text": ", ".join(words), "parts": parts, "lead": parts[0][1]}
     return out
 
