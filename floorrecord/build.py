@@ -381,9 +381,10 @@ def main():
                  members.get(p["bioguide"], {}).get("phone", ""), members.get(p["bioguide"], {}).get("contact_form", "")]
                 for p in sorted(people.values(), key=lambda p: (p["state"], p.get("district") or 0, p["sort"])) if not p["left"]]
     write_json(SITE / "contacts.json", contacts)
-    render("index.html", "index.html", 0, section="home", trending=trending, since=since, featured=featured, coming=coming,
+    render("why/index.html", "why.html", 1, section="why")
+    render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, trending=trending, since=since, featured=featured, coming=coming,
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
-    render("votes/index.html", "votes.html", 1, section="votes", votes=newest, featured=featured,
+    render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,
            nroutine=sum(1 for v in votes if v["info"]["routine"]))
     by_state = defaultdict(list)
     for p in people.values():
@@ -392,7 +393,7 @@ def main():
               for s, g in sorted(by_state.items(), key=lambda kv: STATES.get(kv[0], kv[0]))]
     render("members/index.html", "members.html", 1, section="members", states=states)
     bill_list = sorted(measures.values(), key=lambda m: (m["votes"][0]["date"], m["votes"][0]["roll"]), reverse=True)
-    render("bills/index.html", "bills.html", 1, section="bills", bills=bill_list)
+    render("bills/index.html", "bills.html", 1, section="bills", act={"topic": "", "key": ""}, bills=bill_list)
     render("about/index.html", "about.html", 1, section="about")
     render("404.html", "404.html", 0, section="")
 
@@ -437,6 +438,7 @@ def main():
         ctx["roll_groups"] = [{"title": titles.get(k, k.replace("other:", "Voted for ")), "people": roll[k],
                                "key": k if k in ORDER else f"other-{i}"}
                               for i, k in enumerate(sorted(roll, key=lambda k: ORDER.get(k, 4)))]
+        ctx["act"] = {"topic": v["topics"][0], "key": v["topic_keys"][0]} if v["topics"] else {"topic": "", "key": ""}
         render(f"votes/{v['id']}/index.html", "vote.html", 2, **ctx)
 
     # ---- member pages
@@ -517,7 +519,9 @@ def main():
 
     # ---- bill pages
     for m in measures.values():
+        bt = m["votes"][0] if m["votes"] else None
         render(f"bills/{m['slug']}/index.html", "bill.html", 2, section="bills", b=m, ai=summaries.get(m["slug"]),
+               act={"topic": bt["topics"][0], "key": bt["topic_keys"][0]} if bt and bt["topics"] else {"topic": "", "key": ""},
                sponsor=people.get(m["rec"].get("sponsor")))
 
     # ---- leaderboard and search

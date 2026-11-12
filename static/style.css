@@ -350,3 +350,5 @@ a.tag.soft { text-decoration: none; }
 .reach-row .who { align-items: flex-start; text-align: left; }
 .reach .fieldset .field { align-self: flex-start; }
 #topics, .reach { scroll-margin-top: 150px; }
+.actwrap { padding-top: 8px; padding-bottom: 64px; }
+.home + .actwrap { padding-top: 0; }

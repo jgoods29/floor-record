@@ -21,6 +21,7 @@
 <a href="{{ root }}bills/"{% if section == 'bills' %} aria-current="page"{% endif %}>Bills</a>
 <a href="{{ root }}topics/"{% if section == 'topics' %} aria-current="page"{% endif %}>Topics</a>
 <a href="{{ root }}compare/"{% if section == 'compare' %} aria-current="page"{% endif %}>Compare</a>
+<a href="{{ root }}why/"{% if section == 'why' %} aria-current="page"{% endif %}>Why</a>
 </nav>
 {% if section != 'home' %}<div class="search" data-search>
 <label for="site-search">Search</label>
@@ -31,6 +32,7 @@
 </header>
 <main>
 {% block main %}{% endblock %}
+{% if act is defined %}{% import "_m.html" as act_m %}<div class="wrap actwrap">{{ act_m.reach(root, reach_states, state_names, act.topic, act.key) }}</div>{% endif %}
 </main>
 <footer class="wrap" style="padding-bottom: 56px">
 <div class="foot">
