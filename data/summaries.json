@@ -74,6 +74,21 @@
   "one_sentence": "This joint resolution proposes a constitutional amendment requiring the U.S. Supreme Court to be composed of nine justices: one Chief Justice and eight Associate Justices.",
   "short": "The measure would amend the U.S. Constitution so that the Supreme Court must have exactly nine members. Those nine would consist of one Chief Justice and eight Associate Justices. The official summary does not describe how justices are appointed or any other provisions beyond this number and composition."
  },
+ "hjres-104": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would cancel a Bureau of Land Management rule that closed federal land in eastern Montana's Miles City area to coal leasing.",
+  "short": "The resolution would formally disapprove a Bureau of Land Management rule relating to a land management plan amendment for the Miles City Field Office in Montana. Under the resolution, that rule would be nullified, which would open certain BLM-administered land in eastern Montana to coal leasing. The rule, approved November 20, 2024, made no acres available for coal leasing and placed 1,745,040 acres off the table for further coal leasing consideration to reduce greenhouse gas emissions."
+ },
+ "hjres-105": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify a Bureau of Land Management rule approving a new land management plan for its North Dakota Field Office.",
+  "short": "The resolution would cancel the Bureau of Land Management's rule that approved the Record of Decision and Resource Management Plan for the North Dakota Field Office, issued January 8, 2025. A resource management plan guides how the agency manages the public lands it oversees. According to the official summary, the 2025 plan updated an earlier 1988 plan, including by limiting oil and gas development in low-potential areas and limiting new coal leasing to areas within four miles of existing mines."
+ },
+ "hjres-106": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify a Bureau of Land Management rule approving a new land management plan for Alaska's Central Yukon planning area.",
+  "short": "The measure would overturn a Bureau of Land Management rule, issued on November 12, 2024, that adopted a Record of Decision and Approved Resource Management Plan for Alaska's Central Yukon planning area. A resource management plan guides how the BLM manages the lands it administers. The rule modified the area's prior plan, including by designating 21 areas of critical environmental concern or research natural areas covering about 3,611,000 acres."
+ },
  "hjres-130": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This joint resolution would overturn a Bureau of Land Management rule that made federal coal unavailable for future leasing in the Buffalo Field Office area in Wyoming, restoring the prior plan.",
@@ -133,6 +148,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would bar the Department of Veterans Affairs from sending a veteran's or beneficiary's personal information to the national firearms background check system merely because a fiduciary manages their benefits.",
   "short": "The bill prohibits the Department of Veterans Affairs from transmitting personally identifying information about a veteran or beneficiary to the National Instant Criminal Background Check System (NICS) used by licensed firearms importers and dealers. The prohibition applies solely because the veteran or beneficiary has an appointed fiduciary to manage their benefits. The bill makes an exception where a judicial authority has issued an order or finding that the person is a danger to themselves or others."
+ },
+ "hr-1047": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require FERC to create a rule that speeds up grid connection approval for dispatchable power projects, such as certain fossil fuel plants, to support grid reliability.",
+  "short": "The bill directs the Federal Energy Regulatory Commission (FERC) to issue and periodically review a rule that changes how interconnection requests from electricity generators are approved. The rule must examine whether current procedures can connect new dispatchable power projects to the electric grid quickly, cost-effectively, and reliably. It must also revise the standard interconnection procedures and agreement to let transmission providers propose giving dispatchable projects higher places in the interconnection queue, with FERC required to approve or deny each proposal within 60 days."
  },
  "hr-1049": {
   "model": "claude-haiku-5-5",
@@ -209,6 +229,21 @@
   "one_sentence": "This bill would require the Department of Homeland Security to designate Haiti for temporary protected status for 18 months beginning August 3, 2025.",
   "short": "The bill directs the Secretary of Homeland Security to designate Haiti for temporary protected status (TPS), a temporary immigration status, for 18 months starting August 3, 2025. Eligible Haitian nationals could obtain employment authorization. While they hold TPS, they could not be detained solely because of their immigration status and would not be subject to removal."
  },
+ "hr-1717": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would give statutory authority to an FCC council that advises on the security, reliability, and interoperability of communications networks, and would exempt it from the usual two-year advisory committee termination rule.",
+  "short": "The bill provides legal authority for a Federal Communications Commission council that advises on the security, reliability, and interoperability of communications networks. The FCC could alternatively designate an existing advisory committee for this role if its membership is adjusted to meet the bill's requirements. The council would include, where practicable, representatives of communications companies, public interest or academic groups, and federal, state, tribal, and local governments, with at least one member from each level of government. The bill generally bars members from entities owned, controlled, or influenced by a foreign adversary, or otherwise deemed a national security threat, and exempts the council from the normal two-year termination requirement for federal advisory committees."
+ },
+ "hr-1917": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would give the U.S. Fish and Wildlife Service statutory authority to run a larger program that tags hatchery-raised fish in the Great Lakes and shares the resulting data with fish managers.",
+  "short": "The bill provides legal authority for a Fish and Wildlife Service program that marks large numbers of hatchery-produced fish in the Great Lakes basin so they can be told apart from wild fish. Under the bill, the agency could buy equipment and hire additional staff to expand tagging and tag recovery work. The agency would have to make the collected data available to federal, state, and tribal fish management agencies. The stated uses of that data include guiding management decisions, supporting Great Lakes restoration goals, balancing predators and prey, and evaluating habitat restoration."
+ },
+ "hr-1919": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would bar the Federal Reserve from issuing a central bank digital currency, or digital dollar, and from offering direct accounts or services to individuals using one.",
+  "short": "The bill prohibits Federal Reserve banks from offering products or services directly to individuals, maintaining accounts for individuals, or issuing a central bank digital currency, which is a digital dollar. It also prohibits the Federal Reserve Board of Governors from using such a currency to carry out monetary policy. The Board would further be barred from testing, studying, creating, or implementing a central bank digital currency, subject to exceptions set out in the bill."
+ },
  "hr-1949": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would remove certain federal approval requirements for natural gas imports and exports and give the Federal Energy Regulatory Commission sole authority over approving related facilities.",
@@ -228,6 +263,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would bar federal funds given to international financial institutions from being used for foreign shrimp farming, processing, or export, and would require an annual congressional report on compliance with related policies.",
   "short": "The bill prohibits U.S. federal funds from being provided to international financial institutions, such as the International Monetary Fund, unless the funds are barred from financing shrimp farming, shrimp processing, or shrimp exports in any foreign country. It requires the Department of the Treasury to attach this condition to any such funding. The bill also directs the Government Accountability Office to investigate and report annually to Congress on how well U.S. leaders at these institutions follow Treasury instructions to oppose financing for certain commodities or minerals that are in world surplus and cause substantial injury to U.S. producers."
+ },
+ "hr-2102": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "Would let veterans with a combat-related disability receive their full retirement pay alongside disability compensation, including those with fewer than 20 years of service.",
+  "short": "The bill allows a veteran with a combat-related disability to receive retirement pay without reduction at the same time as disability compensation. It expressly covers veterans who have fewer than 20 years of creditable service. Under current law, veterans receiving both combat-related special compensation and retirement pay have their retirement pay offset."
  },
  "hr-2140": {
   "model": "claude-haiku-5-5",
@@ -294,6 +334,11 @@
   "one_sentence": "The bill would extend U.S. export controls to cover foreign persons remotely accessing controlled items over networks such as the internet or cloud services.",
   "short": "The bill broadens the U.S. export control system so that it applies to remote access of items, meaning access by a foreign person through a network connection from a location other than where the item is physically located. It also covers any other form of remote access that the Department of Commerce specifies in regulations. The bill lets the Commerce Department's Bureau of Industry and Security issue licenses and impose penalties for remote access to controlled items under the existing export control law."
  },
+ "hr-2721": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would create a two-year VA pilot program to provide headstones or burial markers for certain veterans who died on or before November 1, 1990, and were not dishonorably discharged.",
+  "short": "The bill requires the Department of Veterans Affairs to set up and run a two-year pilot program that provides a headstone or burial marker, when requested, for covered veterans. Covered veterans are those who died on or before November 1, 1990, and were released or discharged under conditions other than dishonorable. Under current rules, these benefits are available only to eligible veterans who died on or after November 1, 1990. The bill also requires the VA to update the National Cemetery Administration website with the eligibility requirements."
+ },
  "hr-2853": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would expand federal criminal enforcement against organized retail and supply chain crime, including theft and resale of stolen goods, and create a temporary Homeland Security center to coordinate these efforts.",
@@ -323,6 +368,21 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require fiduciaries of employer-sponsored retirement plans to base investment decisions mainly on financial factors, with limited exceptions, and to act in participants' interests when using shareholder rights.",
   "short": "The bill generally requires retirement plan fiduciaries to make investment decisions based solely on pecuniary factors, meaning factors expected to have a material effect on the risk or return of an investment. Nonpecuniary factors may be considered in certain situations, such as when choosing options for participant-directed plans or when alternatives cannot be distinguished on financial factors alone. The bill also bars discrimination in selecting and retaining plan fiduciaries, counsel, employees, and service providers, and requires fiduciaries to act solely and prudently in participants' interests when exercising shareholder rights, without having to vote every proxy. It further requires specified notices for plans that let participants choose from designated investment alternatives."
+ },
+ "hr-3015": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would give the National Coal Council statutory authority, direct the Department of Energy to reestablish it under its November 2021 charter, and remove the requirement that it be re-chartered every two years.",
+  "short": "The bill provides legal authority for the National Coal Council, which was created in 1984 to advise the Department of Energy on coal and the coal industry. It directs the Department of Energy to reestablish the council in line with the charter that was in effect on November 19, 2021. The bill also removes the requirement under the Federal Advisory Committee Act that the council be re-chartered every two years."
+ },
+ "hr-3062": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill sets a new federal approval process for energy infrastructure that crosses the U.S. border with Canada or Mexico, replacing the current process under existing executive orders.",
+  "short": "The bill requires a certificate of crossing before building or operating a border-crossing facility for oil, natural gas, or electricity transmission. The Federal Energy Regulatory Commission issues certificates for oil and natural gas pipelines, and the Department of Energy issues them for electric transmission facilities, each subject to deadlines set in the bill. The President would need congressional approval before revoking an existing permit for such facilities."
+ },
+ "hr-3095": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the U.S. Postal Service to designate a single, unique ZIP Code for each of 74 listed communities across the United States.",
+  "short": "The bill directs the U.S. Postal Service to give each of 74 named communities its own single, unique ZIP Code. The communities are located in many states, including California, Colorado, Florida, Indiana, Texas, and Wisconsin. The official summary lists the communities but does not describe any further details of how the designations would be carried out."
  },
  "hr-3106": {
   "model": "claude-haiku-5-5",
@@ -354,10 +414,40 @@
   "one_sentence": "The bill would give statutory authority to the Urban Bird Treaty Program, which supports the conservation of birds living in or migrating through urban areas.",
   "short": "The bill provides legal authority for the Urban Bird Treaty Program, which is run by the U.S. Fish and Wildlife Service. The program works with communities to help conserve and manage birds that live in or pass through cities. Support can include grants administered by the National Fish and Wildlife Foundation to government agencies, community groups, and academic institutions for related activities."
  },
+ "hr-3351": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would exempt certain information-gathering actions by an SEC office that supports small business capital formation from the Paperwork Reduction Act's usual procedures.",
+  "short": "The bill excludes actions taken by the Office of the Advocate for Small Business Capital Formation at the Securities and Exchange Commission from the Paperwork Reduction Act. That law normally requires federal agencies to follow specific procedures when collecting information from the public. The bill sets out some exceptions, such as requiring the office to tell people why the information is being collected, as current law already requires."
+ },
+ "hr-3357": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require companies with multiple classes of shares that carry different voting rights to disclose voting-related ownership information in proxy and consent solicitations.",
+  "short": "The bill applies to companies that issue two or more classes of shares with different voting rights, such as shares with few or no votes for the public and shares with more votes for founders and executives. Under the bill, these companies must disclose in proxy or consent solicitation materials the shares and voting power held by each director, director nominee, named executive officer, and each beneficial owner holding 5% or more of total voting power. The disclosed information would cover the number of shares of all voting classes each such person beneficially owns and the amount of voting power each holds."
+ },
  "hr-3383": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would let closed-end funds invest more heavily in private investment funds, and bar the SEC from restricting the sale or listing of those funds' shares.",
   "short": "The bill allows a closed-end fund, which holds pooled assets and has a limited number of shares traded on an exchange, to increase its investment in private investment funds. It prohibits the Securities and Exchange Commission from limiting the sale or listing of securities of a closed-end fund that invests in private investment funds. The same rules would also apply to a closed-end company treated as a business development company."
+ },
+ "hr-3400": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The TRAVEL Act of 2025 would let the Department of Veterans Affairs assign physicians to serve veterans in U.S. territories for up to one year, with bonuses for those physicians.",
+  "short": "The bill authorizes the Department of Veterans Affairs to assign a physician appointed in the Veterans Health Administration to serve as a traveling physician for up to one year. The physician would provide care to veterans at VA facilities in American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, the U.S. Virgin Islands, and any other U.S. territory or possession. Traveling physicians would coordinate with non-VA providers when necessary to ensure coordinated care, and the VA would provide a relocation or retention bonus to these physicians."
+ },
+ "hr-3424": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The SPACE Act of 2025 would direct the General Services Administration to work with federal agencies on sharing space in federally leased buildings and to set measurable goals for those arrangements.",
+  "short": "The bill directs the General Services Administration (GSA) to work with federal agencies that lease buildings to better understand concerns about shared-space arrangements. GSA would develop criteria to make space sharing easier to expand and identify how special-use space could be used for sharing. The agency would also set measurable objectives, in consultation with tenants, to judge whether shared-space arrangements are successful. GSA must brief Congress on implementation within six months of enactment."
+ },
+ "hr-3425": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Federal Protective Service to improve how it tests, trains, and tracks the contract security guards who protect federal buildings, and to report on these efforts to Congress.",
+  "short": "Within one year, the Federal Protective Service would set up performance testing and improvement rules for contract security personnel, including standards for covert test data, quarterly reviews, and required corrective training for anyone who fails a covert test. Within 180 days, the agency would assess whether to replace or upgrade its system for tracking guard availability, and would create a plan and procedures for notifying building tenants about staffing absences or coverage gaps. The agency would report to Congress on these steps as they are completed and in annual updates."
+ },
+ "hr-3486": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would increase criminal penalties for certain non-U.S. nationals who illegally enter or reenter the United States, including some who later commit felonies.",
+  "short": "The bill sets a mandatory minimum prison term of 5 years, with a life sentence allowed, for a non-U.S. national who improperly enters or attempts to enter the country and is later convicted of a felony. It raises the maximum prison term for repeated improper entry from 2 years to 5 years. For people who were previously denied entry or removed and then enter or attempt to enter again without approval, it raises the maximum term from 2 years to 10 years, or to 15 years if they had three or more specified misdemeanor convictions before removal. It also sets a mandatory minimum of 10 years, with a life sentence allowed, for those with a prior felony or at least two prior illegal reentry convictions who again enter or try to enter."
  },
  "hr-3492": {
   "model": "claude-haiku-5-5",
@@ -384,6 +474,11 @@
   "one_sentence": "The bill would let the Federal Energy Regulatory Commission order a power plant to stay open for up to five years when its retirement would make the electric grid unreliable.",
   "short": "The bill changes how the Federal Energy Regulatory Commission decides whether a power plant must remain open, allowing complaints from state commissions and transmission organizations. If the Commission finds that electric service is or is likely to become inadequate within five years, it may order a plant to stay open for up to five years, and it must set any compensation and how costs are shared. Plant owners would need to give at least five years' notice before retiring a unit, except in emergencies. Actions taken to comply with such orders would be exempt from federal, state, and local environmental laws and regulations."
  },
+ "hr-3633": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would create a federal framework placing digital commodities, meaning digital assets whose value relies on a blockchain, under Commodity Futures Trading Commission oversight.",
+  "short": "The bill sets up a regulatory framework for digital commodities, which are digital assets whose value depends on a blockchain. The Commodity Futures Trading Commission would generally regulate transactions involving digital commodity exchanges, brokers, and dealers, including requirements for trade monitoring, recordkeeping, and handling of customer assets. To trade on an exchange, a digital commodity must either be on a mature or decentralized blockchain, or its issuer must file certain reports. The bill also exempts qualifying digital commodities from Securities and Exchange Commission registration if annual sales stay below a set amount and other conditions are met, while giving the SEC jurisdiction over certain related activities."
+ },
  "hr-3638": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The Electric Supply Chain Act would require the Department of Energy to regularly assess the supply chain for electricity components and report its findings and recommendations to Congress.",
@@ -394,15 +489,35 @@
   "one_sentence": "The bill would make the Federal Energy Regulatory Commission the sole lead agency coordinating environmental reviews of certain natural gas pipelines and LNG terminals, and limit how long authorization decisions can take after those reviews.",
   "short": "The bill speeds up environmental review for certain natural gas pipeline projects and liquefied natural gas import or export terminals under the Natural Gas Act. It makes the Federal Energy Regulatory Commission the only lead agency for coordinating those National Environmental Policy Act reviews, and other agencies must defer to its approved review scope. The Commission must invite and designate participating agencies by set deadlines and cannot set an authorization deadline more than 90 days after the environmental review ends. Applicants would not need a state water quality certification under Section 401 of the Clean Water Act, and agencies must consider data gathered by aerial or other remote means."
  },
+ "hr-3838": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill sets defense policy and authorizes funding for Department of Defense programs, military construction, and certain Department of Energy and Maritime Administration national security activities for fiscal year 2026.",
+  "short": "The bill sets policies and authorities for fiscal year 2026 across Department of Defense programs, military construction, and national security activities of the Department of Energy and Maritime Administration. It authorizes purchases and modifications of military items, sets research and development policy, and establishes active-duty and reserve troop strength levels. It also covers military health care and compensation, acquisition and contracting rules including those affecting small businesses, cyber and artificial intelligence matters, and nuclear security and defense environmental cleanup. Its stated aim includes modifying the defense acquisition system to deliver capabilities to the Armed Forces more quickly."
+ },
  "hr-3898": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The PERMIT Act would narrow the Clean Water Act by redefining \"navigable waters\" to leave out waste treatment systems, certain dry features, converted cropland, groundwater, and other features the Army Corps of Engineers identifies.",
   "short": "The bill amends the Clean Water Act by changing the definition of \"navigable waters,\" which determines which water bodies the law covers. Under the bill, the definition would exclude waste treatment systems, ephemeral features that flow only in direct response to precipitation, and prior converted cropland. It would also exclude groundwater and any other features the U.S. Army Corps of Engineers determines should be excluded."
  },
+ "hr-3937": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Forest Service to sell about 14 acres of federal land in Wisconsin's Chequamegon-Nicolet National Forest, including mineral rights, to a local company at market value.",
+  "short": "The bill directs the Forest Service to convey roughly 14 acres of federal land, including its mineral rights, in the Chequamegon-Nicolet National Forest in Wisconsin, to Tony's Wabeno Redi-Mix, LLC, if the company makes an offer to buy it. The Forest Service must first complete an appraisal to set the land's market value, and the offer must be received within 180 days after that appraisal is approved. As a condition of the sale, the company must pay the market value plus all associated costs. The bill also requires the Department of the Interior to publish a review of federal permitting processes for developing stone, sand, and gravel on federal lands."
+ },
+ "hr-3944": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill provides fiscal year 2026 funding for military construction, veterans programs, agriculture and FDA activities, and the legislative branch, and sets rules for using those funds.",
+  "short": "The bill combines three of the twelve regular fiscal year 2026 appropriations bills: one for Military Construction and Veterans Affairs and related agencies, one for Agriculture, Rural Development, the Food and Drug Administration, and related agencies, and one for the legislative branch. It funds activities including Department of Defense military construction and family housing, the Department of Veterans Affairs, the Department of Agriculture, the Food and Drug Administration, the Senate, agencies that support Congress, and several related and independent agencies. Funds for the House of Representatives are not included, as each chamber sets its own requirements. The bill also sets requirements and restrictions on how funds provided by it and other appropriations acts may be used."
+ },
  "hr-3978": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would direct the Nuclear Regulatory Commission to license future U.S. facilities that recycle spent nuclear fuel under a streamlined rule set for special nuclear material instead of the rules for production and utilization facilities.",
   "short": "The bill applies to domestic facilities that reprocess spent nuclear fuel in a way that does not isolate plutonium, turning it into materials that can be reused as nuclear fuel for electricity. It directs the Nuclear Regulatory Commission to license such future facilities under its regulations for special nuclear material. To do this, it excludes these facilities from the legal definition of a production facility. The licensing process under those regulations has fewer steps than the process for production and utilization facilities. The official summary notes that no commercial reprocessing facilities currently operate in the United States."
+ },
+ "hr-4016": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill provides fiscal year 2026 funding for Department of Defense military activities, excluding construction, family housing, Army Corps civil works, and nuclear warheads, which are covered by other bills.",
+  "short": "The bill provides appropriations to the Department of Defense for fiscal year 2026, covering military personnel, operation and maintenance, procurement, research and development, and revolving and management funds. It also funds other Defense programs such as the Defense Health Program, chemical agent and munitions destruction, counter-drug activities, and the Office of the Inspector General. Related agencies receiving funds include the Central Intelligence Agency Retirement and Disability System Fund and the Intelligence Community Management Account. The bill also sets requirements and restrictions on how these funds may be used."
  },
  "hr-4058": {
   "model": "claude-haiku-5-5",
@@ -413,6 +528,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill would direct the Interior Department to speed up and expand mineral mining on federal lands to address weaknesses in the nation's mineral supply chain.",
   "short": "The bill directs the Department of the Interior to identify and expedite priority hardrock mining projects on federal land that can be approved quickly. It also requires the department to find existing or proposed mines that could increase production, add byproducts, or recover minerals from tailings or coal byproducts. Interior would have to review and revise agency actions it considers burdensome to mining, recommend changes to federal law, and review state and local laws that impede domestic mining. The department would also report on the economic impact of U.S. reliance on mineral imports and prioritize geologic mapping."
+ },
+ "hr-4216": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the State Department to review each year which defense items sold only through government-to-government channels could also be sold directly by U.S. companies.",
+  "short": "The bill requires the Department of State to conduct an annual review of defense articles and services currently sold only through Foreign Military Sales, identifying those that could also be sold through Direct Commercial Sales. For each item, the review must compare how long each sales route takes, the effect on State and Defense Department workload, and the benefits to national security and competitiveness. The State Department must report the results to Congress within 30 days of completing each review."
  },
  "hr-4219": {
   "model": "claude-haiku-5-5",
@@ -454,6 +574,11 @@
   "one_sentence": "The bill would require federal financial regulators to review and simplify the process for approving new banks and credit unions.",
   "short": "The bill directs federal financial regulators to review how they handle applications to form new depository institutions and credit unions, and to reduce the amount of information applicants must submit where practicable. It also asks regulators to examine how new institutions raise capital while keeping investor protections in place. On request, applicants would be assigned a caseworker and given a list of similar institutions willing to serve as mentors, and each regulator would develop a plan to engage states and stakeholders on the approval process."
  },
+ "hr-4553": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would provide fiscal year 2026 funding for U.S. Army Corps of Engineers civil works, the Bureau of Reclamation, Department of Energy programs, and several independent energy and regulatory agencies.",
+  "short": "The bill provides FY2026 appropriations for U.S. Army Corps of Engineers civil works projects, including investigations, construction, flood control, and water infrastructure financing. It also funds the Bureau of Reclamation and Central Utah Project under the Department of the Interior. For the Department of Energy, it provides money for numerous energy, science, nuclear, and national security programs, as well as independent agencies such as the Federal Energy Regulatory Commission and the Nuclear Regulatory Commission. The bill also sets requirements and restrictions on how these funds may be used."
+ },
  "hr-4593": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The SHOWER Act would set a federal definition of showerhead for water-efficiency rules by adopting one from the American Society of Mechanical Engineers and require the Department of Energy to revise its regulations to match.",
@@ -494,6 +619,11 @@
   "one_sentence": "The bill would bar colleges that receive federal student aid from boycotting Israel, and require certain federally funded schools to annually certify equal access to Israel-related academic programs.",
   "short": "The bill prohibits institutions of higher education that participate in federal student aid programs from taking commercial actions meant to limit business relations with Israel or Israeli entities, unless based on a valid business reason. Schools that receive or apply for Title VI funds, which support foreign language and international education programs, would have to certify each year that students and faculty can join programs located in Israel on the same terms as programs in other countries. They would also have to certify that students and faculty from Israeli postsecondary institutions can join their academic programs on the same terms as those from other foreign countries."
  },
+ "hr-4922": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would limit the District of Columbia government's power to change criminal sentences, lower the youth offender age limit from 24 to 18, and require monthly public reporting of youth offender crime data.",
+  "short": "The bill would remove the District of Columbia government's authority to change any criminal sentence already in effect when the bill is enacted. It would also lower the maximum age for youth offender treatment from 24 to 18 and end a court option to impose sentences below mandatory minimums for youth offenders. Finally, it would require the D.C. Attorney General's office to publish and update youth offender crime data monthly on a public website."
+ },
  "hr-498": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would bar federal Medicaid payment for certain gender transition procedures for people under 18, with some exceptions.",
@@ -513,6 +643,21 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would repeal a 2022 District of Columbia police and justice reform law and restore the laws that law had changed.",
   "short": "The Common-Sense Law Enforcement and Accountability Now in DC Act, or CLEAN DC Act, would repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022, which the Council of the District of Columbia enacted. Under the bill, any provisions of law that the 2022 act amended or repealed would be restored as if the 2022 act had never been enacted. The 2022 act covered policing measures, including limits on certain neck restraints by officers, additional procedures for body-worn cameras, and expanded access to police disciplinary records."
+ },
+ "hr-5125": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would abolish the D.C. Judicial Nomination Commission and have the President, rather than the commission, appoint the chief judges of D.C.'s Superior Court and Court of Appeals.",
+  "short": "Under current law, a commission recommends nominees for judges on D.C.'s Superior Court and Court of Appeals, and the Senate must confirm them. The commission also selects the chief judges of those courts. This bill would end the commission's role in judicial nominations. It would instead require the President to appoint the chief judges."
+ },
+ "hr-5140": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would lower, from 16 to 14, the minimum age at which a minor charged with certain serious offenses in the District of Columbia can be tried as an adult.",
+  "short": "Under current District of Columbia law, a person under 18 is generally tried as a juvenile, but a person 16 or older can be tried as an adult for offenses such as murder, first-degree sexual abuse, first-degree burglary, armed robbery, or assault with intent to commit those offenses. A person 15 or older can also be tried as an adult for a felony if it is in the public welfare interest and there are no reasonable prospects for rehabilitation. This bill lowers the minimum age for trial as an adult in these cases to 14."
+ },
+ "hr-5143": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would repeal current limits on police chases in Washington, D.C., and generally require officers to pursue fleeing vehicles unless specific exceptions apply.",
+  "short": "The bill would remove the current D.C. restrictions on when police may begin a vehicle pursuit of a fleeing suspect. Under current law, a chase is generally allowed only for certain serious crimes or threats, and only when other options have been exhausted. Under the bill, officers would generally be required to pursue unless the officer or a higher-ranking officer reasonably believes the pursuit would be futile, would create an unacceptable risk of harm to someone other than the suspect, or that the suspect can be caught more effectively by other means. The bill also directs the Department of Justice to report to Congress on the costs and benefits of D.C. police adopting technology that alerts the public to an active pursuit nearby."
  },
  "hr-5184": {
   "model": "claude-haiku-5-5",
@@ -553,6 +698,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill would name the Department of Veterans Affairs multispecialty clinic in Marietta, Georgia, after Colonel Michael H. Boyce.",
   "short": "The bill designates the VA multispecialty clinic in Marietta, Georgia, as the Colonel Michael H. Boyce Department of Veterans Affairs Multispecialty Clinic. It also allows the shorter name Colonel Michael H. Boyce VA Clinic to be used. The provisions concern only the clinic's official designation and do not describe other changes to its services or operations."
+ },
+ "hr-5371": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "Ends the 2025 government shutdown by funding most federal agencies through January 30, 2026, and providing full-year FY2026 funding for agriculture, military construction and veterans affairs, and legislative branch programs.",
+  "short": "The act is a continuing resolution that ends the government shutdown that began on October 1, 2025, by funding most federal agencies at fiscal year 2025 levels through January 30, 2026, or until the applicable regular appropriations act is enacted. It provides full-year fiscal year 2026 funding for agriculture, military construction and veterans affairs, and legislative branch programs. The act also includes provisions for back pay for furloughed federal employees, reimbursement to states and other grantees that covered federal program costs during the shutdown, and a temporary ban on reductions in force through January 30, 2026. It further extends a number of expiring programs and authorities."
  },
  "hr-5408": {
   "model": "claude-haiku-5-5",
@@ -698,6 +848,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require Small Business Administration employees who handle SBA loans to certify in writing that they have no conflict of interest, disclose any later conflicts, and understand the applicable rules.",
   "short": "The bill requires Small Business Administration employees who take part in originating, reviewing, or approving SBA loans to certify in writing, before they take part, that they have no conflict of interest with respect to the loan. Employees would also have to disclose any conflict that arises after certifying and confirm they understand the conflict-of-interest requirements that apply to them. Federal employees already must disclose financial conflicts and generally step aside from such matters, and the SBA would be required to issue regulations to carry out the bill."
+ },
+ "hr-747": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would expand sanctions eligibility for certain Chinese companies and officials linked to opioid trafficking, extend a sanctions reporting requirement, and add steps before certain emergency economic regulations.",
+  "short": "The bill broadens the legal definition of \"foreign opioid trafficker\" to include certain Chinese entities involved in synthetic opioids or related ingredients that fail to prevent trafficking, and certain senior Chinese government officials who aid trafficking, including through intentional inaction. It extends through 2029 the requirement that the President report annually to Congress on identified foreign opioid traffickers and any sanctions imposed, a requirement that expired in December 2024. It also requires the President, before issuing certain economic regulations under emergency powers tied to international drug trafficking, to evaluate and publish the costs and benefits of those regulations."
  },
  "hr-7567": {
   "model": "claude-haiku-5-5",
@@ -1069,10 +1224,45 @@
   "one_sentence": "This resolution sets the procedure for House consideration of H.R. 2913, the Ukraine Support Act, and directs the Clerk to notify the Senate once the House passes it.",
   "short": "The resolution provides for the House to consider H.R. 2913, the Ukraine Support Act. It also requires the Clerk of the House to send the Senate a message that the House has passed the bill, no later than one week after passage. The official summary does not describe the specific support measures contained in the bill itself."
  },
+ "hres-539": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution would formally censure Representative LaMonica McIver and remove her from the House Committee on Homeland Security.",
+  "short": "The resolution would formally censure Representative LaMonica McIver, which is an official statement of disapproval by the House. It would also remove her from the Committee on Homeland Security. The official summary does not describe the reasons for the censure or any further details."
+ },
+ "hres-590": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution would have the House agree to a Senate amendment to H.R. 4, the Rescissions Act of 2025, and treat the bill as passed.",
+  "short": "The measure is a House resolution dealing with the Senate's changes to H.R. 4, the Rescissions Act of 2025. Under its terms, once the resolution passes, the House is considered to have agreed to the Senate amendment and to have passed H.R. 4. The official title refers to budget authority that the President proposed rescinding in special messages sent to Congress on June 3, 2025, but the available summary does not describe the specific funding affected."
+ },
+ "hres-672": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This House resolution sets the rules for floor debate on an energy and water appropriations bill and three joint resolutions that would disapprove Bureau of Land Management land-use plans.",
+  "short": "The measure is a procedural resolution that provides for House consideration of H.R. 4553, which would make appropriations for energy and water development and related agencies for the fiscal year ending September 30, 2026. It also provides for consideration of three joint resolutions (H.J. Res. 104, 105, and 106) that would disapprove Bureau of Land Management rules covering the Miles City Field Office, the North Dakota Field Office, and the Central Yukon planning areas. The official material does not describe the contents of the underlying bill or the specific provisions of the land-use plans beyond their titles."
+ },
+ "hres-682": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the rules for House floor debate on two bills: one authorizing fiscal year 2026 defense spending and one increasing penalties for illegal entry and reentry after removal.",
+  "short": "The measure is a House resolution that provides for consideration of two separate bills. The first, H.R. 3838, would authorize appropriations for fiscal year 2026 for Department of Defense military activities, military construction, and Department of Energy defense activities, and would set military personnel strengths for that year. The second, H.R. 3486, would amend the Immigration and Nationality Act to increase penalties for people who illegally enter or reenter the United States after being removed. The official summary provided does not describe the specific provisions of either bill beyond their titles."
+ },
+ "hres-713": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution would formally censure Representative Ilhan Omar of Minnesota and remove her from the Education and Workforce and Budget committees.",
+  "short": "The resolution would censure Representative Ilhan Omar of Minnesota, which is a formal statement of disapproval by the House. It would also remove her from two House committees: the Committee on Education and Workforce and the Committee on the Budget. The official summary does not describe the reasons for the censure."
+ },
+ "hres-719": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution would condemn the assassination of Charlie Kirk and political violence in general, and honor his life and legacy.",
+  "short": "The resolution condemns the assassination of Charles \"Charlie\" James Kirk and all forms of political violence. It also honors Kirk's life, leadership, and legacy. The official summary does not describe any further provisions."
+ },
  "hres-780": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This is a House procedural resolution that sets the rules for floor debate on H.R. 1834, a bill whose policy contents are not described in the provided material.",
   "short": "The measure is a rule providing for consideration of H.R. 1834, which sets the terms under which the House will debate that bill. The official title refers to advancing policy priorities, but the provided material does not identify what those priorities or specific provisions are. Based on the available material, it is not possible to say what H.R. 1834 would change."
+ },
+ "hres-873": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This House resolution sets the terms for floor consideration of a Senate amendment to H.R. 5371, a bill providing continuing appropriations and extensions for fiscal year 2026.",
+  "short": "The measure is a resolution that provides for House consideration of Senate amendment S.Amdt. 3937 to H.R. 5371. According to the official summary, that bill is titled the Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026. The official material does not describe the specific funding provisions of the amendment."
  },
  "hres-878": {
   "model": "claude-haiku-5-5",
@@ -1148,6 +1338,16 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The SAVE America Act would require documentary proof of U.S. citizenship to register to vote in federal elections and photo identification to vote in federal elections.",
   "short": "The bill bars states from processing a federal voter registration application unless the applicant presents documentary proof of U.S. citizenship, listing acceptable documents such as a passport or a REAL ID-compliant card showing citizenship. States would also have to check their voter lists against the Department of Homeland Security's Systematic Alien Verification for Entitlements system and remove identified noncitizens. The bill further prohibits election officials from giving a federal ballot to anyone without valid photo identification, allowing provisional ballots that must be followed by identification or a religious-objection affidavit within three days, and limits non-in-person voting methods to voters who submit a photo ID copy or meet other specified conditions."
+ },
+ "s-1582": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The GENIUS Act would create a federal and state framework for payment stablecoins, digital assets that issuers must redeem for a fixed value, setting rules for who may issue them and how they must be backed.",
+  "short": "Under the act, only permitted issuers, such as subsidiaries of insured banks or licensed nonbank issuers, could issue payment stablecoins for use in the United States. Issuers would have to hold reserves on a one-to-one basis in liquid assets such as U.S. currency and certain Treasury securities, publish redemption policies, and report reserve details monthly. The act also sets rules for foreign stablecoin issuers, applies anti-money laundering requirements, and states that permitted payment stablecoins would not be treated as securities or commodities under federal law."
+ },
+ "s-1596": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill renames the Anahuac National Wildlife Refuge in Anahuac, Texas, as the Jocelyn Nungaray National Wildlife Refuge.",
+  "short": "The Jocelyn Nungaray National Wildlife Refuge Act would rename the Anahuac National Wildlife Refuge, located in Anahuac, Texas, as the Jocelyn Nungaray National Wildlife Refuge. The act would give statutory authority to Executive Order 14229, which had already made the same name change. The summary provided does not describe any other changes to the refuge."
  },
  "s-2": {
   "model": "claude-haiku-5-5",

@@ -3617,6 +3617,18 @@
   "plain": "The House passed the bill, 295 to 128. It would let retirement plans for employees of public schools, charities, and churches invest in pooled investment funds held by banks or trust companies, and in insurance company separate accounts.",
   "v": 2
  },
+ "2026-322": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Veterans' Disability Pay Bill",
+  "plain": "The House voted 271 to 135 to approve the rules for debating a bill that would let disabled military retirees with combat-related disabilities receive both veterans' disability compensation and retired pay. This vote set the debate rules only and was not the final vote on the bill itself.",
+  "v": 2
+ },
+ "2026-323": {
+  "model": "claude-haiku-5-5",
+  "name": "Major Richard Star Act",
+  "plain": "The House voted 392 to 18 to pass the Major Richard Star Act. It would let veterans with combat-related disabilities receive their full retirement pay alongside their disability compensation, without a reduction.",
+  "v": 2
+ },
  "2026-33": {
   "model": "claude-haiku-5-5",
   "name": "AI for Main Street Act",
