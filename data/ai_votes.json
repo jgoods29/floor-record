@@ -1,4 +1,10 @@
 {
+ "2025-10": {
+  "model": "claude-haiku-5-5",
+  "name": "Post-Disaster Assistance Online Accountability Act",
+  "plain": "The House voted 426 to 0 to pass a bill requiring federal agencies that give disaster aid to publish, every three months, how much aid they provided, how much was spent or committed, and what projects it went to, all in one public online location.",
+  "v": 2
+ },
  "2025-100": {
   "model": "claude-haiku-5-5",
   "name": "Congressional Budget Framework for 2025 to 2034",
@@ -89,6 +95,12 @@
   "plain": "The House passed a bill, 406 to 1, that would require sanctions on people and groups involved in forced organ harvesting and trafficking, and let the State Department deny or revoke passports of certain people convicted of related organ-transfer crimes.",
   "v": 2
  },
+ "2025-12": {
+  "model": "claude-haiku-5-5",
+  "name": "Protection of Women and Girls in Sports Act",
+  "plain": "The House voted 218 to 206 to pass a bill that would bar male-born athletes from women's and girls' sports programs at federally funded schools and colleges, treating such participation as a violation of Title IX.",
+  "v": 2
+ },
  "2025-120": {
   "model": "claude-haiku-5-5",
   "name": "Restricting Homeland Security Funds to Universities with China Ties",
@@ -131,6 +143,12 @@
   "plain": "The House approved a resolution calling on elected officials, faith leaders, and community leaders to speak out against antisemitism and teach the public about the contributions of Jewish Americans. The vote was 421 in favor and 1 against.",
   "v": 2
  },
+ "2025-13": {
+  "model": "claude-haiku-5-5",
+  "name": "POWER Act of 2025",
+  "plain": "The House passed the POWER Act, 419 to 2, using a fast-track process. The bill would let electric utilities that receive emergency help to restore power also carry out cost-effective hazard mitigation work at the same time, and allow them to receive certain disaster hazard mitigation assistance for the same facility.",
+  "v": 2
+ },
  "2025-130": {
   "model": "claude-haiku-5-5",
   "name": "Federal Law Enforcement Officer Service Weapon Purchase Act",
@@ -167,6 +185,12 @@
   "plain": "The House passed a measure to cancel a rule that changed how federal regulators review proposed bank mergers, including removing automatic approvals and streamlined application forms. The vote was 220 to 207.",
   "v": 2
  },
+ "2025-14": {
+  "model": "claude-haiku-5-5",
+  "name": "Tennessee Valley Authority Salary Transparency Act",
+  "plain": "The House voted 423 to 0 to pass a bill requiring the Tennessee Valley Authority, a government electricity and river-management corporation, to again file an annual financial report with Congress each March. It would also limit the public salary details in that report to employees paid above the GS-13 basic pay rate.",
+  "v": 2
+ },
  "2025-143": {
   "model": "claude-haiku-5-5",
   "name": "EPA Clean Air Act Emissions Rule Disapproval",
@@ -189,6 +213,12 @@
   "model": "claude-haiku-5-5",
   "name": "7(a) Loan Agent Oversight Act",
   "plain": "The House voted 405 to 3 to pass a bill requiring the Small Business Administration to publish an annual report on fee-based agents who help businesses apply for 7(a) loans, including fraud cases and referral fees paid.",
+  "v": 2
+ },
+ "2025-15": {
+  "model": "claude-haiku-5-5",
+  "name": "Tax Rules for Certain Taiwan Residents",
+  "plain": "The House voted 423 to 1 to pass a bill that sets special federal income tax rules for certain residents of Taiwan who earn income from U.S. sources.",
   "v": 2
  },
  "2025-150": {
@@ -263,6 +293,12 @@
   "plain": "The House passed a bill, 214 to 212, to cancel certain unspent funds previously provided to the State Department, the U.S. Agency for International Development, several independent agencies, and the Corporation for Public Broadcasting.",
   "v": 2
  },
+ "2025-17": {
+  "model": "claude-haiku-5-5",
+  "name": "Preventing Violence Against Women by Illegal Aliens Act",
+  "plain": "The House voted 274 to 145 to pass a bill that would make certain non-U.S. nationals inadmissible or deportable for convictions or admitted acts such as stalking, child abuse, sex offenses, and domestic violence, and would widen the domestic violence crimes that make them deportable.",
+  "v": 2
+ },
  "2025-171": {
   "model": "claude-haiku-5-5",
   "name": "District of Columbia Immigration Cooperation Bill",
@@ -299,6 +335,12 @@
   "plain": "The House voted 424 to 0 to approve a resolution condemning the June 14, 2025 attacks on Minnesota state legislators. It calls for unity and rejecting political violence, and honors those killed and injured and the officers who responded.",
   "v": 2
  },
+ "2025-18": {
+  "model": "claude-haiku-5-5",
+  "name": "Hershel Woody Williams National Medal of Honor Monument Location Act",
+  "plain": "The House voted 414 to 0 to pass a bill requiring the national monument honoring Medal of Honor recipients to be placed within the Reserve, the central axis of the National Mall running from the Capitol to the Lincoln Memorial and from the White House to the Jefferson Memorial.",
+  "v": 2
+ },
  "2025-180": {
   "model": "claude-haiku-5-5",
   "name": "Spending Bill for Military Construction, Veterans, Agriculture, and Congress",
@@ -333,6 +375,12 @@
   "model": "claude-haiku-5-5",
   "name": "Budget Reconciliation Bill Amendment",
   "plain": "The House voted 220 to 212 to approve a change to a bill that the Senate had altered. Republicans voted yes and Democrats voted no. The change would add a version of the Senate's amendment to the bill, with the vote following party lines.",
+  "v": 2
+ },
+ "2025-19": {
+  "model": "claude-haiku-5-5",
+  "name": "MAPWaters Act of 2025 (Public Waterway Access Data)",
+  "plain": "The House passed the MAPWaters Act by 413 votes to 0 under a fast-track process requiring two-thirds support. The bill directs the Forest Service and Interior Department to publish online maps and data on public access to federal waterways for recreation and on federal fishing restrictions.",
   "v": 2
  },
  "2025-190": {
@@ -485,6 +533,12 @@
   "plain": "The House passed the Made-in-America Defense Act, 395 to 20. The bill would require the State Department to review each year which military equipment and services now sold only through government-to-government deals could also be sold directly by U.S. companies to foreign governments, and to report its findings to Congress.",
   "v": 2
  },
+ "2025-22": {
+  "model": "claude-haiku-5-5",
+  "name": "Wounded Knee Massacre Memorial and Sacred Site Act",
+  "plain": "The House passed a bill, 416 to 0, that would place about 40 acres in Oglala Lakota County, South Dakota, into restricted status for the Oglala Sioux Tribe and Cheyenne River Sioux Tribe. The land would be kept as a memorial and sacred site, with commercial development and gaming banned.",
+  "v": 2
+ },
  "2025-220": {
   "model": "claude-haiku-5-5",
   "name": "Stop Chinese Fentanyl Act",
@@ -531,6 +585,12 @@
   "model": "claude-haiku-5-5",
   "name": "Energy and Water Development Spending Bill Amendment",
   "plain": "The House voted on whether to add an amendment to the Energy and Water Development and Related Agencies Appropriations Act, 2026, which provides funding for Army Corps of Engineers civil works, Bureau of Reclamation, and Department of Energy programs. The amendment was rejected, 77 in favor to 347 opposed.",
+  "v": 2
+ },
+ "2025-23": {
+  "model": "claude-haiku-5-5",
+  "name": "Laken Riley Act",
+  "plain": "The House voted to pass the Laken Riley Act, 263 to 156. It would require detaining certain non-citizens arrested for specified crimes such as theft, assault of a law enforcement officer, or crimes causing death or serious injury, and would let states sue the federal government over certain immigration enforcement decisions.",
   "v": 2
  },
  "2025-230": {
@@ -635,6 +695,12 @@
   "plain": "The House voted 219 to 209 to add an amendment to the annual defense policy bill that sets rules for military programs for fiscal year 2026. The amendment was adopted.",
   "v": 2
  },
+ "2025-25": {
+  "model": "claude-haiku-5-5",
+  "name": "Fix Our Forests Act",
+  "plain": "The House passed the Fix Our Forests Act, 279 to 141. The bill sets rules for managing federal forests to reduce wildfire risk, speeds up reviews of certain forest projects, and limits some legal challenges to them.",
+  "v": 2
+ },
  "2025-250": {
   "model": "claude-haiku-5-5",
   "name": "Amendment to the Defense Authorization Bill",
@@ -737,6 +803,12 @@
   "plain": "The House voted 413 to 0 to pass a bill requiring the Department of Veterans Affairs to run a two-year pilot program providing headstones or burial markers for certain veterans who died before November 1, 1990, if discharged under conditions other than dishonorable.",
   "v": 2
  },
+ "2025-27": {
+  "model": "claude-haiku-5-5",
+  "name": "Born-Alive Abortion Survivors Protection Act",
+  "plain": "The House voted 217 to 204 to pass a bill requiring that a baby born alive after an abortion or attempted abortion receive the same care as any other baby born alive at that age and be taken to a hospital, with criminal penalties for violations.",
+  "v": 2
+ },
  "2025-270": {
   "model": "claude-haiku-5-5",
   "name": "D.C. Criminal Sentencing Limits Bill",
@@ -785,6 +857,12 @@
   "plain": "The House passed the GRID Power Act, 216 to 206. The bill would direct federal energy regulators to speed up connecting dispatchable power projects, such as certain fossil fuel plants, to the electric grid by giving them higher priority in the connection line.",
   "v": 2
  },
+ "2025-28": {
+  "model": "claude-haiku-5-5",
+  "name": "Alaska Native Village Municipal Lands Restoration Act",
+  "plain": "The House passed a bill, 412 to 1, that removes the requirement for Alaska Native village corporations to transfer certain lands to Alaska to be held in trust for future municipal governments. It also lets village corporations regain title to those lands by formal resolution with village residents.",
+  "v": 2
+ },
  "2025-281": {
   "model": "claude-haiku-5-5",
   "name": "Bill to End Government Shutdown and Extend Funding",
@@ -795,6 +873,12 @@
   "model": "claude-haiku-5-5",
   "name": "Honoring Charlie Kirk's Life and Legacy",
   "plain": "The House voted 310 to 58 to approve a resolution that condemns the assassination of Charlie Kirk and all forms of political violence, and honors his life, leadership, and legacy.",
+  "v": 2
+ },
+ "2025-284": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for a Government Funding Bill",
+  "plain": "The House voted 213 to 209 to approve the rules for debating a Senate change to a bill that provides continuing funding for government agencies in fiscal year 2026. The vote set how long debate would last and which amendments could be considered, rather than deciding the bill itself.",
   "v": 2
  },
  "2025-285": {
@@ -825,6 +909,24 @@
   "model": "claude-haiku-5-5",
   "name": "Epstein Files Transparency Act",
   "plain": "The House voted 427 to 1 to pass a bill requiring the Justice Department to publish its unclassified records about the investigation and prosecution of Jeffrey Epstein, with some information such as victims' personal details withheld.",
+  "v": 2
+ },
+ "2025-29": {
+  "model": "claude-haiku-5-5",
+  "name": "Nutria Eradication and Control Reauthorization Act",
+  "plain": "The House passed a bill extending through 2030 a federal program that lets the Interior Department give states money to remove invasive nutria, semi-aquatic rodents, and restore marsh they have damaged. The vote was 361 in favor and 56 against.",
+  "v": 2
+ },
+ "2025-290": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Multiple Measures Including Energy and D.C. Policing",
+  "plain": "The House voted 217 to 211 to end debate and move toward a final vote on several measures, including bills on energy, natural gas, and D.C. policing. This was a procedural step, not a vote on the measures themselves.",
+  "v": 2
+ },
+ "2025-291": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Several Measures",
+  "plain": "The House voted 217 to 210 to approve the rules for debating several measures, including bills on Alaska and Buffalo land-use plans, natural gas trade, and District of Columbia policing and bail. This was a procedural step that sets how and when those measures will be debated, not a final vote on them.",
   "v": 2
  },
  "2025-292": {
@@ -923,6 +1025,18 @@
   "plain": "The House passed the No New Burma Funds Act by 385 to 0. It would require the U.S. representative at the World Bank's main lending arm to push for keeping the pause on loans and new financing to Burma, unless the Treasury Department finds that is not in the national interest.",
   "v": 2
  },
+ "2025-308": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Six Bills",
+  "plain": "The House voted 210 to 205 to end debate and move to a final vote on six bills covering college athletes' name and likeness rights, Chinese government funding of schools, parental notice of foreign influence in schools, a small business regulatory budget, and a Red Tape Hotline for burdensome agency rules. This vote did not decide the bills themselves.",
+  "v": 2
+ },
+ "2025-309": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Six House Bills",
+  "plain": "The House voted 210 to 209 to approve the rules for debating six bills, covering college athlete pay rights, limits on Chinese government funding for public schools, parental notice of foreign influence in schools, small business regulation, and a hotline for burdensome agency rules. This was a procedural step that sets debate time and allowed amendments, not a vote on the bills themselves.",
+  "v": 2
+ },
  "2025-310": {
   "model": "claude-haiku-5-5",
   "name": "Small Business Regulatory Reduction Act of 2025",
@@ -963,6 +1077,30 @@
   "model": "claude-haiku-5-5",
   "name": "Deadline for Wildlife Conservation Plan Approval",
   "plain": "The House passed, 400 to 0, a bill that would require the Interior Department to approve a state's wildlife conservation plan within 180 days of its submission if the plan meets requirements. If the deadline is missed, the plan would be automatically approved and funds would be set aside for that state.",
+  "v": 2
+ },
+ "2025-317": {
+  "model": "claude-haiku-5-5",
+  "name": "Rule Package for Several Bills",
+  "plain": "The House voted 216 to 210 to pass a procedural step that ends debate on a set of bills and moves them to a final vote. This was not a vote on the bills themselves. Votes split along party lines.",
+  "v": 2
+ },
+ "2025-318": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Several Energy, Water and Veterans Bills",
+  "plain": "The House voted 215 to 211 to approve the rules for debating several bills on water pollution, electricity supply, natural gas reviews, investment funds and a veteran's remains. This was a procedural step that sets how long debate lasts and which changes are allowed, not a vote on the bills themselves.",
+  "v": 2
+ },
+ "2025-319": {
+  "model": "claude-haiku-5-5",
+  "name": "National Defense Authorization Act for Fiscal Year 2026",
+  "plain": "The House voted against sending the defense policy bill back to committee, so it moved on to the final vote. The bill sets policies and authorizes funding levels for military programs, equipment, personnel, and related national security activities for fiscal year 2026.",
+  "v": 2
+ },
+ "2025-32": {
+  "model": "claude-haiku-5-5",
+  "name": "HALT Fentanyl Act Amendment",
+  "plain": "The House voted on an amendment to the HALT Fentanyl Act, which would permanently place fentanyl-related substances as a class into the most restricted drug category under federal law. The amendment was rejected, 182 in favor to 226 opposed.",
   "v": 2
  },
  "2025-320": {
@@ -1019,16 +1157,40 @@
   "plain": "The House passed a bill, 302 to 123, that would stop the Securities and Exchange Commission from limiting the sale or listing of closed-end funds that invest in private investment funds. Republicans voted for it and Democrats were divided.",
   "v": 2
  },
+ "2025-329": {
+  "model": "claude-haiku-5-5",
+  "name": "Limits on Clean Water Act Protections",
+  "plain": "The House voted on whether to send the PERMIT Act back to committee, and the motion failed 210 to 216. The bill would narrow the Clean Water Act by excluding waste treatment systems, groundwater, certain seasonal streams, and some farmland, among other features.",
+  "v": 2
+ },
+ "2025-33": {
+  "model": "claude-haiku-5-5",
+  "name": "HALT Fentanyl Act",
+  "plain": "The House passed the HALT Fentanyl Act, 312 to 108. The bill would permanently place fentanyl-related substances as a class under the strictest federal drug category, with the same penalties used for fentanyl analogues.",
+  "v": 2
+ },
  "2025-330": {
   "model": "claude-haiku-5-5",
   "name": "PERMIT Act Clean Water Changes",
   "plain": "The House passed the PERMIT Act, 221 to 205. The bill would narrow which waters are covered by the Clean Water Act by excluding certain features, such as waste treatment systems, groundwater, and some cropland, from the definition of navigable waters.",
   "v": 2
  },
+ "2025-331": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Federal Worker Union Bill",
+  "plain": "The House voted 232 to 194 to approve the rules for debating a bill that would cancel a 2025 executive order removing certain federal agencies from federal worker union and collective bargaining requirements. The vote set debate rules only and was not a vote on the bill itself.",
+  "v": 2
+ },
  "2025-332": {
   "model": "claude-haiku-5-5",
   "name": "Protect America's Workforce Act",
   "plain": "The House passed the Protect America's Workforce Act, 231 to 195. The bill would cancel a March 2025 executive order that removed certain federal agencies from federal workers' collective bargaining rights, and keep existing union contracts in effect through their stated terms.",
+  "v": 2
+ },
+ "2025-333": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion to Recommit Pipeline Review Bill",
+  "plain": "The House voted on whether to send the Improving Interagency Coordination for Pipeline Reviews Act back to committee, and the motion failed 194 to 204. The bill would speed environmental reviews for certain natural gas pipelines and LNG terminals by making the Federal Energy Regulatory Commission the lead agency for those reviews.",
   "v": 2
  },
  "2025-334": {
@@ -1049,16 +1211,52 @@
   "plain": "The House voted 388 to 0 to pass a bill directing the federal Forest Service to give about one acre of land to Perry County, Arkansas, at the county's request, for public uses such as education and youth programs. The county would pay the conveyance costs.",
   "v": 2
  },
+ "2025-337": {
+  "model": "claude-haiku-5-5",
+  "name": "Rule Package for Six Bills on Environment, Energy, Wolves, and Child Trafficking",
+  "plain": "The House voted 215 to 207 to end debate and move to a final vote on a procedural package covering six bills, including changes to environmental reviews, hardrock mine sites, gray wolf protections, electric grid reliability, power plant retirement notices, and child trafficking efforts. The vote was not on the bills themselves.",
+  "v": 2
+ },
+ "2025-338": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Six Measures",
+  "plain": "The House voted 215 to 209 to approve the rules for debating six measures, covering environmental reviews, mining sites, gray wolf protections, electric grid oversight, power plant retirements, and child trafficking. This was a procedural step, not a vote on the measures themselves.",
+  "v": 2
+ },
+ "2025-339": {
+  "model": "claude-haiku-5-5",
+  "name": "Kayla Hamilton Act Referral to Committee",
+  "plain": "The House voted 208 to 218 on whether to send the Kayla Hamilton Act back to committee, and the motion failed. The bill would require the Department of Health and Human Services to consider more information when placing unaccompanied migrant children, including danger and flight risk, and to bar placing children with sponsors who are in the country unlawfully.",
+  "v": 2
+ },
  "2025-340": {
   "model": "claude-haiku-5-5",
   "name": "Kayla Hamilton Act",
   "plain": "The House passed the Kayla Hamilton Act, 225 to 201. It would require the Department of Health and Human Services to consider danger, community risk and flight risk when placing unaccompanied migrant children, and to share sponsor household information with Homeland Security.",
   "v": 2
  },
+ "2025-341": {
+  "model": "claude-haiku-5-5",
+  "name": "Power Plant Reliability Act Committee Referral",
+  "plain": "The House voted 207 to 218 against sending the Power Plant Reliability Act back to committee, so the bill moved on to a final vote. The bill would let federal regulators order a power plant to stay open for up to five years if its closure would make the power grid unreliable, and would exempt compliance actions from certain environmental laws.",
+  "v": 2
+ },
  "2025-342": {
   "model": "claude-haiku-5-5",
   "name": "Power Plant Reliability Act",
   "plain": "The House passed a bill, 222 to 202, that lets federal energy regulators order a power plant to stay open for up to five years if its closure would make the electricity system unreliable. Plant owners would have to give five years' notice before planned retirements.",
+  "v": 2
+ },
+ "2025-343": {
+  "model": "claude-haiku-5-5",
+  "name": "Rules Package on Health Insurance, Medicaid, and Environmental Review Bills",
+  "plain": "The House voted 204 to 203 to end debate and move toward a final vote on a set of bills, covering health insurance access, Medicaid funding for gender transition procedures for minors, penalties for genital mutilation and chemical castration of minors, and changes to the environmental review process. The vote itself was procedural and did not decide the bills.",
+  "v": 2
+ },
+ "2025-344": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Four Bills",
+  "plain": "The House voted 213 to 209 to approve rules for debating four bills, on health insurance access, Medicaid funding for minors' gender transition procedures, genital mutilation and chemical castration of minors, and environmental review. This was a procedural step, not a vote on the bills themselves.",
   "v": 2
  },
  "2025-345": {
@@ -1079,10 +1277,28 @@
   "plain": "The House passed the Reliable Power Act, 225 to 203. It would require federal agencies to get review from federal energy regulators before finalizing rules that affect power generation, if the grid is found to lack enough electricity to stay reliable.",
   "v": 2
  },
+ "2025-348": {
+  "model": "claude-haiku-5-5",
+  "name": "Lower Health Care Premiums for All Americans Act",
+  "plain": "The House voted on whether to send the Lower Health Care Premiums for All Americans Act back to committee, a last step before a final vote on the bill. The motion failed, 210 in favor and 218 against, so the bill moved on toward a final vote.",
+  "v": 2
+ },
  "2025-349": {
   "model": "claude-haiku-5-5",
   "name": "Lower Health Care Premiums for All Americans Act",
   "plain": "The House voted 216 to 211 to pass the Lower Health Care Premiums for All Americans Act. Nearly all Republicans voted yes, and nearly all Democrats voted no.",
+  "v": 2
+ },
+ "2025-35": {
+  "model": "claude-haiku-5-5",
+  "name": "Protecting American Energy Production Act",
+  "plain": "The House voted 226 to 188 to pass a bill that would stop the President from halting hydraulic fracturing, commonly called fracking, unless Congress first approves such a halt. It also states that Congress believes states should keep control over fracking regulation on state and private lands.",
+  "v": 2
+ },
+ "2025-350": {
+  "model": "claude-haiku-5-5",
+  "name": "Protect Children's Innocence Act Committee Referral",
+  "plain": "The House rejected sending the Protect Children's Innocence Act back to committee, 210 to 218, keeping it on track for a final vote. The bill would make it a federal crime to give minors gender-affirming care, with exceptions, and would broaden the federal ban on female genital mutilation.",
   "v": 2
  },
  "2025-351": {
@@ -1109,10 +1325,22 @@
   "plain": "The House voted on whether to add an amendment to the SPEED Act, a bill that would limit environmental reviews of major federal actions under NEPA and speed up that review process. The amendment was rejected, 204 for and 217 against.",
   "v": 2
  },
+ "2025-355": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion to Send the SPEED Act Back to Committee",
+  "plain": "The House voted on whether to send the SPEED Act back to committee, which would have delayed a final vote. The motion failed, 206 to 211. The bill would limit the scope of federal environmental reviews under NEPA and speed up the review process.",
+  "v": 2
+ },
  "2025-356": {
   "model": "claude-haiku-5-5",
   "name": "SPEED Act on Environmental Permitting",
   "plain": "The House passed the SPEED Act, 221 to 196. The bill would limit when federal agencies must conduct environmental reviews under NEPA, speed up those reviews, and restrict court challenges to them.",
+  "v": 2
+ },
+ "2025-357": {
+  "model": "claude-haiku-5-5",
+  "name": "Mining Regulatory Clarity Act",
+  "plain": "The House voted 205 to 213 against sending the Mining Regulatory Clarity Act back to committee, so the bill moved on to a final vote. The bill would let mining companies use federal land for waste disposal and related work, and it creates a fund for cleaning up abandoned hardrock mines.",
   "v": 2
  },
  "2025-358": {
@@ -1121,16 +1349,58 @@
   "plain": "The House passed the Mining Regulatory Clarity Act, 219 to 198. It would let mining operators use federal land for activities like waste disposal, and it would set up an Abandoned Hardrock Mine Fund for cleaning up old mines.",
   "v": 2
  },
+ "2025-359": {
+  "model": "claude-haiku-5-5",
+  "name": "Pet and Livestock Protection Act Recommittal Vote",
+  "plain": "The House rejected a motion to send the Pet and Livestock Protection Act back to committee, by 204 to 213, which means the bill moved on toward a final vote. The bill would direct the Interior Department to reissue a rule removing gray wolf protections under the Endangered Species Act and bar judicial review of that reissued rule.",
+  "v": 2
+ },
+ "2025-36": {
+  "model": "claude-haiku-5-5",
+  "name": "China Exchange Rate Transparency Act",
+  "plain": "The House passed the China Exchange Rate Transparency Act, 388 to 7. The bill would direct the U.S. representative at the International Monetary Fund to push for more openness from China about its currency exchange rates, and the requirement would expire after seven years unless China meets certain conditions sooner.",
+  "v": 2
+ },
  "2025-360": {
   "model": "claude-haiku-5-5",
   "name": "Gray Wolf Protections Removal Bill",
   "plain": "The House passed the Pet and Livestock Protection Act, 211 to 204. The bill would direct the government to reissue a rule removing federal endangered-species protections for the gray wolf in most of the lower 48 states and bar court review of that rule.",
   "v": 2
  },
+ "2025-361": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion to Send Medicaid Gender Transition Bill Back to Committee",
+  "plain": "The House voted on whether to send the Do No Harm in Medicaid Act back to committee, and the motion failed 204 to 212. The bill would bar federal Medicaid payment for gender transition procedures for people under 18, with exceptions such as treatment for early puberty, genetic or chromosomal disorders, and procedures to prevent death.",
+  "v": 2
+ },
  "2025-362": {
   "model": "claude-haiku-5-5",
   "name": "Medicaid Payment Limits for Minors' Gender Transition Procedures",
   "plain": "The House voted to pass the Do No Harm in Medicaid Act, 215 to 201. The bill would bar federal Medicaid payment for certain gender transition procedures for people under 18, with exceptions for early puberty, genetic or chromosomal conditions, reversing prior procedures, and preventing imminent death or serious bodily harm.",
+  "v": 2
+ },
+ "2025-37": {
+  "model": "claude-haiku-5-5",
+  "name": "Extending Deadline for Company Ownership Reports",
+  "plain": "The House voted 408 to 0 to pass a bill that gives certain companies formed or registered before January 1, 2024, until January 1, 2026, instead of January 1, 2025, to report their beneficial ownership information to the Financial Crimes Enforcement Network.",
+  "v": 2
+ },
+ "2025-41": {
+  "model": "claude-haiku-5-5",
+  "name": "Midnight Rules Relief Act",
+  "plain": "The House voted 212 to 208 to pass a bill letting Congress reject several federal regulations at once, when they were submitted late in a President's final year in office.",
+  "v": 2
+ },
+ "2025-42": {
+  "model": "claude-haiku-5-5",
+  "name": "Agent Raul Gonzalez Officer Safety Act",
+  "plain": "The House passed this bill 264 to 155. It would make it a federal crime to drive within 100 miles of the U.S. border while fleeing a Border Patrol agent or a law enforcement officer working with them, with a mandatory minimum prison term if someone dies or is seriously hurt. Non-citizens convicted under it would be barred from staying in the U.S. and from asylum.",
+  "v": 2
+ },
+ "2025-43": {
+  "model": "claude-haiku-5-5",
+  "name": "Barring Financial Fraudsters from Small Business Aid",
+  "plain": "The House voted 405 to 0 to pass a bill that would bar people convicted of certain financial crimes tied to COVID-19 business loans and grants from receiving Small Business Administration assistance, including businesses they own or run. The bill was considered under a fast-track process requiring two-thirds support.",
   "v": 2
  },
  "2025-44": {
@@ -1155,6 +1425,12 @@
   "model": "claude-haiku-5-5",
   "name": "Rural Small Business Resilience Act",
   "plain": "The House passed a bill, 415 to 8, requiring the Small Business Administration to make sure people in rural areas with declared disasters fully get disaster assistance, including targeted outreach to them.",
+  "v": 2
+ },
+ "2025-5": {
+  "model": "claude-haiku-5-5",
+  "name": "Rules for the 119th Congress",
+  "plain": "The House voted 215 to 209 to approve a resolution setting the House's operating rules for the 119th Congress. It keeps most of the previous rules with changes, including limits on removing the Speaker and on waiving the germaneness rule for amendments.",
   "v": 2
  },
  "2025-50": {
@@ -1205,6 +1481,12 @@
   "plain": "The House voted to pass a measure to cancel a Department of Energy rule that updated certification, labeling, and enforcement requirements for certain appliances and industrial equipment, such as washing machines, dishwashers, and computer room air conditioners. The vote was 222 in favor and 203 against.",
   "v": 2
  },
+ "2025-6": {
+  "model": "claude-haiku-5-5",
+  "name": "Laken Riley Act",
+  "plain": "The House passed a bill, 264 to 159, that requires detaining certain non-citizens who are arrested for burglary, theft, larceny, or shoplifting and lack legal status, and lets states sue the federal government over certain immigration enforcement decisions that cause them harm.",
+  "v": 2
+ },
  "2025-60": {
   "model": "claude-haiku-5-5",
   "name": "Censure of Representative Al Green",
@@ -1239,6 +1521,12 @@
   "model": "claude-haiku-5-5",
   "name": "Pandemic Unemployment Fraud Enforcement Act",
   "plain": "The House passed a bill giving federal prosecutors and civil enforcers 10 years, instead of 5, to bring fraud cases tied to pandemic-era unemployment programs. It also cancels certain unused anti-fraud funds that were provided in the 2021 American Rescue Plan Act. The vote was 295 in favor and 127 against.",
+  "v": 2
+ },
+ "2025-7": {
+  "model": "claude-haiku-5-5",
+  "name": "Sanctions on Foreign Aides to the International Criminal Court",
+  "plain": "The House voted 243 to 140 to pass a bill that would require sanctions on foreign people who help the International Criminal Court investigate or prosecute certain individuals, and would cancel funding for that court.",
   "v": 2
  },
  "2025-70": {
@@ -1289,6 +1577,12 @@
   "plain": "The House rejected an amendment to the DETERRENT Act, which would require colleges to disclose certain gifts and contracts from foreign sources and bar contracts with some foreign countries and entities without a waiver. The amendment failed, 199 for and 214 against.",
   "v": 2
  },
+ "2025-8": {
+  "model": "claude-haiku-5-5",
+  "name": "Amtrak Executive Bonus Disclosure Act",
+  "plain": "The House voted 407 to 0 to pass a bill requiring Amtrak to publicly disclose the base pay and bonus pay of its executives in an annual report to Congress, including the criteria used to set bonuses, and to post that report on its website.",
+  "v": 2
+ },
  "2025-80": {
   "model": "claude-haiku-5-5",
   "name": "DETERRENT Act Amendment on Foreign Gifts to Universities",
@@ -1337,6 +1631,12 @@
   "plain": "The House voted 411 to 0 to pass a bill requiring the Department of Veterans Affairs to study how often bile duct cancer occurs among veterans who served in Vietnam, and to report on it to Congress.",
   "v": 2
  },
+ "2025-9": {
+  "model": "claude-haiku-5-5",
+  "name": "Federal Disaster Assistance Coordination Act",
+  "plain": "The House passed this bill 405 to 5 under a fast-track process requiring two-thirds support. It would direct the Federal Emergency Management Agency to make information collection from disaster applicants less burdensome, convene a working group on damage assessments, and report to Congress.",
+  "v": 2
+ },
  "2025-90": {
   "model": "claude-haiku-5-5",
   "name": "Clear Communication for Veterans Claims Act",
@@ -1367,6 +1667,18 @@
   "plain": "The House voted 424 to 0 to pass a bill that would require the Office of Survivors Assistance to operate within the Office of the Secretary of Veterans Affairs instead of its current location within the Veterans Benefits Administration.",
   "v": 2
  },
+ "2026-10": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for a Measure on Policy Priorities",
+  "plain": "The House voted 224 to 202 to approve the rules for debating another measure, H.R. 1834, which aims to advance policy priorities. This was a procedural step that sets how long debate lasts and which amendments are allowed, not a vote on the measure itself.",
+  "v": 2
+ },
+ "2026-100": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion to Send DC Safety and Beautification Bill Back to Committee",
+  "plain": "The House voted on whether to send a bill back to committee before a final vote. The bill would set up a commission to advise on crime and immigration in Washington, D.C., and create a federal program to keep popular public areas clean and restore damaged monuments. The motion failed, 207 to 214.",
+  "v": 2
+ },
  "2026-101": {
   "model": "claude-haiku-5-5",
   "name": "Making DC Safe and Beautiful Act",
@@ -1379,6 +1691,12 @@
   "plain": "The House voted 225 to 187 to approve a resolution expressing support for the Department of Homeland Security. It recognizes the importance of fully funding the department, warns that Americans face greater risk while it is subject to a funding lapse, and thanks its employees for their work.",
   "v": 2
  },
+ "2026-103": {
+  "model": "claude-haiku-5-5",
+  "name": "Pay Our Homeland Defenders Act Procedural Vote",
+  "plain": "The House voted 215 to 210 against sending the bill back to committee, so it moved on toward a final vote. The bill would provide funding to the Department of Homeland Security for the rest of 2026, end a partial shutdown that began February 14, 2026, and provide back pay to affected federal employees.",
+  "v": 2
+ },
  "2026-104": {
   "model": "claude-haiku-5-5",
   "name": "Funding for Homeland Security Department",
@@ -1389,6 +1707,12 @@
   "model": "claude-haiku-5-5",
   "name": "Defending American Property Abroad Act",
   "plain": "The House passed a bill, 247 to 164, that would let the President bar foreign ships from entering U.S. ports if they have stopped at a port in a Western Hemisphere country with a U.S. free trade agreement that seized American-owned property. The ban would end once the property is returned, fairly compensated, or the dispute is otherwise resolved.",
+  "v": 2
+ },
+ "2026-107": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Consolidated Spending Bill",
+  "plain": "The House voted 209 to 206 to end debate and move to a final vote on whether to accept changes the Senate made to a bill that provides further funding for federal government operations for the fiscal year ending September 30, 2026. This was a procedural step, not the final vote on the measure itself.",
   "v": 2
  },
  "2026-108": {
@@ -1415,6 +1739,18 @@
   "plain": "The House passed the ALERT Act by 396 votes to 10 under a fast-track process. The bill would require military and civilian aircraft to carry improved tracking and communication equipment (ADS-B In) by 2031, and expand aviation safety oversight.",
   "v": 2
  },
+ "2026-111": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Four Clean Air and Tax Measures",
+  "plain": "The House voted 212 to 211 to end debate and move to a final vote on a package of four measures: three bills amending the Clean Air Act and a resolution supporting tax policies for working families. This was a procedural vote, not a vote on the measures themselves.",
+  "v": 2
+ },
+ "2026-112": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Clean Air and Tax Measures",
+  "plain": "The House voted 214 to 212 to approve the rules for debating several measures on Clean Air Act changes, foreign emissions standards, and a resolution supporting tax policies for working families. The vote set how long debate would last and which changes could be offered; it did not itself change any law.",
+  "v": 2
+ },
  "2026-113": {
   "model": "claude-haiku-5-5",
   "name": "Bringing Haiti Temporary Protected Status Bill to Floor",
@@ -1427,16 +1763,34 @@
   "plain": "The House voted on a resolution directing the President to remove U.S. armed forces from hostilities with Iran unless Congress or a declaration of war authorizes them, with exceptions for defending the U.S., an ally, or a partner from imminent attack. The resolution failed, 213 in favor to 214 against.",
   "v": 2
  },
+ "2026-115": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion to Send FENCES Act Back to Committee",
+  "plain": "The House rejected a motion to send the FENCES Act back to committee, so the bill moved on toward a final vote. The bill would exempt states from Clean Air Act penalties for pollution coming from outside their control, such as wildfire smoke or emissions from other countries.",
+  "v": 2
+ },
  "2026-116": {
   "model": "claude-haiku-5-5",
   "name": "FENCES Act: Clean Air Penalty Exemptions",
   "plain": "The House voted 220 to 208 to pass the FENCES Act. It would exempt states from Clean Air Act penalties for pollution they cannot control, such as smoke from wildfires or emissions from other countries.",
   "v": 2
  },
+ "2026-117": {
+  "model": "claude-haiku-5-5",
+  "name": "RED Tape Act Motion to Recommit",
+  "plain": "The House voted 213 to 216 against sending the RED Tape Act back to committee, so the bill moved on to its final vote. The bill would remove a requirement that the EPA review and comment on federal construction projects and major federal actions that already undergo environmental review under NEPA.",
+  "v": 2
+ },
  "2026-118": {
   "model": "claude-haiku-5-5",
   "name": "RED Tape Act on Environmental Reviews",
   "plain": "The House passed the RED Tape Act, 222 to 205. The bill would remove a requirement that the Environmental Protection Agency review and comment on federal construction projects and other major federal actions that already undergo a separate environmental review.",
+  "v": 2
+ },
+ "2026-119": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Haiti Protected Status Bill",
+  "plain": "The House voted 220 to 207 to approve the rules for debating a bill that would require the Homeland Security Secretary to grant temporary protected status to Haiti. This was a procedural step that sets how the debate on that bill will run, not a vote on the bill itself.",
   "v": 2
  },
  "2026-12": {
@@ -1457,10 +1811,22 @@
   "plain": "The House voted 219 to 207 to approve a resolution expressing support for tax policies that help working families and recognizing tax relief enacted in 2025. Nearly all Republicans voted yes, and nearly all Democrats voted no.",
   "v": 2
  },
+ "2026-122": {
+  "model": "claude-haiku-5-5",
+  "name": "Rule for Debate on Surveillance Law Extension",
+  "plain": "The House voted 211 to 210 to end debate and move to a final vote on whether to extend certain surveillance authorities through October 20, 2027. This was a procedural step, not a vote on the extension itself.",
+  "v": 2
+ },
  "2026-123": {
   "model": "claude-haiku-5-5",
   "name": "Extending Foreign Surveillance Authority Through 2027",
   "plain": "The House voted on whether to add an amendment to a bill that would extend certain foreign intelligence surveillance powers through October 20, 2027. The amendment failed, 200 in favor to 220 against."
+ },
+ "2026-124": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Foreign Surveillance Extension",
+  "plain": "The House voted on the rules for debating a bill to extend certain foreign intelligence surveillance powers to October 2027. The rules failed, 197 in favor to 228 against, so the proposal to move ahead was rejected.",
+  "v": 2
  },
  "2026-125": {
   "model": "claude-haiku-5-5",
@@ -1493,15 +1859,39 @@
   "plain": "The House passed the Remote Access Security Act, 369 to 22. The bill would extend U.S. export controls to foreign people who remotely use controlled items, such as through the internet or cloud computing, and let the Commerce Department issue licenses and impose penalties for that access.",
   "v": 2
  },
+ "2026-130": {
+  "model": "claude-haiku-5-5",
+  "name": "Rule Vote on Energy, Endangered Species, and Geothermal Bills",
+  "plain": "The House voted 180 to 179 to end debate and move toward a final vote on three bills: one on federal building energy standards, one on the Endangered Species Act, and one on geothermal drilling permits. The vote was on how the bills would be considered, not on the bills themselves.",
+  "v": 2
+ },
+ "2026-131": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Three Environmental and Energy Bills",
+  "plain": "The House voted 211 to 206 to approve the rules for debating three bills: one repealing federal building energy efficiency standards, one changing the Endangered Species Act, and one waiving a federal drilling permit for certain geothermal activities. The vote set how long debate would last and which amendments were allowed, but did not itself decide those bills.",
+  "v": 2
+ },
  "2026-132": {
   "model": "claude-haiku-5-5",
   "name": "Support for Rural Communities Resolution",
   "plain": "The House voted 220 to 196 to approve a resolution expressing support for rural communities across the United States and recognizing the House's work on their behalf. Passed."
  },
+ "2026-133": {
+  "model": "claude-haiku-5-5",
+  "name": "Federal Building Energy Efficiency Standards Repeal",
+  "plain": "The House voted on whether to send the Reliable Federal Infrastructure Act back to committee, and the motion failed 203 to 214. The bill would repeal energy efficiency standards that phase out fossil fuel use in new federal buildings and major renovations by 2030.",
+  "v": 2
+ },
  "2026-134": {
   "model": "claude-haiku-5-5",
   "name": "Federal Building Energy Standards Rollback",
   "plain": "The House passed a bill, 215 to 202, that would repeal rules phasing out fossil fuel use in new and major-renovation federal buildings by 2030. It would also bar green-building certification systems from denying federal buildings certification solely because of fossil fuel use."
+ },
+ "2026-135": {
+  "model": "claude-haiku-5-5",
+  "name": "FIRE Act Motion to Recommit",
+  "plain": "The House voted on whether to send the FIRE Act back to committee before a final vote. The motion failed, 206 to 214, so the bill moved on toward a final vote. The bill would change how air pollution rules treat wildfire-related events and require the EPA to revise its regulations on them.",
+  "v": 2
  },
  "2026-136": {
   "model": "claude-haiku-5-5",
@@ -1527,6 +1917,18 @@
   "model": "claude-haiku-5-5",
   "name": "Continuing Appropriations and Extensions Act, 2027",
   "plain": "The House passed this bill, 340 to 54, to keep federal agencies funded at current levels through December 11, 2026, so a shutdown is avoided, and to extend several expiring programs, including grain inspection, cybersecurity information sharing, and trade benefits for African countries.",
+  "v": 2
+ },
+ "2026-140": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Five Bills and a Budget Resolution",
+  "plain": "The House voted 215 to 210 to end debate and move to a final vote on a package that includes a farm bill, a school gender-marker parental consent bill, a 2026 budget resolution, a Jewish servicemember burial marker bill, and an ethanol fuel waiver bill. This vote was not on those measures themselves.",
+  "v": 2
+ },
+ "2026-141": {
+  "model": "claude-haiku-5-5",
+  "name": "House Rules for Debating Several Bills",
+  "plain": "The House voted 216 to 210 to approve rules for debating several separate measures, including farm programs, school gender-marker consent, the federal budget, and others. This was a procedural step that sets how long debate lasts and which amendments are allowed, not a final vote on those measures.",
   "v": 2
  },
  "2026-142": {
@@ -1590,6 +1992,12 @@
   "name": "Farm Bill Amendment",
   "plain": "The House voted 215 to 213 to add an amendment to the farm bill, which renews Department of Agriculture programs through 2031 covering crop support, conservation, food aid, nutrition, farm credit, rural development, crop insurance, and foreign ownership of U.S. farmland."
  },
+ "2026-153": {
+  "model": "claude-haiku-5-5",
+  "name": "Farm Bill Sent Back to Committee",
+  "plain": "The House voted on whether to send the farm bill back to committee for more work, rather than moving to a final vote. The motion failed 211 to 214, so the bill moved on to the final vote. The bill would reauthorize and modify Department of Agriculture programs covering crop support, conservation, nutrition assistance, rural development, and crop insurance through 2031.",
+  "v": 2
+ },
  "2026-154": {
   "model": "claude-haiku-5-5",
   "name": "Farm Bill",
@@ -1610,6 +2018,30 @@
   "name": "Combating Organized Retail Crime Act",
   "plain": "The House passed a bill to expand federal enforcement against organized theft from stores and shipments, including money laundering charges tied to stolen goods and gift cards, and to create a temporary Homeland Security center to coordinate these cases. The vote was 348 in favor and 60 against."
  },
+ "2026-158": {
+  "model": "claude-haiku-5-5",
+  "name": "Rule Setting Debate on Five Bills",
+  "plain": "The House voted 211 to 208 to pass a procedural rule that sets the terms for debating five bills, covering cashless bail, bail fraud, court monitors, support for law enforcement, and military construction and veterans spending. The vote was to end debate on the rule, not a vote on the bills themselves.",
+  "v": 2
+ },
+ "2026-159": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Five House Bills",
+  "plain": "The House voted 214 to 208 to approve the rules for debating five measures, including bills on cashless bail, bail fraud, court monitors, support for law enforcement, and military construction and veterans spending. This was a procedural step that sets how debate on those measures will proceed.",
+  "v": 2
+ },
+ "2026-16": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Five Labor and Retirement Bills",
+  "plain": "The House voted 206 to 205 to end debate and move to a final vote on a package of five bills concerning retirement plans, overtime pay, tipped workers, and joint employers. This was a procedural vote, not a vote on the bills themselves.",
+  "v": 2
+ },
+ "2026-160": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending Debate on Farm Bill Procedures",
+  "plain": "The House voted 211 to 206 to end debate and move to a final vote on a procedural measure. The measure would remove a requirement to include the text of a separate fuel retailer bill within the farm bill, H.R. 7567. This was not the final vote on the farm bill itself.",
+  "v": 2
+ },
  "2026-161": {
   "model": "claude-haiku-5-5",
   "name": "Procedural Rule for Farm Bill and Fuel Retailer Measure",
@@ -1619,6 +2051,12 @@
   "model": "claude-haiku-5-5",
   "name": "Honoring Law Enforcement Officers Killed in the Line of Duty",
   "plain": "The House approved a resolution expressing support for police and other law enforcement officers and condolences to families of those killed on duty, passing 418 to 2. The measure does not create any new law or spending."
+ },
+ "2026-163": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion to Send Ethanol Fuel Bill Back to Committee",
+  "plain": "The House voted on whether to send the bill allowing gasoline with up to 15% ethanol to be sold year-round back to committee. The motion failed, 112 to 309, so the bill moved on toward a final vote.",
+  "v": 2
  },
  "2026-164": {
   "model": "claude-haiku-5-5",
@@ -1640,10 +2078,22 @@
   "name": "Urging Release of Detained Religious and Political Figures in China",
   "plain": "The House voted 414 to 0 to approve a non-binding resolution asking the President to press for the humanitarian release of five people detained in China, including two pastors and Jimmy Lai, during future talks with Chinese President Xi Jinping. It also asks for proof they are alive, access to lawyers and family, and medical care."
  },
+ "2026-168": {
+  "model": "claude-haiku-5-5",
+  "name": "Bill on Bail Bonds and Insurance Fraud",
+  "plain": "The House voted 210 to 213 against sending the bill back to committee, so the bill moved on toward a final vote. The bill would treat paying bail or bail bonds as insurance business under federal law, which would make it subject to federal insurance-fraud rules.",
+  "v": 2
+ },
  "2026-169": {
   "model": "claude-haiku-5-5",
   "name": "Bail Bond Insurance Fraud Bill",
   "plain": "The House passed a bill 243 to 179 that would treat bail payments, including bail bonds and immigration bail bonds, as insurance business under federal law. This would make such bail providers subject to federal insurance fraud crimes and state insurance licensing and regulation."
+ },
+ "2026-17": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Five Workplace and Retirement Bills",
+  "plain": "The House voted 214 to 207 to approve the rules for debating five bills on retirement plans, overtime, tipped workers, and joint employers. This was a procedural step that sets how long debate lasts and which changes may be offered, not a final vote on the bills themselves.",
+  "v": 2
  },
  "2026-170": {
   "model": "claude-haiku-5-5",
@@ -1654,6 +2104,12 @@
   "model": "claude-haiku-5-5",
   "name": "Cashless Bail Reporting Act",
   "plain": "The House passed the Cashless Bail Reporting Act, 308 to 116. The bill would require the Justice Department to publish a yearly list of state and local governments that let people charged with certain serious offenses, such as burglary, murder, rape, looting, or vandalism, be released before trial without cash bail."
+ },
+ "2026-172": {
+  "model": "claude-haiku-5-5",
+  "name": "Monitor Accountability Act: Send Back to Committee",
+  "plain": "The House voted 210 to 213 against sending the Monitor Accountability Act back to committee, so the bill moved on toward a final vote. The bill would set rules for independent monitors who oversee state and local governments under court settlements, including public comment before appointment, a five-year term limit, and caps on fees.",
+  "v": 2
  },
  "2026-173": {
   "model": "claude-haiku-5-5",
@@ -1690,6 +2146,12 @@
   "name": "Community Bank Deposit Access Act",
   "plain": "The House passed a bill, 393 to 16, that would stop certain custodial deposits at smaller community banks from being classed as brokered deposits, so those banks face less extra oversight. The bill was considered under a fast-track process requiring two-thirds support."
  },
+ "2026-18": {
+  "model": "claude-haiku-5-5",
+  "name": "Voluntary Training and Work Hours Bill",
+  "plain": "The House voted 209 to 213 against sending this bill back to committee, so it moved on toward a final vote. The bill would exclude certain voluntary employer training held outside regular working hours from counting as paid work hours, as long as choosing not to take part doesn't hurt the worker's conditions and no work is done during the training.",
+  "v": 2
+ },
  "2026-180": {
   "model": "claude-haiku-5-5",
   "name": "Veterans Medical Facility Project in St. Louis",
@@ -1710,10 +2172,34 @@
   "name": "Parental Consent for School Gender Changes Bill",
   "plain": "The House passed the bill 217 to 198. It would require public elementary and middle schools to get parental consent before changing a student's gender markers, pronouns, preferred name, or sex-based accommodations such as bathrooms and locker rooms, as a condition of receiving certain federal education funds."
  },
+ "2026-185": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Veterans and Smithsonian Bills",
+  "plain": "The House voted 209 to 207 to end debate and move to a final vote on a package of three bills and a related rule. The package covers limits on sharing certain veterans' information for gun background checks, increases to disability and survivor payments for veterans, and allowing a Smithsonian women's history museum on the National Mall.",
+  "v": 2
+ },
+ "2026-186": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Three Bills",
+  "plain": "The House voted 208 to 207 to approve the rules for debating three measures: one on veterans' records and background checks, one on raising veterans' disability payments, and one on a women's history museum on the National Mall. This was a procedural step that sets how the debate will run, not a vote on the measures themselves.",
+  "v": 2
+ },
+ "2026-187": {
+  "model": "claude-haiku-5-5",
+  "name": "Smithsonian American Women's History Museum Act",
+  "plain": "The House voted on whether to send the bill back to committee, and the motion failed 209 to 209, so the bill moved on. The bill would authorize a Smithsonian American Women's History Museum on a site on the National Mall and limit it to the history of biological women.",
+  "v": 2
+ },
  "2026-188": {
   "model": "claude-haiku-5-5",
   "name": "Smithsonian American Women's History Museum Act",
   "plain": "The House voted on whether to pass a bill to create a Smithsonian women's history museum on a National Mall site and limit its focus to biological women. The bill failed, 204 to 216."
+ },
+ "2026-189": {
+  "model": "claude-haiku-5-5",
+  "name": "Veterans Gun Rights Bill Sent Back to Committee",
+  "plain": "The House voted 208 to 210 on whether to send the Veterans 2nd Amendment Protection Act back to committee, and the motion failed. The bill would stop the Department of Veterans Affairs from sending veterans' personal information to the national gun background check system just because they have a fiduciary who manages their benefits, unless a judge finds them a danger to themselves or others.",
+  "v": 2
  },
  "2026-19": {
   "model": "claude-haiku-5-5",
@@ -1741,10 +2227,28 @@
   "name": "Alaska Native Marine Mammal Products Act",
   "plain": "The House voted 404 to 14 to pass a bill preventing states from banning marine mammal ivory, bone, or baleen legally made by Alaska Natives as traditional handicrafts and clothing."
  },
+ "2026-194": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Four Spending and Program Bills",
+  "plain": "The House voted 208 to 207 to pass a procedural step that ends debate and moves the House toward a final vote on four bills. The bills cover agriculture and food programs, child care funding for noncompliant states, identity fraud checks on student aid forms, and temporary assistance for needy families. Republicans voted yes and Democrats voted no.",
+  "v": 2
+ },
+ "2026-195": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Four Bills",
+  "plain": "The House voted 211 to 207 to approve the rules for debating four bills: one on agriculture and FDA spending, one on child care funding for noncompliant states, one on identity fraud checks for student aid forms, and one on fraud and improper payments in temporary assistance for needy families. This was a procedural step, not a vote on the bills themselves.",
+  "v": 2
+ },
  "2026-196": {
   "model": "claude-haiku-5-5",
   "name": "Northwest Straits Marine Conservation Act",
   "plain": "The House passed a bill to extend for seven years a program that protects and restores marine waters, habitats and species in the Northwest Straits region of Washington state, by a vote of 374 to 49."
+ },
+ "2026-197": {
+  "model": "claude-haiku-5-5",
+  "name": "Child Care Program Sanctions Bill",
+  "plain": "The House voted on whether to send the bill back to committee, and the motion failed 210 to 213. The bill would require federal sanctions, including disqualifying a state from receiving child care block grant funds, when a state substantially violates program rules.",
+  "v": 2
  },
  "2026-198": {
   "model": "claude-haiku-5-5",
@@ -1756,6 +2260,18 @@
   "name": "Removing Forces from Hostilities with Iran",
   "plain": "The House approved a resolution directing the President to remove U.S. armed forces from hostilities against Iran unless Congress or a declaration of war authorizes them. Forces needed to defend the U.S., an ally, or a partner from imminent attack are exempt if the President follows the War Powers Resolution."
  },
+ "2026-2": {
+  "model": "claude-haiku-5-5",
+  "name": "Rules for Three Bills: Showerheads, Manufactured Housing, Spending",
+  "plain": "The House voted 213 to 211 to end debate and move to a final vote on procedural rules for three bills. These rules cover a showerhead definition change, limits on energy efficiency standards for manufactured housing, and a consolidated spending bill for the fiscal year ending September 30, 2026. The vote itself did not decide the bills.",
+  "v": 2
+ },
+ "2026-20": {
+  "model": "claude-haiku-5-5",
+  "name": "Employer Child and Elder Care Overtime Bill",
+  "plain": "The House voted 213 to 209 against sending this bill back to committee, which let it move on to the final vote. The bill would exclude the value of employer-paid child or dependent care from the calculation of overtime pay.",
+  "v": 2
+ },
  "2026-200": {
   "model": "claude-haiku-5-5",
   "name": "Ukraine Support Act Floor Procedure",
@@ -1766,15 +2282,33 @@
   "name": "Ordering Troops Out of Lebanon",
   "plain": "The House voted on a resolution directing the President to remove U.S. armed forces from Lebanon within seven days. The resolution failed, 92 in favor and 324 against."
  },
+ "2026-202": {
+  "model": "claude-haiku-5-5",
+  "name": "Same-Day Rule Waiver for Budget Resolutions",
+  "plain": "The House voted 212 to 210 to let it consider certain rule resolutions on the same day they are reported, through June 5, 2026, without a two-thirds vote. The vote was a procedural step to end debate, not a vote on the measure itself.",
+  "v": 2
+ },
  "2026-203": {
   "model": "claude-haiku-5-5",
   "name": "Fast-Track Rule for Budget Reconciliation Bill",
   "plain": "The House voted 213 to 211 to approve a procedural resolution that lets it consider certain rule reports on the same day without a two-thirds vote, through June 5, 2026. The change relates to a budget reconciliation measure."
  },
+ "2026-204": {
+  "model": "claude-haiku-5-5",
+  "name": "Agriculture and FDA Spending Bill, Committee Return Vote",
+  "plain": "The House voted 210 to 212 against sending the 2027 agriculture and Food and Drug Administration funding bill back to committee, so the bill moved on toward a final vote. The bill would provide money for the Department of Agriculture, the Food and Drug Administration, and related agencies, including nutrition programs such as SNAP and WIC.",
+  "v": 2
+ },
  "2026-205": {
   "model": "claude-haiku-5-5",
   "name": "Agriculture and FDA Spending Bill",
   "plain": "The House passed the bill by a vote of 213 to 210. It provides funding for the Department of Agriculture, the Food and Drug Administration, and related agencies for 2027, covering farm programs, food nutrition assistance, and rural development."
+ },
+ "2026-206": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Ukraine Support Bill",
+  "plain": "The House voted 216 to 204 to approve the rules for debating a bill to authorize support for Ukraine. This was a procedural step that sets how long debate lasts and which amendments are allowed, not a vote on the bill itself.",
+  "v": 2
  },
  "2026-207": {
   "model": "claude-haiku-5-5",
@@ -1791,15 +2325,39 @@
   "name": "Federal Fraud Prevention Workforce Training Act",
   "plain": "The House passed a bill requiring federal employees who oversee federal programs or grants to take antifraud and improper-payment training every two years, with the program also offered to state, local, and tribal governments. The vote was 393 in favor and none against."
  },
+ "2026-21": {
+  "model": "claude-haiku-5-5",
+  "name": "Tipped Employee Protection Act Recommittal Vote",
+  "plain": "The House voted 215 to 209 against sending the Tipped Employee Protection Act back to committee, so it moved on toward a final vote. The bill would count workers as tipped employees based on their tips and other cash wages meeting the federal minimum wage, rather than on their job duties.",
+  "v": 2
+ },
+ "2026-211": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Fraud Prevention and Spending Bills",
+  "plain": "The House voted 213 to 211 to approve the rules for debating several measures aimed at preventing government fraud and improper payments, along with a reconciliation bill. This was a procedural step that sets how long debate lasts and which amendments are allowed, not a final vote on those measures.",
+  "v": 2
+ },
  "2026-212": {
   "model": "claude-haiku-5-5",
   "name": "Speeding Up Union Contract Negotiations",
   "plain": "The House voted 220 to 199 to bring a bill to the floor that would speed up how quickly workers and employers must reach union contracts under federal labor law. Nearly all Democrats supported it, and nearly all Republicans opposed it."
  },
+ "2026-213": {
+  "model": "claude-haiku-5-5",
+  "name": "Secure America Act Recommittal Vote",
+  "plain": "The House voted on whether to send the Secure America Act back to committee, which would have delayed its final vote. The motion failed, 211 to 215. The bill would provide about $70 billion through 2029 for border security, immigration enforcement, and related Homeland Security activities.",
+  "v": 2
+ },
  "2026-214": {
   "model": "claude-haiku-5-5",
   "name": "Secure America Act Funding Bill",
   "plain": "The House passed the Secure America Act by 214 to 212. The bill provides about $70 billion through 2029 for border security, immigration enforcement, and related work by Homeland Security, Customs and Border Protection, and Immigration and Customs Enforcement."
+ },
+ "2026-215": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Workplace Contract Bill",
+  "plain": "The House voted 221 to 201 to approve the rules for debating a bill meant to speed up how quickly workplace union contracts are reached under federal labor law. This was a procedural step that sets how the debate will run, not a final vote on the bill itself.",
+  "v": 2
  },
  "2026-216": {
   "model": "claude-haiku-5-5",
@@ -1815,6 +2373,18 @@
   "model": "claude-haiku-5-5",
   "name": "Fraud Prevention and Accountability Act",
   "plain": "The House voted to pass the Fraud Prevention and Accountability Act, 240 to 181. The bill would give the Treasury Department's Bureau of the Fiscal Service new duties to prevent improper payments and create a Treasury inspector general office to audit and investigate federal funds, including pandemic and disaster spending."
+ },
+ "2026-219": {
+  "model": "claude-haiku-5-5",
+  "name": "Stopping Fraudulent Payments Act",
+  "plain": "The House voted on whether to send the Stopping Fraudulent Payments Act back to committee, a last attempt to change it before a final vote. The motion failed, 209 to 213, so the House moved on toward a final vote. The bill would have agencies pause or check payments that show a high risk of fraud or improper payment.",
+  "v": 2
+ },
+ "2026-22": {
+  "model": "claude-haiku-5-5",
+  "name": "SHOWER Act Showerhead Definition Bill",
+  "plain": "The House voted 209 to 215 against sending the SHOWER Act back to committee, so the bill moved on toward a final vote. The bill would set a new legal definition of showerhead used in federal water-efficiency rules and require the Energy Department to revise its regulations to match.",
+  "v": 2
  },
  "2026-220": {
   "model": "claude-haiku-5-5",
@@ -1872,6 +2442,18 @@
   "plain": "The House voted to pass the SHOWER Act, which sets a new legal definition of showerhead for federal water-efficiency rules and requires the Department of Energy to update its regulations to match. The bill passed 226 to 197.",
   "v": 2
  },
+ "2026-230": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Defense, State Funding, Disability and Tax Bills",
+  "plain": "The House voted 215 to 210 to end debate and move to a final vote on a package of rules covering a defense authorization bill, a national security and State Department funding bill, a disability insurance program bill, and a resolution marking the first anniversary of the Working Families Tax Cuts. This vote was not on the bills themselves.",
+  "v": 2
+ },
+ "2026-231": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Defense, Spending, and Disability Bills",
+  "plain": "The House voted on the rules for debating several measures, including the defense bill, a national security spending bill, and a disability insurance bill, and the rules were rejected, 198 in favor to 224 against. The vote was a procedural step and did not decide the measures themselves.",
+  "v": 2
+ },
  "2026-232": {
   "model": "claude-haiku-5-5",
   "name": "Ordering Troops Out of Lebanon",
@@ -1892,10 +2474,34 @@
   "name": "Easier Airport Security Screening for Families with Young Children",
   "plain": "The House voted to pass a bill of 398 to 12 that directs the TSA to test alternative airport security lanes for travelers with children 12 and under, starting at no fewer than five airports, with priority for busy ones."
  },
+ "2026-236": {
+  "model": "claude-haiku-5-5",
+  "name": "Rules Package on Four Bills",
+  "plain": "The House voted 217 to 210 to end debate and move on to final votes on a package of four bills: making daylight saving time permanent, national security and State Department funding, veterans' benefits, and firearms retailer payment codes. Republicans voted yes and Democrats voted no.",
+  "v": 2
+ },
+ "2026-237": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Four Bills",
+  "plain": "The House voted 215 to 211 to approve the rules for debating four bills: one on daylight saving time, one on national security and State Department funding, one on veterans' benefits, and one on firearms retailer payment codes. This was a procedural step setting how that debate would run, not a vote on the bills themselves.",
+  "v": 2
+ },
  "2026-238": {
   "model": "claude-haiku-5-5",
   "name": "Permanent Daylight Saving Time Bill",
   "plain": "The House passed the Sunshine Protection Act of 2025, 308 to 117. The bill would make daylight saving time the permanent standard time, and states with areas exempt from daylight saving time could choose standard time for those areas."
+ },
+ "2026-239": {
+  "model": "claude-haiku-5-5",
+  "name": "Protecting Privacy in Purchases Act",
+  "plain": "The House rejected a motion to send this bill back to committee, so it moved on toward a final vote. If passed, the bill would bar payment card networks from using merchant codes that separate firearms retailers from general-merchandise or sporting-goods retailers, and would have the Justice Department enforce this and report yearly on the cases.",
+  "v": 2
+ },
+ "2026-24": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Consolidated Appropriations Bill",
+  "plain": "The House voted 213 to 209 to end debate and move to a final vote on a rule for considering a bill that makes further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes. The vote was procedural and was not a vote on the bill itself.",
+  "v": 2
  },
  "2026-240": {
   "model": "claude-haiku-5-5",
@@ -1927,6 +2533,12 @@
   "name": "Funding for State Department and National Security Programs",
   "plain": "The House voted on an amendment to a bill that sets yearly funding for State Department operations, national security, and related programs for fiscal year 2027. The amendment was rejected, 136 in favor and 291 against."
  },
+ "2026-246": {
+  "model": "claude-haiku-5-5",
+  "name": "National Security and State Department Funding Bill",
+  "plain": "The House rejected a motion to send this bill back to committee, 209 to 216. The bill would provide money for the State Department, international organizations, and related programs such as the Peace Corps and the National Endowment for Democracy for the 2027 fiscal year.",
+  "v": 2
+ },
  "2026-247": {
   "model": "claude-haiku-5-5",
   "name": "State Department and National Security Funding for 2027",
@@ -1936,6 +2548,18 @@
   "model": "claude-haiku-5-5",
   "name": "Naming Marietta VA Clinic for Colonel Michael H. Boyce",
   "plain": "The House voted 418 to 0 to pass a bill naming the Department of Veterans Affairs multispecialty clinic in Marietta, Georgia, the Colonel Michael H. Boyce Department of Veterans Affairs Multispecialty Clinic. The bill passed, with both parties voting in favor."
+ },
+ "2026-249": {
+  "model": "claude-haiku-5-5",
+  "name": "Take Care of America's Veterans Act",
+  "plain": "The House voted on whether to send the veterans benefits bill back to committee, and the motion failed 210 to 211, so the bill moved on toward a final vote. The bill addresses veterans' compensation, health care, education benefits, and VA operations.",
+  "v": 2
+ },
+ "2026-25": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Further Appropriations Bill",
+  "plain": "The House voted 213 to 210 to approve the rules for debating a further consolidated appropriations bill for the fiscal year ending September 30, 2026. This was a procedural step that sets how debate will proceed, not a vote on the bill itself.",
+  "v": 2
  },
  "2026-250": {
   "model": "claude-haiku-5-5",
@@ -1951,6 +2575,18 @@
   "model": "claude-haiku-5-5",
   "name": "Value Over Cost Act",
   "plain": "The House passed a bill letting federal agencies buy through the General Services Administration's pre-approved supplier contracts based on overall benefit, not only the lowest price, when the agency decides that serves the government's interests. The vote was 421 in favor and 1 against."
+ },
+ "2026-253": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Several Bills and a Budget Resolution",
+  "plain": "The House voted 213 to 209 to end debate and move toward final votes on a package of measures, including defense, Social Security disability, budget, stock trading limits for Members of Congress, banking, and continuing government funding. This was a procedural vote, not a vote on the measures themselves.",
+  "v": 2
+ },
+ "2026-254": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Several Bills",
+  "plain": "The House voted 214 to 211 to approve the rules for debating several measures, including defense, Social Security disability, budget, congressional stock, banking, and government funding bills. This was a procedural step that sets how long debate lasts and which changes are allowed, not a vote on the measures themselves.",
+  "v": 2
  },
  "2026-255": {
   "model": "claude-haiku-5-5",
@@ -2039,6 +2675,12 @@
   "plain": "The House rejected an amendment to the Financial Services and General Government and National Security, Department of State appropriations bill, which provides 2026 funding for the Treasury, the White House office, the courts, the District of Columbia, and foreign affairs and aid programs. The vote was 127 in favor and 291 against.",
   "v": 2
  },
+ "2026-270": {
+  "model": "claude-haiku-5-5",
+  "name": "Main Street Capital Access Act",
+  "plain": "The House voted on whether to send the Main Street Capital Access Act back to committee, which would have delayed it. The motion failed, 210 to 216, so the House moved on toward a final vote. The bill would ease banking rules, including for bank mergers and for new banks' capital requirements.",
+  "v": 2
+ },
  "2026-271": {
   "model": "claude-haiku-5-5",
   "name": "Main Street Capital Access Act",
@@ -2069,10 +2711,22 @@
   "name": "National Defense Authorization Act Amendment",
   "plain": "The House voted on whether to add an amendment to the National Defense Authorization Act for 2027, which sets policy and funding for military programs. The amendment failed, 175 for and 254 against."
  },
+ "2026-277": {
+  "model": "claude-haiku-5-5",
+  "name": "National Defense Authorization Act for Fiscal Year 2027",
+  "plain": "The House voted 213 to 216 against sending the defense policy bill back to committee, so it moved on toward a final vote. The bill sets policies and authorities for military programs, equipment purchases, personnel levels, and military construction for fiscal year 2027.",
+  "v": 2
+ },
  "2026-278": {
   "model": "claude-haiku-5-5",
   "name": "National Defense Authorization Act for 2027",
   "plain": "The House passed the annual defense spending bill for fiscal year 2027, 216 to 212. It sets policy and funding levels for military programs, equipment, personnel, and related national security work."
+ },
+ "2026-279": {
+  "model": "claude-haiku-5-5",
+  "name": "Stop Insider Trading Act",
+  "plain": "The House voted 211 to 218 on whether to send the Stop Insider Trading Act back to committee, and the motion failed. The bill would bar members of Congress and their spouses and dependent children from buying stocks and require public notice before they sell them.",
+  "v": 2
  },
  "2026-28": {
   "model": "claude-haiku-5-5",
@@ -2115,6 +2769,18 @@
   "name": "Government Funding Extension Bill",
   "plain": "The House voted 370 to 48 to accept the Senate's version of a bill that keeps federal agencies funded through December 11, 2026 and extends a range of expiring programs, including grain inspection, cybersecurity sharing, and trade preferences for African countries."
  },
+ "2026-287": {
+  "model": "claude-haiku-5-5",
+  "name": "Rule for Debating Several Bills and a Resolution",
+  "plain": "The House voted 212 to 205 to end debate on a procedural step that sets the terms for considering several measures, including mineral production projects, North Atlantic right whale regulations, a resolution condemning socialism, and a bill on higher education and Israel-related boycotts. This was not a vote on the measures themselves.",
+  "v": 2
+ },
+ "2026-288": {
+  "model": "claude-haiku-5-5",
+  "name": "Rules for Debating Several Bills and a Resolution",
+  "plain": "The House voted 210 to 208 to approve the rules for debating several measures, including a mining-projects bill, a whale-protection bill, a resolution condemning socialism, and a college-funding bill about Israel. This was a procedural step that set how debate on those measures would run.",
+  "v": 2
+ },
  "2026-289": {
   "model": "claude-haiku-5-5",
   "name": "Resolution Condemning Socialism",
@@ -2124,6 +2790,12 @@
   "model": "claude-haiku-5-5",
   "name": "Amendment to the Retirement Savings Investment Bill",
   "plain": "The House approved an amendment to a bill on how retirement plan managers choose investments, by a vote of 395 to 22. The bill generally requires plan managers to base investment decisions mainly on financial factors that affect risk or return.",
+  "v": 2
+ },
+ "2026-290": {
+  "model": "claude-haiku-5-5",
+  "name": "Northeast Lobsterman Protection Act of 2026",
+  "plain": "The House voted on whether to send the bill back to committee, and the motion failed, 202 to 212. The bill would extend the deadline from 2028 to 2035 for federal regulators to issue new rules protecting endangered Atlantic large whales from lobster and crab fishing gear.",
   "v": 2
  },
  "2026-291": {
@@ -2165,6 +2837,18 @@
   "model": "claude-haiku-5-5",
   "name": "Motion to Table Impeachment of Donald Trump",
   "plain": "The House voted 232 to 147 to set aside a resolution to impeach President Donald Trump, which would have charged him with abusing presidential power by letting ICE and CBP operate in violation of constitutional protections and undermining judicial oversight. Setting it aside ends the resolution."
+ },
+ "2026-3": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Three Spending and Housing Bills",
+  "plain": "The House voted 214 to 212 to approve the rules for debating three bills: one on showerhead definitions, one on energy efficiency standards for manufactured housing, and one providing funding for the fiscal year ending September 30, 2026. This was a procedural step that sets how debate will proceed, not a final vote on those bills.",
+  "v": 2
+ },
+ "2026-30": {
+  "model": "claude-haiku-5-5",
+  "name": "Retirement Plan Investment Rules Bill",
+  "plain": "The House rejected a motion to send the Protecting Prudent Investment of Retirement Savings Act back to committee, by 206 to 210. The bill would require people who manage employer retirement plans to base investment choices mainly on financial factors, with limited exceptions.",
+  "v": 2
  },
  "2026-301": {
   "model": "claude-haiku-5-5",
@@ -2257,6 +2941,18 @@
   "name": "Impeachment Referral of the Defense Secretary",
   "plain": "The House voted 211 to 204 to send the impeachment of Defense Secretary Peter Hegseth to committee rather than decide it on the House floor. Sending it to committee sets the measure aside for now."
  },
+ "2026-318": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Retirement Plan Bill",
+  "plain": "The House voted 213 to 207 to end debate and move to a final vote on a bill that would amend federal securities laws to enhance 403(b) retirement plans. This was a procedural step, not a vote on the bill itself.",
+  "v": 2
+ },
+ "2026-319": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for 403(b) Retirement Plan Bill",
+  "plain": "The House voted 215 to 209 to approve the rules for debating a bill to amend federal securities laws to enhance 403(b) retirement plans. This was a procedural step that sets how long debate lasts and which changes may be offered; it was not a vote on the bill itself.",
+  "v": 2
+ },
  "2026-32": {
   "model": "claude-haiku-5-5",
   "name": "Main Street Parity Act",
@@ -2279,6 +2975,24 @@
   "plain": "The House passed the AI for Main Street Act by 395 to 14. The bill would require Small Business Development Centers to help small businesses evaluate artificial intelligence, including sharing best practices for using it and guidance on using it to plan for unexpected circumstances.",
   "v": 2
  },
+ "2026-34": {
+  "model": "claude-haiku-5-5",
+  "name": "Rule Package on Pregnancy Centers, Campus Pregnancy Info, and Minnesota Land",
+  "plain": "The House voted 212 to 210 to end debate and move to a final vote on procedural rules for three measures: one on state use of funds for pregnancy centers, one requiring colleges to share information on rights and resources for pregnant students, and one to disapprove a federal rule on withdrawing land in three Minnesota counties. This was a procedural vote, not a vote on the measures themselves.",
+  "v": 2
+ },
+ "2026-35": {
+  "model": "claude-haiku-5-5",
+  "name": "House Debate Rules for Three Measures",
+  "plain": "The House voted 213 to 210 to approve the rules for debating three separate measures, including ones on pregnancy centers, pregnant students' rights, and a federal land withdrawal in Minnesota. This was a procedural step that sets debate time and allowed amendments, not a vote on the measures themselves.",
+  "v": 2
+ },
+ "2026-36": {
+  "model": "claude-haiku-5-5",
+  "name": "Funding for Pregnancy Centers Bill",
+  "plain": "The House voted 209 to 213 on whether to send the bill back to committee, and the motion failed, so the bill moved toward a final vote. The bill would let states use Temporary Assistance for Needy Families funds for pregnancy centers that support protecting the life of the mother and unborn child and offer services such as counseling, pregnancy testing, diapers, and baby clothes.",
+  "v": 2
+ },
  "2026-37": {
   "model": "claude-haiku-5-5",
   "name": "Pregnancy Centers Funding Through Temporary Assistance Program",
@@ -2291,6 +3005,12 @@
   "plain": "The House voted 214 to 208 to pass the measure, which would end a 20-year ban on mineral and geothermal leasing across about 225,504 acres of national forest land in Cook, Lake, and Saint Louis Counties, Minnesota.",
   "v": 2
  },
+ "2026-39": {
+  "model": "claude-haiku-5-5",
+  "name": "Rules for Two Spending Bills",
+  "plain": "The House voted 215 to 213 to end debate and move to a final vote on the rules for considering two bills that would provide funding for the 2026 fiscal year. The vote was procedural and was not a vote on the bills themselves.",
+  "v": 2
+ },
  "2026-4": {
   "model": "claude-haiku-5-5",
   "name": "Rule for Consideration of H.R. 1834",
@@ -2301,6 +3021,12 @@
   "model": "claude-haiku-5-5",
   "name": "Rules for Consideration of Spending Bills",
   "plain": "The House voted 427 to 0 to add an amendment that sets the rules for debating two bills, H.R. 7148 and H.R. 7147, which would provide funding for the fiscal year ending September 30, 2026.",
+  "v": 2
+ },
+ "2026-41": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Two Spending Bills",
+  "plain": "The House voted 214 to 213 to approve the rules for debating two bills that fund government operations for the fiscal year ending September 30, 2026. The vote was a procedural step, not a vote on the bills themselves.",
   "v": 2
  },
  "2026-42": {
@@ -2325,6 +3051,12 @@
   "model": "claude-haiku-5-5",
   "name": "Consolidated Appropriations Act, 2026",
   "plain": "The House passed a bill, 341 to 88, that provides funding for several federal departments and agencies, including Defense, Labor, Health and Human Services, Education, Transportation, Housing, and the State Department, for the rest of fiscal year 2026. It also keeps Homeland Security funded at 2025 levels through February 13, 2026, and extends several expiring programs.",
+  "v": 2
+ },
+ "2026-46": {
+  "model": "claude-haiku-5-5",
+  "name": "Pregnant Students' Rights Act",
+  "plain": "The House voted 213 to 216 against sending the Pregnant Students' Rights Act back to committee, so it moved on to a final vote. The bill would require colleges that take federal student aid to tell pregnant and expecting students about on-campus and community resources, accommodations, and how to file a discrimination complaint.",
   "v": 2
  },
  "2026-47": {
@@ -2357,10 +3089,28 @@
   "plain": "The House passed a bill setting rules for paying a veteran's approved pension that was still unpaid when the veteran died. Payment would go first to a living spouse, then living children, then living dependent parents, then the estate, with a one-year deadline to apply. The vote was 405 in favor and 1 against.",
   "v": 2
  },
+ "2026-51": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Three Bills Including Appropriations and Mining",
+  "plain": "The House voted 212 to 210 to end debate and move toward a final vote on a rule covering three measures: a spending bill for the fiscal year ending September 30, 2026, a disapproval of a D.C. income tax change, and a bill on domestic mining. This vote did not decide any of those measures themselves.",
+  "v": 2
+ },
+ "2026-52": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Three Measures",
+  "plain": "The House voted 217 to 215 to approve the rules for debating three separate measures, including a government funding bill, a District of Columbia tax law, and a mining bill. This was a procedural step that sets how long debate lasts and which changes are allowed, not a final vote on those measures.",
+  "v": 2
+ },
  "2026-53": {
   "model": "claude-haiku-5-5",
   "name": "Consolidated Appropriations Act, 2026",
   "plain": "The House voted 217 to 214 to accept the Senate's changes to this bill, which provides federal funding for several departments and agencies for the rest of the 2026 budget year. It also keeps Homeland Security funded at 2025 levels through February 13, 2026, and extends several expiring programs.",
+  "v": 2
+ },
+ "2026-54": {
+  "model": "claude-haiku-5-5",
+  "name": "Critical Mineral Dominance Act Procedural Vote",
+  "plain": "The House voted on whether to send the Critical Mineral Dominance Act back to committee, and the motion failed 209 to 212. The bill would direct the Interior Department to speed up mining on federal land, including identifying priority projects to approve quickly and reviewing rules seen as burdensome to mining.",
   "v": 2
  },
  "2026-55": {
@@ -2387,10 +3137,40 @@
   "plain": "The House voted 395 to 2 to pass the PROTECT Taiwan Act. It would direct the U.S. to seek to keep Chinese representatives out of six international financial groups if the President tells Congress that China's actions threaten Taiwan and U.S. interests.",
   "v": 2
  },
+ "2026-59": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Three Bills",
+  "plain": "The House voted 216 to 214 to end debate and move to a final vote on three bills: one on modernizing federal firearms laws, one on undersea fiber optic cables in marine sanctuaries, and one on securing supplies of critical energy resources and minerals. This was a procedural step, not a vote on the bills themselves.",
+  "v": 2
+ },
  "2026-6": {
   "model": "claude-haiku-5-5",
   "name": "Commerce, Justice, Science; Energy and Water; Interior and Environment Spending Bills",
   "plain": "The House voted 419 to 6 to keep Divisions B and C of the bill in place. Together these sections provide federal funding for 2026 to agencies covering commerce, law enforcement, science, energy and water projects, public lands, and the environment.",
+  "v": 2
+ },
+ "2026-60": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Three Bills on Firearms, Undersea Cables, and Energy Minerals",
+  "plain": "The House voted on the rules for debating three bills: one on modernizing federal firearms laws, one on undersea fiber optic cables in marine sanctuaries, and one on securing critical energy minerals. The rules measure failed, 214 in favor to 217 against. It set debate rules only and did not vote on the bills themselves.",
+  "v": 2
+ },
+ "2026-61": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Several Bills",
+  "plain": "The House voted 216 to 214 to end debate and move to a final vote on a package of measures covering veterans' equal access, firearms laws, undersea fiber optic cables in marine sanctuaries, and securing critical energy minerals. It was a procedural step, not a vote on the measures themselves.",
+  "v": 2
+ },
+ "2026-62": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Several Bills",
+  "plain": "The House voted 216 to 215 to approve the rules for debating several bills, including measures on veterans' committees, firearms laws, undersea fiber optic cables, and energy resources. This was a procedural step that sets how the bills will be debated, not a vote on the bills themselves.",
+  "v": 2
+ },
+ "2026-63": {
+  "model": "claude-haiku-5-5",
+  "name": "Securing America's Critical Minerals Supply Act: Motion to Recommit",
+  "plain": "The House voted 214 to 215 against sending the Securing America's Critical Minerals Supply Act back to committee, so the bill moved on toward a final vote. The bill would require the Department of Energy to assess and work to protect the supply of energy resources that are essential to the country and vulnerable to disruption.",
   "v": 2
  },
  "2026-64": {
@@ -2405,10 +3185,22 @@
   "plain": "The House voted 219 to 211 to pass a measure relating to the President's February 1, 2025 national emergency declaration. Most Democrats and 6 Republicans voted yes, while most Republicans voted no.",
   "v": 2
  },
+ "2026-66": {
+  "model": "claude-haiku-5-5",
+  "name": "Undersea Cable Protection Act Procedural Vote",
+  "plain": "The House voted 214 to 216 against sending the Undersea Cable Protection Act back to committee, so the bill moved on to its final vote. The bill would bar the Commerce Department from requiring its own permit for work on undersea fiber optic cables in national marine sanctuaries when a state or federal agency has already approved that work.",
+  "v": 2
+ },
  "2026-67": {
   "model": "claude-haiku-5-5",
   "name": "Undersea Cable Protection Act",
   "plain": "The House passed a bill, 218 to 212, that would stop the Commerce Department from requiring its own permits for work on undersea fiber optic cables in national marine sanctuaries when a state or federal agency has already approved that work.",
+  "v": 2
+ },
+ "2026-68": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion to Send SAVE America Act Back to Committee",
+  "plain": "The House voted on whether to send the SAVE America Act back to committee, which would have delayed the bill. The motion failed, 214 to 217, so the House moved on toward a final vote. The bill would require documentary proof of U.S. citizenship to register to vote and photo identification to vote in federal elections.",
   "v": 2
  },
  "2026-69": {
@@ -2441,10 +3233,34 @@
   "plain": "The House voted on whether to pass the ROTOR Act, which would require more aircraft tracking equipment and expand oversight of certain military and government flights. The measure failed to pass, with 264 in favor and 133 against, short of the two-thirds needed under this fast-track process.",
   "v": 2
  },
+ "2026-73": {
+  "model": "claude-haiku-5-5",
+  "name": "Rules for Energy Efficiency and Home Electrification Bills",
+  "plain": "The House voted 208 to 189 to end debate and move toward a final vote on two bills: one would stop the Energy Secretary from setting new energy-use standards for products unless they are technically feasible and economically justified, and the other would repeal certain taxpayer subsidies for home electrification.",
+  "v": 2
+ },
+ "2026-74": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Energy Efficiency and Home Electrification Bills",
+  "plain": "The House voted 208 to 187 to approve the rules for debating two bills, one limiting new federal energy efficiency standards for products and one repealing certain tax subsidies for home electrification. This was a procedural step, not a vote on the bills themselves.",
+  "v": 2
+ },
+ "2026-75": {
+  "model": "claude-haiku-5-5",
+  "name": "Home Appliance Protection and Affordability Act",
+  "plain": "The House voted 197 to 208 against sending the bill back to committee, so it moved on to the final vote. The bill would change how the Department of Energy sets efficiency standards for household appliances, adding cost and availability factors and limiting standards for some transformers and washers and dishwashers.",
+  "v": 2
+ },
  "2026-76": {
   "model": "claude-haiku-5-5",
   "name": "Home Appliance Protection and Affordability Act",
   "plain": "The House passed a bill, 217 to 190, that changes how the Department of Energy sets energy efficiency standards for household appliances, adding factors such as cost and availability to consider.",
+  "v": 2
+ },
+ "2026-77": {
+  "model": "claude-haiku-5-5",
+  "name": "Homeowner Energy Freedom Act Committee Motion",
+  "plain": "The House rejected sending the Homeowner Energy Freedom Act back to committee, by 208 to 198, so it moved on toward a final vote. The bill would repeal Energy Department programs for home electric upgrades in lower-income households, home efficiency contractor training grants, and state and local building energy code help, and would cancel unspent money for those rebates and codes.",
   "v": 2
  },
  "2026-78": {
@@ -2453,10 +3269,22 @@
   "plain": "The House passed the Homeowner Energy Freedom Act, 210 to 199. The bill would end three Department of Energy programs: home electric rebates for lower- and middle-income households, contractor training grants for home energy efficiency, and help for states and localities adopting building energy codes. It would also cancel any unspent money for the rebates and building codes.",
   "v": 2
  },
+ "2026-79": {
+  "model": "claude-haiku-5-5",
+  "name": "Homeland Security Spending Bill Debate Rules",
+  "plain": "The House voted 213 to 208 to end debate on the rules for considering a bill that makes spending decisions for the Department of Homeland Security for the fiscal year ending September 30, 2026. This was a procedural step, not a vote on the bill itself.",
+  "v": 2
+ },
  "2026-8": {
   "model": "claude-haiku-5-5",
   "name": "Miccosukee Reserved Area Amendments Act",
   "plain": "The House voted on whether to override the President's veto of a bill that expands the Miccosukee Reserved Area to include Osceola Camp in Everglades National Park and directs protection of its structures from flooding. The override failed, with 236 voting yes and 188 voting no, short of the two-thirds needed.",
+  "v": 2
+ },
+ "2026-80": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Homeland Security Spending Bill",
+  "plain": "The House voted 211 to 209 to approve the rules for debating a bill that provides funding for the Department of Homeland Security for the fiscal year ending September 30, 2026. This was a procedural step that sets how the debate will run, not a vote on the bill itself.",
   "v": 2
  },
  "2026-81": {
@@ -2489,6 +3317,12 @@
   "plain": "The House voted on whether to approve a resolution directing the President to end the use of U.S. armed forces in hostilities against Iran unless Congress has declared war or authorized the use of military force for that purpose. The resolution failed, 212 in favor to 219 opposed. It would not stop the U.S. from defending itself against imminent attack.",
   "v": 2
  },
+ "2026-86": {
+  "model": "claude-haiku-5-5",
+  "name": "Department of Homeland Security Funding Bill",
+  "plain": "The House voted 212 to 217 against sending the Department of Homeland Security funding bill back to committee, so the bill moved on toward a final vote. The bill would provide funding for Homeland Security agencies for the rest of 2026, end a partial shutdown that began February 14, 2026, and provide back pay to affected federal employees.",
+  "v": 2
+ },
  "2026-87": {
   "model": "claude-haiku-5-5",
   "name": "Homeland Security Funding Bill",
@@ -2511,6 +3345,24 @@
   "model": "claude-haiku-5-5",
   "name": "Arkansas Valley Conduit Repayment Bill",
   "plain": "The House voted on whether to override the President's veto of a bill that would remove interest and extend the repayment period to 100 years for communities paying for the Arkansas Valley Conduit, a Colorado water pipeline. The override failed, with 248 voting yes and 177 voting no, so the veto stands.",
+  "v": 2
+ },
+ "2026-90": {
+  "model": "claude-haiku-5-5",
+  "name": "Procedural Vote on Three Immigration and Wildlife Bills",
+  "plain": "The House voted 196 to 192 to end debate and move to a final vote on a package of rules covering three measures: one on lead ammunition and fishing tackle on certain federal lands and waters, and two on deportation for certain convictions. This vote was not on the measures themselves.",
+  "v": 2
+ },
+ "2026-91": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Three Bills",
+  "plain": "The House voted 196 to 193 to approve the rules for debating three measures: one on lead ammunition and tackle on federal land, and two on deportation for certain convictions. The vote set how long debate would last and which changes could be offered; it did not itself pass those measures.",
+  "v": 2
+ },
+ "2026-92": {
+  "model": "claude-haiku-5-5",
+  "name": "Protecting Access for Hunters and Anglers Act",
+  "plain": "The House voted 206 to 209 against sending this bill back to committee, so it moved on toward a final vote. The bill would stop federal wildlife, land and forest agencies from banning or regulating lead ammunition and fishing tackle on federal land and water, with some exceptions.",
   "v": 2
  },
  "2026-93": {
@@ -2541,6 +3393,18 @@
   "model": "claude-haiku-5-5",
   "name": "American Water Stewardship Act",
   "plain": "The House passed the American Water Stewardship Act by 378 to 32. The bill extends several EPA water quality programs, including Great Lakes, Long Island Sound, Columbia River, estuary, and beach safety efforts, through 2031, and bars certain Clean Water Act funds from going to entities tied to foreign countries of concern.",
+  "v": 2
+ },
+ "2026-98": {
+  "model": "claude-haiku-5-5",
+  "name": "Rules for Homeland Security Funding and Other Bills",
+  "plain": "The House voted 212 to 210 to end debate and move on to final votes on several measures, including a bill providing funding for the Department of Homeland Security for the fiscal year ending September 30, 2026. This vote was procedural and did not decide the measures themselves.",
+  "v": 2
+ },
+ "2026-99": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate Rules for Homeland Security Funding and Other Bills",
+  "plain": "The House voted 214 to 210 to approve the rules for debating several measures, including a bill providing funding for the Department of Homeland Security for fiscal year 2026. This was a procedural step that sets how long debate lasts and which amendments are allowed, not a final vote on those measures.",
   "v": 2
  }
 }
