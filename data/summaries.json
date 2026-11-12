@@ -9,6 +9,11 @@
   "one_sentence": "This concurrent resolution would set the federal government's budget framework for fiscal year 2027 and projected spending, revenue, and debt levels for fiscal years 2028 through 2036.",
   "short": "The resolution sets recommended levels for federal revenues, spending, deficits, and debt for fiscal years 2027 through 2036, along with major spending categories. It directs four House committees (Agriculture, Armed Services, Intelligence, and Administration) to submit recommendations for legislation that would increase the deficit by specified amounts, with reports due to the House Budget Committee by September 11, 2026. The resolution also creates a reserve fund to adjust committee allocations for that reconciliation legislation and sets out budget enforcement rules, including treatment of certain agency administrative expenses and additional adjustments for items such as disaster relief and wildfire suppression."
  },
+ "hconres-75": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This concurrent resolution would direct the President to remove U.S. Armed Forces from hostilities against Iran by March 30, 2026, unless Congress has authorized such action.",
+  "short": "The measure directs the President, under the War Powers Resolution, to remove U.S. Armed Forces from hostilities against Iran or any part of its government or military no later than March 30, 2026. The directive does not apply if a declaration of war or authorization to use military force for that purpose has been enacted. The resolution states it would not prevent the United States from defending itself, its Armed Forces, its diplomatic facilities, or allied states from imminent attack."
+ },
  "hconres-84": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This concurrent resolution would direct the President to remove U.S. Armed Forces from Lebanon within seven days of the resolution's adoption.",
@@ -28,6 +33,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This concurrent resolution would direct the President to remove U.S. Armed Forces from hostilities against Iran unless Congress has authorized such action.",
   "short": "The resolution directs the President to remove U.S. Armed Forces from hostilities against Iran unless a declaration of war or a congressional authorization for use of military force against Iran is in place. It does not apply to forces needed to defend the United States, an ally, or a partner from imminent attack, provided the President complies with a specified War Powers Resolution provision. That provision generally requires removal from hostilities within 60 days after the President notifies, or is required to notify, Congress of such involvement, unless Congress authorizes the use."
+ },
+ "hconres-96": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This concurrent resolution expresses support for law enforcement officers and recognizes the contributions and sacrifices they make.",
+  "short": "The resolution states that Congress supports law enforcement officers. It expresses appreciation for their contributions and recognizes the sacrifices they make. The official summary does not describe any further provisions or required actions."
  },
  "hjres-1": {
   "model": "claude-haiku-5-5",
@@ -74,6 +84,11 @@
   "one_sentence": "The bill would authorize a Smithsonian American Women's History Museum on a designated National Mall site and dedicate it to the history of biological women in the United States.",
   "short": "The bill authorizes the Smithsonian American Women's History Museum to be built within the National Mall reserve, designating the undeveloped South Monument site across from the National Museum of African American History and Culture, though the President may pick another site within 180 days of enactment. Administrative control of the site would transfer to the Smithsonian Institution, and any building would need approval from specified federal bodies such as the Commission of Fine Arts. The museum would focus on the history, achievements, and lived experiences of biological women, and it could not depict any biological male as female. Its advisory council would be required to seek guidance from a broad range of sources reflecting diverse political viewpoints and experiences of women."
  },
+ "hr-1346": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would amend the Clean Air Act to let gasoline blended with up to 15% ethanol be sold year-round and adjust the Renewable Fuel Standard Program.",
+  "short": "The bill extends the Clean Air Act waiver for Reid Vapor Pressure limits, which currently applies to gasoline with 10% ethanol, to gasoline with up to 15% ethanol, allowing it to be sold year-round. It nullifies existing state exclusions from the waiver, while allowing states to submit documentation after enactment to be excluded going forward. The bill also directs the Environmental Protection Agency to return compliance credits to small refineries under certain circumstances within the Renewable Fuel Standard Program."
+ },
  "hr-139": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would make daylight saving time the permanent standard time nationwide, ending the twice-yearly clock changes.",
@@ -84,15 +99,50 @@
   "one_sentence": "The bill would permanently make certain mining infrastructure projects eligible for expedited federal environmental review and would bar a proposed rule narrowing that eligibility from being finalized.",
   "short": "The bill would give federal agencies statutory authority to speed up environmental review for certain mining infrastructure projects under the FAST Act, and would make that eligibility permanent. It would codify authorities previously set out in a January 2021 rule issued by the Federal Permitting Improvement Steering Council. The bill also prohibits the Council from finalizing a September 2023 proposed rule that would limit expedited review to critical minerals mining projects."
  },
+ "hr-1681": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would create an interagency strike force to help federal land agencies review requests for permits to build or modify communications facilities on public lands.",
+  "short": "The bill establishes an interagency strike force to support federal land management agencies in reviewing requests for communications use authorizations, which are required to modify or locate communications facilities on public lands. The strike force would hold periodic calls to make sure each agency prioritizes these reviews, set goals for how quickly they are completed, and monitor whether agencies meet those goals. Membership would include the head of the National Telecommunications and Information Administration, the head of each federal land management agency, and other members designated by the Departments of Agriculture and the Interior. The strike force would also be required to report to Congress on how effective it is."
+ },
+ "hr-1993": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would direct the Treasury to mint and issue coins marking the 25th anniversary of the September 11, 2001 attacks and the National September 11 Memorial and Museum.",
+  "short": "The bill directs the Department of the Treasury to mint and issue coins commemorating the 25th anniversary of the September 11, 2001 terrorist attacks on the United States. It also commemorates the establishment of the National September 11 Memorial and Museum at the World Trade Center. Sales of the coins must include a surcharge paid to the Memorial and Museum to support its operations and maintenance. However, no surcharge may be included if coin issuance exceeds certain annual limits."
+ },
+ "hr-2071": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would bar federal funds given to international financial institutions from being used for foreign shrimp farming, processing, or export, and would require an annual congressional report on compliance with related policies.",
+  "short": "The bill prohibits U.S. federal funds from being provided to international financial institutions, such as the International Monetary Fund, unless the funds are barred from financing shrimp farming, shrimp processing, or shrimp exports in any foreign country. It requires the Department of the Treasury to attach this condition to any such funding. The bill also directs the Government Accountability Office to investigate and report annually to Congress on how well U.S. leaders at these institutions follow Treasury instructions to oppose financing for certain commodities or minerals that are in world surplus and cause substantial injury to U.S. producers."
+ },
  "hr-2140": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would extend through fiscal year 2029 a program in which the Environmental Protection Agency provides grants, rebates, or loans to help replace or upgrade diesel engines with pollution control technology.",
   "short": "The Diesel Emissions Reduction Act of 2025 would reauthorize a diesel emissions reduction program through fiscal year 2029. Under the program, the Environmental Protection Agency provides grants, rebates, or loans. The funding can be used for replacing diesel engines or retrofitting them with pollution control technologies."
  },
+ "hr-227": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Clergy Act would let clergy members who previously opted out of Social Security and Medicare taxes choose to opt back in during a two-year window.",
+  "short": "Clergy members who were approved for an exemption from Social Security and Medicare taxes on ministerial earnings, based on religious or conscientious objections, could revoke that exemption. They would file an application with the IRS by the due date of their federal income tax return for the second taxable year after December 31, 2028, which is April 15, 2031 unless an extension is obtained. The revocation could take effect in 2029 or 2030 and would be permanent. The IRS would also be required to develop a plan to inform clergy members of their eligibility to revoke prior exemptions."
+ },
  "hr-2478": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would let mutual fund companies and their transfer agents temporarily delay certain redemptions when they reasonably believe an older or impaired adult is being financially exploited.",
   "short": "The bill sets out procedures for delaying the redemption of certain securities issued by open-end investment companies, such as mutual funds, if the company or its transfer agent reasonably believes the transaction involves financial exploitation. It covers individuals age 65 or older, and adults age 18 or older who cannot protect their own interests due to a mental or physical impairment. The initial delay may last up to 15 days, with an additional 10 days after an exploitation determination, and a state regulator, administrative agency, or court may extend the period. During any delay, the amounts involved must be held in a demand deposit account, and the company must notify the Securities and Exchange Commission if it uses these procedures. The bill also directs the SEC to make recommendations to address the financial exploitation of these adults."
+ },
+ "hr-2493": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill extends through fiscal year 2030 federal grant programs that help fund health care services and networks in rural areas.",
+  "short": "The bill reauthorizes, through fiscal year 2030, Health Resources and Services Administration grant programs that fund health care providers in rural areas. The grants cover expanding health care services, developing integrated networks of local health care organizations, and improving the quality of services provided by small rural providers. For grants that expand services or develop networks, the bill requires the agency to ensure funds are used to meet the needs of underserved populations and to involve those populations in planning and carrying out the activities."
+ },
+ "hr-2616": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require certain public elementary and middle schools to get parental consent before changing a student's gender-related school records or sex-based accommodations, as a condition of receiving certain federal education funds.",
+  "short": "The bill applies to public elementary schools and schools serving only grades 5 through 8 that receive certain federal funds for elementary and secondary education. Before changing a minor student's gender markers, pronouns, or preferred name on any school form, these schools would need parental consent. The same consent requirement would apply to changing a minor student's sex-based accommodations, such as locker room or bathroom use."
+ },
+ "hr-2853": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would expand federal criminal enforcement against organized retail and supply chain crime, including theft and resale of stolen goods, and create a temporary Homeland Security center to coordinate these efforts.",
+  "short": "The bill broadens federal offenses involving the interstate transport, sale, or receipt of stolen goods, allowing prosecution based on the total value of stolen items over a 12-month period. It makes these offenses and theft from interstate or foreign shipments count as underlying crimes for federal money laundering charges, and allows criminal forfeiture of related property. It also adds general-use prepaid cards, gift certificates, and store gift cards to the money laundering statute. Finally, it temporarily establishes a center within the Department of Homeland Security to coordinate federal law enforcement on these crimes."
  },
  "hr-2860": {
   "model": "claude-haiku-5-5",
@@ -114,6 +164,11 @@
   "one_sentence": "The bill would require the Department of Homeland Security to run an exercise simulating a terrorist attack during extreme cold weather and report its findings to Congress.",
   "short": "The bill directs the Department of Homeland Security to develop and conduct an exercise to prepare for a terrorist attack during an extreme cold weather event, such as one caused by a polar vortex. The exercise scenario must involve an attack that causes cascading effects on critical infrastructure, and it must examine how public and private entities can coordinate to reduce those effects and strengthen community resilience. Within 60 days after the exercise, the department must submit an after-action report to Congress with initial findings, plans for applying lessons learned, and any proposed legislative changes."
  },
+ "hr-3234": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would raise the amount of reciprocal deposits that insured banks may accept, using a tiered limit based on total liabilities, and loosen certain rating requirements for doing so.",
+  "short": "Reciprocal deposits are large deposits split among a network of banks so that more of the money is covered by deposit insurance. The bill increases the amount institutions may accept as reciprocal deposits and sets a tiered limit based on each institution's total liabilities. It also allows institutions with CAMELS ratings of 1, 2, or 3 to qualify, where current law relies on a composite rating of outstanding or good, among other requirements."
+ },
  "hr-3276": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would give statutory authority to the Urban Bird Treaty Program, which supports the conservation of birds living in or migrating through urban areas.",
@@ -134,15 +189,40 @@
   "one_sentence": "This bill extends and revises federal breast and cervical cancer screening programs run by the CDC, including grants to states and education for young women about breast health.",
   "short": "The bill reauthorizes CDC programs on breast and cervical cancer, extending the National Breast and Cervical Cancer Early Detection Program through fiscal year 2030 and related young women's breast health programs through fiscal year 2031. The early detection program gives states grants for screening, diagnosis, and treatment for people with low incomes, no insurance, or limited access to care, and the bill gives states more flexibility in how they spend those funds. The bill also requires the Government Accountability Office to report to Congress on the program, including how many people it serves and barriers to getting screened. The young women's programs fund awareness campaigns, prevention research, and grants for services to young women with breast cancer or precancerous conditions."
  },
+ "hr-4544": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require federal financial regulators to review and simplify the process for approving new banks and credit unions.",
+  "short": "The bill directs federal financial regulators to review how they handle applications to form new depository institutions and credit unions, and to reduce the amount of information applicants must submit where practicable. It also asks regulators to examine how new institutions raise capital while keeping investor protections in place. On request, applicants would be assigned a caseworker and given a list of similar institutions willing to serve as mentors, and each regulator would develop a plan to engage states and stakeholders on the approval process."
+ },
  "hr-4646": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would extend existing whistleblower protections to employees of HUD-funded contractors and grant recipients, including those working under contracts and grants signed before the law took effect in 2013.",
   "short": "Current law protects employees of federal contractors and grant recipients from reprisal, such as firing, demotion, or discrimination, for disclosing evidence of certain misconduct involving federal funds to Congress or other appropriate officials. That protection applies only to contracts and grants signed or modified after 2013. This bill would extend the protection to all contracts and grants funded by the Department of Housing and Urban Development, regardless of when they were signed."
  },
+ "hr-4690": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would repeal energy efficiency standards that phase out fossil fuel use in new federal buildings and major renovations by fiscal year 2030.",
+  "short": "The bill removes the requirement that new federal buildings and buildings undergoing major renovations phase out fossil fuel use by fiscal year 2030. It directs the Department of Energy to apply the standards as if that phase-out had never taken effect, until it issues regulations with revised performance standards. It also states that green building certification systems may not bar federal buildings from certification solely because they use fossil fuels directly or indirectly."
+ },
  "hr-4795": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would bar colleges that receive federal student aid from boycotting Israel, and require certain federally funded schools to annually certify equal access to Israel-related academic programs.",
   "short": "The bill prohibits institutions of higher education that participate in federal student aid programs from taking commercial actions meant to limit business relations with Israel or Israeli entities, unless based on a valid business reason. Schools that receive or apply for Title VI funds, which support foreign language and international education programs, would have to certify each year that students and faculty can join programs located in Israel on the same terms as programs in other countries. They would also have to certify that students and faculty from Israeli postsecondary institutions can join their academic programs on the same terms as those from other foreign countries."
+ },
+ "hr-5200": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Emergency Reporting Act would require the FCC to study 9-1-1 outages and hold annual public hearings and issue reports on major communications disruptions during disasters.",
+  "short": "The bill directs the Federal Communications Commission to examine 9-1-1 outages that current rules do not require providers to report, and to consider whether visual information should be included in outage notifications. It also requires the FCC to recommend rule changes based on its findings. For any event that keeps the Disaster Information Reporting System activated for at least a week, the FCC must hold an annual public hearing and publish a report on the outages involved and suggestions for making services more resilient."
+ },
+ "hr-5201": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the FCC to publish a report on how well multiline telephone system makers and vendors comply with Kari's Law, which requires direct 9-1-1 dialing.",
+  "short": "Kari's Law requires multiline telephone systems to be set up so users can dial 9-1-1 directly without first dialing an extra code or prefix. The Kari's Law Reporting Act would require the Federal Communications Commission to publish a report on how the law is being enforced. The report would summarize the extent to which manufacturers and vendors have complied and any obstacles they have faced. It would also include recommendations for improving FCC policy or for further legislation, if needed."
+ },
+ "hr-5317": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would exclude certain custodial deposits at smaller, well-capitalized banks from being classified as brokered deposits, under specified conditions.",
+  "short": "The bill would stop certain custodial deposits at insured banks with less than $10 billion in total assets from being treated as brokered deposits. To qualify, the deposits could not exceed 20% of the institution's liabilities, and the bank would need to be well-capitalized with a specified minimum soundness rating or hold a waiver from the Federal Deposit Insurance Corporation. The bill also applies existing interest rate limits that apply to institutions that are not well-capitalized to similar institutions that accept custodial deposits."
  },
  "hr-5334": {
   "model": "claude-haiku-5-5",
@@ -159,10 +239,30 @@
   "one_sentence": "The bill would set deadlines for employers and newly recognized unions to negotiate a first labor contract, with mediation and, if needed, binding arbitration to finish the agreement.",
   "short": "After a newly recognized or certified union requests bargaining, the employer must begin talks within 10 days, and both sides must make every reasonable effort to reach and sign a contract. If no agreement is reached after 90 days, either party may request mediation from the Federal Mediation and Conciliation Service, and if mediation fails within 30 days, an arbitration panel would decide the terms, which bind the parties for two years. Employers must keep current wages and conditions during negotiations, and the Government Accountability Office would report to Congress on how long first contracts typically take."
  },
+ "hr-5587": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The HEATS Act would exempt certain geothermal energy activities on non-federal land from federal drilling permit, environmental review, and historic preservation requirements.",
+  "short": "The bill says the Department of the Interior cannot require a federal drilling permit for geothermal exploration or production on non-federal surface land (excluding Indian lands) where the United States holds less than 50% of the subsurface geothermal rights and the operator has a state permit. Such activities would not count as major federal actions under the National Environmental Policy Act, and they would be exempt from Endangered Species Act consultation. They would also be exempt from National Historic Preservation Act review unless the state lacks its own law addressing historic property preservation."
+ },
+ "hr-5625": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Department of Justice to publish an annual list of state and local governments that allow certain serious charged offenses to be released before trial without cash bail.",
+  "short": "The Cashless Bail Reporting Act would direct the Department of Justice to publish a yearly list of state and local governments that let people charged with certain offenses be released before trial on personal recognizance or an unsecured appearance bond. The covered offenses include crimes involving a violent or sexual act, such as burglary, murder, or rape, as well as offenses that promote public disorder, such as looting or vandalism. The bill's summary notes that a related executive order issued on August 25, 2025, already required the Department of Justice to compile a similar list for the Assistant to the President for Homeland Security."
+ },
  "hr-6047": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would expand several veterans and survivor benefit programs, including a new monthly allowance for certain disabled veterans, higher survivor compensation, and broader eligibility for VA home loans.",
   "short": "The bill creates a supplemental monthly allowance of $833.33 for veterans already receiving an aid and attendance allowance due to service-connected disabilities or traumatic brain injury. It increases Dependency and Indemnity Compensation, a monthly payment to eligible survivors, by an additional 1% at the next cost-of-living adjustment and an additional 0.5% at the following one. It also widens eligibility for VA home loans to some reserve and National Guard members by counting annual training duty as qualifying active duty, and extends certain loan fee rates and pension limits through September 30, 2036, while raising fees on some refinancing loans and loan assumptions."
+ },
+ "hr-6260": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would treat posting monetary bail, criminal bail bonds, and federal immigration bail bonds as part of the business of insurance under federal law.",
+  "short": "The bill broadens the definition of \"business of insurance\" for federal insurance fraud crimes. Under the bill, posting monetary bail, criminal bail bonds, and federal immigration bail bonds would count as that business. Entities that pay cash bail for defendants, such as charitable bail funds, would fall under federal insurance fraud provisions as well as state licensing requirements and state insurance commissioner regulation."
+ },
+ "hr-6387": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The FIRE Act would change how the Clean Air Act's exceptional events rules apply, including to wildfire-risk mitigation actions, and direct the EPA to revise its related regulations.",
+  "short": "The bill modifies the Clean Air Act's definition of exceptional events, so that certain human activities meant to mirror natural events count as exceptional, and no longer excludes high-temperature, low-precipitation, or unusual air-stagnation events from consideration. Under current law, the EPA may exclude air quality data from pollution-standard violation determinations when a state shows an exceptional event caused it. The bill also requires the EPA to revise its rules on handling monitoring data affected by wildfire-risk mitigation actions and to conduct regional modeling when multiple states petition over the same event or action."
  },
  "hr-6500": {
   "model": "claude-haiku-5-5",
@@ -194,6 +294,11 @@
   "one_sentence": "The bill would require Small Business Administration employees who handle SBA loans to certify in writing that they have no conflict of interest, disclose any later conflicts, and understand the applicable rules.",
   "short": "The bill requires Small Business Administration employees who take part in originating, reviewing, or approving SBA loans to certify in writing, before they take part, that they have no conflict of interest with respect to the loan. Employees would also have to disclose any conflict that arises after certifying and confirm they understand the conflict-of-interest requirements that apply to them. Federal employees already must disclose financial conflicts and generally step aside from such matters, and the SBA would be required to issue regulations to carry out the bill."
  },
+ "hr-7567": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Farm, Food, and National Security Act of 2026 would reauthorize and modify U.S. Department of Agriculture programs covering farm support, nutrition, conservation, trade, and related areas through fiscal year 2031.",
+  "short": "This bill, commonly called the farm bill, extends through fiscal year 2031 and changes Department of Agriculture programs. The programs it covers include commodity support, conservation, trade and international food aid, and nutrition assistance. It also addresses farm credit, rural development, research, forestry, energy, crop insurance, livestock, and foreign investment in U.S. agricultural land."
+ },
  "hr-7618": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill extends three National Park Service battlefield preservation grant programs through fiscal year 2036 and requires studies of additional historic sites for possible preservation.",
@@ -214,6 +319,11 @@
   "one_sentence": "The bill would require the Education Department to set up a fraud detection system for FAFSA applications and require colleges to verify flagged applicants' identities before disbursing federal aid.",
   "short": "Starting October 1, 2026, the Department of Education would use an identity fraud detection system to review each FAFSA application and flag those showing reasonable suspicion of identity fraud. Flagged applicants and the colleges listed on their applications would be notified that additional identity verification is required. Colleges could not disburse federal student aid to a flagged applicant until the college verifies that person's identity in person or by live video, and the Department would set guidelines for these procedures."
  },
+ "hr-7959": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would change how IRS whistleblower awards are reviewed and protected, including court review standards, anonymity, reporting requirements, interest on late-noticed awards, and attorney fee deductions.",
+  "short": "The bill changes the Tax Court's review of IRS whistleblower award decisions to a de novo review based on the existing administrative record and any new or previously unavailable evidence. It allows whistleblowers to remain anonymous in Tax Court proceedings unless a societal interest in disclosing their identity outweighs potential harm to them. It also requires the IRS whistleblower report to list and describe up to 10 of the top tax avoidance schemes disclosed by whistleblowers, requires interest on mandatory awards if the IRS fails to give timely notice of an award recommendation, and allows attorney fees paid by whistleblowers to be deducted from adjusted gross income for both mandatory and discretionary awards."
+ },
  "hr-8278": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill would require eight federal financial agencies to assess their supervisory technology, procurement practices, and data sharing, and report to Congress every five years.",
@@ -223,6 +333,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would give the Treasury Department's Bureau of the Fiscal Service new fraud-prevention duties and create an inspector general office within Treasury to audit and investigate certain federal spending.",
   "short": "The bill assigns financial integrity, improper payment prevention, and spending transparency functions to the Bureau of the Fiscal Service within the Department of the Treasury. These include running the Do Not Pay system, which lets agencies verify recipient eligibility before payments, and offering a voluntary program for sharing data to detect fraud. It also creates an Office of the Inspector General for Fraud, Accountability, and Recovery within Treasury, which would audit and investigate certain federal funds, including coronavirus response funds, awards of $50,000 or more, and emergency disaster and economic recovery spending. The office would refer suspected federal crimes to the Department of Justice and support prosecutors."
+ },
+ "hr-8365": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Monitor Accountability Act would require federal courts to set conditions on appointing independent monitors who oversee state and local governments under certain legal settlements.",
+  "short": "The bill directs the Administrative Office of the U.S. Courts to establish conditions for appointing monitors, who are independent officials overseeing corrective reforms in civil settlements or consent decrees, such as those addressing unconstitutional policing. Under the bill, appointments would require notice and a chance for public comment, a person could serve as only one monitor at a time, and monitors would face a five-year term limit. The bill also requires a public accounting of monitor fees and services, caps fees, and explicitly allows pro bono services."
  },
  "hr-8428": {
   "model": "claude-haiku-5-5",
@@ -238,6 +353,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The TRUE Accountability Act would require federal agencies to create and carry out plans to prevent fraud and improper payments in emergency spending, such as disaster or pandemic funding.",
   "short": "The bill directs the Office of Management and Budget to issue guidance, reviewed every three years, for agencies to build these plans, using existing Government Accountability Office frameworks. Agencies would submit their plans within one year of enactment, covering risk evaluation, strategies to reduce risk before money is spent, and payment monitoring to catch improper or fraudulent payments. Plans must be revised and resubmitted at least every three years. The Office of Management and Budget would send the plans to Congress each year, along with information on implementation and legislative recommendations for emergency appropriations."
+ },
+ "hr-8469": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill provides federal funding for fiscal year 2027 for military construction, Department of Veterans Affairs programs, and several related agencies.",
+  "short": "The bill gives money to the Department of Defense for military construction and family housing for the Army, Navy and Marine Corps, Air Force, Defense-wide agencies, National Guard, and Reserves, plus NATO security investments and base closure costs. For the Department of Veterans Affairs, it provides funding for veterans benefits, health care, national cemeteries, departmental administration, and the Cost of War Toxic Exposures Fund. It also funds related bodies such as the American Battle Monuments Commission, the U.S. Court of Appeals for Veterans Claims, Army cemetery expenses, and the Armed Forces Retirement Home, and sets rules for how these funds may be used."
  },
  "hr-8595": {
   "model": "claude-haiku-5-5",
@@ -324,10 +444,60 @@
   "one_sentence": "This resolution sets the terms for House floor consideration of H.R. 5408, a bill that would speed up the time it takes for workers and employers to reach a contract under the National Labor Relations Act.",
   "short": "The measure is a House resolution that provides for consideration of H.R. 5408. According to the official title, that bill concerns accelerating workplace time-to-contract under the National Labor Relations Act. The available summary does not describe the specific provisions of H.R. 5408 itself."
  },
+ "hres-1175": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the terms for House floor consideration of H.R. 8035, a bill that would extend certain foreign intelligence surveillance authorities under title VII of FISA through October 20, 2027.",
+  "short": "The official summary states that this House resolution provides for the consideration of H.R. 8035. The bill, as described in the official title, would amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and address other purposes. The available material does not describe the specific provisions of the bill or the procedural terms of the resolution beyond this."
+ },
+ "hres-1182": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This House resolution expresses support for rural communities across the United States and recognizes the House's work in the 119th Congress on policies affecting them.",
+  "short": "The resolution states support for rural communities as environmental stewards, energy suppliers, providers of food and manufacturing capacity, and contributors to national economic stability. According to the official summary, it notes House policies related to energy, health care, manufacturing, and broadband connectivity in rural areas. The measure recognizes the work of the House of Representatives in the 119th Congress in supporting these communities."
+ },
+ "hres-1189": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This is a House procedural resolution that would set the terms for floor consideration of three bills on federal building energy standards, endangered species, and geothermal drilling, plus a resolution on rural communities.",
+  "short": "The measure is a rule providing for House consideration of several separate items. It names H.R. 4690, which concerns repealing certain federal building energy efficiency performance standards, and H.R. 1897, which concerns amendments to the Endangered Species Act of 1973. It also names H.R. 5587, which concerns waiving a federal drilling permit requirement and exempting certain activities from the National Environmental Policy Act for geothermal steam, and H. Res. 1182, expressing support for rural communities. The official materials do not describe the specific provisions of these bills beyond their titles."
+ },
+ "hres-1224": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the rules for House floor consideration of several separate measures covering agriculture, school policies, the federal budget, military burial markers, and fuel standards.",
+  "short": "The resolution provides for House consideration of five bills and one budget resolution. The bills concern Department of Agriculture programs through fiscal year 2031, parental consent requirements at certain public elementary and middle schools, a program to identify American-Jewish servicemembers buried under markers that incorrectly show their religion, and the ethanol waiver for Reid Vapor Pressure under the Clean Air Act. The budget resolution sets the congressional budget for fiscal year 2026 and budgetary levels for fiscal years 2027 through 2035. The official summary provided does not describe the specific provisions of the underlying measures beyond their titles."
+ },
  "hres-1247": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This resolution sets the terms for the House to consider H.R. 2102, a bill about veterans' disability pay and retired pay for certain disabled retirees.",
   "short": "The measure is a House resolution that provides for consideration of H.R. 2102. The bill itself would amend federal law on military retirement and veterans' benefits so that certain retirees with combat-related disabilities could receive both veterans' disability compensation and retired pay. The official materials provided do not describe the bill's specific provisions in further detail."
+ },
+ "hres-1251": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution calls on elected officials, faith leaders, and civil society leaders to condemn and counter antisemitism, and honors Jewish-American contributions.",
+  "short": "The resolution urges elected officials, faith leaders, and civil society leaders to condemn and counter acts of antisemitism. It honors the contributions of Jewish-American servicemembers. It also states a commitment to ensuring that all Americans, including Jewish Americans, can worship without fear of violence or persecution."
+ },
+ "hres-1252": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "A resolution expressing support for law enforcement officers, recognizing their service and sacrifice, and offering condolences to the families of officers killed in the line of duty.",
+  "short": "This congressional resolution expresses support for police officers and other law enforcement personnel across the United States. It recognizes the importance of ensuring officers have the equipment, training, and resources needed to protect their health and safety. It also honors the acts of sacrifice and heroism of the law enforcement community and expresses condolences and appreciation to the loved ones of officers who have died in the line of duty."
+ },
+ "hres-1259": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "A House resolution expressing that the President should prioritize securing the release of five named people detained in China during future meetings with Chinese President Xi Jinping.",
+  "short": "The resolution states the sense of the House that the President should make the humanitarian release of Pastor Jin Mingri, Pastor Gao Quanfu and his wife Pang Yu, Dr. Gulshan Abbas, and Jimmy Lai, along with others unjustly detained by China, a priority in future engagements with Xi Jinping. It urges the President to seek verifiable proof of life, access to independent legal counsel, family communication, and medical care for these detainees. It also reaffirms U.S. commitment to defending political and religious freedom and to advocating for those detained for exercising those freedoms."
+ },
+ "hres-1274": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution would remove a provision of House Resolution 1224 that required certain text from one bill to be included in another bill.",
+  "short": "House Resolution 1224 contained a section that required the text of H.R. 1346, the Nationwide Consumer and Fuel Retailer Choice Act of 2025, to be included in H.R. 7567, the Farm, Food, and National Security Act of 2026, commonly called the farm bill. This measure would make that section have no force or effect. The underlying resolution also provides for the House to consider both H.R. 7567 and H.R. 1346, and it was agreed to in the House on April 29, 2026."
+ },
+ "hres-1275": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This House resolution sets terms for floor debate on five measures covering cashless bail lists, bail fraud, court monitors, support for police, and FY2027 military construction and veterans funding.",
+  "short": "The resolution provides for House consideration of five separate measures. Three address bail and courts: H.R. 5625 would direct the Attorney General to publish a list of states and local governments that permit cashless bail, H.R. 6260 would prohibit fraud in connection with posting bail, and H.R. 8365 would set conditions on courts appointing monitors. H. Con. Res. 96 expresses support for law enforcement officers. H.R. 8469 makes appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027."
+ },
+ "hres-1300": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the rules for House floor debate on three bills concerning veterans' records, veterans' benefit amounts, and a Smithsonian museum site, and waives a procedural requirement.",
+  "short": "The resolution provides for House consideration of three separate bills: H.R. 1041, which would bar the Department of Veterans Affairs from sending certain information to the Department of Justice for use in the national instant criminal background check system; H.R. 6047, which would direct the VA to increase certain disability compensation and dependency and indemnity compensation amounts; and H.R. 1329, which would allow the Smithsonian American Women's History Museum to be located within the Reserve of the National Mall. It also waives a requirement of clause 6(a) of rule XIII concerning certain resolutions reported from the Committee on Rules."
  },
  "hres-1333": {
   "model": "claude-haiku-5-5",
@@ -394,10 +564,30 @@
   "one_sentence": "This resolution sets the procedure for House consideration of H.R. 2913, the Ukraine Support Act, and directs the Clerk to notify the Senate once the House passes it.",
   "short": "The resolution provides for the House to consider H.R. 2913, the Ukraine Support Act. It also requires the Clerk of the House to send the Senate a message that the House has passed the bill, no later than one week after passage. The official summary does not describe the specific support measures contained in the bill itself."
  },
+ "s-1003": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "Lulu's Law would require the Federal Communications Commission to issue an order explicitly allowing wireless emergency alerts to be sent to mobile phones when a shark attack occurs.",
+  "short": "Under current rules, authorized government authorities may send wireless emergency alerts about public safety threats such as severe weather, missing children, and other dangers to life or property. This measure would require the Federal Communications Commission to issue an order that explicitly permits such alerts to be sent to mobile phones in the event of a shark attack."
+ },
+ "s-1020": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would let the Federal Energy Regulatory Commission grant hydropower licensees up to six more years to begin construction, and reinstate certain expired licenses.",
+  "short": "The bill applies to hydropower projects licensed before March 13, 2020. Upon a licensee's request, the Federal Energy Regulatory Commission could extend the deadline to begin construction by six years beyond the eight-year extension already allowed under current law. That extension would come in no more than three consecutive two-year periods. The commission could also reinstate certain expired licenses for projects covered by these extensions, effective as of the date they expired."
+ },
+ "s-1318": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The provided material describes a bill about foreign intelligence surveillance and central bank digital currency, but it does not match the stated title, so the measure's actual purpose cannot be confirmed from it.",
+  "short": "The official title refers to restoring the religious heritage of fallen servicemembers, but the attached summary covers a different subject. The summary says the bill reauthorizes Title VII of the Foreign Intelligence Surveillance Act until April 30, 2029, and changes rules for certain searches of U.S. persons' communications under Section 702. It also prohibits Federal Reserve banks from offering financial products to individuals or issuing a central bank digital currency."
+ },
  "s-2": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The Secure America Act would provide about $70 billion through fiscal year 2029 to DHS, CBP, and ICE for immigration enforcement, border security, and related activities.",
   "short": "The act provides funding to the Department of Homeland Security, U.S. Customs and Border Protection, and U.S. Immigration and Customs Enforcement through fiscal year 2029. Funds would cover hiring and training Border Patrol and ICE personnel, including child exploitation investigators, and purchasing border screening and surveillance technology. It also funds immigration enforcement activities, including agreements that let state and local agencies perform certain immigration functions. The act is a reconciliation bill, which Congress considers under expedited procedures that limit filibusters and amendments in the Senate."
+ },
+ "s-2393": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This act authorizes the Department of Veterans Affairs to carry out a major medical facility project in St. Louis, Missouri, during fiscal year 2026.",
+  "short": "The act permits the Department of Veterans Affairs to carry out a major medical facility project in St. Louis, Missouri, during fiscal year 2026. It sets a maximum amount that may be spent on the project. The project would include a new bed tower, a clinical building expansion, a consolidated administrative building and warehouse, a utility plant, and parking garages."
  },
  "s-2403": {
   "model": "claude-haiku-5-5",
@@ -419,9 +609,19 @@
   "one_sentence": "The Local Access to Courts Act would add College Station, Texas, and El Centro, California, to the places where federal court must be held in their respective districts.",
   "short": "The bill adds College Station to the list of locations where federal court must be held in the Galveston Division of the Southern District of Texas. It also adds El Centro to the list of locations where federal court must be held in the Southern District of California."
  },
+ "s-4465": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill extends until June 12, 2026, the authorities in Title VII of the Foreign Intelligence Surveillance Act, which govern collecting foreign intelligence from targets outside the United States.",
+  "short": "The bill extends the authorities of Title VII of the Foreign Intelligence Surveillance Act (FISA) until June 12, 2026. Title VII generally covers surveillance and other methods of gathering foreign intelligence directed at targets outside the United States. It includes Section 702, which concerns acquiring communications of non-U.S. persons believed to be outside the United States. Information about U.S. persons may incidentally be collected this way and later searched under certain circumstances."
+ },
  "s-629": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The act expands and revises federal emergency conservation and forest restoration payment programs for farmers and private forest owners hit by natural disasters.",
   "short": "The act changes the Emergency Conservation Program and the Emergency Forest Restoration Program, which help agricultural producers and owners of forest land pay for repairs after natural disasters. It allows advance payments for replacing, repairing, or restoring farmland and conservation structures, and for emergency work on private nonindustrial forest land, and gives recipients 180 days to spend the funds instead of 60. It also extends eligibility to certain wildfire damage, including fires not caused naturally that spread through natural causes and fires caused by the federal government."
+ },
+ "sconres-33": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This concurrent resolution sets the federal budget framework for fiscal year 2026 and budget levels through 2035, and directs four committees to draft reconciliation legislation adding no more than $70 billion to the deficit.",
+  "short": "The resolution sets out recommended federal revenue, spending, deficit, and debt levels for fiscal year 2026 and projected levels for fiscal years 2027 through 2035. It instructs the House Homeland Security and Judiciary Committees and the Senate Homeland Security and Governmental Affairs and Judiciary Committees to submit recommendations by May 15, 2026, for legislation that would increase the deficit by no more than $70 billion over those years. It also creates reserve funds for certain reconciliation and immigration and border security legislation and sets budget enforcement rules for both chambers."
  }
 }
