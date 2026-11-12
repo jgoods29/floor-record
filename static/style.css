@@ -435,6 +435,3 @@ a.barrow:hover { background: #F7F3FF; }
 .colwrap .barbox .colbar { flex: none; }
 @media (max-width: 640px) { .track li { font-size: 10.5px; padding-left: 12px; padding-right: 0; margin-left: -6px; } .track.sm li { font-size: 9.5px; } }
 
-/* house style: headings, tabs, buttons and labels are lower case; sentences and people's names keep their capitals */
-.h1, .h2, .h3, .nav a, .btn, .label, .eyebrow, .tag, .pilllink, .up-name, .track li, .go, .dist, input::placeholder { text-transform: lowercase; }
-.keepcase, .nav a.myrep, .brand { text-transform: none; }
