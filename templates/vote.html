@@ -22,15 +22,18 @@
 </div>
 <div class="card-body">
 {% if v.kind == 'standard' %}
-<div class="score">
-<div><a class="big xl numlink" href="#voted-yea" data-open="voted-yea" aria-label="{{ v.totals.yea }} voted Yea. See who.">{{ v.totals.yea }}</a><div class="name">Yea</div><div class="muted" style="font-size:16px">{{ v.info.yea|capfirst }}</div></div>
-<div><a class="big xl dim numlink" href="#voted-nay" data-open="voted-nay" aria-label="{{ v.totals.nay }} voted Nay. See who.">{{ v.totals.nay }}</a><div class="name">Nay</div><div class="muted" style="font-size:16px">{{ v.info.nay|capfirst }}</div></div>
-<div>{% if v.totals.nv %}<a class="big md dim numlink" href="#voted-nv" data-open="voted-nv" aria-label="{{ v.totals.nv }} did not vote. See who.">{{ v.totals.nv }}</a>{% else %}<div class="big md dim">0</div>{% endif %}<div class="name">Did not vote</div><div class="muted" style="font-size:16px">{% if v.totals.present %}{{ v.totals.present }} voted present{% else %}&nbsp;{% endif %}</div></div>
+<div class="score split3">
+<div><a class="big xl numlink mix" style="{{ v.mix.yea.style }}" href="#voted-yea" data-open="voted-yea" aria-label="{{ v.totals.yea }} voted Yea. See who.">{{ v.totals.yea }}</a><div class="name">Yea</div><div class="muted" style="font-size:16px">{{ v.info.yea|capfirst }}</div>
+<div class="who-line">{{ v.mix.yea.text }}</div>
+<div class="seats" aria-hidden="true">{% for party, who in seats.yea %}<span class="seat {{ party }}" title="{{ who }}"></span>{% endfor %}</div></div>
+<div><a class="big xl numlink mix" style="{{ v.mix.nay.style }}" href="#voted-nay" data-open="voted-nay" aria-label="{{ v.totals.nay }} voted Nay. See who.">{{ v.totals.nay }}</a><div class="name">Nay</div><div class="muted" style="font-size:16px">{{ v.info.nay|capfirst }}</div>
+<div class="who-line">{{ v.mix.nay.text }}</div>
+<div class="seats" aria-hidden="true">{% for party, who in seats.nay %}<span class="seat {{ party }}" title="{{ who }}"></span>{% endfor %}</div></div>
+<div>{% if v.totals.nv %}<a class="big md numlink mix" style="{{ v.mix.nv.style }}" href="#voted-nv" data-open="voted-nv" aria-label="{{ v.totals.nv }} did not vote. See who.">{{ v.totals.nv }}</a>{% else %}<div class="big md dim">0</div>{% endif %}<div class="name">Did not vote</div><div class="muted" style="font-size:16px">{% if v.totals.present %}{{ v.totals.present }} voted present{% else %}&nbsp;{% endif %}</div>
+<div class="who-line">{{ v.mix.nv.text }}</div>
+<div class="seats" aria-hidden="true">{% for party, who in seats.nv %}<span class="seat out {{ party }}" title="{{ who }}"></span>{% endfor %}</div></div>
 </div>
-<div class="stack" style="gap:14px">
-<div class="seats" role="img" aria-label="{{ seats|length }} squares, one for each member: {{ v.totals.yea }} yea, {{ v.totals.nay }} nay, {{ v.totals.nv }} did not vote">{% for s in seats %}<span class="seat {{ s[0] }}" title="{{ s[1] }}"></span>{% endfor %}</div>
-<div class="legend"><span>Select a number to see who voted that way. Each square is one member of the House.</span><span><i class="seat"></i>Yea</span><span><i class="seat nay"></i>Nay</span>{% if v.totals.present %}<span><i class="seat present"></i>Present</span>{% endif %}<span><i class="seat nv"></i>Did not vote</span></div>
-</div>
+<div class="legend"><span>Select a number to see who voted that way. Each square is one member.</span><span><i class="seat R"></i>Republican</span><span><i class="seat D"></i>Democrat</span>{% if v.by_party.get('I') %}<span><i class="seat I"></i>Independent</span>{% endif %}</div>
 {% else %}
 <p class="lede">This was a special roll call (such as a quorum call or the election of the Speaker). It is listed for the record but is not counted in any member's statistics.</p>
 {% endif %}
@@ -56,8 +59,8 @@
 <div class="grid">{% for pc in parties %}
 <div class="card stack" style="gap:22px">
 <span class="row strong" style="gap:10px;font-size:18px">{{ m.badge(pc.code) }}{{ pc.name }}</span>
-<div class="row" style="gap:36px;align-items:flex-end"><div>{% if pc.yea %}<a class="big lg numlink" href="#voted-yea" data-open="voted-yea" data-only="{{ pc.code }}" data-only-name="{{ pc.name }}" aria-label="{{ pc.yea }} {{ pc.name }} voted Yea. See who.">{{ pc.yea }}</a>{% else %}<div class="big lg">0</div>{% endif %}<div class="small strong" style="padding-top:10px">Yea</div></div><div>{% if pc.nay %}<a class="big lg dim numlink" href="#voted-nay" data-open="voted-nay" data-only="{{ pc.code }}" data-only-name="{{ pc.name }}" aria-label="{{ pc.nay }} {{ pc.name }} voted Nay. See who.">{{ pc.nay }}</a>{% else %}<div class="big lg dim">0</div>{% endif %}<div class="small strong" style="padding-top:10px">Nay</div></div></div>
-<span class="bar" aria-hidden="true"><span style="flex: {{ pc.yea }}"></span><span class="n" style="flex: {{ pc.nay }}"></span><span class="x" style="flex: {{ pc.nv + pc.present }}"></span></span>
+<div class="row" style="gap:36px;align-items:flex-end"><div>{% if pc.yea %}<a class="big lg numlink pc-{{ pc.code }}" href="#voted-yea" data-open="voted-yea" data-only="{{ pc.code }}" data-only-name="{{ pc.name }}" aria-label="{{ pc.yea }} {{ pc.name }} voted Yea. See who.">{{ pc.yea }}</a>{% else %}<div class="big lg">0</div>{% endif %}<div class="small strong" style="padding-top:10px">Yea</div></div><div>{% if pc.nay %}<a class="big lg numlink pc-{{ pc.code }}" href="#voted-nay" data-open="voted-nay" data-only="{{ pc.code }}" data-only-name="{{ pc.name }}" aria-label="{{ pc.nay }} {{ pc.name }} voted Nay. See who.">{{ pc.nay }}</a>{% else %}<div class="big lg dim">0</div>{% endif %}<div class="small strong" style="padding-top:10px">Nay</div></div></div>
+<span class="bar pc-{{ pc.code }}" aria-hidden="true"><span style="flex: {{ pc.yea }}"></span><span class="n" style="flex: {{ pc.nay }}"></span><span class="x" style="flex: {{ pc.nv + pc.present }}"></span></span>
 <span class="small muted">{% if pc.nv %}<a href="#voted-nv" data-open="voted-nv" data-only="{{ pc.code }}" data-only-name="{{ pc.name }}">{{ pc.nv }} did not vote</a>{% else %}Everyone voted{% endif %}{% if pc.present %} · {{ pc.present }} present{% endif %}</span>
 </div>{% endfor %}</div>
 </section>

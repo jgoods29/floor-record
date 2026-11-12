@@ -132,6 +132,31 @@ def bill_status(action):
     return "Introduced", False
 
 
+PARTY_COLORS = {"R": "var(--rep)", "D": "var(--dem)", "I": "var(--ind)"}
+
+
+def party_mix(vote):
+    """For Yea, Nay and not voting: which parties make up the number. Gives the split colouring for
+    the big numerals and a plain sentence, so the colour is never the only way to tell."""
+    out = {}
+    for side in ("yea", "nay", "nv"):
+        parts = sorted(((vote["by_party"].get(p, {}).get(side, 0), p) for p in ("R", "D", "I")), reverse=True)
+        parts = [(n, p) for n, p in parts if n]
+        total = sum(n for n, _ in parts)
+        if not total:
+            out[side] = {"style": "", "text": "", "parts": []}
+            continue
+        stops, at = [], 0.0
+        for n, p in parts:
+            end = at + 100.0 * n / total
+            stops.append(f"{PARTY_COLORS[p]} {at:.1f}% {end:.1f}%")
+            at = end
+        words = [f"{n} {PARTY_NAMES[p]}{'' if n == 1 else 's'}" for n, p in parts]
+        out[side] = {"style": f"background-image: linear-gradient(90deg, {', '.join(stops)})",
+                     "text": ", ".join(words), "parts": parts, "lead": parts[0][1]}
+    return out
+
+
 def member_line(v, pos):
     """'Voted to pass the bill.' for one member on one vote."""
     if pos == "yea":
@@ -189,6 +214,7 @@ def main():
         names = [v["topic"]] if v["topic"] else []
         if v["slug"]:
             names += custom_topics_for(bills.get(v["slug"]) or {}, v["desc"], custom)
+        v["mix"] = party_mix(v)
         v["topics"] = names
         v["topic_keys"] = [topic_key(n) for n in names]
     # The big votes use wording a person approved, or the automatic wording. Never unreviewed AI text.
@@ -316,7 +342,13 @@ def main():
         sponsor_id = (bills.get(v["slug"]) or {}).get("sponsor")
         ctx["sponsor"] = people.get(sponsor_id)
         seats = sorted(v["positions"], key=lambda r: (ORDER.get(r[3], 4), {"R": 0, "D": 1}.get(r[1], 2), people[r[0]]["sort"]))
-        ctx["seats"] = [(r[3] if r[3] in ORDER else "nv", f"{people[r[0]]['name']} ({r[1]}-{r[2]}): {r[3]}") for r in seats]
+        ctx["seats"] = defaultdict(list)
+        for r in seats:
+            side = r[3] if r[3] in ("yea", "nay") else "nv"
+            ctx["seats"][side].append((r[1] if r[1] in ("R", "D") else "I", f"{people[r[0]]['name']} ({r[1]}-{r[2]})"))
+        for side, lst in ctx["seats"].items():  # same party order as the shaded number above
+            rank = {p: i for i, (_, p) in enumerate(v["mix"][side]["parts"])}
+            lst.sort(key=lambda x: rank.get(x[0], 9))
         ctx["parties"] = []
         for code in ("R", "D", "I"):
             t = v["by_party"].get(code)

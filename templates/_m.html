@@ -17,7 +17,7 @@
 <span class="headline-sm">{{ v.info.name }}{% if v.kind == 'standard' %}: {{ v.info.outcome|lcfirst }}{% endif %}</span>
 {% if v.info.plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.info.plain }}</span>{% endif %}
 {% if v.kind == 'standard' %}
-<span class="row nums" style="gap: 8px 14px; align-items: baseline; margin-top: 4px"><span class="big" style="font-size:40px">{{ v.totals.yea }}</span><span class="big dim" style="font-size:40px">{{ v.totals.nay }}</span></span>
+<span class="row nums" style="gap: 8px 14px; align-items: baseline; margin-top: 4px"><span class="big mix" style="font-size:40px;{{ v.mix.yea.style }}">{{ v.totals.yea }}</span><span class="big mix" style="font-size:40px;{{ v.mix.nay.style }}">{{ v.totals.nay }}</span></span>
 {% endif %}
 <span class="fine">{{ v.info.fine }}</span>
 </a>

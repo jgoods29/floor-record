@@ -17,7 +17,7 @@
 <span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ m.tags(v, ('split', 'proc', 'broke')) }}</span>
 <span class="headline-sm">{{ v.f_name }}: {{ v.info.outcome|lcfirst }}</span>
 {% if v.f_plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.f_plain }}</span>{% endif %}
-<span class="row nums" style="gap:8px 14px;align-items:baseline;margin-top:auto"><span class="big" style="font-size:40px">{{ v.totals.yea }}</span><span class="big dim" style="font-size:40px">{{ v.totals.nay }}</span></span>
+<span class="row nums" style="gap:8px 14px;align-items:baseline;margin-top:auto"><span class="big mix" style="font-size:40px;{{ v.mix.yea.style }}">{{ v.totals.yea }}</span><span class="big mix" style="font-size:40px;{{ v.mix.nay.style }}">{{ v.totals.nay }}</span></span>
 </a>{% endfor %}</div>
 </section>
 <h2 class="h2">Every vote</h2>
