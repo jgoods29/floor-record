@@ -292,7 +292,9 @@ def ingest_bills(votes, congress, log=print, limit=400):
         try:
             summaries = _api(f"/bill/{congress}/{kind}/{number}/summaries", key).get("summaries") or []
             if summaries:
-                rec["official_summary"] = re.sub(r"<[^>]+>", " ", summaries[-1].get("text", "")).strip()
+                import html
+                text = html.unescape(re.sub(r"<[^>]+>", " ", summaries[-1].get("text", "")))
+                rec["official_summary"] = " ".join(text.split())
         except Exception:
             pass
         bills[slug] = rec
@@ -316,11 +318,12 @@ def _legislation_rows(payload, key, congress):
     return rows
 
 
-def ingest_member_bills(bioguides, congress, log=print, per_run=150, max_age_days=7):
+def ingest_member_bills(bioguides, congress, log=print, per_run=40, max_age_days=10):
     """What each member introduced and signed onto this Congress, from Congress.gov. Optional.
 
-    Refreshes the stalest members first and stops after `per_run` members, so one run stays well
-    inside the API's hourly limit; the whole House is covered within a few runs.
+    Refreshes the stalest members first and stops after `per_run` members. Each member takes several
+    requests, so a small batch keeps a routine update to a few minutes; with six runs a day the whole
+    House is refreshed about every two days.
     """
     key = os.environ.get("CONGRESS_API_KEY", "").strip()
     if not key:

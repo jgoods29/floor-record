@@ -2,6 +2,7 @@
 
 Run:  python -m floorrecord.build
 """
+import html
 import shutil
 from collections import defaultdict
 from datetime import date, datetime, timezone
@@ -129,6 +130,9 @@ def main():
         raise SystemExit("No roll calls in data/. Run `python -m floorrecord.ingest` first.")
     members = read_json(DATA / "members.json", {})
     bills = read_json(DATA / "bills.json", {})
+    for rec in bills.values():  # tidy summaries collected before the HTML clean-up was added
+        if rec.get("official_summary"):
+            rec["official_summary"] = " ".join(html.unescape(rec["official_summary"]).split())
     summaries = read_json(DATA / "summaries.json", {})
     ai_votes = read_json(DATA / "ai_votes.json", {})
     editorial = read_json(ROOT / "editorial.json", {})

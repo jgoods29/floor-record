@@ -415,9 +415,19 @@ def ai_summaries(votes, cfg, log=print):
     return cache
 
 
+# Raise this when the instructions below change, so earlier answers are written again under the new rules.
+VOTE_PROMPT_VERSION = 2
+
 VOTE_PROMPT = """You write plain-English labels for votes in the U.S. House for a non-partisan public website.
 Readers do not follow politics. Use ONLY the official facts below. Do not add background, motives, predictions,
 praise or criticism, and do not say who "won". Use everyday words; no bill numbers and no procedural jargon.
+
+Accuracy rules:
+- Do not describe a measure's legal force or importance (binding, non-binding, symbolic, landmark, annual, major)
+  unless the official title or summary uses that word.
+- A bill that "authorizes" programs or "sets policy" is not a spending bill. Say it provides or spends money only if
+  the official facts say it appropriates or provides funding.
+- When the measure has an official short title, use it or a faithful shortening of it as the name.
 
 Return JSON with two keys:
 "name": at most 7 words naming what the vote was about, the way a careful newspaper would label it
@@ -446,7 +456,7 @@ def ai_vote_lines(votes, cfg, log=print):
     bills = read_json(DATA / "bills.json", {})
     todo = []
     for v in reversed(votes):  # newest first, substantive votes before housekeeping
-        if v["id"] in cache or v.get("kind") != "standard":
+        if cache.get(v["id"], {}).get("v") == VOTE_PROMPT_VERSION or v.get("kind") != "standard":
             continue
         info = explain(v, bills)
         parsed = parse_legis(v["legis"])
@@ -454,7 +464,8 @@ def ai_vote_lines(votes, cfg, log=print):
         if not (bill.get("title") or v["desc"]):
             continue  # nothing official to describe it with
         todo.append((info["routine"], v, info, bill))
-    todo.sort(key=lambda t: t[0])
+    # Votes with no wording yet come first, then routine ones, then answers written under older instructions.
+    todo.sort(key=lambda t: (t[1]["id"] in cache, t[0]))
     made = failed = 0
 
     def label(job):
@@ -470,7 +481,7 @@ def ai_vote_lines(votes, cfg, log=print):
         name, plain = str(out["name"]).strip().rstrip("."), str(out["plain"]).strip()
         if not name or len(name) > 90 or len(plain) > 400:
             raise ValueError("answer outside the allowed length")
-        return {"name": name, "plain": plain, "model": cfg.get("ai_model", "")}
+        return {"name": name, "plain": plain, "model": cfg.get("ai_model", ""), "v": VOTE_PROMPT_VERSION}
 
     batch = todo[: cfg.get("ai_max_new_vote_lines_per_run", 150)]
     # A small first batch, so a wrong key or model fails fast instead of 150 times.
