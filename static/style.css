@@ -368,3 +368,10 @@ a.tag.soft { text-decoration: none; }
 .zipfind .search input { width: 100%; min-height: 52px; font-size: 18px; }
 button.linkish.on { color: var(--purple-ink); }
 .zipfind .results { left: 0; right: auto; width: 100%; }
+/* Start Here and Why: purple only, so nothing reads as one party's color */
+.start .btn.go { background: var(--purple); border-color: var(--purple); }
+.start .path .num, .start .step .num { background: var(--purple); }
+.start a.card .go:not(.btn), .start .step .go { color: var(--purple); }
+.start a:not(.btn):not(.card) { text-decoration-color: #C9B5F5; }
+.start .search input:focus, .start .field:focus { border-color: var(--purple); outline-color: var(--purple); }
+.nav a.startlink[aria-current="page"] { color: var(--purple); border-bottom-color: var(--purple); }
