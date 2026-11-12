@@ -124,6 +124,11 @@
   "one_sentence": "This joint resolution would overturn a District of Columbia law and realign D.C. tax rules with recent federal tax changes from the 2025 reconciliation act.",
   "short": "Under D.C.'s usual practice, federal tax changes automatically apply locally, but the District Council later passed a law separating some of these provisions from federal rules. This resolution would nullify that D.C. legislation, bringing D.C. tax law back in line with the federal provisions. The provisions it would reinstate include a higher standard deduction, a $6,000 deduction for taxpayers 65 and older, deductions for qualified tips, overtime pay, and car loan interest, and expanded business depreciation and research cost deductions. The resolution would also negate other D.C. changes, including restoring the D.C. child tax credit."
  },
+ "hjres-20": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would cancel a December 2024 Department of Energy rule that set amended energy efficiency standards for gas-fired instantaneous water heaters.",
+  "short": "The resolution would nullify a rule the Department of Energy submitted on December 26, 2024, titled \"Energy Conservation Standards for Consumer Gas-fired Instantaneous Water Heaters.\" That rule set amended energy conservation standards for these water heaters, which the Department said were intended to achieve the greatest improvement in energy efficiency that it found technologically feasible and economically justified. The resolution is a congressional disapproval measure under chapter 8 of title 5 of the U.S. Code, the process Congress uses to overturn federal agency rules."
+ },
  "hjres-210": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This joint resolution would revoke the federal authorization that let California amend its rules on emissions from ships docked at port.",
@@ -143,6 +148,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This joint resolution would cancel an IRS rule that required certain people involved in decentralized finance (DeFi) digital asset transactions to report sale information to the IRS.",
   "short": "The resolution would nullify a December 30, 2024 IRS rule titled \"Gross Proceeds Reporting by Brokers That Regularly Provide Services Effectuating Digital Asset Sales.\" That rule set reporting requirements for persons effectuating digital asset sales through decentralized finance (DeFi) transactions. DeFi refers to financial activities facilitated by cryptocurrency that are intended to operate without traditional financial tools or intermediaries. If passed, the resolution would remove those reporting requirements."
+ },
+ "hjres-35": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify an EPA rule that set procedures for the waste emissions charge on oil and gas facilities, effectively eliminating that annual charge.",
+  "short": "The resolution would disapprove and nullify a rule the Environmental Protection Agency published on November 18, 2024, titled \"Waste Emissions Charge for Petroleum and Natural Gas Systems: Procedures for Facilitating Compliance, Including Netting and Exemptions.\" Under the Methane Emissions Reduction Program, the EPA collects an annual waste emissions charge from certain oil or gas facilities that exceed emission thresholds for greenhouse gases and methane. The resolution would eliminate this charge."
  },
  "hjres-42": {
   "model": "claude-haiku-5-5",
@@ -309,6 +319,11 @@
   "one_sentence": "The TICKET Act would require event ticket sellers to show the full price, including all fees, up front and bar selling tickets they do not possess.",
   "short": "The bill requires sellers of tickets for concerts, sports, and similar events, including resale sellers, to clearly display the total ticket price, and to itemize the base price and each fee before purchase. The total price must also appear in advertisements and price lists. Sellers that do not actually or constructively hold a ticket are prohibited from selling or advertising it, though they may offer a clearly separate service to help obtain tickets. The Federal Trade Commission would enforce these requirements, and sellers must refund the total price if an event is canceled or postponed."
  },
+ "hr-144": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would require the Tennessee Valley Authority to resume filing an annual financial report with Congress and would change which employees' salaries must be listed in that report.",
+  "short": "The bill reinstates a requirement that the Tennessee Valley Authority, a government corporation that provides electricity and river management services, file an annual financial statement and report with Congress in March. The requirement had ended under a 1995 law. The bill also changes the employee reporting rule: names, salaries, and duties would be required only for employees earning more than the maximum basic pay for General Schedule grade GS-13, rather than for those earning over $1,500 a year."
+ },
  "hr-1442": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would ban consumer products containing 10% or greater sodium nitrite from being sold to individuals, with exceptions for certain drugs, medical devices, cosmetics, and food.",
@@ -329,10 +344,20 @@
   "one_sentence": "The bill would require the President to sanction people and entities involved in forced organ harvesting or trafficking, and let the State Department deny or revoke passports of people convicted of certain organ-trafficking crimes.",
   "short": "The bill requires the President to report to Congress a list of persons who facilitate forced organ harvesting or trafficking in persons for organ harvesting. For each person on that list, the President must impose property-blocking and visa-blocking sanctions. It also lets the State Department deny or revoke the passport of an individual convicted of knowingly transferring a human organ for payment for transplant use, if that person is still subject to imprisonment or supervised release and used a passport or crossed an international border while committing the crime."
  },
+ "hr-152": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would direct FEMA to make disaster aid information collection less burdensome, study ways to consolidate damage assessments, and report its findings to Congress.",
+  "short": "The bill requires FEMA to study and plan ways to make collecting information from disaster aid applicants and grantees less burdensome, duplicative, and time-consuming, and to plan regular reporting on federal disaster aid awarded. Within two years of enactment, FEMA would convene a working group to identify duplication in preliminary damage assessments, consider whether one federal agency should conduct them for all agencies, and explore new technologies such as drones. FEMA must submit a comprehensive report and recommendations to Congress, make it public, and post it on its website."
+ },
  "hr-1526": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The No Rogue Rulings Act would bar federal district courts from issuing injunctions that apply to anyone beyond the parties in the case before them.",
   "short": "The bill, known as the No Rogue Rulings Act or NORRA, limits the power of federal district courts to issue injunctions. Under the bill, a district court could issue an injunction only if it applies solely to the parties in the particular case before the court. The summary provided does not describe further provisions, exceptions, or effective dates."
+ },
+ "hr-153": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require federal agencies that provide disaster assistance to publish quarterly public information on the aid they give and how it is spent.",
+  "short": "The bill would create a central place where information about federal disaster assistance is published. The Small Business Administration, the Department of Housing and Urban Development, and other agencies that provide disaster aid would have to make this information public every quarter. The reports would cover the total amount of assistance provided, how much of it was spent or committed, and the specific projects or activities that used the funds."
  },
  "hr-1531": {
   "model": "claude-haiku-5-5",
@@ -349,10 +374,20 @@
   "one_sentence": "The bill would require the Department of Homeland Security to report to Congress on its efforts to prevent, deter, and respond to vehicular terrorism, meaning terrorism carried out using automobiles.",
   "short": "The Department of Homeland Security would submit a report to Congress, prepared with the Transportation Security Administration and the Cybersecurity and Infrastructure Security Agency, on preventing and responding to vehicular terrorism. The report would cover current and emerging threats, higher-risk locations such as airports and government facilities, coordination with law enforcement agencies, and recommendations for technologies to detect and mitigate such attacks. The full report would be classified, but an unclassified executive summary would be published on the department's website, and the department would also brief Congress on its findings."
  },
+ "hr-164": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The POWER Act of 2025 would let electric utilities receiving emergency power restoration aid also carry out cost-effective hazard mitigation work alongside that restoration.",
+  "short": "The bill allows electric utilities that receive emergency assistance to restore power to also carry out cost-effective hazard mitigation activities at the same time. It also states that a utility receiving this assistance for a facility may, if otherwise eligible, receive hazard mitigation help for that same facility under the Federal Emergency Management Agency's Public Assistance program."
+ },
  "hr-1642": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require Small Business Development Centers and Women's Business Centers to give small businesses information about hiring graduates of career and technical education programs.",
   "short": "The bill directs Small Business Development Centers and Women's Business Centers to provide small businesses with educational information about hiring graduates of career and technical education programs. Where appropriate, these centers would also connect small businesses with those programs. The goal described is to help students and graduates of such programs identify career opportunities."
+ },
+ "hr-165": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would place about 40 acres of land in Oglala Lakota County, South Dakota, into restricted status for two Sioux tribes to be kept as a memorial and sacred site.",
+  "short": "The act directs the Department of the Interior to complete the steps needed to place roughly 40 acres in Oglala Lakota County, South Dakota, into restricted fee status for the Oglala Sioux Tribe and the Cheyenne River Sioux Tribe. Restricted fee status means the land stays tribally owned but cannot be sold, transferred, or encumbered, such as by liens or leases. The land must be held and maintained as a memorial and sacred site under a 2022 covenant between the two tribes. The act also prohibits commercial development and gaming activity on the land."
  },
  "hr-1676": {
   "model": "claude-haiku-5-5",
@@ -389,6 +424,16 @@
   "one_sentence": "The bill would require the Small Business Administration to issue an annual report on fee-based agents who help businesses apply for its 7(a) loans.",
   "short": "The bill concerns 7(a) loan agents, who charge fees to refer small business borrowers to and help them apply for loans under the SBA's 7(a) Program. Under the bill, the SBA would submit an annual report covering the number and types of these agents, the number of fraudulent loans involving agent assistance, and the purchase rate of such loans. The report would also include the number and total dollar value of referral fees paid to agents."
  },
+ "hr-186": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would require the authorized national monument honoring Medal of Honor recipients to be placed within the Reserve, the central cross-axis of the National Mall in Washington, D.C.",
+  "short": "The bill requires the authorized monument honoring Medal of Honor recipients to be located within the Reserve. The Reserve is the great cross-axis of the National Mall, which generally runs from the Capitol to the Lincoln Memorial and from the White House to the Jefferson Memorial. The summary provided does not describe the monument's design, cost, or construction timeline."
+ },
+ "hr-187": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The MAPWaters Act of 2025 would require the Forest Service and Interior Department to standardize, digitize, and publicly post data on public access to federal waterways for recreation and on federal fishing restrictions.",
+  "short": "The bill directs the Forest Service and the Department of the Interior to jointly set common standards for collecting and sharing geospatial data on public recreational access to federal waterways and federal fishing restrictions. Within five years, they would digitize and publish online certain data on waterway restrictions, access and navigation, and fishing restrictions, updating waterway data at least twice a year and fishing restriction data in real time. The agencies would also create a way for the public to submit questions or comments on this data, and they could partner with other agencies, private entities, nonprofits, and the U.S. Geological Survey to carry out the work. The bill excludes irrigation canals and flowage easements and requires annual progress reports to specified congressional committees."
+ },
  "hr-1917": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would give the U.S. Fish and Wildlife Service statutory authority to run a larger program that tags hatchery-raised fish in the Great Lakes and shares the resulting data with fish managers.",
@@ -398,6 +443,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would bar the Federal Reserve from issuing a central bank digital currency, or digital dollar, and from offering direct accounts or services to individuals using one.",
   "short": "The bill prohibits Federal Reserve banks from offering products or services directly to individuals, maintaining accounts for individuals, or issuing a central bank digital currency, which is a digital dollar. It also prohibits the Federal Reserve Board of Governors from using such a currency to carry out monetary policy. The Board would further be barred from testing, studying, creating, or implementing a central bank digital currency, subject to exceptions set out in the bill."
+ },
+ "hr-192": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require Amtrak to publicly disclose the base pay and bonus compensation of its executive leadership team, along with the criteria used to set bonuses, in its annual report.",
+  "short": "The bill requires Amtrak to include in its required annual report to Congress the annual base pay and any bonus compensation paid to members of its executive leadership team. The report must also explain the criteria and metrics used to decide any bonuses. Amtrak must make this annual report available on its public website."
  },
  "hr-1949": {
   "model": "claude-haiku-5-5",
@@ -443,6 +493,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill would reverse 2023 changes to D.C. law on disciplining Metropolitan Police Department officers, including time limits, bargaining, penalties, and public hearing schedules.",
   "short": "The bill would restore a 90-day time limit for starting disciplinary action against Metropolitan Police Department officers and civilian employees. It would allow officer discipline to be negotiated as part of a collective bargaining agreement. It would also remove the police chief's power to increase a trial board's recommended penalty for officer misconduct, and end a requirement to post online schedules of termination hearings."
+ },
+ "hr-21": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require medical staff to give a child born alive after an abortion attempt the same care as any other newborn of that gestational age, and would set criminal penalties for violations.",
+  "short": "A health care practitioner who is present would have to provide the same degree of care that would reasonably be given to any other child born alive at the same gestational age, and ensure the child is immediately admitted to a hospital. Anyone with knowledge of a failure to follow these requirements would have to report it immediately to law enforcement. Failing to provide the required care or failing to report a violation could result in a fine, up to five years in prison, or both, and intentionally killing or attempting to kill a child born alive could be prosecuted as murder. The bill bars criminal prosecution of the mother and allows her to bring a civil action against a practitioner or employee for violations."
  },
  "hr-2102": {
   "model": "claude-haiku-5-5",
@@ -499,6 +554,11 @@
   "one_sentence": "The bill would exclude the value of employer-funded child or dependent care from the calculation of an eligible employee's overtime pay rate.",
   "short": "Under current law, overtime must be paid at one and a half times an employee's regular rate, which is an average hourly rate that includes certain pay such as commissions. This bill specifies that an employer can provide or pay for child or dependent care services without counting the value of those services in that overtime calculation."
  },
+ "hr-23": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require U.S. sanctions on foreign persons who help the International Criminal Court investigate, arrest, detain, or prosecute protected individuals, and would cut off U.S. funding for the court.",
+  "short": "The bill would sanction foreign individuals and entities that assist the International Criminal Court (ICC) in investigating, arresting, detaining, or prosecuting certain people. Protected persons include U.S. individuals and entities, unless the United States is a party to the Rome Statute and consents to ICC jurisdiction, as well as citizens or lawful residents of U.S. allies that are not parties to the statute or have not consented to ICC jurisdiction. Sanctions would block visas and property and extend to immediate family members of those sanctioned. The bill would also rescind all funds appropriated for the ICC and bar future use of appropriated funds for the court."
+ },
  "hr-2312": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would change the federal definition of a tipped employee so that an employee's job duties no longer affect whether they qualify as tipped.",
@@ -529,6 +589,11 @@
   "one_sentence": "The bill would cancel a March 2025 executive order that removed certain federal agencies from the federal labor-management law that governs employee collective bargaining.",
   "short": "The Protect America's Workforce Act would nullify an executive order issued on March 27, 2025, which excluded specified federal agencies and subdivisions from the Federal Service Labor-Management Relations Statute. That statute allows federal employees to take part in collective bargaining and enforces those rights. The bill also provides that any covered collective bargaining agreement in place as of March 26, 2025, would remain in full force and effect through the agreement's stated term."
  },
+ "hr-26": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would bar the President from declaring a moratorium on hydraulic fracturing unless Congress first authorizes it.",
+  "short": "The bill prohibits the President from declaring a moratorium on hydraulic fracturing, a process used to extract oil or natural gas by injecting water, sand, and chemicals into underground rock under pressure, unless Congress authorizes the moratorium. It also states that Congress believes states should keep primary authority to regulate hydraulic fracturing for oil and natural gas on state and private lands."
+ },
  "hr-261": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would stop the Department of Commerce from requiring extra permits for certain undersea fiber optic cable work in national marine sanctuaries when a state or federal agency has already approved that work.",
@@ -549,6 +614,11 @@
   "one_sentence": "The bill would extend U.S. export controls to cover foreign persons remotely accessing controlled items over networks such as the internet or cloud services.",
   "short": "The bill broadens the U.S. export control system so that it applies to remote access of items, meaning access by a foreign person through a network connection from a location other than where the item is physically located. It also covers any other form of remote access that the Department of Commerce specifies in regulations. The bill lets the Commerce Department's Bureau of Industry and Security issue licenses and impose penalties for remote access to controlled items under the existing export control law."
  },
+ "hr-27": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The HALT Fentanyl Act would permanently place fentanyl-related substances as a class into Schedule I of the Controlled Substances Act and apply the same penalties used for fentanyl analogues.",
+  "short": "The bill permanently places fentanyl-related substances as a class in Schedule I, the category for drugs with a high potential for abuse and no currently accepted medical value. Offenses involving these substances would carry the same quantity thresholds and penalties as offenses involving fentanyl analogues, such as a 10-year mandatory minimum prison term for 100 grams or more. The bill also creates an alternative registration process for certain Schedule I research and changes some registration requirements for research with controlled substances. It further expresses the sense of Congress agreeing with a 2018 federal district court decision that butyryl fentanyl can be considered an analogue of fentanyl."
+ },
  "hr-2721": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would create a two-year VA pilot program to provide headstones or burial markers for certain veterans who died on or before November 1, 1990, and were not dishonorably discharged.",
@@ -564,6 +634,11 @@
   "one_sentence": "The bill would rename the Gulf of Mexico as the Gulf of America and require federal agencies to update their documents and maps to use the new name.",
   "short": "The Gulf of America Act of 2025 would officially rename the Gulf of Mexico the Gulf of America. It directs federal agencies to update their documents and maps so they use the new name."
  },
+ "hr-28": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would bar federally funded schools and colleges from letting people whose sex at birth was male take part in athletic programs designated for women or girls.",
+  "short": "The bill treats allowing male-sex individuals to participate in women's or girls' school athletic programs as a violation of Title IX, the federal law banning sex discrimination in federally funded education. Under the bill, sex means reproductive biology and genetics at birth. Male individuals may still train or practice with these programs as long as this does not deprive any female of corresponding opportunities or benefits. The bill also directs the Government Accountability Office to report on benefits to women and girls in single-sex sports that could be lost through male participation."
+ },
  "hr-2853": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would expand federal criminal enforcement against organized retail and supply chain crime, including theft and resale of stolen goods, and create a temporary Homeland Security center to coordinate these efforts.",
@@ -573,6 +648,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill would reauthorize for seven years the Northwest Straits Marine Conservation Initiative and its advisory commission, which work to protect and restore marine waters and species in the Northwest Straits region.",
   "short": "The bill revises and renews for seven years the Northwest Straits Marine Conservation Initiative and its Northwest Straits Advisory Commission. These programs focus on protecting and restoring marine waters, habitats, and species in the waters of the Strait of Juan de Fuca and Puget Sound, from the Canadian border to the south end of Snohomish County in Washington state. The commission would support local marine resources committees, develop restoration and protection recommendations based on science, and serve as a public forum for informal discussions about the region's marine ecosystem."
+ },
+ "hr-29": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Laken Riley Act would require the Department of Homeland Security to detain certain non-U.S. nationals arrested for theft-related crimes and let states sue the federal government over certain immigration decisions.",
+  "short": "The bill requires the Department of Homeland Security to detain non-U.S. nationals who are unlawfully present or lacked required documents and who have been charged with, arrested for, convicted of, or admitted to acts that are the essential elements of burglary, theft, larceny, or shoplifting. It also allows state governments to seek injunctive relief from federal court over certain immigration decisions or failures that caused the state or its residents harm, including financial harm over $100. The covered decisions include releasing a non-U.S. national from custody, certain inspection and asylum-interview requirements, visa issuance to nationals of countries that unreasonably deny or delay accepting their nationals, limits on immigration parole, and failing to detain someone ordered removed."
  },
  "hr-2913": {
   "model": "claude-haiku-5-5",
@@ -608,6 +688,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require fiduciaries of employer-sponsored retirement plans to base investment decisions mainly on financial factors, with limited exceptions, and to act in participants' interests when using shareholder rights.",
   "short": "The bill generally requires retirement plan fiduciaries to make investment decisions based solely on pecuniary factors, meaning factors expected to have a material effect on the risk or return of an investment. Nonpecuniary factors may be considered in certain situations, such as when choosing options for participant-directed plans or when alternatives cannot be distinguished on financial factors alone. The bill also bars discrimination in selecting and retaining plan fiduciaries, counsel, employees, and service providers, and requires fiduciaries to act solely and prudently in participants' interests when exercising shareholder rights, without having to vote every proxy. It further requires specified notices for plans that let participants choose from designated investment alternatives."
+ },
+ "hr-30": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would make certain non-U.S. nationals inadmissible or deportable based on specified sex offenses, stalking, child abuse, and domestic violence offenses.",
+  "short": "The bill makes a non-U.S. national inadmissible to the United States if the person has admitted to or been convicted of acts that meet the essential elements of crimes such as stalking, child abuse, child neglect, child abandonment, sex offenses, conspiracy to commit a sex offense, violating certain protection orders, or domestic violence. It adds grounds for deportation, making any sex offense (including crimes against minors) or conspiracy to commit one a basis for removal. It also expands the domestic violence grounds for deportation to cover physical or sexual abuse or a pattern of coercive behavior occurring within certain close relationships."
  },
  "hr-3015": {
   "model": "claude-haiku-5-5",
@@ -704,6 +789,11 @@
   "one_sentence": "The bill would make it a federal crime to provide certain gender-transition procedures or medications to minors and would broaden the existing federal ban on female genital mutilation.",
   "short": "The bill creates federal criminal offenses for knowingly performing or providing procedures or medications, such as hormonal treatments, to a minor to change the minor's body to correspond to a sex different from the minor's biological sex. Exceptions apply to specified procedures, including those treating individuals with both ovarian and testicular tissue or abnormal sex chromosome structure or hormones, and those treating infections or harms from a prior gender-transition procedure. A violation would be punishable by a fine, up to 10 years in prison, or both, and the bill bars arresting or prosecuting individuals who undergo these procedures or medications. The bill also expands the existing federal female genital mutilation ban so that anyone, not only a parent, guardian, or caretaker, who facilitates or consents to such procedures on a minor can be liable, while keeping the same penalties."
  },
+ "hr-35": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would create federal crimes for fleeing from Border Patrol or certain other law enforcement officers in a motor vehicle within 100 miles of the U.S. border.",
+  "short": "The measure establishes new federal criminal offenses for operating a motor vehicle within 100 miles of the U.S. border while fleeing from a U.S. Border Patrol agent or from a federal, state, or local officer actively assisting or under Border Patrol command. It sets criminal penalties for these offenses, including a mandatory minimum prison term when the offense results in death or serious bodily injury. A non-U.S. national who is convicted of or admits to committing such an offense would be inadmissible, deportable, and ineligible for immigration relief, including asylum."
+ },
  "hr-359": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require the Department of Energy to report on how it uses its authority to reduce or waive required non-federal cost-sharing for federally funded energy research and commercialization projects.",
@@ -748,6 +838,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would make the Federal Energy Regulatory Commission the sole lead agency coordinating environmental reviews of certain natural gas pipelines and LNG terminals, and limit how long authorization decisions can take after those reviews.",
   "short": "The bill speeds up environmental review for certain natural gas pipeline projects and liquefied natural gas import or export terminals under the Natural Gas Act. It makes the Federal Energy Regulatory Commission the only lead agency for coordinating those National Environmental Policy Act reviews, and other agencies must defer to its approved review scope. The Commission must invite and designate participating agencies by set deadlines and cannot set an authorization deadline more than 90 days after the environmental review ends. Applicants would not need a state water quality certification under Section 401 of the Clean Water Act, and agencies must consider data gathered by aerial or other remote means."
+ },
+ "hr-375": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require federal agencies to partner with Hawaii to research, control, and address Rapid Ohia Death, a fungal disease that affects ohia trees.",
+  "short": "The bill addresses Rapid Ohia Death, a disease caused by a fungal pathogen that affects ohia trees in Hawaii. It directs the Department of the Interior to work with the Department of Agriculture and Hawaii on control efforts, and asks the U.S. Geological Survey and the Forest Service's Institute of Pacific Islands Forestry to keep researching how the disease spreads. It also has the Fish and Wildlife Service manage ungulates such as deer in affected areas, with private landowners' consent, and provides Forest Service funding to limit the fungus's spread and restore native Hawaiian forests."
  },
  "hr-3838": {
   "model": "claude-haiku-5-5",
@@ -809,6 +904,11 @@
   "one_sentence": "The MAWS Act of 2026 would create a NOAA pilot program to buy invasive blue catfish caught in the Chesapeake Bay Watershed for use in pet food, animal feed, or aquaculture feed.",
   "short": "The bill directs the National Oceanic and Atmospheric Administration (NOAA) to set up a pilot program that helps buy blue catfish, which are considered an invasive species in the Chesapeake Bay, from watermen and seafood processors. NOAA would make cooperative agreements with makers or processors of pet food, animal feed, or aquaculture feed, and would set a minimum price per pound that accounts for market factors, stakeholder feedback, and separate prices for fillets and byproducts. The bill also requires NOAA to work with nonfederal partners on estimates of blue catfish abundance in the watershed and to publish the first estimate before the pilot begins."
  },
+ "hr-43": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "Removes a requirement that Alaska Native village corporations transfer certain lands to Alaska to be held in trust for possible future municipal governments.",
+  "short": "Under the Alaska Native Claims Settlement Act, Alaska Native village corporations must transfer certain lands either to an existing village municipality or, if none exists, to the State of Alaska to be held in trust for a future municipality. This measure would remove that transfer requirement. It would also let a village corporation regain title to lands already held in trust by passing a formal resolution, with the residents of the Native village taking part in the decision."
+ },
  "hr-4305": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The DUMP Red Tape Act would require the Small Business Administration's Office of Advocacy to keep running a Red Tape Hotline where small businesses can report burdensome federal rules and report on those reports each year.",
@@ -868,6 +968,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would repeal energy efficiency standards that phase out fossil fuel use in new federal buildings and major renovations by fiscal year 2030.",
   "short": "The bill removes the requirement that new federal buildings and buildings undergoing major renovations phase out fossil fuel use by fiscal year 2030. It directs the Department of Energy to apply the standards as if that phase-out had never taken effect, until it issues regulations with revised performance standards. It also states that green building certification systems may not bar federal buildings from certification solely because they use fossil fuels directly or indirectly."
+ },
+ "hr-471": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Fix Our Forests Act would set rules for managing federal forests to reduce wildfire threats, speed up environmental reviews of certain forest projects, and limit some lawsuits over those projects.",
+  "short": "The bill designates high-risk wildfire areas as fireshed management areas and creates an interagency Fireshed Center to assess and predict fire, including a public online registry of these areas. It speeds up environmental reviews for certain forest management projects, exempts some activities from those reviews, and creates intra-agency strike teams to coordinate reviews under several federal laws. The bill also limits certain lawsuits and court remedies involving fireshed projects, and it supports community wildfire protection, forest restoration, biochar demonstration projects, wildfire technology, and assistance for wildland firefighters and their families."
  },
  "hr-4758": {
   "model": "claude-haiku-5-5",
@@ -1084,6 +1189,11 @@
   "one_sentence": "The 21st Century ROAD to Housing Act would establish and modify federal housing programs covering counseling, construction, mortgages, manufactured and modular homes, appraisers, and rental assistance.",
   "short": "The act directs HUD to review housing counseling organizations and to support permitting for point-access block buildings, and it exempts certain rural infill housing projects from environmental review. It creates or expands several programs, including a pilot for smaller mortgages, grants for local housing plans, and a permanent Rental Assistance Demonstration program with a higher conversion limit. It also removes the permanent chassis requirement for manufactured homes, expands appraiser eligibility, and modifies the HOME program's income limits; the official summary is cut off before covering all sections."
  },
+ "hr-692": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would direct the U.S. representative at the International Monetary Fund to press for greater transparency from China on its exchange rate policies.",
+  "short": "The bill requires the U.S. Executive Director at the International Monetary Fund to use the U.S. voice and vote to advocate for more transparency from China about its exchange rates. Areas of focus include China's exchange rate arrangements, including indirect currency market intervention by Chinese banks or state-owned enterprises, stronger IMF surveillance, and consideration of China's conduct as a responsible participant in the international monetary system when reviewing IMF quota and voting shares. The requirements expire seven years and 30 days after enactment, or earlier if China meets specified conditions on its exchange rate policies."
+ },
  "hr-6938": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill would provide fiscal year 2026 funding for federal agencies and programs covering commerce, law enforcement, science, energy and water projects, public lands, and the environment.",
@@ -1093,6 +1203,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would let states use federal Temporary Assistance for Needy Families (TANF) funds to support pregnancy centers that offer services to mothers, fathers, and families.",
   "short": "The bill gives states explicit legal authority to spend Temporary Assistance for Needy Families (TANF) funds on pregnancy centers. Such centers would need to support protecting the life of the mother and the unborn child. Eligible services include relationship counseling, prenatal and pregnancy education, pregnancy testing, and material supports such as diapers and baby clothes."
+ },
+ "hr-695": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Medal of Honor Act would raise the monthly special pension for living Medal of Honor recipients, bar inflation increases in years when the pension was already raised, and extend a pension limit for certain veterans in Medicaid nursing homes.",
+  "short": "The act increases the monthly special pension paid to living Medal of Honor recipients. It also bars the Department of Veterans Affairs from applying an inflation increase to that pension in any year in which the pension was already increased. In addition, it extends through January 31, 2033, a current limit of $90 per month on pensions paid to veterans who live in Medicaid nursing homes and have no spouse or child; that limit is now set to expire November 30, 2031."
  },
  "hr-6955": {
   "model": "claude-haiku-5-5",
@@ -1129,6 +1244,11 @@
   "one_sentence": "The Consolidated Appropriations Act, 2026 would fund several federal departments and agencies for the rest of fiscal year 2026, continue Homeland Security funding temporarily, and extend various expiring programs.",
   "short": "The bill includes five of the twelve regular fiscal year 2026 spending bills, covering agencies such as the Defense, Labor, Health and Human Services, Education, Transportation, Housing and Urban Development, and State Departments, along with Treasury, the Executive Office of the President, and the judiciary. It provides temporary funding for the Department of Homeland Security through February 13, 2026, or until a full Homeland Security spending act is enacted, generally at fiscal year 2025 levels. The bill also extends a range of expiring programs and authorities, including the National Flood Insurance Program, the Temporary Assistance for Needy Families program, trade preferences for Haiti and sub-Saharan Africa, and several cybersecurity and health care provisions."
  },
+ "hr-736": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would extend, from January 1, 2025 to January 1, 2026, the deadline for certain companies formed or registered before January 1, 2024 to file beneficial ownership information with FinCEN.",
+  "short": "The bill gives companies formed or registered before January 1, 2024 more time to file beneficial ownership information with the Financial Crimes Enforcement Network (FinCEN). Under the bill, these companies would have until January 1, 2026 to submit the information. Under current regulations, the deadline is January 1, 2025."
+ },
  "hr-7401": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require Small Business Administration employees who handle SBA loans to certify in writing that they have no conflict of interest, disclose any later conflicts, and understand the applicable rules.",
@@ -1144,6 +1264,11 @@
   "one_sentence": "The Farm, Food, and National Security Act of 2026 would reauthorize and modify U.S. Department of Agriculture programs covering farm support, nutrition, conservation, trade, and related areas through fiscal year 2031.",
   "short": "This bill, commonly called the farm bill, extends through fiscal year 2031 and changes Department of Agriculture programs. The programs it covers include commodity support, conservation, trade and international food aid, and nutrition assistance. It also addresses farm credit, rural development, research, forestry, energy, crop insurance, livestock, and foreign investment in U.S. agricultural land."
  },
+ "hr-758": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the U.S. Postal Service to collect, track, and publicly report deaths and injuries from traffic crashes involving vehicles that carry mail.",
+  "short": "The bill directs the U.S. Postal Service to issue regulations requiring it to collect, track, and publicly report information on deaths and injuries from traffic crashes involving vehicles used to transport mail. Postal Service employees and contractors would have to report any such crash that causes injury or death within three days. The Postal Service would also maintain an internal database with detailed information on these injuries and deaths and provide an annual public report summarizing them."
+ },
  "hr-7613": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The ALERT Act would require military and civil aircraft to use or add ADS-B tracking and communication technology and would expand FAA oversight of air traffic control and aviation safety.",
@@ -1153,6 +1278,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill extends three National Park Service battlefield preservation grant programs through fiscal year 2036 and requires studies of additional historic sites for possible preservation.",
   "short": "The bill extends three National Park Service grant programs that fund the acquisition, interpretation modernization, and restoration of certain U.S. battlefields through fiscal year 2036. Under current law, these grants are authorized only through fiscal year 2028. The bill also requires the National Park Service to prepare or certify studies of locations tied to significant events in the French and Indian War (1754-1763) and the Mexican-American War (1846-1848) for potential preservation."
+ },
+ "hr-77": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would let Congress disapprove several regulations at once through a single joint resolution, for rules submitted during the final year of a President's term.",
+  "short": "Under current law, the Congressional Review Act lets Congress disapprove regulations submitted in the last 60 legislative days of a Congress, but each joint resolution can cover only one regulation. This bill would allow a single joint resolution of disapproval to cover multiple regulations. It would apply to regulations submitted for review during a portion of the final year of a President's term."
  },
  "hr-7726": {
   "model": "claude-haiku-5-5",
@@ -1169,6 +1299,16 @@
   "one_sentence": "The KIDS Act would require certain online platforms to add safeguards for minors, including age-based access limits, parental controls, and disclosures from AI chatbots.",
   "short": "Platforms where more than one-third of content is sexual material harmful to minors would need technology to identify minors and block their access. Social media platforms would have to apply default settings limiting compulsive features and contact from other users, give parents tools to manage a minor's privacy and account settings, and bar ephemeral messaging for minors. Online video game platforms would need to offer parental tools to limit minors' communication and purchases, and AI chatbots would have to tell minor users they are talking to an AI and provide suicide and crisis hotline information. The Federal Trade Commission and state attorneys general would enforce the requirements, and the bill calls for studies and reports on social media's effects on minors."
  },
+ "hr-776": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill extends through fiscal year 2030 a federal program that lets the Department of the Interior give states money to control or eliminate nutria and restore marshland they have damaged.",
+  "short": "The bill reauthorizes the Nutria Eradication and Control Act of 2003 through fiscal year 2030. Under the program, the Department of the Interior can provide financial assistance to states. The assistance may be used to eradicate or control nutria, which are invasive, semi-aquatic rodents, and to restore marshland damaged by them."
+ },
+ "hr-788": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Department of Energy and the Small Business Administration to agree to work together on research and development, including small businesses where appropriate.",
+  "short": "The bill directs the Department of Energy and the Small Business Administration to enter into an agreement to collaborate on research and development activities. These activities must include small businesses as appropriate. The two agencies would also be required to report on any collaborative research achievements and on potential opportunities to expand their technical capabilities."
+ },
  "hr-7892": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require the Education Department to set up a fraud detection system for FAFSA applications and require colleges to verify flagged applicants' identities before disbursing federal aid.",
@@ -1184,6 +1324,21 @@
   "one_sentence": "The bill would provide funding to the Department of Homeland Security for the rest of fiscal year 2026, ending a partial DHS shutdown and authorizing back pay for affected federal employees.",
   "short": "The bill provides appropriations to the Department of Homeland Security for the remainder of fiscal year 2026, covering departmental management, border and immigration agencies, the Coast Guard, the Secret Service, FEMA, cybersecurity, and other DHS offices. It is intended to end a partial DHS shutdown that began February 14, 2026, after prior funding expired without a regular appropriations bill being enacted. The bill authorizes back pay, under current law, for federal employees affected by the shutdown. It also ratifies certain obligations incurred during the shutdown needed to protect life and property and wind down government functions in an orderly way."
  },
+ "hr-804": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Small Business Administration's Office of Disaster Recovery and Resilience to ensure people in rural areas with a declared disaster can fully access disaster assistance.",
+  "short": "The bill directs the Small Business Administration's Office of Disaster Recovery and Resilience to take necessary steps so that individuals in rural areas covered by a declared disaster have full access to disaster assistance. Those steps include providing targeted outreach and marketing materials aimed at these individuals."
+ },
+ "hr-818": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The SPUR Act would require federal agencies to report on their annual small business contracting scorecards how many small businesses in specified ownership categories received a prime contract for the first time.",
+  "short": "The bill would add a reporting requirement to federal agencies' annual small business contracting scorecards. Agencies would count the number of small businesses receiving a prime contract for the first time. The count would cover businesses owned and controlled by service-disabled veterans, qualified HUBZone small businesses, businesses owned and controlled by socially and economically disadvantaged individuals, and businesses owned and controlled by women."
+ },
+ "hr-825": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would bar people convicted of certain COVID-19 loan or grant fraud from receiving most Small Business Administration financial assistance, including through businesses they own or run.",
+  "short": "The bill prohibits individuals convicted of financial misconduct or false statements involving certain COVID-19 relief programs, such as Paycheck Protection Program loans, Restaurant Revitalization Fund grants, and Shuttered Venue Operators grants, from receiving SBA financial assistance. Disaster loans are excluded from this prohibition. The restriction also applies to small businesses that have an owner, officer, director, or key employee with such a conviction."
+ },
  "hr-8278": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill would require eight federal financial agencies to assess their supervisory technology, procurement practices, and data sharing, and report to Congress every five years.",
@@ -1193,6 +1348,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would give the Treasury Department's Bureau of the Fiscal Service new fraud-prevention duties and create an inspector general office within Treasury to audit and investigate certain federal spending.",
   "short": "The bill assigns financial integrity, improper payment prevention, and spending transparency functions to the Bureau of the Fiscal Service within the Department of the Treasury. These include running the Do Not Pay system, which lets agencies verify recipient eligibility before payments, and offering a voluntary program for sharing data to detect fraud. It also creates an Office of the Inspector General for Fraud, Accountability, and Recovery within Treasury, which would audit and investigate certain federal funds, including coronavirus response funds, awards of $50,000 or more, and emergency disaster and economic recovery spending. The office would refer suspected federal crimes to the Department of Justice and support prosecutors."
+ },
+ "hr-832": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would expand the Small Business Administration's Office of Advocacy to study small businesses' role in the international economy and to represent their interests before foreign governments and international bodies.",
+  "short": "The measure adds to the primary functions and duties of the Office of Advocacy within the Small Business Administration. It would direct the office to examine the role small businesses play in the international economy. It would also have the office represent small businesses' views and interests before foreign governments and international entities, including on regulatory and trade initiatives that may affect them."
  },
  "hr-8365": {
   "model": "claude-haiku-5-5",
@@ -1223,6 +1383,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill provides federal funding for fiscal year 2027 for military construction, Department of Veterans Affairs programs, and several related agencies.",
   "short": "The bill gives money to the Department of Defense for military construction and family housing for the Army, Navy and Marine Corps, Air Force, Defense-wide agencies, National Guard, and Reserves, plus NATO security investments and base closure costs. For the Department of Veterans Affairs, it provides funding for veterans benefits, health care, national cemeteries, departmental administration, and the Cost of War Toxic Exposures Fund. It also funds related bodies such as the American Battle Monuments Commission, the U.S. Court of Appeals for Veterans Claims, Army cemetery expenses, and the Armed Forces Retirement Home, and sets rules for how these funds may be used."
+ },
+ "hr-856": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Office of Management and Budget to review federal agencies' purchasing rules for lowest-price, technically acceptable contract selections and report whether they create national security risks.",
+  "short": "The bill directs the Office of Management and Budget to evaluate how federal agencies buy goods and services. Specifically, it looks at rules in the Federal Acquisition Regulation that govern selecting the lowest-price technically acceptable source. OMB would determine whether those provisions have created any national security risk and report its findings to Congress."
  },
  "hr-859": {
   "model": "claude-haiku-5-5",
@@ -1539,6 +1704,16 @@
   "one_sentence": "This is a procedural resolution that sets the terms for House floor consideration of several bills and joint resolutions, without itself changing any law.",
   "short": "The official title and summary describe a resolution that provides for consideration of five measures: a bill to establish a National Fraud Enforcement Division at the Department of Justice, a bill on information-sharing between federal and state agencies to address fraud in certain federal programs, two joint resolutions disapproving Environmental Protection Agency rules on California engine and vessel pollution standards, and Senate amendments to a bill allowing early childhood educators to take the educator expense deduction. The material does not describe the specific provisions of the underlying bills or resolutions, so it is not possible to say what those measures would do in detail from this text alone."
  },
+ "hres-161": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the House floor procedure for three measures: two resolutions to disapprove federal energy and emissions rules, and a budget resolution for fiscal years 2025 through 2034.",
+  "short": "The resolution provides for consideration of H.J. Res. 20, which would nullify a Department of Energy rule on energy conservation standards for consumer gas-fired instantaneous water heaters. It also provides for consideration of H.J. Res. 35, which would nullify an Environmental Protection Agency rule on procedures for facilitating compliance with the waste emissions charge for petroleum and natural gas systems, including netting and exemptions. Finally, it provides for consideration of H. Con. Res. 14, which would establish the congressional budget for fiscal year 2025 and set budgetary levels for fiscal years 2026 through 2034."
+ },
+ "hres-177": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This House resolution sets procedural rules for floor debate on three joint resolutions that would disapprove of federal agency rules on appliance energy standards, rubber tire manufacturing emissions, and marine archaeological resources.",
+  "short": "The resolution provides for House consideration of three joint resolutions, each seeking congressional disapproval of a federal agency rule. The rules concern Department of Energy certification and labeling requirements for certain consumer products and commercial equipment, Environmental Protection Agency emission standards for rubber tire manufacturing, and a Bureau of Ocean Energy Management rule on protecting marine archaeological resources. The resolution waives all points of order against consideration of the measures and against provisions within them. It also limits floor debate to one hour and allows one motion to recommit before final passage."
+ },
  "hres-189": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This resolution would formally censure Representative Al Green of Texas.",
@@ -1568,6 +1743,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This House resolution condemns the rise in ideologically motivated attacks on Jewish people in the United States, including a June 2025 attack in Boulder, Colorado, and reaffirms the House's commitment to fighting antisemitism and politically motivated violence.",
   "short": "The resolution condemns the June 1, 2025 attack in Boulder, Colorado, which it describes as a targeted act of terror and ideologically motivated violence. It also condemns the broader rise in ideologically motivated attacks on Jewish individuals in the United States. The resolution reaffirms the House's commitment to protecting Americans' rights to assemble peacefully and practice their faith without fear of violence."
+ },
+ "hres-5": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the rules the House of Representatives will follow during the 119th Congress, adopting the prior Congress's rules with specified changes.",
+  "short": "The resolution adopts the House rules from the 118th Congress with several changes, including limits on when motions to vacate the Speaker and motions to suspend the rules may be considered, and a ban on waiving the germaneness rule. It also bars consideration of measures exceeding a specified long-term budget impact as scored by the Congressional Budget Office. Other changes address committee procedures such as electronic voting and remote witness appearances, eliminate the House Office of Diversity and Inclusion and certain employee collective bargaining rights, and reauthorize several House committees and commissions. The resolution also provides for consideration of twelve listed House bills, H.R. 21 through H.R. 35, with some numbers omitted from the list."
  },
  "hres-516": {
   "model": "claude-haiku-5-5",
@@ -1638,6 +1818,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This resolution sets the rules for House floor consideration of six bills on college athletes' name, image, and likeness rights, Chinese government ties to schools, and small business regulation.",
   "short": "The measure is a House rule that provides for floor consideration of six separate bills. The bills cover name, image, and likeness rights for student athletes, restrictions on elementary and secondary schools accepting funds or contracts from the Chinese government, parental notice of foreign influence in public schools, and limits on federal education funds for schools supported by China. Two further bills would address small business regulation, one setting the small business regulatory budget at zero and the other creating a Red Tape Hotline at the Small Business Administration for reporting burdensome agency rules. The official material provided does not describe the specific provisions of each bill in further detail."
+ },
+ "hres-93": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the procedure for the House to consider H.R. 27, the HALT Fentanyl Act, which concerns scheduling of fentanyl-related substances under the Controlled Substances Act.",
+  "short": "The resolution provides for House consideration of H.R. 27, known as the HALT Fentanyl Act, which amends the Controlled Substances Act regarding how fentanyl-related substances are scheduled. It waives all points of order against considering the bill, meaning procedural objections that could otherwise block it are set aside. The bill will be considered with the changes made by the House Rules Committee, as described in that committee's accompanying report."
  },
  "hres-936": {
   "model": "claude-haiku-5-5",
@@ -1778,6 +1963,11 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill extends until June 12, 2026, the authorities in Title VII of the Foreign Intelligence Surveillance Act, which govern collecting foreign intelligence from targets outside the United States.",
   "short": "The bill extends the authorities of Title VII of the Foreign Intelligence Surveillance Act (FISA) until June 12, 2026. Title VII generally covers surveillance and other methods of gathering foreign intelligence directed at targets outside the United States. It includes Section 702, which concerns acquiring communications of non-U.S. persons believed to be outside the United States. Information about U.S. persons may incidentally be collected this way and later searched under certain circumstances."
+ },
+ "s-5": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Laken Riley Act would require federal detention of certain non-U.S. nationals arrested for specified crimes and let states sue the federal government over certain immigration enforcement decisions.",
+  "short": "The act requires the Department of Homeland Security to detain certain non-U.S. nationals who are unlawfully present and have been charged with, arrested for, convicted of, or admitted to committing offenses such as burglary, theft, shoplifting, assault of a law enforcement officer, or crimes causing death or serious bodily injury. It also allows state governments to seek court orders against the federal government over specified immigration decisions or failures that cause them or their residents harm, including financial harm of more than $100. Covered matters include releasing a non-U.S. national from custody, certain inspection and asylum interview requirements, visa issuance for countries that unreasonably deny or delay acceptance of their nationals, limits on immigration parole, and failing to detain people ordered removed."
  },
  "s-629": {
   "model": "claude-haiku-5-5",
