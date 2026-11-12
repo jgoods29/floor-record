@@ -14,7 +14,7 @@
 </div>
 <div id="member-list">
 {% for state, group in states %}<section class="state" id="state-{{ state }}">
-<div><h2 class="h3" style="font-size:24px">{{ state_names.get(state, state) }}</h2><span class="small muted">{{ group|length }} {{ 'member' if group|length == 1 else 'members' }}</span></div>
+<div><h2 class="h3 keepcase" style="font-size:24px">{{ state_names.get(state, state) }}</h2><span class="small muted">{{ group|length }} {{ 'member' if group|length == 1 else 'members' }}</span></div>
 <div class="people">{% for p in group %}<div class="person" data-text="{{ p.name|lower }} {{ state_names.get(state, state)|lower }} {{ state|lower }}"><span class="dist">{{ p.dist_label }}</span><a href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }}</a>{{ m.badge(p.party, true) }}{% if p.left %}<span class="fine">left office</span>{% endif %}</div>{% endfor %}</div>
 </section>{% endfor %}
 </div>

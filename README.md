@@ -1,4 +1,4 @@
-# Floor Record
+# tally (working repository name: floor-record)
 
 A website that shows how members of the U.S. House vote, in plain English, straight from the official record.
 
