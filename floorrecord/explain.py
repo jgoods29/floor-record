@@ -180,6 +180,36 @@ ROUTINE = {"rule", "previous_question", "adjourn", "journal", "recommit", "consi
 FAST_TRACK = {"suspend_pass", "suspend_agree", "suspend_concur"}
 
 
+SMALL_WORDS = {"a", "an", "the", "and", "or", "nor", "but", "of", "to", "in", "on", "at", "by", "for", "from",
+               "with", "as", "vs", "per", "via"}
+
+
+def title_case(text):
+    """Headline-style capitals: every word starts with a capital except short joining words in the
+    middle. Words that already carry capitals or digits (H.R., REFUEL, AI, 403(b)) are left alone."""
+    words = (text or "").split(" ")
+    out, start = [], True
+    for w in words:
+        core = w.lstrip("(\"'“‘[")
+        lead = w[: len(w) - len(core)]
+        if not core:
+            out.append(w)
+            continue
+        if core.lower() in SMALL_WORDS and core.islower() and not start:
+            out.append(w)
+        elif core[0].islower() and not any(ch.isupper() or ch.isdigit() for ch in core):
+            out.append(lead + core[0].upper() + core[1:])
+        else:
+            out.append(w if not core[0].islower() or any(ch.isdigit() for ch in core[:2]) else lead + core[0].upper() + core[1:])
+        start = w.endswith((":", ".", "?", "!", "—"))
+    for i in range(len(out) - 1, -1, -1):  # the last word is always capitalised
+        if out[i].strip():
+            if out[i].rstrip(".?!").lower() in SMALL_WORDS and out[i].islower():
+                out[i] = out[i][0].upper() + out[i][1:]
+            break
+    return " ".join(out)
+
+
 def _clip(text, limit=78):
     text = " ".join((text or "").split()).rstrip(".")
     if len(text) <= limit:
@@ -503,7 +533,8 @@ def ai_vote_lines(votes, cfg, log=print):
 
 
 def apply_wording(info, vote_id, ai_votes, editorial):
-    """Choose the wording shown for a vote: a person's approved text first, then AI, then the rules."""
+    """Choose the wording shown for a vote: a person's approved text first, then AI, then the rules.
+    Names and outcomes are then put in headline-style capitals."""
     human = (editorial.get("votes") or {}).get(vote_id)
     if human:
         info.update({k: human[k] for k in ("name", "outcome", "plain") if human.get(k)})
@@ -512,4 +543,7 @@ def apply_wording(info, vote_id, ai_votes, editorial):
         info["name"] = ai_votes[vote_id]["name"]
         info["plain"] = ai_votes[vote_id]["plain"]
         info["source"] = "ai"
+    for key in ("name", "outcome", "rule_name"):
+        if info.get(key):
+            info[key] = title_case(info[key])
     return info

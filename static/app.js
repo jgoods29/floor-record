@@ -1,4 +1,4 @@
-/* Floor Record: search, filters, tabs, topic picker, bill lists and the leaderboard. No dependencies. */
+/* Floor Record: search, filters, tabs, topic picker, bill lists and the Compare table. No dependencies. */
 (function () {
   var root = document.body.getAttribute('data-root') || '';
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -106,24 +106,29 @@
   }
   function voteRow(v, m) {
     return '<a class="vrow" href="' + root + 'votes/' + esc(v[0]) + '/"><span class="when">' + esc(v[1]) + '</span><span class="main"><span class="tags"><span class="name">' + esc(v[3]) + '</span>' +
-      (m[2] === 0 ? '<span class="tag broke">Broke with the party</span>' : '') + '</span><span class="plain">' + esc(phrase(v, m[1])) + '</span><span class="fine">' + esc(v[9]) + '</span></span>' +
+      '</span><span class="plain">' + esc(phrase(v, m[1])) + '</span><span class="fine">' + esc(v[9]) + '</span></span>' +
       '<span class="end"><span class="pos">' + esc(word(m[1])) + '</span><span style="font-size:14px;color:var(--muted)">' + esc(v[4]) + ', ' + v[5] + ' to ' + v[6] + '</span></span></a>';
   }
 
-  var allBtn = document.getElementById('all-votes'), log = document.getElementById('vote-log');
-  if (allBtn && log) {
-    allBtn.addEventListener('click', function () {
-      allBtn.disabled = true; allBtn.textContent = 'Loading…';
-      memberData(allBtn.getAttribute('data-src')).then(function (res) {
-        var votes = res[0], mine = res[1];
-        log.innerHTML = mine.slice().reverse().map(function (m) {
-          var v = votes[m[0]];
-          return '<tr><td class="small muted" style="white-space:nowrap">' + esc(v[1]) + '</td><td><a href="' + root + 'votes/' + esc(v[0]) + '/">' + esc(v[3]) + '</a>' +
-            (m[2] === 0 ? ' <span class="tag broke">Broke with the party</span>' : '') + (v[7] ? ' <span class="tag proc">Procedural step</span>' : '') +
-            '</td><td class="strong">' + esc(word(m[1])) + '</td><td class="small">' + esc(v[4]) + ', ' + v[5] + '–' + v[6] + '</td></tr>';
-        }).join('');
-        allBtn.classList.add('hide');
-      }).catch(function () { allBtn.disabled = false; allBtn.textContent = 'Could not load. Try again'; });
+  var logBar = document.querySelector('[data-log]'), log = document.getElementById('vote-log');
+  if (logBar && log) {
+    var firstLog = log.innerHTML;
+    each(logBar.querySelectorAll('[data-log-show]'), function (btn) {
+      btn.addEventListener('click', function () {
+        var mode = btn.getAttribute('data-log-show');
+        each(logBar.querySelectorAll('[data-log-show]'), function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        if (mode === 'recent') { log.innerHTML = firstLog; return; }
+        log.innerHTML = '<tr><td colspan="4" class="muted">Loading…</td></tr>';
+        memberData(logBar.getAttribute('data-src')).then(function (res) {
+          var votes = res[0], mine = res[1];
+          log.innerHTML = mine.slice().reverse().filter(function (m) { return mode === 'all' || m[2] === 0; }).map(function (m) {
+            var v = votes[m[0]];
+            return '<tr><td class="small muted" style="white-space:nowrap">' + esc(v[1]) + '</td><td><a href="' + root + 'votes/' + esc(v[0]) + '/">' + esc(v[3]) + '</a>' +
+              (v[7] ? ' <span class="tag proc">Procedural step</span>' : '') +
+              '</td><td class="strong">' + esc(word(m[1])) + '</td><td class="small">' + esc(v[4]) + ', ' + v[5] + '–' + v[6] + '</td></tr>';
+          }).join('') || '<tr><td colspan="4" class="muted">Nothing to show.</td></tr>';
+        }).catch(function () { log.innerHTML = '<tr><td colspan="4" class="muted">Could not load. Try again.</td></tr>'; });
+      });
     });
   }
 
@@ -153,10 +158,10 @@
     if (more) more.addEventListener('change', function () { if (more.value) pick(more.value, more.options[more.selectedIndex].text); });
   }
 
-  // ---- leaderboard
+  // ---- Compare table
   var table = document.getElementById('lb'), dataEl = document.getElementById('lb-data');
   if (table && dataEl) {
-    var rows = JSON.parse(dataEl.textContent), key = 'ap', dir = -1, party = 'all';
+    var rows = JSON.parse(dataEl.textContent), key = 'sort', dir = 1, party = 'all';
     var body = table.querySelector('tbody'), stateSel = document.getElementById('lb-state'), nameBox = document.getElementById('lb-name'), count = document.getElementById('lb-count');
     var pct = function (v) { return v == null ? '<span class="muted">n/a</span>' : v.toFixed(1) + '%'; };
     var draw = function () {
@@ -167,12 +172,12 @@
         if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1;
         return (typeof x === 'string' ? x.localeCompare(y) : x - y) * dir;
       });
+      var num = function (v) { return v == null ? '<span class="muted">n/a</span>' : v; };
       body.innerHTML = list.map(function (r, i) {
-        return '<tr><td><span class="rank">' + (i + 1) + '</span></td><td><span class="who"><span class="party ' + esc(r.p) + '">' + esc(r.p) + '</span><span><a class="strong" href="' + root + 'members/' + esc(r.id) + '/">' + esc(r.n) + '</a><span class="small muted">' + esc(r.seat) + '</span></span></span></td>' +
-          '<td><span class="strong">' + pct(r.wp) + '</span>' + (r.wp == null ? '' : '<span class="meter" aria-hidden="true" style="margin-top:6px;width:140px"><span style="width:' + r.wp + '%"></span></span>') + '</td>' +
-          '<td class="strong">' + pct(r.ap) + '</td><td>' + (r.br == null ? '' : r.br) + '</td><td>' + r.vc.toLocaleString() + '</td><td>' + pct(r.at) + '</td></tr>';
+        return '<tr><td class="small muted">' + (i + 1) + '</td><td><span class="who"><span class="party ' + esc(r.p) + '">' + esc(r.p) + '</span><span><a class="strong" href="' + root + 'members/' + esc(r.id) + '/">' + esc(r.n) + '</a><span class="small muted">' + esc(r.seat) + '</span></span></span></td>' +
+          '<td class="strong">' + pct(r.at) + '</td><td>' + num(r.bi) + '</td><td>' + num(r.ph) + '</td><td>' + num(r.bl) + '</td><td>' + pct(r.wp) + '</td></tr>';
       }).join('');
-      count.textContent = 'Showing ' + list.length + ' of ' + rows.length + ' ranked members.';
+      count.textContent = 'Showing ' + list.length + ' of ' + rows.length + ' members.';
       each(table.querySelectorAll('th button'), function (b) {
         var base = b.getAttribute('data-label') || b.textContent; b.setAttribute('data-label', base);
         b.textContent = base + (b.getAttribute('data-sort') === key ? (dir < 0 ? ' ↓' : ' ↑') : '');

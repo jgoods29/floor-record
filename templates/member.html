@@ -4,8 +4,8 @@
 {% macro mrow(r) %}
 <a class="vrow" href="{{ root }}votes/{{ r.v.id }}/">
 <span class="when">{{ r.v.date|nicedate }}</span>
-<span class="main"><span class="tags"><span class="name">{{ r.v.info.name }}</span>{% if r.wp == false %}<span class="tag broke">Broke with the party</span>{% endif %}</span>
-<span class="plain">{{ r.phrase }}{% if r.note %} {{ r.note }}{% endif %}</span>
+<span class="main"><span class="name">{{ r.v.info.name }}</span>
+<span class="plain">{{ r.phrase }}</span>
 <span class="fine">{{ r.v.info.fine }}</span></span>
 <span class="end"><span class="pos">{{ m.vword(r.pos) }}</span><span style="font-size:14px;color:var(--muted)">{{ r.v.info.outcome }}, {{ r.v.totals.yea }} to {{ r.v.totals.nay }}</span></span>
 </a>
@@ -32,28 +32,8 @@
 {% if p.url %}<a href="{{ p.url }}">Official website</a>{% endif %}
 </section>
 
-<section class="stack">
-<h2 class="h2">How {{ p.last or p.name }} votes</h2>
-{% if s.split_counted %}
-<div class="card stack" style="gap:14px">
-<span class="strong">When the two parties disagree</span>
-<div class="row" style="gap:8px 48px;align-items:flex-end">
-<div><div class="big lg">{{ m.pctv(s.split_with_pct) }}</div><div class="strong" style="padding-top:8px">Voted with {{ p.party_name }}s</div></div>
-<div><div class="big lg dim">{{ m.pctv(s.split_against_pct) }}</div><div class="strong crossed" style="padding-top:8px">Voted against the party</div></div>
-</div>
-<span class="bar" style="height:12px" role="img" aria-label="{{ m.pctv(s.split_with_pct) }} with the party, {{ m.pctv(s.split_against_pct) }} against"><span style="flex: {{ s.split_with }}"></span><span class="n" style="flex: {{ s.split_against }}"></span></span>
-<p style="color:var(--text-2);max-width:680px">On the {{ s.split_counted|comma }} {{ 'vote' if s.split_counted == 1 else 'votes' }} where most Republicans and most Democrats took opposite sides, {{ p.last or p.name }} sided with the party {{ s.split_with|times }} and against it {{ s.split_against|times }}.</p>
-{% if party_median is not none %}<p class="small muted">The typical House {{ p.party_name }}: {{ m.pctv(party_median) }} with the party.</p>{% endif %}
-</div>
-{% elif p.party not in ('R', 'D') %}
-<div class="card"><p>{{ p.name }} is not a member of either major party, so there is no party position to compare these votes with.</p></div>
-{% else %}
-<div class="card"><p>Not enough party-split votes yet to show a pattern.</p></div>
-{% endif %}
-</section>
-
 <section class="stack" id="topics">
-<div class="stack" style="gap:8px"><h2 class="h2">How {{ p.last or p.name }} voted on what matters to you</h2>
+<div class="stack" style="gap:8px"><h2 class="h2">What {{ p.last or p.name }} has voted on</h2>
 <p style="font-size:18px;color:var(--text-2);max-width:680px">{% if topics %}Pick a topic to see every vote on it.{% else %}The most recent votes on bills and resolutions, leaving out routine procedural steps.{% endif %}</p></div>
 {% if topics %}
 <div class="row" role="group" aria-label="Topics" style="gap:8px" data-topics data-src="votes.json">
@@ -68,13 +48,6 @@
 </div>
 {% if topics %}<p class="small muted">Topics come from the Library of Congress, which files every bill under one subject area. Votes with no bill attached have no topic.</p>{% endif %}
 </section>
-
-{% if breaks %}
-<section class="stack">
-<div class="row between"><h2 class="h2">Votes against the party</h2><span class="small muted">Most recent {{ breaks|length }} of {{ s.against|comma }}</span></div>
-<div class="card flush rows">{% for r in breaks %}{{ mrow(r) }}{% endfor %}</div>
-</section>
-{% endif %}
 
 {% if has_bills %}
 <section class="stack">
@@ -101,6 +74,16 @@
 {% endif %}
 
 <section class="stack">
+<h2 class="h2">By the numbers</h2>
+<div class="grid nums4">
+<div class="card stat"><span class="label">Showed up to vote</span><span class="big">{{ m.pctv(s.attendance_pct) }}</span><span class="small muted">{{ s.cast|comma }} of {{ s.eligible|comma }} roll calls{% if att_median is not none %}. Typical member: {{ m.pctv(att_median) }}{% endif %}</span></div>
+{% if has_bills %}<div class="card stat"><span class="label">Bills introduced</span><span class="big">{{ sponsored|length }}</span><span class="small muted">Signed onto {{ co_count|comma }} more written by others</span></div>
+<div class="card stat"><span class="label">Passed the House</span><span class="big">{{ passed_n }}</span><span class="small muted">Of the bills introduced. {{ law_n }} became law</span></div>{% endif %}
+{% if s.split_counted %}<div class="card stat"><span class="label">Voted with {{ p.party_name }}s</span><span class="big">{{ m.pctv(s.split_with_pct) }}</span><span class="small muted">On {{ s.split_counted|comma }} votes where the two parties took opposite sides{% if party_median is not none %}. Typical {{ p.party_name }}: {{ m.pctv(party_median) }}{% endif %}</span></div>{% endif %}
+</div>
+</section>
+
+<section class="stack">
 <h2 class="h2">Break it down</h2>
 <div class="card stack" style="gap:16px" data-tabs>
 <div class="row" role="group" aria-label="Break down by" style="gap:8px">
@@ -117,18 +100,19 @@
 </div>
 </section>
 
-<section class="stack">
-<div class="row between"><h2 class="h2">Every vote</h2><button class="btn" type="button" id="all-votes" data-src="votes.json">Show all {{ s.eligible|comma }} {{ 'vote' if s.eligible == 1 else 'votes' }}</button></div>
+<section class="stack" id="every-vote">
+<div class="row between"><h2 class="h2">Every vote</h2>
+<div class="row" role="group" aria-label="Which votes to show" style="gap:8px" data-log data-src="votes.json">
+<button class="btn" type="button" aria-pressed="true" data-log-show="recent">Most recent</button>
+<button class="btn" type="button" aria-pressed="false" data-log-show="all">All {{ s.eligible|comma }}</button>
+{% if s.against %}<button class="btn" type="button" aria-pressed="false" data-log-show="against">Against the party ({{ s.against|comma }})</button>{% endif %}
+</div></div>
 <div class="card flush scroll"><table>
 <thead><tr><th>Date</th><th>What the House voted on</th><th>Vote</th><th>Result</th></tr></thead>
 <tbody id="vote-log">{% for r in recent %}<tr><td class="small muted" style="white-space:nowrap">{{ r.v.date|nicedate }}</td>
-<td><a href="{{ root }}votes/{{ r.v.id }}/">{{ r.v.info.name }}</a>{% if r.wp == false %} <span class="tag broke">Broke with the party</span>{% endif %}{% if r.v.info.routine %} <span class="tag proc">Procedural step</span>{% endif %}</td>
+<td><a href="{{ root }}votes/{{ r.v.id }}/">{{ r.v.info.name }}</a>{% if r.v.info.routine %} <span class="tag proc">Procedural step</span>{% endif %}</td>
 <td class="strong">{{ m.vword(r.pos) }}</td><td class="small">{{ r.v.info.outcome }}, {{ r.v.totals.yea }}–{{ r.v.totals.nay }}</td></tr>{% endfor %}</tbody></table></div>
 </section>
 
-<section class="foot" style="border-top:1px solid var(--line)">
-<h2 class="h3" style="font-size:16px">Attendance</h2>
-<p>Voted in {{ s.cast|comma }} of {{ s.eligible|comma }} House roll calls ({{ m.pctv(s.attendance_pct) }}){% if att_median is not none %}. The typical member: {{ m.pctv(att_median) }}{% endif %}.</p>
-</section>
 </div>
 {% endblock %}

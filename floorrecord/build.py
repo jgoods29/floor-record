@@ -11,7 +11,7 @@ from datetime import date, datetime, timezone
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from .common import DATA, ROOT, SITE, config, read_json, write_json
-from .explain import apply_wording, short_name
+from .explain import apply_wording, short_name, title_case
 from .ingest import BILL_LABELS, bill_label, bill_slug, load_votes
 from .stats import PARTY_NAMES, compute, pick_featured
 
@@ -62,7 +62,30 @@ TOPIC_NAMES = {
 
 
 def topic_name(area):
-    return TOPIC_NAMES.get(area, area)
+    return title_case(TOPIC_NAMES.get(area, area))
+
+
+HEADING = re.compile(r"(<(h1|h2|h3)\b[^>]*>)(.*?)(</\2>)|(<(span|p) class=\"(?:h1|h2|h3|headline-sm|title|big-line|name)\b[^\"]*\"[^>]*>)(.*?)(</\6>)", re.S)
+
+
+def title_case_headings(page):
+    """Put every heading on a finished page in headline-style capitals, leaving the tags inside alone."""
+    def fix(m):
+        open_tag, inner, close_tag = (m.group(1), m.group(3), m.group(4)) if m.group(1) else (m.group(5), m.group(7), m.group(8))
+        if open_tag.startswith("<p") and "big-line" not in open_tag:
+            return m.group(0)  # a paragraph set in heading type is still a sentence
+        parts = re.split(r"(<[^>]+>)", inner)
+        first = True
+        for i, part in enumerate(parts):
+            if part.startswith("<") or not part.strip():
+                continue
+            lead = part[: len(part) - len(part.lstrip())]
+            body = html.unescape(part.lstrip())
+            cased = title_case(body if first else "x " + body)
+            parts[i] = lead + html.escape(cased if first else cased[2:], quote=False)
+            first = False
+        return open_tag + "".join(parts) + close_tag
+    return HEADING.sub(fix, page)
 
 
 def topic_key(area):
@@ -156,8 +179,8 @@ def main():
     result = compute(votes_raw, members, bills, cfg)
     votes, people = result["votes"], result["people"]
     today = datetime.now(timezone.utc).date().isoformat()
-    custom = cfg.get("custom_topics") or []
-    popular = cfg.get("popular_topics") or []
+    custom = [dict(t, name=title_case(t["name"])) for t in cfg.get("custom_topics") or []]
+    popular = [title_case(n) for n in cfg.get("popular_topics") or []]
     for v in votes:
         info = v["info"]
         info["rule_name"], info["rule_plain"] = info["name"], info["plain"]
@@ -195,7 +218,7 @@ def main():
                       trim_blocks=True, lstrip_blocks=True)
     env.filters.update(nicedate=nicedate, comma=lambda n: f"{n:,}", capfirst=capfirst,
                        times=lambda n: "once" if n == 1 else f"{n:,} times",
-                       lcfirst=lambda t: t[:1].lower() + t[1:] if t else t)
+                       lcfirst=lambda t: t)  # outcomes keep their capitals after a colon
     years = sorted({v["year"] for v in votes})
     span = str(years[0]) if len(years) == 1 else f"{years[0]}–{years[-1]}"
     shared = {
@@ -213,8 +236,8 @@ def main():
     def render(path, template, depth, **ctx):
         out = SITE / path
         out.parent.mkdir(parents=True, exist_ok=True)
-        html = env.get_template(template).render(root="../" * depth, **shared, **ctx)
-        out.write_text(html)
+        page = env.get_template(template).render(root="../" * depth, **shared, **ctx)
+        out.write_text(title_case_headings(page))
 
     # ---- measures
     measures = {}
@@ -230,7 +253,7 @@ def main():
     for m in measures.values():
         m["votes"].sort(key=lambda v: (v["date"], v["roll"]), reverse=True)
         m["title"] = m["rec"].get("title") or next((v["desc"] for v in m["votes"] if v["desc"]), m["label"])
-        m["name"] = short_name(m["title"], m["label"])
+        m["name"] = title_case(short_name(m["title"], m["label"]))
         m["topic"] = " · ".join(m["votes"][0]["topics"]) if m["votes"] else topic_name(m["rec"].get("policy_area", ""))
         m["kind_name"], m["kind_note"] = KIND_NAMES[m["kind"]]
         m["congress_url"] = (f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
@@ -333,7 +356,7 @@ def main():
             status, moved = bill_status(action)
             internal = slug in measures
             rows.append({
-                "name": short_name(title, label), "title": title or label, "label": label, "introduced": introduced,
+                "name": title_case(short_name(title, label)), "title": title or label, "label": label, "introduced": introduced,
                 "topic": topic_name(area), "action": action, "action_date": action_date, "status": status, "moved": moved,
                 "internal": internal,
                 "href": f"../../bills/{slug}/" if internal else f"{congress_base}{CONGRESS_PATH[kind]}/{number}",
@@ -369,10 +392,15 @@ def main():
         seat_long = f"{state_name}'s {ordinal(d)} District" if d else (f"{state_name}, at large" if d == 0 else state_name)
         mb = read_json(DATA / "member_bills" / f"{me}.json")
         sponsored, cosponsored, co_count = [], [], 0
+        p["bills_n"] = p["passed_n"] = p["law_n"] = None
         if mb:
             sponsored = bill_rows(sorted(mb.get("sponsored", []), key=lambda r: r[4] or r[3], reverse=True))
             for i, b in enumerate(sponsored):
                 b["extra"] = i >= 8
+            moved_on = {"Passed the House", "Passed the Senate", "Sent to the President", "Became law", "Vetoed"}
+            p["bills_n"] = len(sponsored)
+            p["passed_n"] = sum(1 for b in sponsored if b["status"] in moved_on)
+            p["law_n"] = sum(1 for b in sponsored if b["status"] == "Became law")
             co_all = bill_rows(sorted(mb.get("cosponsored", []), key=lambda r: r[3], reverse=True))
             co_count, cosponsored = len(co_all), co_all[:8]
             write_json(SITE / "members" / me / "bills.json",
@@ -382,6 +410,7 @@ def main():
         render(f"members/{me}/index.html", "member.html", 2, section="members", p=p, s=p["all"],
                breaks=breaks, notable=notable, recent=recent, state_name=state_name, seat_long=seat_long,
                has_bills=mb is not None, sponsored=sponsored, cosponsored=cosponsored, co_count=co_count,
+               passed_n=p["passed_n"], law_n=p["law_n"],
                topics=my_topics, by_issue=[(topic_name(a), st) for a, st in p["by_issue"].items()],
                party_median=result["medians"]["split_with_pct"].get(p["party"]),
                att_median=result["medians"]["attendance_pct"])
@@ -400,9 +429,11 @@ def main():
         "wp": p["all"]["split_with_pct"], "ap": p["all"]["split_against_pct"],
         "br": p["all"]["split_against"] if p["all"]["split_counted"] else None,
         "vc": p["all"]["cast"], "at": p["all"]["attendance_pct"],
+        "bi": p.get("bills_n"), "ph": p.get("passed_n"), "bl": p.get("law_n"),
     } for p in ranked]
     state_list = sorted({(p["state"], STATES.get(p["state"], p["state"])) for p in ranked}, key=lambda x: x[1])
-    render("leaderboard/index.html", "leaderboard.html", 1, section="leaderboard", rows=rows, state_list=state_list)
+    render("compare/index.html", "compare.html", 1, section="compare", rows=rows, state_list=state_list)
+    render("leaderboard/index.html", "redirect.html", 1, to="../compare/")  # the page's old address
 
     search = [{"t": p["name"], "s": f"{p['party']}-{p['seat']}", "u": f"members/{p['bioguide']}/",
                "k": f"{p['name']} {STATES.get(p['state'], '')} {p['state']} {p['seat']}".lower()} for p in people.values()]

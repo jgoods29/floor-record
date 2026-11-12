@@ -5,7 +5,7 @@
 {% macro vrow(v, root) %}
 <a class="vrow" href="{{ root }}votes/{{ v.id }}/"{% if v.info.routine %} data-routine{% endif %} data-text="{{ (v.info.name ~ ' ' ~ v.info.fine ~ ' ' ~ v.info.title)|lower }}">
 <span class="when">{{ v.date|nicedate }}</span>
-<span class="main"><span class="tags"><span class="name">{{ v.info.name }}</span>{{ tags(v, ('split',)) }}</span>
+<span class="main"><span class="tags"><span class="name">{{ v.info.name }}</span>{{ tags(v, ('split', 'broke')) }}</span>
 {% if v.info.plain %}<span class="plain">{{ v.info.plain }}</span>{% endif %}
 <span class="fine">{{ v.info.fine }}</span></span>
 <span class="end">{% if v.kind == 'standard' %}<b>{{ v.info.outcome }}</b><span>{{ v.totals.yea }} to {{ v.totals.nay }}</span>{% else %}<b>{{ v.result or 'Recorded' }}</b>{% endif %}</span>
@@ -13,7 +13,7 @@
 {% endmacro %}
 {% macro votetile(v, root) %}
 <a class="card" href="{{ root }}votes/{{ v.id }}/">
-<span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ tags(v, ('split', 'proc')) }}</span>
+<span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ tags(v, ('split', 'proc', 'broke')) }}</span>
 <span class="headline-sm">{{ v.info.name }}{% if v.kind == 'standard' %}: {{ v.info.outcome|lcfirst }}{% endif %}</span>
 {% if v.info.plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.info.plain }}</span>{% endif %}
 {% if v.kind == 'standard' %}

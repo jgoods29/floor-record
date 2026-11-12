@@ -11,10 +11,10 @@
 </div>
 {% if featured %}
 <section class="stack">
-<div class="row between" style="align-items:baseline"><h2 class="h2">The big votes</h2><span class="small muted">Close votes and votes where members crossed party lines</span></div>
+<div class="row between" style="align-items:baseline"><h2 class="h2">The big votes</h2><span class="small muted">Recent votes that were close or drew wide attention</span></div>
 <div class="grid">{% for v in featured %}
 <a class="card" href="{{ root }}votes/{{ v.id }}/" style="gap:12px">
-<span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ m.tags(v, ('split', 'proc')) }}</span>
+<span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ m.tags(v, ('split', 'proc', 'broke')) }}</span>
 <span class="headline-sm">{{ v.f_name }}: {{ v.info.outcome|lcfirst }}</span>
 {% if v.f_plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.f_plain }}</span>{% endif %}
 <span class="row nums" style="gap:8px 14px;align-items:baseline;margin-top:auto"><span class="big" style="font-size:40px">{{ v.totals.yea }}</span><span class="big dim" style="font-size:40px">{{ v.totals.nay }}</span></span>

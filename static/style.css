@@ -280,3 +280,9 @@ a.card.step { gap: 10px; font-size: 16px; color: var(--text-2); }
 .promise .big-line { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; letter-spacing: -.015em; max-width: 760px; text-wrap: balance; }
 .lede.point { color: var(--ink); font-weight: 600; font-size: 22px; line-height: 1.4; max-width: 640px; text-wrap: balance; }
 @media (max-width: 640px) { .lede.point { font-size: 19px; } }
+
+/* profile: by the numbers */
+.nums4 { grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+.card.stat { display: flex; flex-direction: column; gap: 10px; padding: 24px 26px; }
+.stat .big { font-size: 48px; }
+@media (max-width: 640px) { .nums4 { grid-template-columns: 1fr 1fr; gap: 12px; } .card.stat { padding: 18px; } .stat .big { font-size: 36px; } }

@@ -4,7 +4,7 @@ A website that shows how members of the U.S. House vote, in plain English, strai
 
 It collects every House roll call from the Clerk of the House, works out simple statistics (how often each member
 votes with or against their party, attendance), and builds a page for every vote, member and bill, plus a sortable
-leaderboard. It updates itself every four hours.
+comparison table. It updates itself every four hours.
 
 ## Putting it online (one time)
 
@@ -40,7 +40,7 @@ from, so they need `CONGRESS_API_KEY` too.
 ## Settings
 
 `config.json` holds the site name, the years covered, a contact email for corrections, and the minimum number of
-votes a member needs before appearing on the leaderboard.
+votes a member needs before appearing on the Compare page.
 
 ## How it is organised
 

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Compare members · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page">
+<div class="stack">
+<div class="eyebrow"><span>House of Representatives</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
+<h1 class="h1">Compare members</h1>
+<p class="lede">Every member side by side. The list starts in alphabetical order. Select any column heading to sort by it, and select it again to flip the order.</p>
+</div>
+<div class="row between">
+<div class="row" role="group" aria-label="Filter by party" style="gap:8px">
+<button class="btn" type="button" data-party="all" aria-pressed="true">Everyone</button>
+<button class="btn" type="button" data-party="R" aria-pressed="false">Republicans</button>
+<button class="btn" type="button" data-party="D" aria-pressed="false">Democrats</button>
+</div>
+<div class="row" style="gap:10px">
+<label class="sr" for="lb-state">State</label><select class="field" id="lb-state" style="width:auto"><option value="">All states</option>{% for code, name in state_list %}<option value="{{ code }}">{{ name }}</option>{% endfor %}</select>
+<label class="sr" for="lb-name">Name</label><input class="field" id="lb-name" type="search" placeholder="Find a member">
+</div>
+</div>
+<div class="card flush scroll"><table id="lb" style="min-width:900px">
+<thead><tr><th>#</th>
+<th><button type="button" data-sort="sort">Member</button></th>
+<th><button type="button" data-sort="at">Showed up to vote</button></th>
+<th><button type="button" data-sort="bi">Bills introduced</button></th>
+<th><button type="button" data-sort="ph">Passed the House</button></th>
+<th><button type="button" data-sort="bl">Became law</button></th>
+<th><button type="button" data-sort="wp">Voted with party</button></th></tr></thead>
+<tbody></tbody></table></div>
+<p class="small muted" id="lb-count"></p>
+<div class="grid two">
+<div class="card tint stack" style="gap:6px"><span class="strong">What the columns mean</span><span style="font-size:16px;color:var(--text-2)"><strong>Showed up to vote</strong> is the share of roll calls where the member voted. <strong>Bills introduced</strong> counts bills and resolutions the member wrote this Congress; the next two columns count how many of those passed the House and became law. <strong>Voted with party</strong> counts only votes where most Republicans and most Democrats took opposite sides.</span></div>
+<div class="card tint stack" style="gap:6px"><span class="strong">Reading these fairly</span><span style="font-size:16px;color:var(--text-2)">No single column says whether someone is doing a good job. Members in the minority party pass fewer bills. Committee leaders introduce more. Members miss votes for illness and family reasons. Members with fewer than {{ min_votes }} roll calls, and delegates who cannot vote on final passage, are not listed.</span></div>
+</div>
+</div>
+<script id="lb-data" type="application/json">{{ rows|tojson }}</script>
+{% endblock %}
