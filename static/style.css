@@ -286,3 +286,11 @@ a.card.step { gap: 10px; font-size: 16px; color: var(--text-2); }
 .card.stat { display: flex; flex-direction: column; gap: 10px; padding: 24px 26px; }
 .stat .big { font-size: 48px; }
 @media (max-width: 640px) { .nums4 { grid-template-columns: 1fr 1fr; gap: 12px; } .card.stat { padding: 18px; } .stat .big { font-size: 36px; } }
+
+/* numbers you can press to see who voted that way */
+a.numlink { display: inline-block; color: var(--ink); text-decoration-line: underline; text-decoration-color: var(--underline); text-decoration-thickness: 3px; text-underline-offset: 8px; }
+a.numlink.dim { color: var(--faint); }
+a.numlink:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.big.lg.numlink { text-decoration-thickness: 2px; text-underline-offset: 6px; }
+details[id^="voted-"] { scroll-margin-top: 96px; }
+.rollnote { margin: 0 0 8px; padding: 10px 14px; border-radius: 10px; background: var(--blue-tint); font-size: 15px; }

@@ -23,13 +23,13 @@
 <div class="card-body">
 {% if v.kind == 'standard' %}
 <div class="score">
-<div><div class="big xl">{{ v.totals.yea }}</div><div class="name">Yea</div><div class="muted" style="font-size:16px">{{ v.info.yea|capfirst }}</div></div>
-<div><div class="big xl dim">{{ v.totals.nay }}</div><div class="name">Nay</div><div class="muted" style="font-size:16px">{{ v.info.nay|capfirst }}</div></div>
-<div><div class="big md dim">{{ v.totals.nv }}</div><div class="name">Did not vote</div><div class="muted" style="font-size:16px">{% if v.totals.present %}{{ v.totals.present }} voted present{% else %}&nbsp;{% endif %}</div></div>
+<div><a class="big xl numlink" href="#voted-yea" data-open="voted-yea" aria-label="{{ v.totals.yea }} voted Yea. See who.">{{ v.totals.yea }}</a><div class="name">Yea</div><div class="muted" style="font-size:16px">{{ v.info.yea|capfirst }}</div></div>
+<div><a class="big xl dim numlink" href="#voted-nay" data-open="voted-nay" aria-label="{{ v.totals.nay }} voted Nay. See who.">{{ v.totals.nay }}</a><div class="name">Nay</div><div class="muted" style="font-size:16px">{{ v.info.nay|capfirst }}</div></div>
+<div>{% if v.totals.nv %}<a class="big md dim numlink" href="#voted-nv" data-open="voted-nv" aria-label="{{ v.totals.nv }} did not vote. See who.">{{ v.totals.nv }}</a>{% else %}<div class="big md dim">0</div>{% endif %}<div class="name">Did not vote</div><div class="muted" style="font-size:16px">{% if v.totals.present %}{{ v.totals.present }} voted present{% else %}&nbsp;{% endif %}</div></div>
 </div>
 <div class="stack" style="gap:14px">
 <div class="seats" role="img" aria-label="{{ seats|length }} squares, one for each member: {{ v.totals.yea }} yea, {{ v.totals.nay }} nay, {{ v.totals.nv }} did not vote">{% for s in seats %}<span class="seat {{ s[0] }}" title="{{ s[1] }}"></span>{% endfor %}</div>
-<div class="legend"><span>Each square is one member of the House.</span><span><i class="seat"></i>Yea</span><span><i class="seat nay"></i>Nay</span>{% if v.totals.present %}<span><i class="seat present"></i>Present</span>{% endif %}<span><i class="seat nv"></i>Did not vote</span></div>
+<div class="legend"><span>Select a number to see who voted that way. Each square is one member of the House.</span><span><i class="seat"></i>Yea</span><span><i class="seat nay"></i>Nay</span>{% if v.totals.present %}<span><i class="seat present"></i>Present</span>{% endif %}<span><i class="seat nv"></i>Did not vote</span></div>
 </div>
 {% else %}
 <p class="lede">This was a special roll call (such as a quorum call or the election of the Speaker). It is listed for the record but is not counted in any member's statistics.</p>
@@ -56,9 +56,9 @@
 <div class="grid">{% for pc in parties %}
 <div class="card stack" style="gap:22px">
 <span class="row strong" style="gap:10px;font-size:18px">{{ m.badge(pc.code) }}{{ pc.name }}</span>
-<div class="row" style="gap:36px;align-items:flex-end"><div><div class="big lg">{{ pc.yea }}</div><div class="small strong" style="padding-top:10px">Yea</div></div><div><div class="big lg dim">{{ pc.nay }}</div><div class="small strong" style="padding-top:10px">Nay</div></div></div>
+<div class="row" style="gap:36px;align-items:flex-end"><div>{% if pc.yea %}<a class="big lg numlink" href="#voted-yea" data-open="voted-yea" data-only="{{ pc.code }}" data-only-name="{{ pc.name }}" aria-label="{{ pc.yea }} {{ pc.name }} voted Yea. See who.">{{ pc.yea }}</a>{% else %}<div class="big lg">0</div>{% endif %}<div class="small strong" style="padding-top:10px">Yea</div></div><div>{% if pc.nay %}<a class="big lg dim numlink" href="#voted-nay" data-open="voted-nay" data-only="{{ pc.code }}" data-only-name="{{ pc.name }}" aria-label="{{ pc.nay }} {{ pc.name }} voted Nay. See who.">{{ pc.nay }}</a>{% else %}<div class="big lg dim">0</div>{% endif %}<div class="small strong" style="padding-top:10px">Nay</div></div></div>
 <span class="bar" aria-hidden="true"><span style="flex: {{ pc.yea }}"></span><span class="n" style="flex: {{ pc.nay }}"></span><span class="x" style="flex: {{ pc.nv + pc.present }}"></span></span>
-<span class="small muted">{% if pc.nv %}{{ pc.nv }} did not vote{% else %}Everyone voted{% endif %}{% if pc.present %} · {{ pc.present }} present{% endif %}</span>
+<span class="small muted">{% if pc.nv %}<a href="#voted-nv" data-open="voted-nv" data-only="{{ pc.code }}" data-only-name="{{ pc.name }}">{{ pc.nv }} did not vote</a>{% else %}Everyone voted{% endif %}{% if pc.present %} · {{ pc.present }} present{% endif %}</span>
 </div>{% endfor %}</div>
 </section>
 
@@ -87,10 +87,12 @@
 </section>
 {% endif %}
 
-<section class="stack">
+<section class="stack" id="roll-call">
 <h2 class="h2">Full roll call</h2>
-<div class="card">{% for group in roll_groups %}<details{% if loop.first and group.people|length < 40 %} open{% endif %}><summary>{{ group.title }} ({{ group.people|length }})</summary>
-<div class="cols">{% for p, party in group.people %}<span><a href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }}</a><span class="muted">{{ party }}-{{ p.state }}</span></span>{% endfor %}</div></details>{% endfor %}</div>
+<div class="card">
+<p class="rollnote hide" id="roll-note"><span></span> <button type="button" class="linkish" id="roll-all">Show everyone</button></p>
+{% for group in roll_groups %}<details id="voted-{{ group.key }}"{% if loop.first and group.people|length < 40 %} open{% endif %}><summary>{{ group.title }} (<span data-count>{{ group.people|length }}</span>)</summary>
+<div class="cols">{% for p, party in group.people %}<span data-p="{{ party }}"><a href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }}</a><span class="muted">{{ party }}-{{ p.state }}</span></span>{% endfor %}</div></details>{% endfor %}</div>
 </section>
 
 {% if bill %}

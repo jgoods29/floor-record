@@ -65,6 +65,30 @@
     });
   });
 
+  // ---- vote page: press a number to see who voted that way
+  var rollNote = document.getElementById('roll-note'), rollAll = document.getElementById('roll-all');
+  function rollFilter(only, label) {
+    each(document.querySelectorAll('details[id^="voted-"]'), function (d) {
+      var shown = 0;
+      each(d.querySelectorAll('[data-p]'), function (el) { var ok = !only || el.getAttribute('data-p') === only; el.classList.toggle('hide', !ok); if (ok) shown++; });
+      var c = d.querySelector('[data-count]'); if (c) c.textContent = shown;
+    });
+    if (rollNote) { rollNote.classList.toggle('hide', !only); rollNote.querySelector('span').textContent = only ? 'Showing ' + label + ' only.' : ''; }
+  }
+  each(document.querySelectorAll('[data-open]'), function (link) {
+    link.addEventListener('click', function (e) {
+      var target = document.getElementById(link.getAttribute('data-open'));
+      if (!target) return;
+      e.preventDefault();
+      rollFilter(link.getAttribute('data-only') || '', link.getAttribute('data-only-name') || '');
+      each(document.querySelectorAll('details[id^="voted-"]'), function (d) { d.open = d === target; });
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (history.replaceState) history.replaceState(null, '', '#' + target.id);
+    });
+  });
+  if (rollAll) rollAll.addEventListener('click', function () { rollFilter('', ''); });
+  if (location.hash.indexOf('#voted-') === 0) { var opened = document.getElementById(location.hash.slice(1)); if (opened) opened.open = true; }
+
   // ---- tabs
   each(document.querySelectorAll('[data-tab]'), function (btn) {
     btn.addEventListener('click', function () {

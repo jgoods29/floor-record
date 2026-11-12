@@ -337,8 +337,9 @@ def main():
         for r in sorted(v["positions"], key=lambda r: people[r[0]]["sort"]):
             roll[r[3]].append((people[r[0]], r[1]))
         titles = {"yea": "Voted Yea", "nay": "Voted Nay", "present": "Voted Present", "nv": "Did not vote"}
-        ctx["roll_groups"] = [{"title": titles.get(k, k.replace("other:", "Voted for ")), "people": roll[k]}
-                              for k in sorted(roll, key=lambda k: ORDER.get(k, 4))]
+        ctx["roll_groups"] = [{"title": titles.get(k, k.replace("other:", "Voted for ")), "people": roll[k],
+                               "key": k if k in ORDER else f"other-{i}"}
+                              for i, k in enumerate(sorted(roll, key=lambda k: ORDER.get(k, 4)))]
         render(f"votes/{v['id']}/index.html", "vote.html", 2, **ctx)
 
     # ---- member pages
