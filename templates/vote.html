@@ -1,12 +1,12 @@
 {% extends "base.html" %}{% import "_m.html" as m %}
-{% block title %}{{ v.info.name }}: {{ v.info.outcome|lower }} · Roll Call {{ v.roll }} · {{ site.site_name }}{% endblock %}
-{% block desc %}{{ v.date|nicedate }}: {{ v.info.name }}, {{ v.info.outcome|lower }}, {{ v.totals.yea }} to {{ v.totals.nay }}.{% endblock %}
+{% block title %}{{ v.info.name }}: {{ v.info.outcome|lcfirst }} · Roll Call {{ v.roll }} · {{ site.site_name }}{% endblock %}
+{% block desc %}{{ v.date|nicedate }}: {{ v.info.name }}, {{ v.info.outcome|lcfirst }}, {{ v.totals.yea }} to {{ v.totals.nay }}.{% endblock %}
 {% block source %}Every number on this page comes from the official House record of Roll Call {{ v.roll }}, taken {{ v.date|nicedate }}{% if v.time %} at {{ v.time }} ET{% endif %}. <a href="{{ v.source }}">Check it against the Clerk's record</a>.{% endblock %}
 {% block main %}
 <div class="wrap page" style="padding-bottom: 56px">
 <div class="stack">
 <div class="eyebrow"><a href="{{ root }}votes/" style="text-decoration:none;color:inherit">Votes</a><span aria-hidden="true">·</span><span>House of Representatives</span><span aria-hidden="true">·</span><span>{{ v.date|nicedate }}</span></div>
-<h1 class="h1">{{ v.info.name }}{% if v.kind == 'standard' %}: {{ v.info.outcome|lower }}{% endif %}</h1>
+<h1 class="h1">{{ v.info.name }}{% if v.kind == 'standard' %}: {{ v.info.outcome|lcfirst }}{% endif %}</h1>
 {% if v.info.plain %}<p class="lede">{{ v.info.plain }}</p>{% endif %}
 <div class="tags">{{ m.tags(v) }}{% if v.info.source == 'ai' %}<span class="tag proc">Headline written by AI</span>{% endif %}</div>
 <p class="fine" style="font-size:14px">{% if bill %}<a href="{{ root }}bills/{{ v.slug }}/">{{ bill.label }}</a> · {% endif %}{{ v.question }} · Roll Call {{ v.roll }}{% if v.info.title and v.info.title != v.info.name %} · Official title: {{ v.info.title }}{% endif %}{% if sponsor %} · Sponsored by <a href="{{ root }}members/{{ sponsor.bioguide }}/">Rep. {{ sponsor.name }}</a>{% endif %}</p>

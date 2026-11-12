@@ -58,8 +58,8 @@
 {% if topics %}
 <div class="row" role="group" aria-label="Topics" style="gap:8px" data-topics data-src="votes.json">
 <button class="btn topic" type="button" aria-pressed="true" data-topic="">All topics</button>
-{% for t in topics[:6] %}<button class="btn topic" type="button" aria-pressed="false" data-topic="{{ t.key }}">{{ t.name }}</button>{% endfor %}
-{% if topics|length > 6 %}<label class="row small muted" style="gap:8px" for="more-topics">More topics<select class="field" id="more-topics" style="width:auto;min-height:44px;font-size:15px"><option value="">Choose</option>{% for t in topics[6:] %}<option value="{{ t.key }}">{{ t.name }}</option>{% endfor %}</select></label>{% endif %}
+{% for t in topics[:8] %}<button class="btn topic" type="button" aria-pressed="false" data-topic="{{ t.key }}">{{ t.name }}</button>{% endfor %}
+{% if topics|length > 8 %}<label class="row small muted" style="gap:8px" for="more-topics">More topics<select class="field" id="more-topics" style="width:auto;min-height:44px;font-size:15px"><option value="">Choose</option>{% for t in topics[8:] %}<option value="{{ t.key }}">{{ t.name }}</option>{% endfor %}</select></label>{% endif %}
 </div>
 {% endif %}
 <div class="card flush">

@@ -3,6 +3,7 @@
 {% block main %}
 <div class="wrap page">
 <div class="stack"><div class="eyebrow"><span>About</span></div><h1 class="h1">How we count</h1>
+<p class="h2" style="max-width:820px;text-wrap:balance">They work for you. Here's what they've been doing.</p>
 <p class="lede">{{ site.site_name }} shows what members of the U.S. House did, with a link to the official record for every number. It does not grade anyone or tell you what to think.</p></div>
 
 <section class="stack"><h2 class="h2">Where the data comes from</h2><div class="grid two">
@@ -37,6 +38,13 @@
 <p><strong>In committee.</strong> A bill has been filed and assigned to a smaller group of members to study. Most bills never leave this stage.</p>
 <p><strong>Signed onto.</strong> A member formally added their name in support of someone else's bill. The official word is "cosponsored."</p>
 <p><strong>Broke ranks.</strong> On a vote where the two parties took opposite sides, a member voted against most of their own party.</p>
+</div></section>
+
+<section class="stack" id="promise"><h2 class="h2">Free, and for the people</h2><div class="card stack" style="gap:16px">
+<p><strong>Free.</strong> Every page is open to everyone. There is no sign-up and nothing to buy.</p>
+<p><strong>No tracking.</strong> This site sets no cookies, runs no analytics and shows no ads. Its fonts and scripts are served from the site itself, so opening a page does not contact any other company. Like any website, the service that hosts these pages can see ordinary request logs; we do not use them.</p>
+<p><strong>No profit.</strong> Nobody is paid by the people or parties covered here, and nothing on the site is for sale.</p>
+<p><strong>Just knowledge.</strong> The site reports what members did, with a link to the official record for every number. It does not grade anyone or tell you how to vote.</p>
 </div></section>
 
 <section class="stack"><h2 class="h2">Corrections</h2><div class="card"><p>{% if site.contact_email %}Found a mistake? Write to <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a> ({{ site.contact_email }}). Corrections are made in public.{% else %}If you find a mistake, please report it through this site's code repository. Corrections are made in public.{% endif %}</p></div></section>

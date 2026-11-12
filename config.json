@@ -10,5 +10,36 @@
   "min_votes_for_ranking": 50,
   "ai_model": "claude-haiku-5-5",
   "ai_max_new_summaries_per_run": 40,
-  "ai_max_new_vote_lines_per_run": 150
+  "ai_max_new_vote_lines_per_run": 150,
+  "popular_topics": [
+    "Artificial intelligence",
+    "Health",
+    "Taxes",
+    "Immigration",
+    "Budget and spending",
+    "Military and security",
+    "Crime and policing",
+    "Education"
+  ],
+  "custom_topics": [
+    {
+      "name": "Artificial intelligence",
+      "keywords": [
+        "artificial intelligence",
+        "machine learning",
+        "deepfake",
+        "chatbot",
+        "large language model",
+        "generative ai"
+      ],
+      "title_patterns": [
+        "\\bA\\.?I\\.?\\b"
+      ]
+    }
+  ],
+  "search_examples": [
+    "Texas",
+    "Farm Bill",
+    "Taxes"
+  ]
 }

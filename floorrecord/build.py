@@ -69,6 +69,22 @@ def topic_key(area):
     return "".join(ch if ch.isalnum() else "-" for ch in (area or "").lower()).strip("-")
 
 
+def custom_topics_for(rec, title, custom):
+    """Our own topics (such as AI) that the Library of Congress has no category for.
+
+    A bill belongs when a keyword appears in its title or in the opening of its official summary, so a
+    huge bill that mentions the subject once in passing is not swept in.
+    """
+    found = []
+    head = (title or "") + " " + (rec.get("title") or "")
+    lead = head + " " + (rec.get("official_summary") or "")[:350]
+    for topic in custom:
+        words = [w.lower() for w in topic.get("keywords", [])]
+        if any(w in lead.lower() for w in words) or any(re.search(p, head) for p in topic.get("title_patterns", [])):
+            found.append(topic["name"])
+    return found
+
+
 def bill_status(action):
     """A plain status from the official 'latest action' text. Returns (status, has_moved)."""
     a = (action or "").lower()
@@ -140,12 +156,18 @@ def main():
     result = compute(votes_raw, members, bills, cfg)
     votes, people = result["votes"], result["people"]
     today = datetime.now(timezone.utc).date().isoformat()
+    custom = cfg.get("custom_topics") or []
+    popular = cfg.get("popular_topics") or []
     for v in votes:
         info = v["info"]
         info["rule_name"], info["rule_plain"] = info["name"], info["plain"]
         apply_wording(info, v["id"], ai_votes, editorial)
         v["topic"] = topic_name(v["issue"]) if v["issue"] else ""
-        v["topic_key"] = topic_key(v["issue"])
+        names = [v["topic"]] if v["topic"] else []
+        if v["slug"]:
+            names += custom_topics_for(bills.get(v["slug"]) or {}, v["desc"], custom)
+        v["topics"] = names
+        v["topic_keys"] = [topic_key(n) for n in names]
     # The big votes use wording a person approved, or the automatic wording. Never unreviewed AI text.
     featured = pick_featured(votes, pins=editorial.get("pins") or [])
     for v in featured:
@@ -158,15 +180,22 @@ def main():
         p["dist_label"] = "Delegate" if p.get("delegate") else ("At large" if not d else f"District {d}")
     topic_counts = defaultdict(int)
     for v in votes:
-        if v["issue"] and v["kind"] == "standard" and not v["info"]["routine"]:
-            topic_counts[v["issue"]] += 1
-    topics = [{"key": topic_key(a), "name": topic_name(a), "count": n}
-              for a, n in sorted(topic_counts.items(), key=lambda kv: (-kv[1], kv[0]))]
+        if v["kind"] == "standard" and not v["info"]["routine"]:
+            for name in v["topics"]:
+                topic_counts[name] += 1
+
+    def topic_order(name):
+        # Popular topics always come first, in the order set in config.json; the rest by number of votes.
+        return (popular.index(name) if name in popular else len(popular), -topic_counts[name], name)
+
+    topics = [{"key": topic_key(n), "name": n, "count": topic_counts[n], "popular": n in popular}
+              for n in sorted(topic_counts, key=topic_order)]
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]),
                       trim_blocks=True, lstrip_blocks=True)
     env.filters.update(nicedate=nicedate, comma=lambda n: f"{n:,}", capfirst=capfirst,
-                       times=lambda n: "once" if n == 1 else f"{n:,} times")
+                       times=lambda n: "once" if n == 1 else f"{n:,} times",
+                       lcfirst=lambda t: t[:1].lower() + t[1:] if t else t)
     years = sorted({v["year"] for v in votes})
     span = str(years[0]) if len(years) == 1 else f"{years[0]}–{years[-1]}"
     shared = {
@@ -202,7 +231,7 @@ def main():
         m["votes"].sort(key=lambda v: (v["date"], v["roll"]), reverse=True)
         m["title"] = m["rec"].get("title") or next((v["desc"] for v in m["votes"] if v["desc"]), m["label"])
         m["name"] = short_name(m["title"], m["label"])
-        m["topic"] = topic_name(m["rec"].get("policy_area", ""))
+        m["topic"] = " · ".join(m["votes"][0]["topics"]) if m["votes"] else topic_name(m["rec"].get("policy_area", ""))
         m["kind_name"], m["kind_note"] = KIND_NAMES[m["kind"]]
         m["congress_url"] = (f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
                              f"{CONGRESS_PATH[m['kind']]}/{m['number']}")
@@ -213,8 +242,34 @@ def main():
     # ---- home, lists
     mavericks = sorted([p for p in ranked if p["all"]["split_against_pct"] is not None],
                        key=lambda p: -p["all"]["split_against_pct"])[:5]
-    render("index.html", "index.html", 0, section="home", latest=newest[:16], mavericks=mavericks, featured=featured)
-    render("votes/index.html", "votes.html", 1, section="votes", votes=newest,
+    # ---- topics: one page per topic, and "trending" = what the House has voted on most lately
+    by_topic = defaultdict(list)
+    for v in newest:
+        for key in v["topic_keys"]:
+            by_topic[key].append(v)
+    recent_real = [v for v in newest if v["kind"] == "standard" and not v["info"]["routine"]][:60]
+    heat = defaultdict(int)
+    for v in recent_real:
+        for key in v["topic_keys"]:
+            heat[key] += 1
+    since = recent_real[-1]["date"] if recent_real else ""
+    all_topics = []
+    for t in topics:
+        vs = by_topic[t["key"]]
+        all_topics.append(dict(t, total=len(vs), real=t["count"], latest=vs[0], recent=heat.get(t["key"], 0)))
+    # Every topic picker shows the popular topics first, then whatever the House has voted on most lately.
+    hot = sorted((t for t in all_topics if not t["popular"] and t["recent"]), key=lambda t: -t["recent"])
+    trending = [t for t in all_topics if t["popular"]] + hot[:max(0, 10 - sum(1 for t in all_topics if t["popular"]))]
+    if all_topics:
+        render("topics/index.html", "topics.html", 1, section="topics",
+               popular=[t for t in all_topics if t["popular"]],
+               topics=sorted(all_topics, key=lambda t: t["name"]))
+        for t in all_topics:
+            render(f"topics/{t['key']}/index.html", "topic.html", 2, section="topics", t=t, votes=by_topic[t["key"]],
+                   nroutine=t["total"] - t["real"])
+    render("index.html", "index.html", 0, section="home", trending=trending, since=since,
+           has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
+    render("votes/index.html", "votes.html", 1, section="votes", votes=newest, featured=featured,
            nroutine=sum(1 for v in votes if v["info"]["routine"]))
     by_state = defaultdict(list)
     for p in people.values():
@@ -267,7 +322,7 @@ def main():
     write_json(SITE / "votes-index.json", [[
         v["id"], nicedate(v["date"]), v["roll"], v["info"]["name"], v["info"]["outcome"] if v["kind"] == "standard" else v["result"],
         v["totals"].get("yea", 0), v["totals"].get("nay", 0), int(v["info"]["routine"] or v["kind"] != "standard"),
-        v["topic_key"], v["info"]["fine"], v["info"]["yea"], v["info"]["nay"]] for v in votes])
+        v["topic_keys"], v["info"]["fine"], v["info"]["yea"], v["info"]["nay"]] for v in votes])
     congress_base = f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
 
     def bill_rows(items, limit=None):
@@ -323,7 +378,7 @@ def main():
             write_json(SITE / "members" / me / "bills.json",
                        [[b["name"], b["label"], b["status"], int(b["moved"]), b["href"], b["topic"],
                          nicedate(b["introduced"]) if b["introduced"] else ""] for b in co_all])
-        my_topics = [t for t in topics if any(k == t["name"] for k in map(topic_name, p["by_issue"]))]
+        my_topics = topics
         render(f"members/{me}/index.html", "member.html", 2, section="members", p=p, s=p["all"],
                breaks=breaks, notable=notable, recent=recent, state_name=state_name, seat_long=seat_long,
                has_bills=mb is not None, sponsored=sponsored, cosponsored=cosponsored, co_count=co_count,
@@ -352,8 +407,11 @@ def main():
     search = [{"t": p["name"], "s": f"{p['party']}-{p['seat']}", "u": f"members/{p['bioguide']}/",
                "k": f"{p['name']} {STATES.get(p['state'], '')} {p['state']} {p['seat']}".lower()} for p in people.values()]
     search += [{"t": m["name"], "s": m["label"], "u": f"bills/{m['slug']}/",
-                "k": f"{m['label']} {m['label'].replace('.', '').replace(' ', '')} {m['kind']}{m['number']} {m['title']}".lower()}
+                "k": " ".join([m["label"], m["label"].replace(".", "").replace(" ", ""), f"{m['kind']}{m['number']}", m["title"],
+                               m["topic"]] + sorted({v["info"]["name"] for v in m["votes"]})).lower()}
                for m in measures.values()]
+    search += [{"t": t["name"], "s": "Topic", "u": f"topics/{t['key']}/", "k": (t["name"] + " topic").lower()}
+               for t in all_topics]
     write_json(SITE / "search.json", search)
     print(f"Built {len(votes)} vote pages, {len(people)} member pages and {len(measures)} bill pages into {SITE}")
 

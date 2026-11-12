@@ -9,9 +9,12 @@
   var cache = {};
   function once(url) { return cache[url] || (cache[url] = getJSON(url)); }
 
-  // ---- site search
-  var box = document.getElementById('site-search'), out = document.getElementById('search-results'), index = null;
-  if (box && out) {
+  // ---- search boxes (the one in the header and the big one on the home page share an index)
+  var index = null, loading = null;
+  function loadIndex() { return loading || (loading = getJSON(root + 'search.json').then(function (d) { index = d; return d; })); }
+  each(document.querySelectorAll('[data-search]'), function (wrap) {
+    var box = wrap.querySelector('input'), out = wrap.querySelector('.results');
+    if (!box || !out) return;
     var run = function () {
       var q = box.value.trim().toLowerCase();
       if (!q || !index) { out.classList.remove('open'); return; }
@@ -22,11 +25,15 @@
       }).join('') : '<div class="none">Nothing matches. Try a last name, a state or a bill name.</div>';
       out.classList.add('open');
     };
-    box.addEventListener('focus', function () { if (!index) getJSON(root + 'search.json').then(function (d) { index = d; run(); }).catch(function () {}); });
-    box.addEventListener('input', run);
+    box.addEventListener('focus', function () { loadIndex().then(run).catch(function () {}); });
+    box.addEventListener('input', function () { if (index) run(); else loadIndex().then(run).catch(function () {}); });
     box.addEventListener('keydown', function (e) { if (e.key === 'Escape') { out.classList.remove('open'); } if (e.key === 'Enter') { var a = out.querySelector('a'); if (a) location.href = a.href; } });
-    document.addEventListener('click', function (e) { if (!e.target.closest('.search')) out.classList.remove('open'); });
-  }
+    document.addEventListener('click', function (e) { if (!wrap.contains(e.target) && !e.target.closest('[data-example]')) out.classList.remove('open'); });
+    each(document.querySelectorAll('[data-example]'), function (btn) {
+      if (!wrap.classList.contains('big')) return;
+      btn.addEventListener('click', function () { box.value = btn.getAttribute('data-example'); box.focus(); loadIndex().then(run).catch(function () {}); });
+    });
+  });
 
   // ---- simple list filters
   each(document.querySelectorAll('input[data-filter]'), function (input) {
@@ -88,7 +95,7 @@
   }
 
   // ---- a member's votes: the full log and the topic picker
-  // votes-index.json rows: [id, date, roll, name, outcome, yeas, nays, routine, topicKey, finePrint, yeaMeans, nayMeans]
+  // votes-index.json rows: [id, date, roll, name, outcome, yeas, nays, routine, topicKeys, finePrint, yeaMeans, nayMeans]
   function memberData(src) { return Promise.all([once(root + 'votes-index.json'), once(src)]); }
   function phrase(v, pos) {
     if (pos === 'yea') return 'Voted to ' + v[10] + '.';
@@ -133,7 +140,7 @@
         var votes = res[0], mine = res[1], shown = [], routine = 0;
         for (var i = mine.length - 1; i >= 0; i--) {
           var v = votes[mine[i][0]];
-          if (v[8] !== key) continue;
+          if (v[8].indexOf(key) === -1) continue;
           if (v[7]) { routine++; continue; }
           shown.push(voteRow(v, mine[i]));
         }

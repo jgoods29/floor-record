@@ -1,62 +1,42 @@
 {% extends "base.html" %}{% import "_m.html" as m %}
 {% block main %}
-<div class="wrap page">
-<div class="stack" style="gap:16px">
+<div class="wrap home">
+
+<section class="center">
 <h1 class="h1">See how your representative <span class="hl">actually</span> votes.</h1>
-<p class="lede">Every vote in the U.S. House, explained in plain English and taken straight from the official record.</p>
-<div class="row" style="padding-top:8px"><a class="btn go" href="{{ root }}members/" style="min-height:48px;padding:10px 22px;font-size:16px">Find your representative</a><a class="btn" href="{{ root }}leaderboard/" style="text-decoration:none;display:inline-flex;align-items:center;min-height:48px;padding:10px 22px;font-size:16px">Open the leaderboard</a></div>
+<p class="lede point">They work for you. Here's what they've been doing.</p>
+<p class="lede" style="font-size:18px;margin-top:-8px">Every vote in the U.S. House, explained in plain English and taken straight from the official record.</p>
+<div class="search big" data-search>
+<label class="sr" for="home-search">Search for a member, a state, a bill or a topic</label>
+<input id="home-search" type="search" placeholder="Name, state, bill or topic" autocomplete="off">
+<div class="results" role="listbox" aria-label="Search results"></div>
 </div>
+<p class="tries"><span class="muted">Try</span>{% for word in examples %}<button type="button" class="linkish" data-example="{{ word }}">{{ word }}</button>{% endfor %}</p>
+</section>
 
-{% if featured %}
-<section class="stack">
-<div class="row between" style="align-items:baseline"><h2 class="h2">The big votes</h2><span class="small muted">Recent votes that were close or where members crossed party lines</span></div>
-{% set v = featured[0] %}
-<a class="lead" href="{{ root }}votes/{{ v.id }}/">
-<span class="text">
-<span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ m.tags(v, ('proc',)) }}</span>
-<span class="title">{{ v.f_name }}: {{ v.info.outcome|lower }}</span>
-{% if v.f_plain %}<span class="plain">{{ v.f_plain }}</span>{% endif %}
-<span class="fine" style="font-size:14px">{{ v.info.fine }}</span>
-</span>
-<span class="nums">
-<span class="row" style="gap:32px;align-items:flex-end;flex-wrap:nowrap">
-<span style="display:flex;flex-direction:column"><span class="big" style="font-size:84px">{{ v.totals.yea }}</span><span class="small strong" style="padding-top:8px">To {{ v.info.yea_short }}</span></span>
-<span style="display:flex;flex-direction:column"><span class="big dim" style="font-size:84px">{{ v.totals.nay }}</span><span class="small strong" style="padding-top:8px">To {{ v.info.nay_short }}</span></span>
-</span>
-<span class="bar" aria-hidden="true"><span style="flex: {{ v.totals.yea }}"></span><span class="n" style="flex: {{ v.totals.nay }}"></span><span class="x" style="flex: {{ v.totals.nv + v.totals.present }}"></span></span>
-<span class="btn go" style="align-self:flex-start">See how everyone voted</span>
-</span>
-</a>
-{% if featured|length > 1 %}<div class="grid two">{% for v in featured[1:] %}
-<a class="card" href="{{ root }}votes/{{ v.id }}/" style="gap:12px">
-<span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ m.tags(v, ('split', 'proc')) }}</span>
-<span class="headline-sm">{{ v.f_name }}: {{ v.info.outcome|lower }}</span>
-{% if v.f_plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.f_plain }}</span>{% endif %}
-<span class="row nums" style="gap:8px 14px;align-items:baseline"><span class="big" style="font-size:40px">{{ v.totals.yea }}</span><span class="big dim" style="font-size:40px">{{ v.totals.nay }}</span></span>
-<span class="fine" style="font-size:14px">{{ v.info.fine }}</span>
-</a>{% endfor %}</div>{% endif %}
+{% if trending %}
+<section class="center" aria-labelledby="trending-h">
+<h2 class="label" id="trending-h">Popular and trending topics</h2>
+<div class="pills">{% for t in trending %}<a class="pilllink" href="{{ root }}topics/{{ t.key }}/">{{ t.name }}<span>{{ t.real }}</span></a>{% endfor %}</div>
+<p class="small muted">Popular topics first, then what the House has voted on most since {{ since|nicedate }}. The number is how many votes each has had. <a href="{{ root }}topics/">All topics</a></p>
 </section>
 {% endif %}
 
-<section class="stack hide-routine" data-routine-scope>
-<div class="row between"><h2 class="h2">Latest votes</h2>
-<label class="check"><input type="checkbox" data-routine-toggle id="show-routine">Show routine procedural votes</label></div>
-<div class="card flush rows">{% for v in latest %}{{ m.vrow(v, root) }}{% endfor %}
-<a class="more" href="{{ root }}votes/">See all {{ nvotes|comma }} votes</a></div>
+<section class="stack" aria-labelledby="how-h" style="gap:28px">
+<div class="center" style="gap:10px"><h2 class="h2" id="how-h">How to use this site</h2>
+<p class="muted" style="font-size:18px;max-width:620px">{{ site.site_name }} is a free, non-partisan record of what members of Congress do, not what they say. Three steps get you there.</p></div>
+<div class="grid steps">
+<a class="card step" href="{{ root }}members/"><span class="num">1</span><span class="h3">Find your representative</span><span>Search a name or your state above, or browse the full list. Not sure who represents you? Pick your state and look for your district.</span><span class="go">Browse members</span></a>
+<a class="card step" href="{{ root }}{{ 'topics/' if has_topics else 'votes/' }}"><span class="num">2</span><span class="h3">See how they voted</span><span>Each profile shows every vote in plain English. Pick a topic you care about, like farming or health, to see only those votes.</span><span class="go">{{ 'Browse topics' if has_topics else 'Browse votes' }}</span></a>
+<a class="card step" href="{{ root }}leaderboard/"><span class="num">3</span><span class="h3">Compare and check</span><span>See who votes with their party and who breaks from it. Every number links to the official House record, so you can check it yourself.</span><span class="go">Open the leaderboard</span></a>
+</div>
 </section>
+<section class="center promise" aria-label="Our promise">
+<span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>
+<p class="big-line">Free, and for the people.</p>
+<p class="muted" style="font-size:18px;max-width:560px">No tracking. No profit. Just knowledge. <a href="{{ root }}about/#promise">What that means</a></p>
+</section>
+<p class="center small muted"><span>New to how Congress works? <a href="{{ root }}about/">Words you will see, and how we count</a>. Looking for the latest? <a href="{{ root }}votes/">See the big votes and all {{ nvotes|comma }} votes</a>.</span></p>
 
-{% if mavericks %}
-<section class="stack">
-<div class="row between"><h2 class="h2">Who breaks with their party most</h2><a href="{{ root }}leaderboard/">Full leaderboard</a></div>
-<div class="card flush scroll"><table>
-<thead><tr><th>Rank</th><th>Member</th><th>Against party</th><th>Times</th><th>Party-split votes</th></tr></thead>
-<tbody>{% for p in mavericks %}<tr>
-<td><span class="rank">{{ loop.index }}</span></td>
-<td><span class="who">{{ m.badge(p.party) }}<span><a class="strong" href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }}</a><span class="small muted">{{ p.party_name }} · {{ p.seat }}</span></span></span></td>
-<td class="strong">{{ m.pctv(p.all.split_against_pct) }}</td><td>{{ p.all.split_against }}</td><td>{{ p.all.split_counted }}</td>
-</tr>{% endfor %}</tbody></table></div>
-<p class="small muted">Counted on votes where most Republicans and most Democrats took opposite sides. Members with fewer than {{ min_votes }} votes are not ranked.</p>
-</section>
-{% endif %}
 </div>
 {% endblock %}
