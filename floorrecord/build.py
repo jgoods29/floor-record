@@ -3,6 +3,7 @@
 Run:  python -m floorrecord.build
 """
 import html
+import re
 import shutil
 from collections import defaultdict
 from datetime import date, datetime, timezone
@@ -272,6 +273,7 @@ def main():
     def bill_rows(items, limit=None):
         rows = []
         for kind, number, title, introduced, action_date, action, area in items:
+            action = " ".join(html.unescape(re.sub(r"\(?<[^>]*(>|$)", " ", action or "")).split())
             slug, label = bill_slug(kind, number), bill_label(kind, number)
             status, moved = bill_status(action)
             internal = slug in measures
