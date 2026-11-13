@@ -1,12 +1,12 @@
-{% extends "base.html" %}{% import "_m.html" as m %}
-{% block title %}All House votes · {{ site.site_name }}{% endblock %}
+{% extends "base.html" %}{% import "_m.html" as m with context %}
+{% block title %}All {{ ch.name }} votes · {{ site.site_name }}{% endblock %}
 {% block main %}
 <div class="wrap page hide-routine" data-routine-scope>
 <div class="stack">
-<div class="eyebrow"><span>U.S. House of Representatives</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
+<div class="eyebrow"><span>U.S. {{ ch.full }}</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
 <h1 class="h1">Votes</h1>
-<p class="lede">Every recorded House vote, newest first. Select one to see what it meant and how each member voted.</p>
-<p class="newline">A vote is the moment each member says yes or no, on the record. New here? <a href="{{ root }}start/">Start with the basics</a>. Want to know what is next? <a href="{{ root }}upcoming/">See what is coming up</a>.</p>
+<p class="lede">Every recorded {{ ch.name }} vote, newest first. Select one to see what it meant and how each {{ "senator" if c else "member" }} voted.</p>
+{% if c %}<p class="newline">About half of all Senate votes are on people, not bills: the President's picks for judges and top government jobs. Many others are votes to end debate, which can take 60 of the 100 senators. The routine ones are tucked away.</p>{% else %}<p class="newline">A vote is the moment each member says yes or no, on the record. New here? <a href="{{ root }}start/">Start with the basics</a>. Want to know what is next? <a href="{{ root }}upcoming/">See what is coming up</a>.</p>{% endif %}
 <div class="row"><label class="fieldset" for="vote-filter">Find a vote<input class="field" id="vote-filter" type="search" placeholder="A bill name, number or word" style="width: 300px" data-filter="#vote-rows .vrow"></label>
 <label class="check" style="align-self:flex-end"><input type="checkbox" data-routine-toggle id="show-routine">Show routine procedural votes ({{ nroutine }})</label></div>
 </div>
@@ -14,7 +14,7 @@
 <section class="stack">
 <div class="row between" style="align-items:baseline"><h2 class="h2">The big votes</h2><span class="small muted">Recent votes that were close or drew wide attention</span></div>
 <div class="grid">{% for v in featured %}
-<a class="card" href="{{ root }}votes/{{ v.id }}/" style="gap:12px">
+<a class="card" href="{{ root }}{{ c }}votes/{{ v.id }}/" style="gap:12px">
 <span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ m.tags(v, ('split', 'proc', 'broke')) }}</span>
 <span class="headline-sm">{{ v.f_name }}: {{ v.info.outcome|lcfirst }}</span>
 {% if v.f_plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.f_plain }}</span>{% endif %}

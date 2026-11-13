@@ -1,6 +1,7 @@
 /* Floor Record: search, filters, tabs, topic picker, bill lists and the Compare table. No dependencies. */
 (function () {
   var root = document.body.getAttribute('data-root') || '';
+  var chamber = document.body.getAttribute('data-c') || '';  // '' on House pages, 'senate/' on Senate pages
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function getJSON(url) { return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
   function each(list, fn) { Array.prototype.forEach.call(list, fn); }
@@ -174,7 +175,7 @@
 
   // ---- a member's votes: the full log and the topic picker
   // votes-index.json rows: [id, date, roll, name, outcome, yeas, nays, routine, topicKeys, finePrint, yeaMeans, nayMeans]
-  function memberData(src) { return Promise.all([once(root + 'votes-index.json'), once(src)]); }
+  function memberData(src) { return Promise.all([once(root + chamber + 'votes-index.json'), once(src)]); }
   function phrase(v, pos) {
     if (pos === 'yea') return 'Voted to ' + v[10] + '.';
     if (pos === 'nay') return 'Voted to ' + v[11] + '.';
@@ -183,7 +184,7 @@
     return 'Voted for ' + word(pos) + '.';
   }
   function voteRow(v, m) {
-    return '<a class="vrow" href="' + root + 'votes/' + esc(v[0]) + '/"><span class="when">' + esc(v[1]) + '</span><span class="main"><span class="tags"><span class="name">' + esc(v[3]) + '</span>' +
+    return '<a class="vrow" href="' + root + chamber + 'votes/' + esc(v[0]) + '/"><span class="when">' + esc(v[1]) + '</span><span class="main"><span class="tags"><span class="name">' + esc(v[3]) + '</span>' +
       '</span><span class="plain">' + esc(phrase(v, m[1])) + '</span><span class="fine">' + esc(v[9]) + '</span></span>' +
       '<span class="end"><span class="pos">' + esc(word(m[1])) + '</span><span style="font-size:14px;color:var(--muted)">' + esc(v[4]) + ', ' + v[5] + ' to ' + v[6] + '</span></span></a>';
   }
@@ -201,7 +202,7 @@
           var votes = res[0], mine = res[1];
           log.innerHTML = mine.slice().reverse().filter(function (m) { return mode === 'all' || m[2] === 0; }).map(function (m) {
             var v = votes[m[0]];
-            return '<tr><td class="small muted" style="white-space:nowrap">' + esc(v[1]) + '</td><td><a href="' + root + 'votes/' + esc(v[0]) + '/">' + esc(v[3]) + '</a>' +
+            return '<tr><td class="small muted" style="white-space:nowrap">' + esc(v[1]) + '</td><td><a href="' + root + chamber + 'votes/' + esc(v[0]) + '/">' + esc(v[3]) + '</a>' +
               (v[7] ? ' <span class="tag proc">Procedural step</span>' : '') +
               '</td><td class="strong">' + esc(word(m[1])) + '</td><td class="small">' + esc(v[4]) + ', ' + v[5] + '–' + v[6] + '</td></tr>';
           }).join('') || '<tr><td colspan="4" class="muted">Nothing to show.</td></tr>';

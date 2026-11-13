@@ -13,6 +13,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from .common import DATA, ROOT, SITE, config, read_json, write_json
 from .explain import apply_wording, short_name, title_case
 from .ingest import BILL_LABELS, bill_label, bill_slug, load_votes
+from .senate import load_senate_votes
 from .stats import PARTY_NAMES, compute, pick_featured
 
 STATES = {
@@ -270,6 +271,12 @@ def seat_chart(counts, total=435, rows=11):
     return f'<svg class="seatchart" viewBox="0 0 460 236" role="img" aria-label="Seat chart of the House">{dots}<text x="230" y="208" text-anchor="middle" class="sc-n">{total}</text><text x="230" y="228" text-anchor="middle" class="sc-l">seats</text></svg>'
 
 
+HOUSE = {"name": "House", "full": "House of Representatives", "member": "representative", "title": "U.S. Representative",
+         "clerk": "Clerk of the House", "roll": "Roll Call", "seats": 435, "win": 218, "members": "members"}
+SENATE = {"name": "Senate", "full": "Senate", "member": "senator", "title": "U.S. Senator",
+          "clerk": "Secretary of the Senate", "roll": "Senate Vote", "seats": 100, "win": 51, "members": "senators"}
+
+
 FLOOR_HOW = {
     "rule": ("Full debate", "Needs a simple majority to pass. Often the bigger, more argued-over bills."),
     "fast": ("Fast track", "Needs two-thirds to pass. Usually used for bills most members agree on."),
@@ -418,7 +425,7 @@ def main():
         "asset_v": stamp,
         "site": cfg, "span": span, "nvotes": len(votes), "npeople": len(people),
         "updated": nicedate(datetime.now(timezone.utc).date().isoformat()), "min_votes": result["min_votes"],
-        "state_names": STATES,
+        "state_names": STATES, "c": "", "ch": HOUSE, "has_senate": (DATA / "senators.json").exists(),
         "reach_states": sorted({p["state"] for p in people.values() if not p["left"]}, key=lambda c: STATES.get(c, c)),
     }
 
@@ -431,7 +438,7 @@ def main():
     def render(path, template, depth, **ctx):
         out = SITE / path
         out.parent.mkdir(parents=True, exist_ok=True)
-        page = env.get_template(template).render(root="../" * depth, **shared, **ctx)
+        page = env.get_template(template).render(root="../" * depth, **{**shared, **ctx})
         out.write_text(title_case_headings(page))
 
     # ---- measures
@@ -597,125 +604,175 @@ def main():
     render("about/index.html", "about.html", 1, section="about")
     render("404.html", "404.html", 0, section="")
 
-    # ---- vote pages
-    for v in votes:
-        ctx = {"v": v, "section": "votes", "bill": measures.get(v["slug"]), "ai": summaries.get(v["slug"])}
-        sponsor_id = (bills.get(v["slug"]) or {}).get("sponsor")
-        ctx["sponsor"] = people.get(sponsor_id)
-        seats = sorted(v["positions"], key=lambda r: (ORDER.get(r[3], 4), {"R": 0, "D": 1}.get(r[1], 2), people[r[0]]["sort"]))
-        ctx["seats"] = defaultdict(list)
-        for r in seats:
-            side = r[3] if r[3] in ("yea", "nay") else "nv"
-            ctx["seats"][side].append((r[1] if r[1] in ("R", "D") else "I", f"{people[r[0]]['name']} ({r[1]}-{r[2]})"))
-        for side, lst in ctx["seats"].items():  # same party order as the shaded number above
-            rank = {p: i for i, (_, p) in enumerate(v["mix"][side]["parts"])}
-            lst.sort(key=lambda x: rank.get(x[0], 9))
-        ctx["parties"] = []
-        for code in ("R", "D", "I"):
-            t = v["by_party"].get(code)
-            if t and sum(t.values()):
-                ctx["parties"].append({"code": code, "name": PARTY_NAMES[code] + ("s" if code != "I" else ""), **t})
-        vote_of = {r[0]: r for r in v["positions"]}
-        breakers, groups = [], {}
-        for b in v["breakers"]:
-            _, party, _, pos = vote_of[b]
-            same = sum(1 for x in v["breakers"] if vote_of[x][1] == party)
-            note = f"The only {PARTY_NAMES[party]} to vote {pos}" if same == 1 else f"One of {same} {PARTY_NAMES[party]}s to vote {pos}"
-            breakers.append({"p": people[b], "vote": pos, "note": note})
-            groups.setdefault(party, {"code": party, "name": PARTY_NAMES[party], "vote": pos, "people": []})["people"].append(people[b])
-        ctx["breakers"] = sorted(breakers, key=lambda b: b["p"]["sort"])
-        ctx["breaker_groups"] = [dict(g, people=sorted(g["people"], key=lambda p: p["sort"])) for _, g in sorted(groups.items())]
-        absent = {}
-        for a in v["absent"]:
-            party = vote_of[a][1]
-            absent.setdefault(party, {"code": party, "name": PARTY_NAMES.get(party, "Independent"), "people": []})["people"].append(people[a])
-        ctx["absent_groups"] = [dict(g, people=sorted(g["people"], key=lambda p: p["sort"]))
-                                for _, g in sorted(absent.items(), key=lambda kv: {"D": 0, "R": 1}.get(kv[0], 2))]
-        roll = defaultdict(list)
-        for r in sorted(v["positions"], key=lambda r: people[r[0]]["sort"]):
-            roll[r[3]].append((people[r[0]], r[1]))
-        titles = {"yea": "Voted Yea", "nay": "Voted Nay", "present": "Voted Present", "nv": "Did not vote"}
-        ctx["roll_groups"] = [{"title": titles.get(k, k.replace("other:", "Voted for ")), "people": roll[k],
-                               "key": k if k in ORDER else f"other-{i}"}
-                              for i, k in enumerate(sorted(roll, key=lambda k: ORDER.get(k, 4)))]
-        ctx["act"] = {"topic": v["topics"][0], "key": v["topic_keys"][0]} if v["topics"] else {"topic": "", "key": ""}
-        render(f"votes/{v['id']}/index.html", "vote.html", 2, **ctx)
+    def chamber_pages(pre, votes, people, members, result, ch):
+        """Every vote page and member page for one chamber. `pre` is "" for the House and "senate/" for the Senate."""
+        deep = 1 if pre else 0
+        # ---- vote pages
+        for v in votes:
+            ctx = {"v": v, "section": "votes", "bill": measures.get(v["slug"]), "ai": summaries.get(v["slug"])}
+            sponsor_id = (bills.get(v["slug"]) or {}).get("sponsor")
+            ctx["sponsor"] = people.get(sponsor_id)
+            seats = sorted(v["positions"], key=lambda r: (ORDER.get(r[3], 4), {"R": 0, "D": 1}.get(r[1], 2), people[r[0]]["sort"]))
+            ctx["seats"] = defaultdict(list)
+            for r in seats:
+                side = r[3] if r[3] in ("yea", "nay") else "nv"
+                ctx["seats"][side].append((r[1] if r[1] in ("R", "D") else "I", f"{people[r[0]]['name']} ({r[1]}-{r[2]})"))
+            for side, lst in ctx["seats"].items():  # same party order as the shaded number above
+                rank = {p: i for i, (_, p) in enumerate(v["mix"][side]["parts"])}
+                lst.sort(key=lambda x: rank.get(x[0], 9))
+            ctx["parties"] = []
+            for code in ("R", "D", "I"):
+                t = v["by_party"].get(code)
+                if t and sum(t.values()):
+                    ctx["parties"].append({"code": code, "name": PARTY_NAMES[code] + ("s" if code != "I" else ""), **t})
+            vote_of = {r[0]: r for r in v["positions"]}
+            breakers, groups = [], {}
+            for b in v["breakers"]:
+                _, party, _, pos = vote_of[b]
+                same = sum(1 for x in v["breakers"] if vote_of[x][1] == party)
+                note = f"The only {PARTY_NAMES[party]} to vote {pos}" if same == 1 else f"One of {same} {PARTY_NAMES[party]}s to vote {pos}"
+                breakers.append({"p": people[b], "vote": pos, "note": note})
+                groups.setdefault(party, {"code": party, "name": PARTY_NAMES[party], "vote": pos, "people": []})["people"].append(people[b])
+            ctx["breakers"] = sorted(breakers, key=lambda b: b["p"]["sort"])
+            ctx["breaker_groups"] = [dict(g, people=sorted(g["people"], key=lambda p: p["sort"])) for _, g in sorted(groups.items())]
+            absent = {}
+            for a in v["absent"]:
+                party = vote_of[a][1]
+                absent.setdefault(party, {"code": party, "name": PARTY_NAMES.get(party, "Independent"), "people": []})["people"].append(people[a])
+            ctx["absent_groups"] = [dict(g, people=sorted(g["people"], key=lambda p: p["sort"]))
+                                    for _, g in sorted(absent.items(), key=lambda kv: {"D": 0, "R": 1}.get(kv[0], 2))]
+            roll = defaultdict(list)
+            for r in sorted(v["positions"], key=lambda r: people[r[0]]["sort"]):
+                roll[r[3]].append((people[r[0]], r[1]))
+            titles = {"yea": "Voted Yea", "nay": "Voted Nay", "present": "Voted Present", "nv": "Did not vote"}
+            ctx["roll_groups"] = [{"title": titles.get(k, k.replace("other:", "Voted for ")), "people": roll[k],
+                                   "key": k if k in ORDER else f"other-{i}"}
+                                  for i, k in enumerate(sorted(roll, key=lambda k: ORDER.get(k, 4)))]
+            ctx["act"] = {"topic": v["topics"][0], "key": v["topic_keys"][0]} if v["topics"] else {"topic": "", "key": ""}
+            if pre:
+                ctx.pop("act")  # the speak-up block finds House members; senators get their own in a later step
+            render(f"{pre}votes/{v['id']}/index.html", "vote.html", 2 + deep, c=pre, ch=ch, **ctx)
 
-    # ---- member pages
-    write_json(SITE / "votes-index.json", [[
-        v["id"], nicedate(v["date"]), v["roll"], v["info"]["name"], v["info"]["outcome"] if v["kind"] == "standard" else v["result"],
-        v["totals"].get("yea", 0), v["totals"].get("nay", 0), int(v["info"]["routine"] or v["kind"] != "standard"),
-        v["topic_keys"], v["info"]["fine"], v["info"]["yea"], v["info"]["nay"]] for v in votes])
-    congress_base = f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
+        # ---- member pages
+        write_json(SITE / pre / "votes-index.json", [[
+            v["id"], nicedate(v["date"]), v["roll"], v["info"]["name"], v["info"]["outcome"] if v["kind"] == "standard" else v["result"],
+            v["totals"].get("yea", 0), v["totals"].get("nay", 0), int(v["info"]["routine"] or v["kind"] != "standard"),
+            v["topic_keys"], v["info"]["fine"], v["info"]["yea"], v["info"]["nay"]] for v in votes])
+        congress_base = f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
 
-    def bill_rows(items, limit=None):
-        rows = []
-        for kind, number, title, introduced, action_date, action, area in items:
-            action = " ".join(html.unescape(re.sub(r"\(?<[^>]*(>|$)", " ", action or "")).split())
-            slug, label = bill_slug(kind, number), bill_label(kind, number)
-            status, moved = bill_status(action)
-            internal = slug in measures
-            rows.append({
-                "name": title_case(short_name(title, label)), "title": title or label, "label": label, "introduced": introduced,
-                "topic": topic_name(area), "action": action, "action_date": action_date, "status": status, "moved": moved,
-                "internal": internal,
-                "href": f"../../bills/{slug}/" if internal else f"{congress_base}{CONGRESS_PATH[kind]}/{number}",
-            })
-        return rows[:limit] if limit else rows
+        def bill_rows(items, limit=None):
+            rows = []
+            for kind, number, title, introduced, action_date, action, area in items:
+                action = " ".join(html.unescape(re.sub(r"\(?<[^>]*(>|$)", " ", action or "")).split())
+                slug, label = bill_slug(kind, number), bill_label(kind, number)
+                status, moved = bill_status(action)
+                internal = slug in measures
+                rows.append({
+                    "name": title_case(short_name(title, label)), "title": title or label, "label": label, "introduced": introduced,
+                    "topic": topic_name(area), "action": action, "action_date": action_date, "status": status, "moved": moved,
+                    "internal": internal,
+                    "href": f"{'../' * (2 + deep)}bills/{slug}/" if internal else f"{congress_base}{CONGRESS_PATH[kind]}/{number}",
+                })
+            return rows[:limit] if limit else rows
 
-    for p in people.values():
-        log = p["log"]
-        me = p["bioguide"]
+        for p in people.values():
+            log = p["log"]
+            me = p["bioguide"]
 
-        def row(idx, pos, wp):
-            v = votes[idx]
-            note = ""
-            if wp is False:
-                party = next(r[1] for r in v["positions"] if r[0] == me)
-                same = v["broke_by_party"].get(party, 1)
-                word = PARTY_NAMES.get(party, "")
-                note = f"The only {word} to vote {pos}." if same == 1 else f"One of {same} {word}s to vote {pos}."
-            return {"v": v, "pos": pos, "wp": wp, "phrase": member_line(v, pos), "note": note}
+            def row(idx, pos, wp):
+                v = votes[idx]
+                note = ""
+                if wp is False:
+                    party = next(r[1] for r in v["positions"] if r[0] == me)
+                    same = v["broke_by_party"].get(party, 1)
+                    word = PARTY_NAMES.get(party, "")
+                    note = f"The only {word} to vote {pos}." if same == 1 else f"One of {same} {word}s to vote {pos}."
+                return {"v": v, "pos": pos, "wp": wp, "phrase": member_line(v, pos), "note": note}
 
-        breaks, notable = [], []
-        for idx, pos, wp in reversed(log):
-            v = votes[idx]
-            if wp is False and len(breaks) < 8:
-                breaks.append(row(idx, pos, wp))
-            if v["kind"] == "standard" and not v["info"]["routine"] and len(notable) < 6:
-                notable.append(row(idx, pos, wp))
-            if len(breaks) >= 8 and len(notable) >= 6:
-                break
-        recent = [{"v": votes[idx], "pos": pos, "wp": wp} for idx, pos, wp in reversed(log[-25:])]
-        d = p.get("district")
-        state_name = STATES.get(p["state"], p["state"])
-        seat_long = f"{state_name}'s {ordinal(d)} District" if d else (f"{state_name}, at large" if d == 0 else state_name)
-        mb = read_json(DATA / "member_bills" / f"{me}.json")
-        sponsored, cosponsored, co_count = [], [], 0
-        p["bills_n"] = p["passed_n"] = p["law_n"] = None
-        if mb:
-            sponsored = bill_rows(sorted(mb.get("sponsored", []), key=lambda r: r[4] or r[3], reverse=True))
-            for i, b in enumerate(sponsored):
-                b["extra"] = i >= 8
-            moved_on = {"Passed the House", "Passed the Senate", "Sent to the President", "Became law", "Vetoed"}
-            p["bills_n"] = len(sponsored)
-            p["passed_n"] = sum(1 for b in sponsored if b["status"] in moved_on)
-            p["law_n"] = sum(1 for b in sponsored if b["status"] == "Became law")
-            co_all = bill_rows(sorted(mb.get("cosponsored", []), key=lambda r: r[3], reverse=True))
-            co_count, cosponsored = len(co_all), co_all[:8]
-            write_json(SITE / "members" / me / "bills.json",
-                       [[b["name"], b["label"], b["status"], int(b["moved"]), b["href"], b["topic"],
-                         nicedate(b["introduced"]) if b["introduced"] else ""] for b in co_all])
-        my_topics = topics
-        render(f"members/{me}/index.html", "member.html", 2, section="members", p=p, s=p["all"], contact=members.get(me, {}), committees=member_committees(me),
-               breaks=breaks, notable=notable, recent=recent, state_name=state_name, seat_long=seat_long,
-               has_bills=mb is not None, sponsored=sponsored, cosponsored=cosponsored, co_count=co_count,
-               passed_n=p["passed_n"], law_n=p["law_n"],
-               topics=my_topics, by_issue=[(topic_name(a), st) for a, st in p["by_issue"].items()],
-               party_median=result["medians"]["split_with_pct"].get(p["party"]),
-               att_median=result["medians"]["attendance_pct"])
-        write_json(SITE / "members" / me / "votes.json",
-                   [[idx, pos, None if wp is None else int(wp)] for idx, pos, wp in log])
+            breaks, notable = [], []
+            for idx, pos, wp in reversed(log):
+                v = votes[idx]
+                if wp is False and len(breaks) < 8:
+                    breaks.append(row(idx, pos, wp))
+                if v["kind"] == "standard" and not v["info"]["routine"] and len(notable) < 6:
+                    notable.append(row(idx, pos, wp))
+                if len(breaks) >= 8 and len(notable) >= 6:
+                    break
+            recent = [{"v": votes[idx], "pos": pos, "wp": wp} for idx, pos, wp in reversed(log[-25:])]
+            d = p.get("district")
+            state_name = STATES.get(p["state"], p["state"])
+            seat_long = f"{state_name}'s {ordinal(d)} District" if d else (f"{state_name}, at large" if d == 0 else state_name)
+            mb = read_json(DATA / "member_bills" / f"{me}.json")
+            sponsored, cosponsored, co_count = [], [], 0
+            p["bills_n"] = p["passed_n"] = p["law_n"] = None
+            if mb:
+                sponsored = bill_rows(sorted(mb.get("sponsored", []), key=lambda r: r[4] or r[3], reverse=True))
+                for i, b in enumerate(sponsored):
+                    b["extra"] = i >= 8
+                moved_on = {"Passed the House", "Passed the Senate", "Sent to the President", "Became law", "Vetoed"}
+                p["bills_n"] = len(sponsored)
+                p["passed_n"] = sum(1 for b in sponsored if b["status"] in moved_on)
+                p["law_n"] = sum(1 for b in sponsored if b["status"] == "Became law")
+                co_all = bill_rows(sorted(mb.get("cosponsored", []), key=lambda r: r[3], reverse=True))
+                co_count, cosponsored = len(co_all), co_all[:8]
+                write_json(SITE / pre / "members" / me / "bills.json",
+                           [[b["name"], b["label"], b["status"], int(b["moved"]), b["href"], b["topic"],
+                             nicedate(b["introduced"]) if b["introduced"] else ""] for b in co_all])
+            my_topics = topics
+            render(f"{pre}members/{me}/index.html", "member.html", 2 + deep, c=pre, ch=ch, section="members", p=p, s=p["all"], contact=members.get(me, {}), committees=member_committees(me),
+                   breaks=breaks, notable=notable, recent=recent, state_name=state_name, seat_long=seat_long,
+                   has_bills=mb is not None, sponsored=sponsored, cosponsored=cosponsored, co_count=co_count,
+                   passed_n=p["passed_n"], law_n=p["law_n"],
+                   topics=my_topics, by_issue=[(topic_name(a), st) for a, st in p["by_issue"].items()],
+                   party_median=result["medians"]["split_with_pct"].get(p["party"]),
+                   att_median=result["medians"]["attendance_pct"])
+            write_json(SITE / pre / "members" / me / "votes.json",
+                       [[idx, pos, None if wp is None else int(wp)] for idx, pos, wp in log])
+
+    chamber_pages("", votes, people, members, result, HOUSE)
+
+    # ---- the Senate: the same pages, fed with Senate roll calls
+    senate_search = []
+    senators = read_json(DATA / "senators.json", {})
+    svotes_raw = load_senate_votes(cfg["years"], senators, bills) if senators else []
+    if svotes_raw:
+        sres = compute(svotes_raw, senators, bills, dict(cfg, close_margin=5))
+        svotes, speople = sres["votes"], sres["people"]
+        for v in svotes:
+            info = v["info"]
+            info["rule_name"], info["rule_plain"] = info["name"], info["plain"]
+            apply_wording(info, v["id"], {}, editorial)
+            v["topic"], v["topics"], v["topic_keys"], v["mix"] = "", [], [], party_mix(v)
+        # A senator who answered one of the latest roll calls is still in office, whatever end date is on file
+        # (an appointed senator's listed term can end on election day while they keep serving).
+        still_here = {r[0] for v in sorted(svotes, key=lambda v: (v["date"], v["roll"]))[-5:] for r in v["positions"]}
+        for p in speople.values():
+            p["left"] = bool(p.get("term_end")) and p["term_end"] < today and p["bioguide"] not in still_here
+            p["dist_label"] = {"senior": "Senior senator", "junior": "Junior senator"}.get(p.get("rank") or "", "Senator")
+        sfeatured = pick_featured(svotes, pins=editorial.get("senate_pins") or [])
+        for v in sfeatured:
+            v["f_name"], v["f_plain"] = v["info"]["name"], v["info"]["plain"]
+        snewest = sorted(svotes, key=lambda v: (v["date"], v["roll"]), reverse=True)
+        render("senate/votes/index.html", "votes.html", 2, section="votes", c="senate/", ch=SENATE, votes=snewest, featured=sfeatured,
+               nroutine=sum(1 for v in svotes if v["info"]["routine"]), nvotes=len(svotes))
+        sby_state = defaultdict(list)
+        for p in speople.values():
+            sby_state[p["state"]].append(p)
+        sstates = [(st, sorted(g, key=lambda p: (p["left"], p.get("rank") != "senior", p["sort"])))
+                   for st, g in sorted(sby_state.items(), key=lambda kv: STATES.get(kv[0], kv[0]))]
+        sseated = [p for p in speople.values() if not p["left"]]
+        sheld = {k: sum(1 for p in sseated if p["party"] == k) for k in ("R", "D", "I")}
+        sheld["V"] = max(0, 100 - len(sseated))
+        swith = {k: sum(1 for p in sseated if p["party"] == "I" and senators.get(p["bioguide"], {}).get("caucus") == k) for k in ("R", "D")}
+        sside = {k: sheld[k] + swith[k] for k in ("R", "D")}
+        stop = "R" if sside["R"] >= sside["D"] else "D"
+        render("senate/members/index.html", "members.html", 2, section="members", c="senate/", ch=SENATE, states=sstates,
+               house={"svg": seat_chart(sheld, total=100, rows=4), "held": sheld, "top": stop, "low": "D" if stop == "R" else "R",
+                      "side": sside, "ind_with": swith, "ind_other": sheld["I"] - swith["R"] - swith["D"],
+                      "names": {"R": "Republican", "D": "Democratic"}})
+        chamber_pages("senate/", svotes, speople, senators, sres, SENATE)
+        senate_search = [{"t": p["name"], "s": f"Senator · {p['party']}-{p['state']}", "u": f"senate/members/{p['bioguide']}/",
+                          "k": f"{p['name']} {STATES.get(p['state'], '')} {p['state']} senator senate".lower()} for p in speople.values()]
 
     # ---- bill pages
     for m in measures.values():
@@ -743,6 +800,7 @@ def main():
                 "k": " ".join([m["label"], m["label"].replace(".", "").replace(" ", ""), f"{m['kind']}{m['number']}", m["title"],
                                m["topic"]] + sorted({v["info"]["name"] for v in m["votes"]})).lower()}
                for m in measures.values()]
+    search += senate_search
     search += [{"t": c["name"], "s": "Committee", "u": f"committees/#{c['id']}", "k": (c["full"] + " committee").lower()} for c in committees]
     search += [{"t": t["name"], "s": "Topic", "u": f"topics/{t['key']}/", "k": (t["name"] + " topic").lower()}
                for t in all_topics]

@@ -1,13 +1,13 @@
-{% extends "base.html" %}{% import "_m.html" as m %}
+{% extends "base.html" %}{% import "_m.html" as m with context %}
 {% block title %}House members · {{ site.site_name }}{% endblock %}
 {% block main %}
 <div class="wrap page" style="gap:40px">
 <div class="stack" style="gap:16px">
-<h1 class="h1">Members</h1>
-<p class="lede">Everyone who has voted in the U.S. House this Congress, listed by state and district. Select a name to see how they vote.</p>
-<p class="newline">Each member speaks for the people of one district, an area of a state. One of them is yours. New here? <a href="{{ root }}start/">Start with the basics</a>. Want to know what is next? <a href="{{ root }}upcoming/">See what is coming up</a>.</p>
+<h1 class="h1">{{ "Senators" if c else "Members" }}</h1>
+<p class="lede">{% if c %}Everyone who has voted in the U.S. Senate this Congress, listed by state. Every state has two senators. Select a name to see how they vote.{% else %}Everyone who has voted in the U.S. House this Congress, listed by state and district. Select a name to see how they vote.{% endif %}</p>
+{% if not c %}<p class="newline">Each member speaks for the people of one district, an area of a state. One of them is yours. New here? <a href="{{ root }}start/">Start with the basics</a>. Want to know what is next? <a href="{{ root }}upcoming/">See what is coming up</a>.</p>{% endif %}
 <section class="card housebox" aria-labelledby="house-h">
-<div class="stack" style="gap:2px"><span class="label" id="house-h">Who holds the House</span><span class="muted">Party breakdown of the 435 voting seats</span></div>
+<div class="stack" style="gap:2px"><span class="label" id="house-h">Who holds the {{ ch.name }}</span><span class="muted">Party breakdown of the {{ ch.seats }} {{ "seats" if c else "voting seats" }}</span></div>
 <div class="houseflex">{{ house.svg|safe }}
 <div class="housekey">
 <div><span class="hk-h">Majority ({{ house.side[house.top] }})</span><span><i class="sw s{{ house.top }}"></i>{{ house.names[house.top] }} <strong>({{ house.held[house.top] }})</strong></span>{% if house.ind_with[house.top] %}<span><i class="sw sI"></i>Independent, sits with the majority <strong>({{ house.ind_with[house.top] }})</strong></span>{% endif %}</div>
@@ -15,9 +15,9 @@
 {% if house.ind_other %}<div><span class="hk-h">Independent ({{ house.ind_other }})</span><span><i class="sw sI"></i>Independent <strong>({{ house.ind_other }})</strong></span></div>{% endif %}
 {% if house.held.V %}<div><span class="hk-h">Vacant ({{ house.held.V }})</span><span><i class="sw sV"></i>Empty seats <strong>({{ house.held.V }})</strong></span></div>{% endif %}
 </div></div>
-<p class="small muted" style="margin:0">The majority party chairs every <a href="{{ root }}committees/">committee</a> and decides which bills get a vote. It takes 218 votes to pass a bill when every seat is filled and everyone votes. Counted from the member list below; six non-voting delegates are not included.</p>
+<p class="small muted" style="margin:0">The majority party chairs every <a href="{{ root }}committees/">committee</a> and decides which bills get a vote. {% if c %}Most bills need 60 of the 100 senators to end debate before they can pass, so the majority usually needs some votes from the other side. Counted from the list below.{% else %}It takes 218 votes to pass a bill when every seat is filled and everyone votes. Counted from the member list below; six non-voting delegates are not included.{% endif %}</p>
 </section>
-<div class="zipfind"><label class="fieldset" for="zip-members">Not sure who yours is? Enter your ZIP code</label><div class="search" data-search><input id="zip-members" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5-digit ZIP code"><div class="results" role="listbox" aria-label="Your representative"></div></div></div>
+{% if not c %}<div class="zipfind"><label class="fieldset" for="zip-members">Not sure who yours is? Enter your ZIP code</label><div class="search" data-search><input id="zip-members" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5-digit ZIP code"><div class="results" role="listbox" aria-label="Your representative"></div></div></div>{% endif %}
 <div class="row" style="padding-top:8px">
 <label class="fieldset" for="member-filter">Find a member<input class="field" id="member-filter" type="search" placeholder="Type a name or state" style="width:300px" data-filter="#member-list .person" data-groups="#member-list .state"></label>
 <label class="fieldset" for="state-jump">Jump to a state<select class="field" id="state-jump" style="width:auto" data-jump><option value="">Choose a state</option>{% for state, group in states %}<option value="state-{{ state }}">{{ state_names.get(state, state) }}</option>{% endfor %}</select></label>
@@ -25,8 +25,8 @@
 </div>
 <div id="member-list">
 {% for state, group in states %}<section class="state" id="state-{{ state }}">
-<div><h2 class="h3 keepcase" style="font-size:24px">{{ state_names.get(state, state) }}</h2><span class="small muted">{{ group|length }} {{ 'member' if group|length == 1 else 'members' }}</span></div>
-<div class="people">{% for p in group %}<div class="person" data-text="{{ p.name|lower }} {{ state_names.get(state, state)|lower }} {{ state|lower }}"><span class="dist">{{ p.dist_label }}</span><a href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }}</a>{{ m.badge(p.party, true) }}{% if p.left %}<span class="fine">left office</span>{% endif %}</div>{% endfor %}</div>
+<div><h2 class="h3 keepcase" style="font-size:24px">{{ state_names.get(state, state) }}</h2><span class="small muted">{{ group|length }} {{ ('senator' if c else 'member') if group|length == 1 else ch.members }}</span></div>
+<div class="people">{% for p in group %}<div class="person" data-text="{{ p.name|lower }} {{ state_names.get(state, state)|lower }} {{ state|lower }}"><span class="dist">{{ p.dist_label }}</span><a href="{{ root }}{{ c }}members/{{ p.bioguide }}/">{{ p.name }}</a>{{ m.badge(p.party, true) }}{% if p.left %}<span class="fine">left office</span>{% endif %}</div>{% endfor %}</div>
 </section>{% endfor %}
 </div>
 </div>

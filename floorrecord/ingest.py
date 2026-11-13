@@ -547,7 +547,10 @@ def main():
     ingest_committees()
     ingest_senate(cfg["years"], cfg["congress"])
     upcoming = ingest_upcoming()
-    ingest_bills(votes, cfg["congress"], also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"]])
+    from .senate import ingest_senators, measure_of
+    ingest_senators()
+    senate_slugs = sorted({bill_slug(*m) for path in (DATA / "senate").glob("*/*.json") for m in [measure_of(read_json(path))] if m})
+    ingest_bills(votes, cfg["congress"], also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"]] + senate_slugs)
     ingest_member_bills({p[0] for v in votes for p in v["positions"]}, cfg["congress"])
     from .explain import ai_summaries, ai_vote_lines
     ai_summaries(votes, cfg)

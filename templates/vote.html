@@ -1,15 +1,15 @@
-{% extends "base.html" %}{% import "_m.html" as m %}
-{% block title %}{{ v.info.name }}: {{ v.info.outcome|lcfirst }} · Roll Call {{ v.roll }} · {{ site.site_name }}{% endblock %}
+{% extends "base.html" %}{% import "_m.html" as m with context %}
+{% block title %}{{ v.info.name }}: {{ v.info.outcome|lcfirst }} · {{ ch.roll }} {{ v.roll }} · {{ site.site_name }}{% endblock %}
 {% block desc %}{{ v.date|nicedate }}: {{ v.info.name }}, {{ v.info.outcome|lcfirst }}, {{ v.totals.yea }} to {{ v.totals.nay }}.{% endblock %}
-{% block source %}Every number on this page comes from the official House record of Roll Call {{ v.roll }}, taken {{ v.date|nicedate }}{% if v.time %} at {{ v.time }} ET{% endif %}. <a href="{{ v.source }}">Check it against the Clerk's record</a>.{% endblock %}
+{% block source %}Every number on this page comes from the official {{ ch.name }} record of {{ ch.roll }} {{ v.roll }}, taken {{ v.date|nicedate }}{% if v.time %} at {{ v.time }} ET{% endif %}. <a href="{{ v.source }}">Check it against the Clerk's record</a>.{% endblock %}
 {% block main %}
 <div class="wrap page" style="padding-bottom: 56px">
 <div class="stack">
-<div class="eyebrow"><a href="{{ root }}votes/" style="text-decoration:none;color:inherit">Votes</a><span aria-hidden="true">·</span><span>House of Representatives</span><span aria-hidden="true">·</span><span>{{ v.date|nicedate }}</span></div>
+<div class="eyebrow"><a href="{{ root }}{{ c }}votes/" style="text-decoration:none;color:inherit">Votes</a><span aria-hidden="true">·</span><span>{{ ch.full }}</span><span aria-hidden="true">·</span><span>{{ v.date|nicedate }}</span></div>
 <h1 class="h1">{{ v.info.name }}{% if v.kind == 'standard' %}: {{ v.info.outcome|lcfirst }}{% endif %}</h1>
 {% if v.info.plain %}<p class="lede">{{ v.info.plain }}</p>{% endif %}
 <div class="tags">{{ m.tags(v) }}{% if v.info.source == 'ai' %}<span class="tag proc">Headline written by AI</span>{% endif %}</div>
-<p class="fine" style="font-size:14px">{% if bill %}<a href="{{ root }}bills/{{ v.slug }}/">{{ bill.label }}</a> · {% endif %}{{ v.question }} · Roll Call {{ v.roll }}{% if v.info.title and v.info.title != v.info.name %} · Official title: {{ v.info.title }}{% endif %}{% if sponsor %} · Sponsored by <a href="{{ root }}members/{{ sponsor.bioguide }}/">Rep. {{ sponsor.name }}</a>{% endif %}</p>
+<p class="fine" style="font-size:14px">{% if bill %}<a href="{{ root }}bills/{{ v.slug }}/">{{ bill.label }}</a> · {% endif %}{{ v.question }} · {{ ch.roll }} {{ v.roll }}{% if v.info.title and v.info.title != v.info.name %} · Official title: {{ v.info.title }}{% endif %}{% if sponsor %} · Sponsored by <a href="{{ root }}{{ c }}members/{{ sponsor.bioguide }}/">Rep. {{ sponsor.name }}</a>{% endif %}</p>
 </div>
 
 <div class="card flush">
@@ -18,7 +18,7 @@
 <div class="row" style="gap:12px"><span class="label">Official result</span><span class="pill">{{ v.result }}{% if v.info.result_note %}*{% endif %}</span>{% if v.info.two_thirds %}<span class="tag soft">Needed two-thirds</span>{% endif %}</div>
 {% if v.info.result_note %}<p class="small" style="color:var(--text-2);max-width:520px">* {{ v.info.result_note }}</p>{% endif %}
 </div>
-<a class="small strong" href="{{ v.source }}">Official record: Clerk of the House, Roll Call {{ v.roll }}{% if v.time %}, {{ v.time }} ET{% endif %}</a>
+<a class="small strong" href="{{ v.source }}">Official record: {{ ch.clerk }}, {{ ch.roll }} {{ v.roll }}{% if v.time %}, {{ v.time }} ET{% endif %}</a>
 </div>
 <div class="card-body">
 {% if v.kind == 'standard' %}
@@ -70,7 +70,7 @@
 <p class="muted" style="font-size:18px;max-width:640px">Members who voted differently from most of their own party.</p></div>
 {% if breakers|length and breakers|length <= 6 %}
 {% for b in breakers %}
-<a class="card tint" href="{{ root }}members/{{ b.p.bioguide }}/" style="flex-direction:row;flex-wrap:wrap;gap:20px 32px;align-items:center">
+<a class="card tint" href="{{ root }}{{ c }}members/{{ b.p.bioguide }}/" style="flex-direction:row;flex-wrap:wrap;gap:20px 32px;align-items:center">
 <span class="avatar" style="width:72px;height:72px;font-size:28px;background:#fff;border:1px solid var(--line)" aria-hidden="true">{{ b.p.initials }}</span>
 <span style="display:flex;flex-direction:column;gap:4px;flex:1 1 300px"><span class="h2">{{ b.p.name }}</span><span style="font-size:16px;color:var(--text-2)">{{ b.p.party_name }} · {{ b.p.seat }}{% if sponsor and sponsor.bioguide == b.p.bioguide %} · Sponsor of the measure{% endif %}</span></span>
 <span style="display:flex;flex-direction:column;gap:2px"><span class="h2">{{ m.vword(b.vote) }}</span><span class="small crossed">{{ b.note }}</span></span>
@@ -78,7 +78,7 @@
 </a>{% endfor %}
 {% elif breakers %}
 <div class="grid two">{% for group in breaker_groups %}<div class="card stack" style="gap:12px"><span class="row strong" style="gap:10px">{{ m.badge(group.code) }}{{ group.people|length }} {{ group.name }}s voted {{ m.vword(group.vote) }}</span>
-<div class="chips">{% for p in group.people %}<a class="chip" href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }} <span class="small muted">{{ p.seat }}</span></a>{% endfor %}</div></div>{% endfor %}</div>
+<div class="chips">{% for p in group.people %}<a class="chip" href="{{ root }}{{ c }}members/{{ p.bioguide }}/">{{ p.name }} <span class="small muted">{{ p.seat }}</span></a>{% endfor %}</div></div>{% endfor %}</div>
 {% endif %}
 </section>
 
@@ -86,7 +86,7 @@
 <section class="stack">
 <h2 class="h2">{{ v.totals.nv }} {{ 'member' if v.totals.nv == 1 else 'members' }} did not vote</h2>
 {% for group in absent_groups %}<div class="stack" style="gap:14px"><h3 class="row strong" style="gap:10px;font-size:17px">{{ m.badge(group.code) }}{{ group.people|length }} {{ group.name }}{{ '' if group.people|length == 1 else 's' }}</h3>
-<div class="chips">{% for p in group.people %}<a class="chip" href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }} <span class="small muted">{{ p.seat }}</span></a>{% endfor %}</div></div>{% endfor %}
+<div class="chips">{% for p in group.people %}<a class="chip" href="{{ root }}{{ c }}members/{{ p.bioguide }}/">{{ p.name }} <span class="small muted">{{ p.seat }}</span></a>{% endfor %}</div></div>{% endfor %}
 </section>
 {% endif %}
 
@@ -95,14 +95,14 @@
 <div class="card">
 <p class="rollnote hide" id="roll-note"><span></span> <button type="button" class="linkish" id="roll-all">Show everyone</button></p>
 {% for group in roll_groups %}<details id="voted-{{ group.key }}"{% if loop.first and group.people|length < 40 %} open{% endif %}><summary>{{ group.title }} (<span data-count>{{ group.people|length }}</span>)</summary>
-<div class="cols">{% for p, party in group.people %}<span data-p="{{ party }}"><a href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }}</a><span class="muted">{{ party }}-{{ p.state }}</span></span>{% endfor %}</div></details>{% endfor %}</div>
+<div class="cols">{% for p, party in group.people %}<span data-p="{{ party }}"><a href="{{ root }}{{ c }}members/{{ p.bioguide }}/">{{ p.name }}</a><span class="muted">{{ party }}-{{ p.state }}</span></span>{% endfor %}</div></details>{% endfor %}</div>
 </section>
 
 {% if bill %}
 <section class="card trackbox"><span class="label">Where {{ bill.label }} stands now</span>{{ m.track(bill.track) }}<span class="track-text">{{ bill.track.text }} <a class="small" href="{{ root }}bills/{{ v.slug }}/">More about it</a></span></section>
 <section class="grid two">
 <a class="card" href="{{ root }}bills/{{ v.slug }}/" style="min-height:200px"><span class="label" style="color:var(--accent)">The measure</span><span class="h2">{{ bill.name }}</span><span style="color:var(--text-2)">{{ bill.label }}{% if bill.title != bill.name %} · {{ bill.title|truncate(140) }}{% endif %}</span><span class="go">Read more about it</span></a>
-<a class="card" href="{{ root }}votes/" style="min-height:200px"><span class="label" style="color:var(--accent)">More votes</span><span class="h2">All House votes</span><span style="color:var(--text-2)">Browse every recorded vote, newest first.</span><span class="go">See the list</span></a>
+<a class="card" href="{{ root }}{{ c }}votes/" style="min-height:200px"><span class="label" style="color:var(--accent)">More votes</span><span class="h2">All {{ ch.name }} votes</span><span style="color:var(--text-2)">Browse every recorded vote, newest first.</span><span class="go">See the list</span></a>
 </section>
 {% endif %}
 </div>

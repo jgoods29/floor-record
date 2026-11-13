@@ -72,7 +72,7 @@ def compute(votes, members, bills, cfg):
 
     out_votes = []
     for vote in votes:
-        info = explain(vote, bills)
+        info = vote.get("info") or explain(vote, bills)
         parsed = parse_legis(vote["legis"])
         slug = bill_slug(*parsed) if parsed else ""
         issue = (bills.get(slug) or {}).get("policy_area", "") if slug else ""
@@ -121,7 +121,7 @@ def compute(votes, members, bills, cfg):
         for b in breakers:
             by_party[vote_party[b]] += 1
         tags = []
-        if standard and margin <= 15:
+        if standard and margin <= cfg.get("close_margin", 15):
             tags.append(("close", "Close vote"))
         if split:
             tags.append(("split", "Parties split"))
