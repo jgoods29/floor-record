@@ -1,14 +1,14 @@
-{% extends "base.html" %}{% import "_m.html" as m %}
+{% extends "base.html" %}{% import "_m.html" as m with context %}
 {% block title %}{{ b.name }} ({{ b.label }}) · {{ site.site_name }}{% endblock %}
 {% block source %}Votes come from the Clerk of the House. Titles, sponsors and official summaries come from the Library of Congress. <a href="{{ b.congress_url }}">See the official record on Congress.gov</a>.{% endblock %}
 {% block main %}
 <div class="wrap page">
 <div class="stack">
-<div class="eyebrow"><a href="{{ root }}bills/" style="text-decoration:none;color:inherit">Bills</a><span aria-hidden="true">·</span><span>{{ b.kind_name }}</span></div>
+<div class="eyebrow"><a href="{{ root }}{{ c }}bills/" style="text-decoration:none;color:inherit">Bills</a><span aria-hidden="true">·</span><span>{{ b.kind_name }}</span></div>
 <h1 class="h1" style="font-size:clamp(30px,4.4vw,52px)">{{ b.name }}</h1>
 <button type="button" class="btn sm follow" data-follow="fr-bills" data-id="{{ b.slug }}" data-what="bill" style="align-self:flex-start">Follow this bill</button>
 <div class="tags"><span class="tag split">{{ b.label }}</span>{% if b.topic %}<span class="tag proc">{{ b.topic }}</span>{% endif %}</div>
-<div class="trackbox"><span class="label">Where it stands</span>{{ m.track(b.track) }}<span class="track-text">{{ b.track.text }} <a class="small" href="{{ root }}start/#s3">How a bill becomes a law</a></span></div>
+<div class="trackbox"><span class="label">Where it stands</span>{{ m.track(b.track) }}<span class="track-text">{{ b.track.text }} <a class="small" href="{{ root }}{{ c }}start/#s3">How a bill becomes a law</a></span></div>
 {% if b.title != b.name %}<p class="fine" style="font-size:14px;max-width:760px">Official title: {{ b.title }}</p>{% endif %}
 </div>
 

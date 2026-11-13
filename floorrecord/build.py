@@ -552,19 +552,46 @@ def main():
     # Every topic picker shows the popular topics first, then whatever the House has voted on most lately.
     hot = sorted((t for t in all_topics if not t["popular"] and t["recent"]), key=lambda t: -t["recent"])
     trending = [t for t in all_topics if t["popular"]] + hot[:max(0, 10 - sum(1 for t in all_topics if t["popular"]))]
-    if all_topics:
-        render("topics/index.html", "topics.html", 1, section="topics",
-               popular=[t for t in all_topics if t["popular"]],
-               topics=sorted(all_topics, key=lambda t: t["name"]))
-        for t in all_topics:
-            render(f"topics/{t['key']}/index.html", "topic.html", 2, section="topics", t=t, votes=by_topic[t["key"]],
+    def topic_pages(pre, ch, pool):
+        """Topic pages for one chamber, holding only that chamber's votes. Every topic gets a page in both,
+        so a link never lands nowhere; a chamber with no votes on a topic says so."""
+        mine, real = defaultdict(list), defaultdict(int)
+        for v in sorted(pool, key=lambda v: (v["date"], v["roll"]), reverse=True):
+            for key in v["topic_keys"]:
+                mine[key].append(v)
+                if v["kind"] == "standard" and not v["info"]["routine"]:
+                    real[key] += 1
+        rows = [dict(t, total=len(mine[t["key"]]), real=real[t["key"]], latest=mine[t["key"]][0] if mine[t["key"]] else None) for t in all_topics]
+        deep = 1 if pre else 0
+        render(f"{pre}topics/index.html", "topics.html", 1 + deep, section="topics", c=pre, ch=ch,
+               popular=[t for t in rows if t["popular"] and t["real"]], topics=sorted((t for t in rows if t["real"]), key=lambda t: t["name"]))
+        for t in rows:
+            render(f"{pre}topics/{t['key']}/index.html", "topic.html", 2 + deep, section="topics", c=pre, ch=ch, t=t, votes=mine[t["key"]],
                    nroutine=t["total"] - t["real"])
+    topic_pages("", HOUSE, votes)
+    if svotes:
+        topic_pages("senate/", SENATE, svotes)
     congress_root = f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
     weeks = upcoming_weeks(read_json(DATA / "upcoming.json", {}), votes, bills, measures,
                            {t["key"] for t in all_topics}, today, congress_root)
     coming = next((w for w in weeks if w["items"]), None)
     render("upcoming/index.html", "upcoming.html", 1, section="upcoming", weeks=weeks)
     render("start/index.html", "start.html", 1, section="start")
+    if svotes:
+        # The Senate posts no weekly list like the House's, so its "coming up" is what is already waiting on it.
+        waiting = sorted((m for m in measures.values() if any(st["state"] == "now" and st["label"] == "Senate" for st in m["track"]["steps"])),
+                         key=lambda m: (m["allvotes"][0]["date"], m["allvotes"][0]["roll"]), reverse=True)
+        open_noms = {}
+        for v in sorted(svotes, key=lambda v: (v["date"], v["roll"])):
+            if v["info"]["kind"] == "cloture_nom" and v["info"]["outcome"] == "Debate Ended":
+                open_noms[v["info"]["name"]] = v
+            elif v["info"]["kind"] == "nomination":
+                open_noms.pop(v["info"]["name"], None)
+        spending = {"bills": waiting[:25], "nbills": len(waiting), "noms": [v for v in sorted(open_noms.values(), key=lambda v: v["date"], reverse=True)
+                             if (date.fromisoformat(max(x["date"] for x in svotes)) - date.fromisoformat(v["date"])).days <= 14][:12]}
+        render("senate/upcoming/index.html", "pending.html", 2, section="upcoming", c="senate/", ch=SENATE, pending=spending)
+        render("senate/start/index.html", "start.html", 2, section="start", c="senate/", ch=SENATE)
+        render("senate/why/index.html", "why.html", 2, section="why", c="senate/", ch=SENATE)
     contacts = [[p["bioguide"], p["name"], p["state"], p["dist_label"], p["party"], members.get(p["bioguide"], {}).get("url", ""),
                  members.get(p["bioguide"], {}).get("phone", ""), members.get(p["bioguide"], {}).get("contact_form", ""), p.get("district") or 0]
                 for p in sorted(people.values(), key=lambda p: (p["state"], p.get("district") or 0, p["sort"])) if not p["left"]]
@@ -575,50 +602,55 @@ def main():
         by_digit[z[0]][z] = where
     for digit, rows in by_digit.items():
         write_json(SITE / "zip" / f"{digit}.json", rows)
-    # ---- the big picture: everything on file, from far above
-    real = [v for v in votes if v["kind"] == "standard" and not v["info"]["routine"]]
-    won = sum(1 for v in real if (v.get("result") or "").lower().startswith(("passed", "agreed")))
-    split_n = sum(1 for v in real if v.get("split"))
-    close_n = sum(1 for v in real if any(k == "close" for k, _ in v["tags"]))
-    cast = sum(v["totals"]["yea"] + v["totals"]["nay"] + v["totals"].get("present", 0) for v in votes)
-    seats_n = cast + sum(v["totals"].get("nv", 0) for v in votes)
-    bills_by_topic = defaultdict(int)
-    for m in measures.values():
-        if not any(v["kind"] == "standard" and not v["info"]["routine"] for v in m["votes"]):
-            continue
-        for key in m["votes"][0]["topic_keys"]:
-            bills_by_topic[key] += 1
-    topic_rows = sorted(({"name": t["name"], "key": t["key"], "votes": t["real"], "bills": bills_by_topic.get(t["key"], 0)}
-                         for t in all_topics if t["real"]), key=lambda r: -r["votes"])
-    laws = [m for m in measures.values() if m["kind"] in ("hr", "s", "hjres", "sjres") and m["votes"]]
-    def reached(m, n):
-        return sum(1 for st in m["track"]["steps"] if st["state"] == "done") >= n
-    funnel = [("Got a recorded House vote", len(laws)), ("Passed the House", sum(1 for m in laws if reached(m, 3) and (m["kind"].startswith("h") or reached(m, 4)))),
-              ("Passed both House and Senate", sum(1 for m in laws if reached(m, 4))), ("Became law", sum(1 for m in laws if reached(m, 6)))]
-    months = defaultdict(int)
-    for v in votes:
-        months[v["date"][:7]] += 1
-    month_rows = [{"key": k, "n": n, "label": date.fromisoformat(k + "-01").strftime("%b"), "year": k[:4]} for k, n in sorted(months.items())]
-    closest = min(real, key=lambda v: (v["margin"], -v["roll"])) if real else None
-    big = {"real": len(real), "routine": len(votes) - len(real), "won": won, "lost": len(real) - won,
-           "split": split_n, "together": len(real) - split_n, "close": close_n,
-           "turnout": 100.0 * cast / seats_n if seats_n else 0, "bills": sum(1 for m in measures.values() if m["votes"]), "laws": funnel[-1][1],
-           "topics": topic_rows, "topic_max": max([r["votes"] for r in topic_rows] or [1]),
-           "funnel": funnel, "months": month_rows, "month_max": max([r["n"] for r in month_rows] or [1]), "closest": closest}
-    sbig = None
+    # ---- the big picture: everything one chamber has on file, from far above
+    GOOD = ("Passed", "Confirmed", "Adopted", "Taken Up", "Debate Ended", "Agreed To", "Set Aside", "Pulled From Committee", "Veto Overridden", "Rule Set Aside")
+    def big_picture(pre, ch, pool, mkey):
+        senate = bool(pre)
+        real = [v for v in pool if v["kind"] == "standard" and not v["info"]["routine"]]
+        if senate:
+            won = sum(1 for v in real if v["info"]["outcome"] in GOOD)
+        else:
+            won = sum(1 for v in real if (v.get("result") or "").lower().startswith(("passed", "agreed")))
+        split_n = sum(1 for v in real if v.get("split"))
+        close_n = sum(1 for v in real if any(k == "close" for k, _ in v["tags"]))
+        cast = sum(v["totals"]["yea"] + v["totals"]["nay"] + v["totals"].get("present", 0) for v in pool)
+        seats_n = cast + sum(v["totals"].get("nv", 0) for v in pool)
+        real_by, bills_by = defaultdict(int), defaultdict(int)
+        for v in real:
+            for key in v["topic_keys"]:
+                real_by[key] += 1
+        voted = [m for m in measures.values() if m[mkey]]
+        for m in voted:
+            if any(v["kind"] == "standard" and not v["info"]["routine"] for v in m[mkey]):
+                for key in m[mkey][0]["topic_keys"]:
+                    bills_by[key] += 1
+        topic_rows = sorted(({"name": t["name"], "key": t["key"], "votes": real_by[t["key"]], "bills": bills_by.get(t["key"], 0)}
+                             for t in all_topics if real_by[t["key"]]), key=lambda r: -r["votes"])
+        laws = [m for m in voted if m["kind"] in ("hr", "s", "hjres", "sjres")]
+        done = lambda m: sum(1 for st in m["track"]["steps"] if st["state"] == "done")
+        here = lambda m: any(st["label"] == ch["name"] and st["state"] == "done" for st in m["track"]["steps"])
+        funnel = [(f"Got a recorded {ch['name']} vote", len(laws)), (f"Passed the {ch['name']}", sum(1 for m in laws if here(m))),
+                  ("Passed both House and Senate", sum(1 for m in laws if done(m) >= 4)), ("Became law", sum(1 for m in laws if done(m) >= 6))]
+        months = defaultdict(int)
+        for v in pool:
+            months[v["date"][:7]] += 1
+        month_rows = [{"key": k, "n": n, "label": date.fromisoformat(k + "-01").strftime("%b"), "year": k[:4]} for k, n in sorted(months.items())]
+        big = {"real": len(real), "routine": len(pool) - len(real), "won": won, "lost": len(real) - won,
+               "split": split_n, "together": len(real) - split_n, "close": close_n,
+               "turnout": 100.0 * cast / seats_n if seats_n else 0, "bills": len(voted), "laws": funnel[-1][1],
+               "topics": topic_rows, "topic_max": max([r["votes"] for r in topic_rows] or [1]),
+               "funnel": funnel, "months": month_rows, "month_max": max([r["n"] for r in month_rows] or [1]),
+               "closest": min(real, key=lambda v: (v["margin"], -v["roll"])) if real else None}
+        extra = None
+        if senate:
+            sixty = [v for v in pool if v["type"] == "3/5"]
+            extra = {"confirm": sum(1 for v in pool if v["info"]["kind"] == "nomination"), "sixty": len(sixty),
+                     "sixty_fail": sum(1 for v in sixty if v["info"]["outcome"] not in GOOD),
+                     "ties": sum(1 for v in pool if "Vice President broke the tie" in v["info"]["result_note"])}
+        render(f"{pre}big-picture/index.html", "overview.html", 2 if pre else 1, section="big", c=pre, ch=ch, big=big, sbig=extra, nvotes=len(pool))
+    big_picture("", HOUSE, votes, "votes")
     if svotes:
-        sreal = [v for v in svotes if not v["info"]["routine"]]
-        kinds = defaultdict(int)
-        for v in svotes:
-            kinds[v["info"]["kind"]] += 1
-        sixty = [v for v in svotes if v["type"] == "3/5"]
-        good = ("Passed", "Confirmed", "Adopted", "Taken Up", "Debate Ended", "Agreed To", "Set Aside", "Pulled From Committee", "Veto Overridden", "Rule Set Aside")
-        sbig = {"total": len(svotes), "real": len(sreal), "confirm": kinds["nomination"], "sixty": len(sixty),
-                "sixty_fail": sum(1 for v in sixty if v["info"]["outcome"] not in good),
-                "won": sum(1 for v in sreal if v["info"]["outcome"] in good),
-                "split": sum(1 for v in sreal if v["split"]), "close": sum(1 for v in sreal if any(k == "close" for k, _ in v["tags"])),
-                "ties": sum(1 for v in svotes if "Vice President broke the tie" in v["info"]["result_note"])}
-    render("big-picture/index.html", "overview.html", 1, section="big", big=big, sbig=sbig)
+        big_picture("senate/", SENATE, svotes, "svotes")
     render("why/index.html", "why.html", 1, section="why")
     # small lookup files for the personal home page, which is put together in the visitor's own browser
     write_json(SITE / "bills-index.json", {m["slug"]: [m["name"], m["label"], "".join(st["state"][0] for st in m["track"]["steps"]),
@@ -692,8 +724,14 @@ def main():
     states = [(s, sorted(g, key=lambda p: (p.get("district") or 0, p["sort"])))
               for s, g in sorted(by_state.items(), key=lambda kv: STATES.get(kv[0], kv[0]))]
     render("members/index.html", "members.html", 1, section="members", states=states, house=house)
+    render("house/index.html", "chamber.html", 1, section="chamber", house=house, featured=featured,
+           latest=[v for v in newest if v["kind"] == "standard" and not v["info"]["routine"]][:6],
+           nbills=sum(1 for m in measures.values() if m["votes"]), ncoming=len(coming["items"]) if coming else 0)
     bill_list = sorted(measures.values(), key=lambda m: (m["allvotes"][0]["date"], m["allvotes"][0]["roll"]), reverse=True)
-    render("bills/index.html", "bills.html", 1, section="bills", act={"topic": "", "key": ""}, bills=bill_list)
+    for pre, ch, mkey in (("", HOUSE, "votes"), ("senate/", SENATE, "svotes")):
+        mine = sorted((m for m in measures.values() if m[mkey]), key=lambda m: (m[mkey][0]["date"], m[mkey][0]["roll"]), reverse=True)
+        if mine:
+            render(f"{pre}bills/index.html", "bills.html", 2 if pre else 1, section="bills", c=pre, ch=ch, act={"topic": "", "key": ""}, bills=mine)
     render("about/index.html", "about.html", 1, section="about")
     render("404.html", "404.html", 0, section="")
 
@@ -762,7 +800,7 @@ def main():
                     "name": title_case(short_name(title, label)), "title": title or label, "label": label, "introduced": introduced,
                     "topic": topic_name(area), "action": action, "action_date": action_date, "status": status, "moved": moved,
                     "internal": internal,
-                    "href": f"{'../' * (2 + deep)}bills/{slug}/" if internal else f"{congress_base}{CONGRESS_PATH[kind]}/{number}",
+                    "href": f"../../bills/{slug}/" if internal else f"{congress_base}{CONGRESS_PATH[kind]}/{number}",
                 })
             return rows[:limit] if limit else rows
 
@@ -843,10 +881,14 @@ def main():
         swith = {k: sum(1 for p in sseated if p["party"] == "I" and senators.get(p["bioguide"], {}).get("caucus") == k) for k in ("R", "D")}
         sside = {k: sheld[k] + swith[k] for k in ("R", "D")}
         stop = "R" if sside["R"] >= sside["D"] else "D"
-        render("senate/members/index.html", "members.html", 2, section="members", c="senate/", ch=SENATE, states=sstates,
-               house={"svg": seat_chart(sheld, total=100, rows=4), "held": sheld, "top": stop, "low": "D" if stop == "R" else "R",
-                      "side": sside, "ind_with": swith, "ind_other": sheld["I"] - swith["R"] - swith["D"],
-                      "names": {"R": "Republican", "D": "Democratic"}})
+        shouse = {"svg": seat_chart(sheld, total=100, rows=4), "held": sheld, "top": stop, "low": "D" if stop == "R" else "R",
+                  "side": sside, "ind_with": swith, "ind_other": sheld["I"] - swith["R"] - swith["D"],
+                  "names": {"R": "Republican", "D": "Democratic"}}
+        render("senate/members/index.html", "members.html", 2, section="members", c="senate/", ch=SENATE, states=sstates, house=shouse)
+        render("senate/index.html", "chamber.html", 1, section="chamber", c="senate/", ch=SENATE, house=shouse, featured=sfeatured, nvotes=len(svotes),
+               latest=[v for v in snewest if v["kind"] == "standard" and not v["info"]["routine"]][:6],
+               nbills=sum(1 for m in measures.values() if m["svotes"]),
+               nconfirm=sum(1 for v in svotes if v["info"]["kind"] == "nomination"))
         groups = {"cabinet": "The Cabinet", "judges": "Judges", "ambassadors": "Ambassadors", "military": "Military Leaders",
                   "other": "Agencies And Other Posts", "bloc": "Groups Voted On Together"}
         noms = [{"v": v, "person": v["info"]["nominee"][0], "post": v["info"]["nominee"][1], "group": v["info"]["nominee"][2],
@@ -865,9 +907,10 @@ def main():
     # ---- bill pages
     for m in measures.values():
         bt = m["allvotes"][0] if m["allvotes"] else None
-        render(f"bills/{m['slug']}/index.html", "bill.html", 2, section="bills", b=m, ai=summaries.get(m["slug"]),
-               act={"topic": bt["topics"][0], "key": bt["topic_keys"][0]} if bt and bt["topics"] else {"topic": "", "key": ""},
-               sponsor=people.get(m["rec"].get("sponsor")))
+        for pre, ch in (("", HOUSE), ("senate/", SENATE)) if svotes else (("", HOUSE),):
+            render(f"{pre}bills/{m['slug']}/index.html", "bill.html", 3 if pre else 2, section="bills", c=pre, ch=ch, b=m, ai=summaries.get(m["slug"]),
+                   act={"topic": bt["topics"][0], "key": bt["topic_keys"][0]} if bt and bt["topics"] else {"topic": "", "key": ""},
+                   sponsor=people.get(m["rec"].get("sponsor")))
 
     # ---- leaderboard and search
     def compare_page(pre, ch, pool):

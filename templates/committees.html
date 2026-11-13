@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% import "_m.html" as m %}
+{% extends "base.html" %}{% import "_m.html" as m with context %}
 {% block title %}{{ ch.name }} committees · {{ site.site_name }}{% endblock %}
 {% macro who(r, tag='') %}{% if r %}{% if tag %}<span class="role {{ 'chair' if tag == 'Chair' else '' }}">{{ tag }}</span> {% endif %}{% if r.id %}<a href="{{ root }}{{ r.pre }}members/{{ r.id }}/">{{ r.name }}</a>{% else %}{{ r.name }}{% endif %}{% if r.party %} {{ m.badge(r.party, true) }}{% endif %}{% else %}<span class="muted">Not listed</span>{% endif %}{% endmacro %}
 {% block main %}

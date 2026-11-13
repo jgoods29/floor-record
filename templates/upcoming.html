@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% import "_m.html" as m %}
+{% extends "base.html" %}{% import "_m.html" as m with context %}
 {% block title %}Coming up for a vote · {{ site.site_name }}{% endblock %}
 {% block main %}
 <div class="wrap page" style="gap:44px">
@@ -13,7 +13,7 @@
 {% if w['items'] %}<div class="card flush rows">{% for i in w['items'] %}<div class="uprow">
 <div class="stack" style="gap:4px"><a class="up-name" href="{{ i.url if i.outside else root ~ i.url }}"{% if i.outside %} rel="noopener"{% endif %}>{{ i.name }}</a>
 <span class="small muted">{{ i.label }}{% if i.outside %} · opens the official page on Congress.gov{% endif %}{% if i.doc %} · <a href="{{ i.doc }}" rel="noopener">Read the text</a>{% endif %}</span>{{ m.track(i.track, true) }}</div>
-<div class="tags">{% if i.topic %}<a class="tag soft tip" href="{{ root }}topics/{% if i.topic_key %}{{ i.topic_key }}/{% endif %}" data-tip="This bill is about {{ i.topic|lower }}. Select to see {{ 'every House vote on this topic' if i.topic_key else 'all topics' }}.">{{ i.topic }}</a>{% endif %}<a class="tag tip {{ 'status moved' if i.how == 'rule' else 'status' }}" href="#how-{{ i.how }}" data-tip="{{ i.how_note }} Select to read more.">{{ i.how_label }}</a></div>
+<div class="tags">{% if i.topic %}<a class="tag soft tip" href="{{ root }}{{ c }}topics/{% if i.topic_key %}{{ i.topic_key }}/{% endif %}" data-tip="This bill is about {{ i.topic|lower }}. Select to see {{ 'every House vote on this topic' if i.topic_key else 'all topics' }}.">{{ i.topic }}</a>{% endif %}<a class="tag tip {{ 'status moved' if i.how == 'rule' else 'status' }}" href="#how-{{ i.how }}" data-tip="{{ i.how_note }} Select to read more.">{{ i.how_label }}</a></div>
 </div>{% endfor %}</div>
 {% else %}<p class="card muted">Nothing left on this week's list.</p>{% endif %}
 {% if w.done %}<p class="small muted">{{ w.done }} {{ 'bill' if w.done == 1 else 'bills' }} from this week's list {{ 'has' if w.done == 1 else 'have' }} already been voted on. <a href="{{ root }}votes/">See how those votes went</a>.</p>{% endif %}

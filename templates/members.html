@@ -5,7 +5,7 @@
 <div class="stack" style="gap:16px">
 <h1 class="h1">{{ "Senators" if c else "Members" }}</h1>
 <p class="lede">{% if c %}Everyone who has voted in the U.S. Senate this Congress, listed by state. Every state has two senators. Select a name to see how they vote.{% else %}Everyone who has voted in the U.S. House this Congress, listed by state and district. Select a name to see how they vote.{% endif %}</p>
-{% if not c %}<p class="newline">Each member speaks for the people of one district, an area of a state. One of them is yours. New here? <a href="{{ root }}start/">Start with the basics</a>. Want to know what is next? <a href="{{ root }}upcoming/">See what is coming up</a>.</p>{% endif %}
+{% if not c %}<p class="newline">Each member speaks for the people of one district, an area of a state. One of them is yours. New here? <a href="{{ root }}{{ c }}start/">Start with the basics</a>. Want to know what is next? <a href="{{ root }}{{ c }}upcoming/">See what is coming up</a>.</p>{% endif %}
 <section class="card housebox" aria-labelledby="house-h">
 <div class="stack" style="gap:2px"><span class="label" id="house-h">Who holds the {{ ch.name }}</span><span class="muted">Party breakdown of the {{ ch.seats }} {{ "seats" if c else "voting seats" }}</span></div>
 <div class="houseflex">{{ house.svg|safe }}
@@ -15,7 +15,7 @@
 {% if house.ind_other %}<div><span class="hk-h">Independent ({{ house.ind_other }})</span><span><i class="sw sI"></i>Independent <strong>({{ house.ind_other }})</strong></span></div>{% endif %}
 {% if house.held.V %}<div><span class="hk-h">Vacant ({{ house.held.V }})</span><span><i class="sw sV"></i>Empty seats <strong>({{ house.held.V }})</strong></span></div>{% endif %}
 </div></div>
-<p class="small muted" style="margin:0">The majority party chairs every <a href="{{ root }}committees/">committee</a> and decides which bills get a vote. {% if c %}Most bills need 60 of the 100 senators to end debate before they can pass, so the majority usually needs some votes from the other side. Counted from the list below.{% else %}It takes 218 votes to pass a bill when every seat is filled and everyone votes. Counted from the member list below; six non-voting delegates are not included.{% endif %}</p>
+<p class="small muted" style="margin:0">The majority party chairs every <a href="{{ root }}{{ c }}committees/">committee</a> and decides which bills get a vote. {% if c %}Most bills need 60 of the 100 senators to end debate before they can pass, so the majority usually needs some votes from the other side. Counted from the list below.{% else %}It takes 218 votes to pass a bill when every seat is filled and everyone votes. Counted from the member list below; six non-voting delegates are not included.{% endif %}</p>
 </section>
 {% if not c %}<div class="zipfind"><label class="fieldset" for="zip-members">Not sure who yours is? Enter your ZIP code</label><div class="search" data-search><input id="zip-members" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5-digit ZIP code"><div class="results" role="listbox" aria-label="Your representative"></div></div></div>{% endif %}
 <div class="row" style="padding-top:8px">

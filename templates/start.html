@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% import "_m.html" as m %}
+{% extends "base.html" %}{% import "_m.html" as m with context %}
 {% block title %}New here? Start here · {{ site.site_name }}{% endblock %}
 {% block main %}
 <div class="wrap page start" style="gap:64px">
@@ -12,7 +12,7 @@
 <h2 class="h2" id="s1">1. What is Congress?</h2>
 <p class="plain">Congress is the group of people elected to write the country's laws. It has two halves, and a new law needs a yes from both.</p>
 <div class="grid">
-<div class="card stack" style="gap:8px"><span class="h3">The House</span><span class="bignum">435</span><span>voting members. Each one speaks for one area of a state, called a <strong>district</strong>. Everyone is up for election every two years.</span><a class="tag soft" style="align-self:flex-start" href="{{ root }}votes/">See House votes</a></div>
+<div class="card stack" style="gap:8px"><span class="h3">The House</span><span class="bignum">435</span><span>voting members. Each one speaks for one area of a state, called a <strong>district</strong>. Everyone is up for election every two years.</span><a class="tag soft" style="align-self:flex-start" href="{{ root }}{{ c }}votes/">See House votes</a></div>
 <div class="card stack" style="gap:8px"><span class="h3">The Senate</span><span class="bignum">100</span><span>members, called senators. Every state gets two, no matter its size. Each serves six years.</span><a class="tag soft" style="align-self:flex-start" href="{{ root }}senate/votes/">Now on this site</a></div>
 </div>
 </section>
@@ -21,7 +21,7 @@
 <h2 class="h2" id="s2">2. Who is "my representative"?</h2>
 <p class="plain">Wherever you live in the United States, exactly one person in the House represents you. You do not need to have voted for them. Their job is to vote on your behalf, and this site shows you how they have been doing it.</p>
 <div class="zipfind"><label class="fieldset" for="zip-start">Not sure who yours is? Enter your ZIP code</label><div class="search" data-search><input id="zip-start" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5-digit ZIP code"><div class="results" role="listbox" aria-label="Your representative"></div></div></div>
-<div class="row"><a href="{{ root }}members/">Or browse everyone by state</a></div>
+<div class="row"><a href="{{ root }}{{ c }}members/">Or browse everyone by state</a></div>
 </section>
 
 <section class="stack" aria-labelledby="s3">
@@ -47,7 +47,7 @@
 </div>
 <p class="plain">Most votes pass when more than half of the members voting say yea. Each party usually votes together, so the votes where a member goes their own way can tell you a lot.</p>
 <p class="plain"><strong>One thing that trips everyone up:</strong> a lot of votes are not about a bill itself. They are about steps along the way, like whether to keep debating or to set a bill aside. On those, a "yea" can mean the opposite of what you would guess. We spell out what yea and nay meant on every vote, and we tuck the routine ones out of the way.</p>
-<div class="row"><a class="btn go" href="{{ root }}votes/">See the latest votes</a><a href="{{ root }}about/">More words you will see</a></div>
+<div class="row"><a class="btn go" href="{{ root }}{{ c }}votes/">See the latest votes</a><a href="{{ root }}about/">More words you will see</a></div>
 </section>
 
 <section class="stack" aria-labelledby="s4b">
@@ -61,9 +61,9 @@
 <section class="stack" aria-labelledby="s5">
 <h2 class="h2" id="s5">5. What can I do with this?</h2>
 <div class="grid steps">
-<a class="card step" href="{{ root }}members/"><span class="h3">Check on your representative</span><span>See every vote they have cast, what bills they wrote, and how often they show up.</span><span class="go">Find a member</span></a>
-<a class="card step" href="{{ root }}topics/"><span class="h3">Follow what you care about</span><span>Pick a topic, like health, taxes or farming, and see only those votes.</span><span class="go">Browse topics</span></a>
-<a class="card step" href="{{ root }}upcoming/"><span class="h3">See what is coming</span><span>Look at the bills the House may vote on next, while there is still time to speak up.</span><span class="go">Coming up</span></a>
+<a class="card step" href="{{ root }}{{ c }}members/"><span class="h3">Check on your representative</span><span>See every vote they have cast, what bills they wrote, and how often they show up.</span><span class="go">Find a member</span></a>
+<a class="card step" href="{{ root }}{{ c }}topics/"><span class="h3">Follow what you care about</span><span>Pick a topic, like health, taxes or farming, and see only those votes.</span><span class="go">Browse topics</span></a>
+<a class="card step" href="{{ root }}{{ c }}upcoming/"><span class="h3">See what is coming</span><span>Look at the bills the House may vote on next, while there is still time to speak up.</span><span class="go">Coming up</span></a>
 </div>
 </section>
 

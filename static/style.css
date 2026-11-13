@@ -567,3 +567,6 @@ header .yours .yours-x { border: 0; background: none; color: var(--muted); font:
 .btn.follow { align-self: flex-start; }
 .mine [hidden] { display: none !important; }
 .mine [data-mine-clear] { font-size: 14px; }
+
+/* eleven tabs in the Senate: keep them on one line on a wide screen */
+@media (min-width: 1100px) { .nav { gap: 4px 0; } .nav a { padding: 10px 9px; } }

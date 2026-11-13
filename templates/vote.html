@@ -9,7 +9,7 @@
 <h1 class="h1">{{ v.info.name }}{% if v.kind == 'standard' %}: {{ v.info.outcome|lcfirst }}{% endif %}</h1>
 {% if v.info.plain %}<p class="lede">{{ v.info.plain }}</p>{% endif %}
 <div class="tags">{{ m.tags(v) }}{% if v.info.source == 'ai' %}<span class="tag proc">Headline written by AI</span>{% endif %}</div>
-<p class="fine" style="font-size:14px">{% if bill %}<a href="{{ root }}bills/{{ v.slug }}/">{{ bill.label }}</a> · {% endif %}{{ v.question }} · {{ ch.roll }} {{ v.roll }}{% if v.info.title and v.info.title != v.info.name %} · Official title: {{ v.info.title }}{% endif %}{% if sponsor %} · Sponsored by <a href="{{ root }}{{ c }}members/{{ sponsor.bioguide }}/">Rep. {{ sponsor.name }}</a>{% endif %}</p>
+<p class="fine" style="font-size:14px">{% if bill %}<a href="{{ root }}{{ c }}bills/{{ v.slug }}/">{{ bill.label }}</a> · {% endif %}{{ v.question }} · {{ ch.roll }} {{ v.roll }}{% if v.info.title and v.info.title != v.info.name %} · Official title: {{ v.info.title }}{% endif %}{% if sponsor %} · Sponsored by <a href="{{ root }}{{ c }}members/{{ sponsor.bioguide }}/">Rep. {{ sponsor.name }}</a>{% endif %}</p>
 </div>
 
 <div class="card flush">
@@ -50,7 +50,7 @@
 <div class="card"><span class="h3">A Yea vote</span><p style="font-size:18px;color:var(--text-2)">was a vote to {{ v.info.yea }}.</p></div>
 <div class="card"><span class="h3">A Nay vote</span><p style="font-size:18px;color:var(--text-2)">was a vote to {{ v.info.nay }}.</p></div>
 </div>
-{% if ai %}<div class="card"><span class="label">What the measure does · AI-written summary</span><p style="font-size:18px;margin-top:8px">{{ ai.one_sentence }}</p><p class="small muted" style="margin-top:8px">Drafted by AI from the official title and summary. <a href="{{ root }}bills/{{ v.slug }}/">Read more and check the source</a>.</p></div>{% endif %}
+{% if ai %}<div class="card"><span class="label">What the measure does · AI-written summary</span><p style="font-size:18px;margin-top:8px">{{ ai.one_sentence }}</p><p class="small muted" style="margin-top:8px">Drafted by AI from the official title and summary. <a href="{{ root }}{{ c }}bills/{{ v.slug }}/">Read more and check the source</a>.</p></div>{% endif %}
 </div></section>
 
 <div class="wrap page">
@@ -99,9 +99,9 @@
 </section>
 
 {% if bill %}
-<section class="card trackbox"><span class="label">Where {{ bill.label }} stands now</span>{{ m.track(bill.track) }}<span class="track-text">{{ bill.track.text }} <a class="small" href="{{ root }}bills/{{ v.slug }}/">More about it</a></span></section>
+<section class="card trackbox"><span class="label">Where {{ bill.label }} stands now</span>{{ m.track(bill.track) }}<span class="track-text">{{ bill.track.text }} <a class="small" href="{{ root }}{{ c }}bills/{{ v.slug }}/">More about it</a></span></section>
 <section class="grid two">
-<a class="card" href="{{ root }}bills/{{ v.slug }}/" style="min-height:200px"><span class="label" style="color:var(--accent)">The measure</span><span class="h2">{{ bill.name }}</span><span style="color:var(--text-2)">{{ bill.label }}{% if bill.title != bill.name %} · {{ bill.title|truncate(140) }}{% endif %}</span><span class="go">Read more about it</span></a>
+<a class="card" href="{{ root }}{{ c }}bills/{{ v.slug }}/" style="min-height:200px"><span class="label" style="color:var(--accent)">The measure</span><span class="h2">{{ bill.name }}</span><span style="color:var(--text-2)">{{ bill.label }}{% if bill.title != bill.name %} · {{ bill.title|truncate(140) }}{% endif %}</span><span class="go">Read more about it</span></a>
 <a class="card" href="{{ root }}{{ c }}votes/" style="min-height:200px"><span class="label" style="color:var(--accent)">More votes</span><span class="h2">All {{ ch.name }} votes</span><span style="color:var(--text-2)">Browse every recorded vote, newest first.</span><span class="go">See the list</span></a>
 </section>
 {% endif %}

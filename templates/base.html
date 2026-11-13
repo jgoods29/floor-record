@@ -8,25 +8,25 @@
 <link rel="preload" href="{{ root }}static/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ root }}static/style.css?v={{ asset_v }}">
 </head>
-<body data-root="{{ root }}" data-c="{{ c }}" data-scope="{{ 'senate' if c else ('house' if section in ('votes', 'members', 'committees', 'compare') else 'all') }}">
+<body data-root="{{ root }}" data-c="{{ c }}" data-scope="{{ 'all' if section in ('home', 'about') else ('senate' if c else 'house') }}">
 <header class="top">
 <div class="stripe" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></div>
 <div class="wrap">
 <a class="brand" href="{{ root }}"><span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>{{ site.site_name }}</a>
-{% if has_senate %}{% set csec = section if section in ('votes', 'members', 'committees', 'compare') else 'votes' %}{% set chambered = section in ('votes', 'members', 'committees', 'compare', 'confirmations') %}
-<div class="chamber" role="group" aria-label="Switch between the House and the Senate">
-<a href="{{ root }}{{ csec }}/"{% if chambered and not c %} aria-current="true"{% endif %}>House</a><a href="{{ root }}senate/{{ 'confirmations' if section == 'confirmations' else csec }}/"{% if chambered and c %} aria-current="true"{% endif %}>Senate</a></div>{% endif %}
+{% set neutral = section in ('home', 'about') %}{% if has_senate %}<div class="chamber" role="group" aria-label="Switch between the House and the Senate">
+<a href="{{ root }}house/"{% if not neutral and not c %} aria-current="true"{% endif %}>House</a><a href="{{ root }}senate/"{% if not neutral and c %} aria-current="true"{% endif %}>Senate</a></div>{% endif %}
 <nav class="nav" aria-label="Main">
-<a class="startlink" href="{{ root }}start/"{% if section == 'start' %} aria-current="page"{% endif %}>Start Here</a>
+<a class="startlink" href="{{ root }}{{ c }}start/"{% if section == 'start' %} aria-current="page"{% endif %}>Start Here</a>
 <a href="{{ root }}{{ c }}votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a>
-<a href="{{ root }}upcoming/"{% if section == 'upcoming' %} aria-current="page"{% endif %}>Coming Up</a>
-<a href="{{ root }}{{ c }}members/"{% if section == 'members' %} aria-current="page"{% endif %}>Members</a>
+{% if c %}<a href="{{ root }}senate/confirmations/"{% if section == 'confirmations' %} aria-current="page"{% endif %}>Confirmations</a>
+{% endif %}<a href="{{ root }}{{ c }}upcoming/"{% if section == 'upcoming' %} aria-current="page"{% endif %}>Coming Up</a>
+<a href="{{ root }}{{ c }}members/"{% if section == 'members' %} aria-current="page"{% endif %}>{{ "Senators" if c else "Members" }}</a>
 <a href="{{ root }}{{ c }}committees/"{% if section == 'committees' %} aria-current="page"{% endif %}>Committees</a>
-<a href="{{ root }}bills/"{% if section == 'bills' %} aria-current="page"{% endif %}>Bills</a>
-<a href="{{ root }}topics/"{% if section == 'topics' %} aria-current="page"{% endif %}>Topics</a>
+<a href="{{ root }}{{ c }}bills/"{% if section == 'bills' %} aria-current="page"{% endif %}>Bills</a>
+<a href="{{ root }}{{ c }}topics/"{% if section == 'topics' %} aria-current="page"{% endif %}>Topics</a>
 <a href="{{ root }}{{ c }}compare/"{% if section == 'compare' %} aria-current="page"{% endif %}>Compare</a>
-<a href="{{ root }}big-picture/"{% if section == 'big' %} aria-current="page"{% endif %}>Big Picture</a>
-<a href="{{ root }}why/"{% if section == 'why' %} aria-current="page"{% endif %}>Why</a>
+<a href="{{ root }}{{ c }}big-picture/"{% if section == 'big' %} aria-current="page"{% endif %}>Big Picture</a>
+<a href="{{ root }}{{ c }}why/"{% if section == 'why' %} aria-current="page"{% endif %}>Why</a>
 </nav>
 {% if section != 'home' %}<div class="search" data-search>
 <label for="site-search">Search</label>
@@ -35,7 +35,6 @@
 </div>{% endif %}
 </div>
 </header>
-{% if has_senate and c %}<div class="wrap chamberbar"><span class="label purple">In the Senate</span><span class="chamberlinks"><a href="{{ root }}senate/votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a><a href="{{ root }}senate/confirmations/"{% if section == 'confirmations' %} aria-current="page"{% endif %}>Confirmations</a><a href="{{ root }}senate/members/"{% if section == 'members' %} aria-current="page"{% endif %}>Senators</a><a href="{{ root }}senate/committees/"{% if section == 'committees' %} aria-current="page"{% endif %}>Committees</a><a href="{{ root }}senate/compare/"{% if section == 'compare' %} aria-current="page"{% endif %}>Compare</a></span></div>{% endif %}
 <main>
 {% block main %}{% endblock %}
 {% if act is defined %}{% import "_m.html" as act_m %}<div class="wrap actwrap">{{ act_m.reach(root, reach_states, state_names, act.topic, act.key) }}</div>{% endif %}

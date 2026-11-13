@@ -1,0 +1,62 @@
+{% extends "base.html" %}{% import "_m.html" as m with context %}
+{% block title %}The {{ ch.name }} · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page start" style="gap:56px">
+<div class="stack" style="max-width:780px">
+<div class="eyebrow"><span>U.S. {{ ch.full }}</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
+<h1 class="h1">The {{ ch.name }}</h1>
+<p class="lede">{% if c %}100 senators, two from every state, no matter how big or small the state is. They vote on bills, and they alone vote on the President's picks for judges and top jobs.{% else %}435 voting members, each speaking for one district, an area of a state. States with more people get more members. Every one of them is up for election every two years.{% endif %}</p>
+<p class="note">Everything on these pages is about the {{ ch.name }} only. Use the switch at the top to go to the {{ "House" if c else "Senate" }}.</p>
+<div class="search big" data-search style="margin-top:6px">
+<label class="sr" for="chamber-search">Search for {{ "a senator, a state or a bill" if c else "your ZIP code, a member, a state or a bill" }}</label>
+<input id="chamber-search" type="search" placeholder="{{ "Senator, state or bill" if c else "ZIP code, name, state or bill" }}" autocomplete="off">
+<div class="results" role="listbox" aria-label="Search results"></div>
+</div>
+</div>
+
+<section class="grid tiles" aria-label="The {{ ch.name }} in numbers">
+<a class="card tile" href="{{ root }}{{ c }}votes/"><span class="bignum">{{ nvotes|comma }}</span><span class="strong">Recorded Votes</span><span class="small muted">each one explained in plain English</span></a>
+<a class="card tile" href="{{ root }}{{ c }}members/"><span class="bignum">{{ ch.seats }}</span><span class="strong">{{ "Senators" if c else "Members" }}</span><span class="small muted">see how each one votes</span></a>
+<a class="card tile" href="{{ root }}{{ c }}bills/"><span class="bignum">{{ nbills|comma }}</span><span class="strong">Bills Voted On</span><span class="small muted">and how far each one has gotten</span></a>
+{% if c %}<a class="card tile" href="{{ root }}senate/confirmations/"><span class="bignum">{{ nconfirm|comma }}</span><span class="strong">Confirmation Votes</span><span class="small muted">on judges and top government jobs</span></a>{% else %}<a class="card tile" href="{{ root }}upcoming/"><span class="bignum">{{ ncoming }}</span><span class="strong">Coming Up</span><span class="small muted">bills the House may vote on soon</span></a>{% endif %}
+</section>
+
+{% if featured %}<section class="stack">
+<div class="row between" style="align-items:baseline"><h2 class="h2">The Big {{ ch.name }} Votes</h2><span class="small muted">Recent votes that were close or drew wide attention</span></div>
+<div class="grid">{% for v in featured %}
+<a class="card" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/" style="gap:12px">
+<span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ m.tags(v, ('split', 'proc', 'broke')) }}</span>
+<span class="headline-sm">{{ v.f_name }}: {{ v.info.outcome|lcfirst }}</span>
+{% if v.f_plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.f_plain }}</span>{% endif %}
+<span class="row nums" style="gap:8px 14px;align-items:baseline;margin-top:auto"><span class="big mix" style="font-size:40px;{{ v.mix.yea.style }}">{{ v.totals.yea }}</span><span class="big mix" style="font-size:40px;{{ v.mix.nay.style }}">{{ v.totals.nay }}</span></span>
+</a>{% endfor %}</div>
+</section>{% endif %}
+
+<section class="stack">
+<div class="row between" style="align-items:baseline"><h2 class="h2">Latest {{ ch.name }} Votes</h2><a class="small" href="{{ root }}{{ c }}votes/">See all {{ nvotes|comma }}</a></div>
+<div class="card flush rows">{% for v in latest %}{{ m.vrow(v, root) }}{% endfor %}</div>
+</section>
+
+<section class="card housebox" aria-labelledby="house-h">
+<div class="stack" style="gap:2px"><span class="label" id="house-h">Who Holds The {{ ch.name }}</span><span class="muted">Party breakdown of the {{ ch.seats }} {{ "seats" if c else "voting seats" }}</span></div>
+<div class="houseflex">{{ house.svg|safe }}
+<div class="housekey">
+<div><span class="hk-h">Majority ({{ house.side[house.top] }})</span><span><i class="sw s{{ house.top }}"></i>{{ house.names[house.top] }} <strong>({{ house.held[house.top] }})</strong></span>{% if house.ind_with[house.top] %}<span><i class="sw sI"></i>Independent, sits with the majority <strong>({{ house.ind_with[house.top] }})</strong></span>{% endif %}</div>
+<div><span class="hk-h">Minority ({{ house.side[house.low] }})</span><span><i class="sw s{{ house.low }}"></i>{{ house.names[house.low] }} <strong>({{ house.held[house.low] }})</strong></span>{% if house.ind_with[house.low] %}<span><i class="sw sI"></i>Independent, sits with the minority <strong>({{ house.ind_with[house.low] }})</strong></span>{% endif %}</div>
+</div></div>
+<p class="small muted" style="margin:0">The majority party decides which bills get a vote. <a href="{{ root }}{{ c }}members/">See every {{ "senator" if c else "member" }}</a></p>
+</section>
+
+<section class="stack" style="gap:20px">
+<h2 class="h2">Where To Go Next</h2>
+<div class="grid steps">
+<a class="card step" href="{{ root }}{{ c }}members/"><span class="h3">{{ "Find Your Senators" if c else "Find Your Representative" }}</span><span>{{ "Every state has two. See every vote each of them has cast." if c else "One member speaks for where you live. See every vote they have cast." }}</span><span class="go">{{ "Browse senators" if c else "Browse members" }}</span></a>
+<a class="card step" href="{{ root }}{{ c }}topics/"><span class="h3">Pick A Topic</span><span>See only the {{ ch.name }} votes on what you care about, like health, farming or taxes.</span><span class="go">Browse topics</span></a>
+<a class="card step" href="{{ root }}{{ c }}upcoming/"><span class="h3">{{ "See What Is Waiting" if c else "See What Is Coming" }}</span><span>{{ "Bills the House has passed that the Senate has not voted on yet." if c else "Bills the House may vote on next, while there is still time to speak up." }}</span><span class="go">Coming up</span></a>
+<a class="card step" href="{{ root }}{{ c }}compare/"><span class="h3">Compare {{ "Senators" if c else "Members" }}</span><span>Put them side by side: who shows up, and how they voted.</span><span class="go">Compare</span></a>
+<a class="card step" href="{{ root }}{{ c }}committees/"><span class="h3">Committees</span><span>The small groups that shape a bill before the whole {{ ch.name }} votes.</span><span class="go">See committees</span></a>
+<a class="card step" href="{{ root }}{{ c }}big-picture/"><span class="h3">The Big Picture</span><span>One page on what the {{ ch.name }} has been doing, from far above.</span><span class="go">Zoom out</span></a>
+</div>
+</section>
+</div>
+{% endblock %}

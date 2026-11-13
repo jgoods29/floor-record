@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% import "_m.html" as m %}
+{% extends "base.html" %}{% import "_m.html" as m with context %}
 {% block main %}
 <div class="wrap home">
 
@@ -12,7 +12,7 @@
 <div class="results" role="listbox" aria-label="Search results"></div>
 </div>
 <p class="tries"><span class="muted">Try</span>{% for word in examples %}<button type="button" class="linkish" data-example="{{ word }}">{{ word }}</button>{% endfor %}</p>
-<a class="pilllink newhere" href="{{ root }}start/"><b>New to all this?</b> Start Here: Congress in Two Minutes<span aria-hidden="true">→</span></a>
+<a class="pilllink newhere" href="{{ root }}{{ c }}start/"><b>New to all this?</b> Start Here: Congress in Two Minutes<span aria-hidden="true">→</span></a>
 </section>
 
 <section class="stack mine" id="mine" aria-labelledby="mine-h" data-topics='{{ mytopics|tojson }}' style="gap:16px">
@@ -31,8 +31,8 @@
 <section class="center" aria-labelledby="trending-h">
 <h2 class="label" id="trending-h">Trending</h2>
 {% if featured %}<div class="pills">{% for v in featured %}<a class="pilllink hot" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/"><i aria-hidden="true"></i>{{ v.f_name }}: {{ v.info.outcome }}</a>{% endfor %}</div>{% endif %}
-{% if trending %}<div class="pills">{% for t in trending %}<a class="pilllink" href="{{ root }}topics/{{ t.key }}/">{{ t.name }}<span>{{ t.real }}</span></a>{% endfor %}</div>
-<p class="small muted">The votes drawing the most attention, then popular topics and what the House has voted on most since {{ since|nicedate }}. The number is how many votes each topic has had. <a href="{{ root }}topics/">All topics</a></p>{% endif %}
+{% if trending %}<div class="pills">{% for t in trending %}<a class="pilllink" href="{{ root }}{{ c }}topics/{{ t.key }}/">{{ t.name }}<span>{{ t.real }}</span></a>{% endfor %}</div>
+<p class="small muted">The votes drawing the most attention, then popular topics and what the House has voted on most since {{ since|nicedate }}. The number is how many votes each topic has had. <a href="{{ root }}{{ c }}topics/">All topics</a></p>{% endif %}
 </section>
 {% endif %}
 
@@ -42,9 +42,9 @@
 <p class="muted" style="font-size:18px;max-width:620px">Bills the House may vote on {{ 'this week' if coming.current else 'next week' }}. The best time to speak up is before the vote.</p></div>
 <div class="card flush rows">{% for i in coming['items'][:4] %}<div class="uprow">
 <div class="stack" style="gap:4px"><a class="up-name" href="{{ i.url if i.outside else root ~ i.url }}"{% if i.outside %} rel="noopener"{% endif %}>{{ i.name }}</a><span class="small muted">{{ i.label }}</span>{{ m.track(i.track, true) }}</div>
-<div class="tags">{% if i.topic %}<a class="tag soft tip" href="{{ root }}topics/{% if i.topic_key %}{{ i.topic_key }}/{% endif %}" data-tip="This bill is about {{ i.topic|lower }}. Select to see {{ 'every House vote on this topic' if i.topic_key else 'all topics' }}.">{{ i.topic }}</a>{% endif %}<a class="tag tip {{ 'status moved' if i.how == 'rule' else 'status' }}" href="{{ root }}upcoming/#how-{{ i.how }}" data-tip="{{ i.how_note }} Select to read more.">{{ i.how_label }}</a></div>
+<div class="tags">{% if i.topic %}<a class="tag soft tip" href="{{ root }}{{ c }}topics/{% if i.topic_key %}{{ i.topic_key }}/{% endif %}" data-tip="This bill is about {{ i.topic|lower }}. Select to see {{ 'every House vote on this topic' if i.topic_key else 'all topics' }}.">{{ i.topic }}</a>{% endif %}<a class="tag tip {{ 'status moved' if i.how == 'rule' else 'status' }}" href="{{ root }}{{ c }}upcoming/#how-{{ i.how }}" data-tip="{{ i.how_note }} Select to read more.">{{ i.how_label }}</a></div>
 </div>{% endfor %}</div>
-<p class="center small"><a href="{{ root }}upcoming/">See all {{ coming['items']|length }} and tell your representative what you think</a></p>
+<p class="center small"><a href="{{ root }}{{ c }}upcoming/">See all {{ coming['items']|length }} and tell your representative what you think</a></p>
 </section>
 {% endif %}
 
@@ -62,7 +62,7 @@
 <p class="big-line">Free, and for the people.</p>
 <p class="muted" style="font-size:18px;max-width:560px">No tracking. No profit. Just knowledge. <a href="{{ root }}about/#promise">What that means</a></p>
 </section>
-<p class="center small muted"><span>New to how Congress works? <a href="{{ root }}start/">Start here</a>. Looking for the latest? <a href="{{ root }}votes/">See the big votes and all {{ nvotes|comma }} votes</a>.</span></p>
+<p class="center small muted"><span>New to how Congress works? <a href="{{ root }}{{ c }}start/">Start here</a>. Looking for the latest? <a href="{{ root }}votes/">See the big votes and all {{ nvotes|comma }} votes</a>.</span></p>
 
 </div>
 {% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}{% import "_m.html" as m with context %}
+{% block title %}Coming up in the Senate · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page start" style="gap:48px">
+<div class="stack" style="max-width:780px">
+<span class="label purple">Coming Up</span>
+<h1 class="h1">What Is Waiting On The Senate</h1>
+<p class="lede">Bills the House has already passed that the Senate has not finished with. This is the moment your voice counts most: before the vote, not after.</p>
+<p class="note">The Senate does not post a weekly list of votes the way the House does. Its leaders can call a vote with little notice. So this page shows what is in line, not a schedule.</p>
+</div>
+{% if pending.noms %}<section class="stack">
+<div class="stack" style="gap:8px"><h2 class="h2">Confirmation Votes Expected Soon</h2>
+<p class="plain">The Senate has voted to end debate on these picks. The final yes-or-no vote usually follows within days.</p></div>
+<div class="card flush rows">{% for v in pending.noms %}{{ m.vrow(v, root) }}{% endfor %}</div>
+</section>{% endif %}
+<section class="stack">
+<div class="stack" style="gap:8px"><h2 class="h2">Passed The House, Waiting On The Senate</h2>
+<p class="plain">{{ pending.nbills }} {{ 'bill' if pending.nbills == 1 else 'bills' }} that got a recorded vote {{ 'is' if pending.nbills == 1 else 'are' }} at this step{% if pending.nbills > pending.bills|length %}. The {{ pending.bills|length }} most recent are shown{% endif %}. Many never get a Senate vote at all.</p></div>
+{% if pending.bills %}<div class="card flush rows">{% for b in pending.bills %}<div class="uprow">
+<div class="stack" style="gap:4px"><a class="up-name" href="{{ root }}{{ c }}bills/{{ b.slug }}/">{{ b.name }}</a><span class="small muted">{{ b.label }}</span>{{ m.track(b.track, true) }}</div>
+<div class="tags">{% if b.topic %}<span class="tag soft">{{ b.topic }}</span>{% endif %}</div>
+</div>{% endfor %}</div>{% else %}<p class="card muted" style="font-size:18px">Nothing is waiting right now.</p>{% endif %}
+</section>
+</div>
+{% endblock %}
