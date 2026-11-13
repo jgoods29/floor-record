@@ -216,6 +216,60 @@ def party_mix(vote):
     return out
 
 
+COMMITTEE_ABOUT = {
+    "HSAG": "Farm policy, forestry, rural development and nutrition programs, including SNAP (food stamps).",
+    "HSAP": "Writes the yearly spending bills that fund the federal government.",
+    "HSAS": "The military: its budget, troops, weapons and bases.",
+    "HSBA": "Banks, housing, insurance, the stock market and the wider financial system.",
+    "HSBU": "Sets the overall budget plan: how much the government aims to spend and take in.",
+    "HSED": "Schools, colleges, student aid, job training and workplace rules.",
+    "HSFA": "Relations with other countries, foreign aid, treaties and the State Department.",
+    "HSGO": "The House's main watchdog over the federal government and how it runs.",
+    "HSHA": "Runs the House itself and oversees federal election law.",
+    "HSHM": "Border security, counterterrorism, cybersecurity and disaster response.",
+    "HSIF": "Health care, energy, the environment, telecommunications and consumer protection.",
+    "HSII": "Public lands, national parks, water, wildlife, mining and tribal affairs.",
+    "HLIG": "Oversees the country's intelligence agencies, such as the CIA and NSA.",
+    "HSJU": "Courts, crime, immigration, civil rights and the Constitution. Impeachments start here.",
+    "HSPW": "Roads, bridges, aviation, railroads, ports and water projects.",
+    "HSRU": "Decides how and when bills reach the House floor, and whether they can be changed there.",
+    "HSSM": "Small businesses and the agency that supports them.",
+    "HSSO": "Investigates whether House members and staff broke the House's conduct rules.",
+    "HSSY": "Science research, NASA, energy research and technology standards.",
+    "HSVR": "Veterans' health care, benefits and the Department of Veterans Affairs.",
+    "HSWM": "Taxes, trade, Social Security and Medicare.",
+    "HSZS": "Studies economic, technological and security competition with China.",
+    "HSQJ": "A special panel reviewing unanswered questions about January 6, 2021.",
+}
+
+
+def committee_short(name):
+    return re.sub(r"^House (Committee on (the )?)?", "", name).strip()
+
+
+def seat_chart(counts, total=435, rows=11):
+    """A half-circle of dots, one per voting seat, as SVG. Democrats sit on the left and Republicans
+    on the right, as in the chamber; vacant seats and independents fall between them."""
+    import math
+    inner, outer, cx, cy = 92.0, 214.0, 230.0, 226.0
+    radii = [inner + (outer - inner) * i / (rows - 1) for i in range(rows)]
+    share = [r / sum(radii) for r in radii]
+    per_row = [int(total * sh) for sh in share]
+    for i in sorted(range(rows), key=lambda i: total * share[i] - per_row[i], reverse=True)[: total - sum(per_row)]:
+        per_row[i] += 1
+    spots = []
+    for r, n in zip(radii, per_row):
+        for k in range(n):
+            a = math.pi * (1 - (k + 0.5) / n)
+            spots.append((round(a, 4), r))
+    spots.sort(key=lambda sp: (-sp[0], sp[1]))
+    order = [("D", counts.get("D", 0)), ("V", counts.get("V", 0)), ("I", counts.get("I", 0)), ("R", counts.get("R", 0))]
+    kinds = [k for k, n in order for _ in range(n)][:total]
+    dots = "".join(f'<circle class="s{kind}" cx="{cx + r * math.cos(a):.1f}" cy="{cy - r * math.sin(a):.1f}" r="4.4"/>'
+                   for (a, r), kind in zip(spots, kinds))
+    return f'<svg class="seatchart" viewBox="0 0 460 236" role="img" aria-label="Seat chart of the House">{dots}<text x="230" y="208" text-anchor="middle" class="sc-n">{total}</text><text x="230" y="228" text-anchor="middle" class="sc-l">seats</text></svg>'
+
+
 FLOOR_HOW = {
     "rule": ("Full debate", "Needs a simple majority to pass. Often the bigger, more argued-over bills."),
     "fast": ("Fast track", "Needs two-thirds to pass. Usually used for bills most members agree on."),
@@ -484,12 +538,60 @@ def main():
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,
            nroutine=sum(1 for v in votes if v["info"]["routine"]))
+    # ---- committees: who sits where, built from the same member list as everything else
+    def seat_row(r):
+        p = people.get(r["id"])
+        return {"id": r["id"] if p else "", "name": p["name"] if p else r["name"], "party": p["party"] if p else "",
+                "where": f"{p['state']} · {p['dist_label']}" if p else "", "role": r["role"], "side": r["side"]}
+    committees, assignments = [], defaultdict(list)
+    for c in read_json(DATA / "committees.json", []):
+        rows = [seat_row(r) for r in c["members"]]
+        lead = lambda rs, role: next((r for r in rs if r["role"] == role), None)
+        subs = []
+        for sub in c["subs"]:
+            srows = [seat_row(r) for r in sub["members"]]
+            subs.append({"name": sub["name"], "chair": lead(srows, "Chair"), "ranking": lead(srows, "Ranking Member"), "n": len(srows)})
+            for r in sub["members"]:
+                if r["role"] in ("Chair", "Ranking Member", "Vice Chair"):
+                    assignments[r["id"]].append({"cid": c["id"], "sub": sub["name"], "role": r["role"]})
+        item = {"id": c["id"], "name": committee_short(c["name"]), "full": c["name"], "kind": c["kind"], "url": c["url"],
+                "about": COMMITTEE_ABOUT.get(c["id"], ""), "chair": lead(rows, "Chair"), "ranking": lead(rows, "Ranking Member"),
+                "maj": [r for r in rows if r["side"] == "maj"], "min": [r for r in rows if r["side"] == "min"], "subs": subs,
+                "n": len(rows), "by_party": {k: sum(1 for r in rows if r["party"] == k) for k in ("R", "D", "I")},
+                "text": " ".join([committee_short(c["name"])] + [r["name"] for r in rows]).lower()}
+        committees.append(item)
+        for r in c["members"]:
+            assignments[r["id"]].append({"cid": c["id"], "sub": "", "role": r["role"] if r["role"] != "Ex Officio" else ""})
+    committees.sort(key=lambda c: (c["kind"] != "standing", c["name"]))
+    cnames = {c["id"]: c["name"] for c in committees}
+    def member_committees(bioguide):
+        out = {}
+        for a in assignments.get(bioguide, []):
+            row = out.setdefault(a["cid"], {"cid": a["cid"], "name": cnames[a["cid"]], "roles": []})
+            if a["role"]:
+                row["roles"].append(f"{a['role']}, Subcommittee on {a['sub']}" if a["sub"] else a["role"])
+        return sorted(out.values(), key=lambda r: (not any("Subcommittee" not in x for x in r["roles"]), not r["roles"], r["name"]))
+    render("committees/index.html", "committees.html", 1, section="committees", committees=committees,
+           n_standing=sum(1 for c in committees if c["kind"] == "standing"), n_select=sum(1 for c in committees if c["kind"] != "standing"),
+           n_subs=sum(len(c["subs"]) for c in committees))
+
+    # ---- who holds the House: counted from the site's own member list
+    seated = [p for p in people.values() if not p["left"] and not p["delegate"]]
+    held = {k: sum(1 for p in seated if p["party"] == k) for k in ("R", "D", "I")}
+    held["V"] = max(0, 435 - len(seated))
+    ind_with = {k: sum(1 for p in seated if p["party"] == "I" and members.get(p["bioguide"], {}).get("caucus") == k) for k in ("R", "D")}
+    side = {k: held[k] + ind_with[k] for k in ("R", "D")}
+    top = "R" if side["R"] >= side["D"] else "D"
+    low = "D" if top == "R" else "R"
+    house = {"svg": seat_chart(held), "held": held, "top": top, "low": low, "side": side, "ind_with": ind_with,
+             "ind_other": held["I"] - ind_with["R"] - ind_with["D"], "names": {"R": "Republican", "D": "Democratic"}}
+
     by_state = defaultdict(list)
     for p in people.values():
         by_state[p["state"]].append(p)
     states = [(s, sorted(g, key=lambda p: (p.get("district") or 0, p["sort"])))
               for s, g in sorted(by_state.items(), key=lambda kv: STATES.get(kv[0], kv[0]))]
-    render("members/index.html", "members.html", 1, section="members", states=states)
+    render("members/index.html", "members.html", 1, section="members", states=states, house=house)
     bill_list = sorted(measures.values(), key=lambda m: (m["votes"][0]["date"], m["votes"][0]["roll"]), reverse=True)
     render("bills/index.html", "bills.html", 1, section="bills", act={"topic": "", "key": ""}, bills=bill_list)
     render("about/index.html", "about.html", 1, section="about")
@@ -605,7 +707,7 @@ def main():
                        [[b["name"], b["label"], b["status"], int(b["moved"]), b["href"], b["topic"],
                          nicedate(b["introduced"]) if b["introduced"] else ""] for b in co_all])
         my_topics = topics
-        render(f"members/{me}/index.html", "member.html", 2, section="members", p=p, s=p["all"], contact=members.get(me, {}),
+        render(f"members/{me}/index.html", "member.html", 2, section="members", p=p, s=p["all"], contact=members.get(me, {}), committees=member_committees(me),
                breaks=breaks, notable=notable, recent=recent, state_name=state_name, seat_long=seat_long,
                has_bills=mb is not None, sponsored=sponsored, cosponsored=cosponsored, co_count=co_count,
                passed_n=p["passed_n"], law_n=p["law_n"],
@@ -641,6 +743,7 @@ def main():
                 "k": " ".join([m["label"], m["label"].replace(".", "").replace(" ", ""), f"{m['kind']}{m['number']}", m["title"],
                                m["topic"]] + sorted({v["info"]["name"] for v in m["votes"]})).lower()}
                for m in measures.values()]
+    search += [{"t": c["name"], "s": "Committee", "u": f"committees/#{c['id']}", "k": (c["full"] + " committee").lower()} for c in committees]
     search += [{"t": t["name"], "s": "Topic", "u": f"topics/{t['key']}/", "k": (t["name"] + " topic").lower()}
                for t in all_topics]
     write_json(SITE / "search.json", search)

@@ -1,3 +1,4 @@
+import json
 """Collect official data.
 
 Sources
@@ -219,7 +220,7 @@ def _member_from_legislator(person):
         "term_end": last.get("end", ""),
         "url": last.get("url", ""),
         "phone": last.get("phone", ""), "contact_form": last.get("contact_form", ""),
-        "office": last.get("address", ""),
+        "office": last.get("address", ""), "caucus": {"Republican": "R", "Democrat": "D"}.get(last.get("caucus", ""), ""),
     }
 
 
@@ -247,6 +248,43 @@ def ingest_members(votes, log=print):
     write_json(DATA / "members.json", members)
     log(f"Members: {len(members)} of {len(needed)} matched to the legislators list")
     return members
+
+
+COMMITTEE_URL = "https://raw.githubusercontent.com/unitedstates/congress-legislators/gh-pages/{which}.json"
+ROLE_NAMES = (("vice", "Vice Chair"), ("ranking", "Ranking Member"), ("cochair", "Co-Chair"), ("chair", "Chair"), ("ex officio", "Ex Officio"))
+
+
+def _roster(rows):
+    out = []
+    for r in rows or []:
+        title = (r.get("title") or "").lower()
+        role = next((name for words, name in ROLE_NAMES if words in title), "")
+        out.append({"id": r.get("bioguide", ""), "name": r.get("name", ""), "side": "maj" if r.get("party") == "majority" else "min",
+                    "rank": r.get("rank") or 999, "role": role})
+    return sorted(out, key=lambda r: (r["side"], r["rank"]))
+
+
+def ingest_committees(log=print):
+    """House committees, subcommittees and who sits on them, from the public congress-legislators project."""
+    try:
+        listing = json.loads(fetch(COMMITTEE_URL.format(which="committees-current"), timeout=60))
+        membership = json.loads(fetch(COMMITTEE_URL.format(which="committee-membership-current"), timeout=60))
+    except Exception as err:
+        log(f"  ! committees: {err}")
+        return read_json(DATA / "committees.json", [])
+    out = []
+    for c in listing:
+        if c.get("type") != "house" or not membership.get(c["thomas_id"]):
+            continue
+        subs = [{"id": c["thomas_id"] + sub["thomas_id"], "name": sub["name"], "members": _roster(membership.get(c["thomas_id"] + sub["thomas_id"]))}
+                for sub in c.get("subcommittees") or [] if membership.get(c["thomas_id"] + sub["thomas_id"])]
+        out.append({"id": c["thomas_id"], "name": c["name"], "kind": "select" if "select" in c["name"].lower() else "standing",
+                    "url": c.get("url", ""), "members": _roster(membership[c["thomas_id"]]),
+                    "subs": sorted(subs, key=lambda x: x["name"])})
+    if out:
+        write_json(DATA / "committees.json", out)
+        log(f"Committees: {len(out)} committees, {sum(len(c['subs']) for c in out)} subcommittees")
+    return out
 
 
 FLOOR_URL = "https://docs.house.gov/billsthisweek/{d}/{d}.xml"
@@ -429,6 +467,7 @@ def main():
         print("No roll calls found. Check the network connection and the years in config.json.")
         sys.exit(1)
     ingest_members(votes)
+    ingest_committees()
     upcoming = ingest_upcoming()
     ingest_bills(votes, cfg["congress"], also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"]])
     ingest_member_bills({p[0] for v in votes for p in v["positions"]}, cfg["congress"])

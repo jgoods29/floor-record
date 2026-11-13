@@ -286,6 +286,29 @@
     if (z0) { zip.value = z0; fromZip(); } else if (s0 && sel.querySelector('option[value="' + s0 + '"]')) { sel.value = s0; fromState(); }
   });
 
+  // ---- committees: search by committee or member, filter by kind, expand all, open from a link
+  var clist = document.getElementById('committee-list');
+  if (clist) {
+    var cards = clist.querySelectorAll('.cmte'), cbox = document.querySelector('[data-cfilter]'), cnone = document.querySelector('[data-cnone]'), ckind = '', call = document.querySelector('[data-call]');
+    var cdraw = function () {
+      var q = cbox.value.trim().toLowerCase(), shown = 0;
+      each(cards, function (c) {
+        var ok = (!ckind || c.getAttribute('data-kind') === ckind) && (!q || c.getAttribute('data-text').indexOf(q) !== -1);
+        c.hidden = !ok; if (ok) shown++;
+        var hits = 0;
+        each(c.querySelectorAll('.roster li'), function (li) { var hit = q.length > 2 && li.getAttribute('data-name').indexOf(q) !== -1; li.classList.toggle('hit', hit); if (hit) hits++; });
+        if (ok && q.length > 2) c.open = hits > 0;
+      });
+      cnone.hidden = shown > 0;
+    };
+    cbox.addEventListener('input', cdraw);
+    each(document.querySelectorAll('[data-ckind]'), function (b) { b.addEventListener('click', function () {
+      ckind = b.getAttribute('data-ckind'); each(document.querySelectorAll('[data-ckind]'), function (x) { x.classList.toggle('on', x === b); }); cdraw(); }); });
+    call.addEventListener('click', function () { var open = call.textContent === 'Expand all'; each(cards, function (c) { c.open = open; }); call.textContent = open ? 'Collapse all' : 'Expand all'; });
+    var copen = function () { var t = location.hash && document.getElementById(location.hash.slice(1)); if (t && t.classList.contains('cmte')) { t.open = true; t.scrollIntoView(); } };
+    window.addEventListener('hashchange', copen); copen();
+  }
+
   // ---- Compare table
   var table = document.getElementById('lb'), dataEl = document.getElementById('lb-data');
   if (table && dataEl) {

@@ -448,3 +448,56 @@ a.barrow:hover { background: #F7F3FF; }
 /* vote numbers are one solid colour: a party's colour, or purple for a mix of parties */
 .mix { background: none; -webkit-background-clip: border-box; background-clip: border-box; -webkit-text-fill-color: currentColor; }
 .seat.mixkey { background: var(--purple); }
+
+/* committees */
+.bignum.sm, .start .bignum.sm { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1; color: var(--ink); }
+.role { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .02em; padding: 2px 8px; border-radius: 6px; background: #EEF1F7; color: var(--text-2); white-space: normal; vertical-align: middle; }
+.role.chair { background: var(--ink); color: #fff; }
+.btn.sm { min-height: 40px; padding: 8px 14px; font-size: 15px; }
+.btn.sm.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.cmte { padding: 0; }
+.cmte > summary { list-style: none; cursor: pointer; display: flex; flex-direction: column; gap: 8px; padding: 22px 26px; }
+.cmte > summary::-webkit-details-marker { display: none; }
+.cmte .cname { font-size: 24px; }
+.cmte .cabout { font-size: 16px; max-width: 760px; }
+.cleads { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 6px 24px; padding-top: 4px; font-weight: 600; }
+.splitbar { display: flex; gap: 2px; height: 6px; border-radius: 4px; overflow: hidden; margin-top: 6px; }
+.splitbar .pR { background: var(--rep); } .splitbar .pD { background: var(--dem); } .splitbar .pI { background: var(--ind); }
+.csplit { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+.csplit strong { color: var(--ink); }
+.copen { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: #C9B5F5; text-underline-offset: 3px; }
+.cmte[open] .copen { font-size: 0; } .cmte[open] .copen::after { content: "Hide details"; font-size: 14px; }
+.cbody { display: flex; flex-direction: column; gap: 16px; padding: 4px 26px 26px; border-top: 1px solid var(--line); padding-top: 22px; }
+.table.subs td, .table.subs th { text-align: left; }
+.roster { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px 32px; }
+.roster ul, .mcmte ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.roster li { font-size: 15px; }
+.roster li.hit { background: #F1EBFE; border-radius: 6px; padding: 2px 6px; margin: -2px -6px; }
+.mcmte { padding-top: 10px; }
+.mcmte li { font-size: 15px; padding-left: 14px; position: relative; }
+.mcmte li::before { content: ""; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--purple); }
+/* who holds the House */
+.housebox { gap: 14px; background: var(--tint); }
+.houseflex { display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: center; }
+.seatchart { width: min(460px, 100%); height: auto; flex: 0 1 460px; }
+.seatchart .sR, .sw.sR { fill: var(--rep); background: var(--rep); } .seatchart .sD, .sw.sD { fill: var(--dem); background: var(--dem); }
+.seatchart .sI, .sw.sI { fill: var(--ind); background: var(--ind); }
+.seatchart .sV { fill: #fff; stroke: #8E97A8; stroke-width: 1.2; } .sw.sV { background: #fff; border: 1.5px solid #8E97A8; }
+.seatchart .sc-n { font-family: var(--display); font-weight: 700; font-size: 34px; fill: var(--ink); } .seatchart .sc-l { font-size: 13px; fill: var(--muted); }
+.housekey { display: flex; flex-direction: column; gap: 12px; font-size: 16px; }
+.housekey > div { display: flex; flex-direction: column; gap: 4px; }
+.housekey .hk-h { font-weight: 700; color: var(--ink); }
+.sw { display: inline-block; width: 14px; height: 14px; border-radius: 4px; margin-right: 8px; vertical-align: -2px; }
+@media (max-width: 640px) { .cmte > summary { padding: 18px; } .cbody { padding: 18px; } .cmte .cname { font-size: 21px; } }
+.cmte { scroll-margin-top: 150px; }
+.card.tile { display: flex; flex-direction: column; gap: 6px; }
+.cfind > label { flex: 1 1 320px; } .cfind > label .field { width: 100%; }
+@media (max-width: 640px) {
+  .table.subs thead { display: none; }
+  .table.subs, .table.subs tbody, .table.subs tr, .table.subs td { display: block; width: auto; }
+  .table.subs tr { padding: 12px 0; border-top: 1px solid var(--line); }
+  .table.subs td { padding: 2px 0; border: 0; }
+  .table.subs td:first-child { font-weight: 600; }
+  .table.subs td:nth-child(2)::before { content: "Chair: "; color: var(--muted); font-size: 14px; }
+  .table.subs td:nth-child(3)::before { content: "Ranking member: "; color: var(--muted); font-size: 14px; }
+}

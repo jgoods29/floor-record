@@ -6,6 +6,17 @@
 <h1 class="h1">Members</h1>
 <p class="lede">Everyone who has voted in the U.S. House this Congress, listed by state and district. Select a name to see how they vote.</p>
 <p class="newline">Each member speaks for the people of one district, an area of a state. One of them is yours. New here? <a href="{{ root }}start/">Start with the basics</a>. Want to know what is next? <a href="{{ root }}upcoming/">See what is coming up</a>.</p>
+<section class="card housebox" aria-labelledby="house-h">
+<div class="stack" style="gap:2px"><span class="label" id="house-h">Who holds the House</span><span class="muted">Party breakdown of the 435 voting seats</span></div>
+<div class="houseflex">{{ house.svg|safe }}
+<div class="housekey">
+<div><span class="hk-h">Majority ({{ house.side[house.top] }})</span><span><i class="sw s{{ house.top }}"></i>{{ house.names[house.top] }} <strong>({{ house.held[house.top] }})</strong></span>{% if house.ind_with[house.top] %}<span><i class="sw sI"></i>Independent, sits with the majority <strong>({{ house.ind_with[house.top] }})</strong></span>{% endif %}</div>
+<div><span class="hk-h">Minority ({{ house.side[house.low] }})</span><span><i class="sw s{{ house.low }}"></i>{{ house.names[house.low] }} <strong>({{ house.held[house.low] }})</strong></span>{% if house.ind_with[house.low] %}<span><i class="sw sI"></i>Independent, sits with the minority <strong>({{ house.ind_with[house.low] }})</strong></span>{% endif %}</div>
+{% if house.ind_other %}<div><span class="hk-h">Independent ({{ house.ind_other }})</span><span><i class="sw sI"></i>Independent <strong>({{ house.ind_other }})</strong></span></div>{% endif %}
+{% if house.held.V %}<div><span class="hk-h">Vacant ({{ house.held.V }})</span><span><i class="sw sV"></i>Empty seats <strong>({{ house.held.V }})</strong></span></div>{% endif %}
+</div></div>
+<p class="small muted" style="margin:0">The majority party chairs every <a href="{{ root }}committees/">committee</a> and decides which bills get a vote. It takes 218 votes to pass a bill when every seat is filled and everyone votes. Counted from the member list below; six non-voting delegates are not included.</p>
+</section>
 <div class="zipfind"><label class="fieldset" for="zip-members">Not sure who yours is? Enter your ZIP code</label><div class="search" data-search><input id="zip-members" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5-digit ZIP code"><div class="results" role="listbox" aria-label="Your representative"></div></div></div>
 <div class="row" style="padding-top:8px">
 <label class="fieldset" for="member-filter">Find a member<input class="field" id="member-filter" type="search" placeholder="Type a name or state" style="width:300px" data-filter="#member-list .person" data-groups="#member-list .state"></label>
