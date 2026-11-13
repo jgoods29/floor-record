@@ -129,3 +129,20 @@ class Questions(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NewsletterTest(unittest.TestCase):
+    def test_friday_email_shows_how_your_own_members_voted(self):
+        from floorrecord.newsletter import build_email
+        data = {"term": "119th Congress", "upcoming": [], "week": [
+            {"id": "2026-1", "pre": "", "chamber": "House", "date": "2026-11-10", "name": "Test Act", "plain": "It does a thing.",
+             "outcome": "Passed", "yea": 220, "nay": 210, "close": True, "pos": {"A1": "nay"}}]}
+        rep = {"id": "A1", "name": "Pat Example", "state": "KY", "where": "District 4", "party": "R", "phone": "202-555-0100", "pre": "", "role": "Your representative"}
+        subject, body = build_email("friday", data, [rep], "https://example.org/", {"postal_address": "PO Box 1"})
+        self.assertIn("How They Voted", subject)
+        self.assertIn("Voted no", body)
+        self.assertIn("https://example.org/votes/2026-1/", body)
+        self.assertIn("{{unsub}}", body)
+        self.assertIn("PO Box 1", body)
+        _, monday = build_email("monday", data, [rep], "https://example.org/", {})
+        self.assertIn("202-555-0100", monday)

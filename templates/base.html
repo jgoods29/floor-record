@@ -8,14 +8,14 @@
 <link rel="preload" href="{{ root }}static/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ root }}static/style.css?v={{ asset_v }}">
 </head>
-<body data-root="{{ root }}" data-c="{{ c }}" data-scope="{{ 'all' if section in ('home', 'about') else ('senate' if c else 'house') }}">
+<body{% if acct_on %} data-sb-url="{{ acct.supabase_url }}" data-sb-key="{{ acct.supabase_key }}"{% endif %} data-root="{{ root }}" data-c="{{ c }}" data-scope="{{ 'all' if section in ('home', 'about', 'account') else ('senate' if c else 'house') }}">
 <header class="top">
 <div class="stripe" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></div>
 <div class="wrap">
 <a class="brand" href="{{ root }}"><span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>{{ site.site_name }}</a>
-{% set neutral = section in ('home', 'about') %}{% if has_senate %}<div class="chamber" role="group" aria-label="Switch between the House and the Senate">
+{% set neutral = section in ('home', 'about', 'account') %}{% if has_senate %}<div class="chamber" role="group" aria-label="Switch between the House and the Senate">
 <a href="{{ root }}{{ switch.house }}"{% if not neutral and not c %} aria-current="true"{% endif %}>House</a><a href="{{ root }}{{ switch.senate }}"{% if not neutral and c %} aria-current="true"{% endif %}>Senate</a></div>{% endif %}
-<a class="mypage" href="{{ root }}#mine"{% if section == 'home' %} aria-current="page"{% endif %}><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 17c.8-3.3 3.4-5 6.5-5s5.700 1.700 6.500 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Your Page</a>
+{% if acct_on %}<a class="mypage" data-acct-link href="{{ root }}account/"{% if section == 'account' %} aria-current="page"{% endif %}><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 17c.8-3.3 3.4-5 6.5-5s5.700 1.700 6.500 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Sign In</span></a>{% else %}<a class="mypage" href="{{ root }}#mine"{% if section == 'home' %} aria-current="page"{% endif %}><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 17c.8-3.3 3.4-5 6.5-5s5.700 1.700 6.500 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Your Page</a>{% endif %}
 <nav class="nav" aria-label="Main">
 <a class="startlink" href="{{ root }}{{ c }}start/"{% if section == 'start' %} aria-current="page"{% endif %}>Start Here</a>
 <a href="{{ root }}{{ c }}votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a>

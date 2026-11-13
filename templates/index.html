@@ -17,7 +17,8 @@
 
 <section class="stack mine" id="mine" aria-labelledby="mine-h" data-topics='{{ mytopics|tojson }}' style="gap:16px">
 <div class="center" style="gap:6px"><h2 class="h2" id="mine-h">Your page</h2>
-<p class="muted" style="font-size:17px;max-width:640px" data-mine-lede>Make this page yours: your representative, your senators, and the topics you care about. It is saved on this device only. Nothing is sent anywhere.</p></div>
+<p class="muted" style="font-size:17px;max-width:640px" data-mine-lede>Make this page yours: your representative, your senators, and the topics you care about. {% if acct_on %}It is saved on this device. Create a free account below to keep it on every device and get the Monday and Friday emails.{% else %}It is saved on this device only. Nothing is sent anywhere.{% endif %}</p></div>
+{% if acct_on %}<div class="card stack acctcard" data-acct-out>{% include "_signup.html" %}</div>{% endif %}
 <div class="card stack" style="gap:14px"><div class="row" style="justify-content:space-between"><span class="label">Your three in Congress</span><button type="button" class="linkish small" data-mine-clear hidden>Clear my page</button></div>
 <div data-mine-three><p class="muted" style="margin:0">Type your ZIP code in the search box above and they will appear here, with how they voted.</p></div></div>
 <div class="card stack" style="gap:14px"><span class="label">Topics you follow</span>

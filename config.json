@@ -41,5 +41,13 @@
     "Texas",
     "Farm Bill",
     "Taxes"
-  ]
+  ],
+  "accounts": {
+    "supabase_url": "",
+    "supabase_key": "",
+    "site_url": "https://jgoods29.github.io/floor-record/",
+    "from": "",
+    "postal_address": "",
+    "sponsor": ""
+  }
 }

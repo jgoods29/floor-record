@@ -592,3 +592,17 @@ header .mypage:hover, header .mypage[aria-current] { background: #EDE4FD; }
 .termbar .wrap { display: flex; flex-wrap: wrap; gap: 2px 18px; padding-top: 8px; padding-bottom: 8px; align-items: baseline; }
 .termbar strong { color: var(--purple-ink); }
 .termbar .termnote { color: var(--muted); }
+
+/* accounts */
+.acctcard { border-color: #DCCBFB; background: #FBF9FF; }
+.signup .btn, .acct .btn.sm[type=submit] { background: var(--purple); border-color: var(--purple); color: #fff; }
+.signup .btn:disabled { opacity: .6; cursor: default; }
+.btn.danger { color: #B42318; border-color: #F0B8B1; }
+.check.big { align-items: flex-start; font-size: 16px; color: var(--ink); } .check.big input { margin-top: 4px; flex: none; }
+.acct-three { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.acct-who { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; background: #fff; }
+.acct [hidden], [data-acct-out][hidden] { display: none !important; }
+
+header .yours ~ .chamber ~ .mypage { font-size: 0; gap: 0; padding: 6px 11px; }
+.check.big > span { display: block; font-family: var(--body, Inter, sans-serif); letter-spacing: 0; line-height: 1.45; font-weight: 400; }
+.check.big strong { font-weight: 600; letter-spacing: 0; }

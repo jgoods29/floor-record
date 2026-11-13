@@ -1,3 +1,4 @@
+import os
 """Build the static website from data/ into site/.
 
 Run:  python -m floorrecord.build
@@ -6,7 +7,7 @@ import html
 import re
 import shutil
 from collections import defaultdict
-from datetime import date, datetime, timezone
+from datetime import date, timedelta, datetime, timezone
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -482,9 +483,13 @@ def main():
     # fetches the new files whenever they change, and never pairs a new page with old styles.
     import hashlib
     stamp = hashlib.sha256(b"".join(p.read_bytes() for p in sorted((ROOT / "static").glob("*.*")))).hexdigest()[:10]
+    # Accounts and the newsletter stay switched off until the account service's address and public key are filled in.
+    acct = dict(cfg.get("accounts") or {})
+    acct["supabase_url"] = (os.environ.get("FLOORRECORD_ACCOUNTS_URL") or acct.get("supabase_url") or "").rstrip("/")
+    acct["supabase_key"] = os.environ.get("FLOORRECORD_ACCOUNTS_KEY") or acct.get("supabase_key") or ""
     shared = {
         "asset_v": stamp,
-        "site": cfg, "span": span,
+        "site": cfg, "span": span, "acct": acct, "acct_on": bool(acct.get("supabase_url") and acct.get("supabase_key")),
         # A Congress lasts two years and starts on January 3 of each odd year; the 1st began in 1789.
         "term": {"name": f"{ordinal(cfg['congress'])} Congress", "next": f"{ordinal(cfg['congress'] + 1)} Congress",
                  "start": 1789 + 2 * (cfg["congress"] - 1), "end": 1789 + 2 * cfg["congress"]}, "nvotes": len(votes), "npeople": len(people),
@@ -499,7 +504,7 @@ def main():
     shutil.copytree(ROOT / "static", SITE / "static")
     (SITE / ".nojekyll").write_text("")
 
-    def render(path, template, depth, **ctx):
+    def render(path, template, depth, **ctx):  # noqa: E306
         out = SITE / path
         out.parent.mkdir(parents=True, exist_ok=True)
         # Where the House/Senate switch should lead from this page: the same page in the other chamber when there is one.
@@ -674,6 +679,20 @@ def main():
                                                        [st["label"] for st in m["track"]["steps"]], m["track"]["text"]] for m in measures.values()})
     write_json(SITE / "upcoming.json", [[i["name"], i["url"], i["outside"], i["topic_key"], i["topic"], i["how_label"], "This week" if w["current"] else "Next week"]
                                         for w in weeks for i in w["items"]])
+    # ---- what the Monday and Friday emails are written from: the last week of real votes, and who voted how
+    week_from = (date.fromisoformat(max(v["date"] for v in votes + svotes)) - timedelta(days=7)).isoformat()
+    write_json(SITE / "newsletter-data.json", {
+        "term": f"{ordinal(cfg['congress'])} Congress",
+        "week": [{"id": v["id"], "pre": v["pre"], "chamber": v["chamber"], "date": v["date"], "name": v["info"]["name"], "plain": v["info"].get("plain") or "",
+                  "outcome": v["info"]["outcome"], "yea": v["totals"]["yea"], "nay": v["totals"]["nay"], "close": any(k == "close" for k, _ in v["tags"]),
+                  "pos": {r[0]: r[3] for r in v["positions"]}}
+                 for v in sorted(votes + svotes, key=lambda v: (v["date"], v["roll"]), reverse=True)
+                 if v["date"] > week_from and v["kind"] == "standard" and not v["info"]["routine"]],
+        "upcoming": [{"name": i["name"], "label": i["label"], "how": i["how_label"], "topic": i["topic"], "week": "this week" if w["current"] else "next week"}
+                     for w in weeks for i in w["items"]]})
+    if shared["acct_on"]:
+        render("account/index.html", "account.html", 1, section="account", mytopics=[[t["key"], t["name"]] for t in all_topics])
+        render("unsubscribe/index.html", "unsubscribe.html", 1, section="account")
     render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, trending=trending, since=since, featured=featured, coming=coming,
            mytopics=[[t["key"], t["name"]] for t in all_topics],
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])

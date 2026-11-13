@@ -1,0 +1,34 @@
+name: Send the Monday and Friday emails
+
+on:
+  schedule:
+    - cron: "37 11 * * 1"   # Monday morning, U.S. Eastern: The Week Ahead
+    - cron: "37 22 * * 5"   # Friday evening, U.S. Eastern: How They Voted
+  workflow_dispatch:
+    inputs:
+      edition:
+        description: "Which email to send now"
+        type: choice
+        options: [monday, friday]
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Build the site files the emails are written from
+        run: python -m floorrecord.build
+      - name: Send
+        run: python -m floorrecord.newsletter ${{ inputs.edition && format('--edition {0}', inputs.edition) || '' }}

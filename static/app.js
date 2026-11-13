@@ -11,7 +11,8 @@
   function once(url) { return cache[url] || (cache[url] = getJSON(url)); }
 
   // ---- "my representative": found by ZIP code, kept only in this browser
-  function store(key, val) { try { if (val === undefined) return localStorage.getItem(key) || ''; if (val === null) localStorage.removeItem(key); else localStorage.setItem(key, val); } catch (e) {} return ''; }
+  var onStore = function () {};  // set by the account code, so a change made anywhere is saved to the account too
+  function store(key, val) { try { if (val === undefined) return localStorage.getItem(key) || ''; if (val === null) localStorage.removeItem(key); else localStorage.setItem(key, val); } catch (e) {} onStore(key); return ''; }
   function myRep() { try { return JSON.parse(store('fr-rep') || 'null'); } catch (e) { return null; } }
   function setMyRep(id, name) { store('fr-rep', id ? JSON.stringify({ id: id, name: name }) : null); showMyRep(); afterYours(); }
   function contactRows() { return once(root + 'contacts.json'); }
@@ -488,4 +489,188 @@
     stateSel.addEventListener('change', draw); nameBox.addEventListener('input', draw);
     draw();
   }
+  // ---- accounts: one free sign-up that keeps your picks on any device and sends the Monday and Friday emails.
+  // Only switched on when the page carries the account service's address. Sign-in is a link sent by email: no passwords.
+  var SB = document.body.getAttribute('data-sb-url'), SBKEY = document.body.getAttribute('data-sb-key');
+  if (SB && SBKEY) (function () {
+    var KEYS = ['fr-rep', 'fr-home', 'fr-zip', 'fr-topics', 'fr-bills', 'fr-news'];
+    var quiet = false, timer = null;
+    function sess() { try { return JSON.parse(localStorage.getItem('fr-auth') || 'null'); } catch (e) { return null; } }
+    function keep(s) { try { if (s) localStorage.setItem('fr-auth', JSON.stringify(s)); else localStorage.removeItem('fr-auth'); } catch (e) {} }
+    function api(path, opt, token) {
+      opt = opt || {};
+      var h = { apikey: SBKEY, 'Content-Type': 'application/json' }, k;
+      if (token) h.Authorization = 'Bearer ' + token;
+      for (k in (opt.headers || {})) h[k] = opt.headers[k];
+      return fetch(SB + path, { method: opt.method || 'GET', headers: h, body: opt.body ? JSON.stringify(opt.body) : undefined }).then(function (r) {
+        return r.text().then(function (t) {
+          var d = null; try { d = t ? JSON.parse(t) : null; } catch (e) {}
+          if (!r.ok) { var err = new Error((d && (d.msg || d.message || d.error_description)) || 'Something went wrong (' + r.status + ')'); err.status = r.status; throw err; }
+          return d;
+        });
+      });
+    }
+    // a fresh sign-in token, or null when nobody is signed in
+    function token() {
+      var s = sess(); if (!s) return Promise.resolve(null);
+      if (s.expires_at - 60 > Date.now() / 1000) return Promise.resolve(s.access_token);
+      return api('/auth/v1/token?grant_type=refresh_token', { method: 'POST', body: { refresh_token: s.refresh_token } }).then(function (d) {
+        s.access_token = d.access_token; s.refresh_token = d.refresh_token; s.expires_at = Math.floor(Date.now() / 1000) + (d.expires_in || 3600); keep(s); return s.access_token;
+      }).catch(function (e) { if (e.status) keep(null); paint(); return null; });
+    }
+    function list(k) { try { return JSON.parse(store(k) || '[]'); } catch (e) { return []; } }
+    function localRow(id) {
+      var rep = myRep();
+      return { id: id, zip: store('fr-zip') || null, state: store('fr-home') || null, rep_id: rep ? rep.id : null, rep_name: rep ? rep.name : null,
+               topics: list('fr-topics'), bills: list('fr-bills'), newsletter: store('fr-news') !== '0' };
+    }
+    function applyRow(r) {
+      quiet = true;
+      store('fr-zip', r.zip || null); store('fr-home', r.state || null);
+      store('fr-rep', r.rep_id ? JSON.stringify({ id: r.rep_id, name: r.rep_name || '' }) : null);
+      store('fr-topics', r.topics && r.topics.length ? JSON.stringify(r.topics) : null);
+      store('fr-bills', r.bills && r.bills.length ? JSON.stringify(r.bills) : null);
+      store('fr-news', r.newsletter ? '1' : '0');
+      quiet = false;
+      showMyRep(); afterYours(); paintFollows();
+    }
+    function push() {
+      return token().then(function (t) {
+        var s = sess(); if (!t || !s || !s.id) return;
+        return api('/rest/v1/profiles?on_conflict=id', { method: 'POST', body: localRow(s.id), headers: { Prefer: 'resolution=merge-duplicates,return=minimal' } }, t)
+          .then(function () { status('Saved to your account.'); }).catch(function (e) { status('Could not save just now: ' + e.message); });
+      });
+    }
+    onStore = function (key) { if (quiet || KEYS.indexOf(key) === -1 || !sess()) return; clearTimeout(timer); timer = setTimeout(push, 700); };
+    // right after signing in: an account that already holds picks wins; a new one is filled from this device
+    function firstSync() {
+      return token().then(function (t) {
+        if (!t) return;
+        return api('/auth/v1/user', {}, t).then(function (u) {
+          var s = sess(); s.id = u.id; s.email = u.email; keep(s);
+          return api('/rest/v1/profiles?select=*&id=eq.' + encodeURIComponent(u.id), {}, t).then(function (rows) {
+            if (rows && rows.length) { applyRow(rows[0]); return; }
+            var meta = u.user_metadata || {}, pend = {}; try { pend = JSON.parse(localStorage.getItem('fr-pending') || '{}'); } catch (e) {}
+            var zip = pend.zip || meta.zip || '', news = pend.newsletter !== undefined ? pend.newsletter : meta.newsletter;
+            quiet = true; if (news !== undefined) store('fr-news', news ? '1' : '0'); quiet = false;
+            var ready = zip && !store('fr-zip') ? useZip(zip) : Promise.resolve();
+            return ready.then(push);
+          });
+        }).then(function () { try { localStorage.removeItem('fr-pending'); } catch (e) {} paint(); });
+      });
+    }
+    // a ZIP code -> home state, and the representative when the ZIP sits in one district
+    function useZip(zip) {
+      return byZip(zip).then(function (hit) {
+        if (!hit) return null;
+        quiet = true; store('fr-zip', zip); quiet = false;
+        if (hit.rows.length === 1) setMyRep(hit.rows[0][0], hit.rows[0][1]);
+        else { var rep = myRep(); if (rep && !hit.rows.some(function (r) { return r[0] === rep.id; })) setMyRep(null); }
+        return hit;
+      }).catch(function () { return null; });
+    }
+    function status(text) { each(document.querySelectorAll('[data-acct-status]'), function (el) { el.textContent = text; }); }
+
+    // ---- arriving from the emailed link: the sign-in comes back in the address after the #
+    var hash = location.hash.replace(/^#/, ''), back = {};
+    if (/access_token=|error_description=/.test(hash)) {
+      hash.split('&').forEach(function (kv) { var i = kv.indexOf('='); back[decodeURIComponent(kv.slice(0, i))] = decodeURIComponent(kv.slice(i + 1).replace(/\+/g, ' ')); });
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+      if (back.access_token) keep({ access_token: back.access_token, refresh_token: back.refresh_token, expires_at: Math.floor(Date.now() / 1000) + (+back.expires_in || 3600) });
+    }
+
+    window.addEventListener('hashchange', function () { if (/access_token=/.test(location.hash)) location.reload(); });  // link opened in a tab already on this page
+    // ---- the sign-up box (home page and account page)
+    each(document.querySelectorAll('[data-signup]'), function (form) {
+      var note = form.querySelector('[data-signup-note]');
+      if (store('fr-zip')) form.elements.zip.value = store('fr-zip');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = form.elements.email.value.trim(), zip = form.elements.zip.value.trim(), news = form.elements.newsletter.checked;
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { note.textContent = 'Please type your email address.'; form.elements.email.focus(); return; }
+        if (zip && !/^\d{5}$/.test(zip)) { note.textContent = 'A ZIP code is five numbers. You can also leave it empty and add it later.'; form.elements.zip.focus(); return; }
+        try { localStorage.setItem('fr-pending', JSON.stringify({ zip: zip, newsletter: news })); } catch (err) {}
+        var btn = form.querySelector('button[type=submit]'); btn.disabled = true; note.textContent = 'Sending...';
+        var home = new URL(root + 'account/', location.href).href;
+        api('/auth/v1/otp?redirect_to=' + encodeURIComponent(home), { method: 'POST', body: { email: email, create_user: true, data: { zip: zip, newsletter: news } } }).then(function () {
+          form.innerHTML = '<div class="stack" style="gap:6px"><span class="h3">Check Your Email</span><span class="muted">We sent a sign-in link to <strong>' + esc(email) + '</strong>. Open it on this device and you are in. It can take a minute, and it sometimes lands in spam.</span></div>';
+        }).catch(function (err) { btn.disabled = false; note.textContent = err.status === 429 ? 'Too many tries just now. Please wait a minute and try again.' : 'That did not go through: ' + err.message; });
+      });
+    });
+
+    // ---- the account page, and the button in the header
+    var page = document.querySelector('[data-account]');
+    function paint() {
+      var s = sess(), on = !!s;
+      each(document.querySelectorAll('[data-acct-link] span'), function (el) { el.textContent = on ? 'Your Account' : 'Sign In'; });
+      each(document.querySelectorAll('[data-acct-out]'), function (el) { el.hidden = on; });
+      each(document.querySelectorAll('[data-acct-in]'), function (el) { el.hidden = !on; });
+      if (!page || !on) return;
+      page.querySelector('[data-acct-title]').textContent = 'Your Account';
+      page.querySelector('[data-acct-lede]').textContent = 'Everything here is saved to your account, so it follows you to any phone or computer you sign in on.';
+      page.querySelector('[data-acct-email]').textContent = s.email || '';
+      var zipBox = page.querySelector('#acct-zip'); if (document.activeElement !== zipBox) zipBox.value = store('fr-zip');
+      var news = store('fr-news') !== '0'; page.querySelector('[data-acct-news]').checked = news;
+      page.querySelector('[data-acct-newsnote]').textContent = news ? 'You are on the list. Emails go to ' + (s.email || 'your address') + '.' : 'You are not getting the emails. Your account still works.';
+      var all = []; try { all = JSON.parse(page.getAttribute('data-topics') || '[]'); } catch (e) {}
+      var mine = list('fr-topics');
+      page.querySelector('[data-acct-topics]').innerHTML = all.map(function (t) { var on = mine.indexOf(t[0]) !== -1; return '<button type="button" class="pick' + (on ? ' on' : '') + '" data-follow="fr-topics" data-id="' + esc(t[0]) + '" aria-pressed="' + on + '">' + esc(t[1]) + '</button>'; }).join('');
+      three();
+    }
+    function three(hit) {
+      var box = page.querySelector('[data-acct-three]'), rep = myRep(), st = store('fr-home');
+      if (!st) { box.innerHTML = '<p class="muted" style="margin:0">Add your ZIP code and your representative and two senators will show up here.</p>'; return; }
+      senatorsFor(st).then(function (sens) {
+        var out = '<div class="acct-three">';
+        if (rep) out += '<a class="acct-who" href="' + root + 'members/' + esc(rep.id) + '/"><span class="small muted">Your representative</span><strong>' + esc(rep.name) + '</strong></a>';
+        sens.forEach(function (r) { out += '<a class="acct-who" href="' + root + 'senate/members/' + esc(r[0]) + '/"><span class="small muted">Your senator</span><strong>' + esc(r[1]) + '</strong></a>'; });
+        out += '</div>';
+        if (!rep) {
+          var pick = hit ? Promise.resolve(hit) : (store('fr-zip') ? byZip(store('fr-zip')) : Promise.resolve(null));
+          pick.then(function (h) {
+            if (h && h.rows.length > 1) out += '<p style="margin:10px 0 6px"><strong>Your ZIP code is shared by ' + h.rows.length + ' House districts. Which representative is yours?</strong></p><div class="picks">' + h.rows.map(function (r) { return '<button type="button" class="pick" data-acct-rep="' + esc(r[0]) + '" data-name="' + esc(r[1]) + '">' + esc(r[1]) + ' (' + esc(r[3]) + ')</button>'; }).join('') + '</div><p class="small muted" style="margin:8px 0 0">Not sure? <a rel="noopener" href="https://www.house.gov/representatives/find-your-representative">Look it up by street address at house.gov</a>.</p>';
+            box.innerHTML = out;
+          });
+        } else box.innerHTML = out;
+      });
+    }
+    if (page) {
+      if (back.error_description) status('That sign-in link did not work: ' + back.error_description + '. Links work once and expire after a while, so ask for a new one.');
+      page.querySelector('[data-acct-zipform]').addEventListener('submit', function (e) {
+        e.preventDefault(); var z = page.querySelector('#acct-zip').value.trim();
+        if (!/^\d{5}$/.test(z)) { status('A ZIP code is five numbers.'); return; }
+        setMyRep(null);
+        useZip(z).then(function (hit) { if (!hit) { status('We do not know that ZIP code. Check the numbers and try again.'); return; } clearTimeout(timer); push(); paint(); });
+      });
+      page.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-acct-rep]'); if (b) { setMyRep(b.getAttribute('data-acct-rep'), b.getAttribute('data-name')); paint(); return; }
+        if (e.target.closest('[data-follow]')) setTimeout(paint, 0);
+      });
+      page.querySelector('[data-acct-news]').addEventListener('change', function (e) { store('fr-news', e.target.checked ? '1' : '0'); paint(); });
+      page.querySelector('[data-acct-signout]').addEventListener('click', function () {
+        token().then(function (t) { return t ? api('/auth/v1/logout', { method: 'POST' }, t).catch(function () {}) : null; }).then(function () { keep(null); paint(); status(''); });
+      });
+      var del = page.querySelector('[data-acct-delete]'), armed = false;
+      del.addEventListener('click', function () {
+        var note = page.querySelector('[data-acct-delnote]');
+        if (!armed) { armed = true; del.textContent = 'Yes, Delete Everything'; note.textContent = 'Press again to confirm. This cannot be undone.'; setTimeout(function () { armed = false; del.textContent = 'Delete My Account'; note.textContent = ''; }, 8000); return; }
+        token().then(function (t) { return api('/rest/v1/rpc/delete_me', { method: 'POST', body: {} }, t); }).then(function () {
+          keep(null); quiet = true; KEYS.forEach(function (k) { store(k, null); }); quiet = false; showMyRep(); paint();
+          page.querySelector('[data-acct-title]').textContent = 'Your Account Is Deleted'; page.querySelector('[data-acct-lede]').textContent = 'Your email address and everything saved with it have been erased. You are welcome back any time.';
+        }).catch(function (e) { note.textContent = 'Could not delete just now: ' + e.message; });
+      });
+    }
+    // ---- the unsubscribe link in every email
+    var un = document.querySelector('[data-unsub]');
+    if (un) {
+      var tok = (location.search.match(/[?&]t=([0-9a-fA-F-]{36})/) || [])[1], title = un.querySelector('[data-unsub-title]'), text = un.querySelector('[data-unsub-text]');
+      (tok ? api('/rest/v1/rpc/unsubscribe', { method: 'POST', body: { token: tok } }) : Promise.resolve(false)).then(function (ok) {
+        if (ok) { quiet = true; store('fr-news', '0'); quiet = false; }
+        title.textContent = ok ? 'You Are Unsubscribed' : 'That Link Did Not Work';
+        text.textContent = ok ? 'No more Monday and Friday emails. Your account is still there if you want it, and you can turn the emails back on from it.' : 'Sign in to your account and turn the emails off there.';
+      }).catch(function () { title.textContent = 'That Link Did Not Work'; text.textContent = 'Sign in to your account and turn the emails off there.'; });
+    }
+    paint();
+    if (back.access_token) firstSync(); else if (sess() && page) firstSync();
+  })();
 })();

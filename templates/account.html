@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Your account · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page start acct" data-account data-topics='{{ mytopics|tojson }}' style="gap:36px">
+<div class="stack" style="max-width:720px">
+<span class="label purple">Your Account</span>
+<h1 class="h1" data-acct-title>Make It Yours</h1>
+<p class="lede" data-acct-lede>One free account does two things: it remembers who represents you and what you follow on any device, and it sends you a short email on Monday and Friday about what Congress and your own three members are doing.</p>
+</div>
+
+<section class="card stack acctcard" data-acct-out style="gap:18px">
+{% include "_signup.html" %}
+</section>
+
+<section class="stack" data-acct-in hidden style="gap:20px">
+<div class="card stack" style="gap:6px"><span class="label">Signed In As</span><span class="h3" data-acct-email></span>
+<div class="row" style="gap:18px"><button type="button" class="linkish" data-acct-signout>Sign out</button></div></div>
+
+<div class="card stack" style="gap:14px"><span class="label">Where You Live</span>
+<p class="muted" style="margin:0">Your ZIP code tells us which representative and senators are yours. That is the only thing it is used for.</p>
+<form class="row" data-acct-zipform style="align-items:flex-end"><label class="fieldset" for="acct-zip">ZIP code<input class="field" id="acct-zip" name="zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5-digit ZIP code" style="width:180px"></label><button class="btn sm" type="submit">Save</button></form>
+<div data-acct-three></div></div>
+
+<div class="card stack" style="gap:14px"><span class="label">Your Emails</span>
+<label class="check big"><input type="checkbox" data-acct-news><span><strong>Send me the Monday and Friday emails</strong><br><span class="muted">Monday: what is coming up for a vote. Friday: how Congress voted, and how your own three voted.</span></span></label>
+<p class="small muted" style="margin:0" data-acct-newsnote></p></div>
+
+<div class="card stack" style="gap:14px"><span class="label">Topics You Follow</span>
+<div class="picks" data-acct-topics></div>
+<p class="small muted" style="margin:0">Bills you follow are saved too. Use the Follow button on any bill or topic page.</p></div>
+
+<div class="card stack" style="gap:10px"><span class="label">Leave</span>
+<p class="muted" style="margin:0">Deleting your account erases your email address and everything saved with it. It cannot be undone.</p>
+<div class="row"><button type="button" class="btn sm danger" data-acct-delete>Delete My Account</button><span class="small muted" data-acct-delnote></span></div></div>
+<p class="small muted" data-acct-status aria-live="polite"></p>
+</section>
+
+<p class="small muted" style="max-width:720px">What is kept: your email address, your ZIP code, your state, your representative, the topics and bills you follow, and whether you want the emails. Nothing else. It is never sold or shared. <a href="{{ root }}about/#promise">Our promise</a></p>
+</div>
+{% endblock %}
