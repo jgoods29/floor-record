@@ -4067,6 +4067,18 @@
   "plain": "The House voted 214 to 210 to approve the rules for debating several measures, including a bill providing funding for the Department of Homeland Security for fiscal year 2026. This was a procedural step that sets how long debate lasts and which amendments are allowed, not a final vote on those measures.",
   "v": 2
  },
+ "s2025-1": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to advance the Laken Riley Act",
+  "plain": "The Senate voted 84 to 9 to end debate and move ahead on the Laken Riley Act, which would require detaining certain non-citizens arrested for theft, burglary, assault of a law enforcement officer, or crimes causing death or serious injury, and let states sue the federal government over some immigration enforcement decisions.",
+  "v": 1
+ },
+ "s2025-10": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on Peter Hegseth's nomination as Defense Secretary",
+  "plain": "The Senate voted 53 to 45 to begin work on the nomination of Peter Hegseth, of Tennessee, to be Secretary of Defense. This was a step toward considering the nomination, not the final vote on it.",
+  "v": 1
+ },
  "s2025-100": {
   "model": "claude-haiku-5-5",
   "name": "Vote to advance bill on women's sports eligibility",
@@ -4095,6 +4107,12 @@
   "model": "claude-haiku-5-5",
   "name": "Overturning consumer watchdog rule on payment apps",
   "plain": "The Senate voted 51 to 47 to pass a measure that cancels a rule from the consumer financial watchdog. The rule would have allowed federal oversight of nonbank payment apps that handle at least 50 million transactions a year and are not small businesses.",
+  "v": 1
+ },
+ "s2025-11": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to advance the Born-Alive Abortion Survivors Protection Act",
+  "plain": "The Senate voted 52 to 47 to end debate and move ahead on the Born-Alive Abortion Survivors Protection Act, but this step needed 60 votes and did not reach that number, so the Senate did not take up the bill. The bill would require care for any child born alive after an abortion attempt and set criminal penalties for failing to provide it.",
   "v": 1
  },
  "s2025-110": {
@@ -4343,6 +4361,12 @@
   "plain": "The Senate voted 51 to 48 to adopt a budget framework for federal spending and revenue for 2025, with projected levels through 2034. The plan directs House committees to write laws that change the deficit and raise the debt limit.",
   "v": 1
  },
+ "s2025-2": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to begin work on the Laken Riley Act",
+  "plain": "The Senate voted 82 to 10 to begin debate on the Laken Riley Act, which would require detaining certain non-U.S. nationals arrested for theft, burglary, assault of a law enforcement officer, or crimes causing death or serious injury, and let states sue the federal government over certain immigration enforcement decisions.",
+  "v": 1
+ },
  "s2025-206": {
   "model": "claude-haiku-5-5",
   "name": "Senate vote to take up energy efficiency rule for water heaters",
@@ -4353,6 +4377,12 @@
   "model": "claude-haiku-5-5",
   "name": "Overturning federal energy rule for gas water heaters",
   "plain": "The Senate voted 53 to 44 to pass a resolution that cancels a Department of Energy rule setting energy efficiency standards for gas-fired instantaneous water heaters, which the rule had adopted in December 2024.",
+  "v": 1
+ },
+ "s2025-22": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to advance the Illegitimate Court Counteraction Act",
+  "plain": "The Senate voted on whether to end debate and begin work on the Illegitimate Court Counteraction Act, which would sanction foreign persons who help the International Criminal Court act against certain people. The vote was 54 in favor and 45 opposed, short of the 60 votes needed, so the step was not approved.",
   "v": 1
  },
  "s2025-222": {
@@ -4581,6 +4611,18 @@
   "model": "claude-haiku-5-5",
   "name": "Disapproval of EPA rule on California vehicle pollution standards",
   "plain": "The Senate voted 49 to 46 to pass a resolution overturning the Environmental Protection Agency's approval of California's low-emissions standards for new heavy-duty trucks, engines and some off-road diesel equipment. The resolution cancels the agency's waiver that allowed California to enforce those standards.",
+  "v": 1
+ },
+ "s2025-29": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate starts work on Russell Vought nomination for budget director",
+  "plain": "The Senate voted 51 to 46 to begin considering the nomination of Russell Vought to lead the Office of Management and Budget. The vote was almost entirely along party lines, with all Republicans in favor and all Democrats opposed.",
+  "v": 1
+ },
+ "s2025-3": {
+  "model": "claude-haiku-5-5",
+  "name": "Expanding crimes that require immigration detention",
+  "plain": "The Senate approved a change to the Laken Riley Act, 70 to 25, that would widen the list of crimes requiring detention for people in the U.S. without legal status who are charged with or arrested for them. Most Republicans and about half of Democrats supported it.",
   "v": 1
  },
  "s2025-305": {
@@ -4901,6 +4943,18 @@
   "plain": "The Senate voted 50 to 50, and the Vice President broke the tie in favor, passing the bill. It reduces taxes, changes some federal spending programs including food assistance for some adults, and raises the federal debt limit.",
   "v": 1
  },
+ "s2025-38": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to set aside nomination of Russell Vought as budget director",
+  "plain": "The Senate voted 52 to 47 to set aside the nomination of Russell Vought to be Director of the Office of Management and Budget, which ends the proposal without a direct vote on his appointment. Republicans voted yes and Democrats voted no.",
+  "v": 1
+ },
+ "s2025-39": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote to Begin Consideration of Russell Vought's Nomination as OMB Director",
+  "plain": "The Senate voted 52 to 47 to begin considering Russell Vought's nomination to lead the Office of Management and Budget. This was a step to start work on the nomination, not the final vote on whether he is confirmed.",
+  "v": 1
+ },
  "s2025-391": {
   "model": "claude-haiku-5-5",
   "name": "Senate vote to move the Rescissions Act of 2025 to the floor",
@@ -4953,6 +5007,18 @@
   "model": "claude-haiku-5-5",
   "name": "Motion on the Rescissions Act of 2025",
   "plain": "The Senate voted 52 to 47 to reject a motion to send the Rescissions Act of 2025 back to committee. The act would cancel certain unspent funds for foreign aid, certain independent agencies, and the Corporation for Public Broadcasting.",
+  "v": 1
+ },
+ "s2025-4": {
+  "model": "claude-haiku-5-5",
+  "name": "Proposed change to remove state lawsuit provision from Laken Riley Act",
+  "plain": "The Senate voted 46 to 49 to reject a proposed change that would have removed a section letting state attorneys general sue the federal government over certain immigration detention decisions. The change was not adopted.",
+  "v": 1
+ },
+ "s2025-40": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up Tulsi Gabbard's nomination as intelligence director",
+  "plain": "The Senate voted 52 to 46 to begin considering Tulsi Gabbard's nomination to be Director of National Intelligence. Republicans voted in favor and Democrats voted against. This was a step toward a decision, not the final vote on her nomination.",
   "v": 1
  },
  "s2025-400": {
@@ -5015,6 +5081,12 @@
   "plain": "The Senate voted 51 to 48 against a proposed change that would have removed the $15 million cut to the U.S. Institute of Peace from the bill. The change was rejected, so the cut stays in the bill.",
   "v": 1
  },
+ "s2025-41": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up Tulsi Gabbard's nomination as intelligence director",
+  "plain": "The Senate voted 52 to 47 to begin considering Tulsi Gabbard, of Hawaii, to serve as Director of National Intelligence. All Republicans voted yes, and all Democrats voted no. This was a step toward a decision, not the final vote on her appointment.",
+  "v": 1
+ },
  "s2025-410": {
   "model": "claude-haiku-5-5",
   "name": "Substitute version of the Rescissions Act of 2025",
@@ -5025,6 +5097,12 @@
   "model": "claude-haiku-5-5",
   "name": "Rescissions Act of 2025 final passage vote",
   "plain": "The Senate passed the Rescissions Act of 2025, 51 to 48. The measure cancels specified unspent funds for foreign aid, certain U.S. agencies, and the Corporation for Public Broadcasting, with some programs exempted.",
+  "v": 1
+ },
+ "s2025-42": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on Robert F. Kennedy Jr. nomination for Health Secretary",
+  "plain": "The Senate voted 52 to 47 to begin consideration of Robert F. Kennedy Jr. to be Secretary of Health and Human Services. Republicans voted for it and Democrats voted against it.",
   "v": 1
  },
  "s2025-422": {
@@ -5045,6 +5123,24 @@
   "plain": "The Senate voted 90 to 8 to begin debate on a bill that provides money for fiscal year 2026 to military construction and veterans programs, agriculture and food agencies, and the legislative branch. The vote was a step to start work on the bill, not its final passage.",
   "v": 1
  },
+ "s2025-43": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate starts work on RFK Jr. health secretary nomination",
+  "plain": "The Senate voted 52 to 46 to begin considering Robert F. Kennedy Jr. for Secretary of Health and Human Services. All 52 Republicans voted yes, and all 44 Democrats voted no.",
+  "v": 1
+ },
+ "s2025-44": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Howard Lutnick's Nomination as Commerce Secretary",
+  "plain": "The Senate voted 52 to 46 to begin considering Howard Lutnick, of New York, to be Secretary of Commerce. Republicans voted in favor and Democrats voted against. This step does not confirm him to the post.",
+  "v": 1
+ },
+ "s2025-45": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate starts work on Howard Lutnick's nomination as Commerce Secretary",
+  "plain": "The Senate voted 51 to 46 to begin considering Howard Lutnick to serve as Secretary of Commerce. All Republicans voted yes and all Democrats voted no. This was a procedural step, not the final confirmation vote.",
+  "v": 1
+ },
  "s2025-454": {
   "model": "claude-haiku-5-5",
   "name": "Blocking a vote on arms sales to Israel",
@@ -5055,6 +5151,18 @@
   "model": "claude-haiku-5-5",
   "name": "Blocking arms sale to Israel: Senate motion fails",
   "plain": "The Senate voted 24 to 73 against moving a resolution to block a proposed weapons and defense sale to Israel out of committee for full Senate consideration. The resolution would have prohibited that sale.",
+  "v": 1
+ },
+ "s2025-46": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to begin considering Brooke Rollins for Agriculture Secretary",
+  "plain": "The Senate voted 52 to 46 to begin debate on the nomination of Brooke Rollins of Texas to be Secretary of Agriculture. Republicans voted yes and Democrats voted no. This was a step toward a decision, not the final confirmation vote.",
+  "v": 1
+ },
+ "s2025-47": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up Brooke Rollins's nomination for Agriculture Secretary",
+  "plain": "The Senate voted 53 to 46 to begin considering Brooke Rollins, of Texas, to serve as Secretary of Agriculture. Republicans voted in favor and Democrats voted against. This was a step toward a final decision on her nomination.",
   "v": 1
  },
  "s2025-472": {
@@ -5099,6 +5207,18 @@
   "plain": "The Senate rejected a proposed change to the 2026 spending bill for military construction, veterans, agriculture and Congress, by 21 votes in favor to 75 against. The change would have limited disclosures about earmarks, which are funds directed to specific projects.",
   "v": 1
  },
+ "s2025-479": {
+  "model": "claude-haiku-5-5",
+  "name": "Substitute amendment to 2026 military, veterans, agriculture and legislative funding bill",
+  "plain": "The Senate voted 87 to 9 to adopt a substitute version of the bill, which would provide fiscal year 2026 funding for military construction, veterans programs, agriculture and food safety, and the legislative branch. The change replaces the bill's original text, and the vote cleared the 60-vote threshold.",
+  "v": 1
+ },
+ "s2025-48": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Votes to Begin Considering Loeffler's Nomination",
+  "plain": "The Senate voted 53 to 45 to begin considering Kelly Loeffler, of Georgia, for Administrator of the Small Business Administration. Republicans voted in favor and Democrats voted against.",
+  "v": 1
+ },
  "s2025-480": {
   "model": "claude-haiku-5-5",
   "name": "Funding for military construction, veterans, agriculture and Congress",
@@ -5109,6 +5229,12 @@
   "model": "claude-haiku-5-5",
   "name": "Change to 2026 military, veterans, agriculture and Senate funding bill",
   "plain": "The Senate voted 81 to 15 to approve a proposed change to a bill that provides 2026 funding for military construction, veterans programs, agriculture and the Food and Drug Administration, and the Senate. The specific change is not described in the official facts.",
+  "v": 1
+ },
+ "s2025-5": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to advance the Laken Riley Act",
+  "plain": "The Senate voted 61 to 35 to end debate and move ahead on the Laken Riley Act, which reached the 60 votes needed. The act would require detaining certain immigrants who are charged with or arrested for crimes such as theft, burglary, or assault of a police officer, and would let states sue the federal government over some immigration enforcement decisions.",
   "v": 1
  },
  "s2025-500": {
@@ -5339,6 +5465,12 @@
   "plain": "The Senate voted 50 to 47 to begin considering a resolution that would cancel a Bureau of Land Management rule on the Central Yukon land management plan in Alaska. The resolution would nullify the rule, which set aside about 3.6 million acres as areas of critical environmental concern or research natural areas.",
   "v": 1
  },
+ "s2025-56": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Kashyap Patel's Nomination as FBI Director",
+  "plain": "The Senate voted 48 to 45 to begin considering Kashyap Patel's nomination to be Director of the Federal Bureau of Investigation for a ten-year term. This vote was to start work on the nomination, not the final confirmation vote.",
+  "v": 1
+ },
  "s2025-560": {
   "model": "claude-haiku-5-5",
   "name": "Resolution to overturn Central Yukon land management plan",
@@ -5429,6 +5561,12 @@
   "plain": "The Senate voted 50 to 43 to end debate and move ahead on a bill to fund most federal agencies through January 30, 2026, ending the shutdown that began October 1, 2025. The vote fell short of the 60 votes needed, so the bill was not advanced.",
   "v": 1
  },
+ "s2025-58": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate starts work on fiscal 2025 budget resolution",
+  "plain": "The Senate voted 50 to 47 to begin debate on a budget plan for the federal government for fiscal year 2025, with projected spending and revenue levels through 2034. The plan itself is a blueprint that directs committees to draft later bills that would change the deficit.",
+  "v": 1
+ },
  "s2025-581": {
   "model": "claude-haiku-5-5",
   "name": "Vote to end debate on shutdown-ending funding bill",
@@ -5475,6 +5613,12 @@
   "model": "claude-haiku-5-5",
   "name": "Reopening oil and gas leasing in Alaska's National Petroleum Reserve",
   "plain": "The Senate voted 52 to 45 to pass a measure that cancels a 2022 federal plan closing about 48% of the Alaska reserve to oil and gas leasing, restoring the 2020 plan's terms.",
+  "v": 1
+ },
+ "s2025-6": {
+  "model": "claude-haiku-5-5",
+  "name": "Adding serious violent crimes to detention requirement",
+  "plain": "The Senate voted 75 to 24 to approve a change to the Laken Riley Act. The change adds crimes that cause death or serious injury to the list of offenses that require the government to detain certain non-citizens who are charged with them.",
   "v": 1
  },
  "s2025-600": {
@@ -5555,6 +5699,12 @@
   "plain": "The Senate passed a bill to end the government shutdown that began October 1, 2025, by continuing funding for most federal agencies through January 30, 2026, and funding agriculture, military construction and veterans affairs, and legislative branch programs through the end of fiscal year 2026. The vote was 60 yes, 40 no.",
   "v": 1
  },
+ "s2025-62": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on setting aside budget rule for tax cut limits",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill to prevent unwarranted tax cuts for the ultra-rich could go ahead. The proposal needed 60 votes and got 47, so it did not reach the 60 votes needed and the rule stayed in force.",
+  "v": 1
+ },
  "s2025-621": {
   "model": "claude-haiku-5-5",
   "name": "Senate Vote to Take Up Buffalo, Wyoming Coal Leasing Rule Dispute",
@@ -5573,6 +5723,12 @@
   "plain": "The Senate voted 51 to 43 to pass a resolution that cancels a Bureau of Land Management rule. The rule had made federal coal in the Buffalo Field Office area in Wyoming unavailable for future leasing. The resolution requires the agency to return to the earlier management plan, which allows coal leasing there.",
   "v": 1
  },
+ "s2025-63": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on tax cuts for the wealthy and food costs",
+  "plain": "The Senate voted on whether to set aside a budget rule so a measure ending tax cuts for the very wealthy could move ahead. It needed 60 votes and got 48 in favor, so it did not reach the 60 votes needed and the rule stays in place.",
+  "v": 1
+ },
  "s2025-630": {
   "model": "claude-haiku-5-5",
   "name": "Senate Votes to Take Up Arctic Refuge Oil Drilling Rule Dispute",
@@ -5589,6 +5745,12 @@
   "model": "claude-haiku-5-5",
   "name": "Senate vote to advance a package of nominations",
   "plain": "The Senate voted 43 to 37 to end debate on a resolution that would allow a group of presidential nominees on the calendar to be considered together. The vote needed 60 votes to succeed, so it was not approved and debate continues for now.",
+  "v": 1
+ },
+ "s2025-64": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on hedge fund ownership of homes and rents",
+  "plain": "The Senate rejected a proposed change to the budget plan, 48 to 52. The change would have set aside a fund, with no added deficit, to address hedge fund ownership of single-family homes and rent prices.",
   "v": 1
  },
  "s2025-641": {
@@ -5673,6 +5835,12 @@
   "model": "claude-haiku-5-5",
   "name": "Budget plan change on wildland firefighter support",
   "plain": "The Senate rejected a proposed change to the federal budget plan for fiscal year 2025 that would have set aside funds to support federal wildland firefighters and related personnel. The vote was 48 in favor and 52 against.",
+  "v": 1
+ },
+ "s2025-7": {
+  "model": "claude-haiku-5-5",
+  "name": "Laken Riley Act final passage vote",
+  "plain": "The Senate passed the Laken Riley Act, 64 to 35. The law requires federal officials to hold certain non-citizens who have been arrested for theft, burglary, assault of a police officer, or crimes causing death or serious injury, and lets states sue the federal government over certain immigration enforcement decisions.",
   "v": 1
  },
  "s2025-70": {
@@ -5783,6 +5951,12 @@
   "plain": "The Senate voted 52 to 48 to approve a budget plan setting the federal government's spending and revenue targets for fiscal year 2025 and projections through 2034. The plan directs several Senate and House committees to write laws that would raise or lower the deficit by set amounts.",
   "v": 1
  },
+ "s2025-9": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate moves ahead on Ratcliffe CIA director nomination",
+  "plain": "The Senate voted 54 to 46 to begin considering John Ratcliffe, of Texas, to serve as Director of the Central Intelligence Agency. Republicans voted yes, joined by one Democrat, while most Democrats voted no.",
+  "v": 1
+ },
  "s2025-91": {
   "model": "claude-haiku-5-5",
   "name": "Senate vote on reversing ocean archaeology rule",
@@ -5793,6 +5967,12 @@
   "model": "claude-haiku-5-5",
   "name": "Overturning rule on archaeological reports for offshore drilling",
   "plain": "The Senate voted 54 to 44 to pass a resolution cancelling a federal rule that required oil and gas companies to submit archaeological reports with offshore drilling plans. The rule is reversed, so earlier rules apply again, requiring such reports only when regulators have reason to think archaeological remains may be present.",
+  "v": 1
+ },
+ "s2025-93": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate starts work on Linda McMahon's nomination as Education Secretary",
+  "plain": "The Senate voted 51 to 47 to begin work on the nomination of Linda McMahon, of Connecticut, to be Secretary of Education. Republicans voted yes and Democrats voted no. This was a procedural step, not the final confirmation vote.",
   "v": 1
  },
  "s2025-95": {
@@ -6567,6 +6747,12 @@
   "model": "claude-haiku-5-5",
   "name": "Vote to end debate on voter citizenship and photo ID bill",
   "plain": "The Senate voted to end debate so it could move ahead on the SAVE America Act, which would require proof of U.S. citizenship to register and photo ID to vote in federal elections. The vote needed 60 senators in favor and got 41, so it was not approved and the debate continues for now.",
+  "v": 1
+ },
+ "s2026-66": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up Coast Guard nominations",
+  "plain": "The Senate voted 51 to 47 to begin considering a group of Coast Guard nominations, including James M. Hurtt through Kelli A. Knight. Nominations are people put forward for appointment to positions.",
   "v": 1
  },
  "s2026-67": {
