@@ -537,3 +537,14 @@ header .wrap > .nav { order: 2; flex-basis: 100%; }
 header .wrap > .search { order: 3; }
 .chamberbar { padding-top: 18px; }
 @media (max-width: 640px) { header .chamber a { padding: 6px 14px; min-height: 34px; } }
+
+/* "your representative / your senators" sits beside the site name, never among the tabs */
+header .yours { order: 1; margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px 8px; min-width: 0; }
+header .yours ~ .chamber { margin-left: 12px; }
+header .yours a.myrep { color: var(--purple-ink); background: #F1EBFE; border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: 14px; text-decoration: none; white-space: nowrap; }
+header .yours a.myrep.sen { background: #fff; border: 1px solid #DCCBFB; }
+header .yours .yours-x { border: 0; background: none; color: var(--muted); font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; padding: 6px 4px; }
+@media (max-width: 900px) {
+  header .wrap > .brand { order: 0; } header .chamber, header .yours ~ .chamber { order: 0; margin-left: auto; }
+  header .yours { order: 1; flex-basis: 100%; margin-left: 0; justify-content: flex-start; }
+}

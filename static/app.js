@@ -17,29 +17,37 @@
   function contactRows() { return once(root + 'contacts.json'); }
   // the two senators for a state: resolves to [] when the Senate pages are not there
   function senatorsFor(st) { return !st ? Promise.resolve([]) : once(root + 'senators.json').then(function (rows) { return rows.filter(function (r) { return r[2] === st; }); }).catch(function () { return []; }); }
-  function myState() { return store('fr-state'); }
+  // "Home" is only ever set by a ZIP code lookup. Browsing a state in a drop-down does not make its senators yours.
+  function myState() { return store('fr-home'); }
   // -> { rows: members for that ZIP, where: ['KY3', ...] } or null when the ZIP is not known
   function byZip(zip) {
     return Promise.all([once(root + 'zip/' + zip.charAt(0) + '.json'), contactRows()]).then(function (res) {
       var where = res[0][zip]; if (!where) return null;
       where = where.split(',');
-      store('fr-state', where[0].slice(0, 2));
+      store('fr-home', where[0].slice(0, 2));
       return { where: where, state: where[0].slice(0, 2), rows: res[1].filter(function (r) { return where.indexOf(r[2] + r[8]) !== -1; }) };
     });
   }
   function showMyRep() {
-    var rep = myRep(), nav = document.querySelector('.nav'), old = document.querySelector('.myrep');
+    var rep = myRep(), st = myState(), scope = document.body.getAttribute('data-scope') || 'all';
+    var head = document.querySelector('header .wrap'), old = document.querySelector('.yours');
     if (old) old.parentNode.removeChild(old);
-    if (rep && nav) { var a = document.createElement('a'); a.className = 'myrep'; a.href = root + 'members/' + rep.id + '/'; a.textContent = 'Your Rep: ' + rep.name; nav.insertBefore(a, nav.firstChild); }
-    var oldSen = document.querySelector('.myrep.sen'); if (oldSen) oldSen.parentNode.removeChild(oldSen);
-    var st = myState();
-    if (st && nav) senatorsFor(st).then(function (rows) {
-      if (!rows.length || document.querySelector('.myrep.sen')) return;
-      var a = document.createElement('a'); a.className = 'myrep sen'; a.href = root + 'senate/members/#state-' + st;
-      a.textContent = 'Your Senators: ' + rows.map(function (r) { return r[1].split(' ').pop(); }).join(', ');
-      var first = nav.querySelector('.myrep:not(.sen)'); nav.insertBefore(a, first ? first.nextSibling : nav.firstChild);
-    });
     each(document.querySelectorAll('[data-myrep]'), function (b) { var on = rep && rep.id === b.getAttribute('data-myrep'); b.textContent = on ? 'This is your representative. Undo' : 'This is my representative'; b.classList.toggle('on', !!on); });
+    if (!head || (!rep && !st)) return;
+    // its own spot beside the site name, so it never crowds the tabs; House pages show your representative,
+    // Senate pages your senators, and pages that cover both show both
+    var box = document.createElement('div'); box.className = 'yours';
+    var anchor = head.querySelector('.chamber') || head.querySelector('.nav'); head.insertBefore(box, anchor);
+    var add = function (cls, href, text) { var a = document.createElement('a'); a.className = 'myrep ' + cls; a.href = href; a.textContent = text; box.insertBefore(a, box.querySelector('.yours-x')); };
+    var x = document.createElement('button'); x.type = 'button'; x.className = 'yours-x'; x.setAttribute('aria-label', 'Forget my representative and senators'); x.textContent = 'Clear';
+    x.addEventListener('click', function () { store('fr-rep', null); store('fr-home', null); store('fr-zip', null); showMyRep(); yourVote(); });
+    box.appendChild(x);
+    if (rep && scope !== 'senate') add('', root + 'members/' + rep.id + '/', 'Your Rep: ' + rep.name);
+    if (st && scope !== 'house') senatorsFor(st).then(function (rows) {
+      if (!rows.length || !box.parentNode || box.querySelector('.sen')) return;
+      add('sen', root + 'senate/members/#state-' + st, 'Your Senators: ' + rows.map(function (r) { return r[1].split(' ').pop(); }).join(', '));
+    });
+    if (!box.querySelector('.myrep') && !(st && scope !== 'house')) box.parentNode.removeChild(box);
   }
   showMyRep();
   document.addEventListener('click', function (e) {
@@ -286,14 +294,14 @@
         (many ? '<button type="button" class="linkish small" data-myrep="' + esc(r[0]) + '" data-name="' + esc(r[1]) + '">This is my representative</button>' : '') +
         '</div><div class="reach-acts">' + acts + '</div></div>';
     };
-    var show = function (rows, text, st) {
+    var show = function (rows, text, st, byZipCode) {
       var rep = myRep(), house = rows.map(function (r) { return rowHtml(r, 'members/', rows.length > 1, rep && rep.id); }).join('');
       msg.innerHTML = text || '';
       list.innerHTML = house;
       showMyRep();
       senatorsFor(st).then(function (sens) {
         if (!sens.length) return;
-        list.innerHTML = (house ? '<div class="reach-sub">In the House</div>' + house : '') + '<div class="reach-sub">Your two senators</div>' +
+        list.innerHTML = (house ? '<div class="reach-sub">In the House</div>' + house : '') + '<div class="reach-sub">' + (byZipCode ? 'Your two senators' : 'The two senators for this state') + '</div>' +
           sens.map(function (r) { return rowHtml(r, 'senate/members/', false, ''); }).join('');
         showMyRep();
       });
@@ -312,8 +320,8 @@
       byZip(z).then(function (hit) {
         if (!hit || !hit.rows.length) { show([], 'We could not match ' + esc(z) + '. Try a nearby ZIP code or choose your state.'); return; }
         store('fr-zip', z); sel.value = '';
-        if (hit.rows.length === 1) { setMyRep(hit.rows[0][0], hit.rows[0][1]); yourVote(); show(hit.rows, '<strong>This is your representative.</strong>', hit.state); }
-        else show(hit.rows, 'ZIP code ' + esc(z) + ' is shared by ' + hit.rows.length + ' districts. <strong>One of these is yours.</strong> To settle it, <a rel="noopener" href="https://www.house.gov/representatives/find-your-representative">enter your street address on house.gov</a>, then mark yours here.', hit.state);
+        if (hit.rows.length === 1) { setMyRep(hit.rows[0][0], hit.rows[0][1]); yourVote(); show(hit.rows, '<strong>This is your representative.</strong>', hit.state, true); }
+        else show(hit.rows, 'ZIP code ' + esc(z) + ' is shared by ' + hit.rows.length + ' districts. <strong>One of these is yours.</strong> To settle it, <a rel="noopener" href="https://www.house.gov/representatives/find-your-representative">enter your street address on house.gov</a>, then mark yours here.', hit.state, true);
       }).catch(fail);
     };
     sel.addEventListener('change', fromState);
