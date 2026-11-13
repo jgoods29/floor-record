@@ -48,6 +48,23 @@
 </div>
 {% if section != 'home' %}<p class="pledge"><span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>Free, and for the people. No tracking, no profit, just knowledge.</p>{% endif %}
 </footer>
-<script src="{{ root }}static/app.js?v={{ asset_v }}" defer></script>
+{% if acct_on %}<button type="button" class="subfab" data-pop-open hidden><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><rect x="2.500" y="4.500" width="15" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.700"/><path d="M3.500 6l6.500 5 6.500-5" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round"/></svg>Subscribe</button>
+<div class="pop" data-pop{% if section in ('account', 'you') %} data-pop-quiet{% endif %} hidden>
+<div class="pop-card" role="dialog" aria-modal="true" aria-labelledby="pop-h">
+<button type="button" class="pop-x" data-pop-close aria-label="Close">×</button>
+<span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>
+<h2 class="h2" id="pop-h">Know How They Voted. Every Week.</h2>
+<p class="pop-lede">Two short emails. <strong>Monday:</strong> what Congress is about to vote on. <strong>Friday:</strong> how your own representative and senators voted.</p>
+<form class="stack signup" data-signup style="gap:10px" novalidate>
+<label class="sr" for="pop-email">Email</label><input class="field" id="pop-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
+<label class="sr" for="pop-zip">ZIP code</label><input class="field" id="pop-zip" name="zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="ZIP code, so we know who represents you">
+<input type="checkbox" name="newsletter" checked hidden>
+<button class="btn" type="submit">Sign Me Up, Free</button>
+<p class="small muted" style="margin:0" data-signup-note aria-live="polite"></p>
+</form>
+<p class="pop-trust"><strong>We never sell your data.</strong> We are only here to make public information easy to find. Unsubscribe with one click.</p>
+<button type="button" class="linkish small" data-pop-close>No thanks</button>
+</div></div>
+{% endif %}<script src="{{ root }}static/app.js?v={{ asset_v }}" defer></script>
 </body>
 </html>

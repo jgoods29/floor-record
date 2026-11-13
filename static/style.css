@@ -620,3 +620,32 @@ header .yours ~ .chamber ~ .mypage { font-size: 0; gap: 0; padding: 6px 11px; }
 a.youcard { flex-direction: row; align-items: center; gap: 16px; text-align: left; max-width: 760px; margin: 0 auto; width: 100%; }
 a.youcard .go { margin: 0 0 0 auto; white-space: nowrap; color: var(--purple); }
 @media (max-width: 640px) { a.youcard { flex-wrap: wrap; } a.youcard .go { margin-left: 68px; } .youhead .h1 { font-size: 32px !important; } }
+
+.asks { grid-template-columns: repeat(auto-fit, minmax(min(215px, 100%), 1fr)); }
+.basics-head { border-top: 1px solid var(--line); padding-top: 56px; }
+
+/* the newsletter invitation */
+.pop { position: fixed; inset: 0; z-index: 50; background: rgba(20,33,61,.45); display: flex; align-items: center; justify-content: center; padding: 18px; animation: popfade .25s ease; }
+.pop[hidden] { display: none; }
+.pop-card { position: relative; width: 100%; max-width: 440px; background: #fff; border-radius: 20px; padding: 32px 30px 24px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 24px 60px rgba(20,33,61,.28); border-top: 6px solid var(--purple); animation: poprise .3s ease; }
+.pop-card .h2 { font-size: 30px; line-height: 1.1; margin: 0; }
+.pop-lede { margin: 0; font-size: 17px; color: var(--text-2); }
+.pop-card .field { width: 100%; min-height: 48px; font-size: 16px; }
+.pop-card .btn { min-height: 50px; font-size: 17px; }
+.pop-trust { margin: 0; font-size: 14px; color: var(--text-2); background: #F7F3FF; border-radius: 12px; padding: 12px 14px; }
+.pop-trust strong { color: var(--purple-ink); }
+.pop-x { position: absolute; top: 10px; right: 12px; width: 40px; height: 40px; border: 0; background: none; font-size: 28px; line-height: 1; color: var(--muted); cursor: pointer; border-radius: 50%; }
+.pop-x:hover { background: var(--tint, #F4F6FA); }
+.pop-card > .linkish { align-self: center; color: var(--muted); }
+@keyframes popfade { from { opacity: 0; } } @keyframes poprise { from { transform: translateY(14px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .pop, .pop-card { animation: none; } }
+
+/* the small Subscribe button, in reach on every page */
+.subfab { position: fixed; right: 18px; bottom: 18px; z-index: 40; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 16px; border: 0; border-radius: 999px; background: var(--purple); color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 6px 18px rgba(109,40,217,.35); }
+.subfab:hover { background: var(--purple-ink); }
+.subfab[hidden] { display: none; }
+@media (max-width: 640px) { .subfab { right: 12px; bottom: 12px; } }
+
+/* topic chips say what a tap will do: + to follow, a tick once followed */
+.pick[data-follow]::before { content: "+"; margin-right: 7px; font-weight: 700; color: var(--purple); }
+.pick[data-follow].on::before { content: "\2713"; color: #fff; }

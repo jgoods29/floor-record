@@ -399,10 +399,13 @@
       var name = {}; all.forEach(function (t) { name[t[0]] = t[1]; });
       var chosen = all.filter(function (t) { return topics.indexOf(t[0]) !== -1; }), rest = all.filter(function (t) { return topics.indexOf(t[0]) === -1; });
       var pick = function (t, on) { return '<button type="button" class="pick' + (on ? ' on' : '') + '" data-follow="fr-topics" data-id="' + esc(t[0]) + '" aria-pressed="' + on + '">' + esc(t[1]) + '</button>'; };
-      q1('[data-mine-picks]').innerHTML = chosen.map(function (t) { return pick(t, true); }).join('') + rest.slice(0, chosen.length ? 6 : 10).map(function (t) { return pick(t, false); }).join('') +
-        (rest.length > (chosen.length ? 6 : 10) ? '<a class="small" href="' + root + 'topics/">All topics</a>' : '');
+      var few = chosen.length ? 6 : 10, wide = mine.getAttribute('data-all-topics') === '1';
+      q1('[data-mine-picks]').innerHTML = chosen.map(function (t) { return pick(t, true); }).join('') + rest.slice(0, wide ? rest.length : few).map(function (t) { return pick(t, false); }).join('') +
+        (rest.length > few ? '<button type="button" class="linkish small" data-mine-more>' + (wide ? 'Show fewer' : 'Show all ' + all.length + ' topics') + '</button>' : '');
+      var saidEl = q1('[data-mine-topicsaid]');
+      if (saidEl) saidEl.textContent = chosen.length ? 'You follow ' + chosen.length + (chosen.length === 1 ? ' topic' : ' topics') + '. Saved. Tap one again to stop following it.' : 'Tap any topic to follow it. It is saved right away.';
       var tv = q1('[data-mine-topicvotes]');
-      if (!topics.length) tv.innerHTML = '<p class="muted" style="margin:0">Pick a topic to see the latest votes on it from the House and the Senate.</p>';
+      if (!topics.length) tv.innerHTML = '';
       else Promise.all([once(root + 'votes-index.json'), once(root + 'senate/votes-index.json').catch(function () { return []; })]).then(function (res) {
         var rows = [];
         res.forEach(function (idx, c) { idx.forEach(function (r) { if (!r[7] && r[8].some(function (k) { return topics.indexOf(k) !== -1; })) rows.push([Date.parse(r[1]) || 0, r, c ? 'senate/' : '']); }); });
@@ -445,6 +448,7 @@
       });
       mine.addEventListener('click', function (e) { var b = e.target.closest('[data-mine-rep]'); if (b) { setMyRep(b.getAttribute('data-mine-rep'), b.getAttribute('data-name')); } });
     }
+    mine.addEventListener('click', function (e) { if (e.target.closest('[data-mine-more]')) { mine.setAttribute('data-all-topics', mine.getAttribute('data-all-topics') === '1' ? '0' : '1'); drawMine(); } });
     afterYours = drawMine;
     drawMine();
   }
@@ -635,6 +639,7 @@
       each(document.querySelectorAll('[data-acct-link]'), function (a) { a.querySelector('span').textContent = on ? 'Your Page' : 'Sign In'; a.href = a.getAttribute(on ? 'data-you' : 'data-in'); });
       each(document.querySelectorAll('[data-acct-settings]'), function (el) { el.hidden = !on; });
       each(document.querySelectorAll('[data-acct-out]'), function (el) { el.hidden = on; });
+      each(document.querySelectorAll('[data-pop-open]'), function (el) { el.hidden = on; });
       each(document.querySelectorAll('[data-acct-in]'), function (el) { el.hidden = !on; });
       if (!page || !on) return;
       page.querySelector('[data-acct-title]').textContent = 'Your Account';
@@ -700,6 +705,27 @@
         title.textContent = ok ? 'You Are Unsubscribed' : 'That Link Did Not Work';
         text.textContent = ok ? 'No more Monday and Friday emails. Your account is still there if you want it, and you can turn the emails back on from it.' : 'Sign in to your account and turn the emails off there.';
       }).catch(function () { title.textContent = 'That Link Did Not Work'; text.textContent = 'Sign in to your account and turn the emails off there.'; });
+    }
+    // ---- the newsletter invitation: once, after 30 seconds on the site, never for someone signed in or who said no
+    var pop = document.querySelector('[data-pop]'), fab = document.querySelector('[data-pop-open]');
+    if (pop) {
+      var esc27 = function (e) { if (e.key === 'Escape') shut(); };
+      var shut = function () { pop.hidden = true; store('fr-pop', '1'); document.removeEventListener('keydown', esc27); if (fab) fab.focus(); };
+      var open = function () { pop.hidden = false; document.addEventListener('keydown', esc27); var f = pop.querySelector('input[name=email]'); if (f) f.focus(); };
+      pop.addEventListener('click', function (e) { if (e.target === pop || e.target.closest('[data-pop-close]')) shut(); });
+      var pf = pop.querySelector('form');
+      pf.addEventListener('submit', function () { store('fr-pop', '1'); var no = pop.querySelector('.pop-card > [data-pop-close].linkish'); if (no) no.textContent = 'Close'; });
+      // the small Subscribe button: there on every page until the person has signed in
+      if (fab) { fab.hidden = !!sess(); fab.addEventListener('click', open); }
+      if (!sess() && !store('fr-pop') && !pop.hasAttribute('data-pop-quiet')) {
+        var began = 0; try { began = +sessionStorage.getItem('fr-began') || 0; if (!began) { began = Date.now(); sessionStorage.setItem('fr-began', began); } } catch (e) { began = Date.now(); }
+        setTimeout(function () {
+          if (sess() || store('fr-pop') || !pop.hidden) return;
+          var el = document.activeElement, busy = el && /INPUT|TEXTAREA|SELECT/.test(el.tagName);
+          if (busy) el.addEventListener('blur', function () { if (!store('fr-pop')) { pop.hidden = false; document.addEventListener('keydown', esc27); } }, { once: true });
+          else { pop.hidden = false; document.addEventListener('keydown', esc27); }
+        }, Math.max(0, 30000 - (Date.now() - began)));
+      }
     }
     paint();
     if (back.access_token) firstSync(); else if (sess() && page) firstSync();
