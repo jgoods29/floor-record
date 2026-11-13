@@ -93,6 +93,24 @@ def carried(result):
                                     "not guilty", "veto sustained", "not germane"))
 
 
+CABINET = re.compile(r"^(Secretary of (State|the Treasury|Defense|War|the Interior|Agriculture|Commerce|Labor|Health and Human Services|"
+                     r"Housing and Urban Development|Transportation|Energy|Education|Veterans Affairs|Homeland Security)|Attorney General)$", re.I)
+
+
+def nominee(vote):
+    """(person, post, group) from the Senate's own title. group: judges, cabinet, ambassadors, military, other, or bloc."""
+    pns = [d for d in vote["documents"] if d["type"] == "PN"]
+    if len(pns) > 1 or "en bloc" in (vote["title"] + vote["question_text"]).lower():
+        return ("", f"A Group Of {len(pns)} Nominations" if 1 < len(pns) < 40 else "A Group Of Nominations", "bloc")
+    name = nominee_name(vote)
+    person, _, post = name.partition(" For ")
+    low = post.lower()
+    group = ("judges" if re.search(r"\bjudge\b|associate justice|chief justice", low) else "cabinet" if CABINET.match(post.strip()) else
+             "ambassadors" if "ambassador" in low or ("representative" in low and "united nations" in low) else
+             "military" if re.search(r"in the (u\.s\. |regular )?(army|navy|air force|marine corps|space force)|joint chiefs", low) else "other")
+    return (person if post else "", post or name, group)
+
+
 def nominee_name(vote):
     """'Evan Rikhye For Judge, District Court of the Virgin Islands' from the Senate's own title."""
     pns = [d for d in vote["documents"] if d["type"] == "PN"]
@@ -169,6 +187,7 @@ def explain_senate(vote, bills):
         "two_thirds": vote["requirement"] == "2/3", "label": label, "title": title, "name": name, "outcome": outcome,
         "gist": gist, "plain": gist, "fine": fine, "routine": routine, "source": "rules", "result_note": " ".join(notes),
         "yea_short": yea, "nay_short": nay,
+        "nominee": nominee(vote) if kind in ("nomination", "cloture_nom") else None,
     }
 
 

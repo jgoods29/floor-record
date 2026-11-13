@@ -1,0 +1,30 @@
+{% extends "base.html" %}{% import "_m.html" as m with context %}
+{% block title %}Senate confirmations · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page" style="gap:36px">
+<div class="stack" style="gap:14px;max-width:780px">
+<div class="eyebrow"><span>U.S. Senate</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
+<h1 class="h1">Confirmations</h1>
+<p class="lede">The President picks people for the government's top jobs: judges, cabinet secretaries, ambassadors. Most of them cannot start until the Senate votes yes. This is every one of those votes.</p>
+<p class="newline">A judge confirmed here can serve for life, so these votes can matter for decades. Only the Senate votes on nominees; the House has no say.</p>
+</div>
+<section class="grid tiles" aria-label="Totals">
+<div class="card tile"><span class="bignum sm">{{ noms|length }}</span><span class="strong">Confirmation votes</span><span class="small muted">with a recorded vote, since {{ span[:4] }}</span></div>
+<div class="card tile"><span class="bignum sm">{{ noms|length - n_no }}</span><span class="strong">Confirmed</span><span class="small muted">{{ n_no }} rejected</span></div>
+<div class="card tile"><span class="bignum sm">{{ n_party }}</span><span class="strong">Split by party</span><span class="small muted">most Republicans on one side, most Democrats on the other</span></div>
+</section>
+<div class="row cfind" style="align-items:flex-end">
+<label class="fieldset" for="n-filter" style="flex:1 1 280px">Find a nominee or a job<input class="field" id="n-filter" type="search" placeholder="Try a name, or a word like judge or Labor"></label>
+<div class="row" style="gap:8px"><button type="button" class="btn sm on" data-ngroup="">All</button>{% for key, name, n in groups %}<button type="button" class="btn sm" data-ngroup="{{ key }}">{{ name }} ({{ n }})</button>{% endfor %}</div>
+</div>
+<p class="small muted" id="nom-none" hidden>Nothing matches. Try a last name.</p>
+<div class="card flush rows" id="nom-list">
+{% for n in noms %}<a class="nrow" href="{{ root }}senate/votes/{{ n.v.id }}/" data-group="{{ n.group }}" data-text="{{ (n.person ~ ' ' ~ n.post)|lower }}">
+<span class="when">{{ n.v.date|nicedate }}</span>
+<span class="main"><span class="nname">{{ n.person or n.post }}</span>{% if n.person %}<span class="muted">{{ n.post }}</span>{% endif %}</span>
+<span class="side"><span class="strong">{{ 'Confirmed' if n.ok else 'Rejected' }}</span><span class="small muted">{{ n.v.totals.yea }} to {{ n.v.totals.nay }}{% if n.v.split %} · parties split{% endif %}</span></span>
+</a>{% endfor %}
+</div>
+<p class="small muted">Many nominees are approved without a recorded vote, by agreement of all senators. Those do not appear here because there is no vote to show. Votes to end debate on a nominee are listed with the other <a href="{{ root }}senate/votes/">Senate votes</a>.</p>
+</div>
+{% endblock %}

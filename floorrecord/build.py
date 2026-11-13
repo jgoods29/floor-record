@@ -241,11 +241,38 @@ COMMITTEE_ABOUT = {
     "HSWM": "Taxes, trade, Social Security and Medicare.",
     "HSZS": "Studies economic, technological and security competition with China.",
     "HSQJ": "A special panel reviewing unanswered questions about January 6, 2021.",
+    "SSAF": "Farm policy, forestry, and nutrition programs, including SNAP (food stamps).",
+    "SSAP": "Writes the yearly spending bills that fund the federal government.",
+    "SSAS": "The military: its budget, troops, weapons and bases. Questions the President's picks for top defense jobs.",
+    "SSBK": "Banks, housing, the stock market and the wider financial system.",
+    "SSBU": "Sets the overall budget plan: how much the government aims to spend and take in.",
+    "SSCM": "Transportation, technology, the internet, science, space and consumer protection.",
+    "SSEG": "Energy, public lands, national parks, water and mining.",
+    "SSEV": "Clean air and water, wildlife, and building roads, bridges and water systems.",
+    "SSFI": "Taxes, trade, Social Security, Medicare and Medicaid.",
+    "SSFR": "Relations with other countries, treaties and foreign aid. Questions the President's picks for ambassador.",
+    "SSGA": "Homeland security and how the federal government runs. The Senate's main watchdog.",
+    "SSHR": "Health care, schools, workplace rules and retirement plans.",
+    "SSJU": "Courts, crime, immigration and civil rights. Questions the President's picks for judge.",
+    "SSRA": "The Senate's own rules, plus federal election law.",
+    "SSSB": "Small businesses and the agency that supports them.",
+    "SSVA": "Veterans' health care, benefits and the Department of Veterans Affairs.",
+    "SLIA": "Issues affecting Native American, Alaska Native and Native Hawaiian communities.",
+    "SLET": "Investigates whether senators and staff broke the Senate's conduct rules.",
+    "SLIN": "Oversees the country's intelligence agencies, such as the CIA and NSA.",
+    "SPAG": "Studies issues facing older Americans, such as retirement, health care and fraud.",
+    "SCNC": "Studies international drug trafficking and how to fight it.",
+    "JSEC": "House and Senate members together study the economy and report on it.",
+    "JSTX": "House and Senate members together oversee the tax system, with expert staff who estimate what tax bills would cost.",
+    "JSLC": "House and Senate members together oversee the Library of Congress.",
+    "JSPR": "House and Senate members together oversee government printing and publishing.",
+    "JCSE": "House and Senate members who monitor human rights and security in Europe. Also called the Helsinki Commission.",
 }
 
 
 def committee_short(name):
-    return re.sub(r"^House (Committee on (the )?)?", "", name).strip()
+    name = re.sub(r"^(United States )?(House|Senate) (Committee on (the )?)?", "", name)
+    return re.sub(r"^Joint Committee (of Congress )?on (the )?", "", name).strip()
 
 
 def seat_chart(counts, total=435, rows=11):
@@ -545,43 +572,77 @@ def main():
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,
            nroutine=sum(1 for v in votes if v["info"]["routine"]))
+    # ---- the Senate: the same counting, fed with Senate roll calls (prepared here, pages written further down)
+    svotes, speople = [], {}
+    senate_search = []
+    senators = read_json(DATA / "senators.json", {})
+    svotes_raw = load_senate_votes(cfg["years"], senators, bills) if senators else []
+    if svotes_raw:
+        sres = compute(svotes_raw, senators, bills, dict(cfg, close_margin=5))
+        svotes, speople = sres["votes"], sres["people"]
+        known_topics = {t["key"] for t in all_topics}
+        for v in svotes:
+            info = v["info"]
+            info["rule_name"], info["rule_plain"] = info["name"], info["plain"]
+            apply_wording(info, v["id"], {}, editorial)
+            # Senate votes on bills carry the same topics as House ones, so a senator's votes can be browsed by topic.
+            names = [topic_name(v["issue"])] if v["issue"] else []
+            if v["slug"]:
+                names += custom_topics_for(bills.get(v["slug"]) or {}, v["desc"], custom)
+            names = [n for n in names if topic_key(n) in known_topics]
+            v["topic"], v["topics"], v["topic_keys"], v["mix"] = (names[0] if names else ""), names, [topic_key(n) for n in names], party_mix(v)
+        # A senator who answered one of the latest roll calls is still in office, whatever end date is on file
+        # (an appointed senator's listed term can end on election day while they keep serving).
+        still_here = {r[0] for v in sorted(svotes, key=lambda v: (v["date"], v["roll"]))[-5:] for r in v["positions"]}
+        for p in speople.values():
+            p["left"] = bool(p.get("term_end")) and p["term_end"] < today and p["bioguide"] not in still_here
+            p["dist_label"] = {"senior": "Senior senator", "junior": "Junior senator"}.get(p.get("rank") or "", "Senator")
+
     # ---- committees: who sits where, built from the same member list as everything else
-    def seat_row(r):
-        p = people.get(r["id"])
-        return {"id": r["id"] if p else "", "name": p["name"] if p else r["name"], "party": p["party"] if p else "",
-                "where": f"{p['state']} · {p['dist_label']}" if p else "", "role": r["role"], "side": r["side"]}
+    def seat_row(r, chamber):
+        pools = [("senate/", speople)] if chamber == "senate" else [("", people)] if chamber == "house" else [("", people), ("senate/", speople)]
+        pre, p = next(((pre, pool[r["id"]]) for pre, pool in pools if r["id"] in pool), ("", None))
+        where = "" if not p else p["state"] if pre else f"{p['state']} · {p['dist_label']}"
+        return {"id": r["id"] if p else "", "pre": pre, "name": p["name"] if p else r["name"], "party": p["party"] if p else "",
+                "where": where, "role": r["role"], "side": r["side"]}
     committees, assignments = [], defaultdict(list)
     for c in read_json(DATA / "committees.json", []):
-        rows = [seat_row(r) for r in c["members"]]
+        chamber = c.get("chamber", "house")
+        rows = [seat_row(r, chamber) for r in c["members"]]
         lead = lambda rs, role: next((r for r in rs if r["role"] == role), None)
         subs = []
         for sub in c["subs"]:
-            srows = [seat_row(r) for r in sub["members"]]
+            srows = [seat_row(r, chamber) for r in sub["members"]]
             subs.append({"name": sub["name"], "chair": lead(srows, "Chair"), "ranking": lead(srows, "Ranking Member"), "n": len(srows)})
             for r in sub["members"]:
                 if r["role"] in ("Chair", "Ranking Member", "Vice Chair"):
                     assignments[r["id"]].append({"cid": c["id"], "sub": sub["name"], "role": r["role"]})
-        item = {"id": c["id"], "name": committee_short(c["name"]), "full": c["name"], "kind": c["kind"], "url": c["url"],
+        item = {"id": c["id"], "name": committee_short(c["name"]), "full": c["name"], "kind": c["kind"], "url": c["url"], "chamber": chamber,
                 "about": COMMITTEE_ABOUT.get(c["id"], ""), "chair": lead(rows, "Chair"), "ranking": lead(rows, "Ranking Member"),
+                "vice": lead(rows, "Vice Chair"),
                 "maj": [r for r in rows if r["side"] == "maj"], "min": [r for r in rows if r["side"] == "min"], "subs": subs,
                 "n": len(rows), "by_party": {k: sum(1 for r in rows if r["party"] == k) for k in ("R", "D", "I")},
                 "text": " ".join([committee_short(c["name"])] + [r["name"] for r in rows]).lower()}
         committees.append(item)
         for r in c["members"]:
             assignments[r["id"]].append({"cid": c["id"], "sub": "", "role": r["role"] if r["role"] != "Ex Officio" else ""})
-    committees.sort(key=lambda c: (c["kind"] != "standing", c["name"]))
-    cnames = {c["id"]: c["name"] for c in committees}
+    committees.sort(key=lambda c: (("standing", "select", "joint").index(c["kind"]), c["name"]))
+    cinfo = {c["id"]: c for c in committees}
     def member_committees(bioguide):
         out = {}
         for a in assignments.get(bioguide, []):
-            row = out.setdefault(a["cid"], {"cid": a["cid"], "name": cnames[a["cid"]], "roles": []})
+            c = cinfo[a["cid"]]
+            row = out.setdefault(a["cid"], {"cid": a["cid"], "name": c["name"], "roles": [],
+                                            "pre": "" if c["chamber"] == "house" else "senate/"})
             if a["role"]:
                 row["roles"].append(f"{a['role']}, Subcommittee on {a['sub']}" if a["sub"] else a["role"])
         return sorted(out.values(), key=lambda r: (not any("Subcommittee" not in x for x in r["roles"]), not r["roles"], r["name"]))
-    render("committees/index.html", "committees.html", 1, section="committees", committees=committees,
-           n_standing=sum(1 for c in committees if c["kind"] == "standing"), n_select=sum(1 for c in committees if c["kind"] != "standing"),
-           n_subs=sum(len(c["subs"]) for c in committees))
-
+    for pre, ch, mine in (("", HOUSE, [c for c in committees if c["chamber"] == "house"]),
+                          ("senate/", SENATE, [c for c in committees if c["chamber"] != "house"])):
+        if mine:
+            render(f"{pre}committees/index.html", "committees.html", 2 if pre else 1, section="committees", c=pre, ch=ch, committees=mine,
+                   n_standing=sum(1 for c in mine if c["kind"] == "standing"), n_select=sum(1 for c in mine if c["kind"] == "select"),
+                   n_joint=sum(1 for c in mine if c["kind"] == "joint"), n_subs=sum(len(c["subs"]) for c in mine))
     # ---- who holds the House: counted from the site's own member list
     seated = [p for p in people.values() if not p["left"] and not p["delegate"]]
     held = {k: sum(1 for p in seated if p["party"] == k) for k in ("R", "D", "I")}
@@ -731,30 +792,8 @@ def main():
 
     chamber_pages("", votes, people, members, result, HOUSE)
 
-    # ---- the Senate: the same pages, fed with Senate roll calls
-    senate_search = []
-    senators = read_json(DATA / "senators.json", {})
-    svotes_raw = load_senate_votes(cfg["years"], senators, bills) if senators else []
+    # ---- the Senate's own pages
     if svotes_raw:
-        sres = compute(svotes_raw, senators, bills, dict(cfg, close_margin=5))
-        svotes, speople = sres["votes"], sres["people"]
-        known_topics = {t["key"] for t in all_topics}
-        for v in svotes:
-            info = v["info"]
-            info["rule_name"], info["rule_plain"] = info["name"], info["plain"]
-            apply_wording(info, v["id"], {}, editorial)
-            # Senate votes on bills carry the same topics as House ones, so a senator's votes can be browsed by topic.
-            names = [topic_name(v["issue"])] if v["issue"] else []
-            if v["slug"]:
-                names += custom_topics_for(bills.get(v["slug"]) or {}, v["desc"], custom)
-            names = [n for n in names if topic_key(n) in known_topics]
-            v["topic"], v["topics"], v["topic_keys"], v["mix"] = (names[0] if names else ""), names, [topic_key(n) for n in names], party_mix(v)
-        # A senator who answered one of the latest roll calls is still in office, whatever end date is on file
-        # (an appointed senator's listed term can end on election day while they keep serving).
-        still_here = {r[0] for v in sorted(svotes, key=lambda v: (v["date"], v["roll"]))[-5:] for r in v["positions"]}
-        for p in speople.values():
-            p["left"] = bool(p.get("term_end")) and p["term_end"] < today and p["bioguide"] not in still_here
-            p["dist_label"] = {"senior": "Senior senator", "junior": "Junior senator"}.get(p.get("rank") or "", "Senator")
         sfeatured = pick_featured(svotes, pins=editorial.get("senate_pins") or [])
         for v in sfeatured:
             v["f_name"], v["f_plain"] = v["info"]["name"], v["info"]["plain"]
@@ -776,6 +815,13 @@ def main():
                house={"svg": seat_chart(sheld, total=100, rows=4), "held": sheld, "top": stop, "low": "D" if stop == "R" else "R",
                       "side": sside, "ind_with": swith, "ind_other": sheld["I"] - swith["R"] - swith["D"],
                       "names": {"R": "Republican", "D": "Democratic"}})
+        groups = {"cabinet": "The Cabinet", "judges": "Judges", "ambassadors": "Ambassadors", "military": "Military Leaders",
+                  "other": "Agencies And Other Posts", "bloc": "Groups Voted On Together"}
+        noms = [{"v": v, "person": v["info"]["nominee"][0], "post": v["info"]["nominee"][1], "group": v["info"]["nominee"][2],
+                 "ok": v["info"]["outcome"] == "Confirmed"} for v in snewest if v["info"]["kind"] == "nomination"]
+        render("senate/confirmations/index.html", "confirmations.html", 2, section="confirmations", c="senate/", ch=SENATE, noms=noms,
+               groups=[(k, name, sum(1 for n in noms if n["group"] == k)) for k, name in groups.items() if any(n["group"] == k for n in noms)],
+               n_party=sum(1 for n in noms if n["v"]["split"]), n_no=sum(1 for n in noms if not n["ok"]))
         chamber_pages("senate/", svotes, speople, senators, sres, SENATE)
         senate_search = [{"t": p["name"], "s": f"Senator · {p['party']}-{p['state']}", "u": f"senate/members/{p['bioguide']}/",
                           "k": f"{p['name']} {STATES.get(p['state'], '')} {p['state']} senator senate".lower()} for p in speople.values()]
@@ -807,7 +853,8 @@ def main():
                                m["topic"]] + sorted({v["info"]["name"] for v in m["votes"]})).lower()}
                for m in measures.values()]
     search += senate_search
-    search += [{"t": c["name"], "s": "Committee", "u": f"committees/#{c['id']}", "k": (c["full"] + " committee").lower()} for c in committees]
+    search += [{"t": c["name"], "s": {"house": "House committee", "senate": "Senate committee"}.get(c["chamber"], "Joint committee"),
+                "u": f"{'' if c['chamber'] == 'house' else 'senate/'}committees/#{c['id']}", "k": (c["full"] + " committee").lower()} for c in committees]
     search += [{"t": t["name"], "s": "Topic", "u": f"topics/{t['key']}/", "k": (t["name"] + " topic").lower()}
                for t in all_topics]
     write_json(SITE / "search.json", search)

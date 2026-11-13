@@ -1,21 +1,22 @@
 {% extends "base.html" %}{% import "_m.html" as m %}
-{% block title %}House committees · {{ site.site_name }}{% endblock %}
-{% macro who(r, tag='') %}{% if r %}{% if tag %}<span class="role {{ 'chair' if tag == 'Chair' else '' }}">{{ tag }}</span> {% endif %}{% if r.id %}<a href="{{ root }}members/{{ r.id }}/">{{ r.name }}</a>{% else %}{{ r.name }}{% endif %}{% if r.party %} {{ m.badge(r.party, true) }}{% endif %}{% else %}<span class="muted">Not listed</span>{% endif %}{% endmacro %}
+{% block title %}{{ ch.name }} committees · {{ site.site_name }}{% endblock %}
+{% macro who(r, tag='') %}{% if r %}{% if tag %}<span class="role {{ 'chair' if tag == 'Chair' else '' }}">{{ tag }}</span> {% endif %}{% if r.id %}<a href="{{ root }}{{ r.pre }}members/{{ r.id }}/">{{ r.name }}</a>{% else %}{{ r.name }}{% endif %}{% if r.party %} {{ m.badge(r.party, true) }}{% endif %}{% else %}<span class="muted">Not listed</span>{% endif %}{% endmacro %}
 {% block main %}
 <div class="wrap page" style="gap:36px">
 <div class="stack" style="gap:14px;max-width:780px">
 <h1 class="h1">Committees</h1>
-<p class="lede">Most of the House's work happens in committees. Each one handles a subject, like farming, taxes or the military, and reviews bills before the full House votes on them. Most bills never make it out.</p>
+<p class="lede">Most of the {{ ch.name }}'s work happens in committees. Each one handles a subject, like farming, taxes or the military, and reviews bills before the full {{ ch.name }} votes on them. Most bills never make it out.{% if c %} Senate committees also question the President's picks for judges and top jobs before the full Senate votes on them.{% endif %}</p>
 <p class="newline">Each committee has a <strong>chair</strong> from the majority party, who decides which bills get a hearing, and a <strong>ranking member</strong>, the top member from the minority party. Most split their work further into <strong>subcommittees</strong>.</p>
 </div>
 <section class="grid tiles" aria-label="Totals">
 <div class="card tile"><span class="bignum sm">{{ n_standing }}</span><span class="strong">Standing committees</span><span class="small muted">permanent, one per subject</span></div>
 <div class="card tile"><span class="bignum sm">{{ n_select }}</span><span class="strong">Select committees</span><span class="small muted">set up for a special purpose</span></div>
+{% if n_joint %}<div class="card tile"><span class="bignum sm">{{ n_joint }}</span><span class="strong">Joint committees</span><span class="small muted">House and Senate members together</span></div>{% endif %}
 <div class="card tile"><span class="bignum sm">{{ n_subs }}</span><span class="strong">Subcommittees</span><span class="small muted">smaller groups inside committees</span></div>
 </section>
 <div class="row cfind" style="align-items:flex-end">
 <label class="fieldset" for="c-filter" style="flex:1 1 280px">Find a committee or member<input class="field" id="c-filter" type="search" placeholder="Try a last name or a subject like Veterans" data-cfilter></label>
-<div class="row" style="gap:8px"><button type="button" class="btn sm on" data-ckind="">All</button><button type="button" class="btn sm" data-ckind="standing">Standing</button><button type="button" class="btn sm" data-ckind="select">Select</button><button type="button" class="btn sm" data-call>Expand all</button></div>
+<div class="row" style="gap:8px"><button type="button" class="btn sm on" data-ckind="">All</button><button type="button" class="btn sm" data-ckind="standing">Standing</button><button type="button" class="btn sm" data-ckind="select">Select</button>{% if n_joint %}<button type="button" class="btn sm" data-ckind="joint">Joint</button>{% endif %}<button type="button" class="btn sm" data-call>Expand all</button></div>
 </div>
 <p class="small muted" data-cnone hidden>No committee or member matches. Try a last name.</p>
 <div class="stack" id="committee-list" style="gap:16px">
@@ -35,14 +36,14 @@
 </tbody></table></div>{% endif %}
 <h3 class="h3" style="font-size:18px">Full committee roster</h3>
 <div class="roster">
-{% for label, rows in (('Majority', c.maj), ('Minority', c.min)) %}<div><span class="label">{{ label }} · {{ rows|length }}</span>
-<ul>{% for r in rows %}<li data-name="{{ r.name|lower }}">{% if r.party %}{{ m.badge(r.party, true) }} {% endif %}{% if r.id %}<a href="{{ root }}members/{{ r.id }}/">{{ r.name }}</a>{% else %}{{ r.name }}{% endif %}{% if r.where %} <span class="small muted">{{ r.where }}</span>{% endif %}{% if r.role and r.role != 'Ex Officio' %} <span class="role {{ 'chair' if r.role == 'Chair' else '' }}">{{ r.role }}</span>{% endif %}</li>{% endfor %}</ul></div>{% endfor %}
+{% for label, rows in (('Majority', c.maj), ('Minority', c.min)) %}<div><span class="label">{{ label if c.kind != "joint" else ("House and Senate majority" if label == "Majority" else "House and Senate minority") }} · {{ rows|length }}</span>
+<ul>{% for r in rows %}<li data-name="{{ r.name|lower }}">{% if r.party %}{{ m.badge(r.party, true) }} {% endif %}{% if r.id %}<a href="{{ root }}{{ r.pre }}members/{{ r.id }}/">{{ r.name }}</a>{% else %}{{ r.name }}{% endif %}{% if r.where %} <span class="small muted">{{ r.where }}</span>{% endif %}{% if r.role and r.role != 'Ex Officio' %} <span class="role {{ 'chair' if r.role == 'Chair' else '' }}">{{ r.role }}</span>{% endif %}</li>{% endfor %}</ul></div>{% endfor %}
 </div>
 {% if c.url %}<p class="small" style="margin:0"><a href="{{ c.url }}" rel="noopener">Official committee website</a></p>{% endif %}
 </div>
 </details>{% endfor %}
 </div>
-<p class="small muted">Chairs, ranking members and rosters are shown as recorded in the public committee lists, and matched to the same member list used on the Members page. Joint committees with the Senate are not shown yet.</p>
+<p class="small muted">Chairs, ranking members and rosters are shown as recorded in the public committee lists, and matched to the same member list used on the Members page. {% if c %}Joint committees include members of both the House and the Senate.{% else %}Joint committees are listed with the <a href="{{ root }}senate/committees/">Senate committees</a>.{% endif %}</p>
 </div>
 {% endblock %}
 {% block source %}Committee rosters and roles come from the public congress-legislators project, which compiles them from official House sources. Every vote on this site comes from the official record kept by the Clerk of the U.S. House of Representatives.{% endblock %}

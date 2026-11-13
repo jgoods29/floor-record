@@ -351,11 +351,13 @@ def ingest_committees(log=print):
         return read_json(DATA / "committees.json", [])
     out = []
     for c in listing:
-        if c.get("type") != "house" or not membership.get(c["thomas_id"]):
+        if c.get("type") not in ("house", "senate", "joint") or not membership.get(c["thomas_id"]):
             continue
         subs = [{"id": c["thomas_id"] + sub["thomas_id"], "name": sub["name"], "members": _roster(membership.get(c["thomas_id"] + sub["thomas_id"]))}
                 for sub in c.get("subcommittees") or [] if membership.get(c["thomas_id"] + sub["thomas_id"])]
-        out.append({"id": c["thomas_id"], "name": c["name"], "kind": "select" if "select" in c["name"].lower() else "standing",
+        low = c["name"].lower()
+        out.append({"id": c["thomas_id"], "name": c["name"], "chamber": c["type"],
+                    "kind": "joint" if c["type"] == "joint" else "select" if ("select" in low or "special" in low or "caucus" in low) else "standing",
                     "url": c.get("url", ""), "members": _roster(membership[c["thomas_id"]]),
                     "subs": sorted(subs, key=lambda x: x["name"])})
     if out:

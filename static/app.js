@@ -287,6 +287,19 @@
     if (z0) { zip.value = z0; fromZip(); } else if (s0 && sel.querySelector('option[value="' + s0 + '"]')) { sel.value = s0; fromState(); }
   });
 
+  // ---- confirmations: filter by kind of job (works together with the search box through a shared "off" mark)
+  var ngroups = document.querySelectorAll('[data-ngroup]');
+  if (ngroups.length) {
+    var nrows = document.querySelectorAll('#nom-list .nrow'), nbox = document.getElementById('n-filter'), nnone = document.getElementById('nom-none'), ngroup = '';
+    var ndraw = function () {
+      var q = nbox.value.trim().toLowerCase(), shown = 0;
+      each(nrows, function (r) { var ok = (!ngroup || r.getAttribute('data-group') === ngroup) && (!q || r.getAttribute('data-text').indexOf(q) !== -1); r.hidden = !ok; if (ok) shown++; });
+      nnone.hidden = shown > 0;
+    };
+    nbox.addEventListener('input', function () { setTimeout(ndraw, 0); });
+    each(ngroups, function (b) { b.addEventListener('click', function () { ngroup = b.getAttribute('data-ngroup'); each(ngroups, function (x) { x.classList.toggle('on', x === b); }); ndraw(); }); });
+  }
+
   // ---- committees: search by committee or member, filter by kind, expand all, open from a link
   var clist = document.getElementById('committee-list');
   if (clist) {
