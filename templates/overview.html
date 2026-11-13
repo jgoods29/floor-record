@@ -5,10 +5,10 @@
 {% block main %}
 <div class="wrap page start" style="gap:64px">
 <div class="stack" style="max-width:780px">
-<span class="label purple">The big picture</span>
+<span class="label purple">The big picture · {{ term.name }}, {{ term.start }} to {{ term.end }}</span>
 <h1 class="h1">Everything, from 30,000 feet</h1>
 <p class="lede">One page on what the {{ ch.name }} has been doing: what it votes on, how those votes go, and how far the bills get.</p>
-<p class="note">This covers every recorded {{ ch.name }} vote in {{ span }}. "Bills" here means bills that got a recorded vote. Thousands more are written and never reach one.</p>
+<p class="note"><strong>These numbers are for the {{ term.name }} only</strong>, which runs from January 3, {{ term.start }} to January 3, {{ term.end }}. A Congress lasts two years. After each November election in an even year, a new one is sworn in and the count starts over: the {{ term.next }} takes over on January 3, {{ term.end }}. "Bills" here means bills that got a recorded vote. Thousands more are written and never reach one.</p>
 </div>
 
 <section class="grid tiles" aria-label="Totals">

@@ -570,3 +570,25 @@ header .yours .yours-x { border: 0; background: none; color: var(--muted); font:
 
 /* eleven tabs in the Senate: keep them on one line on a wide screen */
 @media (min-width: 1100px) { .nav { gap: 4px 0; } .nav a { padding: 10px 9px; } }
+
+/* Your Page: always one tap away, beside the House/Senate switch */
+header .mypage { order: 1; flex: none; display: inline-flex; align-items: center; gap: 7px; min-height: 42px; padding: 6px 16px; margin-left: -20px; border: 1px solid #DCCBFB; border-radius: 999px; background: #F7F3FF; color: var(--purple-ink); font-weight: 600; font-size: 15px; text-decoration: none; }
+header .mypage:hover, header .mypage[aria-current] { background: #EDE4FD; }
+#mine { scroll-margin-top: 150px; }
+@media (max-width: 900px) { header .mypage { order: 0; margin-left: 0; padding: 6px 10px; font-size: 0; gap: 0; min-height: 40px; } }
+@media (max-width: 640px) {
+  .top .wrap { column-gap: 8px; } .top .brand { font-size: 19px; gap: 7px; }
+  header .chamber a, header .chamber a[aria-current] { padding: 6px 10px; font-size: 14px; }
+  header .mypage { min-height: 36px; width: 36px; padding: 0; justify-content: center; }
+}
+@media (max-width: 420px) {
+  .top .wrap { column-gap: 6px; } .top .brand { font-size: 17px; gap: 6px; }
+  header .chamber { padding: 2px; } header .chamber a, header .chamber a[aria-current] { padding: 6px 8px; font-size: 13px; min-height: 32px; }
+  header .mypage { min-height: 34px; width: 34px; }
+}
+
+/* which Congress this is, on every page */
+.termbar { background: #F7F3FF; border-bottom: 1px solid #E7DCFB; font-size: 14px; color: var(--text-2); }
+.termbar .wrap { display: flex; flex-wrap: wrap; gap: 2px 18px; padding-top: 8px; padding-bottom: 8px; align-items: baseline; }
+.termbar strong { color: var(--purple-ink); }
+.termbar .termnote { color: var(--muted); }

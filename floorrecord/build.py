@@ -484,7 +484,10 @@ def main():
     stamp = hashlib.sha256(b"".join(p.read_bytes() for p in sorted((ROOT / "static").glob("*.*")))).hexdigest()[:10]
     shared = {
         "asset_v": stamp,
-        "site": cfg, "span": span, "nvotes": len(votes), "npeople": len(people),
+        "site": cfg, "span": span,
+        # A Congress lasts two years and starts on January 3 of each odd year; the 1st began in 1789.
+        "term": {"name": f"{ordinal(cfg['congress'])} Congress", "next": f"{ordinal(cfg['congress'] + 1)} Congress",
+                 "start": 1789 + 2 * (cfg["congress"] - 1), "end": 1789 + 2 * cfg["congress"]}, "nvotes": len(votes), "npeople": len(people),
         "updated": nicedate(datetime.now(timezone.utc).date().isoformat()), "min_votes": result["min_votes"],
         "state_names": STATES, "c": "", "ch": HOUSE, "has_senate": (DATA / "senators.json").exists(),
         "reach_states": sorted({p["state"] for p in people.values() if not p["left"]}, key=lambda c: STATES.get(c, c)),
@@ -499,7 +502,21 @@ def main():
     def render(path, template, depth, **ctx):
         out = SITE / path
         out.parent.mkdir(parents=True, exist_ok=True)
-        page = env.get_template(template).render(root="../" * depth, **{**shared, **ctx})
+        # Where the House/Senate switch should lead from this page: the same page in the other chamber when there is one.
+        rel = path[:-len("index.html")] if path.endswith("index.html") else ""
+        sen = rel.startswith("senate/")
+        rel = rel[7:] if sen else ("" if rel == "house/" else rel)
+        parts = rel.strip("/").split("/") if rel else []
+        if not parts or parts[0] == "about":
+            same = ""                                   # the landing page
+        elif parts[0] in ("topics", "bills"):
+            same = rel                                  # the same topic or bill exists in both
+        elif parts[0] == "confirmations":
+            same = "votes/"
+        else:
+            same = parts[0] + "/"                       # one vote or one member has no twin: go to that list
+        switch = {"house": same or "house/", "senate": "senate/" + same}
+        page = env.get_template(template).render(root="../" * depth, **{**shared, "switch": switch, **ctx})
         out.write_text(title_case_headings(page))
 
     # ---- measures
