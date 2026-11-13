@@ -7,7 +7,7 @@
 <div class="stack" style="max-width:780px">
 <span class="label purple">The big picture</span>
 <h1 class="h1">Everything, from 30,000 feet</h1>
-<p class="lede">One page on what the U.S. House has been doing: what it votes on, how those votes go, and how far the bills get.</p>
+<p class="lede">One page on what Congress has been doing: what it votes on, how those votes go, and how far the bills get.</p>
 <p class="note">This covers every recorded House vote in {{ span }}. "Bills" here means bills that got a recorded vote. Thousands more are written and never reach one.</p>
 </div>
 
@@ -32,9 +32,23 @@
 <div class="grid">
 <div class="card stack" style="gap:12px"><span class="h3">Did it pass?</span>{{ share(big.won, big.lost, 'passed', 'failed') }}<span class="small muted">Most things that reach a vote pass, because leaders usually do not schedule a vote they expect to lose.</span></div>
 <div class="card stack" style="gap:12px"><span class="h3">Did the parties agree?</span>{{ share(big.together, big.split, 'with most of both parties on the same side', 'with the parties on opposite sides') }}<span class="small muted">"Opposite sides" means most Republicans voted one way and most Democrats voted the other.</span></div>
-<div class="card stack" style="gap:12px"><span class="h3">Was it close?</span>{{ share(big.close, big.real - big.close, 'close votes', 'not close') }}{% if big.closest %}<span class="small muted">The closest: <a href="{{ root }}votes/{{ big.closest.id }}/">{{ big.closest.info.name }}</a>, {{ big.closest.totals.yea }} to {{ big.closest.totals.nay }}.</span>{% endif %}</div>
+<div class="card stack" style="gap:12px"><span class="h3">Was it close?</span>{{ share(big.close, big.real - big.close, 'close votes', 'not close') }}{% if big.closest %}<span class="small muted">The closest: <a href="{{ root }}{{ big.closest.pre }}votes/{{ big.closest.id }}/">{{ big.closest.info.name }}</a>, {{ big.closest.totals.yea }} to {{ big.closest.totals.nay }}.</span>{% endif %}</div>
 </div>
 </section>
+
+{% if sbig %}<section class="stack" aria-labelledby="senate-h">
+<div class="stack" style="gap:8px"><h2 class="h2" id="senate-h">Meanwhile, in the Senate</h2>
+<p class="plain">The Senate has held {{ sbig.total|comma }} recorded votes in the same period. It spends its time differently from the House.</p></div>
+<section class="grid tiles" aria-label="Senate totals">
+<a class="card tile" href="{{ root }}senate/confirmations/"><span class="bignum">{{ sbig.confirm|comma }}</span><span class="strong">confirmations</span><span class="small muted">votes on the President's picks for judges and top jobs</span></a>
+<a class="card tile" href="{{ root }}start/#s4b"><span class="bignum">{{ sbig.sixty|comma }}</span><span class="strong">votes that needed 60</span><span class="small muted">{{ sbig.sixty_fail }} of them fell short, which blocked what was being voted on</span></a>
+<a class="card tile" href="{{ root }}senate/votes/"><span class="bignum">{{ sbig.ties }}</span><span class="strong">{{ 'tie' if sbig.ties == 1 else 'ties' }} broken by the Vice President</span><span class="small muted">when the Senate splits 50 to 50</span></a>
+</section>
+<div class="grid">
+<div class="card stack" style="gap:12px"><span class="h3">Did the parties agree?</span>{{ share(sbig.real - sbig.split, sbig.split, 'with most of both parties on the same side', 'with the parties on opposite sides') }}<span class="small muted">Out of {{ sbig.real|comma }} Senate votes, leaving out routine steps.</span></div>
+<div class="card stack" style="gap:12px"><span class="h3">Was it close?</span>{{ share(sbig.close, sbig.real - sbig.close, 'decided by 5 votes or fewer', 'not close') }}</div>
+</div>
+</section>{% endif %}
 
 <section class="stack" aria-labelledby="funnel-h">
 <div class="stack" style="gap:8px"><h2 class="h2" id="funnel-h">How far the bills got</h2>

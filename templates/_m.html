@@ -2,17 +2,17 @@
 {% macro pctv(v) %}{% if v is none %}n/a{% else %}{{ '%.1f'|format(v) }}%{% endif %}{% endmacro %}
 {% macro vword(v) %}{{ {'yea':'Yea','nay':'Nay','present':'Present','nv':'Did not vote'}.get(v, v|replace('other:','')) }}{% endmacro %}
 {% macro tags(v, skip=()) %}{% for kind, text in v.tags %}{% if kind not in skip %}<span class="tag {{ kind }}">{{ text }}</span>{% endif %}{% endfor %}{% endmacro %}
-{% macro vrow(v, root) %}
-<a class="vrow" href="{{ root }}{{ c }}votes/{{ v.id }}/"{% if v.info.routine %} data-routine{% endif %} data-text="{{ (v.info.name ~ ' ' ~ v.info.fine ~ ' ' ~ v.info.title)|lower }}">
+{% macro vrow(v, root, chip=false) %}
+<a class="vrow" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/"{% if v.info.routine %} data-routine{% endif %} data-text="{{ (v.info.name ~ ' ' ~ v.info.fine ~ ' ' ~ v.info.title)|lower }}">
 <span class="when">{{ v.date|nicedate }}</span>
-<span class="main"><span class="tags"><span class="name">{{ v.info.name }}</span>{{ tags(v, ('split', 'broke')) }}</span>
+<span class="main"><span class="tags"><span class="name">{{ v.info.name }}</span>{% if chip %}<span class="tag chamber-{{ v.chamber|lower }}">{{ v.chamber }}</span>{% endif %}{{ tags(v, ('split', 'broke')) }}</span>
 {% if v.info.plain %}<span class="plain">{{ v.info.plain }}</span>{% endif %}
 <span class="fine">{{ v.info.fine }}</span></span>
 <span class="end">{% if v.kind == 'standard' %}<b>{{ v.info.outcome }}</b><span>{{ v.totals.yea }} to {{ v.totals.nay }}</span>{% else %}<b>{{ v.result or 'Recorded' }}</b>{% endif %}</span>
 </a>
 {% endmacro %}
 {% macro votetile(v, root) %}
-<a class="card" href="{{ root }}{{ c }}votes/{{ v.id }}/">
+<a class="card" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/">
 <span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ tags(v, ('split', 'proc', 'broke')) }}</span>
 <span class="headline-sm">{{ v.info.name }}{% if v.kind == 'standard' %}: {{ v.info.outcome|lcfirst }}{% endif %}</span>
 {% if v.info.plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.info.plain }}</span>{% endif %}
@@ -25,14 +25,14 @@
 
 {% macro reach(root, states, names, topic='', key='') %}<section class="card reach" data-reach data-topic="{{ key }}" data-topic-name="{{ topic }}" aria-labelledby="reach-h">
 <div class="stack" style="gap:8px"><span class="label purple">Speak up</span>
-<h2 class="h2" id="reach-h">Tell your representative what you think{% if topic %} about {{ topic }}{% endif %}</h2>
-<p class="muted" style="font-size:18px;max-width:680px">One person in the House votes on your behalf. A call or a message from someone they represent is counted, and it takes two minutes.</p></div>
+<h2 class="h2" id="reach-h">Tell the people who represent you what you think{% if topic %} about {{ topic }}{% endif %}</h2>
+<p class="muted" style="font-size:18px;max-width:680px">Three people in Congress vote on your behalf: one representative in the House and two senators. A call or a message from someone they represent is counted, and it takes two minutes.</p></div>
 <div class="reach-find"><label class="fieldset" for="reach-zip">Your ZIP code<input class="field" id="reach-zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5 digits" data-reach-zip></label>
 <span class="muted or">or</span>
 <label class="fieldset" for="reach-state">Your state<select class="field" id="reach-state" data-reach-state><option value="">Choose your state</option>{% for st in states %}<option value="{{ st }}">{{ names.get(st, st) }}</option>{% endfor %}</select></label></div>
 <p class="reach-msg" data-reach-msg aria-live="polite"></p>
 <div class="reach-list" data-reach-list></div>
-<p class="small muted">The lookup happens on your own device. We never see or store your ZIP code. Your state also has two senators: <a href="https://www.senate.gov/senators/senators-contact.htm" rel="noopener">find and contact them on senate.gov</a>.</p>
+<p class="small muted">The lookup happens on your own device. We never see or store your ZIP code.</p>
 </section>{% endmacro %}
 
 {% macro track(t, sm=false) %}{% if t %}<ol class="track{% if sm %} sm{% endif %}" aria-label="Progress: {{ t.text }}">{% for st in t.steps %}<li class="{{ st.state }}"{% if st.state == 'now' %} aria-current="step"{% endif %}><span>{{ st.label }}</span></li>{% endfor %}</ol>{% endif %}{% endmacro %}

@@ -23,8 +23,12 @@
 {% elif not ai %}
 <section class="card stack" style="gap:12px"><h2 class="h3">What it is</h2><p style="max-width:680px">{{ b.title }}</p><p class="small muted">A plain-English summary has not been added yet. <a href="{{ b.congress_url }}">Read the full text on Congress.gov</a>.</p></section>
 {% endif %}
-<section class="stack"><h2 class="h2">House votes on this measure</h2>
-<div class="grid two">{% for v in b.votes %}{{ m.votetile(v, root) }}{% endfor %}</div></section>
+{% if b.votes %}<section class="stack"><h2 class="h2">House votes on this measure</h2>
+<div class="grid two">{% for v in b.votes %}{{ m.votetile(v, root) }}{% endfor %}</div></section>{% endif %}
+{% if b.svotes %}<section class="stack"><h2 class="h2">Senate votes on this measure</h2>
+<div class="grid two">{% for v in b.svotes_show[:4] %}{{ m.votetile(v, root) }}{% endfor %}</div>
+{% if b.svotes_show|length > 4 %}<details class="morevotes"><summary>Show all {{ b.svotes|length }} Senate votes on this</summary><div class="grid two" style="margin-top:16px">{% for v in b.svotes_show[4:] %}{{ m.votetile(v, root) }}{% endfor %}</div></details>{% endif %}</section>{% endif %}
+{% if not b.votes or not b.svotes %}<p class="small muted">{% if not b.votes %}The House has not held a recorded vote on this. It may not have reached the House yet, or it may have passed there without a recorded vote.{% else %}The Senate has not held a recorded vote on this. It may not have reached the Senate yet, or it may have passed there without a recorded vote.{% endif %}</p>{% endif %}
 </div>
 
 <aside class="stack" style="flex:1 1 300px">

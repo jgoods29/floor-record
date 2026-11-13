@@ -9,7 +9,7 @@
 {% block main %}
 <div class="wrap page">
 <div class="stack"><h1 class="h1">Topics</h1>
-<p class="lede">Every House vote on a bill, grouped by what the bill is about. Pick a topic to see the votes.</p></div>
+<p class="lede">Every House and Senate vote on a bill, grouped by what the bill is about. Pick a topic to see the votes.</p></div>
 {% if popular %}<section class="stack"><h2 class="h2">Popular topics</h2><div class="grid">{% for t in popular %}{{ card(t) }}{% endfor %}</div></section>{% endif %}
 <section class="stack"><h2 class="h2">All topics, A to Z</h2><div class="grid">{% for t in topics %}{{ card(t) }}{% endfor %}</div></section>
 <p class="small muted">Most topics come from the Library of Congress, which files every bill under one subject area; the names are reworded for everyday readers. A few, such as Artificial intelligence, are our own: a bill is included when the subject appears in its title or the opening of its official summary. Counts leave out routine procedural votes.</p>

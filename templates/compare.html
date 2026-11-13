@@ -3,7 +3,7 @@
 {% block main %}
 <div class="wrap page">
 <div class="stack">
-<div class="eyebrow"><span>House of Representatives</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
+<div class="eyebrow"><span>{{ ch.full }}</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
 <h1 class="h1">Compare members</h1>
 <p class="lede">Every member side by side. The list starts in alphabetical order. Select any column heading to sort by it, and select it again to flip the order.</p>
 </div>
@@ -15,10 +15,10 @@
 </div>
 <div class="row" style="gap:10px">
 <label class="sr" for="lb-state">State</label><select class="field" id="lb-state" style="width:auto"><option value="">All states</option>{% for code, name in state_list %}<option value="{{ code }}">{{ name }}</option>{% endfor %}</select>
-<label class="sr" for="lb-name">Name</label><input class="field" id="lb-name" type="search" placeholder="Find a member">
+<label class="sr" for="lb-name">Name</label><input class="field" id="lb-name" type="search" placeholder="Find a {{ ch.member if c else 'member' }}">
 </div>
 </div>
-<div class="card flush scroll"><table id="lb" style="min-width:900px">
+<div class="card flush scroll"><table id="lb"{% if c %} class="nobills" style="min-width:560px"{% else %} style="min-width:900px"{% endif %}>
 <thead><tr><th>#</th>
 <th><button type="button" data-sort="sort">Member</button></th>
 <th><button type="button" data-sort="at">Showed up to vote</button></th>

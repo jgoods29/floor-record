@@ -14,7 +14,7 @@
 <section class="stack">
 <div class="row between" style="align-items:baseline"><h2 class="h2">The big votes</h2><span class="small muted">Recent votes that were close or drew wide attention</span></div>
 <div class="grid">{% for v in featured %}
-<a class="card" href="{{ root }}{{ c }}votes/{{ v.id }}/" style="gap:12px">
+<a class="card" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/" style="gap:12px">
 <span class="tags"><span class="small strong muted">{{ v.date|nicedate }}</span>{{ m.tags(v, ('split', 'proc', 'broke')) }}</span>
 <span class="headline-sm">{{ v.f_name }}: {{ v.info.outcome|lcfirst }}</span>
 {% if v.f_plain %}<span style="font-size:16px;color:var(--text-2)">{{ v.f_plain }}</span>{% endif %}

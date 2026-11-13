@@ -2,7 +2,7 @@
 {% block title %}{{ p.name }} ({{ p.party }}-{{ p.state }}) voting record · {{ site.site_name }}{% endblock %}
 {% block desc %}How Rep. {{ p.name }} votes: with or against the party, vote by vote, from the official House record.{% endblock %}
 {% macro mrow(r) %}
-<a class="vrow" href="{{ root }}{{ c }}votes/{{ r.v.id }}/">
+<a class="vrow" href="{{ root }}{{ r.v.pre }}votes/{{ r.v.id }}/">
 <span class="when">{{ r.v.date|nicedate }}</span>
 <span class="main"><span class="name">{{ r.v.info.name }}</span>
 <span class="plain">{{ r.phrase }}</span>
@@ -116,7 +116,7 @@
 <div class="card flush scroll"><table>
 <thead><tr><th>Date</th><th>What the {{ ch.name }} voted on</th><th>Vote</th><th>Result</th></tr></thead>
 <tbody id="vote-log">{% for r in recent %}<tr><td class="small muted" style="white-space:nowrap">{{ r.v.date|nicedate }}</td>
-<td><a href="{{ root }}{{ c }}votes/{{ r.v.id }}/">{{ r.v.info.name }}</a>{% if r.v.info.routine %} <span class="tag proc">Procedural step</span>{% endif %}</td>
+<td><a href="{{ root }}{{ r.v.pre }}votes/{{ r.v.id }}/">{{ r.v.info.name }}</a>{% if r.v.info.routine %} <span class="tag proc">Procedural step</span>{% endif %}</td>
 <td class="strong">{{ m.vword(r.pos) }}</td><td class="small">{{ r.v.info.outcome }}, {{ r.v.totals.yea }}–{{ r.v.totals.nay }}</td></tr>{% endfor %}</tbody></table></div>
 </section>
 

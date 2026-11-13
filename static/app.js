@@ -15,18 +15,30 @@
   function myRep() { try { return JSON.parse(store('fr-rep') || 'null'); } catch (e) { return null; } }
   function setMyRep(id, name) { store('fr-rep', id ? JSON.stringify({ id: id, name: name }) : null); showMyRep(); }
   function contactRows() { return once(root + 'contacts.json'); }
+  // the two senators for a state: resolves to [] when the Senate pages are not there
+  function senatorsFor(st) { return !st ? Promise.resolve([]) : once(root + 'senators.json').then(function (rows) { return rows.filter(function (r) { return r[2] === st; }); }).catch(function () { return []; }); }
+  function myState() { return store('fr-state'); }
   // -> { rows: members for that ZIP, where: ['KY3', ...] } or null when the ZIP is not known
   function byZip(zip) {
     return Promise.all([once(root + 'zip/' + zip.charAt(0) + '.json'), contactRows()]).then(function (res) {
       var where = res[0][zip]; if (!where) return null;
       where = where.split(',');
-      return { where: where, rows: res[1].filter(function (r) { return where.indexOf(r[2] + r[8]) !== -1; }) };
+      store('fr-state', where[0].slice(0, 2));
+      return { where: where, state: where[0].slice(0, 2), rows: res[1].filter(function (r) { return where.indexOf(r[2] + r[8]) !== -1; }) };
     });
   }
   function showMyRep() {
     var rep = myRep(), nav = document.querySelector('.nav'), old = document.querySelector('.myrep');
     if (old) old.parentNode.removeChild(old);
     if (rep && nav) { var a = document.createElement('a'); a.className = 'myrep'; a.href = root + 'members/' + rep.id + '/'; a.textContent = 'Your Rep: ' + rep.name; nav.insertBefore(a, nav.firstChild); }
+    var oldSen = document.querySelector('.myrep.sen'); if (oldSen) oldSen.parentNode.removeChild(oldSen);
+    var st = myState();
+    if (st && nav) senatorsFor(st).then(function (rows) {
+      if (!rows.length || document.querySelector('.myrep.sen')) return;
+      var a = document.createElement('a'); a.className = 'myrep sen'; a.href = root + 'senate/members/#state-' + st;
+      a.textContent = 'Your Senators: ' + rows.map(function (r) { return r[1].split(' ').pop(); }).join(', ');
+      var first = nav.querySelector('.myrep:not(.sen)'); nav.insertBefore(a, first ? first.nextSibling : nav.firstChild);
+    });
     each(document.querySelectorAll('[data-myrep]'), function (b) { var on = rep && rep.id === b.getAttribute('data-myrep'); b.textContent = on ? 'This is your representative. Undo' : 'This is my representative'; b.classList.toggle('on', !!on); });
   }
   showMyRep();
@@ -38,15 +50,25 @@
   });
   // on a vote page, say up front how your own representative voted
   function yourVote() {
-    var score = document.querySelector('.split3'), old = document.getElementById('your-vote'), rep = myRep();
+    var score = document.querySelector('.split3'), old = document.getElementById('your-vote');
     if (old) old.parentNode.removeChild(old);
-    if (!score || !rep) return;
-    var said = { 'voted-yea': 'voted Yea', 'voted-nay': 'voted Nay', 'voted-nv': 'did not vote', 'voted-present': 'voted Present' }, found = '';
-    each(document.querySelectorAll('details[id^="voted-"]'), function (d) { if (d.querySelector('a[href$="members/' + rep.id + '/"]')) found = said[d.id] || 'is listed below'; });
-    if (!found) return;
-    var p = document.createElement('p'); p.id = 'your-vote'; p.className = 'yourvote';
-    p.innerHTML = '<span class="label purple">Your representative</span><span><a href="' + root + 'members/' + esc(rep.id) + '/">' + esc(rep.name) + '</a> <strong>' + found + '</strong> on this.</span>';
-    var card = score.closest('.card') || score; card.parentNode.insertBefore(p, card);
+    if (!score) return;
+    var said = { 'voted-yea': 'voted Yea', 'voted-nay': 'voted Nay', 'voted-nv': 'did not vote', 'voted-present': 'voted Present' };
+    var find = function (id) { var found = ''; each(document.querySelectorAll('details[id^="voted-"]'), function (d) { if (d.querySelector('a[href$="members/' + id + '/"]')) found = said[d.id] || 'is listed below'; }); return found; };
+    var put = function (label, parts) {
+      if (!parts.length || document.getElementById('your-vote')) return;
+      var p = document.createElement('p'); p.id = 'your-vote'; p.className = 'yourvote';
+      p.innerHTML = '<span class="label purple">' + label + '</span><span>' + parts.join(' ') + '</span>';
+      var card = score.closest('.card') || score; card.parentNode.insertBefore(p, card);
+    };
+    if (chamber) {
+      senatorsFor(myState()).then(function (rows) {
+        put('Your senators', rows.map(function (r) { var f = find(r[0]); return f ? '<a href="' + root + 'senate/members/' + esc(r[0]) + '/">' + esc(r[1]) + '</a> <strong>' + f + '</strong>.' : ''; }).filter(Boolean));
+      });
+    } else {
+      var rep = myRep(), f = rep && find(rep.id);
+      if (f) put('Your representative', ['<a href="' + root + 'members/' + esc(rep.id) + '/">' + esc(rep.name) + '</a> <strong>' + f + '</strong> on this.']);
+    }
   }
   yourVote();
 
@@ -69,6 +91,13 @@
           out.innerHTML = '<div class="none">' + (one ? 'Your representative:' : 'ZIP code ' + esc(q) + ' is shared by ' + hit.rows.length + ' districts. One of these is yours:') + '</div>' + hit.rows.map(function (r) {
             return '<a role="option" href="' + root + 'members/' + esc(r[0]) + '/"><span>' + esc(r[1]) + ' (' + esc(r[4]) + ')</span><span class="small muted">' + esc(r[2]) + ' · ' + esc(r[3]) + '</span></a>';
           }).join('') + (one ? '' : '<a role="option" rel="noopener" href="https://www.house.gov/representatives/find-your-representative"><span class="small">Settle it with your street address on house.gov</span></a>');
+          senatorsFor(hit.state).then(function (sens) {
+            if (box.value.trim() !== q || !sens.length || out.innerHTML.indexOf('Your two senators') !== -1) return;
+            out.innerHTML += '<div class="none">Your two senators:</div>' + sens.map(function (r) {
+              return '<a role="option" href="' + root + 'senate/members/' + esc(r[0]) + '/"><span>' + esc(r[1]) + ' (' + esc(r[4]) + ')</span><span class="small muted">' + esc(r[2]) + ' · ' + esc(r[3]) + '</span></a>';
+            }).join('');
+            showMyRep();
+          });
         }).catch(function () { out.innerHTML = '<div class="none">Could not load. Try again.</div>'; });
         return;
       }
@@ -248,19 +277,26 @@
   each(document.querySelectorAll('[data-reach]'), function (box) {
     var sel = box.querySelector('[data-reach-state]'), zip = box.querySelector('[data-reach-zip]'), list = box.querySelector('[data-reach-list]'), msg = box.querySelector('[data-reach-msg]');
     var key = box.getAttribute('data-topic'), label = box.getAttribute('data-topic-name');
-    var show = function (rows, text) {
-      var rep = myRep();
+    var rowHtml = function (r, base, many, mineId) {
+      var page = root + base + r[0] + '/' + (key ? '#topic=' + key : ''), acts = '', mine = mineId === r[0];
+      if (r[6]) acts += '<a class="btn go" href="tel:+1' + esc(r[6].replace(/\D/g, '')) + '">Call ' + esc(r[6]) + '</a>';
+      if (r[7] || r[5]) acts += '<a class="btn" rel="noopener" href="' + esc(r[7] || r[5]) + '">' + (r[7] ? 'Send a message' : 'Write on their website') + '</a>';
+      return '<div class="reach-row' + (mine ? ' mine' : '') + '"><div class="who"><span class="dist">' + esc(r[3]) + (mine ? ' · your representative' : '') + '</span><span class="nm"><a href="' + page + '">' + esc(r[1]) + '</a><span class="party sm ' + esc(r[4]) + '">' + esc(r[4]) + '</span></span>' +
+        '<a class="small" href="' + page + '">' + (key ? 'See how they voted on ' + esc(label) : 'See how they vote') + '</a>' +
+        (many ? '<button type="button" class="linkish small" data-myrep="' + esc(r[0]) + '" data-name="' + esc(r[1]) + '">This is my representative</button>' : '') +
+        '</div><div class="reach-acts">' + acts + '</div></div>';
+    };
+    var show = function (rows, text, st) {
+      var rep = myRep(), house = rows.map(function (r) { return rowHtml(r, 'members/', rows.length > 1, rep && rep.id); }).join('');
       msg.innerHTML = text || '';
-      list.innerHTML = rows.map(function (r) {
-        var page = root + 'members/' + r[0] + '/' + (key ? '#topic=' + key : ''), acts = '', mine = rep && rep.id === r[0];
-        if (r[6]) acts += '<a class="btn go" href="tel:+1' + esc(r[6].replace(/\D/g, '')) + '">Call ' + esc(r[6]) + '</a>';
-        if (r[7] || r[5]) acts += '<a class="btn" rel="noopener" href="' + esc(r[7] || r[5]) + '">' + (r[7] ? 'Send a message' : 'Write on their website') + '</a>';
-        return '<div class="reach-row' + (mine ? ' mine' : '') + '"><div class="who"><span class="dist">' + esc(r[3]) + (mine ? ' · your representative' : '') + '</span><span class="nm"><a href="' + page + '">' + esc(r[1]) + '</a><span class="party sm ' + esc(r[4]) + '">' + esc(r[4]) + '</span></span>' +
-          '<a class="small" href="' + page + '">' + (key ? 'See how they voted on ' + esc(label) : 'See how they vote') + '</a>' +
-          (rows.length > 1 ? '<button type="button" class="linkish small" data-myrep="' + esc(r[0]) + '" data-name="' + esc(r[1]) + '">This is my representative</button>' : '') +
-          '</div><div class="reach-acts">' + acts + '</div></div>';
-      }).join('');
+      list.innerHTML = house;
       showMyRep();
+      senatorsFor(st).then(function (sens) {
+        if (!sens.length) return;
+        list.innerHTML = (house ? '<div class="reach-sub">In the House</div>' + house : '') + '<div class="reach-sub">Your two senators</div>' +
+          sens.map(function (r) { return rowHtml(r, 'senate/members/', false, ''); }).join('');
+        showMyRep();
+      });
     };
     var fail = function () { show([], 'Could not load. Try again.'); };
     var fromState = function () {
@@ -268,7 +304,7 @@
       store('fr-state', st); zip.value = '';
       contactRows().then(function (rows) {
         var mine = rows.filter(function (r) { return r[2] === st; });
-        show(mine, mine.length > 1 ? 'Everyone who represents ' + esc(sel.options[sel.selectedIndex].text) + '. Yours depends on where in the state you live. Enter your ZIP code to narrow it down.' : '');
+        show(mine, mine.length > 1 ? 'Everyone who represents ' + esc(sel.options[sel.selectedIndex].text) + '. Yours depends on where in the state you live. Enter your ZIP code to narrow it down.' : '', st);
       }).catch(fail);
     };
     var fromZip = function () {
@@ -276,8 +312,8 @@
       byZip(z).then(function (hit) {
         if (!hit || !hit.rows.length) { show([], 'We could not match ' + esc(z) + '. Try a nearby ZIP code or choose your state.'); return; }
         store('fr-zip', z); sel.value = '';
-        if (hit.rows.length === 1) { setMyRep(hit.rows[0][0], hit.rows[0][1]); yourVote(); show(hit.rows, '<strong>This is your representative.</strong>'); }
-        else show(hit.rows, 'ZIP code ' + esc(z) + ' is shared by ' + hit.rows.length + ' districts. <strong>One of these is yours.</strong> To settle it, <a rel="noopener" href="https://www.house.gov/representatives/find-your-representative">enter your street address on house.gov</a>, then mark yours here.');
+        if (hit.rows.length === 1) { setMyRep(hit.rows[0][0], hit.rows[0][1]); yourVote(); show(hit.rows, '<strong>This is your representative.</strong>', hit.state); }
+        else show(hit.rows, 'ZIP code ' + esc(z) + ' is shared by ' + hit.rows.length + ' districts. <strong>One of these is yours.</strong> To settle it, <a rel="noopener" href="https://www.house.gov/representatives/find-your-representative">enter your street address on house.gov</a>, then mark yours here.', hit.state);
       }).catch(fail);
     };
     sel.addEventListener('change', fromState);
@@ -339,7 +375,7 @@
       });
       var num = function (v) { return v == null ? '<span class="muted">n/a</span>' : v; };
       body.innerHTML = list.map(function (r, i) {
-        return '<tr><td class="small muted">' + (i + 1) + '</td><td><span class="who"><span class="party ' + esc(r.p) + '">' + esc(r.p) + '</span><span><a class="strong" href="' + root + 'members/' + esc(r.id) + '/">' + esc(r.n) + '</a><span class="small muted">' + esc(r.seat) + '</span></span></span></td>' +
+        return '<tr><td class="small muted">' + (i + 1) + '</td><td><span class="who"><span class="party ' + esc(r.p) + '">' + esc(r.p) + '</span><span><a class="strong" href="' + root + chamber + 'members/' + esc(r.id) + '/">' + esc(r.n) + '</a><span class="small muted">' + esc(r.seat) + '</span></span></span></td>' +
           '<td class="strong">' + pct(r.at) + '</td><td>' + num(r.bi) + '</td><td>' + num(r.ph) + '</td><td>' + num(r.bl) + '</td><td>' + pct(r.wp) + '</td></tr>';
       }).join('');
       count.textContent = 'Showing ' + list.length + ' of ' + rows.length + ' members.';

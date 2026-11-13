@@ -21,7 +21,7 @@
 <a href="{{ root }}{{ c }}committees/"{% if section == 'committees' %} aria-current="page"{% endif %}>Committees</a>
 <a href="{{ root }}bills/"{% if section == 'bills' %} aria-current="page"{% endif %}>Bills</a>
 <a href="{{ root }}topics/"{% if section == 'topics' %} aria-current="page"{% endif %}>Topics</a>
-<a href="{{ root }}compare/"{% if section == 'compare' %} aria-current="page"{% endif %}>Compare</a>
+<a href="{{ root }}{{ c }}compare/"{% if section == 'compare' %} aria-current="page"{% endif %}>Compare</a>
 <a href="{{ root }}big-picture/"{% if section == 'big' %} aria-current="page"{% endif %}>Big Picture</a>
 <a href="{{ root }}why/"{% if section == 'why' %} aria-current="page"{% endif %}>Why</a>
 </nav>
@@ -32,9 +32,9 @@
 </div>{% endif %}
 </div>
 </header>
-{% if has_senate and section in ('votes', 'members', 'committees', 'confirmations') %}<div class="wrap chamberbar"><div class="chamber" role="group" aria-label="Choose a chamber">
+{% if has_senate and section in ('votes', 'members', 'committees', 'confirmations', 'compare') %}<div class="wrap chamberbar"><div class="chamber" role="group" aria-label="Choose a chamber">
 <a href="{{ root }}{{ "votes" if section == "confirmations" else section }}/"{% if not c %} aria-current="true"{% endif %}>House</a><a href="{{ root }}senate/{{ section }}/"{% if c %} aria-current="true"{% endif %}>Senate</a></div>
-{% if c %}<span class="chamberlinks"><a href="{{ root }}senate/votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a><a href="{{ root }}senate/confirmations/"{% if section == 'confirmations' %} aria-current="page"{% endif %}>Confirmations</a><a href="{{ root }}senate/members/"{% if section == 'members' %} aria-current="page"{% endif %}>Senators</a><a href="{{ root }}senate/committees/"{% if section == 'committees' %} aria-current="page"{% endif %}>Committees</a></span>{% else %}<span class="small muted">The House: 435 members, one for each district.</span>{% endif %}</div>{% endif %}
+{% if c %}<span class="chamberlinks"><a href="{{ root }}senate/votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a><a href="{{ root }}senate/confirmations/"{% if section == 'confirmations' %} aria-current="page"{% endif %}>Confirmations</a><a href="{{ root }}senate/members/"{% if section == 'members' %} aria-current="page"{% endif %}>Senators</a><a href="{{ root }}senate/committees/"{% if section == 'committees' %} aria-current="page"{% endif %}>Committees</a><a href="{{ root }}senate/compare/"{% if section == 'compare' %} aria-current="page"{% endif %}>Compare</a></span>{% else %}<span class="small muted">The House: 435 members, one for each district.</span>{% endif %}</div>{% endif %}
 <main>
 {% block main %}{% endblock %}
 {% if act is defined %}{% import "_m.html" as act_m %}<div class="wrap actwrap">{{ act_m.reach(root, reach_states, state_names, act.topic, act.key) }}</div>{% endif %}

@@ -521,3 +521,11 @@ a.barrow:hover { background: #F7F3FF; }
 .nrow .nname { font-family: var(--display); font-weight: 600; font-size: 18px; }
 .nrow .side { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
 @media (max-width: 640px) { .nrow { grid-template-columns: 1fr; padding: 14px 18px; } .nrow .side { align-items: flex-start; text-align: left; } }
+
+/* both chambers side by side */
+.tag.chamber-house, .tag.chamber-senate { background: #fff; border: 1px solid var(--line-2, #C7CFDD); color: var(--text-2); }
+.tag.chamber-senate { border-color: #C9B5F5; color: var(--purple-ink); background: #F7F3FF; }
+table.nobills th:nth-child(4), table.nobills th:nth-child(5), table.nobills th:nth-child(6), table.nobills td:nth-child(4), table.nobills td:nth-child(5), table.nobills td:nth-child(6) { display: none; }
+.nav a.myrep.sen { background: #fff; border: 1px solid #DCCBFB; }
+.reach-sub { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding: 12px 20px 0; }
+.morevotes > summary { cursor: pointer; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: #C9B5F5; text-underline-offset: 3px; width: fit-content; }

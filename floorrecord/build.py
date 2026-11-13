@@ -136,7 +136,7 @@ def bill_status(action):
 PASS_Q = re.compile(r"on passage|suspend the rules and (pass|agree)|agreeing to the (concurrent |joint )?resolution|concur", re.I)
 
 
-def bill_track(kind, rec, mvotes=(), scheduled=False):
+def bill_track(kind, rec, mvotes=(), scheduled=False, svotes=()):
     """Where a measure stands, as steps for the chevron tracker. Worked out from the latest official
     action and from the House votes on file, so it is a guide: the official record has the last word."""
     a = (rec.get("latest_action") or "").lower()
@@ -154,8 +154,13 @@ def bill_track(kind, rec, mvotes=(), scheduled=False):
         if PASS_Q.search(q) and "amendment" not in q.lower() and "recommit" not in q.lower():
             house = "passed" if (v.get("result") or "").lower().startswith(("passed", "agreed")) else "failed"
             break
-    senate_passed = "passed senate" in a or "passed/agreed to in senate" in a
-    in_senate = senate_passed or any(w in a for w in ("received in the senate", "senate legislative calendar", "cloture",
+    senate = ""  # from the Senate's own final votes on it, newest first
+    for v in sorted(svotes, key=lambda v: (v["date"], v["roll"]), reverse=True):
+        if v["info"]["kind"] == "passage":
+            senate = "passed" if v["info"]["outcome"] == "Passed" else "failed"
+            break
+    senate_passed = senate == "passed" or "passed senate" in a or "passed/agreed to in senate" in a
+    in_senate = senate_passed or bool(svotes) or any(w in a for w in ("received in the senate", "senate legislative calendar", "cloture",
                                                        "in senate", "senator ")) or ("read twice" in a and house_first)
     stop, note = None, ""
     if "became public law" in a or "became private law" in a:
@@ -167,7 +172,7 @@ def bill_track(kind, rec, mvotes=(), scheduled=False):
     elif house_first:
         done = 4 if senate_passed and (house == "passed" or in_senate) else 3 if (house == "passed" or in_senate) else None
     else:
-        done = 4 if house == "passed" else 3 if (mvotes or scheduled or senate_passed or "received in the house" in a or "held at the desk" in a) else None
+        done = 4 if house == "passed" and senate_passed else 3 if (senate_passed or mvotes or scheduled or "received in the house" in a or "held at the desk" in a) else None
     if done is None:
         sent_back = "motion to refer" in a and "agreed" in a
         if house == "failed":
@@ -177,6 +182,9 @@ def bill_track(kind, rec, mvotes=(), scheduled=False):
         else:
             done = 1
     done = min(done, len(labels))
+    if senate == "failed" and not senate_passed and "Senate" in labels and done <= labels.index("Senate") + 1 and stop is None and done < len(labels):
+        done = stop = labels.index("Senate")
+        note = "It did not get enough votes in the Senate."
     steps = []
     for i, label in enumerate(labels):
         state = "done" if i < done else "stop" if stop == i else "now" if i == done else "todo"
@@ -412,6 +420,7 @@ def main():
         if v["slug"]:
             names += custom_topics_for(bills.get(v["slug"]) or {}, v["desc"], custom)
         v["mix"] = party_mix(v)
+        v["pre"], v["chamber"] = "", "House"
         v["topics"] = names
         v["topic_keys"] = [topic_key(n) for n in names]
     # The big votes use wording a person approved, or the automatic wording. Never unreviewed AI text.
@@ -424,8 +433,33 @@ def main():
         d = p.get("district")
         p["left"] = bool(p.get("term_end")) and p["term_end"] < today
         p["dist_label"] = "Delegate" if p.get("delegate") else ("At large" if not d else f"District {d}")
+    # ---- the Senate: the same counting, fed with Senate roll calls (prepared here, pages written further down)
+    svotes, speople = [], {}
+    senate_search = []
+    senators = read_json(DATA / "senators.json", {})
+    svotes_raw = load_senate_votes(cfg["years"], senators, bills) if senators else []
+    if svotes_raw:
+        sres = compute(svotes_raw, senators, bills, dict(cfg, close_margin=5))
+        svotes, speople = sres["votes"], sres["people"]
+        for v in svotes:
+            info = v["info"]
+            info["rule_name"], info["rule_plain"] = info["name"], info["plain"]
+            apply_wording(info, v["id"], {}, editorial)
+            # Senate votes on bills carry the same topics as House ones, so a senator's votes can be browsed by topic.
+            names = [topic_name(v["issue"])] if v["issue"] else []
+            if v["slug"]:
+                names += custom_topics_for(bills.get(v["slug"]) or {}, v["desc"], custom)
+            v["topic"], v["topics"], v["topic_keys"], v["mix"] = (names[0] if names else ""), names, [topic_key(n) for n in names], party_mix(v)
+            v["pre"], v["chamber"] = "senate/", "Senate"
+        # A senator who answered one of the latest roll calls is still in office, whatever end date is on file
+        # (an appointed senator's listed term can end on election day while they keep serving).
+        still_here = {r[0] for v in sorted(svotes, key=lambda v: (v["date"], v["roll"]))[-5:] for r in v["positions"]}
+        for p in speople.values():
+            p["left"] = bool(p.get("term_end")) and p["term_end"] < today and p["bioguide"] not in still_here
+            p["dist_label"] = {"senior": "Senior senator", "junior": "Junior senator"}.get(p.get("rank") or "", "Senator")
+
     topic_counts = defaultdict(int)
-    for v in votes:
+    for v in votes + svotes:
         if v["kind"] == "standard" and not v["info"]["routine"]:
             for name in v["topics"]:
                 topic_counts[name] += 1
@@ -470,22 +504,27 @@ def main():
 
     # ---- measures
     measures = {}
-    for v in votes:
+    for v in votes + svotes:
         if not v["slug"]:
             continue
         kind, number = v["slug"].rsplit("-", 1)
         m = measures.setdefault(v["slug"], {
             "slug": v["slug"], "kind": kind, "number": int(number), "label": bill_label(kind, int(number)),
-            "rec": bills.get(v["slug"], {}), "votes": [], "title": "",
+            "rec": bills.get(v["slug"], {}), "votes": [], "svotes": [], "title": "",
         })
-        m["votes"].append(v)
+        m["svotes" if v["pre"] else "votes"].append(v)
     for m in measures.values():
         m["votes"].sort(key=lambda v: (v["date"], v["roll"]), reverse=True)
-        m["title"] = m["rec"].get("title") or next((v["desc"] for v in m["votes"] if v["desc"]), m["label"])
+        m["svotes"].sort(key=lambda v: (v["date"], v["roll"]), reverse=True)
+        m["allvotes"] = sorted(m["votes"] + m["svotes"], key=lambda v: (v["date"], v["roll"]), reverse=True)
+        # On a bill's page the final votes come first; a long run of amendment votes folds away.
+        weight = lambda v: (v["info"]["kind"] not in ("passage", "pass", "suspend_pass", "veto", "veto_override"), v["info"]["kind"] in ("amendment", "waive", "motion", "ruling"))
+        m["svotes_show"] = sorted(m["svotes"], key=weight)
+        m["title"] = m["rec"].get("title") or next((v["desc"] for v in m["allvotes"] if v["desc"]), m["label"])
         m["name"] = title_case(short_name(m["title"], m["label"]))
-        m["topic"] = " · ".join(m["votes"][0]["topics"]) if m["votes"] else topic_name(m["rec"].get("policy_area", ""))
+        m["topic"] = " · ".join(m["allvotes"][0]["topics"]) if m["allvotes"] else topic_name(m["rec"].get("policy_area", ""))
         m["kind_name"], m["kind_note"] = KIND_NAMES[m["kind"]]
-        m["track"] = bill_track(m["kind"], m["rec"], m["votes"])
+        m["track"] = bill_track(m["kind"], m["rec"], m["votes"], svotes=m["svotes"])
         m["congress_url"] = (f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
                              f"{CONGRESS_PATH[m['kind']]}/{m['number']}")
 
@@ -497,7 +536,7 @@ def main():
                        key=lambda p: -p["all"]["split_against_pct"])[:5]
     # ---- topics: one page per topic, and "trending" = what the House has voted on most lately
     by_topic = defaultdict(list)
-    for v in newest:
+    for v in sorted(votes + svotes, key=lambda v: (v["date"], v["roll"]), reverse=True):
         for key in v["topic_keys"]:
             by_topic[key].append(v)
     recent_real = [v for v in newest if v["kind"] == "standard" and not v["info"]["routine"]][:60]
@@ -551,7 +590,7 @@ def main():
             bills_by_topic[key] += 1
     topic_rows = sorted(({"name": t["name"], "key": t["key"], "votes": t["real"], "bills": bills_by_topic.get(t["key"], 0)}
                          for t in all_topics if t["real"]), key=lambda r: -r["votes"])
-    laws = [m for m in measures.values() if m["kind"] in ("hr", "s", "hjres", "sjres")]
+    laws = [m for m in measures.values() if m["kind"] in ("hr", "s", "hjres", "sjres") and m["votes"]]
     def reached(m, n):
         return sum(1 for st in m["track"]["steps"] if st["state"] == "done") >= n
     funnel = [("Got a recorded House vote", len(laws)), ("Passed the House", sum(1 for m in laws if reached(m, 3) and (m["kind"].startswith("h") or reached(m, 4)))),
@@ -563,41 +602,28 @@ def main():
     closest = min(real, key=lambda v: (v["margin"], -v["roll"])) if real else None
     big = {"real": len(real), "routine": len(votes) - len(real), "won": won, "lost": len(real) - won,
            "split": split_n, "together": len(real) - split_n, "close": close_n,
-           "turnout": 100.0 * cast / seats_n if seats_n else 0, "bills": len(measures), "laws": funnel[-1][1],
+           "turnout": 100.0 * cast / seats_n if seats_n else 0, "bills": sum(1 for m in measures.values() if m["votes"]), "laws": funnel[-1][1],
            "topics": topic_rows, "topic_max": max([r["votes"] for r in topic_rows] or [1]),
            "funnel": funnel, "months": month_rows, "month_max": max([r["n"] for r in month_rows] or [1]), "closest": closest}
-    render("big-picture/index.html", "overview.html", 1, section="big", big=big)
+    sbig = None
+    if svotes:
+        sreal = [v for v in svotes if not v["info"]["routine"]]
+        kinds = defaultdict(int)
+        for v in svotes:
+            kinds[v["info"]["kind"]] += 1
+        sixty = [v for v in svotes if v["type"] == "3/5"]
+        good = ("Passed", "Confirmed", "Adopted", "Taken Up", "Debate Ended", "Agreed To", "Set Aside", "Pulled From Committee", "Veto Overridden", "Rule Set Aside")
+        sbig = {"total": len(svotes), "real": len(sreal), "confirm": kinds["nomination"], "sixty": len(sixty),
+                "sixty_fail": sum(1 for v in sixty if v["info"]["outcome"] not in good),
+                "won": sum(1 for v in sreal if v["info"]["outcome"] in good),
+                "split": sum(1 for v in sreal if v["split"]), "close": sum(1 for v in sreal if any(k == "close" for k, _ in v["tags"])),
+                "ties": sum(1 for v in svotes if "Vice President broke the tie" in v["info"]["result_note"])}
+    render("big-picture/index.html", "overview.html", 1, section="big", big=big, sbig=sbig)
     render("why/index.html", "why.html", 1, section="why")
     render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, trending=trending, since=since, featured=featured, coming=coming,
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,
            nroutine=sum(1 for v in votes if v["info"]["routine"]))
-    # ---- the Senate: the same counting, fed with Senate roll calls (prepared here, pages written further down)
-    svotes, speople = [], {}
-    senate_search = []
-    senators = read_json(DATA / "senators.json", {})
-    svotes_raw = load_senate_votes(cfg["years"], senators, bills) if senators else []
-    if svotes_raw:
-        sres = compute(svotes_raw, senators, bills, dict(cfg, close_margin=5))
-        svotes, speople = sres["votes"], sres["people"]
-        known_topics = {t["key"] for t in all_topics}
-        for v in svotes:
-            info = v["info"]
-            info["rule_name"], info["rule_plain"] = info["name"], info["plain"]
-            apply_wording(info, v["id"], {}, editorial)
-            # Senate votes on bills carry the same topics as House ones, so a senator's votes can be browsed by topic.
-            names = [topic_name(v["issue"])] if v["issue"] else []
-            if v["slug"]:
-                names += custom_topics_for(bills.get(v["slug"]) or {}, v["desc"], custom)
-            names = [n for n in names if topic_key(n) in known_topics]
-            v["topic"], v["topics"], v["topic_keys"], v["mix"] = (names[0] if names else ""), names, [topic_key(n) for n in names], party_mix(v)
-        # A senator who answered one of the latest roll calls is still in office, whatever end date is on file
-        # (an appointed senator's listed term can end on election day while they keep serving).
-        still_here = {r[0] for v in sorted(svotes, key=lambda v: (v["date"], v["roll"]))[-5:] for r in v["positions"]}
-        for p in speople.values():
-            p["left"] = bool(p.get("term_end")) and p["term_end"] < today and p["bioguide"] not in still_here
-            p["dist_label"] = {"senior": "Senior senator", "junior": "Junior senator"}.get(p.get("rank") or "", "Senator")
-
     # ---- committees: who sits where, built from the same member list as everything else
     def seat_row(r, chamber):
         pools = [("senate/", speople)] if chamber == "senate" else [("", people)] if chamber == "house" else [("", people), ("senate/", speople)]
@@ -660,7 +686,7 @@ def main():
     states = [(s, sorted(g, key=lambda p: (p.get("district") or 0, p["sort"])))
               for s, g in sorted(by_state.items(), key=lambda kv: STATES.get(kv[0], kv[0]))]
     render("members/index.html", "members.html", 1, section="members", states=states, house=house)
-    bill_list = sorted(measures.values(), key=lambda m: (m["votes"][0]["date"], m["votes"][0]["roll"]), reverse=True)
+    bill_list = sorted(measures.values(), key=lambda m: (m["allvotes"][0]["date"], m["allvotes"][0]["roll"]), reverse=True)
     render("bills/index.html", "bills.html", 1, section="bills", act={"topic": "", "key": ""}, bills=bill_list)
     render("about/index.html", "about.html", 1, section="about")
     render("404.html", "404.html", 0, section="")
@@ -710,8 +736,6 @@ def main():
                                    "key": k if k in ORDER else f"other-{i}"}
                                   for i, k in enumerate(sorted(roll, key=lambda k: ORDER.get(k, 4)))]
             ctx["act"] = {"topic": v["topics"][0], "key": v["topic_keys"][0]} if v["topics"] else {"topic": "", "key": ""}
-            if pre:
-                ctx.pop("act")  # the speak-up block finds House members; senators get their own in a later step
             render(f"{pre}votes/{v['id']}/index.html", "vote.html", 2 + deep, c=pre, ch=ch, **ctx)
 
         # ---- member pages
@@ -822,28 +846,37 @@ def main():
         render("senate/confirmations/index.html", "confirmations.html", 2, section="confirmations", c="senate/", ch=SENATE, noms=noms,
                groups=[(k, name, sum(1 for n in noms if n["group"] == k)) for k, name in groups.items() if any(n["group"] == k for n in noms)],
                n_party=sum(1 for n in noms if n["v"]["split"]), n_no=sum(1 for n in noms if not n["ok"]))
+        write_json(SITE / "senators.json", [[p["bioguide"], p["name"], p["state"], p["dist_label"], p["party"],
+                                             senators.get(p["bioguide"], {}).get("url", ""), senators.get(p["bioguide"], {}).get("phone", ""),
+                                             senators.get(p["bioguide"], {}).get("contact_form", "")]
+                                            for p in sorted(speople.values(), key=lambda p: (p["state"], p.get("rank") != "senior", p["sort"])) if not p["left"]])
         chamber_pages("senate/", svotes, speople, senators, sres, SENATE)
         senate_search = [{"t": p["name"], "s": f"Senator · {p['party']}-{p['state']}", "u": f"senate/members/{p['bioguide']}/",
                           "k": f"{p['name']} {STATES.get(p['state'], '')} {p['state']} senator senate".lower()} for p in speople.values()]
 
     # ---- bill pages
     for m in measures.values():
-        bt = m["votes"][0] if m["votes"] else None
+        bt = m["allvotes"][0] if m["allvotes"] else None
         render(f"bills/{m['slug']}/index.html", "bill.html", 2, section="bills", b=m, ai=summaries.get(m["slug"]),
                act={"topic": bt["topics"][0], "key": bt["topic_keys"][0]} if bt and bt["topics"] else {"topic": "", "key": ""},
                sponsor=people.get(m["rec"].get("sponsor")))
 
     # ---- leaderboard and search
-    rows = [{
-        "id": p["bioguide"], "n": p["name"], "sort": p["sort"], "p": p["party"], "st": p["state"],
-        "seat": f"{p['party_name']} · {p['seat']}",
-        "wp": p["all"]["split_with_pct"], "ap": p["all"]["split_against_pct"],
-        "br": p["all"]["split_against"] if p["all"]["split_counted"] else None,
-        "vc": p["all"]["cast"], "at": p["all"]["attendance_pct"],
-        "bi": p.get("bills_n"), "ph": p.get("passed_n"), "bl": p.get("law_n"),
-    } for p in ranked]
-    state_list = sorted({(p["state"], STATES.get(p["state"], p["state"])) for p in ranked}, key=lambda x: x[1])
-    render("compare/index.html", "compare.html", 1, section="compare", rows=rows, state_list=state_list)
+    def compare_page(pre, ch, pool):
+        ranked_here = [p for p in pool.values() if p["ranked"]]
+        rows = [{
+            "id": p["bioguide"], "n": p["name"], "sort": p["sort"], "p": p["party"], "st": p["state"],
+            "seat": f"{p['party_name']} · {p['seat']}",
+            "wp": p["all"]["split_with_pct"], "ap": p["all"]["split_against_pct"],
+            "br": p["all"]["split_against"] if p["all"]["split_counted"] else None,
+            "vc": p["all"]["cast"], "at": p["all"]["attendance_pct"],
+            "bi": p.get("bills_n"), "ph": p.get("passed_n"), "bl": p.get("law_n"),
+        } for p in ranked_here]
+        state_list = sorted({(p["state"], STATES.get(p["state"], p["state"])) for p in ranked_here}, key=lambda x: x[1])
+        render(f"{pre}compare/index.html", "compare.html", 2 if pre else 1, section="compare", c=pre, ch=ch, rows=rows, state_list=state_list)
+    compare_page("", HOUSE, people)
+    if speople:
+        compare_page("senate/", SENATE, speople)
     render("leaderboard/index.html", "redirect.html", 1, to="../compare/")  # the page's old address
 
     search = [{"t": p["name"], "s": f"{p['party']}-{p['seat']}", "u": f"members/{p['bioguide']}/",
