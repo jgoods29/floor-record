@@ -5,6 +5,7 @@
 <div class="stack">
 <div class="eyebrow"><a href="{{ root }}topics/" style="text-decoration:none;color:inherit">Topics</a></div>
 <h1 class="h1">{{ t.name }}</h1>
+<button type="button" class="btn sm follow" data-follow="fr-topics" data-id="{{ t.key }}" data-what="topic">Follow this topic</button>
 <p class="lede">{{ t.real }} House and Senate {{ 'vote' if t.real == 1 else 'votes' }} on {{ t.name|lower }} bills in {{ span }}, newest first. Care about this? <a href="#reach-h">Tell the people who represent you</a>.</p>
 <div class="row"><label class="fieldset" for="vote-filter">Find a vote<input class="field" id="vote-filter" type="search" placeholder="A bill name or word" style="width: 300px" data-filter="#vote-rows .vrow"></label>
 {% if nroutine %}<label class="check" style="align-self:flex-end"><input type="checkbox" data-routine-toggle id="show-routine">Show routine procedural votes ({{ nroutine }})</label>{% endif %}</div>

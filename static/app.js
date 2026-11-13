@@ -13,7 +13,7 @@
   // ---- "my representative": found by ZIP code, kept only in this browser
   function store(key, val) { try { if (val === undefined) return localStorage.getItem(key) || ''; if (val === null) localStorage.removeItem(key); else localStorage.setItem(key, val); } catch (e) {} return ''; }
   function myRep() { try { return JSON.parse(store('fr-rep') || 'null'); } catch (e) { return null; } }
-  function setMyRep(id, name) { store('fr-rep', id ? JSON.stringify({ id: id, name: name }) : null); showMyRep(); }
+  function setMyRep(id, name) { store('fr-rep', id ? JSON.stringify({ id: id, name: name }) : null); showMyRep(); afterYours(); }
   function contactRows() { return once(root + 'contacts.json'); }
   // the two senators for a state: resolves to [] when the Senate pages are not there
   function senatorsFor(st) { return !st ? Promise.resolve([]) : once(root + 'senators.json').then(function (rows) { return rows.filter(function (r) { return r[2] === st; }); }).catch(function () { return []; }); }
@@ -24,7 +24,7 @@
     return Promise.all([once(root + 'zip/' + zip.charAt(0) + '.json'), contactRows()]).then(function (res) {
       var where = res[0][zip]; if (!where) return null;
       where = where.split(',');
-      store('fr-home', where[0].slice(0, 2));
+      var wasHome = store('fr-home'); store('fr-home', where[0].slice(0, 2)); if (wasHome !== where[0].slice(0, 2)) setTimeout(function () { afterYours(); }, 0);
       return { where: where, state: where[0].slice(0, 2), rows: res[1].filter(function (r) { return where.indexOf(r[2] + r[8]) !== -1; }) };
     });
   }
@@ -40,7 +40,7 @@
     var anchor = head.querySelector('.chamber') || head.querySelector('.nav'); head.insertBefore(box, anchor);
     var add = function (cls, href, text) { var a = document.createElement('a'); a.className = 'myrep ' + cls; a.href = href; a.textContent = text; box.insertBefore(a, box.querySelector('.yours-x')); };
     var x = document.createElement('button'); x.type = 'button'; x.className = 'yours-x'; x.setAttribute('aria-label', 'Forget my representative and senators'); x.textContent = 'Clear';
-    x.addEventListener('click', function () { store('fr-rep', null); store('fr-home', null); store('fr-zip', null); showMyRep(); yourVote(); });
+    x.addEventListener('click', function () { store('fr-rep', null); store('fr-home', null); store('fr-zip', null); showMyRep(); yourVote(); afterYours(); });
     box.appendChild(x);
     if (rep && scope !== 'senate') add('', root + 'members/' + rep.id + '/', 'Your Rep: ' + rep.name);
     if (st && scope !== 'house') senatorsFor(st).then(function (rows) {
@@ -49,6 +49,7 @@
     });
     if (!box.querySelector('.myrep') && !(st && scope !== 'house')) box.parentNode.removeChild(box);
   }
+  var afterYours = function () {};  // set further down by the personal home page
   showMyRep();
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('[data-myrep]'); if (!b) return;
@@ -330,6 +331,92 @@
     var z0 = store('fr-zip'), s0 = store('fr-state');
     if (z0) { zip.value = z0; fromZip(); } else if (s0 && sel.querySelector('option[value="' + s0 + '"]')) { sel.value = s0; fromState(); }
   });
+
+  // ---- following topics and bills, and the personal home page. Everything is kept in this browser only.
+  function saved(k) { try { return JSON.parse(store(k) || '[]'); } catch (e) { return []; } }
+  function flip(k, v) { var a = saved(k), i = a.indexOf(v); if (i < 0) a.push(v); else a.splice(i, 1); store(k, a.length ? JSON.stringify(a) : null); }
+  function paintFollows() {
+    each(document.querySelectorAll('[data-follow]'), function (b) {
+      var on = saved(b.getAttribute('data-follow')).indexOf(b.getAttribute('data-id')) !== -1, what = b.getAttribute('data-what');
+      if (what) b.textContent = on ? 'Following this ' + what + ' · Undo' : 'Follow this ' + what;
+      b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-follow]'); if (!b) return;
+    flip(b.getAttribute('data-follow'), b.getAttribute('data-id')); paintFollows(); afterYours();
+  });
+  paintFollows();
+
+  var mine = document.getElementById('mine');
+  if (mine) {
+    var q1 = function (sel) { return mine.querySelector(sel); };
+    var said = { yea: 'Yea', nay: 'Nay', nv: 'Did not vote', present: 'Present' };
+    var chipFor = function (pos) { return '<span class="votechip ' + (pos === 'yea' || pos === 'nay' ? pos : 'none') + '">' + (said[pos] || 'Other') + '</span>'; };
+    var voteRow = function (r, pre, extra) {
+      return '<a class="minerow" href="' + root + pre + 'votes/' + esc(r[0]) + '/"><span class="mr-main"><span class="mr-name">' + esc(r[3]) + '</span><span class="small muted">' + esc(r[1]) + ' · ' + esc(r[4]) + ' ' + r[5] + ' to ' + r[6] + '</span></span>' + (extra || '') + '</a>';
+    };
+    var person = function (role, id, name, pre) {
+      return Promise.all([once(root + pre + 'votes-index.json'), once(root + pre + 'members/' + id + '/votes.json')]).then(function (res) {
+        var rows = res[1].filter(function (m) { var r = res[0][m[0]]; return r && !r[7] && said[m[1]]; }).slice(-3).reverse();
+        return '<div class="minecol"><span class="dist">' + role + '</span><a class="mc-name" href="' + root + pre + 'members/' + esc(id) + '/">' + esc(name) + '</a>' +
+          (rows.length ? rows.map(function (m) { return voteRow(res[0][m[0]], pre, chipFor(m[1])); }).join('') : '<span class="small muted">No recent votes on file.</span>') + '</div>';
+      }).catch(function () { return ''; });
+    };
+    var drawMine = function () {
+      var rep = myRep(), st = myState(), topics = saved('fr-topics'), bills = saved('fr-bills'), all = JSON.parse(mine.getAttribute('data-topics') || '[]');
+      var any = rep || st || topics.length || bills.length;
+      q1('[data-mine-clear]').hidden = !any;
+      if (any) q1('[data-mine-lede]').textContent = 'Saved on this device only. Nothing is sent anywhere.';
+      // your three
+      var jobs = [];
+      if (rep) jobs.push(person('Your representative', rep.id, rep.name, ''));
+      var three = q1('[data-mine-three]');
+      (st ? senatorsFor(st) : Promise.resolve([])).then(function (sens) {
+        sens.forEach(function (r) { jobs.push(person('Your senator', r[0], r[1], 'senate/')); });
+        if (!jobs.length) { three.innerHTML = '<p class="muted" style="margin:0">Type your ZIP code in the search box above and they will appear here, with how they voted.</p>'; return; }
+        Promise.all(jobs).then(function (cols) {
+          three.innerHTML = '<div class="minegrid">' + cols.join('') + '</div>' + (rep ? '' : '<p class="small muted" style="margin:8px 0 0">Your ZIP code covers more than one House district. Pick yours in the search results to add your representative.</p>');
+        });
+      });
+      // topics
+      var name = {}; all.forEach(function (t) { name[t[0]] = t[1]; });
+      var chosen = all.filter(function (t) { return topics.indexOf(t[0]) !== -1; }), rest = all.filter(function (t) { return topics.indexOf(t[0]) === -1; });
+      var pick = function (t, on) { return '<button type="button" class="pick' + (on ? ' on' : '') + '" data-follow="fr-topics" data-id="' + esc(t[0]) + '" aria-pressed="' + on + '">' + esc(t[1]) + '</button>'; };
+      q1('[data-mine-picks]').innerHTML = chosen.map(function (t) { return pick(t, true); }).join('') + rest.slice(0, chosen.length ? 6 : 10).map(function (t) { return pick(t, false); }).join('') +
+        (rest.length > (chosen.length ? 6 : 10) ? '<a class="small" href="' + root + 'topics/">All topics</a>' : '');
+      var tv = q1('[data-mine-topicvotes]');
+      if (!topics.length) tv.innerHTML = '<p class="muted" style="margin:0">Pick a topic to see the latest votes on it from the House and the Senate.</p>';
+      else Promise.all([once(root + 'votes-index.json'), once(root + 'senate/votes-index.json').catch(function () { return []; })]).then(function (res) {
+        var rows = [];
+        res.forEach(function (idx, c) { idx.forEach(function (r) { if (!r[7] && r[8].some(function (k) { return topics.indexOf(k) !== -1; })) rows.push([Date.parse(r[1]) || 0, r, c ? 'senate/' : '']); }); });
+        rows.sort(function (a, b) { return b[0] - a[0] || b[1][2] - a[1][2]; });
+        tv.innerHTML = rows.slice(0, 6).map(function (x) { return voteRow(x[1], x[2], '<span class="tag chamber-' + (x[2] ? 'senate' : 'house') + '">' + (x[2] ? 'Senate' : 'House') + '</span>'); }).join('') || '<p class="muted" style="margin:0">No votes on these topics yet.</p>';
+      });
+      // bills
+      q1('[data-mine-billbox]').hidden = !bills.length;
+      if (bills.length) once(root + 'bills-index.json').then(function (idx) {
+        var cls = { d: 'done', n: 'now', t: 'todo', s: 'stop' };
+        q1('[data-mine-bills]').innerHTML = bills.filter(function (b) { return idx[b]; }).map(function (b) {
+          var m = idx[b];
+          return '<div class="minebill"><a class="mr-name" href="' + root + 'bills/' + esc(b) + '/">' + esc(m[0]) + '</a><ol class="track sm">' + m[3].map(function (l, i) { return '<li class="' + cls[m[2].charAt(i)] + '"><span>' + esc(l) + '</span></li>'; }).join('') + '</ol><span class="small muted">' + esc(m[4]) + '</span></div>';
+        }).join('');
+      });
+      // coming up on your topics
+      var cbox = q1('[data-mine-comingbox]'); cbox.hidden = true;
+      if (topics.length) once(root + 'upcoming.json').then(function (items) {
+        var hits = items.filter(function (i) { return topics.indexOf(i[3]) !== -1; });
+        cbox.hidden = !hits.length;
+        q1('[data-mine-coming]').innerHTML = hits.slice(0, 5).map(function (i) {
+          return '<a class="minerow" href="' + (i[2] ? esc(i[1]) : root + esc(i[1])) + '"' + (i[2] ? ' rel="noopener"' : '') + '><span class="mr-main"><span class="mr-name">' + esc(i[0]) + '</span><span class="small muted">' + esc(i[6]) + ' · ' + esc(i[4]) + ' · ' + esc(i[5]) + '</span></span></a>';
+        }).join('');
+      }).catch(function () {});
+      paintFollows();
+    };
+    q1('[data-mine-clear]').addEventListener('click', function () { ['fr-rep', 'fr-home', 'fr-zip', 'fr-topics', 'fr-bills'].forEach(function (k) { store(k, null); }); showMyRep(); drawMine(); });
+    afterYours = drawMine;
+    drawMine();
+  }
 
   // ---- confirmations: filter by kind of job (works together with the search box through a shared "off" mark)
   var ngroups = document.querySelectorAll('[data-ngroup]');

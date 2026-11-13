@@ -15,6 +15,18 @@
 <a class="pilllink newhere" href="{{ root }}start/"><b>New to all this?</b> Start Here: Congress in Two Minutes<span aria-hidden="true">→</span></a>
 </section>
 
+<section class="stack mine" id="mine" aria-labelledby="mine-h" data-topics='{{ mytopics|tojson }}' style="gap:16px">
+<div class="center" style="gap:6px"><h2 class="h2" id="mine-h">Your page</h2>
+<p class="muted" style="font-size:17px;max-width:640px" data-mine-lede>Make this page yours: your representative, your senators, and the topics you care about. It is saved on this device only. Nothing is sent anywhere.</p></div>
+<div class="card stack" style="gap:14px"><div class="row" style="justify-content:space-between"><span class="label">Your three in Congress</span><button type="button" class="linkish small" data-mine-clear hidden>Clear my page</button></div>
+<div data-mine-three><p class="muted" style="margin:0">Type your ZIP code in the search box above and they will appear here, with how they voted.</p></div></div>
+<div class="card stack" style="gap:14px"><span class="label">Topics you follow</span>
+<div class="picks" data-mine-picks></div>
+<div data-mine-topicvotes></div></div>
+<div class="card stack" style="gap:14px" data-mine-billbox hidden><span class="label">Bills you follow</span><div data-mine-bills></div></div>
+<div class="card stack" style="gap:14px" data-mine-comingbox hidden><span class="label">Coming up on your topics</span><div data-mine-coming></div></div>
+</section>
+
 {% if featured or trending %}
 <section class="center" aria-labelledby="trending-h">
 <h2 class="label" id="trending-h">Trending</h2>

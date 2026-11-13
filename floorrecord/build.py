@@ -620,7 +620,13 @@ def main():
                 "ties": sum(1 for v in svotes if "Vice President broke the tie" in v["info"]["result_note"])}
     render("big-picture/index.html", "overview.html", 1, section="big", big=big, sbig=sbig)
     render("why/index.html", "why.html", 1, section="why")
+    # small lookup files for the personal home page, which is put together in the visitor's own browser
+    write_json(SITE / "bills-index.json", {m["slug"]: [m["name"], m["label"], "".join(st["state"][0] for st in m["track"]["steps"]),
+                                                       [st["label"] for st in m["track"]["steps"]], m["track"]["text"]] for m in measures.values()})
+    write_json(SITE / "upcoming.json", [[i["name"], i["url"], i["outside"], i["topic_key"], i["topic"], i["how_label"], "This week" if w["current"] else "Next week"]
+                                        for w in weeks for i in w["items"]])
     render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, trending=trending, since=since, featured=featured, coming=coming,
+           mytopics=[[t["key"], t["name"]] for t in all_topics],
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,
            nroutine=sum(1 for v in votes if v["info"]["routine"]))
