@@ -4066,5 +4066,905 @@
   "name": "Debate Rules for Homeland Security Funding and Other Bills",
   "plain": "The House voted 214 to 210 to approve the rules for debating several measures, including a bill providing funding for the Department of Homeland Security for fiscal year 2026. This was a procedural step that sets how long debate lasts and which amendments are allowed, not a final vote on those measures.",
   "v": 2
+ },
+ "s2026-100": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on hedge fund ownership of homes and rents",
+  "plain": "The Senate rejected a proposed change to the 2026 federal budget plan that would have set up a fund, with no added deficit, to address hedge fund ownership of single-family homes and rent prices. The vote was 46 in favor and 52 against.",
+  "v": 1
+ },
+ "s2026-101": {
+  "model": "claude-haiku-5-5",
+  "name": "Lowering prescription drug prices to European and Canadian levels",
+  "plain": "The Senate voted on whether to set aside a budget rule so that a bill to cut prescription drug prices by more than half could go ahead. The vote needed 60 votes and got 49 in favor, so it did not reach the 60 votes needed.",
+  "v": 1
+ },
+ "s2026-102": {
+  "model": "claude-haiku-5-5",
+  "name": "Waiving Budget Rule on Unspent Agency Funds",
+  "plain": "The Senate voted on whether to set aside a budget rule so a proposal could move forward. The proposal would give funding to federal agencies that still have unspent money from earlier budget bills. The vote fell short of the 60 votes needed, with 46 in favor and 52 opposed, so the rule remains in force.",
+  "v": 1
+ },
+ "s2026-103": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on Study of Confidential Drug Pricing Deals",
+  "plain": "The Senate rejected a proposed change to the budget resolution that would have required a government study of the economic effects of private or confidential drug pricing agreements between federal agencies and pharmaceutical manufacturers. The vote was 48 in favor and 50 against.",
+  "v": 1
+ },
+ "s2026-104": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on FEMA disaster aid funding in budget plan",
+  "plain": "The Senate considered a proposed change to the budget plan that would have set aside funds to ensure money for FEMA's disaster recovery and hazard mitigation programs is spent. The change was rejected in a 49-49 tie vote, so it did not pass.",
+  "v": 1
+ },
+ "s2026-105": {
+  "model": "claude-haiku-5-5",
+  "name": "Federal budget plan for 2026 and beyond",
+  "plain": "The Senate approved a budget plan setting federal spending and revenue targets for 2026 and projections through 2035. It also directs several committees to draft legislation that would add no more than $70 billion to the deficit, to be submitted by May 15, 2026.",
+  "v": 1
+ },
+ "s2026-107": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Begins Work on Package of 49 Nominations",
+  "plain": "The Senate voted 52 to 47 to begin work on a single package covering 49 nominees for government jobs, including positions in several federal departments and ambassador posts to Iceland, Slovenia, Sri Lanka, and Vietnam. This was a step to start consideration, not the final approval of the nominees.",
+  "v": 1
+ },
+ "s2026-108": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate ruling on a Cuba military-action resolution",
+  "plain": "The Senate voted 51 to 47 to agree with a ruling that a resolution to remove U.S. armed forces from hostilities against Cuba, unless Congress has authorized them, cannot proceed under the Senate's rules. The resolution would have required the President to withdraw forces from such hostilities.",
+  "v": 1
+ },
+ "s2026-11": {
+  "model": "claude-haiku-5-5",
+  "name": "Funding bill for commerce, justice, science, energy, water, and environment agencies",
+  "plain": "The Senate voted 82 to 15 to pass a bill that provides funding for the 2026 budget year to several federal departments and agencies, including Commerce, Justice, NASA, the National Science Foundation, Energy, the Interior, and the Environmental Protection Agency.",
+  "v": 1
+ },
+ "s2026-110": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Colorado Regional Haze Plan Rule",
+  "plain": "The Senate voted on whether to begin considering a resolution to overturn an Environmental Protection Agency decision rejecting Colorado's regional haze plan. The Senate did not agree to begin, with 46 in favor and 52 against.",
+  "v": 1
+ },
+ "s2026-111": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Ending Automatic Work Permit Extensions",
+  "plain": "The Senate voted on whether to begin considering a resolution to overturn a government rule that would end the automatic extension of immigrant work permits. The vote was 47 in favor and 50 against, so the Senate did not take up the resolution.",
+  "v": 1
+ },
+ "s2026-112": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate moves ahead on 49 nominations package",
+  "plain": "The Senate voted 51 to 46 to end debate and move ahead on a resolution that would let it consider 49 nominees together, including people for jobs in the Departments of Commerce, Justice, State and Transportation and ambassadors to Iceland, Slovenia, Sri Lanka and Vietnam.",
+  "v": 1
+ },
+ "s2026-113": {
+  "model": "claude-haiku-5-5",
+  "name": "Pulling Iran military action resolution from committee",
+  "plain": "The Senate voted against moving a measure out of committee that would direct the President to remove U.S. armed forces from hostilities with Iran not authorized by Congress, with exceptions for defending against attacks on the U.S. or its personnel and facilities abroad. The vote was 47 in favor and 50 against, so the measure stays in committee.",
+  "v": 1
+ },
+ "s2026-114": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate approves package of 49 nominations",
+  "plain": "The Senate voted 46 to 45 to approve a package of 49 nominees for government posts, including roles in the Commerce, Justice, State and Transportation departments and ambassadors to Iceland, Slovenia, Sri Lanka and Vietnam.",
+  "v": 1
+ },
+ "s2026-118": {
+  "model": "claude-haiku-5-5",
+  "name": "Limiting U.S. military action against Iran without Congress",
+  "plain": "The Senate voted 50 to 49 against moving a resolution out of committee for full Senate consideration. The resolution would have directed the President to withdraw U.S. armed forces from hostilities against Iran not authorized by Congress, while still allowing defense against attacks on the U.S. or its personnel and facilities.",
+  "v": 1
+ },
+ "s2026-119": {
+  "model": "claude-haiku-5-5",
+  "name": "Senators' pay during government shutdowns",
+  "plain": "The Senate voted 99 to 0 to end debate and move ahead on a resolution that would withhold Senators' pay during any federal government shutdown, starting the day after the November 2026 general election. Senators would be paid after a shutdown ends.",
+  "v": 1
+ },
+ "s2026-12": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to advance Pregnant Students' Rights Act",
+  "plain": "The Senate voted 47 to 45 on whether to end debate and move ahead on the Pregnant Students' Rights Act. The vote did not reach the 60 votes needed, so the measure remains blocked for now. If passed, it would require colleges that receive federal student aid to tell students about resources and accommodations for carrying a pregnancy to term.",
+  "v": 1
+ },
+ "s2026-121": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Consumer Bureau Rule for Military Families",
+  "plain": "The Senate voted 48 to 52 not to begin considering a resolution that would overturn a Consumer Financial Protection Bureau decision withdrawing a rule on examining risks to active-duty servicemembers and their families. The proposal did not move forward.",
+  "v": 1
+ },
+ "s2026-122": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on consumer debt collection rule disapproval",
+  "plain": "The Senate voted on whether to begin work on a resolution to overturn a Consumer Financial Protection Bureau rule on debt collection, specifically the one involving medical debt. The vote was 50 to 50, so the Senate did not agree to begin work on it.",
+  "v": 1
+ },
+ "s2026-123": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on overturning consumer bank overdraft rule withdrawal",
+  "plain": "The Senate voted on whether to begin considering a resolution to overturn a federal consumer agency's decision to withdraw a rule on overdraft fees. The vote was 47 in favor and 53 against, so the Senate did not take up the resolution.",
+  "v": 1
+ },
+ "s2026-129": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending U.S. military action against Iran without congressional approval",
+  "plain": "The Senate voted 50 to 47 to take a resolution out of committee so the full Senate can consider it. The resolution would direct the President to remove U.S. Armed Forces from hostilities against Iran unless Congress has declared war or authorized the use of force for that purpose.",
+  "v": 1
+ },
+ "s2026-13": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to advance 2026 spending package fails",
+  "plain": "The Senate voted on whether to end debate and move ahead on the Consolidated Appropriations Act, 2026, which funds several federal departments and extends various expiring programs. The vote was 45 in favor and 55 against, short of the 60 votes needed, so the bill remains blocked for now.",
+  "v": 1
+ },
+ "s2026-135": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on ending EPA power plant pollution repeal",
+  "plain": "The Senate voted 46 to 53 not to begin work on a measure that would overturn the Environmental Protection Agency's repeal of pollution limits for coal- and oil-fired power plants. The vote was a decision not to take up the measure.",
+  "v": 1
+ },
+ "s2026-136": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate votes to begin work on Secure America Act",
+  "plain": "The Senate voted 53 to 46 to begin considering the Secure America Act, which would provide $70 billion through 2029 for immigration enforcement, border security, and related activities at Homeland Security, Customs and Border Protection, and Immigration and Customs Enforcement.",
+  "v": 1
+ },
+ "s2026-137": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on Secure America Act motion",
+  "plain": "The Senate voted 49 to 50 against a motion on the Secure America Act, so the motion was rejected. The bill would provide about $70 billion through 2029 for border security, immigration enforcement, and related activities at Homeland Security, Customs and Border Protection, and Immigration and Customs Enforcement.",
+  "v": 1
+ },
+ "s2026-138": {
+  "model": "claude-haiku-5-5",
+  "name": "Moving funds from an anti-weaponization fund to fraud enforcement",
+  "plain": "The Senate voted on whether to set aside a budget rule so a measure shifting money from an anti-weaponization fund to fraud enforcement could go ahead. The request fell short of the 60 votes needed, with 15 in favor and 84 against.",
+  "v": 1
+ },
+ "s2026-139": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on waiving budget rule for White House ballroom measure",
+  "plain": "The Senate voted 53 to 46 to keep a budget rule in place, so the measure on funds for the White House ballroom could not go ahead. The vote needed 60 votes to set the rule aside and did not reach that number.",
+  "v": 1
+ },
+ "s2026-14": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to eliminate refugee and entrant assistance funding",
+  "plain": "The Senate voted 67 to 32 against a proposed change to the funding bill that would have removed money for refugee and entrant assistance. The change was rejected.",
+  "v": 1
+ },
+ "s2026-140": {
+  "model": "claude-haiku-5-5",
+  "name": "Funding for the HOME housing program: budget rule waiver",
+  "plain": "The Senate voted on whether to set aside a budget rule so that a bill providing funding for the HOME Investment Partnerships program could go ahead. The vote needed 60 votes and got 46, so the request was rejected.",
+  "v": 1
+ },
+ "s2026-141": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on Secure America Act funding",
+  "plain": "The Senate voted 47 to 50 against a motion on the Secure America Act, which would provide about $70 billion through 2029 for border security and immigration enforcement. The motion was rejected.",
+  "v": 1
+ },
+ "s2026-142": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on building 7 million new homes bill",
+  "plain": "The Senate voted on whether to set aside a budget rule so the bill to help build 7 million new homes could move ahead. The measure needed 60 votes to do so. It received 46 votes, so it did not reach the 60 votes needed, and the rule stayed in force.",
+  "v": 1
+ },
+ "s2026-143": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on setting aside budget rule for intelligence director bill",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill barring one person from serving as Director of National Intelligence while leading another federal department or agency could move forward. The vote was 49 in favor and 49 against, which did not reach the 60 votes needed, so the rule stayed in place.",
+  "v": 1
+ },
+ "s2026-144": {
+  "model": "claude-haiku-5-5",
+  "name": "Voter citizenship and photo ID bill: budget-rule waiver fails",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill requiring proof of citizenship and photo ID to vote in federal elections could proceed. The vote needed 60 votes to pass and got 48 in favor and 50 against, so it did not reach the 60 needed.",
+  "v": 1
+ },
+ "s2026-145": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on setting aside budget rule for federal funds ban",
+  "plain": "The Senate voted on whether to set aside a budget rule so a measure barring federal funds to people convicted of certain crimes could move ahead. The vote got 51 yes and 47 no, short of the 60 needed, so the rule stayed in force and the measure was not allowed to proceed.",
+  "v": 1
+ },
+ "s2026-146": {
+  "model": "claude-haiku-5-5",
+  "name": "Funding for inspections of Delaney Hall detention facility",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill providing money for inspections of the Delaney Hall detention facility could move forward. The vote needed 60 votes to succeed. It got 46 yes and 53 no, so it did not reach the 60 needed and the rule stayed in place.",
+  "v": 1
+ },
+ "s2026-147": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Secure America Act Motion",
+  "plain": "The Senate voted 46 to 52 to reject a motion on the Secure America Act, which would provide about $70 billion through 2029 for border security and immigration enforcement. The motion did not pass.",
+  "v": 1
+ },
+ "s2026-148": {
+  "model": "claude-haiku-5-5",
+  "name": "Limits on contributions to Super PACs",
+  "plain": "The Senate voted 45 to 53 on whether to set aside a budget rule so a bill limiting contributions to Super PACs could go ahead. The vote needed 60 votes to pass and did not reach that number, so the change was not approved.",
+  "v": 1
+ },
+ "s2026-149": {
+  "model": "claude-haiku-5-5",
+  "name": "Moving immigration enforcement funds to child care",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill could move ahead. The bill would redirect money from immigration enforcement to child care programs. The vote needed 60 votes and got 46, so it did not reach the 60 needed.",
+  "v": 1
+ },
+ "s2026-15": {
+  "model": "claude-haiku-5-5",
+  "name": "Setting Aside a Motion on the 2026 Spending Package",
+  "plain": "The Senate voted 67 to 33 to set aside a request on the Consolidated Appropriations Act, 2026, which provides funding to several federal departments and agencies for the rest of fiscal year 2026 and temporarily funds the Department of Homeland Security through February 13, 2026. Setting the request aside ends it without a direct vote on it.",
+  "v": 1
+ },
+ "s2026-150": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on setting aside a budget rule for an immigration detention oversight bill",
+  "plain": "The Senate voted 46 to 53 on whether to set aside a budget rule so a bill supporting the Immigration Detention Ombudsman could go ahead. The 60 votes needed were not reached, so the rule stayed in force.",
+  "v": 1
+ },
+ "s2026-151": {
+  "model": "claude-haiku-5-5",
+  "name": "Voter ID and citizenship proof bill: vote to set aside budget rule",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill requiring proof of citizenship to register and photo ID to vote could move forward. The vote was 50 in favor and 49 against, which fell short of the 60 votes needed, so the rule stayed in place.",
+  "v": 1
+ },
+ "s2026-152": {
+  "model": "claude-haiku-5-5",
+  "name": "Setting aside budget rule for DACA funding bill",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill could move forward. The bill would shift money from immigration enforcement to processing DACA applications and bar using funds to arrest or deport DACA recipients. The vote was 48 in favor and 51 against, short of the 60 votes needed, so the rule stayed in place.",
+  "v": 1
+ },
+ "s2026-153": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate motion on Secure America Act funding",
+  "plain": "The Senate voted on a motion about the Secure America Act, which would provide $70 billion through 2029 for border security and immigration enforcement. The motion was rejected, 48 in favor to 51 against.",
+  "v": 1
+ },
+ "s2026-154": {
+  "model": "claude-haiku-5-5",
+  "name": "Moving funds to youth mentoring programs in the Secure America Act",
+  "plain": "The Senate rejected a proposed change to the Secure America Act that would have moved money to Justice Department youth mentoring programs. The vote was 46 in favor and 53 against.",
+  "v": 1
+ },
+ "s2026-155": {
+  "model": "claude-haiku-5-5",
+  "name": "Proposal to cancel unspent funds from 2025 law rejected",
+  "plain": "The Senate rejected a proposed change to the Secure America Act that would have cancelled leftover money from the One Big Beautiful Bill Act, by a vote of 46 in favor and 53 against.",
+  "v": 1
+ },
+ "s2026-156": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to fund DACA renewal applications rejected",
+  "plain": "The Senate voted 52 to 47 to reject a proposed change to the Secure America Act that would have made funds available for the timely processing of DACA renewal applications. The change was not adopted.",
+  "v": 1
+ },
+ "s2026-157": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on transparency and accountability for immigration funding",
+  "plain": "The Senate rejected a proposed change to the Secure America Act, which provides $70 billion for immigration enforcement and border security, by a vote of 46 in favor and 53 against. The change was described as aimed at transparency and accountability in the funding.",
+  "v": 1
+ },
+ "s2026-158": {
+  "model": "claude-haiku-5-5",
+  "name": "Bill barring payments to Jan. 6 convicts fails budget test",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill could move forward. The bill would bar the Justice Department from using taxpayer money for settlement payments to people convicted of assaulting police on January 6, 2021. The vote was 54 in favor and 45 against, short of the 60 needed, so the rule stayed in place.",
+  "v": 1
+ },
+ "s2026-159": {
+  "model": "claude-haiku-5-5",
+  "name": "Compensation for Capitol Police who defended the Capitol on January 6",
+  "plain": "The Senate voted 52 to 47 on whether to set aside a budget rule so the bill could move forward. The vote did not reach the 60 votes needed, so the step was rejected and the bill's compensation provisions did not advance.",
+  "v": 1
+ },
+ "s2026-16": {
+  "model": "claude-haiku-5-5",
+  "name": "Set aside a motion on the 2026 spending package",
+  "plain": "The Senate voted 58 to 42 to set aside a motion related to the Consolidated Appropriations Act, 2026, which provides funding to several federal departments and agencies for the rest of fiscal year 2026. Setting it aside ends the motion without a direct vote on it.",
+  "v": 1
+ },
+ "s2026-160": {
+  "model": "claude-haiku-5-5",
+  "name": "Funding for local police hiring, rejected in Senate",
+  "plain": "The Senate rejected a proposed change to the Secure America Act that would have provided money for local law enforcement hiring programs. The vote was 45 in favor and 53 against.",
+  "v": 1
+ },
+ "s2026-161": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on setting aside a budget rule for a funding ban",
+  "plain": "The Senate voted 53 to 46 to keep a budget rule in place, so the proposal to block certain payments to individuals could not go ahead. The vote needed 60 votes to set the rule aside and did not reach that number.",
+  "v": 1
+ },
+ "s2026-162": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on setting aside a budget rule for a judgments-limits bill",
+  "plain": "The Senate voted 51 to 48 to keep a budget rule in force, so the bill on limits for judgments and settlements against the government did not go ahead. The vote needed 60 votes to set the rule aside, and it did not reach that number.",
+  "v": 1
+ },
+ "s2026-163": {
+  "model": "claude-haiku-5-5",
+  "name": "Secure America Act: Senate final passage vote",
+  "plain": "The Senate voted 52 to 47 to pass the Secure America Act. The bill provides about $70 billion through 2029 for immigration enforcement, border security, and related activities at the Department of Homeland Security, Customs and Border Protection, and Immigration and Customs Enforcement.",
+  "v": 1
+ },
+ "s2026-164": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on starting work on a surveillance and Federal Reserve digital currency bill",
+  "plain": "The Senate voted 47 to 52 on whether to begin work on a bill that would extend a foreign intelligence surveillance law to 2029, add rules on searches of Americans' communications, and bar the Federal Reserve from issuing a central bank digital currency. The motion did not pass.",
+  "v": 1
+ },
+ "s2026-17": {
+  "model": "claude-haiku-5-5",
+  "name": "Setting aside a motion on the Consolidated Appropriations Act, 2026",
+  "plain": "The Senate voted 58 to 42 to set aside a motion related to the Consolidated Appropriations Act, 2026, which provides federal funding for several departments for the rest of fiscal year 2026 and temporary funding for Homeland Security through February 13, 2026.",
+  "v": 1
+ },
+ "s2026-173": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Immigration Appeals Board Rule Disapproval",
+  "plain": "The Senate voted on whether to begin considering a resolution to overturn a rule on appeals procedures for the Board of Immigration Appeals. The proposal to begin consideration did not pass, with 46 in favor and 48 opposed.",
+  "v": 1
+ },
+ "s2026-174": {
+  "model": "claude-haiku-5-5",
+  "name": "Bringing a Measure on Iran Military Action to a Full Vote",
+  "plain": "The Senate voted 47 to 48 against moving a proposal to the full Senate that would require U.S. forces to withdraw from hostilities against Iran unless Congress has authorized them. The proposal stays in committee.",
+  "v": 1
+ },
+ "s2026-175": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Opens Debate on 21st Century ROAD to Housing Act",
+  "plain": "The Senate voted 87 to 8 to begin considering the 21st Century ROAD to Housing Act, a bill that changes and sets up various federal housing programs. This vote was to start work on the bill, not a final vote on it.",
+  "v": 1
+ },
+ "s2026-179": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on sending a Honduras human rights review to the floor",
+  "plain": "The Senate voted 44 to 50 on whether to move a resolution asking for information on Honduras's human rights practices out of committee so the full Senate could consider it. The motion was rejected, so the resolution stays in committee.",
+  "v": 1
+ },
+ "s2026-18": {
+  "model": "claude-haiku-5-5",
+  "name": "Proposed cut to immigration enforcement and Medicaid funding",
+  "plain": "The Senate rejected a proposed change to the spending bill that would have canceled certain money for immigration enforcement and changes to Medicaid. The vote was 49 in favor and 51 against, which did not reach the 60 votes needed.",
+  "v": 1
+ },
+ "s2026-180": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending debate on the 21st Century ROAD to Housing Act",
+  "plain": "The Senate voted 84 to 8 to end debate and move ahead on the 21st Century ROAD to Housing Act, which would change federal housing programs, including grants, mortgage limits, and environmental review rules. The vote reached the 60 needed.",
+  "v": 1
+ },
+ "s2026-182": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on the 21st Century ROAD to Housing Act",
+  "plain": "The Senate voted 85 to 5 to agree to a motion on the 21st Century ROAD to Housing Act, a bill that changes various federal housing programs. This vote was a procedural step, not the final vote on the bill.",
+  "v": 1
+ },
+ "s2026-184": {
+  "model": "claude-haiku-5-5",
+  "name": "Resolution directing removal of U.S. forces from Iran hostilities",
+  "plain": "The Senate voted 50 to 48 to approve a resolution directing the President to remove U.S. armed forces from hostilities against Iran, unless Congress has authorized the military action or it is needed to defend the United States, an ally, or a partner from imminent attack.",
+  "v": 1
+ },
+ "s2026-19": {
+  "model": "claude-haiku-5-5",
+  "name": "Bill to block delayed or canceled federal spending",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill could move forward, which needed 60 votes. The vote was 47 in favor and 52 against, so it did not reach the 60 votes needed and the rule stayed in place.",
+  "v": 1
+ },
+ "s2026-190": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on ending a student loan rule",
+  "plain": "The Senate voted 45 to 52 on whether to begin work on a resolution to overturn the Education Department's new federal student loan rules, and the vote was rejected, so the Senate did not begin work on it.",
+  "v": 1
+ },
+ "s2026-192": {
+  "model": "claude-haiku-5-5",
+  "name": "Withdrawing U.S. forces from Iran hostilities without congressional approval",
+  "plain": "The Senate voted 47 to 50 against starting work on a measure that would direct the President to remove U.S. armed forces from hostilities within or against Iran unless Congress has declared war or authorized the use of military force for that purpose. The measure would not stop the U.S. from defending against attacks on itself or its people and facilities in other countries.",
+  "v": 1
+ },
+ "s2026-195": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to advance the 2027 defense authorization bill",
+  "plain": "The Senate voted 50 to 46 on whether to end debate and begin work on the National Defense Authorization Act for Fiscal Year 2027, which sets policies and authorities for military programs. The vote did not reach the 60 votes needed, so the bill was blocked for now.",
+  "v": 1
+ },
+ "s2026-199": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Blocking Medicare Prior-Authorization Pilot",
+  "plain": "The Senate voted on whether to begin considering a measure that would block a Medicare pilot using prior approval and AI to review certain claims in six states. The vote was 46 in favor and 50 against, so the Senate did not take up the measure.",
+  "v": 1
+ },
+ "s2026-20": {
+  "model": "claude-haiku-5-5",
+  "name": "Consolidated Appropriations Act, 2026 final passage",
+  "plain": "The Senate voted 71 to 29 to pass the Consolidated Appropriations Act, 2026, which provides funding for several federal departments and agencies for the rest of fiscal year 2026. It also continues Homeland Security funding through February 13, 2026, and extends several expiring programs.",
+  "v": 1
+ },
+ "s2026-207": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to bring Iran military action resolution to floor",
+  "plain": "The Senate voted 47 to 49 not to pull a resolution out of committee so the full Senate could consider it. The resolution would direct removal of U.S. armed forces from hostilities against Iran not authorized by Congress, unless war is declared or force is authorized.",
+  "v": 1
+ },
+ "s2026-212": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to advance Russia and Iran sanctions bill",
+  "plain": "The Senate voted 86 to 12 to end debate and move ahead on a bill that would impose sanctions, tariffs and investment limits tied to Russia, extend an Iran sanctions law through 2031, and expand a tax deduction for teacher expenses to include early childhood educators. This was a procedural step, not the final vote on the bill.",
+  "v": 1
+ },
+ "s2026-213": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate votes to begin work on Russia and Iran sanctions bill",
+  "plain": "The Senate voted 84 to 12 to begin debating the Lindsey O. Graham Sanctioning Russia and Iran Act of 2026. This vote only starts work on the bill; it does not approve the bill itself.",
+  "v": 1
+ },
+ "s2026-214": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate advances package of executive branch and judicial nominees",
+  "plain": "The Senate voted 50 to 45 to end debate on a resolution that would allow it to confirm a group of nominees together, including officials for the Defense, Energy, Interior, State and Treasury departments, ambassadors, and members of several federal boards and courts. This step lets the Senate move ahead; it does not by itself confirm the nominees.",
+  "v": 1
+ },
+ "s2026-215": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Child Care Funding Rule Rule Disapproval",
+  "plain": "The Senate voted on whether to begin considering a resolution to overturn a Health and Human Services rule changing how child care development funds are administered. The vote was 47 in favor and 52 against, so the Senate did not take up the resolution.",
+  "v": 1
+ },
+ "s2026-216": {
+  "model": "claude-haiku-5-5",
+  "name": "Moving a war-powers resolution on Iran out of committee",
+  "plain": "The Senate voted 49 to 50 against moving a resolution out of committee so the full Senate could consider it. The resolution would direct U.S. forces to leave hostilities against Iran unless Congress has declared war or authorized the use of force, though it would not stop defense against attacks on the U.S. or its personnel.",
+  "v": 1
+ },
+ "s2026-217": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate approves a batch of executive and judicial nominees",
+  "plain": "The Senate voted 50 to 47 to approve a single resolution that allows a group of presidential nominees to be considered together. The nominees would serve in roles including Defense, Energy, Interior, State and Treasury posts, ambassadorships, and seats on several federal boards and D.C. courts.",
+  "v": 1
+ },
+ "s2026-218": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate moves ahead on stopgap government funding bill",
+  "plain": "The Senate voted 89 to 4 to end debate and move ahead on a bill that would keep federal agencies funded at current levels through December 11, 2026, and extend various expiring programs. The vote needed 60 votes, and it reached that threshold.",
+  "v": 1
+ },
+ "s2026-222": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on reviving an EPA PFAS reporting rule challenge",
+  "plain": "The Senate voted on whether to begin considering a resolution to overturn an EPA rule that changes when companies must start reporting PFAS chemical data. The vote was 48 in favor and 50 against, so the Senate did not begin work on it.",
+  "v": 1
+ },
+ "s2026-223": {
+  "model": "claude-haiku-5-5",
+  "name": "Removing tariffs on countries that buy Russian oil or gas",
+  "plain": "The Senate rejected a proposed change that would have removed the provision allowing tariffs of up to 100% on goods from countries that knowingly buy new Russian oil or natural gas. The vote was 32 in favor and 64 against.",
+  "v": 1
+ },
+ "s2026-224": {
+  "model": "claude-haiku-5-5",
+  "name": "Russia and Iran sanctions bill final passage vote",
+  "plain": "The Senate voted 86 to 11 to pass a bill that imposes sanctions, tariffs and investment limits tied to Russia, extends an Iran sanctions law through 2031, and expands a tax deduction for teacher expenses to early childhood educators.",
+  "v": 1
+ },
+ "s2026-226": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending debate on government funding extension bill",
+  "plain": "The Senate voted 91 to 6 to end debate and move ahead on the Continuing Appropriations and Extensions Act, 2027. The vote needed 60 votes, and it reached that threshold. This was a step toward further action, not the final vote on the bill.",
+  "v": 1
+ },
+ "s2026-227": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate sets aside stopgap government funding bill",
+  "plain": "The Senate voted 61 to 32 to set aside a bill that would keep federal agencies funded at current levels through December 11, 2026, and extend various expiring programs. Setting it aside ends consideration of the bill.",
+  "v": 1
+ },
+ "s2026-228": {
+  "model": "claude-haiku-5-5",
+  "name": "Continuing Appropriations and Extensions Act, 2027",
+  "plain": "The Senate passed a bill to keep federal agencies funded at current levels through December 11, 2026, avoiding a shutdown when the new fiscal year starts, and to extend several expiring programs. The vote was 90 in favor and 6 against.",
+  "v": 1
+ },
+ "s2026-231": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on requiring photo ID to vote",
+  "plain": "The Senate voted on whether to end debate and move ahead on a measure requiring photo identification to vote in federal elections, but the vote fell short of the 60 votes needed, with 52 in favor and 46 against, so the Senate did not move ahead on it.",
+  "v": 1
+ },
+ "s2026-234": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on starting debate on digital asset market bill",
+  "plain": "The Senate voted 49 to 50 on whether to end debate and move ahead on the Digital Asset Market Clarity Act, which would set rules for digital commodities. The 60 votes needed were not reached, so the Senate did not begin work on the bill.",
+  "v": 1
+ },
+ "s2026-235": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to advance college sports bill",
+  "plain": "The Senate voted 74 to 24 to end debate and move ahead on the Protect College Sports Act of 2026, which sets rules for college athletes' name, image, and likeness deals and limits the sharing of revenue with athletes. The vote needed 60 votes, and it reached that number.",
+  "v": 1
+ },
+ "s2026-236": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Votes to Begin Work on College Sports Bill",
+  "plain": "The Senate voted 77 to 22 to begin debate on the Protect College Sports Act of 2026, which would set rules for college athletes' endorsement deals, allow schools and conferences to jointly sell certain sports broadcast rights, and require large schools to keep certain non-revenue sports teams.",
+  "v": 1
+ },
+ "s2026-240": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to advance college sports protection bill",
+  "plain": "The Senate voted 70 to 21 to end debate and move ahead on the Protect College Sports Act of 2026, which would set rules for college athletes' name, image, and likeness deals, transfers, and revenue sharing. The 60 votes needed were reached.",
+  "v": 1
+ },
+ "s2026-242": {
+  "model": "claude-haiku-5-5",
+  "name": "Replacement text for the Protect College Sports Act",
+  "plain": "The Senate agreed to a proposed change that swaps in a new version of the bill, 77 to 23. The bill would set rules for college athletes' name, image and likeness deals, limit agent fees to 5%, and allow schools to jointly sell TV rights.",
+  "v": 1
+ },
+ "s2026-243": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to advance college sports bill",
+  "plain": "The Senate voted 74 to 25 to end debate on the Protect College Sports Act of 2026 and move ahead with it. The vote needed 60 votes, which it reached. The bill would set rules for college athletes' name, image and likeness deals, limit how much schools share revenue with athletes, and allow certain schools to pool and sell TV rights.",
+  "v": 1
+ },
+ "s2026-244": {
+  "model": "claude-haiku-5-5",
+  "name": "Removing U.S. forces from hostilities with Iran",
+  "plain": "The Senate voted 49 to 50 against a non-binding measure that would have directed the President to remove U.S. armed forces from hostilities against Iran unless Congress declares war or authorizes the use of force. The measure did not pass.",
+  "v": 1
+ },
+ "s2026-245": {
+  "model": "claude-haiku-5-5",
+  "name": "Change to how the college sports bill relates to existing law",
+  "plain": "The Senate approved a proposed change to the Protect College Sports Act of 2026, 96 to 1, that modifies how the bill's provisions relate to existing law.",
+  "v": 1
+ },
+ "s2026-246": {
+  "model": "claude-haiku-5-5",
+  "name": "Proposed change to the college sports bill",
+  "plain": "The Senate rejected a proposed change to the Protect College Sports Act of 2026, with 1 vote in favor and 94 against. The change would have altered the bill, and the vote did not decide whether the bill itself passes.",
+  "v": 1
+ },
+ "s2026-247": {
+  "model": "claude-haiku-5-5",
+  "name": "Limiting college athletics ticket price increases",
+  "plain": "The Senate voted on a proposed change to the Protect College Sports Act that would have limited price increases for college athletics tickets. The change did not reach the 60 votes needed, with 42 in favor and 54 opposed, so it was not added to the bill.",
+  "v": 1
+ },
+ "s2026-248": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to raise limit on injury insurance for college athletes",
+  "plain": "The Senate voted on a proposed change to the college sports bill that would increase the cap on money set aside for insurance covering injuries to student athletes. The change was not adopted, 49 in favor and 50 opposed.",
+  "v": 1
+ },
+ "s2026-249": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on college sports coaches' standards",
+  "plain": "The Senate voted on a proposed change to the Protect College Sports Act of 2026 that would set certain standards for coaches of college varsity sports teams. The change was rejected, 47 in favor and 52 against.",
+  "v": 1
+ },
+ "s2026-250": {
+  "model": "claude-haiku-5-5",
+  "name": "Protect College Sports Act of 2026",
+  "plain": "The Senate voted 77 to 22 to pass the Protect College Sports Act of 2026. The measure sets rules for college athletes' name, image, and likeness deals, including a ban on blocking athletes from such deals, a 5% cap on agent fees, one transfer without losing eligibility, and limits on sharing revenue with athletes.",
+  "v": 1
+ },
+ "s2026-251": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on taking up health insurance rule disapproval",
+  "plain": "The Senate voted 48 to 51 against starting work on a resolution to overturn a federal health insurance rule for 2027 from the Centers for Medicare & Medicaid Services. The resolution was not taken up.",
+  "v": 1
+ },
+ "s2026-252": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on requesting information about Israel's human rights practices",
+  "plain": "The Senate voted 47 to 51 against moving a resolution asking the State Department for a report on Israel's human rights practices out of committee, so it will not go to the full Senate for now. The resolution asks about the alleged killing of nine U.S. citizens and detention of Palestinian children.",
+  "v": 1
+ },
+ "s2026-253": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to Move Ahead on Stock Trading Ban for Members of Congress",
+  "plain": "The Senate voted 53 to 47 to end debate and move ahead on a bill that would bar members of Congress and their spouses and dependent children from buying stocks. The vote fell short of the 60 votes needed, so the Senate did not begin work on the bill.",
+  "v": 1
+ },
+ "s2026-254": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on the Ratepayer Protection Act",
+  "plain": "The Senate voted 57 to 43 to end debate and begin work on the Ratepayer Protection Act, which would have required large data centers that use 100 megawatts or more to cover the cost of power grid upgrades needed to serve them. The vote fell short of the 60 votes needed, so the Senate did not move ahead with it.",
+  "v": 1
+ },
+ "s2026-257": {
+  "model": "claude-haiku-5-5",
+  "name": "Survivor Justice Tax Prevention Act: vote to end debate",
+  "plain": "The Senate voted 73 to 25 to end debate and move ahead on the Survivor Justice Tax Prevention Act, which would exclude certain court or settlement damages from income tax for people harmed by sexual acts or contact. The 60-vote threshold was met.",
+  "v": 1
+ },
+ "s2026-258": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote to Begin Work on Survivor Justice Tax Prevention Act",
+  "plain": "The Senate voted 62 to 21 to begin debate on the Survivor Justice Tax Prevention Act. The bill would exclude from federal income tax certain damages received from sexual acts or sexual contact, even without observable injuries, and would require the IRS to bear the burden of proof in court if a judgment states the damages arose from such acts.",
+  "v": 1
+ },
+ "s2026-35": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on IRS corporate minimum tax rule for partnerships",
+  "plain": "The Senate voted 47 to 51 not to begin considering a resolution that would overturn an IRS rule simplifying how the corporate alternative minimum tax applies to partnerships. The effort to start debate on it failed.",
+  "v": 1
+ },
+ "s2026-36": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate agrees to take up D.C. tax conformity resolution",
+  "plain": "The Senate voted 51 to 46 to begin work on a resolution that would cancel a D.C. Council law which had separated D.C. tax rules from new federal tax changes. The resolution would bring D.C. tax rules back in line with federal law, including deductions for tips, overtime and car loan interest.",
+  "v": 1
+ },
+ "s2026-37": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning D.C. Council's Changes to Income Tax Rules",
+  "plain": "The Senate voted 49 to 47 to pass a joint resolution that cancels a D.C. Council law which had separated D.C. income tax rules from certain federal tax changes. The resolution brings D.C. tax law back in line with those federal provisions, including larger standard deductions and a deduction for people 65 and older.",
+  "v": 1
+ },
+ "s2026-38": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending debate on Homeland Security funding bill",
+  "plain": "The Senate voted 52 to 47 to end debate on a bill providing funding for most Homeland Security agencies, except ICE and Border Patrol. The vote fell short of the 60 needed, so the Senate did not move ahead on the bill.",
+  "v": 1
+ },
+ "s2026-39": {
+  "model": "claude-haiku-5-5",
+  "name": "Debate-ending vote on Homeland Security funding bill",
+  "plain": "The Senate voted on whether to end debate and begin work on a bill providing funding for most Homeland Security agencies, excluding ICE and Border Patrol. The vote got 50 yes votes, short of the 60 needed, so the Senate did not move ahead on it.",
+  "v": 1
+ },
+ "s2026-44": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to advance the 21st Century ROAD to Housing Act",
+  "plain": "The Senate voted 84 to 6 to end debate and move ahead on the 21st Century ROAD to Housing Act, which reached the 60 votes needed for this step. The act would change various federal housing programs, including grants, mortgage limits, and environmental review rules.",
+  "v": 1
+ },
+ "s2026-45": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Opens Debate on 21st Century ROAD to Housing Act",
+  "plain": "The Senate voted 90 to 8 to begin considering the 21st Century ROAD to Housing Act, a bill that changes various federal housing programs. This vote only opened debate on the bill; it was not a final vote on the bill itself.",
+  "v": 1
+ },
+ "s2026-46": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on ending U.S. military action against Iran",
+  "plain": "The Senate voted against moving a resolution out of committee for a full floor vote. The resolution would direct the President to remove U.S. Armed Forces from hostilities against Iran unless Congress has declared war or authorized the force. The vote was 47 in favor and 53 against.",
+  "v": 1
+ },
+ "s2026-47": {
+  "model": "claude-haiku-5-5",
+  "name": "Homeland Security funding bill: vote to move ahead",
+  "plain": "The Senate voted 51 to 45 on whether to end debate and move ahead on the Homeland Security and Further Additional Continuing Appropriations Act, 2026. The 60 votes needed were not reached, so the Senate did not move ahead on the bill.",
+  "v": 1
+ },
+ "s2026-50": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending debate on the 21st Century ROAD to Housing Act",
+  "plain": "The Senate voted 89 to 9 to end debate and move ahead on the 21st Century ROAD to Housing Act, which sets up and changes many federal housing programs. The 60 votes needed were reached.",
+  "v": 1
+ },
+ "s2026-51": {
+  "model": "claude-haiku-5-5",
+  "name": "Substitute amendment to the 21st Century ROAD to Housing Act",
+  "plain": "The Senate voted 84 to 10 to approve a replacement version of the 21st Century ROAD to Housing Act. The replacement changes the bill's text, which covers federal housing programs including grants, mortgage pilots, and environmental review rules.",
+  "v": 1
+ },
+ "s2026-52": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to end debate on the 21st Century ROAD to Housing Act",
+  "plain": "The Senate voted 82 to 11 to end debate and move ahead on the 21st Century ROAD to Housing Act, which covers a range of federal housing programs. The vote reached the 60 needed, so the Senate can now take up the bill.",
+  "v": 1
+ },
+ "s2026-53": {
+  "model": "claude-haiku-5-5",
+  "name": "21st Century ROAD to Housing Act",
+  "plain": "The Senate passed the 21st Century ROAD to Housing Act, 89 to 10. The act changes and creates federal housing programs, including grants for housing counseling, pilot programs for home repairs and mortgages, and rules that speed up some housing construction approvals.",
+  "v": 1
+ },
+ "s2026-54": {
+  "model": "claude-haiku-5-5",
+  "name": "Homeland Security funding bill: vote to move ahead",
+  "plain": "The Senate voted on whether to end debate and begin work on a bill providing funding for most Homeland Security agencies, except ICE and Border Patrol. It needed 60 votes, got 51, and did not reach that number, so the bill was blocked for now.",
+  "v": 1
+ },
+ "s2026-57": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to begin work on the SAVE America Act",
+  "plain": "The Senate voted 51 to 48 to begin work on the SAVE America Act, which would require documentary proof of U.S. citizenship to register to vote and photo identification to vote in federal elections.",
+  "v": 1
+ },
+ "s2026-58": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on ending U.S. military action against Iran",
+  "plain": "The Senate voted against pulling a resolution out of committee so the full Senate could consider it. The resolution would direct the President to remove U.S. Armed Forces from hostilities against Iran unless Congress has declared war or authorized the use of military force for that purpose. The vote was 47 in favor and 53 against.",
+  "v": 1
+ },
+ "s2026-59": {
+  "model": "claude-haiku-5-5",
+  "name": "Homeland Security funding bill: vote to begin debate",
+  "plain": "The Senate voted 47 to 37 to end debate and move ahead on a bill providing funding for Homeland Security agencies, except Immigration and Customs Enforcement and the Border Patrol. The vote needed 60 votes to succeed and fell short, so the Senate did not begin work on the bill.",
+  "v": 1
+ },
+ "s2026-60": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to end debate on proof-of-citizenship voter bill",
+  "plain": "The Senate voted to end debate on the SAVE America Act, which would require documents proving citizenship to register to vote and photo ID to vote in federal elections. The vote got 49 yes and 41 no, short of the 60 needed, so debate continues and the bill is blocked for now.",
+  "v": 1
+ },
+ "s2026-61": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to end debate on voter citizenship and photo ID bill",
+  "plain": "The Senate voted to end debate so it could move ahead on the SAVE America Act, which would require proof of U.S. citizenship to register and photo ID to vote in federal elections. The vote needed 60 senators in favor and got 41, so it was not approved and the debate continues for now.",
+  "v": 1
+ },
+ "s2026-67": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to set aside the SAVE America Act",
+  "plain": "The Senate voted 53 to 47 to set aside the SAVE America Act without voting on it directly, which ends its consideration. The bill would require documentary proof of U.S. citizenship to register to vote and photo identification to vote in federal elections.",
+  "v": 1
+ },
+ "s2026-68": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate sets aside voter ID and citizenship proof bill",
+  "plain": "The Senate voted 53 to 47 to set aside the bill, ending further action on it without a direct vote on the bill itself. The bill would have required documentary proof of U.S. citizenship to register to vote and photo identification to vote in federal elections.",
+  "v": 1
+ },
+ "s2026-69": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on ending U.S. military action against Iran",
+  "plain": "The Senate rejected a request to move a measure out of committee for full Senate consideration, 47 to 53. The measure would direct the President to remove U.S. Armed Forces from hostilities against Iran unless Congress has declared war or authorized the use of military force for that purpose.",
+  "v": 1
+ },
+ "s2026-70": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on ending IRS wind and solar tax credit rule",
+  "plain": "The Senate voted on whether to begin considering a resolution to overturn an IRS rule on when wind and solar projects must start construction to keep clean electricity tax credits. The vote was 47 in favor and 53 against, so the Senate did not begin work on it.",
+  "v": 1
+ },
+ "s2026-71": {
+  "model": "claude-haiku-5-5",
+  "name": "Homeland Security funding bill: vote to move ahead",
+  "plain": "The Senate voted on whether to end debate and begin work on a bill providing 2026 funding for most Homeland Security agencies, excluding ICE and Border Patrol. The vote got 54 yes and 46 no, short of the 60 needed, so the bill was blocked for now.",
+  "v": 1
+ },
+ "s2026-72": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on taking up VA reproductive health rule disapproval",
+  "plain": "The Senate voted 48 to 50 against starting work on a resolution that would overturn a Department of Veterans Affairs rule on reproductive health services. The resolution was not taken up.",
+  "v": 1
+ },
+ "s2026-73": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to end debate on voter citizenship and photo ID bill",
+  "plain": "The Senate voted 53 to 47 to keep debating a measure requiring proof of citizenship to register and photo ID to vote in federal elections. Ending debate needed 60 votes, so the measure is blocked for now.",
+  "v": 1
+ },
+ "s2026-74": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending debate on a Homeland Security funding bill",
+  "plain": "The Senate voted on whether to end debate and move ahead on a bill providing funding for Homeland Security agencies, except Immigration and Customs Enforcement and the Border Patrol. The vote was 53 yes to 47 no, short of the 60 needed, so the bill was not allowed to move forward for now.",
+  "v": 1
+ },
+ "s2026-79": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Ending U.S. Military Action Against Iran",
+  "plain": "The Senate voted against moving a measure out of committee so the full Senate could consider it. The measure would have directed the President to remove U.S. Armed Forces from hostilities against Iran unless Congress declares war or authorizes the force. The vote was 47 in favor and 52 against.",
+  "v": 1
+ },
+ "s2026-80": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on blocking arms sale to Israel",
+  "plain": "The Senate voted on whether to bring a resolution that would block a proposed U.S. military sale to Israel out of committee for a full Senate vote. The effort failed, 40 in favor to 59 against, so the resolution stays in committee.",
+  "v": 1
+ },
+ "s2026-81": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on blocking arms sale to Israel",
+  "plain": "The Senate voted 36 to 63 against moving a resolution to block a proposed military equipment sale to Israel out of committee for full Senate consideration. The resolution would have prohibited the proposed sale of certain defense articles and services to Israel.",
+  "v": 1
+ },
+ "s2026-82": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to set aside Minnesota mining land withdrawal",
+  "plain": "The Senate voted 51 to 48 to set aside a proposal that would have kept about 225,504 acres of national forest land in three Minnesota counties closed to mineral and geothermal leasing. Setting it aside ends the proposal.",
+  "v": 1
+ },
+ "s2026-83": {
+  "model": "claude-haiku-5-5",
+  "name": "Mining access on Minnesota forest land near Boundary Waters",
+  "plain": "The Senate voted 51 to 49 to begin considering a measure that would undo a 20-year ban on mineral and geothermal leasing across about 225,504 acres of national forest land in three Minnesota counties. The measure would open that land to leasing for exploration and development.",
+  "v": 1
+ },
+ "s2026-84": {
+  "model": "claude-haiku-5-5",
+  "name": "Opening Minnesota federal forest land to mineral leasing",
+  "plain": "The Senate voted 50 to 49 to pass a measure that cancels a 20-year ban on mineral and geothermal leasing on about 225,504 acres of national forest land in Cook, Lake, and Saint Louis Counties in Minnesota. The land is near the Boundary Waters Canoe Area Wilderness.",
+  "v": 1
+ },
+ "s2026-87": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate votes to start work on 2026 budget plan",
+  "plain": "The Senate voted 52 to 46 to begin considering a budget framework for fiscal year 2026, with budget levels through 2035. This was a step to start debate, not a final vote on the budget plan.",
+  "v": 1
+ },
+ "s2026-88": {
+  "model": "claude-haiku-5-5",
+  "name": "Bringing a Measure on Iran Military Action to the Full Senate",
+  "plain": "The Senate voted 46 to 51 to keep a resolution on U.S. military action against Iran in committee rather than bring it to the full Senate. The measure would have directed the removal of U.S. forces from hostilities with Iran not authorized by Congress, while still allowing defense against attacks on the U.S. or its personnel and facilities abroad.",
+  "v": 1
+ },
+ "s2026-89": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on setting aside a budget rule for health costs",
+  "plain": "The Senate voted on whether to set aside a budget rule that a senator said this measure breaks. Setting it aside needed 60 votes, which is three-fifths of the Senate. The vote was 48 in favor and 50 against, so it did not reach the 60 votes needed and the rule stayed in force.",
+  "v": 1
+ },
+ "s2026-90": {
+  "model": "claude-haiku-5-5",
+  "name": "Grocery cost reserve fund budget-rule waiver",
+  "plain": "The Senate voted on whether to set aside a budget rule so a proposal to create a fund for grocery costs could go ahead. The vote was 47 in favor and 50 against, which fell short of the 60 votes needed, so the rule stayed in force.",
+  "v": 1
+ },
+ "s2026-91": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on setting aside a budget rule over insurance delays",
+  "plain": "The Senate voted 49 to 49 on whether to set aside a budget rule so a proposal on insurance companies delaying or denying patient care could go ahead. The vote needed 60 votes to pass and did not reach that number, so the rule stayed in place.",
+  "v": 1
+ },
+ "s2026-92": {
+  "model": "claude-haiku-5-5",
+  "name": "Budget plan change on deporting criminal immigrants",
+  "plain": "The Senate approved, 98 to 0, a change to the budget plan for the 2026 fiscal year. It sets aside a reserve fund for arresting and deporting adult immigrants who entered the country illegally and were convicted of rape, murder, or sexual abuse of a minor. The fund must not add to the deficit.",
+  "v": 1
+ },
+ "s2026-93": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on waiving budget rule for school meal funding",
+  "plain": "The Senate voted on whether to set aside a budget rule that a senator said applied to a proposal about school meal funding. The vote needed 60 yes votes, and it got 48, so the rule stays in force.",
+  "v": 1
+ },
+ "s2026-94": {
+  "model": "claude-haiku-5-5",
+  "name": "Consumer protection from tariff and Iran war price increases",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill protecting consumers from price increases tied to tariffs and the Iran war could move forward. The vote needed 60 votes to pass and got 47, so it did not reach the 60 needed; the Senate kept the rule in place.",
+  "v": 1
+ },
+ "s2026-95": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on child care funding under budget rules",
+  "plain": "The Senate voted 47 to 51 on whether to set aside a budget rule so a bill increasing child care funding for families could go ahead. The 60 votes needed were not reached, so the rule stayed in force.",
+  "v": 1
+ },
+ "s2026-96": {
+  "model": "claude-haiku-5-5",
+  "name": "Setting aside budget rule for voter ID bill",
+  "plain": "The Senate did not set aside a budget rule that would have let a bill on voter ID requirements, photo identification for voting, and Election Day ballot counting move forward. The vote was 48 in favor and 50 against, short of the 60 votes needed.",
+  "v": 1
+ },
+ "s2026-97": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on setting aside budget rule for Medicaid abortion provider payment ban",
+  "plain": "The Senate voted 50 to 48 on whether to set aside a budget rule so a proposal to extend the ban on Medicaid payments to abortion providers could go ahead. The vote needed 60 votes to pass and did not reach that number, so the rule stayed in place.",
+  "v": 1
+ },
+ "s2026-98": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on waiving Senate rule for electricity bill bill",
+  "plain": "A senator said a measure about home electricity bills broke the Senate's budget rules. The Senate voted 48 to 50 on whether to set that rule aside so the measure could go ahead. Because 60 votes were needed and only 48 were in favor, the request was rejected.",
+  "v": 1
+ },
+ "s2026-99": {
+  "model": "claude-haiku-5-5",
+  "name": "Cutting foreign aid, refugee, education and science funding in budget plan",
+  "plain": "The Senate voted against a proposed change to the budget plan for 2026 that would have cut about $70 billion in planned spending, mainly from foreign aid, refugee programs, the Department of Education and the National Science Foundation. The change was rejected, 25 to 73.",
+  "v": 1
  }
 }
