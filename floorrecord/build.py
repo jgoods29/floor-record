@@ -738,11 +738,17 @@ def main():
     if svotes_raw:
         sres = compute(svotes_raw, senators, bills, dict(cfg, close_margin=5))
         svotes, speople = sres["votes"], sres["people"]
+        known_topics = {t["key"] for t in all_topics}
         for v in svotes:
             info = v["info"]
             info["rule_name"], info["rule_plain"] = info["name"], info["plain"]
             apply_wording(info, v["id"], {}, editorial)
-            v["topic"], v["topics"], v["topic_keys"], v["mix"] = "", [], [], party_mix(v)
+            # Senate votes on bills carry the same topics as House ones, so a senator's votes can be browsed by topic.
+            names = [topic_name(v["issue"])] if v["issue"] else []
+            if v["slug"]:
+                names += custom_topics_for(bills.get(v["slug"]) or {}, v["desc"], custom)
+            names = [n for n in names if topic_key(n) in known_topics]
+            v["topic"], v["topics"], v["topic_keys"], v["mix"] = (names[0] if names else ""), names, [topic_key(n) for n in names], party_mix(v)
         # A senator who answered one of the latest roll calls is still in office, whatever end date is on file
         # (an appointed senator's listed term can end on election day while they keep serving).
         still_here = {r[0] for v in sorted(svotes, key=lambda v: (v["date"], v["roll"]))[-5:] for r in v["positions"]}
