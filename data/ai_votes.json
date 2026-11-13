@@ -4067,6 +4067,726 @@
   "plain": "The House voted 214 to 210 to approve the rules for debating several measures, including a bill providing funding for the Department of Homeland Security for fiscal year 2026. This was a procedural step that sets how long debate lasts and which amendments are allowed, not a final vote on those measures.",
   "v": 2
  },
+ "s2025-100": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to advance bill on women's sports eligibility",
+  "plain": "The Senate voted 51 to 45 to end debate and move ahead on a bill that would bar males from school athletic programs designated for women or girls, under Title IX. The vote fell short of the 60 votes needed, so the Senate did not begin work on the bill.",
+  "v": 1
+ },
+ "s2025-101": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate votes to begin work on IRS digital asset reporting rule repeal",
+  "plain": "The Senate voted 70 to 28 to begin debate on a resolution that would cancel an IRS rule requiring certain decentralized digital asset transactions to be reported to the IRS. This step does not by itself cancel the rule.",
+  "v": 1
+ },
+ "s2025-102": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning IRS rule on crypto broker reporting",
+  "plain": "The Senate voted 70 to 27 to pass a resolution that cancels an IRS rule requiring certain decentralized digital asset platforms to report sales information to the IRS.",
+  "v": 1
+ },
+ "s2025-103": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up rule on payment app oversight",
+  "plain": "The Senate voted 50 to 47 to begin work on a measure that would cancel a federal consumer bureau rule. The rule set which large digital payment app companies the bureau can oversee, starting with those handling at least 50 million transactions a year.",
+  "v": 1
+ },
+ "s2025-106": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning consumer watchdog rule on payment apps",
+  "plain": "The Senate voted 51 to 47 to pass a measure that cancels a rule from the consumer financial watchdog. The rule would have allowed federal oversight of nonbank payment apps that handle at least 50 million transactions a year and are not small businesses.",
+  "v": 1
+ },
+ "s2025-110": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending debate to move ahead on the HALT Fentanyl Act",
+  "plain": "The Senate voted 82 to 12 to end debate so it could begin work on the HALT Fentanyl Act, which would permanently place fentanyl-related substances as a class into the most restricted drug category. This was a procedural step, not a final vote on the bill itself.",
+  "v": 1
+ },
+ "s2025-124": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to advance the HALT Fentanyl Act",
+  "plain": "The Senate voted 84 to 15 to end debate and move ahead on the HALT Fentanyl Act. The bill would permanently place fentanyl-related substances as a class in the most restricted category of the Controlled Substances Act, with the same penalties as fentanyl analogues.",
+  "v": 1
+ },
+ "s2025-127": {
+  "model": "claude-haiku-5-5",
+  "name": "Permanently banning fentanyl-related drugs",
+  "plain": "The Senate passed a bill of 84 to 16 that would permanently place fentanyl-related substances as a class under the strictest federal drug category, with the same quantity thresholds and penalties used for fentanyl analogues.",
+  "v": 1
+ },
+ "s2025-128": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending debate on a federal funding and health extension bill",
+  "plain": "The Senate voted 62 to 38 to end debate and move ahead on the Full-Year Continuing Appropriations and Extensions Act, 2025. The bill would keep federal agencies funded at 2024 levels for the rest of 2025 and extend several health programs, including Medicare and Medicaid items.",
+  "v": 1
+ },
+ "s2025-129": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on exempting certain rescissions from a government funding bill",
+  "plain": "The Senate voted 47 to 53 against a proposed change to the Full-Year Continuing Appropriations and Extensions Act, 2025. The change would have exempted certain rescissions from the bill's rules. It needed 60 votes and did not reach them, so the change was not adopted.",
+  "v": 1
+ },
+ "s2025-130": {
+  "model": "claude-haiku-5-5",
+  "name": "Reinstating fired veteran federal employees amendment",
+  "plain": "The Senate voted on a proposed change to the Full-Year Continuing Appropriations and Extensions Act, 2025 that would let veterans who were dismissed from federal jobs without cause be reinstated and require agencies to report how many veterans they fired. The change was rejected, 47 in favor and 53 against, and it did not reach the 60 votes needed.",
+  "v": 1
+ },
+ "s2025-131": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to block DOGE from using appropriated funds",
+  "plain": "The Senate considered a proposed change to the funding bill that would have barred the Department of Government Efficiency (DOGE) from using money provided under the bill. The change did not reach the 60 votes needed, so it was not adopted: 48 senators voted yes and 52 voted no.",
+  "v": 1
+ },
+ "s2025-132": {
+  "model": "claude-haiku-5-5",
+  "name": "Cutting USAID funding amendment rejected",
+  "plain": "The Senate rejected a proposed change to the spending bill that would have reduced the money set aside for the U.S. Agency for International Development. The vote was 27 in favor and 73 against.",
+  "v": 1
+ },
+ "s2025-133": {
+  "model": "claude-haiku-5-5",
+  "name": "Full-Year Continuing Appropriations and Extensions Act, 2025",
+  "plain": "The Senate passed a bill, 54 to 46, to keep federal agencies funded through the rest of 2025 and extend several expiring health programs, including Medicare and Medicaid provisions. It prevents a government shutdown when the current funding expires on March 14, 2025.",
+  "v": 1
+ },
+ "s2025-150": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate starts work on IRS crypto reporting rule repeal",
+  "plain": "The Senate voted 70 to 28 to begin considering a resolution that would cancel an Internal Revenue Service rule requiring reporting of certain digital asset sales made through decentralized finance. The vote was to start work on the resolution, not a final decision on it.",
+  "v": 1
+ },
+ "s2025-151": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning IRS reporting rule for crypto DeFi transactions",
+  "plain": "The Senate voted 70 to 28 to pass a resolution that cancels an IRS rule requiring certain reporting of digital asset sales made through decentralized finance (DeFi) services. This is the final vote on the resolution.",
+  "v": 1
+ },
+ "s2025-152": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Votes to Take Up Overdraft Fee Rule Repeal",
+  "plain": "The Senate voted 52 to 47 to begin considering a resolution that would overturn a consumer bureau rule limiting overdraft charges at very large banks. The rule would cap such charges at $5 or require them to be treated as credit.",
+  "v": 1
+ },
+ "s2025-153": {
+  "model": "claude-haiku-5-5",
+  "name": "Overdraft fee rule for large banks",
+  "plain": "The Senate voted 52 to 48 to pass a measure that cancels a rule on bank overdraft charges at very large banks. The rule had required those banks to cap overdraft fees at $5, cap them at a higher justified amount, or treat overdrafts as credit.",
+  "v": 1
+ },
+ "s2025-160": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending the emergency tariffs on Canadian imports",
+  "plain": "The Senate voted 51 to 48 to pass a measure ending the national emergency the president declared to impose an extra 25% tariff on most imports from Canada. Canadian energy products face an additional 10% tariff instead, and that would also end.",
+  "v": 1
+ },
+ "s2025-161": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote to Take Up Energy Efficiency Rule Repeal",
+  "plain": "The Senate voted 51 to 46 to begin work on a resolution that would cancel newer, stricter energy efficiency standards for walk-in coolers and freezers. If passed, the resolution would remove the requirement that certain walk-in doors and refrigeration systems meet those standards.",
+  "v": 1
+ },
+ "s2025-162": {
+  "model": "claude-haiku-5-5",
+  "name": "Repealing Energy Standards for Walk-In Coolers and Freezers",
+  "plain": "The Senate voted 53 to 42 to pass a resolution that cancels new energy-efficiency rules for walk-in coolers and freezers. Walk-in non-display doors and refrigeration systems would no longer have to meet those stricter standards.",
+  "v": 1
+ },
+ "s2025-165": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on blocking military sale to Israel",
+  "plain": "The Senate voted against moving a resolution to block a proposed weapons sale to Israel out of committee, so it stays in committee for now. The vote was 15 in favor and 82 against.",
+  "v": 1
+ },
+ "s2025-166": {
+  "model": "claude-haiku-5-5",
+  "name": "Blocking a vote on arms sales to Israel",
+  "plain": "The Senate voted 83 to 15 against pulling a resolution out of committee. The resolution would block a proposed sale of certain military equipment and services to Israel. The full Senate will not take it up at this time.",
+  "v": 1
+ },
+ "s2025-169": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Votes to Begin Work on 2025 Federal Budget Plan",
+  "plain": "The Senate voted 52 to 48 to begin work on a budget resolution setting federal spending, revenue and deficit targets for fiscal year 2025 and the years through 2034. This step does not itself approve the budget.",
+  "v": 1
+ },
+ "s2025-170": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to protect Medicare and Medicaid funding in budget plan",
+  "plain": "The Senate approved a change to the 2025 budget plan that would set up a reserve fund to protect Medicare and Medicaid, with no net effect on the deficit. The vote was 51 in favor and 48 against.",
+  "v": 1
+ },
+ "s2025-171": {
+  "model": "claude-haiku-5-5",
+  "name": "Proposed limit on new debt in budget resolution",
+  "plain": "The Senate rejected a proposed change to the budget plan that would have blocked bills adding more debt over 30 years than the country has built up in its 249 years. The vote was 46 in favor and 53 against.",
+  "v": 1
+ },
+ "s2025-172": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to protect Medicaid enrollment and benefits",
+  "plain": "The Senate voted on a proposed change to the budget plan that would set aside funds to prevent cuts in Medicaid enrollment or benefits for seniors, children, families, people with disabilities, veterans and military families. The change was rejected, 48 in favor to 51 against.",
+  "v": 1
+ },
+ "s2025-173": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to remove farm committee instructions from budget plan",
+  "plain": "The Senate rejected a proposed change that would have removed instructions for the Agriculture Committee from the budget plan, by 47 votes in favor to 51 against.",
+  "v": 1
+ },
+ "s2025-174": {
+  "model": "claude-haiku-5-5",
+  "name": "Proposed ban on sharing military operation details over messaging apps",
+  "plain": "The Senate rejected a proposed change to the budget resolution, 46 to 53. The change would have set aside money to ban using commercial messaging apps to send details about the timing, sequence, or weapons of upcoming U.S. military operations abroad.",
+  "v": 1
+ },
+ "s2025-175": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to protect federal workers' union contracts",
+  "plain": "The Senate rejected a proposed change to the budget plan that would have set aside funds to protect federal workers' union contracts and their right to organize, by a vote of 48 in favor to 51 against.",
+  "v": 1
+ },
+ "s2025-176": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on tariffs and grocery prices in budget plan",
+  "plain": "The Senate rejected a proposed change to the 2025 budget plan, 46 to 53. The change would have set aside a fund, with no added deficit, to keep tariffs from raising the cost of groceries and everyday goods for families.",
+  "v": 1
+ },
+ "s2025-177": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on FEMA's disaster relief role",
+  "plain": "The Senate rejected a proposed change to the budget resolution that would have stated the importance of FEMA and its continued role in providing long-term disaster relief to survivors. The vote was 48 in favor and 51 against.",
+  "v": 1
+ },
+ "s2025-178": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on security aid to Ukraine in budget resolution",
+  "plain": "The Senate rejected a proposed change to the 2025 federal budget plan, 48 to 51, that would have aimed to prevent any disruption in security assistance to Ukraine.",
+  "v": 1
+ },
+ "s2025-179": {
+  "model": "claude-haiku-5-5",
+  "name": "Proposed change to debt limit instructions in budget plan",
+  "plain": "The Senate rejected a proposed change to the debt limit instructions in the budget plan for fiscal year 2025, with 5 voting yes and 94 voting no. The change would have altered how much the debt limit is raised for the House and Senate.",
+  "v": 1
+ },
+ "s2025-180": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on Social Security Administration cuts and senior services",
+  "plain": "The Senate rejected a proposed change, 49 to 50, that would have set aside money in a budget reserve fund to reverse cuts to the Social Security Administration and other senior services.",
+  "v": 1
+ },
+ "s2025-181": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on using public land sale money for deficit reduction",
+  "plain": "The Senate rejected a proposed change that would have set aside a fund so money from public land sales could not be used to reduce the federal deficit, by 48 votes to 51.",
+  "v": 1
+ },
+ "s2025-182": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to keep Social Security offices open",
+  "plain": "The Senate rejected a proposed change to the budget plan that would have barred DOGE from closing Social Security offices, keeping access to benefits for seniors and people with disabilities. The vote was 48 in favor and 51 against.",
+  "v": 1
+ },
+ "s2025-183": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on a fund for caregivers in the budget resolution",
+  "plain": "The Senate voted 50 to 49 to reject a proposed change to the budget resolution. The change would have created a fund, with no added deficit, to protect caregivers, including people caring for seniors and children and home care workers, from new barriers.",
+  "v": 1
+ },
+ "s2025-184": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to allow a $17 federal minimum wage by simple majority",
+  "plain": "The Senate rejected a proposed change to a federal budget resolution that would have ensured a $17-an-hour federal minimum wage could be approved by a simple majority vote. The vote was 47 in favor and 52 against.",
+  "v": 1
+ },
+ "s2025-185": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on Medicare drug cost rule waiver",
+  "plain": "The Senate voted 49 to 50 on whether to set aside a budget rule that a senator said would block a measure raising drug costs for seniors and people with disabilities on Medicare. The vote needed 60 votes to pass and did not reach that number, so the rule stayed in force.",
+  "v": 1
+ },
+ "s2025-186": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on Medicaid funding for rural hospitals",
+  "plain": "The Senate voted 49 to 50 to reject a proposed change to a budget resolution. The change would have set aside money to prevent cuts to Medicaid that could close rural hospitals or raise costs for others.",
+  "v": 1
+ },
+ "s2025-187": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to keep Social Security phone service",
+  "plain": "The Senate rejected a proposed change to the budget plan that would have preserved access to Social Security's phone service. The vote was 48 in favor and 51 against.",
+  "v": 1
+ },
+ "s2025-188": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on a health care reserve fund for Medicaid",
+  "plain": "The Senate rejected a proposed change to a budget plan that would have set aside funds to protect health care, including preventing Medicaid cuts that could reduce benefits or coverage. The vote was 48 in favor and 51 against.",
+  "v": 1
+ },
+ "s2025-189": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to remove Medicaid spending cuts from budget plan",
+  "plain": "The Senate rejected a proposed change that would have removed instructions for House committees to cut $880 billion from Medicaid, with 49 voting yes and 50 voting no.",
+  "v": 1
+ },
+ "s2025-190": {
+  "model": "claude-haiku-5-5",
+  "name": "Proposed middle-class tax relief amendment to budget plan",
+  "plain": "The Senate voted 47 to 52 to reject a proposed change to the budget plan that would have provided tax relief for the middle class. The change was not adopted.",
+  "v": 1
+ },
+ "s2025-191": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate adopts 2025 federal budget blueprint",
+  "plain": "The Senate voted 51 to 48 to adopt a budget framework for federal spending and revenue for 2025, with projected levels through 2034. The plan directs House committees to write laws that change the deficit and raise the debt limit.",
+  "v": 1
+ },
+ "s2025-206": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up energy efficiency rule for water heaters",
+  "plain": "The Senate voted 52 to 42 to begin considering a measure that would overturn a Department of Energy rule setting energy efficiency standards for gas-fired instantaneous water heaters. The rule was issued in December 2024.",
+  "v": 1
+ },
+ "s2025-207": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning federal energy rule for gas water heaters",
+  "plain": "The Senate voted 53 to 44 to pass a resolution that cancels a Department of Energy rule setting energy efficiency standards for gas-fired instantaneous water heaters, which the rule had adopted in December 2024.",
+  "v": 1
+ },
+ "s2025-222": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Starts Debate on Energy Appliance Rule Repeal",
+  "plain": "The Senate voted 52 to 46 to begin considering a resolution that would cancel a 2024 Energy Department rule on labeling, certification and enforcement for certain appliances and industrial equipment. This was a step to begin debate, not the final vote on the resolution.",
+  "v": 1
+ },
+ "s2025-223": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning federal energy rules for appliances and equipment",
+  "plain": "The Senate voted 52 to 46 to pass a resolution that cancels a 2024 Department of Energy rule. The rule set new certification, labeling, and enforcement requirements for energy efficiency in certain home appliances, such as washing machines and dishwashers, and in industrial equipment.",
+  "v": 1
+ },
+ "s2025-224": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up energy standards for commercial refrigerators",
+  "plain": "The Senate voted 52 to 46 to begin considering a measure that would cancel newer, stricter energy efficiency standards for commercial refrigerators and freezers, which businesses would have had to meet by 2029.",
+  "v": 1
+ },
+ "s2025-225": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending the emergency behind global tariffs",
+  "plain": "The Senate voted 49 to 49 on a resolution to end the national emergency that was used to impose a 10% tariff on most imports and extra duties on some trading partners. Because the vote was tied, the resolution was defeated.",
+  "v": 1
+ },
+ "s2025-226": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to set aside tariff emergency resolution",
+  "plain": "The Senate voted 49 to 49, with the Vice President breaking the tie, to set aside a resolution that would have ended the national emergency used to impose global tariffs. Setting it aside effectively ends it without a direct vote on the resolution itself.",
+  "v": 1
+ },
+ "s2025-227": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate moves to start work on EPA air pollution rule repeal",
+  "plain": "The Senate voted 52 to 40 to begin considering a measure that would overturn an EPA rule on how factories that release certain hazardous air pollutants are classified. This vote was only to start work on it, not a final decision on the measure.",
+  "v": 1
+ },
+ "s2025-228": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning new energy standards for commercial refrigerators and freezers",
+  "plain": "The Senate voted 52 to 45 to pass a resolution that cancels new federal energy efficiency standards for commercial refrigerators, freezers, and refrigerator-freezers. Businesses would no longer have to meet those standards, which had been due by January 2029.",
+  "v": 1
+ },
+ "s2025-229": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning EPA rule on reclassifying major sources of air pollution",
+  "plain": "The Senate voted 52 to 46 to pass a resolution that cancels an Environmental Protection Agency rule. The rule required facilities that reclassify from major to area sources of hazardous air pollutants to keep certain emission controls so their emissions do not increase.",
+  "v": 1
+ },
+ "s2025-231": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up rubber tire air pollution rule repeal",
+  "plain": "The Senate voted 51 to 43 to begin considering a resolution that would overturn the Environmental Protection Agency's rule setting air pollution limits for rubber tire manufacturing, specifically for the rubber processing part of the industry. The vote began debate; it did not finally pass the resolution.",
+  "v": 1
+ },
+ "s2025-232": {
+  "model": "claude-haiku-5-5",
+  "name": "Rubber tire factory air pollution rule",
+  "plain": "The Senate voted 55 to 45 to pass a resolution that cancels the Environmental Protection Agency's rule setting air pollution limits for the rubber processing part of tire manufacturing. The change removes those limits.",
+  "v": 1
+ },
+ "s2025-233": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Votes to Take Up Bank Merger Rule Disapproval",
+  "plain": "The Senate voted 53 to 46 to begin work on a resolution that would cancel a federal rule changing how bank mergers are reviewed, including removing automatic approvals and streamlined application forms.",
+  "v": 1
+ },
+ "s2025-235": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Votes to Take Up Wi-Fi Hotspot Rule Repeal",
+  "plain": "The Senate voted 53 to 47 to begin considering a resolution that would cancel a federal rule letting schools and libraries buy discounted Wi-Fi hotspots for students and patrons to use at home.",
+  "v": 1
+ },
+ "s2025-236": {
+  "model": "claude-haiku-5-5",
+  "name": "Off-road vehicle rules in Glen Canyon recreation area",
+  "plain": "The Senate voted 53 to 47 to begin considering a measure that would overturn a National Park Service rule limiting off-road vehicles in parts of the Glen Canyon National Recreation Area. If passed, the measure would allow off-road vehicles in certain areas the rule had closed.",
+  "v": 1
+ },
+ "s2025-237": {
+  "model": "claude-haiku-5-5",
+  "name": "Reversing New Rules for Bank Merger Reviews",
+  "plain": "The Senate voted 52 to 47 to pass a measure that cancels a new rule from the Office of the Comptroller of the Currency. The rule changed how bank mergers are reviewed, including removing automatic approvals and streamlined application forms.",
+  "v": 1
+ },
+ "s2025-238": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning FCC rule on school Wi-Fi hotspots",
+  "plain": "The Senate voted 50 to 38 to pass a measure that cancels an FCC rule letting schools and libraries buy discounted Wi-Fi hotspots and mobile service for students and patrons to use off-site, mainly for educational purposes.",
+  "v": 1
+ },
+ "s2025-239": {
+  "model": "claude-haiku-5-5",
+  "name": "Off-road vehicle rules in Glen Canyon recreation area",
+  "plain": "The Senate voted 50 to 43 to pass a resolution that cancels a National Park Service rule limiting off-road vehicles in parts of the Glen Canyon National Recreation Area, which covers northern Arizona and southeastern Utah. Under the resolution, those areas could again allow off-road vehicle use.",
+  "v": 1
+ },
+ "s2025-240": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on starting debate on the GENIUS Act",
+  "plain": "The Senate voted on whether to end debate and move ahead on the GENIUS Act, a bill setting rules for stablecoins, digital assets meant to hold a fixed value. The vote fell short, with 48 in favor and 49 against, and did not reach the 60 votes needed.",
+  "v": 1
+ },
+ "s2025-259": {
+  "model": "claude-haiku-5-5",
+  "name": "Request for information on El Salvador's human rights record",
+  "plain": "The Senate voted on whether to take a resolution asking for information about El Salvador's human rights practices out of committee so the full Senate could consider it. The vote was 45 in favor and 50 against, so the resolution stays in committee.",
+  "v": 1
+ },
+ "s2025-262": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate moves ahead on stablecoin regulation bill",
+  "plain": "The Senate voted 66 to 32 to end debate and move ahead on the GENIUS Act, which sets a federal framework for payment stablecoins, digital assets that issuers must redeem for a fixed value. The 60 votes needed were reached.",
+  "v": 1
+ },
+ "s2025-263": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Votes to Begin Work on GENIUS Act",
+  "plain": "The Senate voted 69 to 31 to start debate on the GENIUS Act, a measure to set rules for stablecoins, which are digital assets that issuers must redeem for a fixed value. This step does not yet pass the bill itself.",
+  "v": 1
+ },
+ "s2025-264": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Vote on Hydrogen Vehicle Fuel System Safety Rule",
+  "plain": "The Senate voted 53 to 46 to begin considering a resolution that would cancel a federal safety rule on fuel storage systems in hydrogen-powered vehicles. The rule, published in January 2025, set performance requirements for hydrogen fuel systems and storage tanks.",
+  "v": 1
+ },
+ "s2025-265": {
+  "model": "claude-haiku-5-5",
+  "name": "Hydrogen vehicle fuel safety rule: Senate vote to set aside",
+  "plain": "The Senate voted 46 to 52 against setting aside a resolution that would cancel a safety rule for hydrogen-fueled vehicles, so the resolution stays alive. The rule set performance requirements for hydrogen vehicle fuel systems and storage tanks, including how they should hold up in crashes.",
+  "v": 1
+ },
+ "s2025-266": {
+  "model": "claude-haiku-5-5",
+  "name": "Setting Aside Hydrogen Vehicle Fuel Safety Rule",
+  "plain": "The Senate voted 51 to 46 to set aside a resolution that would have canceled a federal safety rule for hydrogen-fueled vehicles, which ends that effort without a direct vote on the resolution itself. The rule covers fuel system and hydrogen storage tank requirements for such vehicles.",
+  "v": 1
+ },
+ "s2025-267": {
+  "model": "claude-haiku-5-5",
+  "name": "Disapproval of federal hydrogen vehicle fuel safety rule",
+  "plain": "The Senate voted on a motion to overturn a federal safety rule for hydrogen-fueled vehicles, which sets requirements for their fuel systems and hydrogen storage tanks. The motion was rejected, 46 in favor to 51 against.",
+  "v": 1
+ },
+ "s2025-268": {
+  "model": "claude-haiku-5-5",
+  "name": "Hydrogen vehicle fuel safety rule disapproval motion",
+  "plain": "The Senate voted 45 to 51 against a motion to overturn a federal safety rule for hydrogen-powered vehicles, so the motion was rejected. The rule sets performance requirements for hydrogen fuel systems and storage tanks, including protection against leaks and bursts.",
+  "v": 1
+ },
+ "s2025-269": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on overturning hydrogen vehicle fuel safety rule",
+  "plain": "The Senate voted 46 to 51 against a motion to overturn a federal safety rule on fuel systems and hydrogen storage in hydrogen-powered vehicles, so the motion was rejected.",
+  "v": 1
+ },
+ "s2025-270": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on hydrogen vehicle fuel safety rule",
+  "plain": "The Senate voted 46 to 51 to reject a motion to overturn a federal safety rule for hydrogen-powered vehicles. The rule sets fuel system and hydrogen storage tank requirements, and the motion did not pass.",
+  "v": 1
+ },
+ "s2025-271": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to overturn hydrogen vehicle fuel safety rule",
+  "plain": "The Senate rejected a motion to overturn a federal safety rule for hydrogen-fueled vehicles, which sets fuel system and hydrogen storage tank requirements. The vote was 45 in favor and 52 against.",
+  "v": 1
+ },
+ "s2025-272": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote on hydrogen vehicle safety rule",
+  "plain": "The Senate voted 46 to 51 against a motion to adjourn, so the chamber stayed in session. The vote was not on the hydrogen vehicle safety rule itself, which would have been canceled had the resolution passed.",
+  "v": 1
+ },
+ "s2025-273": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate ruling on hydrogen vehicle safety rule disapproval",
+  "plain": "The Senate voted 51 to 46 to uphold a ruling on how its rules apply to a resolution that would undo federal safety standards for hydrogen-fueled vehicles. The ruling was made on a procedural question, not on the resolution itself.",
+  "v": 1
+ },
+ "s2025-274": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate ruling on hydrogen vehicle safety rule disapproval",
+  "plain": "The Senate voted 51 to 46 to uphold a ruling on its own rules about a resolution to overturn a 2025 federal safety rule covering hydrogen-fueled vehicles. The resolution would have nullified that rule.",
+  "v": 1
+ },
+ "s2025-275": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning federal hydrogen vehicle fuel safety rule",
+  "plain": "The Senate voted 51 to 46 to overturn a 2025 federal safety rule setting fuel system and hydrogen storage tank requirements for vehicles that run on hydrogen. The resolution now goes to the House.",
+  "v": 1
+ },
+ "s2025-276": {
+  "model": "claude-haiku-5-5",
+  "name": "Taking up a resolution on California vehicle emissions waiver",
+  "plain": "The Senate voted 51 to 46 to begin considering a resolution that would cancel the federal approval letting California enforce its Advanced Clean Cars II vehicle emission rules. This vote was only to start debate on it, not a final vote on the resolution.",
+  "v": 1
+ },
+ "s2025-277": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning California's vehicle emission rule waiver",
+  "plain": "The Senate voted 51 to 44 to pass a joint resolution that cancels the federal approval given to California's Advanced Clean Cars II rules on vehicle pollution, which set requirements for low-emission and zero-emission vehicles.",
+  "v": 1
+ },
+ "s2025-278": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up California vehicle emissions rule repeal",
+  "plain": "The Senate voted 51 to 46 to begin considering a resolution that would cancel an Environmental Protection Agency decision letting California enforce its own pollution standards for heavy-duty trucks and some vehicles. The vote was to start debate, not a final vote on the resolution.",
+  "v": 1
+ },
+ "s2025-279": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning California's truck emission rules",
+  "plain": "The Senate voted 51 to 45 to pass a resolution that cancels the federal government's approval of California's rules on emissions from heavy trucks and buses, including zero-emission truck and airport shuttle requirements.",
+  "v": 1
+ },
+ "s2025-280": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to take up California vehicle pollution rule repeal",
+  "plain": "The Senate voted 51 to 46 to begin considering a measure that would cancel an Environmental Protection Agency decision allowing California to set its own emissions standards for heavy-duty trucks, buses and some off-road diesel engines. Passage of the measure itself was not decided by this vote.",
+  "v": 1
+ },
+ "s2025-281": {
+  "model": "claude-haiku-5-5",
+  "name": "Disapproval of EPA rule on California vehicle pollution standards",
+  "plain": "The Senate voted 49 to 46 to pass a resolution overturning the Environmental Protection Agency's approval of California's low-emissions standards for new heavy-duty trucks, engines and some off-road diesel equipment. The resolution cancels the agency's waiver that allowed California to enforce those standards.",
+  "v": 1
+ },
+ "s2025-305": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to advance the GENIUS Act on stablecoins",
+  "plain": "The Senate voted 68 to 30 to end debate and move ahead with the GENIUS Act, which sets rules for stablecoins, digital money that must be redeemable for a fixed value. The 60 votes needed were reached. This was a step, not the final vote on the bill.",
+  "v": 1
+ },
+ "s2025-306": {
+  "model": "claude-haiku-5-5",
+  "name": "Blocking a proposed arms sale to Qatar",
+  "plain": "The Senate voted 39 to 56 against pulling a resolution out of committee that would block a proposed sale of certain military equipment and services to Qatar. The resolution stays in committee for now.",
+  "v": 1
+ },
+ "s2025-307": {
+  "model": "claude-haiku-5-5",
+  "name": "Blocking arms sale to United Arab Emirates",
+  "plain": "The Senate voted against moving a resolution to block a proposed military equipment sale to the United Arab Emirates out of committee, so it will not get a full Senate vote for now. The measure would have prohibited the sale of certain defense articles and services.",
+  "v": 1
+ },
+ "s2025-309": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion to set aside the GENIUS Act stablecoin bill",
+  "plain": "The Senate voted 45 to 52 on a step to set aside the GENIUS Act, which would create rules for payment stablecoins, digital assets redeemable for a fixed value. The step failed, so the bill stays under consideration.",
+  "v": 1
+ },
+ "s2025-310": {
+  "model": "claude-haiku-5-5",
+  "name": "Setting aside a Senate budget rule on a pending measure",
+  "plain": "The Senate voted 64 to 33 to set aside a budget rule that a senator said the measure broke, so work on it could continue. The 60-vote threshold for this step was met.",
+  "v": 1
+ },
+ "s2025-311": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to the GENIUS Act stablecoin bill",
+  "plain": "The Senate voted 67 to 30 to adopt a proposed change that replaces the text of the GENIUS Act, a bill setting rules for stablecoins, which are digital assets meant to keep a fixed value. The bill itself was not yet passed by this vote.",
+  "v": 1
+ },
+ "s2025-312": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote to advance the GENIUS Act on stablecoins",
+  "plain": "The Senate voted 67 to 27 to end debate and move ahead on the GENIUS Act, which would set rules for stablecoins, digital assets meant to be redeemable for a fixed value. Because the vote needed 60 votes, it reached the required threshold.",
+  "v": 1
+ },
+ "s2025-318": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate passes GENIUS Act on digital dollar rules",
+  "plain": "The Senate voted 68 to 30 to pass the GENIUS Act, which sets rules for stablecoins, digital tokens meant to be redeemable for a fixed value, such as one U.S. dollar. Under the act, only approved issuers could offer them to U.S. users, and they would need to hold matching reserves.",
+  "v": 1
+ },
+ "s2025-328": {
+  "model": "claude-haiku-5-5",
+  "name": "Moving a bill on U.S. military action against Iran",
+  "plain": "The Senate voted 47 to 53 against taking up a measure that would have required the President to end U.S. military action against Iran unless Congress had authorized it. The measure stays in committee.",
+  "v": 1
+ },
+ "s2025-329": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Votes to Begin Work on Budget Reconciliation Bill",
+  "plain": "The Senate voted 51 to 49 to begin debate on a reconciliation bill that changes federal spending and taxes, including SNAP food assistance rules, reduces taxes, and raises the federal debt limit. This was a step to start work on the bill, not its final passage.",
+  "v": 1
+ },
+ "s2025-330": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on how the rules apply to a tax and spending bill",
+  "plain": "The Senate voted 53 to 47 to uphold the presiding officer's ruling on how the Senate's rules apply to a large bill that changes taxes, federal spending, and the debt limit, with all Republicans in favor and Democrats opposed.",
+  "v": 1
+ },
+ "s2025-331": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate ruling on rules for budget reconciliation bill",
+  "plain": "The Senate voted 53 to 47 to uphold the presiding officer's ruling on how the Senate's rules apply to a large budget bill that changes taxes, spending on federal programs, and the federal debt limit. Republicans voted for the ruling and Democrats voted against it.",
+  "v": 1
+ },
+ "s2025-332": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on budget reconciliation bill",
+  "plain": "The Senate voted 47 to 53 to reject a motion on a large budget bill that changes taxes, spending on federal programs, and the government's borrowing limit. The bill itself was not voted on in this step.",
+  "v": 1
+ },
+ "s2025-333": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on reconciliation bill",
+  "plain": "The Senate voted 49 to 51 to reject a motion on a reconciliation bill that changes taxes, federal spending, and the debt limit, including changes to food assistance (SNAP) rules. The motion was not agreed to.",
+  "v": 1
+ },
+ "s2025-334": {
+  "model": "claude-haiku-5-5",
+  "name": "Setting aside a budget rule for a spending and tax bill",
+  "plain": "The Senate voted 51 to 48 to set aside a Senate budget rule that a senator had said the bill breaks, so the bill could move forward. The vote needed 60 votes, three-fifths of the Senate, and 51 votes was enough to pass it. The bill reduces taxes, changes food assistance (SNAP) and other federal programs, and raises the government's borrowing limit.",
+  "v": 1
+ },
+ "s2025-335": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on budget reconciliation bill",
+  "plain": "The Senate voted 47 to 53 to reject a motion on a budget reconciliation bill that would change federal programs, including food assistance (SNAP) work requirements and benefit calculations, and raise the federal debt limit. The motion did not pass.",
+  "v": 1
+ },
+ "s2025-336": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on budget reconciliation bill",
+  "plain": "The Senate voted 48 to 52 to reject a motion related to a budget reconciliation bill, which would reduce taxes, change spending on various federal programs, and raise the federal debt limit. The motion did not pass.",
+  "v": 1
+ },
+ "s2025-337": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on a budget reconciliation bill",
+  "plain": "The Senate voted 49 to 51 to reject a motion on a large budget bill that would change taxes, spending, and the national debt limit. Because the motion was rejected, the Senate did not move forward with the bill at this step.",
+  "v": 1
+ },
+ "s2025-338": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on budget reconciliation bill",
+  "plain": "The Senate voted 48 to 52 to reject a motion on a large budget bill that would change taxes, spending, and the federal debt limit, along with several food assistance and other federal programs. Because the motion was rejected, the bill was not moved forward at this step.",
+  "v": 1
+ },
+ "s2025-339": {
+  "model": "claude-haiku-5-5",
+  "name": "Extending health insurance tax credits and raising top tax rate",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill extending health insurance tax credits and raising the tax rate on incomes over $10 million could move ahead. The vote needed 60 votes and got 47 in favor, so it did not reach the 60 needed.",
+  "v": 1
+ },
+ "s2025-340": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion on Budget Reconciliation Bill with Food Aid Changes",
+  "plain": "The Senate voted on a motion about a budget reconciliation bill that reduces taxes, changes spending on federal programs, and raises the debt limit. The motion was rejected, 48 in favor to 52 against, so it did not pass.",
+  "v": 1
+ },
+ "s2025-341": {
+  "model": "claude-haiku-5-5",
+  "name": "Consumer Financial Protection Bureau funding cap",
+  "plain": "The Senate voted on whether to set aside a budget rule so a change to the consumer bureau's funding limit could move forward. The proposal needed 60 votes to do so and got 47, so it did not reach the 60 needed; the rule remains in force.",
+  "v": 1
+ },
+ "s2025-342": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on waiving budget rule for Medicaid funding change",
+  "plain": "The Senate voted 56 to 44 to keep a budget rule in place, so the proposal to lower federal Medicaid funding to 80 percent for states covering certain noncitizens charged with or convicted of certain acts did not go ahead. The vote needed 60 votes to set the rule aside and fell short.",
+  "v": 1
+ },
+ "s2025-343": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on crypto corruption bill's budget-rule objection",
+  "plain": "The Senate voted 47 to 53 on whether to set aside a budget rule so a bill to prevent cryptocurrency corruption could go ahead. The vote needed 60 votes to succeed and did not reach that number, so the rule stayed in force and the bill did not move forward.",
+  "v": 1
+ },
+ "s2025-344": {
+  "model": "claude-haiku-5-5",
+  "name": "Vote to set aside Senate budget rule",
+  "plain": "The Senate voted on whether to set aside a Senate budget rule so a measure could move ahead. The vote needed 60 votes to succeed and got 49 in favor and 51 against, so it did not reach the 60 needed and the rule stays in force.",
+  "v": 1
+ },
+ "s2025-345": {
+  "model": "claude-haiku-5-5",
+  "name": "Medicaid and CHIP coverage limited to verified citizens",
+  "plain": "The Senate voted 53 to 47 on whether to set aside a budget rule so a bill could move ahead. The bill would bar federal Medicaid and CHIP funding for people without verified citizenship or satisfactory immigration status. Because 60 votes were needed and only 53 were cast in favor, the request did not reach the 60 votes required, so the rule stayed in force.",
+  "v": 1
+ },
+ "s2025-346": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion on Budget Reconciliation Bill With Spending and Tax Changes",
+  "plain": "The Senate voted 47 to 53 to reject a motion on a budget reconciliation bill that cuts taxes, changes spending on federal programs, and raises the government's borrowing limit. The motion did not pass.",
+  "v": 1
+ },
+ "s2025-347": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion on budget reconciliation bill with SNAP changes",
+  "plain": "The Senate voted 47 to 53 to reject a motion on a budget reconciliation bill that reduces taxes, changes spending on federal programs, and raises the debt limit. The bill includes changes to the food assistance program SNAP, such as expanded work requirements for some recipients.",
+  "v": 1
+ },
+ "s2025-348": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on budget reconciliation bill",
+  "plain": "The Senate voted 47 to 53 to reject a motion on a large budget bill that changes taxes, spending, and the federal debt limit, along with many federal programs such as food assistance. The motion did not pass, so the bill was not advanced by this vote.",
+  "v": 1
+ },
+ "s2025-349": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on budget reconciliation bill",
+  "plain": "The Senate voted on a motion about a budget reconciliation bill that would change several federal programs, including food assistance (SNAP) work rules and benefit calculations. The motion was rejected, 48 in favor and 52 against.",
+  "v": 1
+ },
+ "s2025-350": {
+  "model": "claude-haiku-5-5",
+  "name": "Motion on a budget reconciliation bill with SNAP and tax changes",
+  "plain": "The Senate voted 49 to 51 to reject a motion on a large budget bill that changes food assistance and taxes, along with other federal programs. Because the motion was rejected, this step did not advance the bill.",
+  "v": 1
+ },
+ "s2025-351": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on budget reconciliation bill",
+  "plain": "The Senate voted 47 to 53 to reject a motion on a budget reconciliation bill that would change taxes, spending and the debt limit, including changes to SNAP food assistance work requirements and benefit calculations. The motion did not pass.",
+  "v": 1
+ },
+ "s2025-352": {
+  "model": "claude-haiku-5-5",
+  "name": "Limiting use of Defense Production Act funds without Congress",
+  "plain": "The Senate voted on whether to set aside a budget rule so a measure could move forward, which needed 60 votes. The vote was 42 in favor and 58 against, so it did not reach the 60 votes needed. The measure would bar using Defense Production Act funds without congressional approval.",
+  "v": 1
+ },
+ "s2025-353": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate rejects motion on budget reconciliation bill",
+  "plain": "The Senate voted 47 to 53 to reject a motion on a budget reconciliation bill that changes taxes, spending, and the federal debt limit, including changes to SNAP food assistance work requirements and benefit calculations. The motion did not pass.",
+  "v": 1
+ },
  "s2025-354": {
   "model": "claude-haiku-5-5",
   "name": "Senate rejects motion on budget reconciliation bill",
@@ -4919,10 +5639,178 @@
   "plain": "The Senate voted 77 to 20 to agree to a motion on the National Defense Authorization Act for Fiscal Year 2026, a bill that sets policies and authorities for military programs, equipment, personnel, and related national security matters for 2026.",
   "v": 1
  },
+ "s2025-65": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on setting aside a budget rule for housing costs",
+  "plain": "The Senate voted 47 to 53 on whether to set aside a budget rule that would have let a housing-cost measure go ahead. The vote needed 60 votes to pass and did not reach them, so the rule stays in force.",
+  "v": 1
+ },
  "s2025-654": {
   "model": "claude-haiku-5-5",
   "name": "Senate vote on disapproving HHS rule on Administrative Procedure Act",
   "plain": "The Senate voted 50 to 50 on a resolution to overturn a Health and Human Services Department rule about following the text of the Administrative Procedure Act. Because the vote was tied, the resolution was defeated.",
+  "v": 1
+ },
+ "s2025-66": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to remove budget reconciliation instructions and add bipartisan funding",
+  "plain": "The Senate rejected a proposed change, 47 to 53, that would have removed the budget's reconciliation instructions and set aside up to $171 billion each for defense and for other programs, including border security, veterans, farmers, food and nutrition, and disaster relief.",
+  "v": 1
+ },
+ "s2025-67": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on waiving budget rule for energy cost measure",
+  "plain": "The Senate voted 47 to 53 against setting aside a budget rule that had been raised against a measure meant to address energy costs, including electricity bills, building materials and transportation. Because the vote needed 60 votes to pass, the effort did not reach that threshold, so the rule stayed in place.",
+  "v": 1
+ },
+ "s2025-68": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to reinstate fired federal land workers",
+  "plain": "The Senate rejected a proposed change to the budget plan, 52 to 48, that would have set aside money to rehire federal employees fired from the Forest Service, National Park Service, Fish and Wildlife Service, and Bureau of Land Management.",
+  "v": 1
+ },
+ "s2025-69": {
+  "model": "claude-haiku-5-5",
+  "name": "Budget plan change on wildland firefighter support",
+  "plain": "The Senate rejected a proposed change to the federal budget plan for fiscal year 2025 that would have set aside funds to support federal wildland firefighters and related personnel. The vote was 48 in favor and 52 against.",
+  "v": 1
+ },
+ "s2025-70": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to protect Medicare and Medicaid in budget plan",
+  "plain": "The Senate approved a proposed change to the budget plan that would set aside funds for protecting Medicare and Medicaid, without adding to the deficit. The vote was 51 to 49.",
+  "v": 1
+ },
+ "s2025-71": {
+  "model": "claude-haiku-5-5",
+  "name": "Blocking tax cuts tied to Medicaid funding",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill could move ahead, but the vote needed 60 votes and got 49, so the rule stayed in place. The bill would prevent tax cuts for the wealthy if any Medicaid funding were cut.",
+  "v": 1
+ },
+ "s2025-72": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on Medicaid maternal and pediatric care funding",
+  "plain": "The Senate rejected a proposed change to the budget plan that would have set aside funds to protect access to maternal and pediatric health care through Medicaid. The vote was 49 in favor and 51 against.",
+  "v": 1
+ },
+ "s2025-73": {
+  "model": "claude-haiku-5-5",
+  "name": "Health coverage bill; vote to set aside budget rule",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill to prevent millions of Americans from losing health coverage could go ahead. The vote needed 60 votes and did not reach that number, with 47 in favor and 53 against.",
+  "v": 1
+ },
+ "s2025-74": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on setting aside a budget rule for Medicaid cuts bill",
+  "plain": "The Senate voted on whether to set aside a budget rule so a bill about protecting seniors' health care from Medicaid cuts could go ahead. The vote needed 60 votes and got 48 in favor, so it did not reach the 60 needed, and the rule stayed in place.",
+  "v": 1
+ },
+ "s2025-75": {
+  "model": "claude-haiku-5-5",
+  "name": "Set aside budget rule to protect Medicare and Medicaid",
+  "plain": "The Senate voted on whether to set aside a budget rule so a measure could go ahead; the measure would stop cuts to Medicare and Medicaid benefits. The vote was 49 in favor and 51 against, so it did not reach the 60 votes needed and the rule stayed in place.",
+  "v": 1
+ },
+ "s2025-76": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on continued U.S. support for Ukraine against Russia",
+  "plain": "The Senate voted 47 to 53 to reject a proposed change to the budget resolution. The change would have aimed to ensure continued United States support for Ukraine as it stands firm against aggression by Russia in Europe.",
+  "v": 1
+ },
+ "s2025-77": {
+  "model": "claude-haiku-5-5",
+  "name": "Requiring more deficit reduction in budget plan",
+  "plain": "The Senate rejected a proposed change to the 2025 budget plan that would have required an adequate amount of deficit reduction as part of a later reconciliation bill. The vote was 24 in favor and 76 against.",
+  "v": 1
+ },
+ "s2025-78": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on avian flu funding in budget resolution",
+  "plain": "The Senate voted on a proposed change to the budget plan that would set aside money to keep funding and staff for responding to and preventing avian flu from being cut. The change was rejected, 47 in favor to 53 against.",
+  "v": 1
+ },
+ "s2025-79": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on protecting school lunch and breakfast funding",
+  "plain": "The Senate voted on whether to set aside a budget rule so a measure protecting school lunch and breakfast funding could go ahead. The request fell short, with 49 in favor and 51 against, and it did not reach the 60 votes needed.",
+  "v": 1
+ },
+ "s2025-80": {
+  "model": "claude-haiku-5-5",
+  "name": "Budget plan change on health care tax credits",
+  "plain": "The Senate voted on a proposed change to the 2025 federal budget plan that would have set aside funds to preserve and extend Affordable Care Act health insurance tax credits. The change was rejected, 48 in favor and 52 against.",
+  "v": 1
+ },
+ "s2025-81": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on police funding reserve fund",
+  "plain": "The Senate voted 48 to 52 against a proposed change to the 2025 federal budget plan that would have set aside a reserve fund, not adding to the deficit, to support police, including money to hire or rehire career law enforcement officers. The change was rejected.",
+  "v": 1
+ },
+ "s2025-82": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment on fertility services in the 2025 budget plan",
+  "plain": "The Senate voted 49 to 51 to reject a proposed change to the federal budget plan for 2025. The change would have set aside funds to protect access to fertility services and expand nationwide coverage for in vitro fertilization.",
+  "v": 1
+ },
+ "s2025-83": {
+  "model": "claude-haiku-5-5",
+  "name": "Protecting veterans' health care funding in the budget plan",
+  "plain": "The Senate rejected a proposed change to the 2025 budget plan that would have ensured full, uninterrupted funding for Department of Veterans Affairs health care and benefits under the PACT Act, preventing any cuts or delays. The vote was 47 in favor and 52 against.",
+  "v": 1
+ },
+ "s2025-84": {
+  "model": "claude-haiku-5-5",
+  "name": "Amendment to remove budget cuts to rural programs and food aid",
+  "plain": "The Senate rejected a proposed change that would have removed instructions in the budget plan requiring cuts to rural programs and food assistance for families. The vote was 47 in favor and 53 against.",
+  "v": 1
+ },
+ "s2025-85": {
+  "model": "claude-haiku-5-5",
+  "name": "Reserve fund for limiting federal rule-making",
+  "plain": "The Senate approved a change to the 2025 federal budget plan that would set aside a reserve fund for legislation to limit federal agencies from finalizing major rules without congressional approval. The vote was 53 to 47, largely along party lines.",
+  "v": 1
+ },
+ "s2025-86": {
+  "model": "claude-haiku-5-5",
+  "name": "Proposed change on prescription drug price gouging",
+  "plain": "The Senate rejected a proposed change to the federal budget plan that would have set aside funds for ending price gouging on prescription drugs, by a vote of 49 to 51.",
+  "v": 1
+ },
+ "s2025-87": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate adopts federal budget plan for 2025 and beyond",
+  "plain": "The Senate voted 52 to 48 to approve a budget plan setting the federal government's spending and revenue targets for fiscal year 2025 and projections through 2034. The plan directs several Senate and House committees to write laws that would raise or lower the deficit by set amounts.",
+  "v": 1
+ },
+ "s2025-91": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate vote on reversing ocean archaeology rule",
+  "plain": "The Senate voted 54 to 42 to begin debate on a resolution that would undo a federal rule requiring archaeological reports for offshore oil and gas plans. The vote was to start work on the resolution, not a final vote on it.",
+  "v": 1
+ },
+ "s2025-92": {
+  "model": "claude-haiku-5-5",
+  "name": "Overturning rule on archaeological reports for offshore drilling",
+  "plain": "The Senate voted 54 to 44 to pass a resolution cancelling a federal rule that required oil and gas companies to submit archaeological reports with offshore drilling plans. The rule is reversed, so earlier rules apply again, requiring such reports only when regulators have reason to think archaeological remains may be present.",
+  "v": 1
+ },
+ "s2025-95": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending the national energy emergency declaration",
+  "plain": "The Senate voted 47 to 52 against a measure that would have ended the national emergency on energy declared by the President in January 2025. The measure was defeated.",
+  "v": 1
+ },
+ "s2025-96": {
+  "model": "claude-haiku-5-5",
+  "name": "Senate Votes to Take Up EPA Methane Fee Rule Repeal",
+  "plain": "The Senate voted 52 to 47 to begin considering a resolution that would overturn an EPA rule setting up an annual charge on methane and other greenhouse gas emissions from oil and gas operations that exceed set limits.",
+  "v": 1
+ },
+ "s2025-97": {
+  "model": "claude-haiku-5-5",
+  "name": "Repealing EPA fee on oil and gas methane emissions",
+  "plain": "The Senate voted 52 to 47 to pass a resolution that cancels an EPA rule setting up a yearly charge on oil and gas facilities that exceed limits on methane and other greenhouse gas emissions.",
   "v": 1
  },
  "s2026-10": {
@@ -5793,6 +6681,12 @@
   "model": "claude-haiku-5-5",
   "name": "Senate vote on setting aside a budget rule for health costs",
   "plain": "The Senate voted on whether to set aside a budget rule that a senator said this measure breaks. Setting it aside needed 60 votes, which is three-fifths of the Senate. The vote was 48 in favor and 50 against, so it did not reach the 60 votes needed and the rule stayed in force.",
+  "v": 1
+ },
+ "s2026-9": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending U.S. military action against Venezuela without approval",
+  "plain": "The Senate voted on a procedural question about the Senate's own rules affecting a measure to direct the removal of U.S. armed forces from hostilities against Venezuela not authorized by Congress. The vote was 50 to 50, and the Vice President broke the tie by voting yes, so the measure's point of order was upheld.",
   "v": 1
  },
  "s2026-90": {
