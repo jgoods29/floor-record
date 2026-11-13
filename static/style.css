@@ -606,3 +606,17 @@ header .mypage:hover, header .mypage[aria-current] { background: #EDE4FD; }
 header .yours ~ .chamber ~ .mypage { font-size: 0; gap: 0; padding: 6px 11px; }
 .check.big > span { display: block; font-family: var(--body, Inter, sans-serif); letter-spacing: 0; line-height: 1.45; font-weight: 400; }
 .check.big strong { font-weight: 600; letter-spacing: 0; }
+
+/* Your Page as its own page, laid out like an account page */
+.avatar { flex: none; width: 52px; height: 52px; border-radius: 50%; background: #F1EBFE; color: var(--purple); display: inline-flex; align-items: center; justify-content: center; }
+.avatar.lg { width: 76px; height: 76px; }
+.youhead { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.youact { display: flex; align-items: center; gap: 14px; }
+.youpage .minegrid { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; }
+.youpage .minecol { border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; background: #fff; }
+.youpage .mc-name { font-size: 21px; }
+.youempty { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; border-style: dashed; }
+.youpage [data-mine-bills] > :first-child, .youpage [data-mine-coming] > :first-child { border-top: 0; padding-top: 0; }
+a.youcard { flex-direction: row; align-items: center; gap: 16px; text-align: left; max-width: 760px; margin: 0 auto; width: 100%; }
+a.youcard .go { margin: 0 0 0 auto; white-space: nowrap; color: var(--purple); }
+@media (max-width: 640px) { a.youcard { flex-wrap: wrap; } a.youcard .go { margin-left: 68px; } .youhead .h1 { font-size: 32px !important; } }

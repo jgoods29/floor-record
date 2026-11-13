@@ -121,7 +121,11 @@
     };
     box.addEventListener('focus', function () { loadIndex().then(run).catch(function () {}); });
     box.addEventListener('input', function () { if (index) run(); else loadIndex().then(run).catch(function () {}); });
-    box.addEventListener('keydown', function (e) { if (e.key === 'Escape') { out.classList.remove('open'); } if (e.key === 'Enter') { var a = out.querySelector('a'); if (a) location.href = a.href; } });
+    box.addEventListener('keydown', function (e) { if (e.key === 'Escape') { out.classList.remove('open'); } if (e.key === 'Enter') {
+      var zq = box.value.trim();
+      // a ZIP code belongs to three people, not one: go to the page that lists the representative and both senators
+      if (/^\d{5}$/.test(zq)) { e.preventDefault(); byZip(zq).then(function (hit) { if (!hit) return; store('fr-zip', zq); if (hit.rows.length === 1) setMyRep(hit.rows[0][0], hit.rows[0][1]); else { var r0 = myRep(); if (r0 && !hit.rows.some(function (r) { return r[0] === r0.id; })) setMyRep(null); } location.href = root + 'you/'; }); return; }
+      var a = out.querySelector('a'); if (a) location.href = a.href; } });
     document.addEventListener('click', function (e) { if (!wrap.contains(e.target) && !e.target.closest('[data-example]')) out.classList.remove('open'); });
     each(document.querySelectorAll('[data-example]'), function (btn) {
       if (!wrap.classList.contains('big')) return;
@@ -143,6 +147,12 @@
     });
   });
 
+  // Bring the top of a section to just under the pinned header, after the page has finished opening or closing lists.
+  function bringToTop(el) {
+    var go = function () { var head = document.querySelector('header.top'), y = el.getBoundingClientRect().top + window.pageYOffset - (head ? head.offsetHeight : 0) - 12; window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' }); };
+    requestAnimationFrame(function () { requestAnimationFrame(go); });
+  }
+
   // ---- show or hide routine procedural votes
   each(document.querySelectorAll('[data-routine-toggle]'), function (boxEl) {
     boxEl.addEventListener('change', function () {
@@ -155,7 +165,7 @@
   each(document.querySelectorAll('select[data-jump]'), function (sel) {
     sel.addEventListener('change', function () {
       var target = sel.value && document.getElementById(sel.value);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (target) bringToTop(target);
     });
   });
 
@@ -176,7 +186,7 @@
       e.preventDefault();
       rollFilter(link.getAttribute('data-only') || '', link.getAttribute('data-only-name') || '');
       each(document.querySelectorAll('details[id^="voted-"]'), function (d) { d.open = d === target; });
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      bringToTop(target);
       if (history.replaceState) history.replaceState(null, '', '#' + target.id);
     });
   });
@@ -279,7 +289,7 @@
     if (fromHash) {
       var hb = topicBar.querySelector('[data-topic="' + fromHash[1] + '"]'), ho = more && more.querySelector('option[value="' + fromHash[1] + '"]');
       if (hb) pick(fromHash[1], hb.textContent); else if (ho) pick(fromHash[1], ho.text);
-      var anchor = document.getElementById('topics'); if (anchor && (hb || ho)) anchor.scrollIntoView();
+      var anchor = document.getElementById('topics'); if (anchor && (hb || ho)) bringToTop(anchor);
     }
   }
 
@@ -368,16 +378,21 @@
       var rep = myRep(), st = myState(), topics = saved('fr-topics'), bills = saved('fr-bills'), all = JSON.parse(mine.getAttribute('data-topics') || '[]');
       var any = rep || st || topics.length || bills.length;
       q1('[data-mine-clear]').hidden = !any;
-      if (any) q1('[data-mine-lede]').textContent = 'Saved on this device only. Nothing is sent anywhere.';
+      if (any) q1('[data-mine-lede]').textContent = st ? 'The people who represent you, and what you follow.' : 'Add your ZIP code to see the people who represent you.';
       // your three
       var jobs = [];
       if (rep) jobs.push(person('Your representative', rep.id, rep.name, ''));
       var three = q1('[data-mine-three]');
       (st ? senatorsFor(st) : Promise.resolve([])).then(function (sens) {
         sens.forEach(function (r) { jobs.push(person('Your senator', r[0], r[1], 'senate/')); });
-        if (!jobs.length) { three.innerHTML = '<p class="muted" style="margin:0">Type your ZIP code in the search box above and they will appear here, with how they voted.</p>'; return; }
+        if (!jobs.length) { three.innerHTML = '<div class="card youempty"><strong>Nobody here yet.</strong><span class="muted">Type your ZIP code above and your representative and two senators will appear, with how they voted.</span></div>'; return; }
         Promise.all(jobs).then(function (cols) {
-          three.innerHTML = '<div class="minegrid">' + cols.join('') + '</div>' + (rep ? '' : '<p class="small muted" style="margin:8px 0 0">Your ZIP code covers more than one House district. Pick yours in the search results to add your representative.</p>');
+          three.innerHTML = '<div class="minegrid">' + cols.join('') + '</div>' + (rep ? '' : '<div data-mine-choose></div>');
+          var zip = store('fr-zip'), slot = three.querySelector('[data-mine-choose]');
+          if (slot && zip) byZip(zip).then(function (hit) {
+            if (!hit || hit.rows.length < 2) return;
+            slot.innerHTML = '<div class="card stack" style="gap:10px;margin-top:16px"><strong>Your ZIP code is shared by ' + hit.rows.length + ' House districts. Which representative is yours?</strong><div class="picks">' + hit.rows.map(function (r) { return '<button type="button" class="pick" data-mine-rep="' + esc(r[0]) + '" data-name="' + esc(r[1]) + '">' + esc(r[1]) + ' (' + esc(r[3]) + ')</button>'; }).join('') + '</div><span class="small muted">Not sure? <a rel="noopener" href="https://www.house.gov/representatives/find-your-representative">Look it up by street address at house.gov</a>.</span></div>';
+          });
         });
       });
       // topics
@@ -415,6 +430,21 @@
       paintFollows();
     };
     q1('[data-mine-clear]').addEventListener('click', function () { ['fr-rep', 'fr-home', 'fr-zip', 'fr-topics', 'fr-bills'].forEach(function (k) { store(k, null); }); showMyRep(); drawMine(); });
+    var zform = q1('[data-mine-zip]');
+    if (zform) {
+      var zbox = zform.querySelector('input'), znote = q1('[data-mine-zipnote]');
+      zbox.value = store('fr-zip');
+      zform.addEventListener('submit', function (e) {
+        e.preventDefault(); var z = zbox.value.trim(); znote.hidden = false;
+        if (!/^\d{5}$/.test(z)) { znote.textContent = 'A ZIP code is five numbers.'; return; }
+        byZip(z).then(function (hit) {
+          if (!hit) { znote.textContent = 'We do not know that ZIP code. Check the numbers and try again.'; return; }
+          znote.hidden = true; store('fr-zip', z);
+          setMyRep(hit.rows.length === 1 ? hit.rows[0][0] : null, hit.rows.length === 1 ? hit.rows[0][1] : null); drawMine();
+        });
+      });
+      mine.addEventListener('click', function (e) { var b = e.target.closest('[data-mine-rep]'); if (b) { setMyRep(b.getAttribute('data-mine-rep'), b.getAttribute('data-name')); } });
+    }
     afterYours = drawMine;
     drawMine();
   }
@@ -451,7 +481,7 @@
     each(document.querySelectorAll('[data-ckind]'), function (b) { b.addEventListener('click', function () {
       ckind = b.getAttribute('data-ckind'); each(document.querySelectorAll('[data-ckind]'), function (x) { x.classList.toggle('on', x === b); }); cdraw(); }); });
     call.addEventListener('click', function () { var open = call.textContent === 'Expand all'; each(cards, function (c) { c.open = open; }); call.textContent = open ? 'Collapse all' : 'Expand all'; });
-    var copen = function () { var t = location.hash && document.getElementById(location.hash.slice(1)); if (t && t.classList.contains('cmte')) { t.open = true; t.scrollIntoView(); } };
+    var copen = function () { var t = location.hash && document.getElementById(location.hash.slice(1)); if (t && t.classList.contains('cmte')) { t.open = true; bringToTop(t); } };
     window.addEventListener('hashchange', copen); copen();
   }
 
@@ -602,7 +632,8 @@
     var page = document.querySelector('[data-account]');
     function paint() {
       var s = sess(), on = !!s;
-      each(document.querySelectorAll('[data-acct-link] span'), function (el) { el.textContent = on ? 'Your Account' : 'Sign In'; });
+      each(document.querySelectorAll('[data-acct-link]'), function (a) { a.querySelector('span').textContent = on ? 'Your Page' : 'Sign In'; a.href = a.getAttribute(on ? 'data-you' : 'data-in'); });
+      each(document.querySelectorAll('[data-acct-settings]'), function (el) { el.hidden = !on; });
       each(document.querySelectorAll('[data-acct-out]'), function (el) { el.hidden = on; });
       each(document.querySelectorAll('[data-acct-in]'), function (el) { el.hidden = !on; });
       if (!page || !on) return;

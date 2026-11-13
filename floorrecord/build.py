@@ -693,6 +693,7 @@ def main():
     if shared["acct_on"]:
         render("account/index.html", "account.html", 1, section="account", mytopics=[[t["key"], t["name"]] for t in all_topics])
         render("unsubscribe/index.html", "unsubscribe.html", 1, section="account")
+    render("you/index.html", "you.html", 1, section="you", mytopics=[[t["key"], t["name"]] for t in all_topics])
     render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, trending=trending, since=since, featured=featured, coming=coming,
            mytopics=[[t["key"], t["name"]] for t in all_topics],
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])

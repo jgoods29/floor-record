@@ -15,18 +15,8 @@
 <a class="pilllink newhere" href="{{ root }}{{ c }}start/"><b>New to all this?</b> Start Here: Congress in Two Minutes<span aria-hidden="true">→</span></a>
 </section>
 
-<section class="stack mine" id="mine" aria-labelledby="mine-h" data-topics='{{ mytopics|tojson }}' style="gap:16px">
-<div class="center" style="gap:6px"><h2 class="h2" id="mine-h">Your page</h2>
-<p class="muted" style="font-size:17px;max-width:640px" data-mine-lede>Make this page yours: your representative, your senators, and the topics you care about. {% if acct_on %}It is saved on this device. Create a free account below to keep it on every device and get the Monday and Friday emails.{% else %}It is saved on this device only. Nothing is sent anywhere.{% endif %}</p></div>
-{% if acct_on %}<div class="card stack acctcard" data-acct-out>{% include "_signup.html" %}</div>{% endif %}
-<div class="card stack" style="gap:14px"><div class="row" style="justify-content:space-between"><span class="label">Your three in Congress</span><button type="button" class="linkish small" data-mine-clear hidden>Clear my page</button></div>
-<div data-mine-three><p class="muted" style="margin:0">Type your ZIP code in the search box above and they will appear here, with how they voted.</p></div></div>
-<div class="card stack" style="gap:14px"><span class="label">Topics you follow</span>
-<div class="picks" data-mine-picks></div>
-<div data-mine-topicvotes></div></div>
-<div class="card stack" style="gap:14px" data-mine-billbox hidden><span class="label">Bills you follow</span><div data-mine-bills></div></div>
-<div class="card stack" style="gap:14px" data-mine-comingbox hidden><span class="label">Coming up on your topics</span><div data-mine-coming></div></div>
-</section>
+<a class="card youcard" href="{{ root }}you/"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 20 20" width="26" height="26"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 17c.8-3.3 3.4-5 6.500-5s5.700 1.700 6.500 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+<span class="stack" style="gap:2px"><span class="h3">Your Page</span><span class="muted">Your representative, your two senators and the topics you care about, all in one place.</span></span><span class="go">{{ "Open" }} Your Page</span></a>
 
 {% if featured or trending %}
 <section class="center" aria-labelledby="trending-h">
