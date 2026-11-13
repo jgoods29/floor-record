@@ -529,3 +529,11 @@ table.nobills th:nth-child(4), table.nobills th:nth-child(5), table.nobills th:n
 .nav a.myrep.sen { background: #fff; border: 1px solid #DCCBFB; }
 .reach-sub { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding: 12px 20px 0; }
 .morevotes > summary { cursor: pointer; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: #C9B5F5; text-underline-offset: 3px; width: fit-content; }
+
+/* the House / Senate switch lives in the header, on every page */
+header .chamber { margin-left: auto; order: 1; flex: none; align-self: center; padding: 3px; }
+header .chamber a { padding: 6px 18px; min-height: 36px; font-size: 15px; }
+header .wrap > .nav { order: 2; flex-basis: 100%; }
+header .wrap > .search { order: 3; }
+.chamberbar { padding-top: 18px; }
+@media (max-width: 640px) { header .chamber a { padding: 6px 14px; min-height: 34px; } }

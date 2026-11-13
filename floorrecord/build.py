@@ -444,7 +444,7 @@ def main():
         for v in svotes:
             info = v["info"]
             info["rule_name"], info["rule_plain"] = info["name"], info["plain"]
-            apply_wording(info, v["id"], {}, editorial)
+            apply_wording(info, v["id"], ai_votes, editorial)
             # Senate votes on bills carry the same topics as House ones, so a senator's votes can be browsed by topic.
             names = [topic_name(v["issue"])] if v["issue"] else []
             if v["slug"]:
@@ -820,7 +820,9 @@ def main():
     if svotes_raw:
         sfeatured = pick_featured(svotes, pins=editorial.get("senate_pins") or [])
         for v in sfeatured:
-            v["f_name"], v["f_plain"] = v["info"]["name"], v["info"]["plain"]
+            ai = v["info"]["source"] == "ai"  # the big cards never carry unreviewed AI text
+            v["f_name"] = title_case(v["info"]["rule_name"]) if ai else v["info"]["name"]
+            v["f_plain"] = v["info"]["rule_plain"] if ai else v["info"]["plain"]
         snewest = sorted(svotes, key=lambda v: (v["date"], v["roll"]), reverse=True)
         render("senate/votes/index.html", "votes.html", 2, section="votes", c="senate/", ch=SENATE, votes=snewest, featured=sfeatured,
                nroutine=sum(1 for v in svotes if v["info"]["routine"]), nvotes=len(svotes))

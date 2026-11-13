@@ -13,6 +13,9 @@
 <div class="stripe" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></div>
 <div class="wrap">
 <a class="brand" href="{{ root }}"><span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>{{ site.site_name }}</a>
+{% if has_senate %}{% set csec = section if section in ('votes', 'members', 'committees', 'compare') else 'votes' %}{% set chambered = section in ('votes', 'members', 'committees', 'compare', 'confirmations') %}
+<div class="chamber" role="group" aria-label="Switch between the House and the Senate">
+<a href="{{ root }}{{ csec }}/"{% if chambered and not c %} aria-current="true"{% endif %}>House</a><a href="{{ root }}senate/{{ 'confirmations' if section == 'confirmations' else csec }}/"{% if chambered and c %} aria-current="true"{% endif %}>Senate</a></div>{% endif %}
 <nav class="nav" aria-label="Main">
 <a class="startlink" href="{{ root }}start/"{% if section == 'start' %} aria-current="page"{% endif %}>Start Here</a>
 <a href="{{ root }}{{ c }}votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a>
@@ -32,9 +35,7 @@
 </div>{% endif %}
 </div>
 </header>
-{% if has_senate and section in ('votes', 'members', 'committees', 'confirmations', 'compare') %}<div class="wrap chamberbar"><div class="chamber" role="group" aria-label="Choose a chamber">
-<a href="{{ root }}{{ "votes" if section == "confirmations" else section }}/"{% if not c %} aria-current="true"{% endif %}>House</a><a href="{{ root }}senate/{{ section }}/"{% if c %} aria-current="true"{% endif %}>Senate</a></div>
-{% if c %}<span class="chamberlinks"><a href="{{ root }}senate/votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a><a href="{{ root }}senate/confirmations/"{% if section == 'confirmations' %} aria-current="page"{% endif %}>Confirmations</a><a href="{{ root }}senate/members/"{% if section == 'members' %} aria-current="page"{% endif %}>Senators</a><a href="{{ root }}senate/committees/"{% if section == 'committees' %} aria-current="page"{% endif %}>Committees</a><a href="{{ root }}senate/compare/"{% if section == 'compare' %} aria-current="page"{% endif %}>Compare</a></span>{% else %}<span class="small muted">The House: 435 members, one for each district.</span>{% endif %}</div>{% endif %}
+{% if has_senate and c %}<div class="wrap chamberbar"><span class="label purple">In the Senate</span><span class="chamberlinks"><a href="{{ root }}senate/votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a><a href="{{ root }}senate/confirmations/"{% if section == 'confirmations' %} aria-current="page"{% endif %}>Confirmations</a><a href="{{ root }}senate/members/"{% if section == 'members' %} aria-current="page"{% endif %}>Senators</a><a href="{{ root }}senate/committees/"{% if section == 'committees' %} aria-current="page"{% endif %}>Committees</a><a href="{{ root }}senate/compare/"{% if section == 'compare' %} aria-current="page"{% endif %}>Compare</a></span></div>{% endif %}
 <main>
 {% block main %}{% endblock %}
 {% if act is defined %}{% import "_m.html" as act_m %}<div class="wrap actwrap">{{ act_m.reach(root, reach_states, state_names, act.topic, act.key) }}</div>{% endif %}

@@ -474,7 +474,43 @@ Official facts
 """
 
 
-def ai_vote_lines(votes, cfg, log=print):
+SENATE_VOTE_PROMPT_VERSION = 1
+
+SENATE_VOTE_PROMPT = """You write plain-English labels for votes in the U.S. Senate for a non-partisan public website.
+Readers do not follow politics. Use ONLY the official facts below. Do not add background, motives, predictions,
+praise or criticism, and do not say who "won". Use everyday words; no bill numbers and no procedural jargon
+(do not write cloture, motion to proceed, table, discharge or point of order).
+
+Accuracy rules:
+- Many Senate votes are steps, not final votes. If the facts say this was a vote to end debate, to start work on
+  something, to set something aside or to waive a rule, describe that step. Never say the bill itself passed or
+  failed unless the facts say this was the final vote on it.
+- If the vote needed 60 votes and fell short, say it did not reach the 60 votes needed. Do not say it lacked a majority.
+- Do not describe a measure's legal force or importance (binding, non-binding, symbolic, landmark, annual, major)
+  unless the official title or summary uses that word.
+- A bill that "authorizes" programs or "sets policy" is not a spending bill. Say it provides or spends money only if
+  the official facts say it appropriates or provides funding.
+- When the measure has an official short title, use it or a faithful shortening of it as the name.
+- For a proposed change (an amendment), name the change itself, starting with the sponsor's last name if it is given.
+
+Return JSON with two keys:
+"name": at most 8 words naming what the vote was about, the way a careful newspaper would label it. No verbs about
+        the outcome.
+"plain": one or two sentences, at most 45 words in total, saying what the Senate decided and, if the facts
+         below say so, what the measure or change would do.
+
+Official facts
+- Official title: {title}
+- Official summary (may be empty): {summary}
+- What kind of vote this was: {what}
+- A Yea vote was a vote to: {yea}
+- A Nay vote was a vote to: {nay}
+- Result: {result}, {yeas} Yea to {nays} Nay
+- Republicans: {r_yea} Yea, {r_nay} Nay. Democrats: {d_yea} Yea, {d_nay} Nay.
+"""
+
+
+def ai_vote_lines(votes, cfg, log=print, prompt=None, version=None, what="AI vote lines"):
     """Optional AI-written name and one-line explanation for each vote, cached in data/ai_votes.json."""
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     cache = read_json(DATA / "ai_votes.json", {})
@@ -482,11 +518,12 @@ def ai_vote_lines(votes, cfg, log=print):
         log("AI vote lines: ANTHROPIC_API_KEY not set, skipping")
         return cache
     bills = read_json(DATA / "bills.json", {})
+    prompt, version = prompt or VOTE_PROMPT, version or VOTE_PROMPT_VERSION
     todo = []
     for v in reversed(votes):  # newest first, substantive votes before housekeeping
-        if cache.get(v["id"], {}).get("v") == VOTE_PROMPT_VERSION or v.get("kind") != "standard":
+        if cache.get(v["id"], {}).get("v") == version or v.get("kind") != "standard":
             continue
-        info = explain(v, bills)
+        info = v.get("info") or explain(v, bills)
         parsed = parse_legis(v["legis"])
         bill = bills.get(bill_slug(*parsed), {}) if parsed else {}
         if not (bill.get("title") or v["desc"]):
@@ -499,9 +536,10 @@ def ai_vote_lines(votes, cfg, log=print):
     def label(job):
         _, v, info, bill = job
         party = v.get("by_party", {})
-        text = _ask(VOTE_PROMPT.format(
+        text = _ask(prompt.format(
             title=bill.get("title") or v["desc"], summary=(bill.get("official_summary") or "")[:6000],
-            what=info["what"], yea=info["yea"], nay=info["nay"], result=v["result"],
+            what=info["what"] + (" " + info["result_note"] if v["id"].startswith("s") and info.get("result_note") else ""),
+            yea=info["yea"], nay=info["nay"], result=v["result"],
             yeas=v["totals"].get("yea", 0), nays=v["totals"].get("nay", 0),
             r_yea=party.get("R", {}).get("yea", 0), r_nay=party.get("R", {}).get("nay", 0),
             d_yea=party.get("D", {}).get("yea", 0), d_nay=party.get("D", {}).get("nay", 0)), cfg, key, 400)
@@ -509,7 +547,7 @@ def ai_vote_lines(votes, cfg, log=print):
         name, plain = str(out["name"]).strip().rstrip("."), str(out["plain"]).strip()
         if not name or len(name) > 90 or len(plain) > 400:
             raise ValueError("answer outside the allowed length")
-        return {"name": name, "plain": plain, "model": cfg.get("ai_model", ""), "v": VOTE_PROMPT_VERSION}
+        return {"name": name, "plain": plain, "model": cfg.get("ai_model", ""), "v": version}
 
     batch = todo[: cfg.get("ai_max_new_vote_lines_per_run", 150)]
     # A small first batch, so a wrong key or model fails fast instead of 150 times.
@@ -526,7 +564,7 @@ def ai_vote_lines(votes, cfg, log=print):
             log("  ! stopping AI lines for this run after the first batch failed")
             break
     write_json(DATA / "ai_votes.json", cache, compact=False)
-    log(f"AI vote lines: {made} new, {len(cache)} on file, {max(0, len(todo) - made)} still waiting")
+    log(f"{what}: {made} new, {len(cache)} on file, {max(0, len(todo) - made)} still waiting")
     return cache
 
 

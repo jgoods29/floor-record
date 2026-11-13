@@ -557,6 +557,12 @@ def main():
     from .explain import ai_summaries, ai_vote_lines
     ai_summaries(votes, cfg)
     ai_vote_lines(votes, cfg)
+    # The Senate's turn. Confirmations keep their rule-made names ("Jane Doe For Judge"), which are already exact.
+    from .explain import SENATE_VOTE_PROMPT, SENATE_VOTE_PROMPT_VERSION
+    from .senate import load_senate_votes
+    senate_votes = [v for v in load_senate_votes(cfg["years"], read_json(DATA / "senators.json", {}), read_json(DATA / "bills.json", {}))
+                    if v["info"]["kind"] not in ("nomination", "cloture_nom")]
+    ai_vote_lines(senate_votes, cfg, prompt=SENATE_VOTE_PROMPT, version=SENATE_VOTE_PROMPT_VERSION, what="AI Senate vote lines")
     print(f"Done: {len(votes)} roll calls on file.")
 
 
