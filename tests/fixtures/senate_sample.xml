@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><roll_call_vote>
+  <congress>119</congress>
+  <session>2</session>
+  <congress_year>2026</congress_year>
+  <vote_number>7</vote_number>
+  <vote_date>May 18, 2026,  05:36 PM</vote_date>
+  <modify_date>May 18, 2026,  06:01 PM</modify_date>
+  <vote_question_text>On Passage of the Bill (S. 99)</vote_question_text>
+  <vote_document_text>A bill used only as a test sample.</vote_document_text>
+  <vote_result_text>Bill Passed (2-1)</vote_result_text>
+  <question>On Passage of the Bill</question>
+  <vote_title>S. 99</vote_title>
+  <majority_requirement>1/2</majority_requirement>
+  <vote_result>Bill Passed</vote_result>
+  <document>
+    <document_congress>119</document_congress>
+    <document_type>S.</document_type>
+    <document_number>99</document_number>
+    <document_name>S. 99</document_name>
+    <document_title>A bill used only as a test sample.</document_title>
+  </document>
+  <amendment><amendment_number/><amendment_purpose/></amendment>
+  <count><yeas>2</yeas><nays>1</nays><present/><absent>1</absent></count>
+  <tie_breaker><by_whom/><tie_breaker_vote/></tie_breaker>
+  <members>
+    <member><member_full>Sample One (R-AA)</member_full><last_name>One</last_name><first_name>Sample</first_name><party>R</party><state>AA</state><vote_cast>Yea</vote_cast><lis_member_id>S001</lis_member_id></member>
+    <member><member_full>Sample Two (D-BB)</member_full><last_name>Two</last_name><first_name>Sample</first_name><party>D</party><state>BB</state><vote_cast>Yea</vote_cast><lis_member_id>S002</lis_member_id></member>
+    <member><member_full>Sample Three (I-CC)</member_full><last_name>Three</last_name><first_name>Sample</first_name><party>I</party><state>CC</state><vote_cast>Nay</vote_cast><lis_member_id>S003</lis_member_id></member>
+    <member><member_full>Sample Four (R-DD)</member_full><last_name>Four</last_name><first_name>Sample</first_name><party>R</party><state>DD</state><vote_cast>Not Voting</vote_cast><lis_member_id>S004</lis_member_id></member>
+  </members>
+</roll_call_vote>

@@ -103,6 +103,16 @@ class Questions(unittest.TestCase):
         self.assertEqual(bill_status("Received in the Senate and Read twice and referred to the Committee on the Judiciary."), ("Passed the House", True))
         self.assertEqual(bill_status("Motion to reconsider laid on the table Agreed to without objection.")[0], "Voted on in the House")
 
+    def test_senate_vote(self):
+        from floorrecord.ingest import parse_senate_vote
+        v = parse_senate_vote((FIXTURE.parent / "senate_sample.xml").read_bytes())
+        self.assertEqual((v["year"], v["session"], v["roll"], v["date"], v["time"]), (2026, 2, 7, "2026-05-18", "17:36"))
+        self.assertEqual(v["totals"], {"yea": 2, "nay": 1, "present": 0, "nv": 1})
+        self.assertTrue(v["tally_matches"])
+        self.assertEqual(v["positions"][2][:4], ["S003", "I", "CC", "nay"])
+        self.assertEqual(v["documents"][0]["name"], "S. 99")
+        self.assertIsNone(v["amendment"]); self.assertIsNone(v["tie_breaker"])
+
     def test_floor_schedule(self):
         from floorrecord.ingest import parse_floor_schedule
         week = parse_floor_schedule((FIXTURE.parent / "floor_sample.xml").read_text())

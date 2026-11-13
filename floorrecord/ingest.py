@@ -250,6 +250,83 @@ def ingest_members(votes, log=print):
     return members
 
 
+SENATE_MENU = "https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_{congress}_{session}.xml"
+SENATE_VOTE = "https://www.senate.gov/legislative/LIS/roll_call_votes/vote{congress}{session}/vote_{congress}_{session}_{num:05d}.xml"
+SENATE_CAST = {"yea": "yea", "nay": "nay", "present": "present", "not voting": "nv", "guilty": "yea", "not guilty": "nay"}
+
+
+def parse_senate_vote(xml_bytes):
+    """Turn one Senate roll call XML file into a compact dict, shaped like the House ones."""
+    from datetime import datetime
+    root = ET.fromstring(xml_bytes)
+    if root.tag != "roll_call_vote" or not _text(root, "vote_number"):
+        raise ValueError("not a Senate roll call document")
+    raw_date = " ".join(_text(root, "vote_date").split())
+    try:
+        when = datetime.strptime(raw_date, "%B %d, %Y, %I:%M %p")
+    except ValueError:
+        when = datetime.strptime(raw_date.split(",")[0] + ", " + _text(root, "congress_year"), "%B %d, %Y")
+    docs = [{"type": _text(d, "document_type"), "number": _text(d, "document_number"), "name": _text(d, "document_name"),
+             "title": _text(d, "document_title")} for d in root.findall("document") if _text(d, "document_name")]
+    amendment = root.find("amendment")
+    count = root.find("count")
+    tie = root.find("tie_breaker")
+    positions = []
+    for m in root.iter("member"):
+        cast = _text(m, "vote_cast")
+        positions.append([_text(m, "lis_member_id"), _text(m, "party"), _text(m, "state"),
+                          SENATE_CAST.get(cast.lower(), "other:" + cast), _text(m, "last_name"), _text(m, "first_name")])
+    num = lambda tag: int(_text(count, tag) or 0) if count is not None else 0
+    totals = {"yea": num("yeas"), "nay": num("nays"), "present": num("present"), "nv": num("absent")}
+    counted = {k: sum(1 for p in positions if p[3] == k) for k in totals}
+    return {"chamber": "senate", "congress": int(_text(root, "congress") or 0), "session": int(_text(root, "session") or 0),
+            "year": int(_text(root, "congress_year") or when.year), "roll": int(_text(root, "vote_number")),
+            "date": when.date().isoformat(), "time": when.strftime("%H:%M"),
+            "question": " ".join(_text(root, "question").split()), "question_text": " ".join(_text(root, "vote_question_text").split()),
+            "title": " ".join(_text(root, "vote_title").split()), "document_text": " ".join(_text(root, "vote_document_text").split()),
+            "requirement": _text(root, "majority_requirement"), "result": _text(root, "vote_result"),
+            "result_text": " ".join(_text(root, "vote_result_text").split()), "documents": docs[:40],
+            "amendment": {"number": _text(amendment, "amendment_number"), "purpose": _text(amendment, "amendment_purpose")} if amendment is not None and _text(amendment, "amendment_number") else None,
+            "tie_breaker": {"by": _text(tie, "by_whom"), "vote": _text(tie, "tie_breaker_vote")} if tie is not None and _text(tie, "by_whom") else None,
+            "totals": totals, "tally_matches": counted == totals, "positions": positions}
+
+
+def ingest_senate(years, congress, log=print, per_run=400):
+    """Trial collection of Senate roll calls. Nothing on the site reads these yet. Whatever happens is
+    written to data/senate/status.json so it is easy to see whether senate.gov lets the updater in."""
+    status = {"checked": date.today().isoformat(), "ok": False, "error": "", "sessions": {}}
+    new = 0
+    try:
+        for year in years:
+            session = year - (1787 + 2 * congress) + 1  # the 119th Congress: 2025 is session 1, 2026 is session 2
+            folder = DATA / "senate" / str(year)
+            folder.mkdir(parents=True, exist_ok=True)
+            menu = ET.fromstring(fetch(SENATE_MENU.format(congress=congress, session=session), timeout=60))
+            listed = sorted(int(v.findtext("vote_number")) for v in menu.iter("vote") if (v.findtext("vote_number") or "").strip().isdigit())
+            have = {int(p.stem) for p in folder.glob("*.json")}
+            for num in [n for n in listed if n not in have]:
+                if new >= per_run:
+                    break
+                try:
+                    vote = parse_senate_vote(fetch(SENATE_VOTE.format(congress=congress, session=session, num=num)))
+                except (NotFound, ValueError, ET.ParseError) as err:
+                    log(f"  ! Senate {year} vote {num}: {err}")
+                    continue
+                write_json(folder / f"{num:05d}.json", vote)
+                have.add(num)
+                new += 1
+                time.sleep(0.3)
+            status["sessions"][str(year)] = {"listed": len(listed), "on_file": len(have)}
+            log(f"Senate {year}: {len(listed)} roll calls listed, {len(have)} on file")
+        status["ok"] = True
+    except Exception as err:  # blocked, down or changed: record it and carry on with the House
+        status["error"] = str(err)[:300]
+        log(f"  ! Senate trial: {err}")
+    status["new_this_run"] = new
+    write_json(DATA / "senate" / "status.json", status)
+    return status
+
+
 COMMITTEE_URL = "https://raw.githubusercontent.com/unitedstates/congress-legislators/gh-pages/{which}.json"
 ROLE_NAMES = (("vice", "Vice Chair"), ("ranking", "Ranking Member"), ("cochair", "Co-Chair"), ("chair", "Chair"), ("ex officio", "Ex Officio"))
 
@@ -468,6 +545,7 @@ def main():
         sys.exit(1)
     ingest_members(votes)
     ingest_committees()
+    ingest_senate(cfg["years"], cfg["congress"])
     upcoming = ingest_upcoming()
     ingest_bills(votes, cfg["congress"], also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"]])
     ingest_member_bills({p[0] for v in votes for p in v["positions"]}, cfg["congress"])
