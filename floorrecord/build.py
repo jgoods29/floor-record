@@ -694,7 +694,13 @@ def main():
         render("account/index.html", "account.html", 1, section="account", mytopics=[[t["key"], t["name"]] for t in all_topics])
         render("unsubscribe/index.html", "unsubscribe.html", 1, section="account")
     render("you/index.html", "you.html", 1, section="you", mytopics=[[t["key"], t["name"]] for t in all_topics])
-    render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, trending=trending, since=since, featured=featured, coming=coming,
+    # ---- in the news: older votes worth resurfacing because the people or bills in them are back in the headlines.
+    # Hand-picked in data/in_the_news.json; each entry drops off by itself after its "until" date.
+    by_id = {v["id"]: v for v in votes + svotes}
+    news = [{"v": by_id[n["vote"]], "label": n.get("label") or by_id[n["vote"]]["info"]["name"]}
+            for n in read_json(DATA / "in_the_news.json", [])
+            if n.get("vote") in by_id and (n.get("until") or "9999") >= date.today().isoformat()][:4]
+    render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, news=news, trending=trending, since=since, featured=featured, coming=coming,
            mytopics=[[t["key"], t["name"]] for t in all_topics],
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,

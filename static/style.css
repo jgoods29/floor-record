@@ -649,3 +649,7 @@ a.youcard .go { margin: 0 0 0 auto; white-space: nowrap; color: var(--purple); }
 /* topic chips say what a tap will do: + to follow, a tick once followed */
 .pick[data-follow]::before { content: "+"; margin-right: 7px; font-weight: 700; color: var(--purple); }
 .pick[data-follow].on::before { content: "\2713"; color: #fff; }
+
+/* a past vote that is back in the headlines */
+.pilllink.news { border-color: #DCCBFB; background: #F7F3FF; }
+.pilllink.news em { font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--purple); border-radius: 999px; padding: 2px 8px; margin-right: 8px; }
