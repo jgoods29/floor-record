@@ -153,6 +153,70 @@
     requestAnimationFrame(function () { requestAnimationFrame(go); });
   }
 
+  // ---- "How would you vote?": cast your own vote on this week's bills, then see how Congress and your own members voted
+  var playBox = document.querySelector('[data-play]');
+  if (playBox) (function () {
+    var qs = []; try { qs = JSON.parse(playBox.getAttribute('data-play')) || []; } catch (e) {}
+    var card = playBox.querySelector('[data-play-card]'), i = 0, mine = [], week = null, sens = null;
+    var SAY = { yea: 'Yes', nay: 'No' }, DID = { yea: 'voted yes', nay: 'voted no', present: 'voted present', nv: 'did not vote' };
+    var load = function () { return week ? Promise.resolve() : fetch(root + 'newsletter-data.json').then(function (r) { return r.json(); }).then(function (d) { week = {}; (d.week || []).forEach(function (v) { week[v.id] = v.pos; }); }); };
+    var people = function (q) {   // whoever of your three sits in the chamber that held this vote
+      var rep = myRep(), st = myState();
+      if (q.chamber === 'House') return Promise.resolve(rep ? [{ id: rep.id, name: rep.name }] : []);
+      return st ? senatorsFor(st).then(function (rows) { return rows.map(function (r) { return { id: r[0], name: r[1] }; }); }) : Promise.resolve([]);
+    };
+    var ask = function () {
+      var q = qs[i];
+      card.innerHTML = '<span class="small strong muted">Vote ' + (i + 1) + ' of ' + qs.length + ' · ' + esc(q.chamber) + ' · ' + esc(q.date) + '</span>' +
+        '<p class="playask">' + esc(q.ask) + '</p>' +
+        '<div class="playbtns"><button type="button" class="playbtn yes" data-say="yea">Yes</button><button type="button" class="playbtn no" data-say="nay">No</button></div>' +
+        '<p class="small muted" style="margin:0"><button type="button" class="linkish small" data-say="skip">Not sure, skip</button> · <a href="' + root + q.pre + 'votes/' + esc(q.id) + '/" target="_blank" rel="noopener">Read more before you decide</a></p>';
+    };
+    var reveal = function (say) {
+      var q = qs[i], share = Math.round(100 * q.yea / Math.max(1, q.yea + q.nay)), won = q.yea > q.nay ? 'yea' : 'nay';
+      load().then(function () { return people(q); }).then(function (who) {
+        var pos = week[q.id] || {}, rows = who.map(function (p) {
+          var d = pos[p.id], same = say !== 'skip' && d === say, diff = say !== 'skip' && (d === 'yea' || d === 'nay') && d !== say;
+          return { same: same, diff: diff, html: '<p class="playwho"><strong>' + esc(p.name) + '</strong> ' + (DID[d] || 'has no vote on record here') + (same ? ' <span class="agree">Same as you</span>' : diff ? ' <span class="differ">Different from you</span>' : '') + '</p>' };
+        });
+        mine[i] = { say: say, withMajority: say === won, rows: rows };
+        card.innerHTML = '<span class="small strong muted">Vote ' + (i + 1) + ' of ' + qs.length + ' · ' + esc(q.name) + '</span>' +
+          '<p class="playyou">' + (say === 'skip' ? 'You skipped this one.' : 'You said <strong>' + SAY[say] + '</strong>.') + '</p>' +
+          '<div class="playresult"><span><strong>The ' + esc(q.chamber) + ': ' + esc(q.outcome) + '</strong>, ' + q.yea + ' to ' + q.nay + '</span>' +
+          '<div class="playbar" role="img" aria-label="' + q.yea + ' yes, ' + q.nay + ' no"><i style="width:' + share + '%"></i></div><span class="small muted">' + q.yea + ' voted yes · ' + q.nay + ' voted no</span></div>' +
+          (rows.length ? '<div class="playyours">' + rows.map(function (r) { return r.html; }).join('') + '</div>' :
+            '<form class="row playzip" data-play-zip style="align-items:flex-end;gap:10px"><label class="fieldset" for="play-zip">How did yours vote? Type your ZIP code<input class="field" id="play-zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5 digits" style="width:170px"></label><button class="btn sm" type="submit">Show Me</button></form><p class="small muted" data-play-zipnote style="margin:0" hidden></p>') +
+          '<div class="row" style="justify-content:space-between;gap:12px"><a class="small" href="' + root + q.pre + 'votes/' + esc(q.id) + '/">See everyone who voted</a><button type="button" class="btn" data-play-next>' + (i + 1 < qs.length ? 'Next Vote' : 'See How You Did') + '</button></div>';
+      });
+    };
+    var finish = function () {
+      var answered = mine.filter(function (m) { return m && m.say !== 'skip'; }), maj = answered.filter(function (m) { return m.withMajority; }).length, tally = {};
+      mine.forEach(function (m) { if (!m || m.say === 'skip') return; m.rows.forEach(function (r) { var n = (r.html.match(/<strong>(.*?)<\/strong>/) || [])[1]; if (!n || !(r.same || r.diff)) return; tally[n] = tally[n] || [0, 0]; tally[n][1]++; if (r.same) tally[n][0]++; }); });
+      var lines = Object.keys(tally).map(function (n) { return '<p class="playwho">You and <strong>' + n + '</strong> voted the same way on <strong>' + tally[n][0] + ' of ' + tally[n][1] + '</strong>.</p>'; }).join('');
+      card.innerHTML = '<span class="small strong muted">This week</span><p class="playask">' + (answered.length ? 'You voted with the majority on ' + maj + ' of ' + answered.length + '.' : 'You skipped them all. Fair enough.') + '</p>' +
+        (lines ? '<div class="playyours">' + lines + '</div>' : '<p class="muted" style="margin:0">Add your ZIP code on Your Page to see how often you and your own representative agree.</p>') +
+        '<div class="row" style="gap:12px"><a class="btn" href="' + root + 'you/">Open Your Page</a><button type="button" class="linkish" data-play-again>Vote again</button></div>' +
+        '<p class="small muted" style="margin:0">New votes every week. Agreeing or disagreeing is not a score: it is just the record next to your own view.</p>';
+    };
+    card.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-say]'); if (b) { reveal(b.getAttribute('data-say')); return; }
+      if (e.target.closest('[data-play-next]')) { i++; if (i < qs.length) ask(); else finish(); return; }
+      if (e.target.closest('[data-play-again]')) { i = 0; mine = []; ask(); }
+    });
+    card.addEventListener('submit', function (e) {
+      var f = e.target.closest('[data-play-zip]'); if (!f) return; e.preventDefault();
+      var z = f.querySelector('input').value.trim(), note = card.querySelector('[data-play-zipnote]'); note.hidden = false;
+      if (!/^\d{5}$/.test(z)) { note.textContent = 'A ZIP code is five numbers.'; return; }
+      byZip(z).then(function (hit) {
+        if (!hit) { note.textContent = 'We do not know that ZIP code. Check the numbers and try again.'; return; }
+        store('fr-zip', z); setMyRep(hit.rows.length === 1 ? hit.rows[0][0] : null, hit.rows.length === 1 ? hit.rows[0][1] : null);
+        if (hit.rows.length > 1) { note.innerHTML = 'Your ZIP code is shared by more than one House district. <a href="' + root + 'you/">Pick your representative on Your Page</a>, then come back.'; return; }
+        reveal(mine[i] ? mine[i].say : 'skip');
+      });
+    });
+    if (qs.length) ask();
+  })();
+
   // ---- home briefing: what your own three did this week
   var b3 = document.querySelector('[data-brief-three]');
   if (b3) {

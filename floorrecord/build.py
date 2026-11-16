@@ -727,8 +727,14 @@ def main():
             picks.append(v); per[v["chamber"]] += 1
     brief = {"picks": picks, "total": len(wk), "from": (date.fromisoformat(week_from) + timedelta(days=1)).isoformat(), "to": max(v["date"] for v in votes + svotes),
              "coming": (coming["items"][:3] if coming else [])}
-    home_template = "index_brief.html" if (os.environ.get("FLOORRECORD_HOME") or cfg.get("home")) == "brief" else "index.html"
-    render("index.html", home_template, 0, brief=brief, section="home", act={"topic": "", "key": ""}, news=news, trending=trending, since=since, featured=featured, coming=coming,
+    # "How would you vote?": this week's final votes on bills that have a reviewed, neutrally worded question, closest first
+    asks = read_json(DATA / "questions.json", {})
+    play = [{"id": v["id"], "pre": v["pre"], "chamber": v["chamber"], "date": nicedate(v["date"]), "name": v["info"]["name"], "ask": asks[v["id"]],
+             "yea": v["totals"]["yea"], "nay": v["totals"]["nay"], "outcome": v["info"]["outcome"], "yea_means": v["info"].get("yea", ""), "nay_means": v["info"].get("nay", "")}
+            for v in sorted(wk, key=lambda v: v["margin"]) if v["id"] in asks][:5]
+    home_mode = os.environ.get("FLOORRECORD_HOME") or cfg.get("home")
+    home_template = {"brief": "index_brief.html", "play": "index_play.html" if play else "index_brief.html"}.get(home_mode, "index.html")
+    render("index.html", home_template, 0, brief=brief, play=play, section="home", act={"topic": "", "key": ""}, news=news, trending=trending, since=since, featured=featured, coming=coming,
            mytopics=[[t["key"], t["name"]] for t in all_topics],
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,

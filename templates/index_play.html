@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% import "_m.html" as m with context %}
+{% block main %}
+<div class="wrap home brief">
+
+<section class="play" data-play='{{ play|tojson }}' aria-labelledby="play-h">
+<span class="label purple">This Week In Congress · {{ brief.from|nicedate }} to {{ brief.to|nicedate }}</span>
+<h1 class="h1" id="play-h">How Would You Vote?</h1>
+<p class="lede">Congress voted on these this week. Cast your own vote, then see how the people who represent you voted.</p>
+<div class="card playcard" data-play-card aria-live="polite">
+<noscript><p>Turn on JavaScript to vote, or read the week below.</p></noscript>
+</div>
+<p class="small muted" style="margin:0">Your answers stay on this device. Nothing is recorded or sent anywhere.</p>
+</section>
+
+<section class="stack briefhead" style="padding-top:0"><h2 class="h1" style="font-size:44px">The Week, In 60 Seconds</h2></section>
+{% include "_brief_body.html" %}
+<section class="card promise" id="promise">
+<h2 class="h2">No Tracking, No Profit, Just Knowledge</h2>
+<p>Free, non-partisan, and built from the official record of the House and the Senate. <a href="{{ root }}about/#promise">Read the promise</a></p>
+</section>
+</div>
+{% endblock %}
