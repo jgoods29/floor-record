@@ -653,3 +653,18 @@ a.youcard .go { margin: 0 0 0 auto; white-space: nowrap; color: var(--purple); }
 /* a past vote that is back in the headlines */
 .pilllink.news { border-color: #DCCBFB; background: #F7F3FF; }
 .pilllink.news em { font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--purple); border-radius: 999px; padding: 2px 8px; margin-right: 8px; }
+
+/* Subscribe sits beside Your Page in the header and carries the purple; Your Page steps back to a plain outline */
+header .subbtn { order: 1; flex: none; display: inline-flex; align-items: center; gap: 7px; min-height: 42px; padding: 6px 16px; margin-left: -20px; border: 0; border-radius: 999px; background: var(--purple); color: #fff; font: inherit; font-weight: 600; font-size: 15px; cursor: pointer; }
+header .subbtn:hover { background: var(--purple-ink); }
+header .subbtn[hidden] { display: none; }
+header .subbtn ~ .mypage { margin-left: -24px; border-color: var(--line); background: #fff; color: var(--ink); }
+header .subbtn[hidden] ~ .mypage { margin-left: -20px; }
+header .subbtn ~ .mypage:hover, header .subbtn ~ .mypage[aria-current] { background: var(--tint, #F4F6FA); }
+header .yours ~ .chamber ~ .subbtn { font-size: 0; gap: 0; padding: 6px 12px; }
+.pop-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 16px; color: var(--text-2); }
+.pop-list li { padding-left: 26px; position: relative; } .pop-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--purple); font-weight: 700; } .pop-list strong { color: var(--ink); }
+@media (max-width: 900px) { header .subbtn { order: 0; margin-left: 0; font-size: 0; gap: 0; padding: 0; width: 40px; min-height: 40px; justify-content: center; } header .subbtn ~ .mypage { margin-left: 0; } }
+@media (max-width: 640px) { header .subbtn { width: 36px; min-height: 36px; } }
+@media (max-width: 420px) { header .subbtn { width: 34px; min-height: 34px; } }
+@media (max-width: 380px) { header .subbtn ~ .mypage, header .subbtn { width: 32px; min-height: 32px; } .top .brand { font-size: 16px; } header .chamber a, header .chamber a[aria-current] { padding: 6px 7px; } }

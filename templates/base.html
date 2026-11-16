@@ -15,7 +15,8 @@
 <a class="brand" href="{{ root }}"><span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>{{ site.site_name }}</a>
 {% set neutral = section in ('home', 'about', 'account', 'you') %}{% if has_senate %}<div class="chamber" role="group" aria-label="Switch between the House and the Senate">
 <a href="{{ root }}{{ switch.house }}"{% if not neutral and not c %} aria-current="true"{% endif %}>House</a><a href="{{ root }}{{ switch.senate }}"{% if not neutral and c %} aria-current="true"{% endif %}>Senate</a></div>{% endif %}
-<a class="mypage"{% if acct_on %} data-acct-link data-you="{{ root }}you/" data-in="{{ root }}account/"{% endif %} href="{{ root }}{{ 'account/' if acct_on else 'you/' }}"{% if section in ('you', 'account') %} aria-current="page"{% endif %}><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 17c.8-3.3 3.4-5 6.5-5s5.700 1.700 6.500 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>{{ 'Sign In' if acct_on else 'Your Page' }}</span></a>
+{% if acct_on %}<button type="button" class="subbtn" data-pop-open><svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><rect x="2.500" y="4.500" width="15" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.700"/><path d="M3.500 6l6.500 5 6.500-5" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Subscribe</span></button>
+{% endif %}<a class="mypage"{% if acct_on %} data-acct-link data-you="{{ root }}you/" data-in="{{ root }}account/"{% endif %} href="{{ root }}{{ 'account/' if acct_on else 'you/' }}"{% if section in ('you', 'account') %} aria-current="page"{% endif %}><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 17c.8-3.3 3.4-5 6.5-5s5.700 1.700 6.500 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>{{ 'Sign In' if acct_on else 'Your Page' }}</span></a>
 <nav class="nav" aria-label="Main">
 <a class="startlink" href="{{ root }}{{ c }}start/"{% if section == 'start' %} aria-current="page"{% endif %}>Start Here</a>
 <a href="{{ root }}{{ c }}votes/"{% if section == 'votes' %} aria-current="page"{% endif %}>Votes</a>
@@ -48,18 +49,20 @@
 </div>
 {% if section != 'home' %}<p class="pledge"><span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>Free, and for the people. No tracking, no profit, just knowledge.</p>{% endif %}
 </footer>
-{% if acct_on %}<button type="button" class="subfab" data-pop-open hidden><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><rect x="2.500" y="4.500" width="15" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.700"/><path d="M3.500 6l6.500 5 6.500-5" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round"/></svg>Subscribe</button>
-<div class="pop" data-pop{% if section in ('account', 'you') %} data-pop-quiet{% endif %} hidden>
+{% if acct_on %}<div class="pop" data-pop{% if section in ('account', 'you') %} data-pop-quiet{% endif %} hidden>
 <div class="pop-card" role="dialog" aria-modal="true" aria-labelledby="pop-h">
 <button type="button" class="pop-x" data-pop-close aria-label="Close">×</button>
 <span class="mark" aria-hidden="true"><span class="r"></span><span class="p"></span><span class="b"></span></span>
-<h2 class="h2" id="pop-h">Know How They Voted. Every Week.</h2>
-<p class="pop-lede">Two short emails. <strong>Monday:</strong> what Congress is about to vote on. <strong>Friday:</strong> how your own representative and senators voted.</p>
+<h2 class="h2" id="pop-h">Get The Email Updates</h2>
+<ul class="pop-list">
+<li><strong>Every Monday and Friday.</strong> Two short emails a week, nothing more.</li>
+<li><strong>National updates.</strong> What Congress is about to vote on, and how it voted.</li>
+<li><strong>Your own representative.</strong> How the people who speak for you voted.</li>
+</ul>
 <form class="stack signup" data-signup style="gap:10px" novalidate>
-<label class="sr" for="pop-email">Email</label><input class="field" id="pop-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
-<label class="sr" for="pop-zip">ZIP code</label><input class="field" id="pop-zip" name="zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="ZIP code, so we know who represents you">
+<label class="sr" for="pop-email">Your email address</label><input class="field" id="pop-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required>
 <input type="checkbox" name="newsletter" checked hidden>
-<button class="btn" type="submit">Sign Me Up, Free</button>
+<button class="btn" type="submit">Subscribe, Free</button>
 <p class="small muted" style="margin:0" data-signup-note aria-live="polite"></p>
 </form>
 <p class="pop-trust"><strong>We never sell your data.</strong> We are only here to make public information easy to find. Unsubscribe with one click.</p>

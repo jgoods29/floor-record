@@ -617,17 +617,15 @@
     // ---- the sign-up box (home page and account page)
     each(document.querySelectorAll('[data-signup]'), function (form) {
       var note = form.querySelector('[data-signup-note]');
-      if (store('fr-zip')) form.elements.zip.value = store('fr-zip');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var email = form.elements.email.value.trim(), zip = form.elements.zip.value.trim(), news = form.elements.newsletter.checked;
+        var email = form.elements.email.value.trim(), zip = store('fr-zip'), news = form.elements.newsletter.checked;
         if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { note.textContent = 'Please type your email address.'; form.elements.email.focus(); return; }
-        if (zip && !/^\d{5}$/.test(zip)) { note.textContent = 'A ZIP code is five numbers. You can also leave it empty and add it later.'; form.elements.zip.focus(); return; }
         try { localStorage.setItem('fr-pending', JSON.stringify({ zip: zip, newsletter: news })); } catch (err) {}
         var btn = form.querySelector('button[type=submit]'); btn.disabled = true; note.textContent = 'Sending...';
         var home = new URL(root + 'account/', location.href).href;
         api('/auth/v1/otp?redirect_to=' + encodeURIComponent(home), { method: 'POST', body: { email: email, create_user: true, data: { zip: zip, newsletter: news } } }).then(function () {
-          form.innerHTML = '<div class="stack" style="gap:6px"><span class="h3">Check Your Email</span><span class="muted">We sent a sign-in link to <strong>' + esc(email) + '</strong>. Open it on this device and you are in. It can take a minute, and it sometimes lands in spam.</span></div>';
+          form.innerHTML = '<div class="stack" style="gap:8px"><span class="h3">One More Step: Check Your Email</span><span class="muted">We sent a link to <strong>' + esc(email) + '</strong>. Click it to confirm. It can take a minute, and it sometimes lands in spam.</span><span class="muted"><strong>What you signed up for:</strong> an email every Monday and Friday with national updates and how your own representative voted.' + (zip ? '' : ' After you confirm, add your ZIP code so we know who your representative is.') + '</span></div>';
         }).catch(function (err) { btn.disabled = false; note.textContent = err.status === 429 ? 'Too many tries just now. Please wait a minute and try again.' : 'That did not go through: ' + err.message; });
       });
     });
@@ -639,7 +637,7 @@
       each(document.querySelectorAll('[data-acct-link]'), function (a) { a.querySelector('span').textContent = on ? 'Your Page' : 'Sign In'; a.href = a.getAttribute(on ? 'data-you' : 'data-in'); });
       each(document.querySelectorAll('[data-acct-settings]'), function (el) { el.hidden = !on; });
       each(document.querySelectorAll('[data-acct-out]'), function (el) { el.hidden = on; });
-      each(document.querySelectorAll('[data-pop-open]'), function (el) { el.hidden = on; });
+      each(document.querySelectorAll('[data-pop-open]'), function (el) { el.hidden = on && store('fr-news') !== '0'; });
       each(document.querySelectorAll('[data-acct-in]'), function (el) { el.hidden = !on; });
       if (!page || !on) return;
       page.querySelector('[data-acct-title]').textContent = 'Your Account';
@@ -716,7 +714,7 @@
       var pf = pop.querySelector('form');
       pf.addEventListener('submit', function () { store('fr-pop', '1'); var no = pop.querySelector('.pop-card > [data-pop-close].linkish'); if (no) no.textContent = 'Close'; });
       // the small Subscribe button: there on every page until the person has signed in
-      if (fab) { fab.hidden = !!sess(); fab.addEventListener('click', open); }
+      if (fab) { fab.hidden = !!sess() && store('fr-news') !== '0'; fab.addEventListener('click', function () { if (sess()) location.href = root + 'account/'; else open(); }); }
       if (!sess() && !store('fr-pop') && !pop.hasAttribute('data-pop-quiet')) {
         var began = 0; try { began = +sessionStorage.getItem('fr-began') || 0; if (!began) { began = Date.now(); sessionStorage.setItem('fr-began', began); } } catch (e) { began = Date.now(); }
         setTimeout(function () {
