@@ -9,7 +9,7 @@ Everything is built and sits switched off until these are filled in.
    These two are meant to be public. The **service role key is secret**: it goes only in the GitHub secret `SUPABASE_SERVICE_KEY`.
 3. **Mail service (Resend).** Verify the domain. Put the API key in the GitHub secret `RESEND_API_KEY`.
    In Supabase, Authentication > Emails > SMTP Settings, enter the Resend SMTP details so sign-in links come from the domain.
-   Set `accounts.from` in `config.json`, for example `Floor Record <hello@yourdomain.com>`.
+   Set `accounts.from` in `config.json`, for example `Floor The Record <hello@floortherecord.com>`.
 4. **Before the first sponsored email:** set `accounts.postal_address`. Sponsor text goes in `accounts.sponsor`.
 5. **Reword the promise** on the About page and footer before switching on: the site will now keep email addresses.
 

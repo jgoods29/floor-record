@@ -107,7 +107,7 @@ def build_email(edition, data, people, site, acct, unsub="{{unsub}}"):
         parts.append(section("Make It Yours", f'<div style="font-size:15px;color:{T2}">Add your ZIP code to <a href="{site}account/" style="color:{PURPLE};font-weight:700">your account</a> and this email will show how your own representative and senators voted.</div>'))
     if acct.get("sponsor"):
         parts.append(section("Presented By", f'<div style="font-size:15px;color:{T2}">{acct["sponsor"]}</div>'))
-    name = config().get("site_name", "Floor Record")
+    name = config().get("site_name", "Floor The Record")
     address = f'<br>{e(acct["postal_address"])}' if acct.get("postal_address") else ""
     foot = (f'<tr><td style="padding:28px 32px 32px 32px"><div style="border-top:1px solid {LINE};padding-top:16px;font-size:12px;color:{MUTED};line-height:1.6">'
             f'{e(data.get("term", ""))}. Every vote comes from the official record of the House and the Senate. Free and non-partisan.<br>'

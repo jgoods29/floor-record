@@ -1,7 +1,7 @@
 /* Fonts are served from this site, not from a third party, so visiting a page contacts no one else. */
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('fonts/inter.woff2') format('woff2'); }
 @font-face { font-family: 'Inter Tight'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('fonts/inter-tight.woff2') format('woff2'); }
-/* Floor Record. Layout: airy single column, 1080px, outlined cards on white.
+/* Floor The Record. Layout: airy single column, 1080px, outlined cards on white.
    Color jobs: blue = things you can press, red = close votes, purple = crossing party lines.
    Vote counts stay navy and gray so the site's own colors never look like a party's. */
 :root {
@@ -677,3 +677,6 @@ header .yours ~ .chamber ~ .subbtn { font-size: 0; gap: 0; padding: 6px 12px; }
   header .wrap:has(.subbtn) .nav { order: 2; flex: 1 1 0; min-width: 0; width: auto; }
   header .wrap:has(.subbtn) .search, header .wrap:has(.subbtn) .yours { order: 3; }
 }
+/* the longer name needs a touch less room on small phones */
+@media (max-width: 420px) { .top .brand { font-size: 16px; gap: 5px; letter-spacing: -0.02em; } }
+@media (max-width: 380px) { .top .brand { font-size: 15px; } }

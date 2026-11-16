@@ -1,5 +1,5 @@
 {
-  "site_name": "Floor Record",
+  "site_name": "Floor The Record",
   "tagline": "How the U.S. House votes, in plain English.",
   "congress": 119,
   "years": [
@@ -45,7 +45,7 @@
   "accounts": {
     "supabase_url": "",
     "supabase_key": "",
-    "site_url": "https://jgoods29.github.io/floor-record/",
+    "site_url": "https://floortherecord.com/",
     "from": "",
     "postal_address": "",
     "sponsor": ""

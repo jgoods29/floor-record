@@ -1,4 +1,4 @@
-/* Floor Record: search, filters, tabs, topic picker, bill lists and the Compare table. No dependencies. */
+/* Floor The Record: search, filters, tabs, topic picker, bill lists and the Compare table. No dependencies. */
 (function () {
   var root = document.body.getAttribute('data-root') || '';
   var chamber = document.body.getAttribute('data-c') || '';  // '' on House pages, 'senate/' on Senate pages

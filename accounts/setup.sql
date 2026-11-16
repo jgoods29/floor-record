@@ -1,4 +1,4 @@
--- Floor Record accounts. Paste this whole file into the Supabase SQL Editor and press Run. Safe to run more than once.
+-- Floor The Record accounts. Paste this whole file into the Supabase SQL Editor and press Run. Safe to run more than once.
 -- One row per person: who represents them, what they follow, and whether they want the newsletter. Nothing else is kept.
 
 create table if not exists public.profiles (
