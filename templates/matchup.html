@@ -1,0 +1,40 @@
+{% extends "base.html" %}{% import "_m.html" as m with context %}
+{% block title %}{{ mu.title }} · {{ site.site_name }}{% endblock %}
+{% macro said(pos) %}<span class="said {{ pos }}">{{ {'yea': 'Yes', 'nay': 'No', 'present': 'Present'}.get(pos, 'Did not vote') }}</span>{% endmacro %}
+{% macro versus(v, pa, pb) %}<div class="vsrow"><div class="stack" style="gap:2px"><a class="strong" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/">{{ v.info.name }}</a><span class="small muted">{{ v.date|nicedate }} · {{ v.info.outcome }}, {{ v.totals.yea }} to {{ v.totals.nay }}</span></div><div class="vspos"><span class="small muted">{{ mu.pa.last }}</span>{{ said(pa) }}</div><div class="vspos"><span class="small muted">{{ mu.pb.last }}</span>{{ said(pb) }}</div></div>{% endmacro %}
+{% block main %}
+<div class="wrap page start" style="gap:48px">
+<div class="stack" style="max-width:800px">
+<span class="label purple">In The News</span>
+<h1 class="h1">{{ mu.title }}</h1>
+<p class="lede">{{ mu.why }}</p>
+<p class="note">This page shows their votes and nothing else. It does not say who should lead.</p>
+</div>
+
+<section class="grid" aria-label="The two members">{% for p, st in ((mu.pa, mu.sa), (mu.pb, mu.sb)) %}
+<a class="card stack" href="{{ root }}{{ c }}members/{{ p.bioguide }}/" style="gap:6px"><span class="row" style="gap:10px">{{ m.badge(p.party) }}<span class="h3">{{ p.name }}</span></span>
+<span class="muted">{{ p.seat }}</span>
+<span>Missed <strong>{{ st.missed }}</strong> of {{ st.total|comma }} votes ({{ '%.1f'|format(st.missed_pct) }}%)</span>
+<span class="go">Full record</span></a>{% endfor %}
+</section>
+
+<section class="card stack" style="gap:8px;align-items:flex-start">
+<span class="bignum" style="font-size:72px">{{ '%.0f'|format(mu.same_pct) }}%</span>
+<span class="h3">Of The Time, They Voted The Same Way</span>
+<span class="muted">{{ mu.same|comma }} of the {{ mu.both|comma }} votes in this Congress where both voted yes or no. They split on {{ mu.split|length }}.</span>
+</section>
+
+{% if mu.spot %}<section class="stack" style="gap:16px">
+<div class="stack" style="gap:6px"><h2 class="h2">Votes Getting Attention</h2><p class="plain">Past votes that are back in the headlines.</p></div>
+<div class="card flush">{% for v, pa, pb in mu.spot %}{{ versus(v, pa, pb) }}{% endfor %}</div>
+</section>{% endif %}
+
+<section class="stack" style="gap:16px">
+<div class="stack" style="gap:6px"><h2 class="h2">Where They Split</h2><p class="plain">{% if mu.split %}The {{ mu.split|length }} {{ 'vote' if mu.split|length == 1 else 'votes' }} where one said yes and the other said no, newest first.{% else %}They have not been on opposite sides of a vote in this Congress.{% endif %}</p></div>
+{% if mu.split %}<div class="card flush">{% for v, pa, pb in mu.split[:25] %}{{ versus(v, pa, pb) }}{% endfor %}</div>
+{% if mu.split|length > 25 %}<p class="small muted">Showing the 25 most recent of {{ mu.split|length }}.</p>{% endif %}{% endif %}
+</section>
+
+<p><a class="btn sm" href="{{ root }}{{ c }}compare/">Compare Any Two {{ "Senators" if c else "Members" }}</a></p>
+</div>
+{% endblock %}

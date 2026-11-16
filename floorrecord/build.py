@@ -707,6 +707,34 @@ def main():
         render("account/index.html", "account.html", 1, section="account", mytopics=[[t["key"], t["name"]] for t in all_topics])
         render("unsubscribe/index.html", "unsubscribe.html", 1, section="account")
     render("you/index.html", "you.html", 1, section="you", mytopics=[[t["key"], t["name"]] for t in all_topics])
+    # ---- side-by-side pages for two members who are in the news together (hand-picked in data/matchups.json, each with an end date)
+    matchups = []
+    for mu in read_json(DATA / "matchups.json", []):
+        if (mu.get("until") or "9999") < date.today().isoformat():
+            continue
+        sen = mu.get("chamber") == "senate"
+        pool, vv, pre, ch = (speople, svotes, "senate/", SENATE) if sen else (people, votes, "", HOUSE)
+        if mu["a"] not in pool or mu["b"] not in pool:
+            continue
+        rows, stat = [], {mu["a"]: [0, 0], mu["b"]: [0, 0]}
+        for v in sorted(vv, key=lambda v: (v["date"], v["roll"]), reverse=True):
+            pos = {r[0]: r[3] for r in v["positions"] if r[0] in stat}
+            for who in stat:
+                if who in pos:
+                    stat[who][1] += 1
+                    stat[who][0] += pos[who] == "nv"
+            if v["kind"] == "standard" and mu["a"] in pos and mu["b"] in pos:
+                rows.append((v, pos[mu["a"]], pos[mu["b"]]))
+        both = [r for r in rows if r[1] in ("yea", "nay") and r[2] in ("yea", "nay")]
+        same = sum(1 for r in both if r[1] == r[2])
+        st = lambda who: {"missed": stat[who][0], "total": stat[who][1], "missed_pct": 100.0 * stat[who][0] / max(1, stat[who][1])}
+        last = lambda p: p.get("last") or p["name"].split()[-1]
+        pa, pb = dict(pool[mu["a"]]), dict(pool[mu["b"]])
+        pa["last"], pb["last"] = last(pa), last(pb)
+        page = dict(mu, pa=pa, pb=pb, sa=st(mu["a"]), sb=st(mu["b"]), both=len(both), same=same, same_pct=100.0 * same / max(1, len(both)),
+                    split=[r for r in both if r[1] != r[2]], spot=[r for r in rows if r[0]["id"] in (mu.get("spotlight") or [])])
+        render(f"matchups/{mu['slug']}/index.html", "matchup.html", 2, section="matchup", c=pre, ch=ch, mu=page)
+        matchups.append({"slug": mu["slug"], "label": mu.get("label") or mu["title"]})
     # ---- in the news: older votes worth resurfacing because the people or bills in them are back in the headlines.
     # Hand-picked in data/in_the_news.json; each entry drops off by itself after its "until" date.
     by_id = {v["id"]: v for v in votes + svotes}
@@ -740,7 +768,7 @@ def main():
             for v in sorted(wk, key=lambda v: v["margin"]) if v["id"] in asks][:5]
     home_mode = os.environ.get("FLOORRECORD_HOME") or cfg.get("home")
     home_template = {"brief": "index_brief.html", "play": "index_play.html" if play else "index_brief.html", "mix": "index_mix.html"}.get(home_mode, "index.html")
-    render("index.html", home_template, 0, brief=brief, play=play, section="home", act={"topic": "", "key": ""}, news=news, trending=trending, since=since, featured=featured, coming=coming,
+    render("index.html", home_template, 0, brief=brief, play=play, matchups=matchups, section="home", act={"topic": "", "key": ""}, news=news, trending=trending, since=since, featured=featured, coming=coming,
            mytopics=[[t["key"], t["name"]] for t in all_topics],
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,
