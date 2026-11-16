@@ -6,7 +6,7 @@ Run:  python -m floorrecord.build
 import html
 import re
 import shutil
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import date, timedelta, datetime, timezone
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -547,6 +547,19 @@ def main():
         m["topic"] = " · ".join(m["allvotes"][0]["topics"]) if m["allvotes"] else topic_name(m["rec"].get("policy_area", ""))
         m["kind_name"], m["kind_note"] = KIND_NAMES[m["kind"]]
         m["track"] = bill_track(m["kind"], m["rec"], m["votes"], svotes=m["svotes"])
+        # ---- what the Bills page can be filtered by: where it stands, who introduced it, where it started
+        steps = m["track"]["steps"]
+        now = next((st["label"] for st in steps if st["state"] == "now"), "")
+        if any(st["state"] == "stop" for st in steps):
+            m["status"] = "Stopped"
+        elif all(st["state"] == "done" for st in steps):
+            m["status"] = "Became Law" if steps[-1]["label"] == "Law" else "Passed"
+        else:
+            m["status"] = {"Committee": "In Committee", "House": "Waiting On The House", "Senate": "Waiting On The Senate",
+                           "President": "Waiting On The President"}.get(now, "Introduced")
+        got = re.search(r"\[([A-Z])-", m["rec"].get("sponsor_name") or "")
+        m["party"] = {"R": "Republican", "D": "Democrat", "I": "Independent"}.get(got.group(1) if got else "", "")
+        m["origin"] = "House" if m["kind"].startswith("h") else "Senate"
         m["congress_url"] = (f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
                              f"{CONGRESS_PATH[m['kind']]}/{m['number']}")
 
@@ -774,7 +787,10 @@ def main():
     for pre, ch, mkey in (("", HOUSE, "votes"), ("senate/", SENATE, "svotes")):
         mine = sorted((m for m in measures.values() if m[mkey]), key=lambda m: (m[mkey][0]["date"], m[mkey][0]["roll"]), reverse=True)
         if mine:
-            render(f"{pre}bills/index.html", "bills.html", 2 if pre else 1, section="bills", c=pre, ch=ch, act={"topic": "", "key": ""}, bills=mine)
+            order = ["Became Law", "Waiting On The President", "Waiting On The Senate", "Waiting On The House", "Passed", "In Committee", "Introduced", "Stopped"]
+            count = lambda key: sorted(Counter(m[key] for m in mine if m[key]).items(), key=lambda kv: (order.index(kv[0]) if kv[0] in order else 99, kv[0]))
+            render(f"{pre}bills/index.html", "bills.html", 2 if pre else 1, section="bills", c=pre, ch=ch, act={"topic": "", "key": ""}, bills=mine,
+                   facets={"topic": count("topic"), "status": count("status"), "party": count("party"), "origin": count("origin")})
     render("about/index.html", "about.html", 1, section="about")
     render("404.html", "404.html", 0, section="")
 

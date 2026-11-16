@@ -680,3 +680,10 @@ header .yours ~ .chamber ~ .subbtn { font-size: 0; gap: 0; padding: 6px 12px; }
 /* the longer name needs a touch less room on small phones */
 @media (max-width: 420px) { .top .brand { font-size: 16px; gap: 5px; letter-spacing: -0.02em; } }
 @media (max-width: 380px) { .top .brand { font-size: 15px; } }
+
+/* Bills page filters */
+.billfilters { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 12px 14px; align-items: end; }
+.billfilters .field { width: 100%; min-height: 46px; }
+.billfilters select.field { appearance: auto; padding-right: 8px; background: #fff; }
+.billfilters select.on { border-color: var(--purple); box-shadow: 0 0 0 1px var(--purple) inset; }
+.card[hidden] { display: none; }

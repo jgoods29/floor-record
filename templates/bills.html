@@ -7,10 +7,18 @@
 <h1 class="h1">Bills</h1>
 <p class="lede">Every bill and resolution the {{ ch.name }} has held a recorded vote on, most recent first.</p>
 <p class="newline">A bill is a proposed law. It only becomes a real law if the House, the Senate and the President all agree. New here? <a href="{{ root }}{{ c }}start/">Start with the basics</a>. Want to know what is next? <a href="{{ root }}{{ c }}upcoming/">See what is coming up</a>.</p>
-<div class="row"><label class="small muted" for="bill-filter">Filter</label><input class="field" id="bill-filter" type="search" placeholder="A number or word" style="width: 280px" data-filter="#bill-rows tr"></div>
+<div class="billfilters" data-billfilters>
+<label class="fieldset">Search<input class="field" id="bill-filter" type="search" placeholder="A number or word"></label>
+<label class="fieldset">Topic<select class="field" data-f="topic"><option value="">All topics</option>{% for k, n in facets.topic %}<option value="{{ k }}">{{ k }} ({{ n }})</option>{% endfor %}</select></label>
+<label class="fieldset">Where it stands<select class="field" data-f="status"><option value="">Any stage</option>{% for k, n in facets.status %}<option value="{{ k }}">{{ k }} ({{ n }})</option>{% endfor %}</select></label>
+<label class="fieldset">Introduced by<select class="field" data-f="party"><option value="">Either party</option>{% for k, n in facets.party %}<option value="{{ k }}">{{ "An" if k[0] in "AEIOU" else "A" }} {{ k }} ({{ n }})</option>{% endfor %}</select></label>
+<label class="fieldset">Started in<select class="field" data-f="origin"><option value="">Either chamber</option>{% for k, n in facets.origin %}<option value="{{ k }}">The {{ k }} ({{ n }})</option>{% endfor %}</select></label>
+</div>
+<p class="small muted" style="margin:0"><span data-billcount aria-live="polite">Showing all {{ bills|length }} bills</span> <button type="button" class="linkish small" data-billclear hidden>Clear filters</button></p>
 </div>
 <div class="card flush scroll"><table>
 <thead><tr><th>Bill</th><th>Number</th><th>{{ ch.name }} votes</th><th>Latest vote</th></tr></thead>
-<tbody id="bill-rows">{% for b in bills %}<tr><td><a class="strong" href="{{ root }}{{ c }}bills/{{ b.slug }}/">{{ b.name }}</a>{% if b.topic %}<br><span class="small muted">{{ b.topic }}</span>{% endif %}{{ m.track(b.track, true) }}</td><td class="small muted" style="white-space:nowrap">{{ b.label }}</td>{% set bv = b.svotes if c else b.votes %}<td>{{ bv|length }}</td><td class="small muted" style="white-space:nowrap">{{ bv[0].date|nicedate }}</td></tr>{% endfor %}</tbody></table></div>
+<tbody id="bill-rows">{% for b in bills %}<tr data-topic="{{ b.topic }}" data-status="{{ b.status }}" data-party="{{ b.party }}" data-origin="{{ b.origin }}"><td><a class="strong" href="{{ root }}{{ c }}bills/{{ b.slug }}/">{{ b.name }}</a><br><span class="small muted">{{ b.topic }}{% if b.topic and b.party %} · {% endif %}{% if b.party %}Introduced by {{ "an" if b.party[0] in "AEIOU" else "a" }} {{ b.party }}{% endif %}</span>{{ m.track(b.track, true) }}</td><td class="small muted" style="white-space:nowrap">{{ b.label }}</td>{% set bv = b.svotes if c else b.votes %}<td>{{ bv|length }}</td><td class="small muted" style="white-space:nowrap">{{ bv[0].date|nicedate }}</td></tr>{% endfor %}</tbody></table></div>
+<p class="card muted" data-billnone hidden style="font-size:18px">No bills match those filters. <button type="button" class="linkish" data-billclear>Clear filters</button></p>
 </div>
 {% endblock %}

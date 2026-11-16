@@ -153,6 +153,32 @@
     requestAnimationFrame(function () { requestAnimationFrame(go); });
   }
 
+  // ---- Bills page: search plus filters for topic, stage, who introduced it and where it started
+  var bf = document.querySelector('[data-billfilters]');
+  if (bf) {
+    var brows = document.querySelectorAll('#bill-rows tr'), bq = document.getElementById('bill-filter'), bsel = bf.querySelectorAll('select[data-f]');
+    var bcount = document.querySelector('[data-billcount]'), bnone = document.querySelector('[data-billnone]'), btable = document.querySelector('#bill-rows').closest('.card');
+    var applyBills = function () {
+      var terms = bq.value.trim().toLowerCase().split(/\s+/).filter(Boolean), shown = 0, active = terms.length > 0;
+      var want = {}; each(bsel, function (s) { want[s.getAttribute('data-f')] = s.value; if (s.value) active = true; s.classList.toggle('on', !!s.value); });
+      each(brows, function (tr) {
+        var ok = terms.every(function (t) { return tr.textContent.toLowerCase().indexOf(t) !== -1; });
+        for (var k in want) if (ok && want[k] && tr.getAttribute('data-' + k) !== want[k]) ok = false;
+        tr.classList.toggle('hide', !ok); if (ok) shown++;
+      });
+      bcount.textContent = active ? 'Showing ' + shown + ' of ' + brows.length + ' bills' : 'Showing all ' + brows.length + ' bills';
+      each(document.querySelectorAll('[data-billclear]'), function (b) { if (!b.closest('[data-billnone]')) b.hidden = !active; });
+      bnone.hidden = shown > 0; btable.hidden = shown === 0;
+      try { var qs = []; for (var k2 in want) if (want[k2]) qs.push(k2 + '=' + encodeURIComponent(want[k2])); history.replaceState(null, '', location.pathname + (qs.length ? '?' + qs.join('&') : '')); } catch (e) {}
+    };
+    bq.addEventListener('input', applyBills);
+    each(bsel, function (s) { s.addEventListener('change', applyBills); });
+    document.addEventListener('click', function (e) { if (e.target.closest('[data-billclear]')) { bq.value = ''; each(bsel, function (s) { s.value = ''; }); applyBills(); } });
+    // a link can open the page already filtered, for example bills/?status=Became%20Law
+    location.search.replace(/[?&](topic|status|party|origin)=([^&]*)/g, function (_, k, v) { var s = bf.querySelector('select[data-f="' + k + '"]'); if (s) s.value = decodeURIComponent(v.replace(/\+/g, ' ')); });
+    applyBills();
+  }
+
   // ---- show or hide routine procedural votes
   each(document.querySelectorAll('[data-routine-toggle]'), function (boxEl) {
     boxEl.addEventListener('change', function () {
