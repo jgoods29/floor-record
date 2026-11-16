@@ -132,6 +132,7 @@ def build_email(edition, data, people, site, acct, unsub="{{unsub}}"):
         title, kicker = "The Week Ahead", "What Congress may vote on, while there is still time to speak up."
         if coming:
             items = "".join(f'<div style="padding:12px 0;border-bottom:1px solid {LINE}"><a href="{e(i["url"] if i.get("outside") else site + (i.get("url") or "upcoming/"))}" style="font-size:16px;font-weight:700;color:{INK};text-decoration:underline;text-decoration-color:#B9A5F3">{e(i["name"])}</a>'
+                            + (f'<div style="font-size:14px;color:{T2};margin-top:4px;line-height:1.45">{e(i["plain"])}</div>' if i.get("plain") else "") +
                             f'<div style="font-size:13px;color:{MUTED};margin-top:4px">{e(i["label"])} &nbsp;{pill(i["how"], PTINT, PURPLE)}{" &nbsp;" + pill(i["topic"], TINT, T2) if i["topic"] else ""}</div></div>' for i in coming[:10])
             more = f'<div style="margin-top:14px"><a href="{site}upcoming/" style="display:inline-block;background:{PURPLE};color:#fff;font-weight:700;font-size:14px;text-decoration:none;border-radius:99px;padding:10px 18px">See All {len(coming)} And What The Labels Mean</a></div>'
             parts.append(section("Coming Up In The House", items + more))

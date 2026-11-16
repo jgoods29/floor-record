@@ -721,7 +721,8 @@ def main():
                  for v in sorted(votes + svotes, key=lambda v: (v["date"], v["roll"]), reverse=True)
                  if v["date"] > week_from and v["kind"] == "standard" and not v["info"]["routine"]],
         "upcoming": [{"name": i["name"], "label": i["label"], "how": i["how_label"], "topic": i["topic"], "week": "this week" if w["current"] else "next week",
-                      "url": i.get("url") or "upcoming/", "outside": bool(i.get("outside"))}
+                      "url": i.get("url") or "upcoming/", "outside": bool(i.get("outside")),
+                      "plain": (summaries.get(i.get("slug") or "") or {}).get("one_sentence", "")}
                      for w in weeks for i in w["items"]]})
     if shared["acct_on"]:
         render("account/index.html", "account.html", 1, section="account", mytopics=[[t["key"], t["name"]] for t in all_topics])
