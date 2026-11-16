@@ -1038,6 +1038,14 @@ def main():
         chamber_pages("senate/", svotes, speople, senators, sres, SENATE)
         senate_search = [{"t": p["name"], "s": f"Senator · {p['party']}-{p['state']}", "u": f"senate/members/{p['bioguide']}/",
                           "k": f"{p['name']} {STATES.get(p['state'], '')} {p['state']} senator senate".lower()} for p in speople.values()]
+        # people the Senate voted to confirm are searchable by name or job; the newest vote on each wins
+        seen_noms = set()
+        for n in noms:
+            if n["group"] == "bloc" or (n["person"], n["post"]) in seen_noms:
+                continue
+            seen_noms.add((n["person"], n["post"]))
+            senate_search.append({"t": n["person"], "s": f"{n['v']['info']['outcome']} · {n['post']}", "u": f"senate/votes/{n['v']['id']}/",
+                                  "k": f"{n['person']} {n['post']} confirmation nominee".lower()})
 
     # ---- bill pages
     valid_topics = {t["key"] for t in all_topics}

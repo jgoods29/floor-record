@@ -15,9 +15,10 @@
 <a class="pilllink newhere" href="{{ root }}{{ c }}start/"><b>New to all this?</b> Start Here: Congress in Two Minutes<span aria-hidden="true">→</span></a>
 </section>
 
-{% if featured or trending or matchups %}<section class="trendrow" aria-labelledby="trending-h">
+{% if featured or trending or matchups or news %}<section class="trendrow" aria-labelledby="trending-h">
 <h2 class="label" id="trending-h">Trending</h2>
 {% for x in matchups %}<a class="pilllink news" href="{{ root }}matchups/{{ x.slug }}/"><em>In the news</em>{{ x.label }}</a>{% endfor %}
+{% for n in news %}<a class="pilllink news" href="{{ root }}{{ n.v.pre }}votes/{{ n.v.id }}/"><em>In the news</em>{{ n.label }}</a>{% endfor %}
 {% for v in featured[:3] %}<a class="pilllink hot" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/"><i aria-hidden="true"></i>{{ v.f_name }}: {{ v.info.outcome }}</a>{% endfor %}
 {% for t in trending[:4] %}<a class="pilllink" href="{{ root }}topics/{{ t.key }}/">{{ t.name }}</a>{% endfor %}
 <a class="small" href="{{ root }}topics/">All topics</a>
