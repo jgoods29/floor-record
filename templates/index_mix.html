@@ -5,7 +5,7 @@
 <section class="center">
 <h1 class="h1">See how your representative <span class="hl">actually</span> votes</h1>
 <p class="lede point">They work for you. Here's what they've been doing.</p>
-<p class="lede" style="font-size:18px;margin-top:-8px">Every vote in the U.S. House, explained in plain English and taken straight from the official record.</p>
+<p class="lede" style="font-size:18px;margin-top:-8px">Every vote in Congress, explained in plain English and taken straight from the official record.</p>
 <div class="search big" data-search>
 <label class="sr" for="home-search">Search for your ZIP code, a member, a state, a bill or a topic</label>
 <input id="home-search" type="search" placeholder="ZIP code, name, state, bill or topic" autocomplete="off">
@@ -28,7 +28,7 @@
 <li><a class="card briefitem" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/">
 <span class="briefnum" aria-hidden="true">{{ loop.index }}</span>
 <span class="stack" style="gap:4px">
-<span class="briefline">{{ v.info.name }}: {{ v.info.outcome }}, {{ v.totals.yea }} to {{ v.totals.nay }}</span>
+<span class="briefline">{{ v.briefname }}: {{ v.info.outcome }}, {{ v.totals.yea }} to {{ v.totals.nay }}</span>
 {% if v.briefsub %}<span class="briefsub">{{ v.briefsub }}</span>{% endif %}
 <span class="small muted">{{ v.chamber }} · {{ v.date|nicedate }}{% if v.briefclose %} · Close vote{% endif %}</span>
 </span>
