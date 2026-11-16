@@ -713,7 +713,22 @@ def main():
     news = [{"v": by_id[n["vote"]], "label": n.get("label") or by_id[n["vote"]]["info"]["name"]}
             for n in read_json(DATA / "in_the_news.json", [])
             if n.get("vote") in by_id and (n.get("until") or "9999") >= date.today().isoformat()][:4]
-    render("index.html", "index.html", 0, section="home", act={"topic": "", "key": ""}, news=news, trending=trending, since=since, featured=featured, coming=coming,
+    # ---- the 60-second briefing (an alternative home page, switched on with "home": "brief" in config.json).
+    # Picked by rule, never by hand: the closest votes of the week first, then the most recent; at most three from one chamber.
+    wk = [v for v in sorted(votes + svotes, key=lambda v: (v["date"], v["roll"]), reverse=True)
+          if v["date"] > week_from and v["kind"] == "standard" and not v["info"]["routine"]]
+    for v in wk:
+        v["briefclose"] = any(k == "close" for k, _ in v["tags"])
+        # a confirmation's stock sentence does not say who or what job, so its name is the clearer line
+        v["briefline"] = v["info"]["name"] if v["info"].get("kind") in ("nomination", "cloture_nom") or not v["info"].get("plain") else v["info"]["plain"]
+    ranked, picks, per = sorted(wk, key=lambda v: (not v["briefclose"], v["margin"] if v["briefclose"] else 0)), [], Counter()
+    for v in ranked:
+        if len(picks) < 4 and per[v["chamber"]] < 3:
+            picks.append(v); per[v["chamber"]] += 1
+    brief = {"picks": picks, "total": len(wk), "from": (date.fromisoformat(week_from) + timedelta(days=1)).isoformat(), "to": max(v["date"] for v in votes + svotes),
+             "coming": (coming["items"][:3] if coming else [])}
+    home_template = "index_brief.html" if (os.environ.get("FLOORRECORD_HOME") or cfg.get("home")) == "brief" else "index.html"
+    render("index.html", home_template, 0, brief=brief, section="home", act={"topic": "", "key": ""}, news=news, trending=trending, since=since, featured=featured, coming=coming,
            mytopics=[[t["key"], t["name"]] for t in all_topics],
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,

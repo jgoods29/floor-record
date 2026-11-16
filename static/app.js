@@ -153,6 +153,38 @@
     requestAnimationFrame(function () { requestAnimationFrame(go); });
   }
 
+  // ---- home briefing: what your own three did this week
+  var b3 = document.querySelector('[data-brief-three]');
+  if (b3) {
+    var bout = b3.querySelector('[data-brief-out]'), bform = b3.querySelector('[data-brief-zip]'), bzip = b3.querySelector('#brief-zip'), blede = b3.querySelector('[data-brief-lede]');
+    var WORD3 = { yea: 'Voted yes', nay: 'Voted no', present: 'Voted present', nv: 'Did not vote' };
+    var drawThree = function () {
+      var st = myState(), rep = myRep();
+      if (!st) { bout.innerHTML = ''; return; }
+      bzip.value = store('fr-zip');
+      Promise.all([senatorsFor(st), fetch(root + 'newsletter-data.json').then(function (r) { return r.json(); })]).then(function (got) {
+        var people = (rep ? [{ id: rep.id, name: rep.name, role: 'Your representative', pre: '' }] : []).concat(got[0].map(function (r) { return { id: r[0], name: r[1], role: 'Your senator', pre: 'senate/' }; }));
+        var week = got[1].week || [];
+        blede.textContent = 'Here is what the people who speak for you did this week.';
+        bout.innerHTML = '<div class="brief3">' + people.map(function (p) {
+          var mine = week.filter(function (v) { return v.pos[p.id]; }).slice(0, 3);
+          return '<div class="brief3col"><span class="small muted">' + p.role + '</span><a class="h3" href="' + root + p.pre + 'members/' + esc(p.id) + '/">' + esc(p.name) + '</a>' +
+            (mine.length ? mine.map(function (v) { return '<a class="brief3row" href="' + root + v.pre + 'votes/' + esc(v.id) + '/"><b class="pos-' + esc(v.pos[p.id]) + '">' + (WORD3[v.pos[p.id]] || 'Other') + '</b> on ' + esc(v.name) + '</a>'; }).join('') : '<span class="small muted">No votes on real questions this week.</span>') + '</div>';
+        }).join('') + '</div>' + (rep ? '' : '<p class="small muted" style="margin:10px 0 0">Your ZIP code is shared by more than one House district. <a href="' + root + 'you/">Pick your representative on Your Page</a>.</p>') +
+          '<p class="small" style="margin:12px 0 0"><a href="' + root + 'you/">Open Your Page for their full record</a></p>';
+      });
+    };
+    bform.addEventListener('submit', function (e) {
+      e.preventDefault(); var z = bzip.value.trim();
+      if (!/^\d{5}$/.test(z)) { blede.textContent = 'A ZIP code is five numbers.'; return; }
+      byZip(z).then(function (hit) {
+        if (!hit) { blede.textContent = 'We do not know that ZIP code. Check the numbers and try again.'; return; }
+        store('fr-zip', z); setMyRep(hit.rows.length === 1 ? hit.rows[0][0] : null, hit.rows.length === 1 ? hit.rows[0][1] : null); drawThree();
+      });
+    });
+    drawThree();
+  }
+
   // ---- Bills page: search plus filters for topic, stage, who introduced it and where it started
   var bf = document.querySelector('[data-billfilters]');
   if (bf) {

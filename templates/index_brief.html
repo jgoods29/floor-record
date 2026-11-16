@@ -1,0 +1,54 @@
+{% extends "base.html" %}{% import "_m.html" as m with context %}
+{% block main %}
+<div class="wrap home brief">
+
+<section class="stack briefhead">
+<span class="label purple">This Week In Congress · {{ brief.from|nicedate }} to {{ brief.to|nicedate }}</span>
+<h1 class="h1">Congress, In 60 Seconds</h1>
+<p class="lede">What happened this week, in plain English. Straight from the official record, with no spin.</p>
+</section>
+
+<section class="stack" aria-labelledby="happened-h" style="gap:18px">
+<h2 class="h2" id="happened-h">What Happened</h2>
+<ol class="brieflist">{% for v in brief.picks %}
+<li><a class="card briefitem" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/">
+<span class="briefnum" aria-hidden="true">{{ loop.index }}</span>
+<span class="stack" style="gap:8px">
+<span class="tags"><span class="small strong muted">{{ v.chamber }} · {{ v.date|nicedate }}</span>{% if v.briefclose %}<span class="tag close">Close vote</span>{% endif %}</span>
+<span class="briefline">{{ v.briefline }}</span>
+<span class="briefresult"><b>{{ v.info.outcome }}</b>, {{ v.totals.yea }} to {{ v.totals.nay }}{% if v.briefline != v.info.name %}<span class="muted"> · {{ v.info.name }}</span>{% endif %}</span>
+</span>
+<span class="go">Who voted how</span>
+</a></li>{% endfor %}</ol>
+{% if not brief.picks %}<p class="card muted" style="font-size:18px">Congress held no votes on real questions this week. It was likely out of session.</p>{% endif %}
+<p class="small muted" style="margin:0">How these are picked: the closest votes of the week first, then the most recent, from both the House and the Senate. Nobody hand-picks them. {{ brief.total }} real votes were held this week; <a href="{{ root }}votes/">see them all</a>.</p>
+</section>
+
+{% if brief.coming %}<section class="stack" aria-labelledby="next-h" style="gap:18px">
+<div class="row between" style="align-items:baseline"><h2 class="h2" id="next-h">What Is Next</h2><a class="small" href="{{ root }}upcoming/">Everything coming up</a></div>
+<div class="grid">{% for i in brief.coming %}<a class="card stack" href="{{ root }}upcoming/" style="gap:6px"><span class="small strong muted">House · {{ i.how_label }}</span><span class="h3 clamp3">{{ i.name }}</span><span class="small muted">{{ i.label }}{% if i.topic %} · {{ i.topic }}{% endif %}</span></a>{% endfor %}</div>
+<p class="small muted" style="margin:0">A vote that has not happened yet is the one you can still change. <a href="{{ root }}upcoming/">See how to speak up</a>.</p>
+</section>{% endif %}
+
+<section class="card stack briefyours" aria-labelledby="three-h" data-brief-three style="gap:16px">
+<div class="stack" style="gap:4px"><h2 class="h2" id="three-h">What Your Three Did</h2><p class="muted" style="margin:0" data-brief-lede>Three people speak for you in Congress. Type your ZIP code to see what they did this week.</p></div>
+<form class="row" data-brief-zip style="align-items:flex-end;gap:10px"><label class="fieldset" for="brief-zip">Your ZIP code<input class="field" id="brief-zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5 digits" style="width:160px"></label><button class="btn" type="submit">Show Me</button></form>
+<div data-brief-out></div>
+</section>
+
+<section class="stack center" aria-labelledby="dig-h" style="gap:18px">
+<h2 class="h2" id="dig-h">Want To Dig Deeper?</h2>
+<div class="search big" data-search>
+<label class="sr" for="home-search">Search for your ZIP code, a member, a state, a bill or a topic</label>
+<input id="home-search" type="search" placeholder="ZIP code, name, state, bill or topic" autocomplete="off">
+<div class="results" role="listbox" aria-label="Search results"></div>
+</div>
+<div class="pills"><a class="pilllink" href="{{ root }}votes/">All Votes</a><a class="pilllink" href="{{ root }}topics/">Topics</a><a class="pilllink" href="{{ root }}bills/">Bills</a><a class="pilllink" href="{{ root }}members/">Members</a><a class="pilllink" href="{{ root }}start/">How To Use This Site</a></div>
+</section>
+
+<section class="card promise" id="promise">
+<h2 class="h2">No Tracking, No Profit, Just Knowledge</h2>
+<p>Free, non-partisan, and built from the official record of the House and the Senate. <a href="{{ root }}about/#promise">Read the promise</a></p>
+</section>
+</div>
+{% endblock %}
