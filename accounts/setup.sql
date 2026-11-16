@@ -18,6 +18,12 @@ create table if not exists public.profiles (
 
 alter table public.profiles enable row level security;
 
+-- Who may touch the table at all. A signed-in person may read, add and change (the rules below limit that to their own row);
+-- visitors who are not signed in get nothing; the newsletter sender (service role) may read the list.
+revoke all on table public.profiles from anon;
+grant select, insert, update on table public.profiles to authenticated;
+grant select, update on table public.profiles to service_role;
+
 -- A signed-in person can see and change their own row, and nobody else's.
 drop policy if exists "read own row" on public.profiles;
 create policy "read own row" on public.profiles for select to authenticated using (auth.uid() = id);
