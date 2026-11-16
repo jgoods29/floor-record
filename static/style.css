@@ -668,3 +668,12 @@ header .yours ~ .chamber ~ .subbtn { font-size: 0; gap: 0; padding: 6px 12px; }
 @media (max-width: 640px) { header .subbtn { width: 36px; min-height: 36px; } }
 @media (max-width: 420px) { header .subbtn { width: 34px; min-height: 34px; } }
 @media (max-width: 380px) { header .subbtn ~ .mypage, header .subbtn { width: 32px; min-height: 32px; } .top .brand { font-size: 16px; } header .chamber a, header .chamber a[aria-current] { padding: 6px 7px; } }
+/* phones, once Subscribe exists: name + a labelled Subscribe on the first row, the House/Senate switch shares the tab row */
+@media (max-width: 640px) {
+  header .wrap:has(.subbtn) .brand { margin-right: auto; }
+  header .wrap:has(.subbtn) .subbtn { width: auto; min-height: 38px; padding: 0 15px; gap: 6px; font-size: 14px; }
+  header .wrap:has(.subbtn) .subbtn ~ .mypage { width: 38px; min-height: 38px; }
+  header .wrap:has(.subbtn) .chamber { order: 1; margin-left: 0; }
+  header .wrap:has(.subbtn) .nav { order: 2; flex: 1 1 0; min-width: 0; width: auto; }
+  header .wrap:has(.subbtn) .search, header .wrap:has(.subbtn) .yours { order: 3; }
+}
