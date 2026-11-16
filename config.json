@@ -48,7 +48,8 @@
     "site_url": "https://floortherecord.com/",
     "from": "Floor The Record <hello@floortherecord.com>",
     "postal_address": "",
-    "sponsor": ""
+    "sponsor": "",
+    "reply_to": "justin@floortherecord.com"
   },
   "home": "mix"
 }

@@ -225,7 +225,8 @@ def main():
         link = f"{site}unsubscribe/?t={sub['unsub_token']}"
         try:
             call("https://api.resend.com/emails", {"Authorization": f"Bearer {rkey}"},
-                 {"from": acct["from"], "to": [sub["email"]], "subject": subject, "html": body.replace("{{unsub}}", link), "headers": {"List-Unsubscribe": f"<{link}>"}})
+                 {"from": acct["from"], "to": [sub["email"]], "subject": subject, "html": body.replace("{{unsub}}", link), "headers": {"List-Unsubscribe": f"<{link}>"},
+                  **({"reply_to": acct["reply_to"]} if acct.get("reply_to") else {})})
             sent += 1
         except urllib.error.HTTPError as err:
             failed += 1
