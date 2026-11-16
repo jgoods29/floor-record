@@ -721,6 +721,10 @@ def main():
         v["briefclose"] = any(k == "close" for k, _ in v["tags"])
         # a confirmation's stock sentence does not say who or what job, so its name is the clearer line
         v["briefline"] = v["info"]["name"] if v["info"].get("kind") in ("nomination", "cloture_nom") or not v["info"].get("plain") else v["info"]["plain"]
+        # for the 30-second version: the sentence that says what the thing does, not the one that repeats the tally
+        parts = [x.strip() for x in re.split(r"(?<=[.!?])\s+", v["info"].get("plain") or "") if x.strip()]
+        does = [x for x in parts if not re.search(r"\d+ to \d+", x)]
+        v["briefsub"] = "" if v["info"].get("kind") in ("nomination", "cloture_nom") else (does[0] if does else (parts[0] if parts else ""))
     ranked, picks, per = sorted(wk, key=lambda v: (not v["briefclose"], v["margin"] if v["briefclose"] else 0)), [], Counter()
     for v in ranked:
         if len(picks) < 4 and per[v["chamber"]] < 3:
@@ -733,7 +737,7 @@ def main():
              "yea": v["totals"]["yea"], "nay": v["totals"]["nay"], "outcome": v["info"]["outcome"], "yea_means": v["info"].get("yea", ""), "nay_means": v["info"].get("nay", "")}
             for v in sorted(wk, key=lambda v: v["margin"]) if v["id"] in asks][:5]
     home_mode = os.environ.get("FLOORRECORD_HOME") or cfg.get("home")
-    home_template = {"brief": "index_brief.html", "play": "index_play.html" if play else "index_brief.html"}.get(home_mode, "index.html")
+    home_template = {"brief": "index_brief.html", "play": "index_play.html" if play else "index_brief.html", "mix": "index_mix.html"}.get(home_mode, "index.html")
     render("index.html", home_template, 0, brief=brief, play=play, section="home", act={"topic": "", "key": ""}, news=news, trending=trending, since=since, featured=featured, coming=coming,
            mytopics=[[t["key"], t["name"]] for t in all_topics],
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])

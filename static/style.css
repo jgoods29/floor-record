@@ -723,3 +723,13 @@ a.briefitem .go { margin: 0 0 0 auto; white-space: nowrap; align-self: center; c
 .playcard .btn { background: var(--purple); border-color: var(--purple); color: #fff; }
 /* with the "your rep / your senators" pills showing, keep the whole top row on one line */
 @media (min-width: 901px) { .top .wrap:has(.yours) { column-gap: 14px; } .top .wrap:has(.yours) .mypage, .top .wrap:has(.yours) .subbtn { margin-left: 0; } }
+
+/* home: search first, Trending in one tight row, then Congress In 30 Seconds */
+.homemix { gap: 56px; }
+.trendrow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px; margin-top: -20px; }
+.trendrow .label { margin: 0 6px 0 0; } .trendrow .pilllink { min-height: 38px; padding: 6px 14px; font-size: 15px; }
+.h1.thirty { font-size: 44px; margin: 0; }
+.brieflist.tight { gap: 10px; } .brieflist.tight a.briefitem { padding: 18px 22px; gap: 16px; align-items: center; }
+.brieflist.tight .briefline { font-size: 21px; } .briefsub { font-size: 16px; color: var(--text-2); line-height: 1.45; }
+.brieflist.tight .briefnum { width: 38px; height: 38px; font-size: 17px; }
+@media (max-width: 640px) { .h1.thirty { font-size: 32px; } .brieflist.tight .briefline { font-size: 19px; } .trendrow { justify-content: flex-start; margin-top: -12px; } }
