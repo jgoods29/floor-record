@@ -1709,6 +1709,11 @@
   "one_sentence": "This resolution sets the House floor procedure for three measures: two resolutions to disapprove federal energy and emissions rules, and a budget resolution for fiscal years 2025 through 2034.",
   "short": "The resolution provides for consideration of H.J. Res. 20, which would nullify a Department of Energy rule on energy conservation standards for consumer gas-fired instantaneous water heaters. It also provides for consideration of H.J. Res. 35, which would nullify an Environmental Protection Agency rule on procedures for facilitating compliance with the waste emissions charge for petroleum and natural gas systems, including netting and exemptions. Finally, it provides for consideration of H. Con. Res. 14, which would establish the congressional budget for fiscal year 2025 and set budgetary levels for fiscal years 2026 through 2034."
  },
+ "hres-1650": {
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the rules for House floor consideration of H.R. 1013, a bill about 403(b) retirement plans and federal securities laws.",
+  "short": "The measure is a procedural resolution that provides for the House to consider H.R. 1013. According to the official title, the underlying bill would amend federal securities laws to enhance 403(b) plans, which are retirement savings plans for certain employees. The available official material does not describe the specific provisions of those changes."
+ },
  "hres-177": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This House resolution sets procedural rules for floor debate on three joint resolutions that would disapprove of federal agency rules on appliance energy standards, rubber tire manufacturing emissions, and marine archaeological resources.",
