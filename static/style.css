@@ -744,3 +744,4 @@ a.briefitem .go { margin: 0 0 0 auto; white-space: nowrap; align-self: center; c
 
 /* accounts in preview: hidden unless this device switched them on */
 body[data-acct-preview]:not(.acct-go) :is(.subbtn, [data-acct-out], [data-acct-settings], .pop) { display: none !important; }
+.acctsaved { color: #1B7F4B; font-weight: 600; min-height: 1.2em; }

@@ -21,6 +21,12 @@
   // "Home" is only ever set by a ZIP code lookup. Browsing a state in a drop-down does not make its senators yours.
   function myState() { return store('fr-home'); }
   // -> { rows: members for that ZIP, where: ['KY3', ...] } or null when the ZIP is not known
+  // After a ZIP lookup: one district -> that representative; several -> keep the current pick if it serves this ZIP, else ask.
+  function repForZip(hit) {
+    if (hit.rows.length === 1) { setMyRep(hit.rows[0][0], hit.rows[0][1]); return; }
+    var cur = myRep();
+    if (!cur || !hit.rows.some(function (r) { return r[0] === cur.id; })) setMyRep(null);
+  }
   function byZip(zip) {
     return Promise.all([once(root + 'zip/' + zip.charAt(0) + '.json'), contactRows()]).then(function (res) {
       var where = res[0][zip]; if (!where) return null;
@@ -209,7 +215,7 @@
       if (!/^\d{5}$/.test(z)) { note.textContent = 'A ZIP code is five numbers.'; return; }
       byZip(z).then(function (hit) {
         if (!hit) { note.textContent = 'We do not know that ZIP code. Check the numbers and try again.'; return; }
-        store('fr-zip', z); setMyRep(hit.rows.length === 1 ? hit.rows[0][0] : null, hit.rows.length === 1 ? hit.rows[0][1] : null);
+        store('fr-zip', z); repForZip(hit);
         if (hit.rows.length > 1) { note.innerHTML = 'Your ZIP code is shared by more than one House district. <a href="' + root + 'you/">Pick your representative on Your Page</a>, then come back.'; return; }
         reveal(mine[i] ? mine[i].say : 'skip');
       });
@@ -243,7 +249,7 @@
       if (!/^\d{5}$/.test(z)) { blede.textContent = 'A ZIP code is five numbers.'; return; }
       byZip(z).then(function (hit) {
         if (!hit) { blede.textContent = 'We do not know that ZIP code. Check the numbers and try again.'; return; }
-        store('fr-zip', z); setMyRep(hit.rows.length === 1 ? hit.rows[0][0] : null, hit.rows.length === 1 ? hit.rows[0][1] : null); drawThree();
+        store('fr-zip', z); repForZip(hit); drawThree();
       });
     });
     drawThree();
@@ -565,7 +571,7 @@
         byZip(z).then(function (hit) {
           if (!hit) { znote.textContent = 'We do not know that ZIP code. Check the numbers and try again.'; return; }
           znote.hidden = true; store('fr-zip', z);
-          setMyRep(hit.rows.length === 1 ? hit.rows[0][0] : null, hit.rows.length === 1 ? hit.rows[0][1] : null); drawMine();
+          repForZip(hit); drawMine();
         });
       });
       mine.addEventListener('click', function (e) { var b = e.target.closest('[data-mine-rep]'); if (b) { setMyRep(b.getAttribute('data-mine-rep'), b.getAttribute('data-name')); } });
@@ -805,7 +811,7 @@
       page.querySelector('[data-acct-zipform]').addEventListener('submit', function (e) {
         e.preventDefault(); var z = page.querySelector('#acct-zip').value.trim();
         if (!/^\d{5}$/.test(z)) { status('A ZIP code is five numbers.'); return; }
-        setMyRep(null);
+        status('Saving...');
         useZip(z).then(function (hit) { if (!hit) { status('We do not know that ZIP code. Check the numbers and try again.'); return; } clearTimeout(timer); push(); paint(); });
       });
       page.addEventListener('click', function (e) {
