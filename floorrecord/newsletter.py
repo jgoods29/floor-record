@@ -128,8 +128,14 @@ def people_for(sub, reps, sens):
 
 def call(url, headers, body=None):
     req = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None, headers={"Content-Type": "application/json", "User-Agent": "floorrecord-newsletter", **headers})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        text = r.read().decode()
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            text = r.read().decode()
+    except urllib.error.HTTPError as err:
+        # say what the service answered (never the keys), so a failed run explains itself
+        detail = err.read().decode(errors="replace")[:400]
+        print(f"Request to {url.split('?')[0]} failed with {err.code}: {detail}")
+        raise
     return json.loads(text) if text else None
 
 
