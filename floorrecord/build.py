@@ -720,9 +720,9 @@ def main():
     for v in wk:
         v["briefclose"] = any(k == "close" for k, _ in v["tags"])
         # a confirmation's stock sentence does not say who or what job, so its name is the clearer line
-# a shorter name for the tight list: "U.S. District Judge For The Northern District Of Alabama" -> "Judge, Northern District Of Alabama"
+        # a shorter name for the tight list: "U.S. District Judge For The Northern District Of Alabama" -> "Judge, Northern District Of Alabama"
         v["briefname"] = re.sub(r"\bFor (?:U\.S\. |United States )?District Judge For The ", "For Judge, ", v["info"]["name"])
-                v["briefline"] = v["info"]["name"] if v["info"].get("kind") in ("nomination", "cloture_nom") or not v["info"].get("plain") else v["info"]["plain"]
+        v["briefline"] = v["info"]["name"] if v["info"].get("kind") in ("nomination", "cloture_nom") or not v["info"].get("plain") else v["info"]["plain"]
         # for the 30-second version: the sentence that says what the thing does, not the one that repeats the tally
         parts = [x.strip() for x in re.split(r"(?<=[.!?])\s+", v["info"].get("plain") or "") if x.strip()]
         does = [x for x in parts if not re.search(r"\d+ to \d+", x)]
