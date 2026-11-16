@@ -741,3 +741,6 @@ a.briefitem .go { margin: 0 0 0 auto; white-space: nowrap; align-self: center; c
 .said { display: inline-block; min-width: 64px; text-align: center; font-size: 14px; font-weight: 700; border-radius: 999px; padding: 4px 10px; border: 1.5px solid var(--ink); color: var(--ink); background: #fff; }
 .said.yea { background: var(--ink); color: #fff; } .said.nv, .said.present { border-color: #B9C1CF; color: var(--muted); }
 @media (max-width: 640px) { .vsrow { grid-template-columns: 1fr 1fr; } .vsrow > .stack { grid-column: 1 / -1; } .vspos { flex-direction: row; justify-content: flex-start; gap: 8px; } }
+
+/* accounts in preview: hidden unless this device switched them on */
+body[data-acct-preview]:not(.acct-go) :is(.subbtn, [data-acct-out], [data-acct-settings], .pop) { display: none !important; }

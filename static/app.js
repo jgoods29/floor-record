@@ -649,6 +649,16 @@
   // Only switched on when the page carries the account service's address. Sign-in is a link sent by email: no passwords.
   var SB = document.body.getAttribute('data-sb-url'), SBKEY = document.body.getAttribute('data-sb-key');
   if (SB && SBKEY) (function () {
+    // Preview mode: accounts stay invisible to everyone except a device that opened the site with ?accounts=on
+    // (or that arrives from a sign-in email). ?accounts=off hides them again.
+    if (document.body.hasAttribute('data-acct-preview')) {
+      try {
+        if (/[?&]accounts=on\b/.test(location.search) || /access_token=/.test(location.hash)) localStorage.setItem('fr-acct-preview', '1');
+        if (/[?&]accounts=off\b/.test(location.search)) localStorage.removeItem('fr-acct-preview');
+        if (localStorage.getItem('fr-acct-preview') !== '1') return;
+      } catch (e) { return; }
+      document.body.classList.add('acct-go');
+    }
     var KEYS = ['fr-rep', 'fr-home', 'fr-zip', 'fr-topics', 'fr-bills', 'fr-news'];
     var quiet = false, timer = null;
     function sess() { try { return JSON.parse(localStorage.getItem('fr-auth') || 'null'); } catch (e) { return null; } }
