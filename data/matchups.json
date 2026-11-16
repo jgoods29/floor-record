@@ -6,8 +6,10 @@
     "chamber": "senate",
     "a": "S000148",
     "b": "V000128",
-    "why": "Senate Democrats choose their leader in December. Chuck Schumer has led them since 2017, and Chris Van Hollen has said he is considering a challenge. Here is how the two have voted.",
-    "spotlight": ["s2025-21"],
+    "why": "Senate Democrats choose their leader in December. Chuck Schumer has led them since 2017. On November 12, Chris Van Hollen announced he is running against him. Here is how the two have voted.",
+    "spotlight": [
+      "s2025-21"
+    ],
     "until": "2026-12-20"
   }
 ]
