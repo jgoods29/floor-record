@@ -555,7 +555,7 @@ def main():
     ingest_bills(votes, cfg["congress"], also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"]] + senate_slugs)
     ingest_member_bills({p[0] for v in votes for p in v["positions"]}, cfg["congress"])
     from .explain import ai_summaries, ai_vote_lines
-    ai_summaries(votes, cfg)
+    ai_summaries(votes, cfg, also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"] if i.get("slug")])
     ai_vote_lines(votes, cfg)
     # The Senate's turn. Confirmations keep their rule-made names ("Jane Doe For Judge"), which are already exact.
     from .explain import SENATE_VOTE_PROMPT, SENATE_VOTE_PROMPT_VERSION

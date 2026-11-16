@@ -404,7 +404,7 @@ def _in_parallel(jobs, work, workers=4):
     with ThreadPoolExecutor(max_workers=workers) as pool:
         yield from pool.map(safe, jobs)
 
-def ai_summaries(votes, cfg, log=print):
+def ai_summaries(votes, cfg, log=print, also=()):
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     cache = read_json(DATA / "summaries.json", {})
     if not key:
@@ -422,6 +422,16 @@ def ai_summaries(votes, cfg, log=print):
         if slug in cache or slug in todo or not bill.get("official_summary"):
             continue
         todo.append(slug)
+    # Bills on the schedule that have not had a vote yet. Without a Library of Congress summary, a long official
+    # title that says what the bill does ("To amend ... to ...") is enough for one careful sentence; a short name is not.
+    for slug in also:
+        bill = bills.get(slug) or {}
+        had = cache.get(slug)
+        stale = had and had.get("basis") == "title" and bill.get("official_summary")
+        if not bill or slug in todo or (had and not stale):
+            continue
+        if bill.get("official_summary") or re.match(r"(To|A bill to|Providing|Expressing|Directing) ", bill.get("title") or ""):
+            todo.insert(0, slug)
     made = 0
 
     def summarise(slug):
@@ -430,7 +440,7 @@ def ai_summaries(votes, cfg, log=print):
                     cfg, key, 700)
         out = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
         return {"one_sentence": str(out["one_sentence"]).strip(), "short": str(out["short"]).strip(),
-                "model": cfg.get("ai_model", "")}
+                "model": cfg.get("ai_model", ""), "basis": "summary" if bill.get("official_summary") else "title"}
 
     for slug, result in _in_parallel(todo[: cfg.get("ai_max_new_summaries_per_run", 40)], summarise):
         if isinstance(result, Exception):

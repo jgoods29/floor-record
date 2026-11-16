@@ -320,7 +320,7 @@ FLOOR_HOW = {
 }
 
 
-def upcoming_weeks(raw, votes, bills, measures, topic_keys, today, congress_base):
+def upcoming_weeks(raw, votes, bills, measures, topic_keys, today, congress_base, local=None):
     """The House's posted schedule, minus anything already voted on that week."""
     last_vote = {}
     for v in votes:
@@ -344,19 +344,19 @@ def upcoming_weeks(raw, votes, bills, measures, topic_keys, today, congress_base
                 continue
             rec = bills.get(slug) or {}
             topic = topic_name(rec["policy_area"]) if rec.get("policy_area") else ""
-            if slug in measures:
+            if slug in measures or slug in (local or ()):
                 url, outside = f"bills/{slug}/", False
             elif slug:
                 kind, number = slug.rsplit("-", 1)
                 url, outside = f"{congress_base}{CONGRESS_PATH[kind]}/{number}", True
             else:
                 url, outside = it.get("doc", ""), True
-            track = measures[slug]["track"] if slug in measures else bill_track(slug.rsplit("-", 1)[0], rec, scheduled=True) if slug else None
+            track = measures[slug]["track"] if slug in measures else local[slug]["track"] if slug in (local or ()) else bill_track(slug.rsplit("-", 1)[0], rec, scheduled=True) if slug else None
             label, note = FLOOR_HOW[it.get("how", "other")]
             items.append({"name": title_case(title) or it.get("label", ""), "label": it.get("label", ""), "url": url,
                           "outside": outside, "how": it.get("how", "other"), "how_label": label, "how_note": note,
                           "topic": topic, "topic_key": topic_key(topic) if topic and topic_key(topic) in topic_keys else "",
-                          "doc": it.get("doc", ""), "track": track})
+                          "doc": it.get("doc", ""), "track": track, "slug": slug})
         items.sort(key=lambda i: ("rule", "fast", "other").index(i["how"]))
         weeks.append({"week": w["week"], "updated": w.get("updated", ""), "items": items, "done": done,
                       "current": start.isoformat() <= today})
@@ -535,7 +535,7 @@ def main():
             "rec": bills.get(v["slug"], {}), "votes": [], "svotes": [], "title": "",
         })
         m["svotes" if v["pre"] else "votes"].append(v)
-    for m in measures.values():
+    def dress(m, scheduled=False):
         m["votes"].sort(key=lambda v: (v["date"], v["roll"]), reverse=True)
         m["svotes"].sort(key=lambda v: (v["date"], v["roll"]), reverse=True)
         m["allvotes"] = sorted(m["votes"] + m["svotes"], key=lambda v: (v["date"], v["roll"]), reverse=True)
@@ -546,7 +546,7 @@ def main():
         m["name"] = title_case(short_name(m["title"], m["label"]))
         m["topic"] = " · ".join(m["allvotes"][0]["topics"]) if m["allvotes"] else topic_name(m["rec"].get("policy_area", ""))
         m["kind_name"], m["kind_note"] = KIND_NAMES[m["kind"]]
-        m["track"] = bill_track(m["kind"], m["rec"], m["votes"], svotes=m["svotes"])
+        m["track"] = bill_track(m["kind"], m["rec"], m["votes"], scheduled=scheduled, svotes=m["svotes"])
         # ---- what the Bills page can be filtered by: where it stands, who introduced it, where it started
         steps = m["track"]["steps"]
         now = next((st["label"] for st in steps if st["state"] == "now"), "")
@@ -562,6 +562,19 @@ def main():
         m["origin"] = "House" if m["kind"].startswith("h") else "Senate"
         m["congress_url"] = (f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
                              f"{CONGRESS_PATH[m['kind']]}/{m['number']}")
+
+    for m in measures.values():
+        dress(m)
+    # Bills on the House's schedule that have not had a vote yet get a page of their own too, so "coming up" links stay on this site.
+    ahead = {}
+    for w in (read_json(DATA / "upcoming.json", {}).get("weeks") or []):
+        for it in w.get("items") or []:
+            slug = it.get("slug", "")
+            if slug and slug not in measures and slug not in ahead and bills.get(slug):
+                kind, number = slug.rsplit("-", 1)
+                ahead[slug] = {"slug": slug, "kind": kind, "number": int(number), "label": bill_label(kind, int(number)),
+                               "rec": bills[slug], "votes": [], "svotes": [], "title": "", "coming": {}}
+                dress(ahead[slug], scheduled=True)
 
     newest = sorted(votes, key=lambda v: (v["date"], v["roll"]), reverse=True)
     ranked = [p for p in people.values() if p["ranked"]]
@@ -608,7 +621,11 @@ def main():
         topic_pages("senate/", SENATE, svotes)
     congress_root = f"https://www.congress.gov/bill/{ordinal(cfg['congress'])}-congress/"
     weeks = upcoming_weeks(read_json(DATA / "upcoming.json", {}), votes, bills, measures,
-                           {t["key"] for t in all_topics}, today, congress_root)
+                           {t["key"] for t in all_topics}, today, congress_root, local=ahead)
+    for w in weeks:
+        for i in w["items"]:
+            if i["slug"] in ahead:
+                ahead[i["slug"]]["coming"] = {"how": i["how_label"], "note": i["how_note"], "when": "this week" if w["current"] else "next week", "doc": i["doc"]}
     coming = next((w for w in weeks if w["items"]), None)
     render("upcoming/index.html", "upcoming.html", 1, section="upcoming", weeks=weeks)
     render("start/index.html", "start.html", 1, section="start")
@@ -689,7 +706,7 @@ def main():
     render("why/index.html", "why.html", 1, section="why")
     # small lookup files for the personal home page, which is put together in the visitor's own browser
     write_json(SITE / "bills-index.json", {m["slug"]: [m["name"], m["label"], "".join(st["state"][0] for st in m["track"]["steps"]),
-                                                       [st["label"] for st in m["track"]["steps"]], m["track"]["text"]] for m in measures.values()})
+                                                       [st["label"] for st in m["track"]["steps"]], m["track"]["text"]] for m in list(measures.values()) + list(ahead.values())})
     write_json(SITE / "upcoming.json", [[i["name"], i["url"], i["outside"], i["topic_key"], i["topic"], i["how_label"], "This week" if w["current"] else "Next week"]
                                         for w in weeks for i in w["items"]])
     # ---- what the Monday and Friday emails are written from: the last week of real votes, and who voted how
@@ -1022,12 +1039,15 @@ def main():
                           "k": f"{p['name']} {STATES.get(p['state'], '')} {p['state']} senator senate".lower()} for p in speople.values()]
 
     # ---- bill pages
-    for m in measures.values():
+    valid_topics = {t["key"] for t in all_topics}
+    for m in list(measures.values()) + list(ahead.values()):
         bt = m["allvotes"][0] if m["allvotes"] else None
+        tkey = topic_key(m["topic"]) if m["topic"] and " · " not in m["topic"] else ""
+        act = ({"topic": bt["topics"][0], "key": bt["topic_keys"][0]} if bt and bt["topics"]
+               else {"topic": m["topic"], "key": tkey} if tkey in valid_topics else {"topic": "", "key": ""})
         for pre, ch in (("", HOUSE), ("senate/", SENATE)) if svotes else (("", HOUSE),):
             render(f"{pre}bills/{m['slug']}/index.html", "bill.html", 3 if pre else 2, section="bills", c=pre, ch=ch, b=m, ai=summaries.get(m["slug"]),
-                   act={"topic": bt["topics"][0], "key": bt["topic_keys"][0]} if bt and bt["topics"] else {"topic": "", "key": ""},
-                   sponsor=people.get(m["rec"].get("sponsor")))
+                   act=act, sponsor=people.get(m["rec"].get("sponsor")))
 
     # ---- leaderboard and search
     def compare_page(pre, ch, pool):
