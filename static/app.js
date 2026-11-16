@@ -713,7 +713,7 @@
       return token().then(function (t) {
         if (!t) return;
         return api('/auth/v1/user', {}, t).then(function (u) {
-          var s = sess(); s.id = u.id; s.email = u.email; keep(s);
+          var s = sess(); s.id = u.id; s.email = u.email; keep(s); paint();
           return api('/rest/v1/profiles?select=*&id=eq.' + encodeURIComponent(u.id), {}, t).then(function (rows) {
             if (rows && rows.length) { applyRow(rows[0]); return; }
             var meta = u.user_metadata || {}, pend = {}; try { pend = JSON.parse(localStorage.getItem('fr-pending') || '{}'); } catch (e) {}
@@ -722,7 +722,7 @@
             var ready = zip && !store('fr-zip') ? useZip(zip) : Promise.resolve();
             return ready.then(push);
           });
-        }).then(function () { try { localStorage.removeItem('fr-pending'); } catch (e) {} paint(); });
+        }).then(function () { try { localStorage.removeItem('fr-pending'); } catch (e) {} paint(); }).catch(function (e) { paint(); status('Signed in, but your saved details could not be loaded: ' + e.message + (e.status ? ' (code ' + e.status + ')' : '')); });
       });
     }
     // a ZIP code -> home state, and the representative when the ZIP sits in one district
