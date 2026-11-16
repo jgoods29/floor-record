@@ -1,0 +1,101 @@
+{% extends "base.html" %}{% import "_m.html" as m with context %}
+{% block title %}How to use this site · {{ site.site_name }}{% endblock %}
+{% block main %}
+<div class="wrap page start" style="gap:64px">
+<div class="stack" style="max-width:780px">
+<span class="label purple">Start here</span>
+<h1 class="h1">How To Use This Site</h1>
+<p class="lede">Search for anything you are curious about, or pick a question below. You do not need to know anything about politics.</p>
+<div class="search big" data-search style="margin-top:6px">
+<label class="sr" for="start-search">Search for your ZIP code, a member, a state, a bill or a topic</label>
+<input id="start-search" type="search" placeholder="ZIP code, name, state, bill or topic" autocomplete="off">
+<div class="results" role="listbox" aria-label="Search results"></div>
+</div>
+<p class="tries" style="justify-content:flex-start"><span class="muted">Try</span>{% for word in site.search_examples or ["Texas", "Farm Bill", "Taxes"] %}<button type="button" class="linkish" data-example="{{ word }}">{{ word }}</button>{% endfor %}</p>
+</div>
+
+<section class="stack" aria-labelledby="ask-h" style="gap:20px">
+<h2 class="h2" id="ask-h">What Are You Looking For?</h2>
+<div class="grid steps asks">
+<a class="card step" href="{{ root }}you/"><span class="h3">Who Represents Me?</span><span>Type your ZIP code and see your representative and your two senators.</span><span class="go">Find mine</span></a>
+<a class="card step" href="{{ root }}{{ c }}members/"><span class="h3">How Does Someone Vote?</span><span>Open any {{ "senator" if c else "member" }} to see every vote they have cast, in plain English.</span><span class="go">Browse {{ "senators" if c else "members" }}</span></a>
+<a class="card step" href="{{ root }}{{ c }}topics/"><span class="h3">What Happened On An Issue I Care About?</span><span>Pick a topic, like health, taxes or farming, and see only those votes.</span><span class="go">Browse topics</span></a>
+<a class="card step" href="{{ root }}{{ c }}votes/"><span class="h3">What Did Congress Just Vote On?</span><span>The latest votes, newest first, with the big ones at the top.</span><span class="go">See the votes</span></a>
+<a class="card step" href="{{ root }}{{ c }}upcoming/"><span class="h3">What Is Coming Up?</span><span>What may be voted on next, while there is still time to speak up.</span><span class="go">Coming up</span></a>
+<a class="card step" href="{{ root }}{{ c }}bills/"><span class="h3">Where Is A Bill Now?</span><span>Every bill has a tracker showing how far it has gotten toward becoming law.</span><span class="go">Browse bills</span></a>
+<a class="card step" href="{{ root }}{{ c }}compare/"><span class="h3">How Do Two Members Compare?</span><span>Put them side by side: who shows up, and how they voted.</span><span class="go">Compare</span></a>
+<a class="card step" href="{{ root }}{{ c }}big-picture/"><span class="h3">What Is The Big Picture?</span><span>One page on what Congress has been doing, from far above.</span><span class="go">Zoom out</span></a>
+</div>
+</section>
+
+<section class="stack" aria-labelledby="tips-h" style="gap:20px">
+<h2 class="h2" id="tips-h">Four Things That Make It Easier</h2>
+<div class="grid asks">
+<div class="card stack" style="gap:6px"><span class="h3">The Search Box Finds Almost Anything</span><span>A ZIP code, a name, a state, a bill number or a word like "veterans." It is at the top of every page.</span></div>
+<div class="card stack" style="gap:6px"><span class="h3">House And Senate Have A Switch</span><span>Congress has two halves. The switch at the top right flips every page between them and keeps your place.</span></div>
+<div class="card stack" style="gap:6px"><span class="h3">Everything Is Clickable</span><span>On a vote, press the big Yea or Nay number to see exactly who voted that way. Press a name to see that person.</span></div>
+<div class="card stack" style="gap:6px"><span class="h3">Your Page Remembers</span><span>Follow a topic or a bill and it shows up on <a href="{{ root }}you/">Your Page</a>, next to the people who represent you.</span></div>
+</div>
+</section>
+
+<div class="stack basics-head" style="max-width:780px;gap:10px">
+<span class="label purple">New to Congress?</span>
+<h2 class="h1" style="font-size:44px" id="basics">Congress, In Two Minutes</h2>
+<p class="lede">The background, in plain English. Skip it if you already know how Congress works.</p>
+</div>
+
+<section class="stack" aria-labelledby="s1">
+<h2 class="h2" id="s1">1. What is Congress?</h2>
+<p class="plain">Congress is the group of people elected to write the country's laws. It has two halves, and a new law needs a yes from both.</p>
+<div class="grid">
+<div class="card stack" style="gap:8px"><span class="h3">The House</span><span class="bignum">435</span><span>voting members. Each one speaks for one area of a state, called a <strong>district</strong>. Everyone is up for election every two years.</span><a class="tag soft" style="align-self:flex-start" href="{{ root }}{{ c }}votes/">See House votes</a></div>
+<div class="card stack" style="gap:8px"><span class="h3">The Senate</span><span class="bignum">100</span><span>members, called senators. Every state gets two, no matter its size. Each serves six years.</span><a class="tag soft" style="align-self:flex-start" href="{{ root }}senate/votes/">Now on this site</a></div>
+</div>
+</section>
+
+<section class="stack" aria-labelledby="s2">
+<h2 class="h2" id="s2">2. Who is "my representative"?</h2>
+<p class="plain">Wherever you live in the United States, exactly one person in the House represents you. You do not need to have voted for them. Their job is to vote on your behalf, and this site shows you how they have been doing it.</p>
+<div class="zipfind"><label class="fieldset" for="zip-start">Not sure who yours is? Enter your ZIP code</label><div class="search" data-search><input id="zip-start" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5-digit ZIP code"><div class="results" role="listbox" aria-label="Your representative"></div></div></div>
+<div class="row"><a href="{{ root }}{{ c }}members/">Or browse everyone by state</a></div>
+</section>
+
+<section class="stack" aria-labelledby="s3">
+<h2 class="h2" id="s3">3. How does an idea become a law?</h2>
+<ol class="track" aria-hidden="true"><li class="done"><span>Introduced</span></li><li class="done"><span>Committee</span></li><li class="now"><span>House</span></li><li class="todo"><span>Senate</span></li><li class="todo"><span>President</span></li><li class="todo"><span>Law</span></li></ol>
+<p class="small muted" style="margin:0">You will see this tracker on every bill. Dark steps are done, purple is where the bill is now, and gray is still ahead.</p>
+<ol class="path">
+<li><span class="num">1</span><span><strong>Someone writes a bill.</strong> A bill is a proposed law. Any member can write one.</span></li>
+<li><span class="num">2</span><span><strong>A committee looks at it.</strong> A small group of members studies it. Most bills stop here and never get a vote.</span></li>
+<li><span class="num">3</span><span><strong>The House votes.</strong> Every member says yes or no, on the record. That record is what this site shows.</span></li>
+<li><span class="num">4</span><span><strong>The Senate votes.</strong> The other half of Congress has to agree to the same bill.</span></li>
+<li><span class="num">5</span><span><strong>The President signs it.</strong> Now it is a law. The President can also say no, which is called a veto.</span></li>
+</ol>
+</section>
+
+<section class="stack" aria-labelledby="s4">
+<h2 class="h2" id="s4">4. How to read a vote</h2>
+<div class="grid words">
+<div class="card"><span class="h3">Yea</span><span>Yes.</span></div>
+<div class="card"><span class="h3">Nay</span><span>No.</span></div>
+<div class="card"><span class="h3">Present</span><span>"I am here, but I am not picking a side."</span></div>
+<div class="card"><span class="h3">Did not vote</span><span>They were not there, or chose not to vote.</span></div>
+</div>
+<p class="plain">Most votes pass when more than half of the members voting say yea. Each party usually votes together, so the votes where a member goes their own way can tell you a lot.</p>
+<p class="plain"><strong>One thing that trips everyone up:</strong> a lot of votes are not about a bill itself. They are about steps along the way, like whether to keep debating or to set a bill aside. On those, a "yea" can mean the opposite of what you would guess. We spell out what yea and nay meant on every vote, and we tuck the routine ones out of the way.</p>
+<div class="row"><a class="btn go" href="{{ root }}{{ c }}votes/">See the latest votes</a><a href="{{ root }}about/">More words you will see</a></div>
+</section>
+
+<section class="stack" aria-labelledby="s4b">
+<h2 class="h2" id="s4b">Two things only the Senate does</h2>
+<div class="grid">
+<div class="card stack" style="gap:8px"><span class="h3">It approves the President's picks</span><span>Judges, cabinet secretaries and ambassadors need a yes from the Senate before they can start. These are called <strong>confirmations</strong>, and they are about half of all Senate votes.</span><a href="{{ root }}senate/confirmations/">See every confirmation</a></div>
+<div class="card stack" style="gap:8px"><span class="h3">It often takes 60 votes, not 51</span><span>In the Senate, any senator can keep debate going to hold up a bill. This is called a <strong>filibuster</strong>. Ending debate takes 60 of the 100 senators, so a bill can have a majority behind it and still be blocked.</span><span class="small muted">When that rule applied to a vote, the vote's page says so.</span></div>
+</div>
+</section>
+
+
+
+{{ m.reach(root, reach_states, state_names) }}
+</div>
+{% endblock %}
