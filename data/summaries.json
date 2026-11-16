@@ -564,6 +564,12 @@
   "one_sentence": "The bill would change the federal definition of a tipped employee so that an employee's job duties no longer affect whether they qualify as tipped.",
   "short": "Under current federal law, employers may pay tipped employees less than the federal minimum wage if tips make up the difference, and a worker counts as tipped if they regularly receive more than $30 a month in tips. This bill would broaden the definition of a tipped employee to include any worker who receives tips and other cash wages for a work period at a rate at least equal to the federal minimum wage, regardless of their duties. The work period would be set by the employer."
  },
+ "hr-2400": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would place about 604 acres of land in California into trust for the Pit River Tribe, making it part of the tribe's reservation, and would prohibit gaming on that land.",
+  "short": "The bill directs the Department of the Interior to take about 603.94 acres of land in California into trust for the Pit River Tribe. The land includes about 583.79 acres of federal land managed by the Forest Service, excluding about 20.03 acres of roads, highways, and public rights-of-way subject to existing easements, plus about 40.18 acres of fee land already held by the tribe. Once placed in trust, the combined land would become part of the tribe's reservation. The bill also prohibits gaming on the land taken into trust."
+ },
  "hr-2478": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would let mutual fund companies and their transfer agents temporarily delay certain redemptions when they reasonably believe an older or impaired adult is being financially exploited.",
@@ -789,6 +795,12 @@
   "one_sentence": "The bill would make it a federal crime to provide certain gender-transition procedures or medications to minors and would broaden the existing federal ban on female genital mutilation.",
   "short": "The bill creates federal criminal offenses for knowingly performing or providing procedures or medications, such as hormonal treatments, to a minor to change the minor's body to correspond to a sex different from the minor's biological sex. Exceptions apply to specified procedures, including those treating individuals with both ovarian and testicular tissue or abnormal sex chromosome structure or hormones, and those treating infections or harms from a prior gender-transition procedure. A violation would be punishable by a fine, up to 10 years in prison, or both, and the bill bars arresting or prosecuting individuals who undergo these procedures or medications. The bill also expands the existing federal female genital mutilation ban so that anyone, not only a parent, guardian, or caretaker, who facilitates or consents to such procedures on a minor can be liable, while keeping the same penalties."
  },
+ "hr-3495": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would exclude real estate agents and direct sellers of consumer products from the Fair Labor Standards Act's definition of employee, so those workers would not receive its minimum wage and overtime protections.",
+  "short": "The bill changes the definition of employee under the Fair Labor Standards Act of 1938 by excluding real estate agents and direct sellers of consumer products. Workers covered by that law as employees are entitled to the federal minimum wage and, generally, overtime pay for hours beyond 40 in a workweek. Under the bill, workers in these two categories would fall outside those requirements."
+ },
  "hr-35": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would create federal crimes for fleeing from Border Patrol or certain other law enforcement officers in a motor vehicle within 100 miles of the U.S. border.",
@@ -928,6 +940,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require the U.S. representative at the World Bank's International Bank for Reconstruction and Development to keep pushing for a pause on new loans and payments to Burma, unless the Treasury Department finds this is not in the national interest.",
   "short": "The No New Burma Funds Act directs the U.S. Executive Director at the International Bank for Reconstruction and Development (IBRD), part of the World Bank, to advocate for and vote in favor of a continued pause on disbursements and new financing commitments to Burma. The pause would continue unless the Department of the Treasury determines it is not in the national interest. The World Bank paused disbursements and new financing to Burma after a 2021 military coup there."
+ },
+ "hr-4464": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Congressional Budget Office to report on any savings from preventive health care that proposed legislation might produce beyond the standard 10-year budget window.",
+  "short": "When Congress asks, the Congressional Budget Office would have to determine whether a proposed law would reduce federal spending through preventive health care, meaning actions that protect and promote health and prevent disease, disability, or early death. If such savings are found, the Office's projection would need to describe and estimate them, along with the reasoning behind the conclusion. These estimates would serve as supplementary information only and could not be used to judge compliance with the Congressional Budget Act of 1974 or other budget enforcement rules."
  },
  "hr-4541": {
   "model": "claude-haiku-5-5",
@@ -1094,6 +1112,12 @@
   "one_sentence": "The bill would set deadlines for employers and newly recognized unions to negotiate a first labor contract, with mediation and, if needed, binding arbitration to finish the agreement.",
   "short": "After a newly recognized or certified union requests bargaining, the employer must begin talks within 10 days, and both sides must make every reasonable effort to reach and sign a contract. If no agreement is reached after 90 days, either party may request mediation from the Federal Mediation and Conciliation Service, and if mediation fails within 30 days, an arbitration panel would decide the terms, which bind the parties for two years. Employers must keep current wages and conditions during negotiations, and the Government Accountability Office would report to Congress on how long first contracts typically take."
  },
+ "hr-5490": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require sanctions on foreign persons responsible for online financial scams against U.S. nationals and create a task force to shut down the criminal syndicates behind them.",
+  "short": "The bill directs the President to determine whether 43 specified foreign persons, and others responsible for or complicit in online financial scams against U.S. nationals, are subject to sanctions, and to impose applicable sanctions such as blocking property transactions within the United States. It also requires an interagency task force to shut down transnational criminal syndicates that run large scam centers using forced labor of trafficked persons. The task force must submit a strategy to Congress, coordinate its implementation, and report annually for five years, including a list of sanctioned persons. The Department of State is authorized to provide care, shelter, reintegration, and support services for trafficking victims in these scam centers."
+ },
  "hr-556": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would bar three federal land agencies from banning or regulating lead ammunition and fishing tackle on federal lands and waters, with some exceptions.",
@@ -1244,6 +1268,12 @@
   "one_sentence": "The Consolidated Appropriations Act, 2026 would fund several federal departments and agencies for the rest of fiscal year 2026, continue Homeland Security funding temporarily, and extend various expiring programs.",
   "short": "The bill includes five of the twelve regular fiscal year 2026 spending bills, covering agencies such as the Defense, Labor, Health and Human Services, Education, Transportation, Housing and Urban Development, and State Departments, along with Treasury, the Executive Office of the President, and the judiciary. It provides temporary funding for the Department of Homeland Security through February 13, 2026, or until a full Homeland Security spending act is enacted, generally at fiscal year 2025 levels. The bill also extends a range of expiring programs and authorities, including the National Flood Insurance Program, the Temporary Assistance for Needy Families program, trade preferences for Haiti and sub-Saharan Africa, and several cybersecurity and health care provisions."
  },
+ "hr-7254": {
+  "basis": "title",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "Would direct the Secretary of the Interior to study whether the Bay Area Ridge Trail could be designated a national scenic trail under the National Trails System Act.",
+  "short": "The bill amends the National Trails System Act. It would require the Secretary of the Interior to conduct a feasibility study on designating the Bay Area Ridge National Scenic Trail. The official title also notes other purposes, but the available materials do not describe them."
+ },
  "hr-736": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would extend, from January 1, 2025 to January 1, 2026, the deadline for certain companies formed or registered before January 1, 2024 to file beneficial ownership information with FinCEN.",
@@ -1314,6 +1344,12 @@
   "one_sentence": "The bill would require the Education Department to set up a fraud detection system for FAFSA applications and require colleges to verify flagged applicants' identities before disbursing federal aid.",
   "short": "Starting October 1, 2026, the Department of Education would use an identity fraud detection system to review each FAFSA application and flag those showing reasonable suspicion of identity fraud. Flagged applicants and the colleges listed on their applications would be notified that additional identity verification is required. Colleges could not disburse federal student aid to a flagged applicant until the college verifies that person's identity in person or by live video, and the Department would set guidelines for these procedures."
  },
+ "hr-7954": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would direct the Interior Department to help Tribes own and manage buffalo and buffalo habitat on Indian lands.",
+  "short": "The bill directs the Department of the Interior to work with Indian Tribes and tribal organizations to develop tribal ownership and management of buffalo and buffalo habitat on Indian lands. Interior would be required to enter into contracts, award grants, and provide technical assistance for buffalo restoration or management, and to consult with Tribes on initiatives affecting buffalo, including efforts to contain or eradicate diseased animals. Interior would also develop a policy on buffalo management on Indian land and may agree to transport surplus federal buffalo onto Indian land. The authority created by the bill would end seven years after enactment."
+ },
  "hr-7959": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would change how IRS whistleblower awards are reviewed and protected, including court review standards, anonymity, reporting requirements, interest on late-noticed awards, and attorney fee deductions.",
@@ -1383,6 +1419,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill provides federal funding for fiscal year 2027 for military construction, Department of Veterans Affairs programs, and several related agencies.",
   "short": "The bill gives money to the Department of Defense for military construction and family housing for the Army, Navy and Marine Corps, Air Force, Defense-wide agencies, National Guard, and Reserves, plus NATO security investments and base closure costs. For the Department of Veterans Affairs, it provides funding for veterans benefits, health care, national cemeteries, departmental administration, and the Cost of War Toxic Exposures Fund. It also funds related bodies such as the American Battle Monuments Commission, the U.S. Court of Appeals for Veterans Claims, Army cemetery expenses, and the Armed Forces Retirement Home, and sets rules for how these funds may be used."
+ },
+ "hr-8483": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would place about 847 acres of federal land in San Diego County, California, into trust for the Barona Group of Capitan Grande Band of Mission Indians as part of its reservation.",
+  "short": "The bill would take three parcels of federal land in San Diego County, totaling about 847 acres, into trust for the Barona Group of Capitan Grande Band of Mission Indians, making the land part of the Tribe's reservation. One parcel of about 164 acres is managed by the Bureau of Land Management, and two parcels of about 683 acres are managed by the Forest Service, whose administrative jurisdiction would be transferred to the Department of the Interior. The land would remain subject to existing liens, rights-of-way, leases, permits, and easements, would keep public access to roads and trails, and would allow federal employees access for operations and emergencies such as wildfire suppression. The Tribe would have to maintain a fuel break on two of the parcels under Forest Service standards, and gaming would be prohibited on the land."
  },
  "hr-856": {
   "model": "claude-haiku-5-5",
@@ -1488,6 +1530,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would let uranium enrichment facilities be built before the Nuclear Regulatory Commission issues a license, under the same terms that apply to other nuclear fuel facilities.",
   "short": "Under current law, a Nuclear Regulatory Commission license is required before a uranium enrichment facility can be built. This bill would allow construction to begin before that license is issued, treating enrichment facilities as it already treats uranium conversion and fuel fabrication facilities. Such facilities would still need an NRC license to process and handle special nuclear material and source material. The NRC would be required to issue or revise its regulations to carry out the bill within 180 days of enactment."
+ },
+ "hr-9640": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "Reauthorizes through fiscal year 2031 the USGS Earth Mapping Resources Initiative, which maps U.S. natural resources with a focus on critical minerals, and adds new requirements for contractors and data.",
+  "short": "The bill extends the U.S. Geological Survey's Earth Mapping Resources Initiative through fiscal year 2031. The program integrates and modernizes mapping of U.S. natural resources, with a focus on critical minerals such as lithium and titanium. The bill requires contractors to disclose the ownership of the primary contractor and each subcontractor, and directs the USGS to prefer U.S.-owned and controlled entities where practicable, while considering specialized expertise. It also adds data from the USGS 3D Hydrography Program and explicitly allows the initiative's mapping to use modern sensing technologies and data-driven analysis."
  },
  "hr-973": {
   "model": "claude-haiku-5-5",
