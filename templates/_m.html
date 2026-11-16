@@ -32,7 +32,7 @@
 <label class="fieldset" for="reach-state">Your state<select class="field" id="reach-state" data-reach-state><option value="">Choose your state</option>{% for st in states %}<option value="{{ st }}">{{ names.get(st, st) }}</option>{% endfor %}</select></label></div>
 <p class="reach-msg" data-reach-msg aria-live="polite"></p>
 <div class="reach-list" data-reach-list></div>
-<p class="small muted">The lookup happens on your own device. We never see or store your ZIP code.</p>
+<p class="small muted">The lookup happens on your own device. Your ZIP code is only saved with us if you subscribe.</p>
 </section>{% endmacro %}
 
 {% macro track(t, sm=false) %}{% if t %}<ol class="track{% if sm %} sm{% endif %}" aria-label="Progress: {{ t.text }}">{% for st in t.steps %}<li class="{{ st.state }}"{% if st.state == 'now' %} aria-current="step"{% endif %}><span>{{ st.label }}</span></li>{% endfor %}</ol>{% endif %}{% endmacro %}

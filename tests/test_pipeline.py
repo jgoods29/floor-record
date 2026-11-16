@@ -140,7 +140,7 @@ class NewsletterTest(unittest.TestCase):
         rep = {"id": "A1", "name": "Pat Example", "state": "KY", "where": "District 4", "party": "R", "phone": "202-555-0100", "pre": "", "role": "Your representative"}
         subject, body = build_email("friday", data, [rep], "https://example.org/", {"postal_address": "PO Box 1"})
         self.assertIn("How They Voted", subject)
-        self.assertIn("Voted no", body)
+        self.assertIn(">No<", body)
         self.assertIn("https://example.org/votes/2026-1/", body)
         self.assertIn("{{unsub}}", body)
         self.assertIn("PO Box 1", body)

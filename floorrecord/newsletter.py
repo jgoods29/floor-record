@@ -45,37 +45,71 @@ def load():
     return data, reps, sens
 
 
+REP, DEM, IND, GREEN, NO, PTINT = "#D61F45", "#2347F5", "#8A93A3", "#17603A", "#9B1C1C", "#F4EFFE"
+GOOD = ("Passed", "Confirmed", "Adopted", "Taken Up", "Debate Ended", "Agreed To", "Vote Forced", "Veto Overridden")
+
+
 def section(title, inner):
-    return (f'<tr><td style="padding:26px 32px 0 32px"><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:{PURPLE}">{e(title)}</div>'
-            f'<div style="margin-top:10px">{inner}</div></td></tr>')
+    return (f'<tr><td style="padding:30px 32px 0 32px"><table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:{PURPLE};color:#fff;'
+            f'font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:99px;padding:6px 14px">{e(title)}</td></tr></table>'
+            f'<div style="margin-top:14px">{inner}</div></td></tr>')
+
+
+def pill(text, bg, fg="#fff"):
+    return f'<span style="display:inline-block;background:{bg};color:{fg};border-radius:99px;padding:3px 11px;font-size:12px;font-weight:700">{e(text)}</span>'
+
+
+def party_bar(label, counts, total):
+    """One row: 'Yes 392' and a bar split into Republican red, Democratic blue and grey for independents."""
+    n = sum(counts)
+    cells = "".join(f'<td width="{max(1, round(100 * c / n))}%" height="12" bgcolor="{col}" style="background:{col};font-size:0;line-height:0">&nbsp;</td>'
+                    for c, col in zip(counts, (REP, DEM, IND)) if c) if n else ""
+    width = max(6, round(100 * n / total)) if total else 0
+    bar = (f'<table role="presentation" width="{width}%" cellpadding="0" cellspacing="0" style="border-radius:6px;overflow:hidden"><tr>{cells}</tr></table>'
+           if n else f'<div style="font-size:12px;color:{MUTED}">none</div>')
+    who = " · ".join(f'<span style="color:{col};font-weight:700">{c} {name}</span>' for c, col, name in zip(counts, (REP, DEM, IND), ("R", "D", "I")) if c)
+    return (f'<tr><td width="74" style="font-size:13px;font-weight:700;color:{INK};padding:5px 0;white-space:nowrap">{label} {n}</td><td style="padding:5px 0">{bar}</td></tr>'
+            f'<tr><td></td><td style="font-size:12px;padding-bottom:4px">{who}</td></tr>')
 
 
 def vote_block(v, site):
-    tally = f'{v["yea"]} to {v["nay"]}'
-    close = f' <span style="background:{RED};color:#fff;border-radius:99px;padding:1px 8px;font-size:11px;font-weight:700">Close vote</span>' if v["close"] else ""
-    return (f'<div style="border:1px solid {LINE};border-radius:12px;padding:14px 16px;margin-bottom:10px">'
-            f'<div style="font-size:12px;color:{MUTED}">{e(v["chamber"])} · {nice(v["date"])}{close}</div>'
-            f'<a href="{site}{v["pre"]}votes/{v["id"]}/" style="color:{INK};font-size:17px;font-weight:700;text-decoration:none;line-height:1.3">{e(v["name"])}</a>'
-            f'<div style="font-size:14px;font-weight:700;color:{INK};margin-top:4px">{e(v["outcome"])}, {tally}</div>'
-            + (f'<div style="font-size:14px;color:{T2};margin-top:4px">{e(v["plain"])}</div>' if v["plain"] else "") + "</div>")
+    ok = v["outcome"] in GOOD
+    tags = pill(v["outcome"], GREEN if ok else NO) + (" " + pill("Close vote", PURPLE) if v["close"] else "")
+    by, total = v.get("by") or {}, max(1, v["yea"] + v["nay"])
+    bars = (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:10px">{party_bar("Yes", by.get("yea", [0, 0, 0]), total)}'
+            f'{party_bar("No", by.get("nay", [0, 0, 0]), total)}</table>') if by else f'<div style="font-size:14px;font-weight:700;color:{INK};margin-top:6px">{v["yea"]} to {v["nay"]}</div>'
+    return (f'<div style="border:1px solid {LINE};border-top:4px solid {GREEN if ok else NO};border-radius:12px;padding:16px 18px;margin-bottom:12px">'
+            f'<div style="font-size:12px;color:{MUTED};margin-bottom:6px">{e(v["chamber"])} · {nice(v["date"])} &nbsp;{tags}</div>'
+            f'<a href="{site}{v["pre"]}votes/{v["id"]}/" style="color:{INK};font-size:18px;font-weight:700;text-decoration:none;line-height:1.3">{e(v["name"])}</a>'
+            + (f'<div style="font-size:14px;color:{T2};margin-top:6px;line-height:1.5">{e(v["plain"])}</div>' if v["plain"] else "") + bars + "</div>")
 
 
 def person_block(p, week, site, friday):
+    col = {"R": REP, "D": DEM}.get(p["party"], IND)
+    badge = f'<td width="44" valign="top"><div style="width:36px;height:36px;border-radius:50%;background:{col};color:#fff;font-weight:700;font-size:15px;line-height:36px;text-align:center">{e(p["party"])}</div></td>'
     head = (f'<div style="font-size:12px;color:{MUTED}">{e(p["role"])} · {e(p["where"])}</div>'
-            f'<a href="{site}{p["pre"]}members/{p["id"]}/" style="color:{INK};font-size:17px;font-weight:700;text-decoration:none">{e(p["name"])} ({e(p["party"])})</a>')
+            f'<a href="{site}{p["pre"]}members/{p["id"]}/" style="color:{INK};font-size:18px;font-weight:700;text-decoration:none">{e(p["name"])}</a>')
     rows = ""
     if friday:
         mine = [v for v in week if p["id"] in v["pos"]][:6]
         for v in mine:
             pos = v["pos"][p["id"]]
-            color = {"yea": "#1B7F4B", "nay": "#B42318"}.get(pos, MUTED)
-            rows += (f'<div style="font-size:14px;margin-top:8px;color:{T2}"><strong style="color:{color}">{WORD.get(pos, "Other")}</strong> on '
-                     f'<a href="{site}{v["pre"]}votes/{v["id"]}/" style="color:{INK}">{e(v["name"])}</a> ({e(v["outcome"].lower())})</div>')
+            chip = pill({"yea": "Yes", "nay": "No"}.get(pos, "Missed"), {"yea": GREEN, "nay": NO}.get(pos, IND))
+            rows += (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:8px"><tr><td width="66" valign="top">{chip}</td>'
+                     f'<td style="font-size:14px;color:{T2};line-height:1.4"><a href="{site}{v["pre"]}votes/{v["id"]}/" style="color:{INK};text-decoration:none">{e(v["name"])}</a>'
+                     f' <span style="color:{MUTED}">({e(v["outcome"].lower())})</span></td></tr></table>')
         if not mine:
             rows = f'<div style="font-size:14px;margin-top:8px;color:{MUTED}">No votes on real questions this week.</div>'
     elif p["phone"]:
-        rows = f'<div style="font-size:14px;margin-top:6px;color:{T2}">Call the office: <a href="tel:{e(p["phone"])}" style="color:{INK};font-weight:700">{e(p["phone"])}</a></div>'
-    return f'<div style="background:{TINT};border-radius:12px;padding:14px 16px;margin-bottom:10px">{head}{rows}</div>'
+        rows = (f'<div style="margin-top:10px"><a href="tel:{e(p["phone"])}" style="display:inline-block;background:{PURPLE};color:#fff;font-weight:700;font-size:14px;'
+                f'text-decoration:none;border-radius:99px;padding:8px 16px">Call {e(p["phone"])}</a></div>')
+    return (f'<div style="background:{TINT};border-left:4px solid {col};border-radius:12px;padding:14px 16px;margin-bottom:10px">'
+            f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>{badge}<td>{head}{rows}</td></tr></table></div>')
+
+
+def stat(num, label, bg, fg):
+    return (f'<td width="33%" style="padding:0 5px"><div style="background:{bg};border-radius:12px;padding:14px 8px;text-align:center">'
+            f'<div style="font-size:30px;font-weight:800;color:{fg};line-height:1">{num}</div><div style="font-size:12px;font-weight:600;color:{fg};margin-top:4px">{e(label)}</div></div></td>')
 
 
 def build_email(edition, data, people, site, acct, unsub="{{unsub}}"):
@@ -85,17 +119,21 @@ def build_email(edition, data, people, site, acct, unsub="{{unsub}}"):
     parts = []
     if friday:
         top = sorted(week, key=lambda v: (not v["close"], -date.fromisoformat(v["date"]).toordinal()))[:6]
-        title, kicker = "How They Voted", f'{len(week)} votes on real questions in Congress this week.'
-        parts.append(section("Across The Country", "".join(vote_block(v, site) for v in top) if top else
+        title, kicker = "How They Voted", "The week in Congress, in plain English."
+        passed = sum(1 for v in week if v["outcome"] in GOOD)
+        parts.append(f'<tr><td style="padding:22px 27px 0 27px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>'
+                     f'{stat(len(week), "Real Votes", PTINT, PURPLE)}{stat(passed, "Went Through", "#E8F3EC", GREEN)}{stat(sum(1 for v in week if v["close"]), "Close Calls", "#FBEAEA", NO)}</tr></table></td></tr>')
+        parts.append(section("Across The Country", "".join(vote_block(v, site) for v in top)
+                             + f'<div style="font-size:12px;color:{MUTED}">Bars show who voted each way: <span style="color:{REP};font-weight:700">red is Republican</span>, <span style="color:{DEM};font-weight:700">blue is Democrat</span>.</div>' if top else
                              f'<div style="font-size:15px;color:{T2}">Congress held no votes on real questions this week. It was likely out of session.</div>'))
         if people:
             parts.append(section("Your Own Three" if len(people) == 3 else "Your Members", "".join(person_block(p, week, site, True) for p in people)))
     else:
         title, kicker = "The Week Ahead", "What Congress may vote on, while there is still time to speak up."
         if coming:
-            items = "".join(f'<div style="padding:10px 0;border-bottom:1px solid {LINE}"><div style="font-size:16px;font-weight:700;color:{INK}">{e(i["name"])}</div>'
-                            f'<div style="font-size:13px;color:{MUTED}">{e(i["label"])} · {e(i["how"])}{" · " + e(i["topic"]) if i["topic"] else ""}</div></div>' for i in coming[:10])
-            more = f'<div style="margin-top:10px;font-size:14px"><a href="{site}upcoming/" style="color:{PURPLE};font-weight:700">See all {len(coming)} and what each label means</a></div>'
+            items = "".join(f'<div style="padding:12px 0;border-bottom:1px solid {LINE}"><div style="font-size:16px;font-weight:700;color:{INK}">{e(i["name"])}</div>'
+                            f'<div style="font-size:13px;color:{MUTED};margin-top:4px">{e(i["label"])} &nbsp;{pill(i["how"], PTINT, PURPLE)}{" &nbsp;" + pill(i["topic"], TINT, T2) if i["topic"] else ""}</div></div>' for i in coming[:10])
+            more = f'<div style="margin-top:14px"><a href="{site}upcoming/" style="display:inline-block;background:{PURPLE};color:#fff;font-weight:700;font-size:14px;text-decoration:none;border-radius:99px;padding:10px 18px">See All {len(coming)} And What The Labels Mean</a></div>'
             parts.append(section("Coming Up In The House", items + more))
         else:
             parts.append(section("Coming Up In The House", f'<div style="font-size:15px;color:{T2}">The House has not posted a list for this week. It may be out of session.</div>'))
@@ -107,16 +145,20 @@ def build_email(edition, data, people, site, acct, unsub="{{unsub}}"):
         parts.append(section("Make It Yours", f'<div style="font-size:15px;color:{T2}">Add your ZIP code to <a href="{site}account/" style="color:{PURPLE};font-weight:700">your account</a> and this email will show how your own representative and senators voted.</div>'))
     if acct.get("sponsor"):
         parts.append(section("Presented By", f'<div style="font-size:15px;color:{T2}">{acct["sponsor"]}</div>'))
+    parts.append(f'<tr><td align="center" style="padding:30px 32px 0 32px"><a href="{site}" style="display:inline-block;background:{INK};color:#fff;font-weight:700;font-size:15px;text-decoration:none;border-radius:99px;padding:12px 26px">Open Floor The Record</a></td></tr>')
     name = config().get("site_name", "Floor The Record")
     address = f'<br>{e(acct["postal_address"])}' if acct.get("postal_address") else ""
     foot = (f'<tr><td style="padding:28px 32px 32px 32px"><div style="border-top:1px solid {LINE};padding-top:16px;font-size:12px;color:{MUTED};line-height:1.6">'
             f'{e(data.get("term", ""))}. Every vote comes from the official record of the House and the Senate. Free and non-partisan.<br>'
             f'You get this because you signed up at {e(name)}. <a href="{unsub}" style="color:{MUTED}">Unsubscribe</a> · <a href="{site}account/" style="color:{MUTED}">Your account</a>{address}</div></td></tr>')
+    squares = "".join(f'<td width="14" height="14" bgcolor="{c}" style="background:{c};border-radius:4px;font-size:0;line-height:0">&nbsp;</td><td width="5"></td>' for c in (RED, PURPLE, BLUE))
     body = (f'<!doctype html><html lang="en"><body style="margin:0;background:{TINT};{FONT}"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{TINT}"><tr><td align="center" style="padding:20px 10px">'
             f'<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#fff;border-radius:14px;overflow:hidden;{FONT};color:{INK}">'
-            f'<tr><td style="font-size:0;line-height:0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td height="8" style="background:{RED}"></td><td height="8" style="background:{PURPLE}"></td><td height="8" style="background:{BLUE}"></td></tr></table></td></tr>'
-            f'<tr><td style="padding:26px 32px 0 32px"><div style="font-size:14px;font-weight:700;color:{INK}">{e(name)} · {date.today().strftime("%A, %B")} {date.today().day}</div>'
-            f'<div style="font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-top:10px">{title}</div><div style="font-size:16px;color:{T2};margin-top:8px">{e(kicker)}</div></td></tr>'
+            f'<tr><td style="font-size:0;line-height:0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td height="8" bgcolor="{RED}" style="background:{RED}"></td><td height="8" bgcolor="{PURPLE}" style="background:{PURPLE}"></td><td height="8" bgcolor="{BLUE}" style="background:{BLUE}"></td></tr></table></td></tr>'
+            f'<tr><td bgcolor="{INK}" style="background:{INK};padding:26px 32px 28px 32px"><table role="presentation" cellpadding="0" cellspacing="0"><tr>{squares}<td style="padding-left:6px;font-size:15px;font-weight:700;color:#fff">{e(name)}</td></tr></table>'
+            f'<div style="font-size:36px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-top:16px;color:#fff">{title}</div>'
+            f'<div style="font-size:16px;color:#C9D1E0;margin-top:8px">{e(kicker)}</div>'
+            f'<div style="font-size:13px;color:#9FB0CC;margin-top:10px">{date.today().strftime("%A, %B")} {date.today().day}</div></td></tr>'
             + "".join(parts) + foot + "</table></td></tr></table></body></html>")
     return f"{title}: {date.today().strftime('%B')} {date.today().day}", body
 

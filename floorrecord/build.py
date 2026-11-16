@@ -698,7 +698,9 @@ def main():
         "term": f"{ordinal(cfg['congress'])} Congress",
         "week": [{"id": v["id"], "pre": v["pre"], "chamber": v["chamber"], "date": v["date"], "name": v["info"]["name"], "plain": v["info"].get("plain") or "",
                   "outcome": v["info"]["outcome"], "yea": v["totals"]["yea"], "nay": v["totals"]["nay"], "close": any(k == "close" for k, _ in v["tags"]),
-                  "pos": {r[0]: r[3] for r in v["positions"]}}
+                  "pos": {r[0]: r[3] for r in v["positions"]},
+                  "by": {side: [sum(1 for r in v["positions"] if r[3] == side and r[1] == pty) for pty in ("R", "D")]
+                         + [sum(1 for r in v["positions"] if r[3] == side and r[1] not in ("R", "D"))] for side in ("yea", "nay")}}
                  for v in sorted(votes + svotes, key=lambda v: (v["date"], v["roll"]), reverse=True)
                  if v["date"] > week_from and v["kind"] == "standard" and not v["info"]["routine"]],
         "upcoming": [{"name": i["name"], "label": i["label"], "how": i["how_label"], "topic": i["topic"], "week": "this week" if w["current"] else "next week"}
