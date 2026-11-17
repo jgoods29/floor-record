@@ -28,7 +28,7 @@
       },
       {
         "name": "The 2026 Defense Policy Bill",
-        "about": "Covers troop levels, weapons buying, military pay and health care.",
+        "about": "Covers troop levels, weapons buying and military construction.",
         "votes": [
           "s2025-500",
           "s2025-503",
@@ -37,7 +37,7 @@
           "s2025-647",
           "s2025-648"
         ],
-        "more": "This yearly bill sets policy for the military: how many troops, which aircraft, ships and missiles to buy, pay and health care for service members, and construction on bases. It sets spending limits but does not itself provide the money. The six votes were steps along the way, from starting debate to approving the final version.",
+        "more": "This yearly bill sets policy for the military: how many troops, which aircraft, ships and missiles to buy, and construction on bases. The final version also covered military pay and health care. It sets spending limits but does not itself provide the money. The six votes were steps along the way, from starting debate to approving the final version.",
         "bill": "s-2296"
       },
       {
@@ -54,7 +54,7 @@
       },
       {
         "name": "Permanently Banning Fentanyl-Related Drugs",
-        "about": "Keeps fentanyl-related substances in the strictest drug category.",
+        "about": "Permanently puts fentanyl-related substances in the strictest drug category.",
         "votes": [
           "s2025-110",
           "s2025-124",
@@ -65,18 +65,18 @@
       },
       {
         "name": "The Survivor Justice Tax Prevention Act",
-        "about": "Stops taxing most payouts won by survivors of sexual abuse.",
+        "about": "Would stop taxing most payouts won by survivors of sexual abuse.",
         "votes": [
           "s2026-257",
           "s2026-258",
           "s2026-264"
         ],
-        "more": "Money won in a lawsuit or settlement is usually taxed unless it is for a physical injury. This bill makes damages for sexual abuse or assault tax-free whether or not there was a visible injury, and puts the burden on the IRS to prove otherwise. Punitive damages are still taxed.",
+        "more": "Money won in a lawsuit or settlement is usually taxed unless it is for a physical injury. This bill would make damages for sexual abuse or assault tax-free whether or not there was a visible injury, and put the burden on the IRS to prove otherwise. Punitive damages would still be taxed. It has not become law.",
         "bill": "hr-2347"
       },
       {
         "name": "The College Sports Bill",
-        "about": "Covers athlete pay deals, agent fees, transfers and schools' TV rights.",
+        "about": "Covers name and image deals, agent fees, transfers and schools' TV rights.",
         "votes": [
           "s2026-235",
           "s2026-236"
@@ -86,12 +86,12 @@
       },
       {
         "name": "The ROAD To Housing Act",
-        "about": "Covers dozens of changes to federal housing programs and building rules.",
+        "about": "Covers dozens of housing changes, plus rules for community banks.",
         "votes": [
           "s2026-44",
           "s2026-45"
         ],
-        "more": "The 21st Century ROAD to Housing Act creates and changes a long list of federal housing programs. Among them: support for permitting new kinds of apartment buildings, lighter environmental review for some rural projects, and closer oversight of housing counseling groups.",
+        "more": "The 21st Century ROAD to Housing Act has 59 sections that create or change federal housing programs. Among them: support for permitting new kinds of apartment buildings, lighter environmental review for some rural projects, rules for manufactured housing, and closer oversight of housing counseling groups. It also includes sections on community banks.",
         "bill": "hr-6644"
       },
       {
@@ -105,7 +105,7 @@
       },
       {
         "name": "The 2026 Government Funding Bill",
-        "about": "Covers the military, health, education, transportation and housing.",
+        "about": "Funds the military, health, education, transportation, housing and more.",
         "votes": [
           "s2026-20"
         ],
