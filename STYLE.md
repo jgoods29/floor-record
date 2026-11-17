@@ -1,0 +1,54 @@
+# Floor The Record: House Style
+
+Rules the owner has set. Follow them for anything built for the site, the emails or the social posts.
+
+## Spacing: everything sits on one grid
+
+The owner wants every piece to feel evenly spaced, with no gap that is "a bit off in any direction".
+Measure before publishing; do not judge spacing by eye alone.
+
+**Website** (`static/style.css`, templates)
+
+- Between major sections of a page: 56px on a computer, 40px on a phone. No page sets its own value.
+- Inside sections and cards: only 8, 12, 16, 20 or 32px.
+- A heading belongs to the block below it: wrap the two in one `section.stack`, never leave a heading as a
+  direct child of the page wrapper.
+- `gap` only works on flex or grid containers. A card that sets `gap` must also be `display: flex`.
+- Do not render empty rows (an empty `.tags` div still takes a gap).
+- Check with a script that walks `main` and lists the gap between consecutive blocks at 1280px and 390px wide.
+  Every section gap should read 56 (or 40 on a phone).
+
+**Social posts** (1080 x 1350 boards)
+
+- 64px from every edge of the board: left, right, top and bottom.
+- 32px between every block, down and across, including the gutter between side-by-side cards.
+- 32px padding inside every card.
+- Content fills the board: one block (or a set of equal boxes) has `flex: 1` so the last block ends exactly
+  32px above the footer line. No dead space at the bottom.
+- Rows that sit side by side in two cards line up: give each row `flex: 1` instead of padding with blank lines.
+- Break big headlines on purpose with `<br>` so no single word is left alone on a line.
+- Before publishing, render a plain-HTML copy with Inter and Inter Tight loaded and measure: every gap 32,
+  every block 64 from both sides, nothing overflowing.
+
+**Emails**
+
+- Same idea: one padding value for the left and right edge of every row, one gap between sections.
+- No dark header bands: phone mail apps in dark mode recolor them and the email stops matching.
+
+## Titles
+
+- Every word capitalized.
+- Never end with a period.
+- Join two parts of a headline with a colon, not a comma ("Schumer And Van Hollen: Side By Side").
+
+## Voice
+
+- Plain English, non-partisan, the record and not opinion.
+- Name both sides of a vote or neither ("How Each Senator Voted", not "Who Voted Yes").
+- Do not promise what the site cannot show (it does not track campaign promises).
+- Make it easy to act at every turn.
+
+## Color
+
+- Red is Republican, blue is Democrat, purple is neutral or unity.
+- Light and airy, navy text, rounded cards, Inter and Inter Tight.

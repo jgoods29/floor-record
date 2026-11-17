@@ -1,0 +1,125 @@
+"""The five-slide Senate leader carousel, on one spacing system.
+
+Every slide: 64px outer margin on all four sides, 32px between every block (down and across),
+32px padding inside every card. One block per slide stretches so the content fills the page exactly.
+"""
+import pathlib, sys
+ROOT = pathlib.Path(__file__).parent / 'project'
+INK, T2, MUTED, LINE, TINT = '#14213D', '#3B4A66', '#5A6473', '#DDE3EC', '#F4F6FA'
+RED, PURPLE, BLUE, DEM = '#D61F45', '#6D28D9', '#2347F5', '#2456A6'
+D = "font-family: 'Inter Tight', Inter, sans-serif"
+M, G = 64, 32
+CARD = f'border: 2px solid {LINE}; border-radius: 28px; padding: {G}px; box-sizing: border-box'
+CAP = 'font-size: 23px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1'
+
+
+def page(title, label, body):
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{title}</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+<style>
+body{{margin:0}}
+</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; box-sizing: border-box; background: #FFFFFF; color: {INK}; font-family: Inter, sans-serif; display: flex; flex-direction: column">
+<div style="display: flex; height: 16px; flex: none" aria-hidden="true"><div style="flex: 1; background: {RED}"></div><div style="flex: 1; background: {PURPLE}"></div><div style="flex: 1; background: {BLUE}"></div></div>
+<div style="display: flex; align-items: center; justify-content: space-between; padding: {M - 16}px {M}px 0 {M}px; flex: none">
+<div style="display: flex; align-items: center; gap: 16px"><div style="display: flex; gap: 6px" aria-hidden="true"><div style="width: 18px; height: 18px; border-radius: 5px; background: {RED}"></div><div style="width: 18px; height: 18px; border-radius: 5px; background: {PURPLE}"></div><div style="width: 18px; height: 18px; border-radius: 5px; background: {BLUE}"></div></div><div style="{D}; font-weight: 700; font-size: 36px; line-height: 1; letter-spacing: -0.01em">Floor The Record</div></div>
+<div style="font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1; color: {PURPLE}; border: 2px solid #DCCBFB; background: #F7F3FF; border-radius: 999px; padding: 12px 24px">{label}</div>
+</div>
+<div style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: {G}px; padding: {G}px {M}px {G}px {M}px">
+{body}
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; margin: 0 {M}px; padding: {G}px 0 {M}px 0; border-top: 2px solid {LINE}; flex: none">
+<div style="font-size: 24px; line-height: 1; color: {T2}; font-weight: 500">Straight from the official record. No spin.</div>
+<div style="font-size: 24px; line-height: 1; color: {INK}; font-weight: 700">floortherecord.com</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{{"$preview":{{"width":1080,"height":1350}}}}'>
+class Component extends DCLogic {{
+renderVals() {{
+return {{}};
+}}
+}}
+</script>
+</body>
+</html>
+'''
+
+
+def h1(text, size): return f'<h1 style="margin: 0; {D}; font-weight: 700; font-size: {size}px; line-height: 1.05; letter-spacing: -0.02em">{text}</h1>'
+def lede(text): return f'<p style="margin: 0; font-size: 34px; line-height: 1.35; color: {T2}">{text}</p>'
+def badge(size=26): return f'<span style="background: {DEM}; color: #FFFFFF; font-weight: 700; border-radius: 8px; padding: 4px 12px; line-height: 1">D</span>'
+
+
+# ---- 1: hook (the heading block is centred in the space, with equal room above and below)
+HOOK = ('Race 1: Who Will Be The Next Senate Majority Leader', 'In The News',
+        f'<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: {G}px">'
+        f'<div style="{D}; font-weight: 700; font-size: 132px; line-height: 1.02; letter-spacing: -0.025em"><div style="color: {INK}">Who Will Be<br>The Next</div><div style="color: {DEM}">Senate Majority<br>Leader?</div></div>'
+        + lede('Two Democrats want the job. Swipe to compare their records.') + '</div>')
+
+
+# ---- 2: the race and the people (the two cards stretch; their rows line up across both cards)
+def who(name, seat, lines):
+    rows = ''.join(f'<div style="flex: 1; display: flex; align-items: center; font-size: 28px; line-height: 1.3; padding: 16px 0; border-top: 2px solid {LINE}">{l}</div>' for l in lines)
+    return (f'<div style="flex: 1; min-width: 0; {CARD}; padding-bottom: 16px; display: flex; flex-direction: column">'
+            f'<div style="{D}; font-weight: 700; font-size: 46px; line-height: 1.05; letter-spacing: -0.02em">{name}</div>'
+            f'<div style="display: flex; gap: 12px; align-items: center; font-size: 26px; line-height: 1; color: {T2}; padding: 16px 0 {G}px 0">{badge()}<span>{seat}</span></div>{rows}</div>')
+
+
+EXPLAIN = ('Race 2: The Race And The People', 'The Race', '\n'.join([
+    h1('Two Senators Want The Job', 62),
+    lede('Senate Democrats choose their leader in December.<br>Only Democratic senators get a vote.'),
+    f'<div style="flex: 1; min-height: 0; display: flex; gap: {G}px">'
+    + who('Chuck Schumer', 'New York', ['In the Senate since 1999', 'Has led Senate Democrats since 2017', 'Running to keep the job'])
+    + who('Chris Van Hollen', 'Maryland', ['In the Senate since 2017', 'Served in House of Representatives (2003-17)', 'Announced his run on November 12']) + '</div>',
+    f'<div style="{CARD}; background: #F7F3FF; display: flex; flex-direction: column; gap: 16px"><div style="{CAP}; color: {PURPLE}">What we show</div><div style="font-size: 29px; line-height: 1.32">How each of them has voted, from the official record. Not who should win.</div></div>',
+]))
+
+
+# ---- 3 and 4: each senator in a nutshell (the three boxes share the leftover height equally)
+def tile(num, label, sub): return f'<div style="flex: 1; {CARD}; display: flex; flex-direction: column; justify-content: center; gap: 8px"><div style="{D}; font-weight: 700; font-size: 84px; line-height: 1; letter-spacing: -0.02em">{num}</div><div style="font-size: 28px; font-weight: 700; line-height: 1.2">{label}</div><div style="font-size: 23px; line-height: 1.2; color: {MUTED}">{sub}</div></div>'
+
+
+def sen(name, initials, seat, since, role, cast, att, missed, cmtes, news):
+    return '\n'.join([
+        f'<div style="display: flex; gap: {G}px; align-items: center"><div style="width: 168px; height: 168px; border-radius: 50%; background: {TINT}; border: 2px solid {LINE}; box-sizing: border-box; display: flex; align-items: center; justify-content: center; {D}; font-weight: 700; font-size: 62px; color: {MUTED}; flex: none">{initials}</div><div style="display: flex; flex-direction: column; gap: 16px">{h1(name, 76)}<div style="display: flex; gap: 12px; align-items: center; font-size: 30px; line-height: 1; color: {T2}">{badge()}<span>{seat}</span></div><div style="font-size: 26px; line-height: 1; color: {MUTED}">In the Senate since {since} · {role}</div></div></div>',
+        f'<div style="flex: 1 1 68px; display: flex; gap: {G}px">{tile(cast, "votes cast", "since January 2025")}{tile(att, "attendance", f"missed {missed} of 923 votes")}</div>',
+        f'<div style="flex: 1; {CARD}; display: flex; flex-direction: column; justify-content: center; gap: 16px"><div style="{CAP}; color: {MUTED}">Committees</div><div style="font-size: 30px; font-weight: 600; line-height: 1.3">{cmtes}</div></div>',
+        f'<div style="flex: 1; {CARD}; background: #F7F3FF; display: flex; flex-direction: column; justify-content: center; gap: 16px"><div style="{CAP}; color: {PURPLE}">Why you are hearing this name</div><div style="font-size: 29px; line-height: 1.32">{news}</div></div>',
+    ])
+
+
+SCHUMER = ('Race 3: Chuck Schumer In A Nutshell', 'In A Nutshell', sen('Chuck Schumer', 'CS', 'New York · Senior senator', '1999', 'Senate Democratic leader', '919', '99.6%', '4', 'Rules and Administration<br>Intelligence (sits in as a party leader)', 'Senate Democrats pick their leader in December. Schumer is running to keep the job. Chris Van Hollen is running against him.'))
+VANHOLLEN = ('Race 4: Chris Van Hollen In A Nutshell', 'In A Nutshell', sen('Chris Van Hollen', 'CV', 'Maryland · Senior senator', '2017', 'in the House before that', '909', '98.5%', '14', 'Appropriations · Budget<br>Banking, Housing, and Urban Affairs<br>Foreign Relations', 'Senate Democrats pick their leader in December. Van Hollen announced on November 12 that he is running against the current leader, Chuck Schumer.'))
+
+
+# ---- 5: key comparisons (the two tables stretch; every row in a table is the same height)
+def vs(label, a, b): return f'<div style="flex: 1; display: grid; grid-template-columns: 1fr 300px 1fr; align-items: center; border-top: 2px solid {LINE}"><div style="{D}; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.02em">{a}</div><div style="font-size: 24px; font-weight: 600; color: {MUTED}; text-align: center">{label}</div><div style="{D}; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.02em; text-align: right">{b}</div></div>'
+def split(what, a, b, n): return f'<div style="flex: 1; display: grid; grid-template-columns: 110px 1fr 110px; align-items: center; gap: 16px; border-top: 2px solid {LINE}"><div style="font-size: 27px; font-weight: 700">{a}</div><div style="display: flex; flex-direction: column; gap: 4px; text-align: center"><div style="font-size: 27px; font-weight: 600; line-height: 1.2">{what}</div><div style="font-size: 21px; line-height: 1.2; color: {MUTED}">{n}</div></div><div style="font-size: 27px; font-weight: 700; text-align: right">{b}</div></div>'
+
+
+COMPARE = ('Race 5: Key Comparisons', 'Side By Side', '\n'.join([
+    f'<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: {G}px"><div style="display: flex; flex-direction: column; gap: 8px">{h1("Chuck Schumer", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · New York</div></div><div style="display: flex; flex-direction: column; gap: 8px; text-align: right">{h1("Chris Van Hollen", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · Maryland</div></div></div>',
+    '<div style="flex: 3; min-height: 0; display: flex; flex-direction: column">' + vs('In the Senate since', '1999', '2017') + vs('Votes cast since 2025', '919', '909') + vs('Attendance', '99.6%', '98.5%') + '</div>',
+    f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 108px; line-height: 1; letter-spacing: -0.03em">96%</div><div style="font-size: 30px; line-height: 1.3; font-weight: 500">of the time, they voted the same way: 871 of the 905 votes where both voted Yea or Nay.</div></div>',
+    f'<div style="flex: 4; min-height: 0; display: flex; flex-direction: column"><div style="{CAP}; color: {MUTED}; padding-bottom: 16px">Where they split most often</div>'
+    + split('Taking up measures to block arms sales to Israel', 'Nay', 'Yea', '6 votes') + split('The 2026 defense policy bill', 'Yea', 'Nay', '6 votes')
+    + split('Overturning an IRS reporting rule for crypto', 'Yea', 'Nay', '4 votes') + split('Permanently banning fentanyl-related drugs', 'Yea', 'Nay', '3 votes') + '</div>',
+]))
+
+SLIDES = {'RaceHook': HOOK, 'RaceExplain': EXPLAIN, 'SenSchumer': SCHUMER, 'SenVanHollen': VANHOLLEN, 'Compare': COMPARE}
+if __name__ == '__main__':
+    out = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT
+    for k, (t, l, b) in SLIDES.items():
+        (out / f'{k}.dc.html').write_text(page(t, l, b))
+    print('wrote', ', '.join(SLIDES))
