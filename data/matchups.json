@@ -15,7 +15,7 @@
     "groups": [
       {
         "name": "Blocking Arms Sales To Israel",
-        "about": "Six attempts to stop specific weapons sales. All failed.",
+        "about": "Six attempts to stop specific sales of bombs, rifles and bulldozers. All failed.",
         "votes": [
           "s2025-165",
           "s2025-166",
@@ -24,7 +24,7 @@
           "s2026-80",
           "s2026-81"
         ],
-        "more": "Congress can block a weapons sale to another country by passing a resolution against it. Senators forced votes on six of these, each covering a different sale to Israel. Every vote was on whether to pull the resolution out of committee, and every one failed, so none moved forward."
+        "more": "Congress can block an arms sale to another country by passing a resolution against it. Senators forced votes on six of these, each covering a different sale to Israel. Four covered bombs or bomb guidance kits, one covered rifles for Israel's national police, and one covered Caterpillar bulldozers. Every vote was on whether to pull the resolution out of committee, and every one failed, so none moved forward."
       },
       {
         "name": "The 2026 Defense Policy Bill",
@@ -37,7 +37,7 @@
           "s2025-647",
           "s2025-648"
         ],
-        "more": "This yearly bill sets policy for the military: how many troops, which aircraft, ships and missiles to buy, and construction on bases. The final version also covered military pay and health care. It sets spending limits but does not itself provide the money. The six votes were steps along the way, from starting debate to approving the final version.",
+        "more": "This yearly bill sets policy for the military: how many troops, which aircraft, ships and missiles to buy, and construction on bases. It also covers military pay and health care. It sets spending limits but does not itself provide the money. The six votes were steps along the way, from starting debate to approving the final version. The first three were on the Senate's own version (S. 2296). The last three were on the final version agreed with the House, which traveled under a different bill number (S. 1071).",
         "bill": "s-2296"
       },
       {
@@ -64,8 +64,8 @@
         "bill": "s-331"
       },
       {
-        "name": "The Energy Permitting Bill",
-        "about": "Would change permit and review rules for energy projects and power lines.",
+        "name": "Advancing The Energy Permitting Bill",
+        "about": "Would change permit rules for energy projects. No final vote yet.",
         "votes": [
           "s2026-257",
           "s2026-258",
@@ -74,23 +74,23 @@
         "more": "The Senate is using a House tax bill, the Survivor Justice Tax Prevention Act (H.R. 2347), to carry a much larger package called the Bipartisan American Affordability and Jobs Act. The package would set deadlines for federal permits and environmental reviews, set a 150-day limit for filing many lawsuits against them, and change rules for power lines, geothermal, hydropower, nuclear licensing and mining. The version a Senate committee posted on November 7 keeps the original tax bill as one section. That section would stop taxing most payouts won by survivors of sexual abuse. Two of these votes were on taking up the bill and one was on ending debate on the package. The Senate has not held a final vote on it."
       },
       {
-        "name": "The College Sports Bill",
-        "about": "Covers name and image deals, agent fees, transfers and schools' TV rights.",
+        "name": "Taking Up The College Sports Bill",
+        "about": "Votes to start debate on rules for college sports. Both later voted against it.",
         "votes": [
           "s2026-235",
           "s2026-236"
         ],
-        "more": "The Protect College Sports Act sets national rules for athletes' name, image and likeness deals, requires agents to register and caps their fees at 5 percent, and gives athletes one transfer without losing eligibility. It also lets schools and conferences pool and sell media rights, and makes the cap on sharing revenue with athletes permanent.",
+        "more": "Both votes were on whether to start debate on the Protect College Sports Act. When the Senate passed the bill on September 28, 2026, 77 to 22, both senators voted no. As introduced, the bill sets national rules for athletes' name, image and likeness deals, caps agents' fees on those deals at 5 percent, and gives athletes one transfer without losing eligibility. It also lets schools and conferences pool and sell media rights, and keeps the cap on sharing revenue with athletes in place after a court settlement ends.",
         "bill": "s-4668"
       },
       {
-        "name": "The ROAD To Housing Act",
-        "about": "Covers dozens of housing changes, plus rules for community banks.",
+        "name": "Taking Up The Housing Bill",
+        "about": "Votes to start debate on a wide housing bill. Both later voted to pass it.",
         "votes": [
           "s2026-44",
           "s2026-45"
         ],
-        "more": "The 21st Century ROAD to Housing Act has 59 sections that create or change federal housing programs. Among them: support for permitting new kinds of apartment buildings, lighter environmental review for some rural projects, rules for manufactured housing, and closer oversight of housing counseling groups. It also includes sections on community banks.",
+        "more": "Both votes were on whether to start debate on a housing bill the House had passed, the Housing for the 21st Century Act (H.R. 6644). The Senate then replaced its text with its own version, the 21st Century ROAD to Housing Act, and passed it 89 to 10 on March 12, 2026. Both senators voted yes then, and yes again on the final version on June 22, 2026. The final version has 59 sections. Most create or change federal housing programs: support for permitting new kinds of apartment buildings, lighter environmental review for some rural projects, rules for manufactured housing, and closer oversight of housing counseling groups. It also has sections on community banks, limits on large investors buying single-family homes, and a bar, through 2030, on the Federal Reserve issuing its own digital currency.",
         "bill": "hr-6644"
       },
       {
@@ -112,12 +112,12 @@
         "bill": "hr-7148"
       },
       {
-        "name": "The March 2025 Stopgap Funding Bill",
-        "about": "Advanced a bill keeping the government open through September 2025.",
+        "name": "Advancing The March 2025 Stopgap Funding Bill",
+        "about": "Let a bill funding the government reach a final vote. Both then voted no.",
         "votes": [
           "s2025-128"
         ],
-        "more": "A continuing resolution that funded the government for the rest of the 2025 budget year, mostly at 2024 levels, and avoided a shutdown on March 14, 2025. This was the vote to end debate on it, which needed 60 senators.",
+        "more": "A continuing resolution that funded the government through September 30, 2025, the rest of that budget year, and avoided a shutdown on March 14, 2025. This was the vote to end debate on it, which needed 60 senators. Later the same day both senators voted against passing the bill itself, which passed 54 to 46.",
         "bill": "hr-1968"
       },
       {
@@ -134,7 +134,7 @@
         "votes": [
           "s2025-568"
         ],
-        "more": "An amendment to the defense policy bill. It would have cut the Pentagon budget by 10 percent and used the money to expand dental care for veterans. It failed, 10 to 88.",
+        "more": "An amendment to the defense policy bill. It would have cut the amount the bill allows for the Pentagon by 10 percent, not counting military pay and the military health program, and used the money to expand dental care for veterans. It needed 60 votes and failed, 10 to 88.",
         "bill": "s-2296"
       },
       {
@@ -152,7 +152,7 @@
         "votes": [
           "s2025-179"
         ],
-        "more": "An amendment to the 2025 budget plan that would have changed its instructions on the debt limit. It failed, 5 to 94.",
+        "more": "An amendment to the 2025 budget plan. The plan told Congress to raise the debt limit by $4 trillion in the House's instructions and by up to $5 trillion in the Senate's. The amendment would have changed both to $500 billion. It failed, 5 to 94.",
         "bill": "hconres-14"
       }
     ]

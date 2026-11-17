@@ -103,7 +103,7 @@ def who(name, seat, lines):
 
 EXPLAIN = ('Race 3: The Race And The People', 'The Race', '\n'.join([
     h1('Two Senators Want The Job', 62),
-    lede('Senate Democrats choose their leader in December.<br>Only Democratic senators get a vote.'),
+    lede('Senate Democrats are set to vote on December 1.<br>Only Democratic senators get a vote.'),
     f'<div style="flex: 1; min-height: 0; display: flex; gap: {G}px">'
     + who('Chuck Schumer', 'New York', ['In the Senate since 1999', 'Has led Senate Democrats since 2017', 'Running to keep the job'])
     + who('Chris Van Hollen', 'Maryland', ['In the Senate since 2017', 'Served in House of Representatives (2003-17)', 'Announced his run on November 12']) + '</div>',
@@ -138,16 +138,16 @@ def split(what, a, b, n, about):
             f'<div style="font-size: 30px; font-weight: 700; line-height: 1; text-align: right">{b}</div></div>')
 
 
-SPLITS = [('Blocking Arms Sales To Israel', 'No', 'Yes', 6, 'Six attempts to stop specific weapons sales. All failed.'),
+SPLITS = [('Blocking Arms Sales To Israel', 'No', 'Yes', 6, 'Six attempts to stop specific sales of bombs, rifles and bulldozers. All failed.'),
           ('The 2026 Defense Policy Bill', 'Yes', 'No', 6, 'Covers troop levels, weapons buying and military construction.'),
           ('Overturning An IRS Reporting Rule For Crypto', 'Yes', 'No', 4, 'Cancels a rule making some crypto platforms report sales to the IRS.'),
           ('Permanently Banning Fentanyl-Related Drugs', 'Yes', 'No', 3, 'Permanently puts fentanyl-related substances in the strictest drug category.'),
-          ('The Energy Permitting Bill', 'Yes', 'No', 3, 'Would change permit and review rules for energy projects and power lines.'),
-          ('The College Sports Bill', 'Yes', 'No', 2, 'Covers name and image deals, agent fees, transfers and schools&rsquo; TV rights.'),
-          ('The ROAD To Housing Act', 'Yes', 'No', 2, 'Covers dozens of housing changes, plus rules for community banks.'),
+          ('Advancing The Energy Permitting Bill', 'Yes', 'No', 3, 'Would change permit rules for energy projects. No final vote yet.'),
+          ('Taking Up The College Sports Bill', 'Yes', 'No', 2, 'Votes to start debate on rules for college sports. Both later voted against it.'),
+          ('Taking Up The Housing Bill', 'Yes', 'No', 2, 'Votes to start debate on a wide housing bill. Both later voted to pass it.'),
           ('Luke Lindberg For A Top Agriculture Job', 'Yes', 'No', 2, 'Nominee for the Agriculture Department&rsquo;s top trade post.'),
           ('The 2026 Government Funding Bill', 'Yes', 'No', 1, 'Funds the military, health, education, transportation, housing and more.'),
-          ('The March 2025 Stopgap Funding Bill', 'Yes', 'No', 1, 'Advanced a bill keeping the government open through September 2025.'),
+          ('Advancing The March 2025 Stopgap Funding Bill', 'Yes', 'No', 1, 'Let a bill funding the government reach a final vote. Both then voted no.'),
           ('Sean Duffy For Transportation Secretary', 'Yes', 'No', 1, 'Nominee to run the Department of Transportation.'),
           ('Cutting The Defense Budget By 10 Percent', 'No', 'Yes', 1, 'Would have moved the money to veterans&rsquo; dental care. Failed, 10 to 88.'),
           ('Setting Aside A Hemp Change In A Funding Bill', 'No', 'Yes', 1, 'Set aside an attempt to drop a new definition of hemp from the bill.'),
