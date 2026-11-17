@@ -2286,6 +2286,42 @@
   "one_sentence": "This joint resolution would nullify a 2024 Consumer Financial Protection Bureau rule that sets limits on overdraft charges at very large financial institutions.",
   "short": "The resolution would cancel the final rule issued by the Consumer Financial Protection Bureau, titled \"Overdraft Lending: Very Large Financial Institutions,\" which was published on December 30, 2024. That rule concerns fees charged when a customer's bank account lacks enough funds to cover a transaction, known as overdrafts, at very large financial institutions. Under the rule, those institutions would have to cap overdraft charges at $5, cap them at a higher amount if they can justify it, or treat overdrafts as credit and follow the disclosure requirements of the Truth in Lending Act."
  },
+ "sjres-180": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The resolution would direct the President to remove U.S. Armed Forces from hostilities within or against Iran unless Congress has declared war or authorized the use of military force for that purpose.",
+  "short": "The joint resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran that Congress has not authorized, meaning no declaration of war or authorization to use military force for that purpose has been enacted. It states that it does not prevent the United States from defending against an attack on the United States or on its personnel or facilities in other nations."
+ },
+ "sjres-181": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The resolution would direct the President to remove U.S. armed forces from hostilities against Iran unless Congress has declared war or authorized the use of force for that purpose.",
+  "short": "The joint resolution would require the President to withdraw U.S. Armed Forces from hostilities within or against Iran that have not been approved by Congress, through a declaration of war or an authorization for the use of military force. It states that it does not prevent the United States from defending against an attack on the country or on U.S. personnel or facilities in other nations."
+ },
+ "sjres-184": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The resolution would require the President to remove U.S. Armed Forces from hostilities against Iran unless Congress has declared war or authorized the use of force for that purpose.",
+  "short": "The joint resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran that Congress has not authorized. The removal requirement does not apply if a declaration of war or an authorization to use military force for that purpose has been enacted. The resolution also states that it does not prevent the United States from defending against an attack on the country or on its personnel or facilities in other nations."
+ },
+ "sjres-185": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The resolution would require the President to remove U.S. armed forces from hostilities against Iran unless Congress has declared war or authorized the use of military force for that purpose.",
+  "short": "The joint resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran that have not been authorized by Congress. Under the measure, the removal requirement does not apply if a declaration of war or an authorization to use military force for that purpose has been enacted. The resolution also states that it would not prevent the United States from defending against an attack on the country or on its personnel or facilities in other nations."
+ },
+ "sjres-198": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify a 2025 CMS notice that set up a Medicare prior authorization test model in six states using third-party contractors and enhanced technology.",
+  "short": "The resolution would overturn a July 1, 2025 notice from the Centers for Medicare & Medicaid Services (CMS) that created the WISeR model, a payment model that requires prior authorization for certain Medicare services. Under the model, contracted companies would review prior authorization requests for select services using enhanced technology, such as artificial intelligence, and are paid based on a share of resulting savings. The model covers New Jersey, Ohio, Oklahoma, Texas, Arizona, and Washington over six years, and CMS began implementing it on January 1, 2026. The resolution would prohibit CMS from continuing the model."
+ },
+ "sjres-26": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would block a proposed U.S. foreign military sale to Israel of certain defense articles and services.",
+  "short": "The measure is a joint resolution of disapproval, meaning it would formally reject a proposed sale rather than create a new program. If enacted, it would prohibit a proposed foreign military sale of certain defense articles and services to Israel. The official summary does not list the specific items involved or the sale's value."
+ },
  "sjres-28": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This resolution would nullify a Consumer Financial Protection Bureau rule that defines which payment app companies are subject to the Bureau's supervision.",
@@ -2302,9 +2338,177 @@
   "one_sentence": "This joint resolution would nullify an Environmental Protection Agency rule that requires certain facilities reclassifying as area sources under the Clean Air Act to keep using specified emission controls.",
   "short": "The resolution would overturn an EPA rule about facilities that move from the major source category to the area source category under Section 112 of the Clean Air Act. Under the rule, such facilities must continue using certain control methods so they do not increase emissions beyond the major source requirements in place when they reclassify. Area sources are subject to less stringent standards than major sources. The official summary states that the resolution would remove the requirement for sources of persistent and bioaccumulative hazardous air pollutants to comply with certain major source standards when they reclassify."
  },
+ "sjres-32": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would block a proposed U.S. sale of certain military equipment and related services to the Government of Israel.",
+  "short": "The resolution expresses congressional disapproval of a proposed foreign military sale of certain defense articles and services to Israel. If enacted, it would prohibit that proposed sale from going forward. The official summary provides no further detail on the specific items or services involved."
+ },
+ "sjres-33": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would block a proposed U.S. military sale of certain defense articles and services to the Government of Israel.",
+  "short": "The measure is a joint resolution of disapproval, meaning it would formally reject a proposed foreign military sale to Israel. Under the resolution, the specified defense articles and services could not be sold as proposed. The official summary describes only this prohibition and does not give further details about the items involved."
+ },
+ "sjres-34": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would block a proposed U.S. military sale of certain defense articles and services to the Government of Israel.",
+  "short": "The resolution is a formal disapproval of a proposed foreign military sale of certain defense articles and services to Israel. If enacted, it would prohibit that proposed sale from going forward. The official summary does not describe the specific items or services involved."
+ },
+ "sjres-37": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would end the national emergency that was used to impose additional tariffs on most imports from Canada.",
+  "short": "The resolution would terminate the national emergency declared by President Donald J. Trump on February 1, 2025. That emergency was the basis for an additional 25% tariff on most imports from Canada. Canadian energy or energy resources would instead be subject to an additional 10% tariff under the same declaration."
+ },
+ "sjres-41": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would block a proposed export of certain firearms, parts, and components to Israel.",
+  "short": "The resolution is a joint resolution of disapproval concerning a proposed export of certain defense articles to Israel. According to the Congressional Research Service summary, it would prohibit the proposed export of certain firearms, parts, and components to Israel. The official material provided does not describe the specific items, quantities, or the reasons behind the proposal."
+ },
+ "sjres-49": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would end the national emergency that was used to impose tariffs on most U.S. imports and additional duties on specified trading partners.",
+  "short": "The resolution would terminate the national emergency declared by President Donald J. Trump on April 2, 2025. That emergency was the basis for imposing a 10% tariff on most imports to the United States. It also covers additional duties on specified trading partners."
+ },
+ "sjres-53": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would block a proposed U.S. military sale of certain defense articles and services to the Government of Qatar.",
+  "short": "The measure is a joint resolution of disapproval, which would formally oppose a proposed foreign military sale to Qatar. According to the official summary, it would prohibit the proposed sale of specified defense articles and services to Qatar. The official material does not list the specific items or dollar value involved."
+ },
+ "sjres-54": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would block a proposed U.S. military sale of certain defense articles and services to the United Arab Emirates.",
+  "short": "The measure is a joint resolution of disapproval concerning a proposed foreign military sale of certain defense articles and services to the United Arab Emirates. According to the Congressional Research Service summary, it would prohibit that proposed sale from going forward. The official material does not list the specific articles or services involved, the dollar value, or the reasons behind the resolution."
+ },
+ "sjres-55": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify a January 2025 federal rule that set new vehicle safety standards for hydrogen-fueled motor vehicles.",
+  "short": "The resolution would cancel a final rule from the National Highway Traffic Safety Administration, published January 17, 2025, that created two new Federal Motor Vehicle Safety Standards for vehicles using hydrogen as fuel. The standards cover the hydrogen fuel system during normal operation and after crashes, and the compressed hydrogen storage system, including its closure devices such as valves and pressure relief devices, with the aim of making leaks or bursts unlikely. The rule is based on a international technical regulation on hydrogen and fuel cell vehicles, developed under a 1998 agreement administered by the UN Economic Commission for Europe."
+ },
+ "sjres-59": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would direct the President to end U.S. military hostilities against Iran unless Congress has specifically authorized them.",
+  "short": "The resolution directs the President to remove United States Armed Forces from hostilities against Iran that Congress has not authorized. It would stop such hostilities unless Congress has issued a declaration of war or a specific authorization for use of military force against Iran."
+ },
+ "sjres-60": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify a 2025 EPA rule that raised the allowed summer nitrogen oxides emissions from Indiana electricity generating units.",
+  "short": "The resolution would cancel an Environmental Protection Agency interim final rule published May 20, 2025, titled \"Emissions Budget and Allowance Allocations for Indiana Under the Revised Cross-State Air Pollution Rule Update.\" That rule increases the permissible nitrogen oxides (NOx) emissions from Indiana electricity generating units from May through September, beginning in 2024 and continuing in later years. Under the resolution, the rule would be nullified. The resolution is authorized under the Congressional Review Act, which allows Congress to disapprove federal agency rules."
+ },
+ "sjres-7": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify a Federal Communications Commission rule that allows schools and libraries in the E-Rate program to buy discounted Wi-Fi hotspots and mobile service for off-site use.",
+  "short": "The resolution would cancel a final rule issued by the Federal Communications Commission and published on August 20, 2024, titled \"Addressing the Homework Gap Through the E-Rate Program.\" That rule lets schools and libraries participating in the E-Rate program buy discounted Wi-Fi hotspots and related mobile connectivity service for students, staff, and library patrons to use outside their buildings. Under the rule, participants must adopt acceptable use policies requiring the hotspots to be used primarily for educational purposes."
+ },
+ "sjres-71": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would end the national emergency on energy that the President declared on January 20, 2025, in Executive Order 14156.",
+  "short": "The resolution would terminate the national emergency relating to energy declared by the President in Executive Order 14156. That order states that U.S. energy supply and infrastructure are insufficient to meet national needs and defines energy to include oil, natural gas, refined petroleum products, uranium, coal, biofuels, geothermal heat, water-flow power, and critical minerals. The order directs federal agencies to use emergency and other authorities to support domestic energy development, expedite certain energy infrastructure projects, and conduct a Department of Defense assessment of energy acquisition and transport in the Northeast and West Coast."
+ },
+ "sjres-76": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would overturn an EPA rule that extended certain deadlines for oil and natural gas facility emissions standards, restoring the original deadlines.",
+  "short": "The resolution would nullify a rule the Environmental Protection Agency published on July 31, 2025, which extended deadlines for performance standards covering control devices, equipment leaks, storage vessels, process controllers, and vent systems at crude oil and natural gas facilities. The rule also extended the date for future implementation of the Methane Super Emitter Program and a state plan submittal deadline. If passed, the resolution would restore the deadlines that applied before the rule's extensions."
+ },
+ "sjres-77": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would end the national emergency that was used to impose additional tariffs on most imports from Canada.",
+  "short": "The resolution terminates the national emergency declared by President Donald J. Trump on February 1, 2025. That emergency was the basis for an additional 25% tariff on most imports from Canada. Canadian energy or energy resources would instead face an additional 10% tariff under the same emergency."
+ },
  "sjres-80": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This joint resolution would overturn a 2022 Bureau of Land Management plan for the National Petroleum Reserve in Alaska and restore the earlier 2020 plan, reopening portions of the area to oil and gas leasing.",
   "short": "The resolution would nullify a Bureau of Land Management plan issued April 25, 2022, for the National Petroleum Reserve in Alaska, an area of roughly 23 million acres on the North Slope. The 2022 plan had closed about 48% of the reserve to oil and gas leasing to protect resources such as wildlife and subsistence use by communities. Under the resolution, those protections would be removed and the 2020 plan would apply again, reopening portions of the reserve to leasing."
+ },
+ "sjres-81": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would end the national emergency that was used to impose an additional 40% tariff on certain imports from Brazil.",
+  "short": "The resolution terminates the national emergency declared by President Trump in a July 30, 2025 executive order. That emergency was the basis for an additional 40% tariff on certain Brazilian imports. The executive order exempted some products from this tariff, including civil aircraft and parts, wood pulp, precious metals, energy products, and fertilizers."
+ },
+ "sjres-84": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would cancel a 2025 Centers for Medicare & Medicaid Services rule that changed health insurance marketplace enrollment and coverage requirements.",
+  "short": "The joint resolution would nullify a rule issued by the Centers for Medicare & Medicaid Services on June 25, 2025, titled \"Patient Protection and Affordable Care Act; Marketplace Integrity and Affordability.\" The rule sets annual open enrollment for health insurance exchanges to run from November 1 to December 31, and requires exchanges to verify eligibility before enrolling at least 75% of new special enrollment period applicants. It also bars Deferred Action for Childhood Arrivals (DACA) recipients from enrolling through exchanges or state Basic Health Programs. In addition, the rule prohibits individual and small group health insurers from covering certain sex-trait modification procedures as an essential health benefit."
+ },
+ "sjres-86": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify an EPA rule that approved South Dakota's revised regional haze plan for improving visibility in national parks and wilderness areas.",
+  "short": "The resolution would cancel a final rule from the Environmental Protection Agency, published August 28, 2025, that approved South Dakota's revision to its state implementation plan. The approved plan was meant to meet the EPA's regional haze rule, which requires states to take actions to improve visibility in national parks and wilderness areas. The resolution is filed under chapter 8 of title 5 of the U.S. Code, the Congressional Review Act procedure for disapproving federal agency rules."
+ },
+ "sjres-88": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would end the national emergency that was used to impose tariffs on most U.S. imports and additional duties on certain trading partners.",
+  "short": "The resolution would terminate the national emergency declared by President Donald J. Trump on April 2, 2025. That emergency was the basis for a 10% tariff on most imports into the United States. It also supported additional duties on specified trading partners."
+ },
+ "sjres-89": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would cancel a 2024 Bureau of Land Management rule and restore the 2015 land management plan for the Buffalo Field Office in Wyoming, making coal available for federal leasing again.",
+  "short": "The resolution would nullify a rule the Bureau of Land Management submitted on November 20, 2024, which amended the 2015 resource management plan for the Buffalo Field Office in Wyoming so that no federal coal would be available for future leasing. Under the resolution, the Bureau would follow the 2015 plan as it stood before the 2024 amendment, and coal would be available for leasing. The Bureau made the amendment after a court ruled that it had to evaluate the climate impacts of federal coal leasing in the area and consider alternatives that would limit or stop leasing, in order to comply with the National Environmental Policy Act."
+ },
+ "sjres-90": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would direct the President to end the use of U.S. Armed Forces in hostilities within or against Venezuela unless Congress has declared war or authorized the use of military force for that purpose.",
+  "short": "The resolution directs the President to terminate U.S. military involvement in hostilities within or against Venezuela that Congress has not authorized through a declaration of war or an authorization for the use of military force. It states that it does not prevent the United States from defending itself against an armed attack or the threat of an imminent armed attack."
+ },
+ "sjres-91": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution would cancel a 2024 Bureau of Land Management rule that limits oil and gas leasing in the Arctic National Wildlife Refuge's Coastal Plain.",
+  "short": "The Bureau of Land Management issued a 2024 decision that made about 1.2 million of the roughly 1.6 million acres in the Coastal Plain program area unavailable for oil and gas leasing. That decision still requires at least 400,000 acres to be offered for leasing in a specified lease sale, subject to certain conditions. This joint resolution would nullify that 2024 decision, which replaced a 2020 decision making the entire program area available for leasing."
+ },
+ "sjres-98": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would direct the President to end U.S. Armed Forces hostilities within or against Venezuela unless Congress has declared war or authorized the use of military force for that purpose.",
+  "short": "The resolution directs the President to end the use of U.S. Armed Forces in hostilities within or against Venezuela. The direction applies unless Congress has enacted a declaration of war or an authorization for the use of military force for that purpose. The resolution also states that it does not prevent the United States from defending itself against an armed attack or the threat of an imminent armed attack."
+ },
+ "sres-377": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution lets the Senate consider a group of executive-branch and ambassador nominations together, in one batch, during its executive session.",
+  "short": "The resolution provides for the Senate to take up several nominations on the Executive Calendar en bloc, meaning as a single group rather than one at a time. The nominations cover executive officers who would serve in the Departments of Defense, Energy, the Interior, and Labor. It also covers ambassadors who would represent the United States to Argentina, Greece, Liechtenstein, and Sweden."
+ },
+ "sres-526": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution would withhold Senators' pay during any federal government shutdown, starting the day after the November 2026 general election.",
+  "short": "The resolution would stop paying Senators while any federal government shutdown is in effect, meaning a lapse in funding for one or more federal agencies or departments. Senators would be paid as soon as practicable after a shutdown ends. The restriction would begin the day after the regularly scheduled general election for federal office in November 2026, because the Constitution does not allow changes to congressional pay to take effect before an intervening election."
+ },
+ "sres-690": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This executive resolution would allow the Senate to consider 49 pending nominations for federal posts, including ambassadorships, as a single group.",
+  "short": "The resolution authorizes the Senate to take up 49 nominations on the Executive Calendar together, en bloc, while in Executive Session. The nominees would fill various roles, including executive officers in the Departments of Commerce, Justice, State, and Transportation. The package also includes nominations to serve as U.S. ambassador to Iceland, Slovenia, Sri Lanka, and Vietnam."
+ },
+ "sres-817": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution would allow the Senate to confirm a group of executive branch, judicial, and ambassadorial nominees together in a single vote.",
+  "short": "The resolution sets up en bloc consideration, meaning several nominations listed on the Executive Calendar are considered together in executive session rather than one at a time. The nominees would serve in executive offices at agencies including the Departments of Defense, Energy, the Interior, State, and the Treasury. Other nominees would represent the United States to bodies such as the United Nations and the Organization for Economic Cooperation and Development, and to countries including Brazil, Cambodia, Cyprus, and the Gambia. Additional nominees would serve on the National Labor Relations Board, National Transportation Safety Board, Consumer Product Safety Commission, and District of Columbia courts."
+ },
+ "sres-852": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution asks the State Department to give Congress an unclassified report on Israel's human rights practices, including killings of U.S. citizens since 2022.",
+  "short": "The resolution requests that the Department of State provide Congress with an unclassified statement on Israel's human rights practices, under section 502B(c) of the Foreign Assistance Act of 1961. The requested statement would include all credible information about the alleged killing of nine named U.S. citizens and any other U.S. citizens by Israeli forces or settlers in 2022 or later. It would also cover possible suspects, steps Israeli authorities have taken to investigate and hold people accountable, the situation of U.S. citizens held in Israeli prisons, and the human rights situation of Palestinian children in Israeli military detention in the West Bank."
  }
 }
