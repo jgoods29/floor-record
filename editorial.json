@@ -1,5 +1,5 @@
 {
-  "_about": "Wording a person has approved. 'pins' puts votes at the top of the home page for 90 days. 'votes' sets the name, outcome and one-line explanation for a vote, and always wins over AI or automatic wording.",
+  "_about": "Wording a person has approved. 'pins' puts votes at the top of the home page for 90 days. 'votes' sets the name, outcome and one-line explanation for a vote, and always wins over AI or automatic wording. 'carried' marks a bill the Senate is using to carry a different, larger package: Senate vote pages on or after 'since' show the note in place of the summary of the original bill, and the bill page shows the note at the top.",
   "pins": ["2026-317", "2026-320", "2026-307"],
   "votes": {
     "2026-317": {
@@ -16,6 +16,24 @@
       "name": "Iran war powers",
       "outcome": "Passed",
       "plain": "The House directed the President to remove U.S. armed forces from hostilities with Iran."
+    },
+    "s2026-257": {
+      "name": "Energy permitting bill: first vote to take it up",
+      "plain": "The Senate voted 73 to 25 to move toward debate on H.R. 2347, a House tax bill that Senate leaders are using to carry a large energy permitting package. The package would change permit and environmental review rules for energy projects and power lines."
+    },
+    "s2026-258": {
+      "name": "Energy permitting bill: vote to begin debate",
+      "plain": "The Senate voted 62 to 21 to begin debate on H.R. 2347, a House tax bill that Senate leaders are using to carry a large energy permitting package. The package was then offered as an amendment that would replace the bill's text."
+    },
+    "s2026-264": {
+      "name": "Energy permitting bill: vote to end debate on the package",
+      "plain": "The Senate voted 70 to 27 to end debate on an amendment that would replace the text of H.R. 2347, a House tax bill, with a large energy permitting package called the Bipartisan American Affordability and Jobs Act. The package would change permit and environmental review rules for energy projects and power lines."
+    }
+  },
+  "carried": {
+    "hr-2347": {
+      "since": "2026-11-09",
+      "note": "The Senate is using this House tax bill to carry a much larger energy permitting package, the Bipartisan American Affordability and Jobs Act. Senate votes on H.R. 2347 since November 9, 2026 are steps on that package. The package would change permit and environmental review rules for energy projects and power lines. The summary of the original House bill does not describe it."
     }
   }
 }

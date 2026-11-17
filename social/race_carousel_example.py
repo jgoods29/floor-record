@@ -142,7 +142,7 @@ SPLITS = [('Blocking Arms Sales To Israel', 'No', 'Yes', 6, 'Six attempts to sto
           ('The 2026 Defense Policy Bill', 'Yes', 'No', 6, 'Covers troop levels, weapons buying and military construction.'),
           ('Overturning An IRS Reporting Rule For Crypto', 'Yes', 'No', 4, 'Cancels a rule making some crypto platforms report sales to the IRS.'),
           ('Permanently Banning Fentanyl-Related Drugs', 'Yes', 'No', 3, 'Permanently puts fentanyl-related substances in the strictest drug category.'),
-          ('The Survivor Justice Tax Prevention Act', 'Yes', 'No', 3, 'Would stop taxing most payouts won by survivors of sexual abuse.'),
+          ('The Energy Permitting Bill', 'Yes', 'No', 3, 'Would change permit and review rules for energy projects and power lines.'),
           ('The College Sports Bill', 'Yes', 'No', 2, 'Covers name and image deals, agent fees, transfers and schools&rsquo; TV rights.'),
           ('The ROAD To Housing Act', 'Yes', 'No', 2, 'Covers dozens of housing changes, plus rules for community banks.'),
           ('Luke Lindberg For A Top Agriculture Job', 'Yes', 'No', 2, 'Nominee for the Agriculture Department&rsquo;s top trade post.'),

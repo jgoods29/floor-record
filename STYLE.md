@@ -50,6 +50,18 @@ Measure before publishing; do not judge spacing by eye alone.
 - Do not promise what the site cannot show (it does not track campaign promises).
 - Make it easy to act at every turn.
 
+## Accuracy: read every bill
+
+Errors are very costly for this project. The owner's rule: read the bill itself before describing it.
+
+- Before a bill or vote is named or described on the site, in an email or in a social post, read the text that was
+  actually voted on, not only its official title or the Library of Congress summary.
+- The Senate often takes a bill that has passed the House and replaces its text with something else (an amendment
+  "in the nature of a substitute"). The official title stays the same. Describe what the Senate was voting on, and
+  mark the bill under `carried` in `editorial.json`.
+- If the text cannot be read, say so and do not publish the description until it has been.
+- Before a social post goes out, check every row in it against the official record and one news source.
+
 ## Color
 
 - Red is Republican, blue is Democrat, purple is neutral or unity.

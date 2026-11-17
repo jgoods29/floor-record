@@ -18,6 +18,7 @@
 
 <div class="row" style="align-items:flex-start;gap:32px">
 <div class="stack" style="flex:999 1 560px;min-width:0">
+{% if note %}<section class="card stack" style="gap:12px"><h2 class="label">Good to know</h2><p style="max-width:680px">{{ note }}</p></section>{% endif %}
 {% if ai %}
 <section class="card tint stack" style="gap:12px"><h2 class="label">In one sentence · AI-written</h2><p style="font-size:20px;line-height:1.4;font-weight:500">{{ ai.one_sentence }}</p></section>
 <section class="card stack" style="gap:12px"><h2 class="h3">The short version <span class="tag proc" style="vertical-align:middle">AI-written</span></h2><p style="max-width:680px">{{ ai.short }}</p>

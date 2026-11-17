@@ -903,6 +903,9 @@ def main():
         # ---- vote pages
         for v in votes:
             ctx = {"v": v, "section": "votes", "bill": measures.get(v["slug"]), "ai": summaries.get(v["slug"])}
+            # A bill the Senate is using to carry a different, larger package: show the approved note, not the summary of the original bill.
+            carried = (editorial.get("carried") or {}).get(v["slug"]) or {}
+            ctx["note"] = carried.get("note", "") if pre and v["date"] >= carried.get("since", "9999") else ""
             sponsor_id = (bills.get(v["slug"]) or {}).get("sponsor")
             ctx["sponsor"] = people.get(sponsor_id)
             seats = sorted(v["positions"], key=lambda r: (ORDER.get(r[3], 4), {"R": 0, "D": 1}.get(r[1], 2), people[r[0]]["sort"]))
@@ -1083,6 +1086,7 @@ def main():
                else {"topic": m["topic"], "key": tkey} if tkey in valid_topics else {"topic": "", "key": ""})
         for pre, ch in (("", HOUSE), ("senate/", SENATE)) if svotes else (("", HOUSE),):
             render(f"{pre}bills/{m['slug']}/index.html", "bill.html", 3 if pre else 2, section="bills", c=pre, ch=ch, b=m, ai=summaries.get(m["slug"]),
+                   note=((editorial.get("carried") or {}).get(m["slug"]) or {}).get("note", ""),
                    act=act, sponsor=people.get(m["rec"].get("sponsor")))
 
     # ---- leaderboard and search
