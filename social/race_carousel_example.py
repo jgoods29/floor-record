@@ -131,15 +131,15 @@ VANHOLLEN = ('Race 5: Chris Van Hollen In A Nutshell', 'In A Nutshell', sen('Chr
 
 # ---- 5: key comparisons (the two tables stretch; every row in a table is the same height)
 def vs(label, a, b): return f'<div style="flex: 1; display: grid; grid-template-columns: 1fr 340px 1fr; align-items: center; border-top: 2px solid {LINE}"><div style="{D}; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.02em">{a}</div><div style="font-size: 24px; line-height: 1.2; font-weight: 600; color: {MUTED}; text-align: center">{label}</div><div style="{D}; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.02em; text-align: right">{b}</div></div>'
-def split(what, a, b, n): return f'<div style="flex: 1; display: grid; grid-template-columns: 110px 1fr 110px; align-items: center; gap: 16px; border-top: 2px solid {LINE}"><div style="font-size: 27px; font-weight: 700">{a}</div><div style="display: flex; flex-direction: column; gap: 4px; text-align: center"><div style="font-size: 27px; font-weight: 600; line-height: 1.2">{what}</div><div style="font-size: 21px; line-height: 1.2; color: {MUTED}">{n}</div></div><div style="font-size: 27px; font-weight: 700; text-align: right">{b}</div></div>'
+def split(what, a, b, n): return f'<div style="flex: 1; display: grid; grid-template-columns: 170px 1fr 170px; align-items: center; gap: 16px; border-top: 2px solid {LINE}"><div style="font-size: 30px; font-weight: 700">{a}</div><div style="display: flex; flex-direction: column; gap: 4px; text-align: center"><div style="font-size: 27px; font-weight: 600; line-height: 1.2">{what}</div><div style="font-size: 21px; line-height: 1.2; color: {MUTED}">{n}</div></div><div style="font-size: 30px; font-weight: 700; text-align: right">{b}</div></div>'
 
 
 COMPARE = ('Race 6: Key Comparisons', 'Side By Side', '\n'.join([
     f'<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: {G}px"><div style="display: flex; flex-direction: column; gap: 8px">{h1("Chuck Schumer", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · New York</div></div><div style="display: flex; flex-direction: column; gap: 8px; text-align: right">{h1("Chris Van Hollen", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · Maryland</div></div></div>',
-    '<div style="flex: 1; min-height: 0; display: flex; flex-direction: column">' + vs('In the Senate since', '1999', '2017') + vs('Bills they introduced', '35', '76') + vs('Others&rsquo; bills they backed', '143', '679') + vs('Voted with their party', '98.5%', '100%')
-    + f'<div style="font-size: 21px; line-height: 1.2; color: {MUTED}; text-align: center; padding-top: 16px; border-top: 2px solid {LINE}">Bills and votes are from this Congress only, since January 2025. Not their whole careers.</div></div>',
-    f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 108px; line-height: 1; letter-spacing: -0.03em">96%</div><div style="font-size: 30px; line-height: 1.3; font-weight: 500">of the time, they voted the same way: 871 of the 905 votes where both voted yes or no.</div></div>',
-    f'<div style="flex: 1; min-height: 0; display: flex; flex-direction: column"><div style="{CAP}; color: {MUTED}; padding-bottom: 16px">Big votes where they split · since January 2025</div>'
+    '<div style="flex: 4; min-height: 0; display: flex; flex-direction: column">' + vs('In the Senate since', '1999', '2017') + vs('Bills they introduced', '35', '76') + vs('Bills they co-signed*', '143', '679')
+    + f'<div style="font-size: 21px; line-height: 1.4; color: {MUTED}; text-align: center; padding-top: 16px; border-top: 2px solid {LINE}">Bills are from this Congress only, since January 2025. Not their whole careers.<br>*See what co-signing a bill means at floortherecord.com</div></div>',
+    f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 108px; line-height: 1; letter-spacing: -0.03em">96%</div><div style="font-size: 30px; line-height: 1.3; font-weight: 500">of the time, they voted the same way. Below are four big votes where they did not.</div></div>',
+    f'<div style="flex: 5; min-height: 0; display: flex; flex-direction: column"><div style="display: grid; grid-template-columns: 170px 1fr 170px; gap: 16px; align-items: end; padding-bottom: 16px; {CAP}; color: {MUTED}"><div>Schumer</div><div style="text-align: center">Where they split</div><div style="text-align: right">Van Hollen</div></div>'
     + split('Blocking an arms sale to Israel', 'No', 'Yes', 'Apr 15, 2026 · Failed, 40 to 59') + split('The 2026 government funding bill', 'Yes', 'No', 'Jan 30, 2026 · Passed, 71 to 29')
     + split('The 2026 defense policy bill', 'Yes', 'No', 'Oct 9, 2025 · Passed, 77 to 20') + split('Sean Duffy for Transportation Secretary', 'Yes', 'No', 'Jan 28, 2025 · Confirmed, 77 to 22') + '</div>',
 ]))
@@ -150,9 +150,8 @@ ACT = ('Race 7: Check It Yourself', 'Your Turn', '\n'.join([
     lede('Every number in this post comes from the public record. Here is how to check it, and how to look up the people who represent you.'),
     f'<div style="flex: 1; min-height: 0; display: flex; flex-direction: column; border-bottom: 2px solid {LINE}">'
     + stepn(1, 'Go To floortherecord.com', 'It is free. You do not need an account.')
-    + stepn(2, 'Type A Name Or Your ZIP Code', 'Find any senator or representative.')
-    + stepn(3, 'Read How They Voted', 'Every vote, explained in one plain sentence.')
-    + stepn(4, 'Decide For Yourself', 'We show the record. What it means is up to you.') + '</div>',
+    + stepn(2, 'Read How They Voted', 'Every vote, explained in one plain sentence.')
+    + stepn(3, 'Decide For Yourself', 'We show the record. What it means is up to you.') + '</div>',
     f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; justify-content: space-between; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 64px; line-height: 1; letter-spacing: -0.02em">floortherecord.com</div><div style="font-size: 28px; line-height: 1.2; font-weight: 600; text-align: right">Link in bio</div></div>',
 ]))
 

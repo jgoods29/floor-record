@@ -1087,6 +1087,8 @@ def main():
                 "u": f"{'' if c['chamber'] == 'house' else 'senate/'}committees/#{c['id']}", "k": (c["full"] + " committee").lower()} for c in committees]
     search += [{"t": t["name"], "s": "Topic", "u": f"topics/{t['key']}/", "k": (t["name"] + " topic").lower()}
                for t in all_topics]
+    search.append({"t": "What Co-Signing A Bill Means", "s": "Explained", "u": "about/#cosign",
+                   "k": "what co-signing a bill means co-sign cosign co-signed cosigned co-signing cosigning cosponsor co-sponsor cosponsored signed onto"})
     write_json(SITE / "search.json", search)
     print(f"Built {len(votes)} vote pages, {len(people)} member pages and {len(measures)} bill pages into {SITE}")
 
