@@ -1,0 +1,483 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 1058383,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "COMMODITIES"
+    ],
+    [
+     "Title II",
+     "CONSERVATION"
+    ],
+    [
+     "Subtitle A",
+     "Definitions"
+    ],
+    [
+     "Subtitle B",
+     "Conservation Reserve Program"
+    ],
+    [
+     "Subtitle C",
+     "Environmental Quality Incentives Program"
+    ],
+    [
+     "Subtitle D",
+     "Conservation Stewardship Program"
+    ],
+    [
+     "Subtitle E",
+     "Other Conservation Programs"
+    ],
+    [
+     "Subtitle F",
+     "Funding and Administration"
+    ],
+    [
+     "Subtitle G",
+     "Agricultural Conservation Easement Program"
+    ],
+    [
+     "Subtitle H",
+     "Forest Conservation Easement Program"
+    ],
+    [
+     "Subtitle I",
+     "Regional Conservation Partnership Program"
+    ],
+    [
+     "Title III",
+     "TRADE"
+    ],
+    [
+     "Subtitle A",
+     "Food for Peace Act"
+    ],
+    [
+     "Subtitle B",
+     "Agricultural Trade Act of 1978"
+    ],
+    [
+     "Subtitle C",
+     "Other Agricultural Trade Laws"
+    ],
+    [
+     "Title IV",
+     "NUTRITION"
+    ],
+    [
+     "Subtitle A",
+     "Supplemental Nutrition Assistance Program"
+    ],
+    [
+     "Subtitle B",
+     "Commodity Distribution Programs"
+    ],
+    [
+     "Subtitle C",
+     "Miscellaneous"
+    ],
+    [
+     "Title V",
+     "CREDIT"
+    ],
+    [
+     "Subtitle A",
+     "Farm Ownership Loans"
+    ],
+    [
+     "Subtitle B",
+     "Operating Loans"
+    ],
+    [
+     "Subtitle C",
+     "Emergency Loans"
+    ],
+    [
+     "Subtitle D",
+     "Administrative Provisions"
+    ],
+    [
+     "Subtitle E",
+     "Miscellaneous"
+    ],
+    [
+     "Title VI",
+     "RURAL DEVELOPMENT"
+    ],
+    [
+     "Subtitle A",
+     "Improving Health Outcomes in Rural America"
+    ],
+    [
+     "Subtitle B",
+     "Connecting Rural Americans to High Speed Broadband"
+    ],
+    [
+     "Subtitle D",
+     "Additional Amendments to the Consolidated Farm and Rural"
+    ],
+    [
+     "Subtitle E",
+     "Additional Amendments to the Rural Electrification Act of"
+    ],
+    [
+     "Title VII",
+     "RESEARCH, EXTENSION, AND RELATED MATTERS"
+    ],
+    [
+     "Subtitle A",
+     "National Agricultural Research, Extension, and Teaching"
+    ],
+    [
+     "Subtitle B",
+     "Food, Agriculture, Conservation, and Trade Act of 1990"
+    ],
+    [
+     "Subtitle C",
+     "Agricultural Research, Extension, and Education Reform Act"
+    ],
+    [
+     "Subtitle D",
+     "Food, Conservation, and Energy Act of 2008"
+    ],
+    [
+     "Subtitle E",
+     "Amendments to Other Laws"
+    ],
+    [
+     "Subtitle F",
+     "Other Matters"
+    ],
+    [
+     "Title VIII",
+     "FORESTRY"
+    ],
+    [
+     "Subtitle A",
+     "Cooperative Forestry Assistance Act of 1978"
+    ],
+    [
+     "Subtitle B",
+     "Healthy Forests Restoration Act of 2003"
+    ],
+    [
+     "Subtitle C",
+     "Other Forestry Programs"
+    ],
+    [
+     "Subtitle D",
+     "Forest Management"
+    ],
+    [
+     "Subtitle E",
+     "Other Matters"
+    ],
+    [
+     "Title IX",
+     "ENERGY"
+    ],
+    [
+     "Title X",
+     "HORTICULTURE, MARKETING, AND REGULATORY REFORM"
+    ],
+    [
+     "Subtitle A",
+     "Horticulture"
+    ],
+    [
+     "Subtitle B",
+     "Marketing"
+    ],
+    [
+     "Subtitle C",
+     "Regulatory Reform"
+    ],
+    [
+     "Title XI",
+     "CROP INSURANCE"
+    ],
+    [
+     "Title XII",
+     "MISCELLANEOUS PROVISIONS"
+    ],
+    [
+     "Subtitle A",
+     "Livestock and Other Animals"
+    ],
+    [
+     "Subtitle B",
+     "Department of Agriculture Reorganization Act of 1994"
+    ],
+    [
+     "Subtitle C",
+     "National Security"
+    ],
+    [
+     "Subtitle D",
+     "Other Miscellaneous Provisions"
+    ]
+   ],
+   "sections": 381,
+   "short_titles": [
+    "Farm, Food, and National Security Act of 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7567ih/html/BILLS-119hr7567ih.htm"
+  },
+  {
+   "chars": 1281494,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "COMMODITIES"
+    ],
+    [
+     "Title II",
+     "CONSERVATION"
+    ],
+    [
+     "Subtitle A",
+     "Definitions"
+    ],
+    [
+     "Subtitle B",
+     "Conservation Reserve Program"
+    ],
+    [
+     "Subtitle C",
+     "Environmental Quality Incentives Program"
+    ],
+    [
+     "Subtitle D",
+     "Conservation Stewardship Program"
+    ],
+    [
+     "Subtitle E",
+     "Other Conservation Programs"
+    ],
+    [
+     "Subtitle F",
+     "Funding and Administration"
+    ],
+    [
+     "Subtitle G",
+     "Agricultural Conservation Easement Program"
+    ],
+    [
+     "Subtitle H",
+     "Forest Conservation Easement Program"
+    ],
+    [
+     "Subtitle I",
+     "Regional Conservation Partnership Program"
+    ],
+    [
+     "Title III",
+     "TRADE"
+    ],
+    [
+     "Subtitle A",
+     "Food for Peace Act"
+    ],
+    [
+     "Subtitle B",
+     "Agricultural Trade Act of 1978"
+    ],
+    [
+     "Subtitle C",
+     "Other Agricultural Trade Laws"
+    ],
+    [
+     "Subtitle D",
+     "Other Trade Matters"
+    ],
+    [
+     "Title IV",
+     "NUTRITION"
+    ],
+    [
+     "Subtitle A",
+     "Supplemental Nutrition Assistance Program"
+    ],
+    [
+     "Subtitle B",
+     "Commodity Distribution Programs"
+    ],
+    [
+     "Subtitle C",
+     "Miscellaneous"
+    ],
+    [
+     "Title V",
+     "CREDIT"
+    ],
+    [
+     "Subtitle A",
+     "Farm Ownership Loans"
+    ],
+    [
+     "Subtitle B",
+     "Operating Loans"
+    ],
+    [
+     "Subtitle C",
+     "Emergency Loans"
+    ],
+    [
+     "Subtitle D",
+     "Administrative Provisions"
+    ],
+    [
+     "Subtitle E",
+     "Miscellaneous"
+    ],
+    [
+     "Title VI",
+     "RURAL DEVELOPMENT"
+    ],
+    [
+     "Subtitle A",
+     "Improving Health Outcomes in Rural America"
+    ],
+    [
+     "Subtitle B",
+     "Connecting Rural Americans to High Speed Broadband"
+    ],
+    [
+     "Subtitle D",
+     "Additional Amendments to the Consolidated Farm and Rural"
+    ],
+    [
+     "Subtitle E",
+     "Additional Amendments to the Rural Electrification Act of"
+    ],
+    [
+     "Title VII",
+     "RESEARCH, EXTENSION, AND RELATED MATTERS"
+    ],
+    [
+     "Subtitle A",
+     "National Agricultural Research, Extension, and Teaching"
+    ],
+    [
+     "Subtitle B",
+     "Food, Agriculture, Conservation, and Trade Act of 1990"
+    ],
+    [
+     "Subtitle C",
+     "Agricultural Research, Extension, and Education Reform Act"
+    ],
+    [
+     "Subtitle D",
+     "Food, Conservation, and Energy Act of 2008"
+    ],
+    [
+     "Subtitle E",
+     "Amendments to Other Laws"
+    ],
+    [
+     "Subtitle F",
+     "Other Matters"
+    ],
+    [
+     "Title VIII",
+     "FORESTRY"
+    ],
+    [
+     "Subtitle A",
+     "Cooperative Forestry Assistance Act of 1978"
+    ],
+    [
+     "Subtitle B",
+     "Healthy Forests Restoration Act of 2003"
+    ],
+    [
+     "Subtitle C",
+     "Other Forestry Programs"
+    ],
+    [
+     "Subtitle D",
+     "Forest Management"
+    ],
+    [
+     "Subtitle E",
+     "Other Matters"
+    ],
+    [
+     "Subtitle F",
+     "White Oak Resilience"
+    ],
+    [
+     "Subtitle G",
+     "Save Our Sequoias"
+    ],
+    [
+     "Title IX",
+     "ENERGY"
+    ],
+    [
+     "Title X",
+     "HORTICULTURE, MARKETING, AND REGULATORY REFORM"
+    ],
+    [
+     "Subtitle A",
+     "Horticulture"
+    ],
+    [
+     "Subtitle B",
+     "Marketing"
+    ],
+    [
+     "Subtitle C",
+     "Regulatory Reform"
+    ],
+    [
+     "Title XI",
+     "CROP INSURANCE"
+    ],
+    [
+     "Title XII",
+     "MISCELLANEOUS PROVISIONS"
+    ],
+    [
+     "Subtitle A",
+     "Livestock and Other Animals"
+    ],
+    [
+     "Subtitle B",
+     "Department of Agriculture Reorganization Act of 1994"
+    ],
+    [
+     "Subtitle C",
+     "National Security"
+    ],
+    [
+     "Subtitle D",
+     "Other Miscellaneous Provisions"
+    ],
+    [
+     "Subtitle E",
+     "United States Grain Standards Reauthorization"
+    ]
+   ],
+   "sections": 457,
+   "short_titles": [
+    "Farm, Food, and National Security Act of 2026",
+    "White Oak Resilience Act",
+    "Save Our Sequoias Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7567eh/html/BILLS-119hr7567eh.htm"
+  }
+ ]
+}

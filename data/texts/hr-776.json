@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 1527,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Nutria Eradication and Control Reauthorization Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr776ih/html/BILLS-119hr776ih.htm"
+  },
+  {
+   "chars": 1554,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Nutria Eradication and Control Reauthorization Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr776eh/html/BILLS-119hr776eh.htm"
+  }
+ ]
+}

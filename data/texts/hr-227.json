@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.907,
+  "kept": 0.949,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 4524,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Clergy Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr227ih/html/BILLS-119hr227ih.htm"
+  },
+  {
+   "chars": 4535,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Clergy Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr227eh/html/BILLS-119hr227eh.htm"
+  },
+  {
+   "chars": 4356,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Clergy Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr227enr/html/BILLS-119hr227enr.htm"
+  }
+ ]
+}

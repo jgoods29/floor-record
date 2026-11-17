@@ -1,0 +1,43 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.527,
+  "kept": 0.69,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 1611,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres18is/html/BILLS-119sjres18is.htm"
+  },
+  {
+   "chars": 1371,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres18es/html/BILLS-119sjres18es.htm"
+  },
+  {
+   "chars": 1287,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres18enr/html/BILLS-119sjres18enr.htm"
+  }
+ ]
+}

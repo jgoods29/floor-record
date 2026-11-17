@@ -1,0 +1,69 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 733541,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "COMPENSATION"
+    ],
+    [
+     "Title II",
+     "EDUCATION AND ECONOMIC OPPORTUNITY"
+    ],
+    [
+     "Title III",
+     "HEALTH CARE"
+    ],
+    [
+     "Title IV",
+     "ORGANIZATION"
+    ],
+    [
+     "Title V",
+     "MEMORIAL AFFAIRS"
+    ],
+    [
+     "Title VI",
+     "VETERANS' ASSURING CRITICAL CARE EXPANSIONS TO SUPPORT"
+    ],
+    [
+     "Subtitle A",
+     "Improvement of Veterans Community Care Program"
+    ],
+    [
+     "Subtitle B",
+     "Mental Health Treatment Programs"
+    ],
+    [
+     "Subtitle C",
+     "Staffing Matters"
+    ],
+    [
+     "Subtitle D",
+     "Optimization of Workforce"
+    ],
+    [
+     "Subtitle E",
+     "Veterans Infrastructure and Transformation"
+    ],
+    [
+     "Subtitle F",
+     "Other Health Care Matters"
+    ]
+   ],
+   "sections": 115,
+   "short_titles": [
+    "Take Care of America's Veterans Act",
+    "Veterans Infrastructure and Transformation Act of 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9237ih/html/BILLS-119hr9237ih.htm"
+  }
+ ]
+}

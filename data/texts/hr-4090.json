@@ -1,0 +1,29 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 10926,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090ih/html/BILLS-119hr4090ih.htm"
+  },
+  {
+   "chars": 11834,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 8,
+   "short_titles": [
+    "Critical Mineral Dominance Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090eh/html/BILLS-119hr4090eh.htm"
+  }
+ ]
+}

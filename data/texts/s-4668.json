@@ -1,0 +1,54 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 145370,
+   "code": "is",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "PROTECTIONS OF STUDENT ATHLETES AND FAIR COMPETITION"
+    ],
+    [
+     "Title II",
+     "SPORTS BROADCASTING"
+    ]
+   ],
+   "sections": 33,
+   "short_titles": [
+    "Protect College Sports Act of 2026"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s4668is/html/BILLS-119s4668is.htm"
+  },
+  {
+   "chars": 239707,
+   "code": "es",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "PROTECTIONS OF STUDENT ATHLETES AND FAIR COMPETITION"
+    ],
+    [
+     "Title II",
+     "SPORTS BROADCASTING"
+    ],
+    [
+     "Title III",
+     "HBCU SPORTS MEDIA AND CONNECTIVITY PROGRAM"
+    ]
+   ],
+   "sections": 45,
+   "short_titles": [
+    "Protect College Sports Act of 2026",
+    "HBCU Sports Media and Connectivity Program"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s4668es/html/BILLS-119s4668es.htm"
+  }
+ ]
+}

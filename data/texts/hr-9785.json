@@ -1,0 +1,35 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 12314,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "WESTERN SOUTH DAKOTA WATER SUPPLY PROJECT FEASIBILITY STUDY"
+    ],
+    [
+     "Title II",
+     "LEWIS AND CLARK REGIONAL WATER SYSTEM EXPANSION FEASIBILITY"
+    ],
+    [
+     "Title III",
+     "DAKOTA MAINSTEM WATER SUPPLY PROJECT FEASIBILITY STUDY"
+    ]
+   ],
+   "sections": 10,
+   "short_titles": [
+    "South Dakota Water Feasibility Studies Act",
+    "Western South Dakota Water Supply Project Feasibility Study Act",
+    "Lewis and Clark Regional Water System Expansion Feasibility Study Act",
+    "Dakota Mainstem Water Supply Project Feasibility Study Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9785ih/html/BILLS-119hr9785ih.htm"
+  }
+ ]
+}

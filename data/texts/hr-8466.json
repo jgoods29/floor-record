@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 8182,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Taxpayer Resources Used in Emergencies Accountability Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8466ih/html/BILLS-119hr8466ih.htm"
+  },
+  {
+   "chars": 10662,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Taxpayer Resources Used in Emergencies Accountability Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8466eh/html/BILLS-119hr8466eh.htm"
+  }
+ ]
+}

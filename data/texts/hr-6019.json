@@ -1,0 +1,27 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 1761,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 1,
+   "short_titles": [],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6019ih/html/BILLS-119hr6019ih.htm"
+  },
+  {
+   "chars": 1641,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 1,
+   "short_titles": [],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6019eh/html/BILLS-119hr6019eh.htm"
+  }
+ ]
+}

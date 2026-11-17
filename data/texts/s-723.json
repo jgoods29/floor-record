@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.968,
+  "kept": 0.984,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 18797,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Tribal Trust Land Homeownership Act of 2025"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s723is/html/BILLS-119s723is.htm"
+  },
+  {
+   "chars": 18798,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Tribal Trust Land Homeownership Act of 2025"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s723es/html/BILLS-119s723es.htm"
+  },
+  {
+   "chars": 16414,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Tribal Trust Land Homeownership Act of 2025"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s723enr/html/BILLS-119s723enr.htm"
+  }
+ ]
+}

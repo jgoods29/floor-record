@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.851,
+  "kept": 0.916,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 2207,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Finish the Arkansas Valley Conduit Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr131ih/html/BILLS-119hr131ih.htm"
+  },
+  {
+   "chars": 3665,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Finish the Arkansas Valley Conduit Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr131eh/html/BILLS-119hr131eh.htm"
+  },
+  {
+   "chars": 3264,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Finish the Arkansas Valley Conduit Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr131enr/html/BILLS-119hr131enr.htm"
+  }
+ ]
+}

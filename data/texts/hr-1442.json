@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 3219,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Youth Poisoning Protection Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1442ih/html/BILLS-119hr1442ih.htm"
+  },
+  {
+   "chars": 3276,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Youth Poisoning Protection Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1442eh/html/BILLS-119hr1442eh.htm"
+  }
+ ]
+}

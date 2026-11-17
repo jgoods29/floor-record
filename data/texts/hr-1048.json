@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 78155,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 5,
+   "short_titles": [
+    "Defending Education Transparency and Ending Rogue Regimes Engaging in Nefarious Transactions Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048ih/html/BILLS-119hr1048ih.htm"
+  },
+  {
+   "chars": 87014,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 5,
+   "short_titles": [
+    "Defending Education Transparency and Ending Rogue Regimes Engaging in Nefarious Transactions Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm"
+  }
+ ]
+}

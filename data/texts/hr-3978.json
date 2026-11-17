@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 1939,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Nuclear REFUEL (Recycling Efficient Fuels Utilizing Expedited Licensing) Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3978ih/html/BILLS-119hr3978ih.htm"
+  },
+  {
+   "chars": 2118,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Nuclear REFUEL (Recycling Efficient Fuels Utilizing Expedited Licensing) Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3978eh/html/BILLS-119hr3978eh.htm"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.867,
+  "kept": 0.926,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 3589,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Filing Relief for Natural Disasters Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr517ih/html/BILLS-119hr517ih.htm"
+  },
+  {
+   "chars": 3765,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Filing Relief for Natural Disasters Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr517eh/html/BILLS-119hr517eh.htm"
+  },
+  {
+   "chars": 3476,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Filing Relief for Natural Disasters Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr517enr/html/BILLS-119hr517enr.htm"
+  }
+ ]
+}

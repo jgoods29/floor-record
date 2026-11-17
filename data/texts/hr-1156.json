@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 6360,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Pandemic Unemployment Fraud Enforcement Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1156ih/html/BILLS-119hr1156ih.htm"
+  },
+  {
+   "chars": 6007,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Pandemic Unemployment Fraud Enforcement Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1156eh/html/BILLS-119hr1156eh.htm"
+  }
+ ]
+}

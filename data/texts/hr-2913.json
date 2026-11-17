@@ -1,0 +1,57 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 117751,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "DIPLOMACY AND SUPPORT FOR UKRAINE"
+    ],
+    [
+     "Title II",
+     "SECURITY ASSISTANCE"
+    ],
+    [
+     "Title III",
+     "SANCTIONS AND EXPORT CONTROLS"
+    ]
+   ],
+   "sections": 40,
+   "short_titles": [
+    "Ukraine Support Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2913ih/html/BILLS-119hr2913ih.htm"
+  },
+  {
+   "chars": 117404,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "DIPLOMACY AND SUPPORT FOR UKRAINE"
+    ],
+    [
+     "Title II",
+     "SECURITY ASSISTANCE"
+    ],
+    [
+     "Title III",
+     "SANCTIONS AND EXPORT CONTROLS"
+    ]
+   ],
+   "sections": 40,
+   "short_titles": [
+    "Ukraine Support Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2913eh/html/BILLS-119hr2913eh.htm"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 1531,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "EARLY Act Reauthorization of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4541ih/html/BILLS-119hr4541ih.htm"
+  },
+  {
+   "chars": 7490,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "EARLY ACT REAUTHORIZATION"
+    ],
+    [
+     "Title II",
+     "SCREENS FOR CANCER ACT"
+    ]
+   ],
+   "sections": 4,
+   "short_titles": [
+    "EARLY Act Reauthorization of 2025",
+    "Screening for Communities to Receive Early and Equitable Needed Services for Cancer Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4541eh/html/BILLS-119hr4541eh.htm"
+  }
+ ]
+}

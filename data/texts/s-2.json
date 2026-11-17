@@ -1,0 +1,55 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.96,
+  "kept": 0.977,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 14024,
+   "code": "es",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS"
+    ],
+    [
+     "Title II",
+     "COMMITTEE ON THE JUDICIARY"
+    ]
+   ],
+   "sections": 8,
+   "short_titles": [
+    "Secure America Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2es/html/BILLS-119s2es.htm"
+  },
+  {
+   "chars": 13014,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS"
+    ],
+    [
+     "Title II",
+     "COMMITTEE ON THE JUDICIARY"
+    ]
+   ],
+   "sections": 8,
+   "short_titles": [
+    "Secure America Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2enr/html/BILLS-119s2enr.htm"
+  }
+ ]
+}

@@ -1,0 +1,328 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.999,
+  "kept": 0.934,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 1299566,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "DEPARTMENT OF DEFENSE APPROPRIATIONS ACT, 2026"
+    ],
+    [
+     "Division B",
+     "DEPARTMENTS OF LABOR, HEALTH AND HUMAN SERVICES, AND"
+    ],
+    [
+     "Division D",
+     "TRANSPORTATION, HOUSING AND URBAN DEVELOPMENT, AND RELATED"
+    ],
+    [
+     "Division E",
+     "AUTHORIZING EXTENDERS AND TECHNICAL CORRECTIONS"
+    ],
+    [
+     "Division F",
+     "HEALTH CARE EXTENDERS"
+    ],
+    [
+     "Title I",
+     "MEDICAID"
+    ],
+    [
+     "Title II",
+     "MEDICARE"
+    ],
+    [
+     "Title III",
+     "HUMAN SERVICES"
+    ],
+    [
+     "Title IV",
+     "PUBLIC HEALTH AND OTHER EXTENDERS"
+    ],
+    [
+     "Subtitle A",
+     "Extensions"
+    ],
+    [
+     "Subtitle B",
+     "World Trade Center Health Program"
+    ],
+    [
+     "Title V",
+     "PUBLIC HEALTH PROGRAMS"
+    ],
+    [
+     "Title VI",
+     "FOOD AND DRUG ADMINISTRATION"
+    ],
+    [
+     "Subtitle A",
+     "Mikaela Naylon Give Kids a Chance Act"
+    ],
+    [
+     "Subtitle B",
+     "United States-Abraham Accords Cooperation and Security"
+    ],
+    [
+     "Title VII",
+     "LOWERING PRESCRIPTION DRUG COSTS"
+    ]
+   ],
+   "sections": 87,
+   "short_titles": [
+    "Consolidated Appropriations Act, 2026",
+    "Department of Defense Appropriations Act, 2026",
+    "Department of Labor Appropriations Act, 2026",
+    "Department of Health and Human Services Appropriations Act, 2026",
+    "Department of Education Appropriations Act, 2026",
+    "Departments of Labor, Health and Human Services, and Education, and Related Agencies Appropriations Act, 2026",
+    "Department of Transportation Appropriations Act, 2026",
+    "Department of Housing and Urban Development Appropriations Act, 2026",
+    "Transportation, Housing and Urban Development, and Related Agencies Appropriations Act, 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/html/BILLS-119hr7148ih.htm"
+  },
+  {
+   "chars": 2073969,
+   "code": "eh",
+   "full_text": false,
+   "parts": [
+    [
+     "Division A",
+     "DEPARTMENT OF DEFENSE APPROPRIATIONS ACT, 2026"
+    ],
+    [
+     "Division B",
+     "DEPARTMENTS OF LABOR, HEALTH AND HUMAN SERVICES, AND"
+    ],
+    [
+     "Division D",
+     "TRANSPORTATION, HOUSING AND URBAN DEVELOPMENT, AND RELATED"
+    ],
+    [
+     "Division E",
+     "FINANCIAL SERVICES AND GENERAL GOVERNMENT APPROPRIATIONS"
+    ],
+    [
+     "Division F",
+     "NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED"
+    ],
+    [
+     "Division G",
+     "OTHER MATTERS"
+    ],
+    [
+     "Division H",
+     "DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS ACT, 2026"
+    ],
+    [
+     "Division I",
+     "AUTHORIZING EXTENDERS AND TECHNICAL CORRECTIONS"
+    ],
+    [
+     "Division J",
+     "HEALTH CARE EXTENDERS"
+    ],
+    [
+     "Title I",
+     "MEDICAID"
+    ],
+    [
+     "Title II",
+     "MEDICARE"
+    ],
+    [
+     "Title III",
+     "HUMAN SERVICES"
+    ],
+    [
+     "Title IV",
+     "PUBLIC HEALTH AND OTHER EXTENDERS"
+    ],
+    [
+     "Subtitle A",
+     "Extensions"
+    ],
+    [
+     "Subtitle B",
+     "World Trade Center Health Program"
+    ],
+    [
+     "Title V",
+     "PUBLIC HEALTH PROGRAMS"
+    ],
+    [
+     "Title VI",
+     "FOOD AND DRUG ADMINISTRATION"
+    ],
+    [
+     "Subtitle A",
+     "Mikaela Naylon Give Kids a Chance Act"
+    ],
+    [
+     "Subtitle B",
+     "United States-Abraham Accords Cooperation and Security"
+    ],
+    [
+     "Title VII",
+     "LOWERING PRESCRIPTION DRUG COSTS"
+    ]
+   ],
+   "sections": 89,
+   "short_titles": [
+    "Consolidated Appropriations Act, 2026",
+    "Department of Defense Appropriations Act, 2026",
+    "Department of Labor Appropriations Act, 2026",
+    "Department of Health and Human Services Appropriations Act, 2026",
+    "Department of Education Appropriations Act, 2026",
+    "Departments of Labor, Health and Human Services, and Education, and Related Agencies Appropriations Act, 2026",
+    "Department of Transportation Appropriations Act, 2026",
+    "Department of Housing and Urban Development Appropriations Act, 2026",
+    "Transportation, Housing and Urban Development, and Related Agencies Appropriations Act, 2026",
+    "Department of the Treasury Appropriations Act, 2026",
+    "Executive Office of the President Appropriations Act, 2026",
+    "Judiciary Appropriations Act, 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148eh/html/BILLS-119hr7148eh.htm"
+  },
+  {
+   "chars": 2800,
+   "code": "eas",
+   "full_text": true,
+   "parts": [
+    [
+     "Division H",
+     "FURTHER CONTINUING APPROPRIATIONS ACT, 2026"
+    ]
+   ],
+   "sections": 0,
+   "short_titles": [
+    "Further Continuing Appropriations Act, 2026"
+   ],
+   "stage": "As changed and passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148eas/html/BILLS-119hr7148eas.htm",
+   "whole": false
+  },
+  {
+   "chars": 1820764,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "DEPARTMENT OF DEFENSE APPROPRIATIONS ACT, 2026"
+    ],
+    [
+     "Division B",
+     "DEPARTMENTS OF LABOR, HEALTH AND HUMAN SERVICES, AND"
+    ],
+    [
+     "Division D",
+     "TRANSPORTATION, HOUSING AND URBAN DEVELOPMENT, AND RELATED"
+    ],
+    [
+     "Division E",
+     "FINANCIAL SERVICES AND GENERAL GOVERNMENT APPROPRIATIONS"
+    ],
+    [
+     "Division F",
+     "NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED PROGRAMS"
+    ],
+    [
+     "Division G",
+     "OTHER MATTERS"
+    ],
+    [
+     "Division H",
+     "FURTHER CONTINUING APPROPRIATIONS ACT, 2026"
+    ],
+    [
+     "Division I",
+     "AUTHORIZING EXTENDERS AND TECHNICAL CORRECTIONS"
+    ],
+    [
+     "Division J",
+     "HEALTH CARE EXTENDERS"
+    ],
+    [
+     "Division F",
+     "NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED"
+    ],
+    [
+     "Title I",
+     "MEDICAID"
+    ],
+    [
+     "Title II",
+     "MEDICARE"
+    ],
+    [
+     "Title III",
+     "HUMAN SERVICES"
+    ],
+    [
+     "Title IV",
+     "PUBLIC HEALTH AND OTHER EXTENDERS"
+    ],
+    [
+     "Subtitle A",
+     "Extensions"
+    ],
+    [
+     "Subtitle B",
+     "World Trade Center Health Program"
+    ],
+    [
+     "Title V",
+     "PUBLIC HEALTH PROGRAMS"
+    ],
+    [
+     "Title VI",
+     "FOOD AND DRUG ADMINISTRATION"
+    ],
+    [
+     "Subtitle A",
+     "Mikaela Naylon Give Kids a Chance Act"
+    ],
+    [
+     "Subtitle B",
+     "United States-Abraham Accords Cooperation and Security"
+    ],
+    [
+     "Title VII",
+     "LOWERING PRESCRIPTION DRUG COSTS"
+    ]
+   ],
+   "sections": 89,
+   "short_titles": [
+    "Consolidated Appropriations Act, 2026",
+    "Department of Defense Appropriations Act, 2026",
+    "Department of Labor Appropriations Act, 2026",
+    "Department of Health and Human Services Appropriations Act, 2026",
+    "Department of Education Appropriations Act, 2026",
+    "Departments of Labor, Health and Human Services, and Education, and Related Agencies Appropriations Act, 2026",
+    "Department of Transportation Appropriations Act, 2026",
+    "Department of Housing and Urban Development Appropriations Act, 2026",
+    "Transportation, Housing and Urban Development, and Related Agencies Appropriations Act, 2026",
+    "Department of the Treasury Appropriations Act, 2026",
+    "Executive Office of the President Appropriations Act, 2026",
+    "Judiciary Appropriations Act, 2026"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148enr/html/BILLS-119hr7148enr.htm"
+  }
+ ]
+}

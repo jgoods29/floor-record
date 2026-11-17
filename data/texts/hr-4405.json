@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.923,
+  "kept": 0.958,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 6892,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Epstein Files Transparency Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4405ih/html/BILLS-119hr4405ih.htm"
+  },
+  {
+   "chars": 6968,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Epstein Files Transparency Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4405eh/html/BILLS-119hr4405eh.htm"
+  },
+  {
+   "chars": 6317,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Epstein Files Transparency Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4405enr/html/BILLS-119hr4405enr.htm"
+  }
+ ]
+}

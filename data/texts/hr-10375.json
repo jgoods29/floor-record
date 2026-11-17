@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 16444,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 6,
+   "short_titles": [
+    "504 Modernization and Small Manufacturer Enhancement Act of 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10375ih/html/BILLS-119hr10375ih.htm"
+  },
+  {
+   "chars": 16416,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "504 Modernization and Small Manufacturer Enhancement Act of 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10375eh/html/BILLS-119hr10375eh.htm"
+  }
+ ]
+}

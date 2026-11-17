@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 2036,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Common-Sense Law Enforcement and Accountability Now in DC Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5107ih/html/BILLS-119hr5107ih.htm"
+  },
+  {
+   "chars": 2033,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Common-Sense Law Enforcement and Accountability Now in DC Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5107eh/html/BILLS-119hr5107eh.htm"
+  }
+ ]
+}

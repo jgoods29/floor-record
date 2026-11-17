@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 9861,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "DC Criminal Reforms to Immediately Make Everyone Safe Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4922ih/html/BILLS-119hr4922ih.htm"
+  },
+  {
+   "chars": 9304,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "D. C. Criminal Reforms to Immediately Make Everyone Safe Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4922eh/html/BILLS-119hr4922eh.htm"
+  }
+ ]
+}

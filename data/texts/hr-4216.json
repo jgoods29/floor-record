@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 4824,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "FMS-Only List Review Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4216ih/html/BILLS-119hr4216ih.htm"
+  },
+  {
+   "chars": 6397,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Made-in-America Defense Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4216eh/html/BILLS-119hr4216eh.htm"
+  }
+ ]
+}

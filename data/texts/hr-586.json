@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 4210,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Vietnam Veterans Liver Fluke Cancer Study Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr586ih/html/BILLS-119hr586ih.htm"
+  },
+  {
+   "chars": 4404,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Vietnam Veterans Liver Fluke Cancer Study Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr586eh/html/BILLS-119hr586eh.htm"
+  }
+ ]
+}

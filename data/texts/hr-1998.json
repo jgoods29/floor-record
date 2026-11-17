@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 9749,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Sanction Sea Pirates Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1998ih/html/BILLS-119hr1998ih.htm"
+  },
+  {
+   "chars": 9866,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Sanction Sea Pirates Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1998eh/html/BILLS-119hr1998eh.htm"
+  }
+ ]
+}

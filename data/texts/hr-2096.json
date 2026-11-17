@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 4329,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Protecting Our Nation's Capital Emergency Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2096ih/html/BILLS-119hr2096ih.htm"
+  },
+  {
+   "chars": 2723,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Protecting Our Nation's Capital Emergency Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2096eh/html/BILLS-119hr2096eh.htm"
+  }
+ ]
+}

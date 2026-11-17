@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 3510,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Cybersecurity for Small Businesses Act of 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10238ih/html/BILLS-119hr10238ih.htm"
+  },
+  {
+   "chars": 3919,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Cybersecurity for Small Businesses Act of 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10238eh/html/BILLS-119hr10238eh.htm"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 6879,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "LEOSA Reform Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2243ih/html/BILLS-119hr2243ih.htm"
+  },
+  {
+   "chars": 6794,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "LEOSA Reform Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2243eh/html/BILLS-119hr2243eh.htm"
+  }
+ ]
+}

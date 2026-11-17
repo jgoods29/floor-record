@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 4169,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "TRIA Program Reauthorization Act of 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7128ih/html/BILLS-119hr7128ih.htm"
+  },
+  {
+   "chars": 8958,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 5,
+   "short_titles": [
+    "TRIA Program Reauthorization Act of 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7128eh/html/BILLS-119hr7128eh.htm"
+  }
+ ]
+}

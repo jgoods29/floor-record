@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.981,
+  "kept": 0.991,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 30458,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "Halt All Lethal Trafficking of Fentanyl Act"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s331is/html/BILLS-119s331is.htm"
+  },
+  {
+   "chars": 30414,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "Halt All Lethal Trafficking of Fentanyl Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s331es/html/BILLS-119s331es.htm"
+  },
+  {
+   "chars": 26321,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "Halt All Lethal Trafficking of Fentanyl Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s331enr/html/BILLS-119s331enr.htm"
+  }
+ ]
+}

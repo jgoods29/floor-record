@@ -1,0 +1,493 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.447,
+  "kept": 0.389,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 1366543,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "COMMITTEE ON AGRICULTURE"
+    ],
+    [
+     "Subtitle A",
+     "Nutrition"
+    ],
+    [
+     "Subtitle B",
+     "Investment in Rural America"
+    ],
+    [
+     "Title II",
+     "COMMITTEE ON ARMED SERVICES"
+    ],
+    [
+     "Title III",
+     "COMMITTEE ON EDUCATION AND WORKFORCE"
+    ],
+    [
+     "Subtitle A",
+     "Student Eligibility"
+    ],
+    [
+     "Subtitle B",
+     "Loan Limits"
+    ],
+    [
+     "Subtitle C",
+     "Loan Repayment"
+    ],
+    [
+     "Subtitle D",
+     "Pell Grants"
+    ],
+    [
+     "Subtitle E",
+     "Accountability"
+    ],
+    [
+     "Subtitle F",
+     "Regulatory Relief"
+    ],
+    [
+     "Subtitle G",
+     "Limitation on Authority"
+    ],
+    [
+     "Title IV",
+     "ENERGY AND COMMERCE"
+    ],
+    [
+     "Subtitle A",
+     "Energy"
+    ],
+    [
+     "Subtitle B",
+     "Environment"
+    ],
+    [
+     "Subtitle C",
+     "Communications"
+    ],
+    [
+     "Subtitle D",
+     "Health"
+    ],
+    [
+     "Title V",
+     "COMMITTEE ON FINANCIAL SERVICES"
+    ],
+    [
+     "Title VI",
+     "COMMITTEE ON HOMELAND SECURITY"
+    ],
+    [
+     "Title VII",
+     "COMMITTEE ON THE JUDICIARY"
+    ],
+    [
+     "Subtitle A",
+     "Immigration Matters"
+    ],
+    [
+     "Subtitle B",
+     "Regulatory Matters"
+    ],
+    [
+     "Subtitle C",
+     "Other Matters"
+    ],
+    [
+     "Title VIII",
+     "COMMITTEE ON NATURAL RESOURCES"
+    ],
+    [
+     "Subtitle A",
+     "Energy and Mineral Resources"
+    ],
+    [
+     "Subtitle B",
+     "Water, Wildlife, and Fisheries"
+    ],
+    [
+     "Subtitle C",
+     "Federal Lands"
+    ],
+    [
+     "Title IX",
+     "COMMITTEE ON OVERSIGHT AND GOVERNMENT REFORM"
+    ],
+    [
+     "Title X",
+     "COMMITTEE ON TRANSPORTATION AND INFRASTRUCTURE"
+    ],
+    [
+     "Title XI",
+     "COMMITTEE ON WAYS AND MEANS, ``THE ONE, BIG, BEAUTIFUL BILL''"
+    ],
+    [
+     "Subtitle A",
+     "Make American Families and Workers Thrive Again"
+    ],
+    [
+     "Subtitle B",
+     "Make Rural America and Main Street Grow Again"
+    ],
+    [
+     "Subtitle C",
+     "Make America Win Again"
+    ],
+    [
+     "Subtitle D",
+     "Increase in Debt Limit"
+    ]
+   ],
+   "sections": 334,
+   "short_titles": [
+    "One Big Beautiful Bill Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eh/html/BILLS-119hr1eh.htm"
+  },
+  {
+   "chars": 1189548,
+   "code": "eas",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY"
+    ],
+    [
+     "Subtitle A",
+     "Nutrition"
+    ],
+    [
+     "Subtitle B",
+     "Forestry"
+    ],
+    [
+     "Subtitle C",
+     "Commodities"
+    ],
+    [
+     "Subtitle D",
+     "Disaster Assistance Programs"
+    ],
+    [
+     "Subtitle E",
+     "Crop Insurance"
+    ],
+    [
+     "Subtitle F",
+     "Additional Investments in Rural America"
+    ],
+    [
+     "Title II",
+     "COMMITTEE ON ARMED SERVICES"
+    ],
+    [
+     "Title III",
+     "COMMITTEE ON BANKING, HOUSING, AND URBAN AFFAIRS"
+    ],
+    [
+     "Title IV",
+     "COMMITTEE ON COMMERCE, SCIENCE, AND TRANSPORTATION"
+    ],
+    [
+     "Title V",
+     "COMMITTEE ON ENERGY AND NATURAL RESOURCES"
+    ],
+    [
+     "Subtitle A",
+     "Oil and Gas Leasing"
+    ],
+    [
+     "Subtitle B",
+     "Mining"
+    ],
+    [
+     "Subtitle C",
+     "Lands"
+    ],
+    [
+     "Subtitle D",
+     "Energy"
+    ],
+    [
+     "Subtitle E",
+     "Water"
+    ],
+    [
+     "Title VI",
+     "COMMITTEE ON ENVIRONMENT AND PUBLIC WORKS"
+    ],
+    [
+     "Title VII",
+     "FINANCE"
+    ],
+    [
+     "Subtitle A",
+     "Tax"
+    ],
+    [
+     "Subtitle B",
+     "Health"
+    ],
+    [
+     "Subtitle C",
+     "Increase in Debt Limit"
+    ],
+    [
+     "Subtitle D",
+     "Unemployment"
+    ],
+    [
+     "Title VIII",
+     "COMMITTEE ON HEALTH, EDUCATION, LABOR, AND PENSIONS"
+    ],
+    [
+     "Subtitle A",
+     "Exemption of Certain Assets"
+    ],
+    [
+     "Subtitle B",
+     "Loan Limits"
+    ],
+    [
+     "Subtitle C",
+     "Loan Repayment"
+    ],
+    [
+     "Subtitle D",
+     "Pell Grants"
+    ],
+    [
+     "Subtitle E",
+     "Accountability"
+    ],
+    [
+     "Subtitle F",
+     "Regulatory Relief"
+    ],
+    [
+     "Subtitle G",
+     "Garden of Heroes"
+    ],
+    [
+     "Subtitle H",
+     "Office of Refugee Resettlement"
+    ],
+    [
+     "Title IX",
+     "COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS"
+    ],
+    [
+     "Subtitle A",
+     "Homeland Security Provisions"
+    ],
+    [
+     "Subtitle B",
+     "Governmental Affairs Provisions"
+    ],
+    [
+     "Title X",
+     "COMMITTEE ON THE JUDICIARY"
+    ],
+    [
+     "Subtitle A",
+     "Immigration and Law Enforcement Matters"
+    ],
+    [
+     "Subtitle B",
+     "Judiciary Matters"
+    ],
+    [
+     "Subtitle C",
+     "Radiation Exposure Compensation Matters"
+    ]
+   ],
+   "sections": 309,
+   "short_titles": [
+    "FEHB Protection Act of 2025"
+   ],
+   "stage": "As changed and passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eas/html/BILLS-119hr1eas.htm",
+   "whole": false
+  },
+  {
+   "chars": 1022282,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY"
+    ],
+    [
+     "Subtitle A",
+     "Nutrition"
+    ],
+    [
+     "Subtitle B",
+     "Forestry"
+    ],
+    [
+     "Subtitle C",
+     "Commodities"
+    ],
+    [
+     "Subtitle D",
+     "Disaster Assistance Programs"
+    ],
+    [
+     "Subtitle E",
+     "Crop Insurance"
+    ],
+    [
+     "Subtitle F",
+     "Additional Investments in Rural America"
+    ],
+    [
+     "Title II",
+     "COMMITTEE ON ARMED SERVICES"
+    ],
+    [
+     "Title III",
+     "COMMITTEE ON BANKING, HOUSING, AND URBAN AFFAIRS"
+    ],
+    [
+     "Title IV",
+     "COMMITTEE ON COMMERCE, SCIENCE, AND TRANSPORTATION"
+    ],
+    [
+     "Title V",
+     "COMMITTEE ON ENERGY AND NATURAL RESOURCES"
+    ],
+    [
+     "Subtitle A",
+     "Oil and Gas Leasing"
+    ],
+    [
+     "Subtitle B",
+     "Mining"
+    ],
+    [
+     "Subtitle C",
+     "Lands"
+    ],
+    [
+     "Subtitle D",
+     "Energy"
+    ],
+    [
+     "Subtitle E",
+     "Water"
+    ],
+    [
+     "Title VI",
+     "COMMITTEE ON ENVIRONMENT AND PUBLIC WORKS"
+    ],
+    [
+     "Title VII",
+     "FINANCE"
+    ],
+    [
+     "Subtitle A",
+     "Tax"
+    ],
+    [
+     "Subtitle B",
+     "Health"
+    ],
+    [
+     "Subtitle C",
+     "Increase in Debt Limit"
+    ],
+    [
+     "Subtitle D",
+     "Unemployment"
+    ],
+    [
+     "Title VIII",
+     "COMMITTEE ON HEALTH, EDUCATION, LABOR, AND PENSIONS"
+    ],
+    [
+     "Subtitle A",
+     "Exemption of Certain Assets"
+    ],
+    [
+     "Subtitle B",
+     "Loan Limits"
+    ],
+    [
+     "Subtitle C",
+     "Loan Repayment"
+    ],
+    [
+     "Subtitle D",
+     "Pell Grants"
+    ],
+    [
+     "Subtitle E",
+     "Accountability"
+    ],
+    [
+     "Subtitle F",
+     "Regulatory Relief"
+    ],
+    [
+     "Subtitle G",
+     "Garden of Heroes"
+    ],
+    [
+     "Subtitle H",
+     "Office of Refugee Resettlement"
+    ],
+    [
+     "Title IX",
+     "COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS"
+    ],
+    [
+     "Subtitle A",
+     "Homeland Security Provisions"
+    ],
+    [
+     "Subtitle B",
+     "Governmental Affairs Provisions"
+    ],
+    [
+     "Title X",
+     "COMMITTEE ON THE JUDICIARY"
+    ],
+    [
+     "Subtitle A",
+     "Immigration and Law Enforcement Matters"
+    ],
+    [
+     "Subtitle B",
+     "Judiciary Matters"
+    ],
+    [
+     "Subtitle C",
+     "Radiation Exposure Compensation Matters"
+    ]
+   ],
+   "sections": 310,
+   "short_titles": [
+    "FEHB Protection Act of 2025"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1enr/html/BILLS-119hr1enr.htm"
+  }
+ ]
+}

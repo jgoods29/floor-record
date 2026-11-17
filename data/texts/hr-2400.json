@@ -1,0 +1,50 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.454,
+  "kept": 0.535,
+  "later": "eas",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 4639,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Pit River Land Transfer Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2400ih/html/BILLS-119hr2400ih.htm"
+  },
+  {
+   "chars": 3682,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Pit River Land Transfer Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2400eh/html/BILLS-119hr2400eh.htm"
+  },
+  {
+   "chars": 3924,
+   "code": "eas",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Pit River Land Transfer Act of 2026"
+   ],
+   "stage": "As changed and passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2400eas/html/BILLS-119hr2400eas.htm",
+   "whole": true
+  }
+ ]
+}

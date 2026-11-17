@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 20159,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Don't Mess With My Home Appliances Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4626ih/html/BILLS-119hr4626ih.htm"
+  },
+  {
+   "chars": 31036,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Home Appliance Protection and Affordability Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4626eh/html/BILLS-119hr4626eh.htm"
+  }
+ ]
+}

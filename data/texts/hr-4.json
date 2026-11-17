@@ -1,0 +1,62 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.646,
+  "kept": 0.743,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 9161,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Rescissions Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4ih/html/BILLS-119hr4ih.htm"
+  },
+  {
+   "chars": 9245,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Rescissions Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4eh/html/BILLS-119hr4eh.htm"
+  },
+  {
+   "chars": 9603,
+   "code": "eas",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Rescissions Act of 2025"
+   ],
+   "stage": "As changed and passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4eas/html/BILLS-119hr4eas.htm",
+   "whole": true
+  },
+  {
+   "chars": 9128,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Rescissions Act of 2025"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4enr/html/BILLS-119hr4enr.htm"
+  }
+ ]
+}

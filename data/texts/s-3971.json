@@ -1,0 +1,37 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.987,
+  "kept": 0.994,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 54030,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 10,
+   "short_titles": [
+    "Small Business Innovation and Economic Security Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s3971es/html/BILLS-119s3971es.htm"
+  },
+  {
+   "chars": 44880,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 10,
+   "short_titles": [
+    "Small Business Innovation and Economic Security Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s3971enr/html/BILLS-119s3971enr.htm"
+  }
+ ]
+}

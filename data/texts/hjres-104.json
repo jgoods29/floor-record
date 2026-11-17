@@ -1,0 +1,43 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.687,
+  "kept": 0.805,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 1938,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres104ih/html/BILLS-119hjres104ih.htm"
+  },
+  {
+   "chars": 2019,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres104eh/html/BILLS-119hjres104eh.htm"
+  },
+  {
+   "chars": 1736,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres104enr/html/BILLS-119hjres104enr.htm"
+  }
+ ]
+}

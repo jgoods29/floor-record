@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 1603,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Modernizing the Veterans On-Campus Experience Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr980ih/html/BILLS-119hr980ih.htm"
+  },
+  {
+   "chars": 5196,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 5,
+   "short_titles": [
+    "Veterans Readiness and Employment Improvement Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr980eh/html/BILLS-119hr980eh.htm"
+  }
+ ]
+}

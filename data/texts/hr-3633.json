@@ -1,0 +1,78 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 323648,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "DEFINITIONS; RULEMAKING; PROVISIONAL REGISTRATION"
+    ],
+    [
+     "Title II",
+     "OFFERS AND SALES OF DIGITAL COMMODITIES"
+    ],
+    [
+     "Title III",
+     "REGISTRATION FOR INTERMEDIARIES AT THE SECURITIES AND"
+    ],
+    [
+     "Title IV",
+     "REGISTRATION FOR DIGITAL COMMODITY INTERMEDIARIES AT THE"
+    ],
+    [
+     "Title V",
+     "INNOVATION AND TECHNOLOGY IMPROVEMENTS"
+    ]
+   ],
+   "sections": 53,
+   "short_titles": [
+    "Digital Asset Market Clarity Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3633ih/html/BILLS-119hr3633ih.htm"
+  },
+  {
+   "chars": 353798,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "DEFINITIONS; RULEMAKING; EXPEDITED REGISTRATION"
+    ],
+    [
+     "Title II",
+     "OFFERS AND SALES OF DIGITAL COMMODITIES"
+    ],
+    [
+     "Title III",
+     "REGISTRATION FOR INTERMEDIARIES AT THE SECURITIES AND"
+    ],
+    [
+     "Title IV",
+     "REGISTRATION FOR DIGITAL COMMODITY INTERMEDIARIES AT THE"
+    ],
+    [
+     "Title V",
+     "INNOVATION AND TECHNOLOGY IMPROVEMENTS"
+    ],
+    [
+     "Title VI",
+     "ANTI-CBDC SURVEILLANCE STATE ACT"
+    ]
+   ],
+   "sections": 66,
+   "short_titles": [
+    "Digital Asset Market Clarity Act of 2025",
+    "Anti-CBDC Surveillance State Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3633eh/html/BILLS-119hr3633eh.htm"
+  }
+ ]
+}

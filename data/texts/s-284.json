@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.726,
+  "kept": 0.846,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 1808,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Congressional Award Program Reauthorization Act"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s284is/html/BILLS-119s284is.htm"
+  },
+  {
+   "chars": 1861,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Congressional Award Program Reauthorization Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s284es/html/BILLS-119s284es.htm"
+  },
+  {
+   "chars": 1743,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Congressional Award Program Reauthorization Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s284enr/html/BILLS-119s284enr.htm"
+  }
+ ]
+}

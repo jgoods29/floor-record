@@ -1,0 +1,65 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 83962,
+   "code": "is",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "CONTINUING APPROPRIATIONS ACT, 2026"
+    ],
+    [
+     "Division B",
+     "EXTENSIONS AND OTHER MATTERS"
+    ],
+    [
+     "Title I",
+     "HEALTH"
+    ],
+    [
+     "Subtitle A",
+     "Public Health Extenders"
+    ],
+    [
+     "Subtitle B",
+     "Medicare"
+    ],
+    [
+     "Subtitle C",
+     "Human Services"
+    ],
+    [
+     "Subtitle D",
+     "Medicaid"
+    ],
+    [
+     "Subtitle E",
+     "Other Health Provisions"
+    ],
+    [
+     "Title II",
+     "VETERANS AFFAIRS"
+    ],
+    [
+     "Title III",
+     "MISCELLANEOUS EXTENSIONS"
+    ],
+    [
+     "Title IV",
+     "BUDGETARY EFFECTS"
+    ]
+   ],
+   "sections": 54,
+   "short_titles": [
+    "Continuing Appropriations and Extensions and Other Matters Act, 2026",
+    "Continuing Appropriations Act, 2026"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2882is/html/BILLS-119s2882is.htm"
+  }
+ ]
+}

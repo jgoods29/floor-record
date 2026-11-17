@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 5098,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Enhancing Stakeholder Support and Outreach for Preparedness Grants Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4058ih/html/BILLS-119hr4058ih.htm"
+  },
+  {
+   "chars": 5120,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Enhancing Stakeholder Support and Outreach for Preparedness Grants Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4058eh/html/BILLS-119hr4058eh.htm"
+  }
+ ]
+}

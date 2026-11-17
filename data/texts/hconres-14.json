@@ -1,0 +1,123 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.392,
+  "kept": 0.486,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 65825,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "RECOMMENDED LEVELS AND AMOUNTS"
+    ],
+    [
+     "Title II",
+     "RECONCILIATION AND RELATED MATTERS"
+    ],
+    [
+     "Title III",
+     "RESERVE FUND AND DEFICIT REDUCTION ADJUSTMENT"
+    ],
+    [
+     "Title IV",
+     "POLICY STATEMENTS"
+    ],
+    [
+     "Title V",
+     "OTHER MATTERS"
+    ]
+   ],
+   "sections": 15,
+   "short_titles": [],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres14eh/html/BILLS-119hconres14eh.htm"
+  },
+  {
+   "chars": 77994,
+   "code": "eas",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "RECOMMENDED LEVELS AND AMOUNTS"
+    ],
+    [
+     "Subtitle A",
+     "Budgetary Levels in Both Houses"
+    ],
+    [
+     "Subtitle B",
+     "Levels and Amounts in the Senate"
+    ],
+    [
+     "Title II",
+     "RECONCILIATION"
+    ],
+    [
+     "Title III",
+     "RESERVE FUNDS"
+    ],
+    [
+     "Title IV",
+     "OTHER MATTERS"
+    ],
+    [
+     "Title V",
+     "POLICY STATEMENTS IN THE HOUSE OF REPRESENTATIVES"
+    ]
+   ],
+   "sections": 22,
+   "short_titles": [],
+   "stage": "As changed and passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres14eas/html/BILLS-119hconres14eas.htm",
+   "whole": true
+  },
+  {
+   "chars": 70559,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "RECOMMENDED LEVELS AND AMOUNTS"
+    ],
+    [
+     "Subtitle A",
+     "Budgetary Levels in Both Houses"
+    ],
+    [
+     "Subtitle B",
+     "Levels and Amounts in the Senate"
+    ],
+    [
+     "Title II",
+     "RECONCILIATION"
+    ],
+    [
+     "Title III",
+     "RESERVE FUNDS"
+    ],
+    [
+     "Title IV",
+     "OTHER MATTERS"
+    ],
+    [
+     "Title V",
+     "POLICY STATEMENTS IN THE HOUSE OF REPRESENTATIVES"
+    ]
+   ],
+   "sections": 22,
+   "short_titles": [],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres14enr/html/BILLS-119hconres14enr.htm"
+  }
+ ]
+}

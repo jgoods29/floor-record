@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.834,
+  "kept": 0.906,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 2976,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Salem Maritime National Historical Park Redesignation and Boundary Study Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2215ih/html/BILLS-119hr2215ih.htm"
+  },
+  {
+   "chars": 3058,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Salem Maritime National Historical Park Redesignation and Boundary Study Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2215eh/html/BILLS-119hr2215eh.htm"
+  },
+  {
+   "chars": 2841,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Salem Maritime National Historical Park Redesignation and Boundary Study Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2215enr/html/BILLS-119hr2215enr.htm"
+  }
+ ]
+}

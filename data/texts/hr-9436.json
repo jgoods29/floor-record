@@ -1,0 +1,29 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 1510,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 1,
+   "short_titles": [],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9436ih/html/BILLS-119hr9436ih.htm"
+  },
+  {
+   "chars": 1648,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Northeast Lobsterman Protection Act of 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9436eh/html/BILLS-119hr9436eh.htm"
+  }
+ ]
+}

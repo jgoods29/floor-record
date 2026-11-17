@@ -1,0 +1,54 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.27,
+  "kept": 0.803,
+  "later": "eas",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 121288,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [
+    "Military Construction, Veterans Affairs, and Related Agencies Appropriations Act, 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3944eh/html/BILLS-119hr3944eh.htm"
+  },
+  {
+   "chars": 343247,
+   "code": "eas",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "MILITARY CONSTRUCTION, VETERANS AFFAIRS, AND RELATED"
+    ],
+    [
+     "Division B",
+     "AGRICULTURE, RURAL DEVELOPMENT, FOOD AND DRUG"
+    ],
+    [
+     "Division C",
+     "LEGISLATIVE BRANCH APPROPRIATIONS ACT, 2026"
+    ]
+   ],
+   "sections": 3,
+   "short_titles": [
+    "Military Construction and Veterans Affairs, Agriculture, and Legislative Branch Appropriations Act, 2026",
+    "Military Construction, Veterans Affairs, and Related Agencies Appropriations Act, 2026",
+    "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies Appropriations Act, 2026",
+    "Legislative Branch Appropriations Act, 2026"
+   ],
+   "stage": "As changed and passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3944eas/html/BILLS-119hr3944eas.htm",
+   "whole": true
+  }
+ ]
+}

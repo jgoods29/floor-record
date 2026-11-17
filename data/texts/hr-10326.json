@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 7504,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "Preventing Rip-offs and Obtaining Oversight of Funds Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10326ih/html/BILLS-119hr10326ih.htm"
+  },
+  {
+   "chars": 7590,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "Preventing Rip-offs and Obtaining Oversight of Funds Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10326eh/html/BILLS-119hr10326eh.htm"
+  }
+ ]
+}

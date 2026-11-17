@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 29781,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 8,
+   "short_titles": [
+    "Mobilizing and Enhancing Georgia's Options for Building Accountability, Resilience, and Independence Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr36ih/html/BILLS-119hr36ih.htm"
+  },
+  {
+   "chars": 29570,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 8,
+   "short_titles": [
+    "Mobilizing and Enhancing Georgia's Options for Building Accountability, Resilience, and Independence Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr36eh/html/BILLS-119hr36eh.htm"
+  }
+ ]
+}

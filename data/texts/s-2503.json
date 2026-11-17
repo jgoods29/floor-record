@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 18200,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "Rotorcraft Operations Transparency and Oversight Reform Act"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2503is/html/BILLS-119s2503is.htm"
+  },
+  {
+   "chars": 61869,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 9,
+   "short_titles": [
+    "Rotorcraft Operations Transparency and Oversight Reform Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2503es/html/BILLS-119s2503es.htm"
+  }
+ ]
+}

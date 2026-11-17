@@ -1,0 +1,60 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.026,
+  "kept": 0.087,
+  "later": "eah",
+  "verdict": "replaced"
+ },
+ "review": true,
+ "versions": [
+  {
+   "chars": 5012,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Fallen Servicemembers Religious Heritage Restoration Act"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1318is/html/BILLS-119s1318is.htm"
+  },
+  {
+   "chars": 5006,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Fallen Servicemembers Religious Heritage Restoration Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1318es/html/BILLS-119s1318es.htm"
+  },
+  {
+   "chars": 18089,
+   "code": "eah",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "FOREIGN INTELLIGENCE ACCOUNTABILITY ACT"
+    ],
+    [
+     "Title II",
+     "ANTI-CBDC SURVEILLANCE STATE ACT"
+    ]
+   ],
+   "sections": 13,
+   "short_titles": [
+    "Foreign Intelligence Accountability Act",
+    "Anti-CBDC Surveillance State Act"
+   ],
+   "stage": "As changed and passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1318eah/html/BILLS-119s1318eah.htm",
+   "whole": true
+  }
+ ]
+}

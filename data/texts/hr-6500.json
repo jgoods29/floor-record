@@ -1,0 +1,148 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.02,
+  "kept": 0.249,
+  "later": "enr",
+  "verdict": "replaced"
+ },
+ "review": true,
+ "versions": [
+  {
+   "chars": 6160,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "AGOA Extension Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500ih/html/BILLS-119hr6500ih.htm"
+  },
+  {
+   "chars": 6178,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "AGOA Extension Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500eh/html/BILLS-119hr6500eh.htm"
+  },
+  {
+   "chars": 71006,
+   "code": "eas",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "CONTINUING APPROPRIATIONS ACT, 2027"
+    ],
+    [
+     "Division B",
+     "AUTHORIZING EXTENSIONS"
+    ],
+    [
+     "Division C",
+     "SURFACE TRANSPORTATION EXTENSION ACT OF 2026"
+    ],
+    [
+     "Division D",
+     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS"
+    ],
+    [
+     "Title I",
+     "SURFACE TRANSPORTATION PROGRAMS"
+    ],
+    [
+     "Title II",
+     "TRUST FUNDS"
+    ],
+    [
+     "Title I",
+     "HEALTH CARE MATTERS"
+    ],
+    [
+     "Title II",
+     "BENEFITS"
+    ],
+    [
+     "Title III",
+     "HOUSING"
+    ],
+    [
+     "Title IV",
+     "OTHER MATTERS"
+    ]
+   ],
+   "sections": 53,
+   "short_titles": [
+    "Continuing Appropriations and Extensions Act, 2027",
+    "Continuing Appropriations Act, 2027",
+    "Surface Transportation Extension Act of 2026"
+   ],
+   "stage": "As changed and passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500eas/html/BILLS-119hr6500eas.htm",
+   "whole": true
+  },
+  {
+   "chars": 68127,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "CONTINUING APPROPRIATIONS ACT, 2027"
+    ],
+    [
+     "Division B",
+     "AUTHORIZING EXTENSIONS"
+    ],
+    [
+     "Division C",
+     "SURFACE TRANSPORTATION EXTENSION ACT OF 2026"
+    ],
+    [
+     "Division D",
+     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS"
+    ],
+    [
+     "Title I",
+     "SURFACE TRANSPORTATION PROGRAMS"
+    ],
+    [
+     "Title II",
+     "TRUST FUNDS"
+    ],
+    [
+     "Title I",
+     "HEALTH CARE MATTERS"
+    ],
+    [
+     "Title II",
+     "BENEFITS"
+    ],
+    [
+     "Title III",
+     "HOUSING"
+    ],
+    [
+     "Title IV",
+     "OTHER MATTERS"
+    ]
+   ],
+   "sections": 53,
+   "short_titles": [
+    "Continuing Appropriations and Extensions Act, 2027",
+    "Continuing Appropriations Act, 2027",
+    "Surface Transportation Extension Act of 2026"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500enr/html/BILLS-119hr6500enr.htm"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 3493,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3234ih/html/BILLS-119hr3234ih.htm"
+  },
+  {
+   "chars": 5231,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 5,
+   "short_titles": [
+    "Keeping Deposits Local Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3234eh/html/BILLS-119hr3234eh.htm"
+  }
+ ]
+}

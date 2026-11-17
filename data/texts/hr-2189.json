@@ -1,0 +1,41 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 2802,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Law-Enforcement Innovate to De- Escalate Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2189ih/html/BILLS-119hr2189ih.htm"
+  },
+  {
+   "chars": 8528,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "LAW-ENFORCEMENT INNOVATE TO DE-ESCALATE"
+    ],
+    [
+     "Title II",
+     "INNOVATE LESS LETHAL TO DE-ESCALATE TAX MODERNIZATION"
+    ]
+   ],
+   "sections": 5,
+   "short_titles": [
+    "Law-Enforcement Innovate to De- Escalate Act",
+    "Innovate Less Lethal to De- Escalate Tax Modernization Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2189eh/html/BILLS-119hr2189eh.htm"
+  }
+ ]
+}

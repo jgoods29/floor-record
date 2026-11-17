@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 121713,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "CIVIL AVIATION MATTERS"
+    ],
+    [
+     "Title II",
+     "DEPARTMENT OF DEFENSE MATTERS"
+    ]
+   ],
+   "sections": 28,
+   "short_titles": [
+    "Airspace Location and Enhanced Risk Transparency Act of 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7613ih/html/BILLS-119hr7613ih.htm"
+  },
+  {
+   "chars": 166242,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "CIVIL AVIATION MATTERS"
+    ],
+    [
+     "Title II",
+     "DEPARTMENT OF DEFENSE MATTERS"
+    ]
+   ],
+   "sections": 37,
+   "short_titles": [
+    "Airspace Location and Enhanced Risk Transparency Act of 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7613eh/html/BILLS-119hr7613eh.htm"
+  }
+ ]
+}

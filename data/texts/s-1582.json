@@ -1,0 +1,37 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.997,
+  "kept": 0.998,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 181301,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 20,
+   "short_titles": [
+    "Guiding and Establishing National Innovation for U.S. Stablecoins Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm"
+  },
+  {
+   "chars": 156393,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 20,
+   "short_titles": [
+    "Guiding and Establishing National Innovation for U.S. Stablecoins Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1582enr/html/BILLS-119s1582enr.htm"
+  }
+ ]
+}

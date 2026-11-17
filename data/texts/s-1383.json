@@ -1,0 +1,50 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.008,
+  "kept": 0.024,
+  "later": "eah",
+  "verdict": "replaced"
+ },
+ "review": true,
+ "versions": [
+  {
+   "chars": 14507,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Veterans Accessibility Advisory Committee Act of 2025"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383is/html/BILLS-119s1383is.htm"
+  },
+  {
+   "chars": 14571,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Veterans Accessibility Advisory Committee Act of 2025"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383es/html/BILLS-119s1383es.htm"
+  },
+  {
+   "chars": 42311,
+   "code": "eah",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Safeguard American Voter Eligibility Act"
+   ],
+   "stage": "As changed and passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+   "whole": true
+  }
+ ]
+}

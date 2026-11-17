@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.918,
+  "kept": 0.959,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 7298,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Secure Rural Schools Reauthorization Act of 2025"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s356is/html/BILLS-119s356is.htm"
+  },
+  {
+   "chars": 7067,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Secure Rural Schools Reauthorization Act of 2025"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s356es/html/BILLS-119s356es.htm"
+  },
+  {
+   "chars": 6368,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 4,
+   "short_titles": [
+    "Secure Rural Schools Reauthorization Act of 2025"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s356enr/html/BILLS-119s356enr.htm"
+  }
+ ]
+}

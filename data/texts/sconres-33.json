@@ -1,0 +1,83 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.99,
+  "kept": 0.991,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 63318,
+   "code": "es",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "RECOMMENDED LEVELS AND AMOUNTS"
+    ],
+    [
+     "Subtitle A",
+     "Budgetary Levels in Both Houses"
+    ],
+    [
+     "Subtitle B",
+     "Levels and Amounts in the Senate"
+    ],
+    [
+     "Title II",
+     "RECONCILIATION"
+    ],
+    [
+     "Title III",
+     "RESERVE FUNDS"
+    ],
+    [
+     "Title IV",
+     "OTHER MATTERS"
+    ]
+   ],
+   "sections": 18,
+   "short_titles": [],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119sconres33es/html/BILLS-119sconres33es.htm"
+  },
+  {
+   "chars": 56811,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "RECOMMENDED LEVELS AND AMOUNTS"
+    ],
+    [
+     "Subtitle A",
+     "Budgetary Levels in Both Houses"
+    ],
+    [
+     "Subtitle B",
+     "Levels and Amounts in the Senate"
+    ],
+    [
+     "Title II",
+     "RECONCILIATION"
+    ],
+    [
+     "Title III",
+     "RESERVE FUNDS"
+    ],
+    [
+     "Title IV",
+     "OTHER MATTERS"
+    ]
+   ],
+   "sections": 18,
+   "short_titles": [],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119sconres33enr/html/BILLS-119sconres33enr.htm"
+  }
+ ]
+}

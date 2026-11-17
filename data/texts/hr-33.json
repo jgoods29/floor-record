@@ -1,0 +1,51 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 55100,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "UNITED STATES-TAIWAN EXPEDITED DOUBLE-TAX RELIEF ACT"
+    ],
+    [
+     "Title II",
+     "UNITED STATES-TAIWAN TAX AGREEMENT AUTHORIZATION ACT"
+    ]
+   ],
+   "sections": 12,
+   "short_titles": [
+    "United States-Taiwan Expedited Double-Tax Relief Act",
+    "United States-Taiwan Tax Agreement Authorization Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr33ih/html/BILLS-119hr33ih.htm"
+  },
+  {
+   "chars": 54916,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "UNITED STATES-TAIWAN EXPEDITED DOUBLE-TAX RELIEF ACT"
+    ],
+    [
+     "Title II",
+     "UNITED STATES-TAIWAN TAX AGREEMENT AUTHORIZATION ACT"
+    ]
+   ],
+   "sections": 12,
+   "short_titles": [
+    "United States-Taiwan Expedited Double-Tax Relief Act",
+    "United States-Taiwan Tax Agreement Authorization Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr33eh/html/BILLS-119hr33eh.htm"
+  }
+ ]
+}

@@ -1,0 +1,1666 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.0,
+  "kept": 0.742,
+  "later": "enr",
+  "verdict": "expanded"
+ },
+ "review": true,
+ "versions": [
+  {
+   "chars": 2058,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 1,
+   "short_titles": [],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1071is/html/BILLS-119s1071is.htm"
+  },
+  {
+   "chars": 2100,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 1,
+   "short_titles": [],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1071es/html/BILLS-119s1071es.htm"
+  },
+  {
+   "chars": 4518612,
+   "code": "eah",
+   "full_text": false,
+   "parts": [
+    [
+     "Division A",
+     "DEPARTMENT OF DEFENSE AUTHORIZATIONS"
+    ],
+    [
+     "Title I",
+     "PROCUREMENT"
+    ],
+    [
+     "Subtitle A",
+     "Authorization of Appropriations"
+    ],
+    [
+     "Subtitle B",
+     "Army Programs"
+    ],
+    [
+     "Subtitle C",
+     "Navy Programs"
+    ],
+    [
+     "Subtitle D",
+     "Air Force Programs"
+    ],
+    [
+     "Subtitle E",
+     "Defense-wide, Joint, and Multiservice Matters"
+    ],
+    [
+     "Title II",
+     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION"
+    ],
+    [
+     "Subtitle B",
+     "Program Requirements, Restrictions, and Limitations"
+    ],
+    [
+     "Subtitle C",
+     "Biotechnology Matters"
+    ],
+    [
+     "Subtitle D",
+     "Plans, Reports, and Other Matters"
+    ],
+    [
+     "Title III",
+     "OPERATION AND MAINTENANCE"
+    ],
+    [
+     "Subtitle B",
+     "Energy and Environment"
+    ],
+    [
+     "Subtitle C",
+     "Logistics and Sustainment"
+    ],
+    [
+     "Subtitle D",
+     "Matters Relating to Munitions"
+    ],
+    [
+     "Subtitle E",
+     "Other Matters"
+    ],
+    [
+     "Title IV",
+     "MILITARY PERSONNEL AUTHORIZATIONS"
+    ],
+    [
+     "Subtitle A",
+     "Active Forces"
+    ],
+    [
+     "Subtitle B",
+     "Reserve Forces"
+    ],
+    [
+     "Subtitle C",
+     "Authorization of Appropriations; Reports"
+    ],
+    [
+     "Title V",
+     "MILITARY PERSONNEL POLICY"
+    ],
+    [
+     "Subtitle A",
+     "Officer Policy"
+    ],
+    [
+     "Subtitle B",
+     "Reserve Component Management"
+    ],
+    [
+     "Subtitle C",
+     "General Service Authorities and Military Records"
+    ],
+    [
+     "Subtitle D",
+     "Recruitment and Accession"
+    ],
+    [
+     "Subtitle E",
+     "Member Training"
+    ],
+    [
+     "Subtitle F",
+     "Member Education"
+    ],
+    [
+     "Subtitle G",
+     "Military Justice and Other Legal Matters"
+    ],
+    [
+     "Subtitle H",
+     "Career Transition"
+    ],
+    [
+     "Subtitle I",
+     "Family Programs, Child Care, and Dependent Education"
+    ],
+    [
+     "Subtitle J",
+     "Decorations and Awards, Reports, and Other Matters"
+    ],
+    [
+     "Title VI",
+     "COMPENSATION AND OTHER PERSONNEL BENEFITS"
+    ],
+    [
+     "Subtitle A",
+     "Basic Pay and Retired Pay"
+    ],
+    [
+     "Subtitle B",
+     "Bonus, Incentive, and Separation Pays"
+    ],
+    [
+     "Subtitle C",
+     "Allowances"
+    ],
+    [
+     "Subtitle D",
+     "Leave"
+    ],
+    [
+     "Subtitle E",
+     "Family and Survivor Benefits"
+    ],
+    [
+     "Subtitle F",
+     "Defense Resale Matters"
+    ],
+    [
+     "Subtitle G",
+     "Other Benefits, Administrative Matters, Reports, and"
+    ],
+    [
+     "Title VII",
+     "HEALTH CARE PROVISIONS"
+    ],
+    [
+     "Subtitle A",
+     "TRICARE and Other Health Benefits"
+    ],
+    [
+     "Subtitle B",
+     "Health Care Administration"
+    ],
+    [
+     "Subtitle C",
+     "Studies, Reports, and Other Matters"
+    ],
+    [
+     "Title VIII",
+     "ACQUISITION POLICY, ACQUISITION MANAGEMENT, AND RELATED"
+    ],
+    [
+     "Subtitle A",
+     "Acquisition Policy and Management"
+    ],
+    [
+     "Subtitle B",
+     "Amendments to General Contracting Authorities, Procedures,"
+    ],
+    [
+     "Subtitle C",
+     "Provisions Relating to Workforce Development"
+    ],
+    [
+     "Subtitle D",
+     "Provisions Relating to Supply Chains and Domestic Sourcing"
+    ],
+    [
+     "Subtitle E",
+     "Prohibitions and Limitations on Procurement"
+    ],
+    [
+     "Subtitle F",
+     "Industrial Base Matters"
+    ],
+    [
+     "Subtitle G",
+     "Other Matters"
+    ],
+    [
+     "Title IX",
+     "DEPARTMENT OF DEFENSE ORGANIZATION AND MANAGEMENT"
+    ],
+    [
+     "Subtitle A",
+     "Office of the Secretary of Defense and Related Matters"
+    ],
+    [
+     "Subtitle B",
+     "Other Department of Defense Organization and Management"
+    ],
+    [
+     "Title X",
+     "GENERAL PROVISIONS"
+    ],
+    [
+     "Subtitle A",
+     "Financial Matters"
+    ],
+    [
+     "Subtitle B",
+     "Counterdrug Activities"
+    ],
+    [
+     "Subtitle C",
+     "Naval Vessels and Shipyards"
+    ],
+    [
+     "Subtitle D",
+     "Counterterrorism"
+    ],
+    [
+     "Subtitle E",
+     "Miscellaneous Authorities and Limitations"
+    ],
+    [
+     "Subtitle F",
+     "Studies and Reports"
+    ],
+    [
+     "Title XI",
+     "CIVILIAN PERSONNEL"
+    ],
+    [
+     "Title XII",
+     "MATTERS RELATING TO FOREIGN NATIONS"
+    ],
+    [
+     "Subtitle A",
+     "Assistance and Training"
+    ],
+    [
+     "Subtitle B",
+     "Foreign Military Sales and Related Processes"
+    ],
+    [
+     "Subtitle C",
+     "Matters Relating to the Middle East"
+    ],
+    [
+     "Subtitle D",
+     "Matters Relating to Israel"
+    ],
+    [
+     "Subtitle E",
+     "Matters Relating to Europe, Ukraine, and the Russian"
+    ],
+    [
+     "Subtitle F",
+     "Matters Relating to the Indo-Pacific Region"
+    ],
+    [
+     "Subtitle G",
+     "Matters Relating to Asia"
+    ],
+    [
+     "Subtitle H",
+     "Other Matters"
+    ],
+    [
+     "Title XIV",
+     "OTHER AUTHORIZATIONS"
+    ],
+    [
+     "Subtitle A",
+     "Military Programs"
+    ],
+    [
+     "Subtitle B",
+     "National Defense Stockpile"
+    ],
+    [
+     "Subtitle C",
+     "Other Matters"
+    ],
+    [
+     "Title XV",
+     "CYBERSPACE-RELATED MATTERS"
+    ],
+    [
+     "Subtitle A",
+     "Cyber Operations"
+    ],
+    [
+     "Subtitle B",
+     "Cybersecurity"
+    ],
+    [
+     "Subtitle C",
+     "Information Technology and Data Management"
+    ],
+    [
+     "Subtitle D",
+     "Artificial Intelligence"
+    ],
+    [
+     "Subtitle E",
+     "Reports and Other Matters"
+    ],
+    [
+     "Title XVI",
+     "SPACE ACTIVITIES, STRATEGIC PROGRAMS, AND INTELLIGENCE"
+    ],
+    [
+     "Subtitle A",
+     "Space Activities"
+    ],
+    [
+     "Subtitle B",
+     "Defense Intelligence and Intelligence-Related Activities"
+    ],
+    [
+     "Subtitle C",
+     "Nuclear Forces"
+    ],
+    [
+     "Subtitle D",
+     "Missile Defense Programs"
+    ],
+    [
+     "Subtitle E",
+     "Matters Relating to Unidentified Anomalous Phenomena"
+    ],
+    [
+     "Subtitle F",
+     "Matters Relating to Electromagnetic Warfare"
+    ],
+    [
+     "Title XVII",
+     "OTHER DEFENSE MATTERS"
+    ],
+    [
+     "Title XVIII",
+     "ACQUISITION REFORM"
+    ],
+    [
+     "Subtitle A",
+     "Alignment of the Defense Acquisition System"
+    ],
+    [
+     "Subtitle B",
+     "Requirements Process Reform"
+    ],
+    [
+     "Subtitle C",
+     "Matters Relating to Commercial Products and Commercial"
+    ],
+    [
+     "Subtitle D",
+     "Improvements to Acquisition Programs"
+    ],
+    [
+     "Subtitle E",
+     "Modifications to Strengthen the Industrial Base"
+    ],
+    [
+     "Division B",
+     "MILITARY CONSTRUCTION AUTHORIZATIONS"
+    ],
+    [
+     "Title XXI",
+     "ARMY MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XXII",
+     "NAVY MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XXIII",
+     "AIR FORCE MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XXIV",
+     "DEFENSE AGENCIES MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XXV",
+     "INTERNATIONAL PROGRAMS"
+    ],
+    [
+     "Subtitle A",
+     "North Atlantic Treaty Organization Security Investment"
+    ],
+    [
+     "Subtitle B",
+     "Host Country In-Kind Contributions"
+    ],
+    [
+     "Title XXVI",
+     "GUARD AND RESERVE FORCES FACILITIES"
+    ],
+    [
+     "Title XXVII",
+     "BASE REALIGNMENT AND CLOSURE ACTIVITIES"
+    ],
+    [
+     "Title XXVIII",
+     "MILITARY CONSTRUCTION GENERAL PROVISIONS"
+    ],
+    [
+     "Subtitle A",
+     "Military Construction Programs"
+    ],
+    [
+     "Subtitle B",
+     "Military Housing Reforms"
+    ],
+    [
+     "Subtitle C",
+     "Real Property and Facilities Administration"
+    ],
+    [
+     "Subtitle D",
+     "Land Conveyances"
+    ],
+    [
+     "Subtitle E",
+     "Modifications to Unspecified Minor Military Construction"
+    ],
+    [
+     "Subtitle F",
+     "Other Matters"
+    ],
+    [
+     "Division C",
+     "DEPARTMENT OF ENERGY NATIONAL SECURITY AUTHORIZATIONS AND"
+    ],
+    [
+     "Title XXXI",
+     "DEPARTMENT OF ENERGY NATIONAL SECURITY PROGRAMS"
+    ],
+    [
+     "Subtitle A",
+     "National Security Programs and Authorizations"
+    ],
+    [
+     "Subtitle B",
+     "Program Authorizations, Restrictions, and Limitations"
+    ],
+    [
+     "Subtitle C",
+     "Reports and Other Matters"
+    ],
+    [
+     "Title XXXII",
+     "DEFENSE NUCLEAR FACILITIES SAFETY BOARD"
+    ],
+    [
+     "Title XXXIV",
+     "NAVAL PETROLEUM RESERVES"
+    ],
+    [
+     "Title XXXV",
+     "MARITIME ADMINISTRATION"
+    ],
+    [
+     "Division D",
+     "FUNDING TABLES"
+    ],
+    [
+     "Title XLI",
+     "PROCUREMENT"
+    ],
+    [
+     "Title XLII",
+     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION"
+    ],
+    [
+     "Title XLIII",
+     "OPERATION AND MAINTENANCE"
+    ],
+    [
+     "Title XLIV",
+     "MILITARY PERSONNEL"
+    ],
+    [
+     "Title XLV",
+     "OTHER AUTHORIZATIONS"
+    ],
+    [
+     "Title XLVI",
+     "MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XLVII",
+     "DEPARTMENT OF ENERGY NATIONAL SECURITY PROGRAMS"
+    ],
+    [
+     "Division E",
+     "DEPARTMENT OF STATE AUTHORIZATION ACT FOR FISCAL YEAR 2026"
+    ],
+    [
+     "Title I",
+     "ORGANIZATION AND OPERATIONS"
+    ],
+    [
+     "Subtitle A",
+     "Management and Consular Affairs"
+    ],
+    [
+     "Subtitle B",
+     "Human Resources"
+    ],
+    [
+     "Subtitle C",
+     "Political Affairs"
+    ],
+    [
+     "Subtitle D",
+     "Other Matters"
+    ],
+    [
+     "Title II",
+     "WORKFORCE MATTERS"
+    ],
+    [
+     "Title III",
+     "INFORMATION SECURITY AND CYBER DIPLOMACY"
+    ],
+    [
+     "Title IV",
+     "PUBLIC DIPLOMACY"
+    ],
+    [
+     "Title V",
+     "DIPLOMATIC SECURITY"
+    ],
+    [
+     "Title VI",
+     "MISCELLANEOUS"
+    ],
+    [
+     "Division F",
+     "INTELLIGENCE AUTHORIZATION ACT FOR FISCAL YEAR 2026"
+    ],
+    [
+     "Title LXI",
+     "INTELLIGENCE ACTIVITIES"
+    ],
+    [
+     "Title LXII",
+     "CENTRAL INTELLIGENCE AGENCY RETIREMENT AND DISABILITY"
+    ],
+    [
+     "Title LXIII",
+     "INTELLIGENCE COMMUNITY MATTERS"
+    ],
+    [
+     "Title LXIV",
+     "INTELLIGENCE COMMUNITY EFFICIENCY AND EFFECTIVENESS"
+    ],
+    [
+     "Title LXV",
+     "MATTERS RELATING TO ELEMENTS OF THE INTELLIGENCE COMMUNITY"
+    ],
+    [
+     "Subtitle A",
+     "Central Intelligence Agency"
+    ],
+    [
+     "Subtitle B",
+     "Elements of Department of Defense"
+    ],
+    [
+     "Subtitle C",
+     "Federal Bureau of Investigation"
+    ],
+    [
+     "Title LXVI",
+     "ARTIFICIAL INTELLIGENCE AND OTHER EMERGING TECHNOLOGIES"
+    ],
+    [
+     "Subtitle A",
+     "Artificial Intelligence"
+    ],
+    [
+     "Subtitle B",
+     "Biotechnology"
+    ],
+    [
+     "Title LXVII",
+     "MATTERS RELATING TO FOREIGN COUNTRIES"
+    ],
+    [
+     "Subtitle A",
+     "Matters Relating to China"
+    ],
+    [
+     "Subtitle B",
+     "Other Matters"
+    ],
+    [
+     "Title LXVIII",
+     "REPORTS AND OTHER MATTERS"
+    ],
+    [
+     "Division G",
+     "COAST GUARD AUTHORIZATION ACT OF 2025"
+    ],
+    [
+     "Title LXXI",
+     "COAST GUARD"
+    ],
+    [
+     "Subtitle B",
+     "Accountability"
+    ],
+    [
+     "Title LXXII",
+     "ORGANIZATION, AUTHORITIES, ACQUISITION, AND PERSONNEL OF"
+    ],
+    [
+     "Subtitle A",
+     "Authorities"
+    ],
+    [
+     "Subtitle B",
+     "Acquisition"
+    ],
+    [
+     "Subtitle C",
+     "Personnel"
+    ],
+    [
+     "Subtitle D",
+     "Coast Guard Academy"
+    ],
+    [
+     "Subtitle E",
+     "Reports and Policies"
+    ],
+    [
+     "Title LXXIII",
+     "SHIPPING AND NAVIGATION"
+    ],
+    [
+     "Subtitle A",
+     "Merchant Mariner Credentials"
+    ],
+    [
+     "Subtitle B",
+     "Vessel Safety"
+    ],
+    [
+     "Subtitle C",
+     "Ports"
+    ],
+    [
+     "Subtitle D",
+     "Matters Involving Uncrewed Systems"
+    ],
+    [
+     "Title LXXIV",
+     "OIL POLLUTION RESPONSE"
+    ],
+    [
+     "Title LXXV",
+     "SEXUAL ASSAULT AND SEXUAL HARASSMENT RESPONSE"
+    ],
+    [
+     "Subtitle A",
+     "Accountability Implementation"
+    ],
+    [
+     "Subtitle B",
+     "Misconduct"
+    ],
+    [
+     "Title LXXVI",
+     "COMPTROLLER GENERAL REPORTS"
+    ],
+    [
+     "Title LXXVII",
+     "AMENDMENTS"
+    ],
+    [
+     "Division H",
+     "OTHER MATTERS"
+    ],
+    [
+     "Title LXXXI",
+     "FINANCIAL SERVICES MATTERS"
+    ],
+    [
+     "Title LXXXII",
+     "JUDICIARY MATTERS"
+    ],
+    [
+     "Title LXXXIII",
+     "FOREIGN AFFAIRS MATTERS"
+    ],
+    [
+     "Subtitle A",
+     "Taiwan Non-Discrimination Act of 2025"
+    ],
+    [
+     "Subtitle B",
+     "BUST Fentanyl Act"
+    ],
+    [
+     "Subtitle C",
+     "Western Balkans Democracy and Prosperity"
+    ],
+    [
+     "Subtitle D",
+     "Countering Wrongful Detention Act of 2025"
+    ],
+    [
+     "Title LXXXIV",
+     "NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION"
+    ],
+    [
+     "Subtitle A",
+     "National Oceanic and Atmospheric Administration"
+    ],
+    [
+     "Subtitle B",
+     "South Pacific Tuna Treaty Matters"
+    ],
+    [
+     "Title LXXXV",
+     "COMPREHENSIVE OUTBOUND INVESTMENT NATIONAL SECURITY ACT OF"
+    ],
+    [
+     "Subtitle A",
+     "General Matters"
+    ],
+    [
+     "Subtitle B",
+     "Imposition of Sanctions"
+    ],
+    [
+     "Subtitle C",
+     "Prohibition and Notification on Investments Relating to"
+    ],
+    [
+     "Subtitle D",
+     "Securities and Related Matters"
+    ],
+    [
+     "Title LXXXVI",
+     "SECURING THE AIRSPACE, FACILITATING EMERGENCY RESPONSE,"
+    ],
+    [
+     "Title LXXXVII",
+     "DFC MODERNIZATION AND REAUTHORIZATION ACT OF 2025"
+    ],
+    [
+     "Subtitle A",
+     "Definitions and Less Developed Country Focus"
+    ],
+    [
+     "Subtitle B",
+     "Management of Corporation"
+    ],
+    [
+     "Subtitle C",
+     "Authorities Relating to the Provision of Support"
+    ],
+    [
+     "Title LXXXVIII",
+     "OTHER MATTERS"
+    ]
+   ],
+   "sections": 1133,
+   "short_titles": [
+    "National Defense Authorization Act for Fiscal Year 2026",
+    "AUKUS Improvement Act of 2025",
+    "Military Construction Authorization Act for Fiscal Year 2026",
+    "Department of State Authorization Act for Fiscal Year 2026",
+    "Intelligence Authorization Act for Fiscal Year 2026",
+    "Intelligence Community Efficiency and Effectiveness Act of 2025",
+    "Coast Guard Authorization Act of 2025",
+    "Holding Foreign Insiders Accountable Act",
+    "Taiwan Non-Discrimination Act of 2025",
+    "Break Up Suspicious Transactions of Fentanyl Act",
+    "Western Balkans Democracy and Prosperity Act",
+    "Countering Wrongful Detention Act of 2025"
+   ],
+   "stage": "As changed and passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1071eah/html/BILLS-119s1071eah.htm",
+   "whole": true
+  },
+  {
+   "chars": 4124282,
+   "code": "enr",
+   "full_text": false,
+   "parts": [
+    [
+     "Division A",
+     "DEPARTMENT OF DEFENSE AUTHORIZATIONS"
+    ],
+    [
+     "Title I",
+     "PROCUREMENT"
+    ],
+    [
+     "Subtitle A",
+     "Authorization of Appropriations"
+    ],
+    [
+     "Subtitle B",
+     "Army Programs"
+    ],
+    [
+     "Subtitle C",
+     "Navy Programs"
+    ],
+    [
+     "Subtitle D",
+     "Air Force Programs"
+    ],
+    [
+     "Subtitle E",
+     "Defense-wide, Joint, and Multiservice Matters"
+    ],
+    [
+     "Title II",
+     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION"
+    ],
+    [
+     "Subtitle B",
+     "Program Requirements, Restrictions, and Limitations"
+    ],
+    [
+     "Subtitle C",
+     "Biotechnology Matters"
+    ],
+    [
+     "Subtitle D",
+     "Plans, Reports, and Other Matters"
+    ],
+    [
+     "Title III",
+     "OPERATION AND MAINTENANCE"
+    ],
+    [
+     "Subtitle B",
+     "Energy and Environment"
+    ],
+    [
+     "Subtitle C",
+     "Logistics and Sustainment"
+    ],
+    [
+     "Subtitle D",
+     "Matters Relating to Munitions"
+    ],
+    [
+     "Subtitle E",
+     "Other Matters"
+    ],
+    [
+     "Title IV",
+     "MILITARY PERSONNEL AUTHORIZATIONS"
+    ],
+    [
+     "Subtitle A",
+     "Active Forces"
+    ],
+    [
+     "Subtitle B",
+     "Reserve Forces"
+    ],
+    [
+     "Subtitle C",
+     "Authorization of Appropriations; Reports"
+    ],
+    [
+     "Title V",
+     "MILITARY PERSONNEL POLICY"
+    ],
+    [
+     "Subtitle A",
+     "Officer Policy"
+    ],
+    [
+     "Subtitle B",
+     "Reserve Component Management"
+    ],
+    [
+     "Subtitle C",
+     "General Service Authorities and Military Records"
+    ],
+    [
+     "Subtitle D",
+     "Recruitment and Accession"
+    ],
+    [
+     "Subtitle E",
+     "Member Training"
+    ],
+    [
+     "Subtitle F",
+     "Member Education"
+    ],
+    [
+     "Subtitle G",
+     "Military Justice and Other Legal Matters"
+    ],
+    [
+     "Subtitle H",
+     "Career Transition"
+    ],
+    [
+     "Subtitle I",
+     "Family Programs, Child Care, and Dependent Education"
+    ],
+    [
+     "Subtitle J",
+     "Decorations and Awards, Reports, and Other Matters"
+    ],
+    [
+     "Title VI",
+     "COMPENSATION AND OTHER PERSONNEL BENEFITS"
+    ],
+    [
+     "Subtitle A",
+     "Basic Pay and Retired Pay"
+    ],
+    [
+     "Subtitle B",
+     "Bonus, Incentive, and Separation Pays"
+    ],
+    [
+     "Subtitle C",
+     "Allowances"
+    ],
+    [
+     "Subtitle D",
+     "Leave"
+    ],
+    [
+     "Subtitle E",
+     "Family and Survivor Benefits"
+    ],
+    [
+     "Subtitle F",
+     "Defense Resale Matters"
+    ],
+    [
+     "Subtitle G",
+     "Other Benefits, Administrative Matters, Reports, and"
+    ],
+    [
+     "Title VII",
+     "HEALTH CARE PROVISIONS"
+    ],
+    [
+     "Subtitle A",
+     "TRICARE and Other Health Benefits"
+    ],
+    [
+     "Subtitle B",
+     "Health Care Administration"
+    ],
+    [
+     "Subtitle C",
+     "Studies, Reports, and Other Matters"
+    ],
+    [
+     "Title VIII",
+     "ACQUISITION POLICY, ACQUISITION MANAGEMENT, AND RELATED"
+    ],
+    [
+     "Subtitle A",
+     "Acquisition Policy and Management"
+    ],
+    [
+     "Subtitle B",
+     "Amendments to General Contracting Authorities, Procedures,"
+    ],
+    [
+     "Subtitle C",
+     "Provisions Relating to Workforce Development"
+    ],
+    [
+     "Subtitle D",
+     "Provisions Relating to Supply Chains and Domestic Sourcing"
+    ],
+    [
+     "Subtitle E",
+     "Prohibitions and Limitations on Procurement"
+    ],
+    [
+     "Subtitle F",
+     "Industrial Base Matters"
+    ],
+    [
+     "Subtitle G",
+     "Other Matters"
+    ],
+    [
+     "Title IX",
+     "DEPARTMENT OF DEFENSE ORGANIZATION AND MANAGEMENT"
+    ],
+    [
+     "Subtitle A",
+     "Office of the Secretary of Defense and Related Matters"
+    ],
+    [
+     "Subtitle B",
+     "Other Department of Defense Organization and Management"
+    ],
+    [
+     "Title X",
+     "GENERAL PROVISIONS"
+    ],
+    [
+     "Subtitle A",
+     "Financial Matters"
+    ],
+    [
+     "Subtitle B",
+     "Counterdrug Activities"
+    ],
+    [
+     "Subtitle C",
+     "Naval Vessels and Shipyards"
+    ],
+    [
+     "Subtitle D",
+     "Counterterrorism"
+    ],
+    [
+     "Subtitle E",
+     "Miscellaneous Authorities and Limitations"
+    ],
+    [
+     "Subtitle F",
+     "Studies and Reports"
+    ],
+    [
+     "Title XI",
+     "CIVILIAN PERSONNEL"
+    ],
+    [
+     "Title XII",
+     "MATTERS RELATING TO FOREIGN NATIONS"
+    ],
+    [
+     "Subtitle A",
+     "Assistance and Training"
+    ],
+    [
+     "Subtitle B",
+     "Foreign Military Sales and Related Processes"
+    ],
+    [
+     "Subtitle C",
+     "Matters Relating to the Middle East"
+    ],
+    [
+     "Subtitle D",
+     "Matters Relating to Israel"
+    ],
+    [
+     "Subtitle E",
+     "Matters Relating to Europe, Ukraine, and the Russian"
+    ],
+    [
+     "Subtitle F",
+     "Matters Relating to the Indo-Pacific Region"
+    ],
+    [
+     "Subtitle G",
+     "Matters Relating to Asia"
+    ],
+    [
+     "Subtitle H",
+     "Other Matters"
+    ],
+    [
+     "Title XIV",
+     "OTHER AUTHORIZATIONS"
+    ],
+    [
+     "Subtitle A",
+     "Military Programs"
+    ],
+    [
+     "Subtitle B",
+     "National Defense Stockpile"
+    ],
+    [
+     "Subtitle C",
+     "Other Matters"
+    ],
+    [
+     "Title XV",
+     "CYBERSPACE-RELATED MATTERS"
+    ],
+    [
+     "Subtitle A",
+     "Cyber Operations"
+    ],
+    [
+     "Subtitle B",
+     "Cybersecurity"
+    ],
+    [
+     "Subtitle C",
+     "Information Technology and Data Management"
+    ],
+    [
+     "Subtitle D",
+     "Artificial Intelligence"
+    ],
+    [
+     "Subtitle E",
+     "Reports and Other Matters"
+    ],
+    [
+     "Title XVI",
+     "SPACE ACTIVITIES, STRATEGIC PROGRAMS, AND INTELLIGENCE"
+    ],
+    [
+     "Subtitle A",
+     "Space Activities"
+    ],
+    [
+     "Subtitle B",
+     "Defense Intelligence and Intelligence-Related Activities"
+    ],
+    [
+     "Subtitle C",
+     "Nuclear Forces"
+    ],
+    [
+     "Subtitle D",
+     "Missile Defense Programs"
+    ],
+    [
+     "Subtitle E",
+     "Matters Relating to Unidentified Anomalous Phenomena"
+    ],
+    [
+     "Subtitle F",
+     "Matters Relating to Electromagnetic Warfare"
+    ],
+    [
+     "Title XVII",
+     "OTHER DEFENSE MATTERS"
+    ],
+    [
+     "Title XVIII",
+     "ACQUISITION REFORM"
+    ],
+    [
+     "Subtitle A",
+     "Alignment of the Defense Acquisition System"
+    ],
+    [
+     "Subtitle B",
+     "Requirements Process Reform"
+    ],
+    [
+     "Subtitle C",
+     "Matters Relating to Commercial Products and Commercial"
+    ],
+    [
+     "Subtitle D",
+     "Improvements to Acquisition Programs"
+    ],
+    [
+     "Subtitle E",
+     "Modifications to Strengthen the Industrial Base"
+    ],
+    [
+     "Division B",
+     "MILITARY CONSTRUCTION AUTHORIZATIONS"
+    ],
+    [
+     "Title XXI",
+     "ARMY MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XXII",
+     "NAVY MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XXIII",
+     "AIR FORCE MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XXIV",
+     "DEFENSE AGENCIES MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XXV",
+     "INTERNATIONAL PROGRAMS"
+    ],
+    [
+     "Subtitle A",
+     "North Atlantic Treaty Organization Security Investment"
+    ],
+    [
+     "Subtitle B",
+     "Host Country In-Kind Contributions"
+    ],
+    [
+     "Title XXVI",
+     "GUARD AND RESERVE FORCES FACILITIES"
+    ],
+    [
+     "Title XXVII",
+     "BASE REALIGNMENT AND CLOSURE ACTIVITIES"
+    ],
+    [
+     "Title XXVIII",
+     "MILITARY CONSTRUCTION GENERAL PROVISIONS"
+    ],
+    [
+     "Subtitle A",
+     "Military Construction Programs"
+    ],
+    [
+     "Subtitle B",
+     "Military Housing Reforms"
+    ],
+    [
+     "Subtitle C",
+     "Real Property and Facilities Administration"
+    ],
+    [
+     "Subtitle D",
+     "Land Conveyances"
+    ],
+    [
+     "Subtitle E",
+     "Modifications to Unspecified Minor Military Construction"
+    ],
+    [
+     "Subtitle F",
+     "Other Matters"
+    ],
+    [
+     "Division C",
+     "DEPARTMENT OF ENERGY NATIONAL SECURITY AUTHORIZATIONS AND"
+    ],
+    [
+     "Title XXXI",
+     "DEPARTMENT OF ENERGY NATIONAL SECURITY PROGRAMS"
+    ],
+    [
+     "Subtitle A",
+     "National Security Programs and Authorizations"
+    ],
+    [
+     "Subtitle B",
+     "Program Authorizations, Restrictions, and Limitations"
+    ],
+    [
+     "Subtitle C",
+     "Reports and Other Matters"
+    ],
+    [
+     "Title XXXII",
+     "DEFENSE NUCLEAR FACILITIES SAFETY BOARD"
+    ],
+    [
+     "Title XXXIV",
+     "NAVAL PETROLEUM RESERVES"
+    ],
+    [
+     "Title XXXV",
+     "MARITIME ADMINISTRATION"
+    ],
+    [
+     "Division D",
+     "FUNDING TABLES"
+    ],
+    [
+     "Title XLI",
+     "PROCUREMENT"
+    ],
+    [
+     "Title XLII",
+     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION"
+    ],
+    [
+     "Title XLIII",
+     "OPERATION AND MAINTENANCE"
+    ],
+    [
+     "Title XLIV",
+     "MILITARY PERSONNEL"
+    ],
+    [
+     "Title XLV",
+     "OTHER AUTHORIZATIONS"
+    ],
+    [
+     "Title XLVI",
+     "MILITARY CONSTRUCTION"
+    ],
+    [
+     "Title XLVII",
+     "DEPARTMENT OF ENERGY NATIONAL SECURITY PROGRAMS"
+    ],
+    [
+     "Division E",
+     "DEPARTMENT OF STATE AUTHORIZATION ACT FOR FISCAL YEAR 2026"
+    ],
+    [
+     "Title I",
+     "ORGANIZATION AND OPERATIONS"
+    ],
+    [
+     "Subtitle A",
+     "Management and Consular Affairs"
+    ],
+    [
+     "Subtitle B",
+     "Human Resources"
+    ],
+    [
+     "Subtitle C",
+     "Political Affairs"
+    ],
+    [
+     "Subtitle D",
+     "Other Matters"
+    ],
+    [
+     "Title II",
+     "WORKFORCE MATTERS"
+    ],
+    [
+     "Title III",
+     "INFORMATION SECURITY AND CYBER DIPLOMACY"
+    ],
+    [
+     "Title IV",
+     "PUBLIC DIPLOMACY"
+    ],
+    [
+     "Title V",
+     "DIPLOMATIC SECURITY"
+    ],
+    [
+     "Title VI",
+     "MISCELLANEOUS"
+    ],
+    [
+     "Division F",
+     "INTELLIGENCE AUTHORIZATION ACT FOR FISCAL YEAR 2026"
+    ],
+    [
+     "Title LXI",
+     "INTELLIGENCE ACTIVITIES"
+    ],
+    [
+     "Title LXII",
+     "CENTRAL INTELLIGENCE AGENCY RETIREMENT AND DISABILITY SYSTEM"
+    ],
+    [
+     "Title LXIII",
+     "INTELLIGENCE COMMUNITY MATTERS"
+    ],
+    [
+     "Title LXIV",
+     "INTELLIGENCE COMMUNITY EFFICIENCY AND EFFECTIVENESS"
+    ],
+    [
+     "Title LXV",
+     "MATTERS RELATING TO ELEMENTS OF THE INTELLIGENCE COMMUNITY"
+    ],
+    [
+     "Subtitle A",
+     "Central Intelligence Agency"
+    ],
+    [
+     "Subtitle B",
+     "Elements of Department of Defense"
+    ],
+    [
+     "Subtitle C",
+     "Federal Bureau of Investigation"
+    ],
+    [
+     "Title LXVI",
+     "ARTIFICIAL INTELLIGENCE AND OTHER EMERGING TECHNOLOGIES"
+    ],
+    [
+     "Subtitle A",
+     "Artificial Intelligence"
+    ],
+    [
+     "Subtitle B",
+     "Biotechnology"
+    ],
+    [
+     "Title LXVII",
+     "MATTERS RELATING TO FOREIGN COUNTRIES"
+    ],
+    [
+     "Subtitle A",
+     "Matters Relating to China"
+    ],
+    [
+     "Subtitle B",
+     "Other Matters"
+    ],
+    [
+     "Title LXVIII",
+     "REPORTS AND OTHER MATTERS"
+    ],
+    [
+     "Division G",
+     "COAST GUARD AUTHORIZATION ACT OF 2025"
+    ],
+    [
+     "Title LXXI",
+     "COAST GUARD"
+    ],
+    [
+     "Subtitle B",
+     "Accountability"
+    ],
+    [
+     "Title LXXII",
+     "ORGANIZATION, AUTHORITIES, ACQUISITION, AND PERSONNEL OF"
+    ],
+    [
+     "Subtitle A",
+     "Authorities"
+    ],
+    [
+     "Subtitle B",
+     "Acquisition"
+    ],
+    [
+     "Subtitle C",
+     "Personnel"
+    ],
+    [
+     "Subtitle D",
+     "Coast Guard Academy"
+    ],
+    [
+     "Subtitle E",
+     "Reports and Policies"
+    ],
+    [
+     "Title LXXIII",
+     "SHIPPING AND NAVIGATION"
+    ],
+    [
+     "Subtitle A",
+     "Merchant Mariner Credentials"
+    ],
+    [
+     "Subtitle B",
+     "Vessel Safety"
+    ],
+    [
+     "Subtitle C",
+     "Ports"
+    ],
+    [
+     "Subtitle D",
+     "Matters Involving Uncrewed Systems"
+    ],
+    [
+     "Title LXXIV",
+     "OIL POLLUTION RESPONSE"
+    ],
+    [
+     "Title LXXV",
+     "SEXUAL ASSAULT AND SEXUAL HARASSMENT RESPONSE"
+    ],
+    [
+     "Subtitle A",
+     "Accountability Implementation"
+    ],
+    [
+     "Subtitle B",
+     "Misconduct"
+    ],
+    [
+     "Title LXXVI",
+     "COMPTROLLER GENERAL REPORTS"
+    ],
+    [
+     "Title LXXVII",
+     "AMENDMENTS"
+    ],
+    [
+     "Division H",
+     "OTHER MATTERS"
+    ],
+    [
+     "Title LXXXI",
+     "FINANCIAL SERVICES MATTERS"
+    ],
+    [
+     "Title LXXXII",
+     "JUDICIARY MATTERS"
+    ],
+    [
+     "Title LXXXIII",
+     "FOREIGN AFFAIRS MATTERS"
+    ],
+    [
+     "Subtitle A",
+     "Taiwan Non-Discrimination Act of 2025"
+    ],
+    [
+     "Subtitle B",
+     "BUST Fentanyl Act"
+    ],
+    [
+     "Subtitle C",
+     "Western Balkans Democracy and Prosperity"
+    ],
+    [
+     "Subtitle D",
+     "Countering Wrongful Detention Act of 2025"
+    ],
+    [
+     "Title LXXXIV",
+     "NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION"
+    ],
+    [
+     "Subtitle A",
+     "National Oceanic and Atmospheric Administration Commissioned"
+    ],
+    [
+     "Subtitle B",
+     "South Pacific Tuna Treaty Matters"
+    ],
+    [
+     "Title LXXXV",
+     "COMPREHENSIVE OUTBOUND INVESTMENT NATIONAL SECURITY ACT OF"
+    ],
+    [
+     "Subtitle A",
+     "General Matters"
+    ],
+    [
+     "Subtitle B",
+     "Imposition of Sanctions"
+    ],
+    [
+     "Subtitle C",
+     "Prohibition and Notification on Investments Relating to"
+    ],
+    [
+     "Subtitle D",
+     "Securities and Related Matters"
+    ],
+    [
+     "Title LXXXVI",
+     "SECURING THE AIRSPACE, FACILITATING EMERGENCY RESPONSE,"
+    ],
+    [
+     "Title LXXXVII",
+     "DFC MODERNIZATION AND REAUTHORIZATION ACT OF 2025"
+    ],
+    [
+     "Subtitle A",
+     "Definitions and Less Developed Country Focus"
+    ],
+    [
+     "Subtitle B",
+     "Management of Corporation"
+    ],
+    [
+     "Subtitle C",
+     "Authorities Relating to the Provision of Support"
+    ],
+    [
+     "Title LXXXVIII",
+     "OTHER MATTERS"
+    ],
+    [
+     "Title LXII",
+     "CENTRAL INTELLIGENCE AGENCY RETIREMENT AND DISABILITY"
+    ],
+    [
+     "Subtitle A",
+     "National Oceanic and Atmospheric Administration"
+    ]
+   ],
+   "sections": 1133,
+   "short_titles": [
+    "National Defense Authorization Act for Fiscal Year 2026",
+    "AUKUS Improvement Act of 2025",
+    "Military Construction Authorization Act for Fiscal Year 2026",
+    "Department of State Authorization Act for Fiscal Year 2026",
+    "Intelligence Authorization Act for Fiscal Year 2026",
+    "Intelligence Community Efficiency and Effectiveness Act of 2025",
+    "Coast Guard Authorization Act of 2025",
+    "Holding Foreign Insiders Accountable Act",
+    "Taiwan Non-Discrimination Act of 2025",
+    "Break Up Suspicious Transactions of Fentanyl Act",
+    "Western Balkans Democracy and Prosperity Act",
+    "Countering Wrongful Detention Act of 2025"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1071enr/html/BILLS-119s1071enr.htm"
+  }
+ ]
+}

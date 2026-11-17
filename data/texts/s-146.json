@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "es",
+  "from_earlier": 0.974,
+  "kept": 0.987,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 28374,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 5,
+   "short_titles": [
+    "Tools to Address Known Exploitation by Immobilizing Technological Deepfakes on Websites and Networks Act"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s146is/html/BILLS-119s146is.htm"
+  },
+  {
+   "chars": 28157,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 5,
+   "short_titles": [
+    "Tools to Address Known Exploitation by Immobilizing Technological Deepfakes on Websites and Networks Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s146es/html/BILLS-119s146es.htm"
+  },
+  {
+   "chars": 22880,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 5,
+   "short_titles": [
+    "Tools to Address Known Exploitation by Immobilizing Technological Deepfakes on Websites and Networks Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s146enr/html/BILLS-119s146enr.htm"
+  }
+ ]
+}

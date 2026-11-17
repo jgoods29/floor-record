@@ -554,6 +554,9 @@ def main():
     ingest_senators()
     senate_slugs = sorted({bill_slug(*m) for path in (DATA / "senate").glob("*/*.json") for m in [measure_of(read_json(path))] if m})
     ingest_bills(votes, cfg["congress"], also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"]] + senate_slugs)
+    from .texts import ingest_texts
+    linked = [g.get("bill") for m in (read_json(DATA / "matchups.json") or []) for g in (m.get("groups") or []) if g.get("bill")]
+    ingest_texts(read_json(DATA / "bills.json", {}), cfg["congress"], first=linked + senate_slugs[::-1])
     matched = [m.get(k) for m in (read_json(DATA / "matchups.json") or []) for k in ("a", "b")]
     ingest_member_bills({p[0] for v in votes for p in v["positions"]} | set(read_json(DATA / "senators.json") or {}), cfg["congress"], first=set(matched))
     from .explain import ai_summaries, ai_vote_lines

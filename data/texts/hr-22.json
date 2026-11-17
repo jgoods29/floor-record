@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 32218,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 8,
+   "short_titles": [
+    "Safeguard American Voter Eligibility Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22ih/html/BILLS-119hr22ih.htm"
+  },
+  {
+   "chars": 31511,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 8,
+   "short_titles": [
+    "Safeguard American Voter Eligibility Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm"
+  }
+ ]
+}

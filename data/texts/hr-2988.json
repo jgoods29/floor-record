@@ -1,0 +1,73 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 19615,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "INCREASE RETIREMENT EARNINGS"
+    ],
+    [
+     "Division B",
+     "NO DISCRIMINATION IN MY BENEFITS"
+    ],
+    [
+     "Division C",
+     "RETIREMENT PROXY PROTECTION"
+    ],
+    [
+     "Division D",
+     "PROVIDING COMPLETE INFORMATION TO RETIREMENT INVESTORS"
+    ]
+   ],
+   "sections": 9,
+   "short_titles": [
+    "Protecting Prudent Investment of Retirement Savings Act",
+    "Increase Retirement Earnings Act",
+    "No Discrimination in My Benefits Act",
+    "Retirement Proxy Protection Act",
+    "Providing Complete Information to Retirement Investors Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2988ih/html/BILLS-119hr2988ih.htm"
+  },
+  {
+   "chars": 20469,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "INCREASE RETIREMENT EARNINGS"
+    ],
+    [
+     "Division B",
+     "NO DISCRIMINATION IN MY BENEFITS"
+    ],
+    [
+     "Division C",
+     "RETIREMENT PROXY PROTECTION"
+    ],
+    [
+     "Division D",
+     "PROVIDING COMPLETE INFORMATION TO RETIREMENT INVESTORS"
+    ]
+   ],
+   "sections": 10,
+   "short_titles": [
+    "Protecting Prudent Investment of Retirement Savings Act",
+    "Increase Retirement Earnings Act",
+    "No Discrimination in My Benefits Act",
+    "Retirement Proxy Protection Act",
+    "Providing Complete Information to Retirement Investors Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2988eh/html/BILLS-119hr2988eh.htm"
+  }
+ ]
+}

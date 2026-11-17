@@ -1,0 +1,27 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 1957,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres55is/html/BILLS-119sjres55is.htm"
+  },
+  {
+   "chars": 1884,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres55es/html/BILLS-119sjres55es.htm"
+  }
+ ]
+}

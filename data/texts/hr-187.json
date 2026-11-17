@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.954,
+  "kept": 0.975,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 11607,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "Modernizing Access to our Public Waters Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr187ih/html/BILLS-119hr187ih.htm"
+  },
+  {
+   "chars": 11404,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "Modernizing Access to our Public Waters Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr187eh/html/BILLS-119hr187eh.htm"
+  },
+  {
+   "chars": 10473,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "Modernizing Access to our Public Waters Act of 2025"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr187enr/html/BILLS-119hr187enr.htm"
+  }
+ ]
+}

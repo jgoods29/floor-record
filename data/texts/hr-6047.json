@@ -1,0 +1,32 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 5762,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Sharri Briley and Eric Edmundson Veterans Benefits Expansion Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6047ih/html/BILLS-119hr6047ih.htm"
+  },
+  {
+   "chars": 10940,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 5,
+   "short_titles": [
+    "Sharri Briley and Eric Edmundson Veterans Benefits Expansion Act of 2026",
+    "Home Affordability for Guard and Reserve Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6047eh/html/BILLS-119hr6047eh.htm"
+  }
+ ]
+}

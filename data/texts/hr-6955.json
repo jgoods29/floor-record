@@ -1,0 +1,97 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 205988,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "NEW BANK FORMATION AND LOCAL COMMUNITY ACCESS"
+    ],
+    [
+     "Title II",
+     "TAILORING BANK REGULATION"
+    ],
+    [
+     "Title III",
+     "FAIR AND TRANSPARENT BANK SUPERVISION"
+    ],
+    [
+     "Title IV",
+     "REGULATORY ACCOUNTABILITY AND TRANSPARENCY"
+    ],
+    [
+     "Title V",
+     "STRENGTHENING LOCAL BANK FUNDING"
+    ],
+    [
+     "Title VI",
+     "PROMOTING BANK COMPETITION AND MERGER CLARITY"
+    ],
+    [
+     "Title VII",
+     "STRENGTHENING TRANSPARENCY AND INVOLVEMENT IN BANK"
+    ],
+    [
+     "Title VIII",
+     "FACILITATING INNOVATION AND BANK PARTNERSHIPS"
+    ]
+   ],
+   "sections": 30,
+   "short_titles": [
+    "Main Street Capital Access Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6955ih/html/BILLS-119hr6955ih.htm"
+  },
+  {
+   "chars": 197695,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "NEW BANK FORMATION AND LOCAL COMMUNITY ACCESS"
+    ],
+    [
+     "Title II",
+     "TAILORING BANK REGULATION"
+    ],
+    [
+     "Title III",
+     "FAIR AND TRANSPARENT BANK SUPERVISION"
+    ],
+    [
+     "Title IV",
+     "REGULATORY ACCOUNTABILITY AND TRANSPARENCY"
+    ],
+    [
+     "Title V",
+     "STRENGTHENING LOCAL BANK FUNDING"
+    ],
+    [
+     "Title VI",
+     "PROMOTING BANK COMPETITION AND MERGER CLARITY"
+    ],
+    [
+     "Title VII",
+     "STRENGTHENING TRANSPARENCY AND INVOLVEMENT IN BANK"
+    ],
+    [
+     "Title VIII",
+     "FACILITATING INNOVATION AND BANK PARTNERSHIPS"
+    ]
+   ],
+   "sections": 28,
+   "short_titles": [
+    "Main Street Capital Access Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6955eh/html/BILLS-119hr6955eh.htm"
+  }
+ ]
+}

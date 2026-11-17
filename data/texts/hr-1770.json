@@ -1,0 +1,63 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 11180,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "ARTIFICIAL INTELLIGENCE AND CONSUMER PRODUCT SAFETY"
+    ],
+    [
+     "Title II",
+     "BLOCKCHAIN TECHNOLOGY INNOVATION"
+    ],
+    [
+     "Title III",
+     "TOKEN TAXONOMY"
+    ]
+   ],
+   "sections": 9,
+   "short_titles": [
+    "Consumer Safety Technology Act",
+    "AI for Consumer Product Safety Act",
+    "Blockchain Innovation Act",
+    "Digital Taxonomy Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1770ih/html/BILLS-119hr1770ih.htm"
+  },
+  {
+   "chars": 11204,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "ARTIFICIAL INTELLIGENCE AND CONSUMER PRODUCT SAFETY"
+    ],
+    [
+     "Title II",
+     "BLOCKCHAIN TECHNOLOGY INNOVATION"
+    ],
+    [
+     "Title III",
+     "TOKEN TAXONOMY"
+    ]
+   ],
+   "sections": 9,
+   "short_titles": [
+    "Consumer Safety Technology Act",
+    "AI for Consumer Product Safety Act",
+    "Blockchain Innovation Act",
+    "Digital Taxonomy Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1770eh/html/BILLS-119hr1770eh.htm"
+  }
+ ]
+}

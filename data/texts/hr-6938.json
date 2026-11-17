@@ -1,0 +1,106 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.999,
+  "kept": 0.999,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 545111,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "COMMERCE, JUSTICE, SCIENCE, AND RELATED AGENCIES"
+    ],
+    [
+     "Division B",
+     "ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES"
+    ],
+    [
+     "Division C",
+     "DEPARTMENT OF THE INTERIOR, ENVIRONMENT, AND RELATED"
+    ]
+   ],
+   "sections": 5,
+   "short_titles": [
+    "Commerce, Justice, Science; Energy and Water Development; and Interior and Environment Appropriations Act, 2026",
+    "Department of Commerce Appropriations Act, 2026",
+    "Department of Justice Appropriations Act, 2026",
+    "Science Appropriations Act, 2026",
+    "Commerce, Justice, Science, and Related Agencies Appropriations Act, 2026",
+    "Energy and Water Development and Related Agencies Appropriations Act, 2026",
+    "Department of the Interior, Environment, and Related Agencies Appropriations Act, 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm"
+  },
+  {
+   "chars": 544988,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "COMMERCE, JUSTICE, SCIENCE, AND RELATED AGENCIES"
+    ],
+    [
+     "Division B",
+     "ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES"
+    ],
+    [
+     "Division C",
+     "DEPARTMENT OF THE INTERIOR, ENVIRONMENT, AND RELATED"
+    ]
+   ],
+   "sections": 5,
+   "short_titles": [
+    "Commerce, Justice, Science; Energy and Water Development; and Interior and Environment Appropriations Act, 2026",
+    "Department of Commerce Appropriations Act, 2026",
+    "Department of Justice Appropriations Act, 2026",
+    "Science Appropriations Act, 2026",
+    "Commerce, Justice, Science, and Related Agencies Appropriations Act, 2026",
+    "Energy and Water Development and Related Agencies Appropriations Act, 2026",
+    "Department of the Interior, Environment, and Related Agencies Appropriations Act, 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm"
+  },
+  {
+   "chars": 537946,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "COMMERCE, JUSTICE, SCIENCE, AND RELATED AGENCIES"
+    ],
+    [
+     "Division B",
+     "ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES"
+    ],
+    [
+     "Division C",
+     "DEPARTMENT OF THE INTERIOR, ENVIRONMENT, AND RELATED"
+    ]
+   ],
+   "sections": 5,
+   "short_titles": [
+    "Commerce, Justice, Science; Energy and Water Development; and Interior and Environment Appropriations Act, 2026",
+    "Department of Commerce Appropriations Act, 2026",
+    "Department of Justice Appropriations Act, 2026",
+    "Science Appropriations Act, 2026",
+    "Commerce, Justice, Science, and Related Agencies Appropriations Act, 2026",
+    "Energy and Water Development and Related Agencies Appropriations Act, 2026",
+    "Department of the Interior, Environment, and Related Agencies Appropriations Act, 2026"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938enr/html/BILLS-119hr6938enr.htm"
+  }
+ ]
+}

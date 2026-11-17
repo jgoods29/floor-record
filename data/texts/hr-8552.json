@@ -1,0 +1,49 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.877,
+  "kept": 0.931,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 3897,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Veterans' Compensation Cost-of- Living Adjustment Act of 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8552ih/html/BILLS-119hr8552ih.htm"
+  },
+  {
+   "chars": 3966,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Veterans' Compensation Cost-of- Living Adjustment Act of 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8552eh/html/BILLS-119hr8552eh.htm"
+  },
+  {
+   "chars": 3599,
+   "code": "enr",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Veterans' Compensation Cost-of- Living Adjustment Act of 2026"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8552enr/html/BILLS-119hr8552enr.htm"
+  }
+ ]
+}

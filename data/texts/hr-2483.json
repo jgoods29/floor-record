@@ -1,0 +1,100 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.992,
+  "kept": 0.996,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 66761,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "PREVENTION"
+    ],
+    [
+     "Title II",
+     "TREATMENT"
+    ],
+    [
+     "Title III",
+     "RECOVERY"
+    ],
+    [
+     "Title IV",
+     "MISCELLANEOUS MATTERS"
+    ]
+   ],
+   "sections": 31,
+   "short_titles": [
+    "SUPPORT for Patients and Communities Reauthorization Act of 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2483ih/html/BILLS-119hr2483ih.htm"
+  },
+  {
+   "chars": 75252,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "PREVENTION"
+    ],
+    [
+     "Title II",
+     "TREATMENT"
+    ],
+    [
+     "Title III",
+     "RECOVERY"
+    ],
+    [
+     "Title IV",
+     "MISCELLANEOUS MATTERS"
+    ]
+   ],
+   "sections": 34,
+   "short_titles": [
+    "SUPPORT for Patients and Communities Reauthorization Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2483eh/html/BILLS-119hr2483eh.htm"
+  },
+  {
+   "chars": 67253,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "PREVENTION"
+    ],
+    [
+     "Title II",
+     "TREATMENT"
+    ],
+    [
+     "Title III",
+     "RECOVERY"
+    ],
+    [
+     "Title IV",
+     "MISCELLANEOUS MATTERS"
+    ]
+   ],
+   "sections": 34,
+   "short_titles": [
+    "SUPPORT for Patients and Communities Reauthorization Act of 2025"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2483enr/html/BILLS-119hr2483enr.htm"
+  }
+ ]
+}

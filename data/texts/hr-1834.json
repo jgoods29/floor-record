@@ -1,0 +1,94 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 43995,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "CONGRESSIONAL TIME CAPSULE"
+    ],
+    [
+     "Title II",
+     "FIRE SUPPRESSION COST SHARE AGREEMENTS"
+    ],
+    [
+     "Title III",
+     "UDALL FOUNDATION FUNDING"
+    ],
+    [
+     "Title IV",
+     "STRATEGY ON BOKO HARAM"
+    ],
+    [
+     "Title V",
+     "VETERANS INTERAGENCY TASK FORCE"
+    ],
+    [
+     "Title VI",
+     "VETERANS PILOT PROGRAM"
+    ],
+    [
+     "Title VII",
+     "TSA COMMUTING BENEFITS"
+    ],
+    [
+     "Title VIII",
+     "CHINA FINANCIAL THREAT MITIGATION"
+    ],
+    [
+     "Title IX",
+     "SERVICEMEMBERS' AND VETERANS' GROUP LIFE INSURANCE"
+    ],
+    [
+     "Title X",
+     "RESTORATION OF AMOUNTS TO VETERANS"
+    ],
+    [
+     "Title XI",
+     "HEARINGS BY HOUSE COMMITTEES"
+    ],
+    [
+     "Title XII",
+     "CODE OF OFFICIAL CONDUCT"
+    ],
+    [
+     "Title XIII",
+     "PROHIBITING TRANSFER OF SENSITIVE DATA TO FOREIGN"
+    ],
+    [
+     "Title XIV",
+     "DETERMINATION OF BUDGETARY EFFECTS"
+    ],
+    [
+     "Title XV",
+     "DOMESTICALLY MADE UNITED STATES FLAGS"
+    ],
+    [
+     "Title XVI",
+     "APPROPRIATIONS"
+    ]
+   ],
+   "sections": 17,
+   "short_titles": [
+    "Breaking the Gridlock Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1834ih/html/BILLS-119hr1834ih.htm"
+  },
+  {
+   "chars": 1994,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 1,
+   "short_titles": [],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1834eh/html/BILLS-119hr1834eh.htm"
+  }
+ ]
+}

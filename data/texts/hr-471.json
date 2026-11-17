@@ -1,0 +1,105 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 152263,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "LANDSCAPE-SCALE RESTORATION"
+    ],
+    [
+     "Subtitle A",
+     "Addressing Emergency Wildfire Risks in High Priority"
+    ],
+    [
+     "Subtitle B",
+     "Expanding Collaborative Tools to Reduce Wildfire Risk and"
+    ],
+    [
+     "Subtitle C",
+     "Litigation Reform"
+    ],
+    [
+     "Title II",
+     "PROTECTING COMMUNITIES IN THE WILDLAND-URBAN INTERFACE"
+    ],
+    [
+     "Title III",
+     "TRANSPARENCY, TECHNOLOGY, AND PARTNERSHIPS"
+    ],
+    [
+     "Subtitle A",
+     "Transparency and Technology"
+    ],
+    [
+     "Subtitle B",
+     "White Oak Resilience"
+    ],
+    [
+     "Title IV",
+     "ENSURING CASUALTY ASSISTANCE FOR OUR FIREFIGHTERS"
+    ]
+   ],
+   "sections": 44,
+   "short_titles": [
+    "Fix Our Forests Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr471ih/html/BILLS-119hr471ih.htm"
+  },
+  {
+   "chars": 152319,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "LANDSCAPE-SCALE RESTORATION"
+    ],
+    [
+     "Subtitle A",
+     "Addressing Emergency Wildfire Risks in High Priority"
+    ],
+    [
+     "Subtitle B",
+     "Expanding Collaborative Tools to Reduce Wildfire Risk and"
+    ],
+    [
+     "Subtitle C",
+     "Litigation Reform"
+    ],
+    [
+     "Title II",
+     "PROTECTING COMMUNITIES IN THE WILDLAND-URBAN INTERFACE"
+    ],
+    [
+     "Title III",
+     "TRANSPARENCY, TECHNOLOGY, AND PARTNERSHIPS"
+    ],
+    [
+     "Subtitle A",
+     "Transparency and Technology"
+    ],
+    [
+     "Subtitle B",
+     "White Oak Resilience"
+    ],
+    [
+     "Title IV",
+     "ENSURING CASUALTY ASSISTANCE FOR OUR FIREFIGHTERS"
+    ]
+   ],
+   "sections": 45,
+   "short_titles": [
+    "Fix Our Forests Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr471eh/html/BILLS-119hr471eh.htm"
+  }
+ ]
+}

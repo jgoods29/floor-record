@@ -1,0 +1,73 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 438662,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "GENERAL PROVISIONS"
+    ],
+    [
+     "Title II",
+     "STUDIES AND REPORTS"
+    ],
+    [
+     "Title III",
+     "DEAUTHORIZATIONS AND MODIFICATIONS"
+    ],
+    [
+     "Title IV",
+     "WATER RESOURCES INFRASTRUCTURE"
+    ],
+    [
+     "Title V",
+     "DAM SAFETY"
+    ]
+   ],
+   "sections": 129,
+   "short_titles": [
+    "Water Resources Development Act of 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9497ih/html/BILLS-119hr9497ih.htm"
+  },
+  {
+   "chars": 461808,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "GENERAL PROVISIONS"
+    ],
+    [
+     "Title II",
+     "STUDIES AND REPORTS"
+    ],
+    [
+     "Title III",
+     "DEAUTHORIZATIONS AND MODIFICATIONS"
+    ],
+    [
+     "Title IV",
+     "WATER RESOURCES INFRASTRUCTURE"
+    ],
+    [
+     "Title V",
+     "DAM SAFETY"
+    ]
+   ],
+   "sections": 137,
+   "short_titles": [
+    "Water Resources Development Act of 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9497eh/html/BILLS-119hr9497eh.htm"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 10847,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 8,
+   "short_titles": [
+    "25th Anniversary of 9/11 Commemorative Coin Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1993ih/html/BILLS-119hr1993ih.htm"
+  },
+  {
+   "chars": 10736,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 8,
+   "short_titles": [
+    "25th Anniversary of 9/11 Commemorative Coin Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1993eh/html/BILLS-119hr1993eh.htm"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 382833,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED"
+    ],
+    [
+     "Title VIII",
+     "ADDITIONAL GENERAL PROVISION"
+    ],
+    [
+     "Division B",
+     "SAFEGUARD AMERICAN VOTER ELIGIBILITY ACT"
+    ]
+   ],
+   "sections": 3,
+   "short_titles": [
+    "National Security, Department of State, and Related Programs Appropriations Act, 2027",
+    "Safeguard American Voter Eligibility Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595eh/html/BILLS-119hr8595eh.htm"
+  }
+ ]
+}

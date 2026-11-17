@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 3885,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Pressure Regulatory Organizations To End Chinese Threats to Taiwan Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1531ih/html/BILLS-119hr1531ih.htm"
+  },
+  {
+   "chars": 3686,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Pressure Regulatory Organizations To End Chinese Threats to Taiwan Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1531eh/html/BILLS-119hr1531eh.htm"
+  }
+ ]
+}

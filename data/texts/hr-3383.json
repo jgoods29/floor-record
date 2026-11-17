@@ -1,0 +1,44 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 6193,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Increasing Investor Opportunities Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3383ih/html/BILLS-119hr3383ih.htm"
+  },
+  {
+   "chars": 85715,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "EXPANDING ACCESS TO CAPITAL FOR SMALL BUSINESSES"
+    ],
+    [
+     "Title II",
+     "INCREASING OPPORTUNITIES FOR INVESTORS"
+    ],
+    [
+     "Title III",
+     "STRENGTHENING PUBLIC MARKETS"
+    ]
+   ],
+   "sections": 23,
+   "short_titles": [
+    "Incentivizing New Ventures and Economic Strength Through Capital Formation Act of 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3383eh/html/BILLS-119hr3383eh.htm"
+  }
+ ]
+}

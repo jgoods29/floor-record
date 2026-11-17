@@ -1,0 +1,202 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.334,
+  "kept": 0.675,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 158109,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "BUILDING SMARTER FOR THE 21ST CENTURY"
+    ],
+    [
+     "Title II",
+     "MODERNIZING LOCAL DEVELOPMENT AND RURAL HOUSING PROGRAMS"
+    ],
+    [
+     "Title III",
+     "EXPANDING MANUFACTURED AND AFFORDABLE HOUSING FINANCE"
+    ],
+    [
+     "Title IV",
+     "PROTECTING BORROWERS AND ASSISTED FAMILIES"
+    ],
+    [
+     "Title V",
+     "ENHANCING OVERSIGHT OF HOUSING PROVIDERS"
+    ]
+   ],
+   "sections": 28,
+   "short_titles": [
+    "Housing for the 21st Century Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6644ih/html/BILLS-119hr6644ih.htm"
+  },
+  {
+   "chars": 266831,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "BUILDING SMARTER FOR THE 21ST CENTURY"
+    ],
+    [
+     "Title II",
+     "MODERNIZING LOCAL DEVELOPMENT AND RURAL HOUSING PROGRAMS"
+    ],
+    [
+     "Title III",
+     "EXPANDING MANUFACTURED AND AFFORDABLE HOUSING FINANCE"
+    ],
+    [
+     "Title IV",
+     "PROTECTING BORROWERS AND ASSISTED FAMILIES"
+    ],
+    [
+     "Title V",
+     "ENHANCING OVERSIGHT OF HOUSING PROVIDERS"
+    ],
+    [
+     "Title VI",
+     "STRENGTHENING COMMUNITY BANKS' ROLE IN HOUSING"
+    ]
+   ],
+   "sections": 39,
+   "short_titles": [
+    "Housing for the 21st Century Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6644eh/html/BILLS-119hr6644eh.htm"
+  },
+  {
+   "chars": 413905,
+   "code": "eas",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "IMPROVING FINANCIAL LITERACY"
+    ],
+    [
+     "Title II",
+     "BUILDING MORE IN AMERICA"
+    ],
+    [
+     "Title III",
+     "MANUFACTURED HOUSING FOR AMERICA"
+    ],
+    [
+     "Title IV",
+     "ACCESSING THE AMERICAN DREAM"
+    ],
+    [
+     "Title V",
+     "PROGRAM REFORM"
+    ],
+    [
+     "Title VI",
+     "VETERANS AND HOUSING"
+    ],
+    [
+     "Title VII",
+     "OVERSIGHT AND ACCOUNTABILITY"
+    ],
+    [
+     "Title VIII",
+     "COORDINATION, STUDIES, AND REPORTING"
+    ],
+    [
+     "Title IX",
+     "HOMEOWNERSHIP FOR MAIN STREET AMERICA"
+    ],
+    [
+     "Title X",
+     "CENTRAL BANK DIGITAL CURRENCY"
+    ],
+    [
+     "Title XI",
+     "MISCELLANEOUS"
+    ]
+   ],
+   "sections": 44,
+   "short_titles": [
+    "21st Century ROAD to Housing Act"
+   ],
+   "stage": "As changed and passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6644eas/html/BILLS-119hr6644eas.htm",
+   "whole": true
+  },
+  {
+   "chars": 442644,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "OPPORTUNITIES FOR HOUSING"
+    ],
+    [
+     "Title II",
+     "BUILDING MORE IN AMERICA"
+    ],
+    [
+     "Title III",
+     "MANUFACTURED HOUSING FOR AMERICA"
+    ],
+    [
+     "Title IV",
+     "ACCESSING THE AMERICAN DREAM"
+    ],
+    [
+     "Title V",
+     "PROGRAM REFORM"
+    ],
+    [
+     "Title VI",
+     "VETERANS AND HOUSING"
+    ],
+    [
+     "Title VII",
+     "OVERSIGHT AND ACCOUNTABILITY"
+    ],
+    [
+     "Title VIII",
+     "ACCOUNTABILITY, COORDINATION, STUDIES, AND REPORTING"
+    ],
+    [
+     "Title IX",
+     "STRENGTHENING COMMUNITY BANKS' ROLE IN HOUSING"
+    ],
+    [
+     "Title X",
+     "HOME-OWNERSHIP FOR MAIN STREET AMERICA"
+    ],
+    [
+     "Title XI",
+     "CENTRAL BANK DIGITAL CURRENCY"
+    ],
+    [
+     "Title XII",
+     "MISCELLANEOUS"
+    ]
+   ],
+   "sections": 60,
+   "short_titles": [
+    "21st Century ROAD to Housing Act"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6644enr/html/BILLS-119hr6644enr.htm"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 10200,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Fostering the Use of Technology to Uphold Regulatory Effectiveness in Supervision Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8278ih/html/BILLS-119hr8278ih.htm"
+  },
+  {
+   "chars": 10826,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Fostering the Use of Technology to Uphold Regulatory Effectiveness in Supervision Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8278eh/html/BILLS-119hr8278eh.htm"
+  }
+ ]
+}

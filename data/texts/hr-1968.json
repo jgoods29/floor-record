@@ -1,0 +1,299 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.996,
+  "kept": 0.998,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 120992,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "FULL-YEAR CONTINUING APPROPRIATIONS ACT, 2025"
+    ],
+    [
+     "Title I",
+     "GENERAL PROVISIONS"
+    ],
+    [
+     "Title II",
+     "AGRICULTURE, RURAL DEVELOPMENT, FOOD AND DRUG ADMINISTRATION,"
+    ],
+    [
+     "Title III",
+     "COMMERCE, JUSTICE, SCIENCE, AND RELATED AGENCIES"
+    ],
+    [
+     "Title IV",
+     "DEPARTMENT OF DEFENSE"
+    ],
+    [
+     "Title V",
+     "ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES"
+    ],
+    [
+     "Title VI",
+     "FINANCIAL SERVICES AND GENERAL GOVERNMENT"
+    ],
+    [
+     "Title VII",
+     "DEPARTMENT OF HOMELAND SECURITY"
+    ],
+    [
+     "Title VIII",
+     "DEPARTMENT OF THE INTERIOR, ENVIRONMENT, AND RELATED"
+    ],
+    [
+     "Title IX",
+     "DEPARTMENTS OF LABOR, HEALTH AND HUMAN SERVICES, AND"
+    ],
+    [
+     "Title X",
+     "LEGISLATIVE BRANCH"
+    ],
+    [
+     "Title XI",
+     "MILITARY CONSTRUCTION, VETERANS AFFAIRS, AND RELATED AGENCIES"
+    ],
+    [
+     "Title XII",
+     "DEPARTMENT OF STATE, FOREIGN OPERATIONS, AND RELATED"
+    ],
+    [
+     "Title XIII",
+     "TRANSPORTATION, HOUSING AND URBAN DEVELOPMENT, AND RELATED"
+    ],
+    [
+     "Division B",
+     "HEALTH"
+    ],
+    [
+     "Title I",
+     "PUBLIC HEALTH EXTENDERS"
+    ],
+    [
+     "Title II",
+     "MEDICARE"
+    ],
+    [
+     "Title III",
+     "HUMAN SERVICES"
+    ],
+    [
+     "Title IV",
+     "MEDICAID"
+    ],
+    [
+     "Division C",
+     "OTHER MATTERS"
+    ]
+   ],
+   "sections": 27,
+   "short_titles": [
+    "Full-Year Continuing Appropriations and Extensions Act, 2025",
+    "Full-Year Continuing Appropriations Act, 2025"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1968ih/html/BILLS-119hr1968ih.htm"
+  },
+  {
+   "chars": 120601,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "FULL-YEAR CONTINUING APPROPRIATIONS ACT, 2025"
+    ],
+    [
+     "Title I",
+     "GENERAL PROVISIONS"
+    ],
+    [
+     "Title II",
+     "AGRICULTURE, RURAL DEVELOPMENT, FOOD AND DRUG ADMINISTRATION,"
+    ],
+    [
+     "Title III",
+     "COMMERCE, JUSTICE, SCIENCE, AND RELATED AGENCIES"
+    ],
+    [
+     "Title IV",
+     "DEPARTMENT OF DEFENSE"
+    ],
+    [
+     "Title V",
+     "ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES"
+    ],
+    [
+     "Title VI",
+     "FINANCIAL SERVICES AND GENERAL GOVERNMENT"
+    ],
+    [
+     "Title VII",
+     "DEPARTMENT OF HOMELAND SECURITY"
+    ],
+    [
+     "Title VIII",
+     "DEPARTMENT OF THE INTERIOR, ENVIRONMENT, AND RELATED"
+    ],
+    [
+     "Title IX",
+     "DEPARTMENTS OF LABOR, HEALTH AND HUMAN SERVICES, AND"
+    ],
+    [
+     "Title X",
+     "LEGISLATIVE BRANCH"
+    ],
+    [
+     "Title XI",
+     "MILITARY CONSTRUCTION, VETERANS AFFAIRS, AND RELATED AGENCIES"
+    ],
+    [
+     "Title XII",
+     "DEPARTMENT OF STATE, FOREIGN OPERATIONS, AND RELATED"
+    ],
+    [
+     "Title XIII",
+     "TRANSPORTATION, HOUSING AND URBAN DEVELOPMENT, AND RELATED"
+    ],
+    [
+     "Division B",
+     "HEALTH"
+    ],
+    [
+     "Title I",
+     "PUBLIC HEALTH EXTENDERS"
+    ],
+    [
+     "Title II",
+     "MEDICARE"
+    ],
+    [
+     "Title III",
+     "HUMAN SERVICES"
+    ],
+    [
+     "Title IV",
+     "MEDICAID"
+    ],
+    [
+     "Division C",
+     "OTHER MATTERS"
+    ]
+   ],
+   "sections": 27,
+   "short_titles": [
+    "Full-Year Continuing Appropriations and Extensions Act, 2025",
+    "Full-Year Continuing Appropriations Act, 2025"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1968eh/html/BILLS-119hr1968eh.htm"
+  },
+  {
+   "chars": 116996,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "FULL-YEAR CONTINUING APPROPRIATIONS ACT, 2025"
+    ],
+    [
+     "Title I",
+     "GENERAL PROVISIONS"
+    ],
+    [
+     "Title II",
+     "AGRICULTURE, RURAL DEVELOPMENT, FOOD AND DRUG ADMINISTRATION,"
+    ],
+    [
+     "Title III",
+     "COMMERCE, JUSTICE, SCIENCE, AND RELATED AGENCIES"
+    ],
+    [
+     "Title IV",
+     "DEPARTMENT OF DEFENSE"
+    ],
+    [
+     "Title V",
+     "ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES"
+    ],
+    [
+     "Title VI",
+     "FINANCIAL SERVICES AND GENERAL GOVERNMENT"
+    ],
+    [
+     "Title VII",
+     "DEPARTMENT OF HOMELAND SECURITY"
+    ],
+    [
+     "Title VIII",
+     "DEPARTMENT OF THE INTERIOR, ENVIRONMENT, AND RELATED"
+    ],
+    [
+     "Title IX",
+     "DEPARTMENTS OF LABOR, HEALTH AND HUMAN SERVICES, AND"
+    ],
+    [
+     "Title X",
+     "LEGISLATIVE BRANCH"
+    ],
+    [
+     "Title XI",
+     "MILITARY CONSTRUCTION, VETERANS AFFAIRS, AND RELATED AGENCIES"
+    ],
+    [
+     "Title XII",
+     "DEPARTMENT OF STATE, FOREIGN OPERATIONS, AND RELATED PROGRAMS"
+    ],
+    [
+     "Title XIII",
+     "TRANSPORTATION, HOUSING AND URBAN DEVELOPMENT, AND RELATED"
+    ],
+    [
+     "Division B",
+     "HEALTH"
+    ],
+    [
+     "Title I",
+     "PUBLIC HEALTH EXTENDERS"
+    ],
+    [
+     "Title II",
+     "MEDICARE"
+    ],
+    [
+     "Title III",
+     "HUMAN SERVICES"
+    ],
+    [
+     "Title IV",
+     "MEDICAID"
+    ],
+    [
+     "Division C",
+     "OTHER MATTERS"
+    ],
+    [
+     "Title XII",
+     "DEPARTMENT OF STATE, FOREIGN OPERATIONS, AND RELATED"
+    ]
+   ],
+   "sections": 27,
+   "short_titles": [
+    "Full-Year Continuing Appropriations and Extensions Act, 2025",
+    "Full-Year Continuing Appropriations Act, 2025"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1968enr/html/BILLS-119hr1968enr.htm"
+  }
+ ]
+}

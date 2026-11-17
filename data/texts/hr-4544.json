@@ -1,0 +1,31 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 9223,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 6,
+   "short_titles": [
+    "American Access to Banking Act"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4544ih/html/BILLS-119hr4544ih.htm"
+  },
+  {
+   "chars": 9849,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 7,
+   "short_titles": [
+    "American Access to Banking Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4544eh/html/BILLS-119hr4544eh.htm"
+  }
+ ]
+}

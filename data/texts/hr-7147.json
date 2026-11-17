@@ -1,0 +1,84 @@
+{
+ "checked": "2026-11-17",
+ "compare": {
+  "earlier": "eh",
+  "from_earlier": 0.942,
+  "kept": 0.859,
+  "later": "enr",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 134047,
+   "code": "ih",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [
+    "Department of Homeland Security Appropriations Act, 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147ih/html/BILLS-119hr7147ih.htm"
+  },
+  {
+   "chars": 134354,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 0,
+   "short_titles": [
+    "Department of Homeland Security Appropriations Act, 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147eh/html/BILLS-119hr7147eh.htm"
+  },
+  {
+   "chars": 120616,
+   "code": "eas",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS ACT, 2026"
+    ],
+    [
+     "Division B",
+     "FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026"
+    ]
+   ],
+   "sections": 5,
+   "short_titles": [
+    "Homeland Security and Further Additional Continuing Appropriations Act, 2026.",
+    "Department of Homeland Security Appropriations Act, 2026",
+    "Further Additional Continuing Appropriations Act, 2026"
+   ],
+   "stage": "As changed and passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147eas/html/BILLS-119hr7147eas.htm",
+   "whole": true
+  },
+  {
+   "chars": 117966,
+   "code": "enr",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS ACT, 2026"
+    ],
+    [
+     "Division B",
+     "FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026"
+    ]
+   ],
+   "sections": 5,
+   "short_titles": [
+    "Homeland Security and Further Additional Continuing Appropriations Act, 2026.",
+    "Department of Homeland Security Appropriations Act, 2026",
+    "Further Additional Continuing Appropriations Act, 2026"
+   ],
+   "stage": "As sent to the President",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147enr/html/BILLS-119hr7147enr.htm"
+  }
+ ]
+}

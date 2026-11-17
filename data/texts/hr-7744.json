@@ -1,0 +1,51 @@
+{
+ "checked": "2026-11-17",
+ "compare": null,
+ "review": false,
+ "versions": [
+  {
+   "chars": 136722,
+   "code": "ih",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS"
+    ],
+    [
+     "Division B",
+     "FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026"
+    ]
+   ],
+   "sections": 5,
+   "short_titles": [
+    "Department of Homeland Security Appropriations Act, 2026",
+    "Further Additional Continuing Appropriations Act, 2026"
+   ],
+   "stage": "As introduced in the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7744ih/html/BILLS-119hr7744ih.htm"
+  },
+  {
+   "chars": 136420,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Division A",
+     "DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS"
+    ],
+    [
+     "Division B",
+     "FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026"
+    ]
+   ],
+   "sections": 5,
+   "short_titles": [
+    "Department of Homeland Security Appropriations Act, 2026",
+    "Further Additional Continuing Appropriations Act, 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7744eh/html/BILLS-119hr7744eh.htm"
+  }
+ ]
+}
