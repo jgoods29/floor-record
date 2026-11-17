@@ -64,7 +64,7 @@ def badge(size=26): return f'<span style="background: {DEM}; color: #FFFFFF; fon
 # ---- 1: hook (the heading block is centred in the space, with equal room above and below)
 HOOK = ('Race 1: Who Will Be The Next Senate Majority Leader', 'In The News',
         f'<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: {G}px">'
-        f'<div style="{D}; font-weight: 700; font-size: 132px; line-height: 1.02; letter-spacing: -0.025em"><div style="color: {INK}">Who Will Be<br>The Next</div><div style="color: {DEM}">Senate Majority<br>Leader?</div></div>'
+        f'<div style="{D}; font-weight: 700; font-size: 132px; line-height: 1.02; letter-spacing: -0.025em"><div style="color: {INK}">Who Will Be<br>The Next</div><div style="color: {PURPLE}">Senate Majority<br>Leader?</div></div>'
         + lede('Two Democrats want the job. Swipe to compare their records.') + '</div>')
 
 
@@ -171,11 +171,12 @@ COMPARE2 = ('Race 7: Where They Split, Continued', 'Side By Side', '\n'.join([
 # ---- 8: your turn (numbers are right here: these are steps, done in order)
 ACT = ('Race 8: Check It Yourself', 'Your Turn', '\n'.join([
     h1('Don&rsquo;t Take Our Word For It', 76),
-    lede('Every number in this post comes from the public record. Here is how to check it, and how to look up the people who represent you.'),
+    lede('Everything in this post comes from the public record. Here is how to check it, and how to look up the people who represent you.'),
     f'<div style="flex: 1; min-height: 0; display: flex; flex-direction: column; border-bottom: 2px solid {LINE}">'
     + stepn(1, 'Go To floortherecord.com', 'It is free. You do not need an account.')
-    + stepn(2, 'Read How They Voted', 'Every vote, explained in one plain sentence.')
-    + stepn(3, 'Decide For Yourself', 'We show the record. What it means is up to you.') + '</div>',
+    + stepn(2, 'Read How They Voted', 'Every vote, clear and explained.')
+    + stepn(3, 'Decide For Yourself', 'We show the record. What it means is up to you.')
+    + stepn(4, 'Subscribe For Free', 'Emails every Monday and Friday, so you never miss a moment.') + '</div>',
     f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; justify-content: space-between; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 64px; line-height: 1; letter-spacing: -0.02em">floortherecord.com</div><div style="font-size: 28px; line-height: 1.2; font-weight: 600; text-align: right">Link in bio</div></div>',
 ]))
 
