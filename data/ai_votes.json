@@ -6623,6 +6623,12 @@
   "plain": "The Senate voted 62 to 21 to begin debate on the Survivor Justice Tax Prevention Act. The bill would exclude from federal income tax certain damages received from sexual acts or sexual contact, even without observable injuries, and would require the IRS to bear the burden of proof in court if a judgment states the damages arose from such acts.",
   "v": 1
  },
+ "s2026-264": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending debate on the Survivor Justice Tax Prevention Act",
+  "plain": "The Senate voted to end debate on the Survivor Justice Tax Prevention Act, so it can move ahead, with 70 in favor and 27 opposed. The bill would exclude from federal income tax certain damages from sexual acts or sexual contact, and shift the burden of proof to the IRS in related tax disputes.",
+  "v": 1
+ },
  "s2026-35": {
   "model": "claude-haiku-5-5",
   "name": "Senate vote on IRS corporate minimum tax rule for partnerships",
