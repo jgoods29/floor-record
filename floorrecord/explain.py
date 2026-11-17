@@ -432,6 +432,15 @@ def ai_summaries(votes, cfg, log=print, also=()):
             continue
         if bill.get("official_summary") or re.match(r"(To|A bill to|Providing|Expressing|Directing) ", bill.get("title") or ""):
             todo.insert(0, slug)
+    # Every other bill that has an official summary gets one too (Senate bills, bills linked from a comparison page),
+    # so no bill page opens on a wall of official text. Bills a comparison page links to go first.
+    linked = [g.get("bill") for m in (read_json(DATA / "matchups.json", []) or []) for g in (m.get("groups") or []) if g.get("bill")]
+    for slug in linked:
+        if bills.get(slug, {}).get("official_summary") and slug not in cache and slug not in todo:
+            todo.insert(0, slug)
+    for slug, bill in bills.items():
+        if bill.get("official_summary") and slug not in cache and slug not in todo:
+            todo.append(slug)
     made = 0
 
     def summarise(slug):

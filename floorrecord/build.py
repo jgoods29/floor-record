@@ -475,12 +475,12 @@ def main():
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]),
                       trim_blocks=True, lstrip_blocks=True)
-    def sumparts(text, first=1200, most=9000):
+    def sumparts(text, first=330, most=9000):
         """Split a long official summary at a sentence end: (shown, behind a 'read the rest' toggle, was it cut short)."""
         text = text or ""
-        if len(text) <= first + 300:
+        if len(text) <= first + 150:
             return text, "", False
-        cut = text.rfind(". ", 0, first) + 1 or first
+        cut = text.rfind(". ", 120, first) + 1 or text.find(". ", first) + 1 or first  # end on a full sentence
         rest, capped = text[cut:].strip(), False
         if len(rest) > most:
             end = rest.rfind(". ", 0, most) + 1 or most
