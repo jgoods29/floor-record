@@ -49,6 +49,7 @@ Measure before publishing; do not judge spacing by eye alone.
 - Name both sides of a vote or neither ("How Each Senator Voted", not "Who Voted Yes").
 - Do not promise what the site cannot show (it does not track campaign promises).
 - Make it easy to act at every turn.
+- Explain as much as possible, concisely: say what is in a bill and how it got there, in as few words as it takes.
 
 ## Accuracy: read every bill
 
