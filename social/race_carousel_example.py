@@ -119,14 +119,14 @@ def sen(name, initials, seat, since, role, cast, att, missed, bills, cosigned, c
     rows = ''.join(f'<div style="flex: 1; display: flex; align-items: center; font-size: 28px; font-weight: 600; line-height: 1.25; padding: 4px 0; border-top: 2px solid {LINE}">{c}</div>' for c in cmtes)
     return '\n'.join([
         f'<div style="display: flex; gap: {G}px; align-items: center"><div style="width: 152px; height: 152px; border-radius: 50%; background: {TINT}; border: 2px solid {LINE}; box-sizing: border-box; display: flex; align-items: center; justify-content: center; {D}; font-weight: 700; font-size: 56px; color: {MUTED}; flex: none">{initials}</div><div style="display: flex; flex-direction: column; gap: 12px">{h1(name, 72)}<div style="display: flex; gap: 12px; align-items: center; font-size: 30px; line-height: 1; color: {T2}">{badge()}<span>{seat}</span></div><div style="font-size: 26px; line-height: 1; color: {MUTED}">In the Senate since {since} · {role}</div></div></div>',
-        f'<div style="flex: none; display: grid; grid-template-columns: 1fr 1fr; gap: {G}px">{tile(cast, "votes cast", "since January 2025")}{tile(att, "attendance", f"missed {missed} of 923 votes")}{tile(bills, "bills introduced", "since January 2025")}{tile(cosigned, "bills co-signed", "added their name to others&rsquo; bills")}</div>',
+        f'<div style="flex: none; display: grid; grid-template-columns: 1fr 1fr; gap: {G}px">{tile(cast, "votes cast", "since January 2025")}{tile(att, "attendance", f"missed {missed} of 923 votes")}{tile(bills, "bills introduced", "since January 2025")}{tile(cosigned, "bills co-signed", "since January 2025")}</div>',
         f'<div style="flex: 1; min-height: 0; {CARD}; padding-bottom: 16px; display: flex; flex-direction: column"><div style="{CAP}; color: {MUTED}; padding-bottom: 24px">Committees</div>{rows}</div>',
         f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: 24px {G}px; display: flex; align-items: center; justify-content: space-between; gap: {G}px; font-size: 28px; line-height: 1.2"><div style="font-weight: 700">Check this record yourself</div><div style="font-weight: 500; flex: none">The last slide shows you how &rarr;</div></div>',
     ])
 
 
-SCHUMER = ('Race 4: Chuck Schumer In A Nutshell', 'In A Nutshell', sen('Chuck Schumer', 'CS', 'New York · Senior senator', '1999', 'Senate Democratic leader', '919', '99.6%', '4', '35', '143', ['Rules and Administration', 'Intelligence (sits in as a party leader)']))
-VANHOLLEN = ('Race 5: Chris Van Hollen In A Nutshell', 'In A Nutshell', sen('Chris Van Hollen', 'CV', 'Maryland · Senior senator', '2017', 'in the House before that', '909', '98.5%', '14', '76', '679', ['Appropriations', 'Budget', 'Banking, Housing, and Urban Affairs', 'Foreign Relations']))
+SCHUMER = ('Race 4: Chuck Schumer In A Nutshell', 'In A Nutshell', sen('Chuck Schumer', 'CS', 'New York · Senior senator', '1999', 'Senate Democratic Leader', '919', '99.6%', '4', '35', '143', ['Rules and Administration', 'Intelligence (sits in as a party leader)']))
+VANHOLLEN = ('Race 5: Chris Van Hollen In A Nutshell', 'In A Nutshell', sen('Chris Van Hollen', 'CV', 'Maryland · Senior senator', '2017', 'In The House Before That (2003-17)', '909', '98.5%', '14', '76', '679', ['Appropriations', 'Budget', 'Banking, Housing, and Urban Affairs', 'Foreign Relations']))
 
 
 # ---- 5: key comparisons (the two tables stretch; every row in a table is the same height)
@@ -137,11 +137,11 @@ def split(what, a, b, n):
             f'<div style="text-align: center; font-size: 24px; line-height: 1.1"><span style="font-weight: 600">{what}</span> <span style="color: {MUTED}">· {votes}</span></div><div style="font-size: 26px; font-weight: 700; line-height: 1; text-align: right">{b}</div></div>')
 
 
-SPLITS = [('Blocking arms sales to Israel', 'No', 'Yes', 6), ('The 2026 defense policy bill', 'Yes', 'No', 6), ('Overturning an IRS reporting rule for crypto', 'Yes', 'No', 4),
-          ('Permanently banning fentanyl-related drugs', 'Yes', 'No', 3), ('The Survivor Justice Tax Prevention Act', 'Yes', 'No', 3), ('The college sports bill', 'Yes', 'No', 2),
-          ('The ROAD to Housing Act', 'Yes', 'No', 2), ('Luke Lindberg for a top Agriculture job', 'Yes', 'No', 2), ('The 2026 government funding bill', 'Yes', 'No', 1),
-          ('The March 2025 stopgap funding bill', 'Yes', 'No', 1), ('Sean Duffy for Transportation Secretary', 'Yes', 'No', 1), ('Cutting the defense budget by 10 percent', 'No', 'Yes', 1),
-          ('Setting aside a hemp change in a funding bill', 'No', 'Yes', 1), ('Changing debt limit instructions in the budget', 'No', 'Yes', 1)]
+SPLITS = [('Blocking Arms Sales To Israel', 'No', 'Yes', 6), ('The 2026 Defense Policy Bill', 'Yes', 'No', 6), ('Overturning An IRS Reporting Rule For Crypto', 'Yes', 'No', 4),
+          ('Permanently Banning Fentanyl-Related Drugs', 'Yes', 'No', 3), ('The Survivor Justice Tax Prevention Act', 'Yes', 'No', 3), ('The College Sports Bill', 'Yes', 'No', 2),
+          ('The ROAD To Housing Act', 'Yes', 'No', 2), ('Luke Lindberg For A Top Agriculture Job', 'Yes', 'No', 2), ('The 2026 Government Funding Bill', 'Yes', 'No', 1),
+          ('The March 2025 Stopgap Funding Bill', 'Yes', 'No', 1), ('Sean Duffy For Transportation Secretary', 'Yes', 'No', 1), ('Cutting The Defense Budget By 10 Percent', 'No', 'Yes', 1),
+          ('Setting Aside A Hemp Change In A Funding Bill', 'No', 'Yes', 1), ('Changing Debt Limit Instructions In The Budget', 'No', 'Yes', 1)]
 assert sum(x[3] for x in SPLITS) == 34
 
 COMPARE = ('Race 6: Where They Split', 'Side By Side', '\n'.join([
