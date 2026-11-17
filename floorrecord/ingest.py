@@ -495,7 +495,7 @@ def _legislation_rows(payload, key, congress):
     return rows
 
 
-def ingest_member_bills(bioguides, congress, log=print, per_run=40, max_age_days=10):
+def ingest_member_bills(bioguides, congress, log=print, per_run=40, max_age_days=10, first=()):
     """What each member introduced and signed onto this Congress, from Congress.gov. Optional.
 
     Refreshes the stalest members first and stops after `per_run` members. Each member takes several
@@ -516,7 +516,8 @@ def ingest_member_bills(bioguides, congress, log=print, per_run=40, max_age_days
         if age >= max_age_days:
             ages.append((-age, b))
     done = 0
-    for _, b in sorted(ages)[:per_run]:
+    # People in a live side-by-side comparison go to the front of the queue.
+    for _, b in sorted(ages, key=lambda t: (t[1] not in first, t))[:per_run]:
         rec = {"fetched": today.isoformat(), "sponsored": [], "cosponsored": []}
         try:
             for field, path, pages in (("sponsored", "sponsored-legislation", 2), ("cosponsored", "cosponsored-legislation", 4)):
@@ -553,7 +554,8 @@ def main():
     ingest_senators()
     senate_slugs = sorted({bill_slug(*m) for path in (DATA / "senate").glob("*/*.json") for m in [measure_of(read_json(path))] if m})
     ingest_bills(votes, cfg["congress"], also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"]] + senate_slugs)
-    ingest_member_bills({p[0] for v in votes for p in v["positions"]}, cfg["congress"])
+    matched = [m.get(k) for m in (read_json(DATA / "matchups.json") or []) for k in ("a", "b")]
+    ingest_member_bills({p[0] for v in votes for p in v["positions"]} | set(read_json(DATA / "senators.json") or {}), cfg["congress"], first=set(matched))
     from .explain import ai_summaries, ai_vote_lines
     ai_summaries(votes, cfg, also=[i["slug"] for w in upcoming.get("weeks", []) for i in w["items"] if i.get("slug")])
     ai_vote_lines(votes, cfg)
