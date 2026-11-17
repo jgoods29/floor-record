@@ -5,7 +5,7 @@
 {% block main %}
 <div class="wrap page start" style="gap:48px">
 <div class="stack" style="max-width:800px">
-<span class="label purple">In The News</span>
+<span class="label purple">{{ mu.kicker or "In The News" }}</span>
 <h1 class="h1">{{ mu.title }}</h1>
 <p class="lede">{{ mu.why }}</p>
 <p class="note">This page shows their votes and nothing else. It does not say who should lead.</p>

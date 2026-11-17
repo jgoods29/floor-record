@@ -748,3 +748,4 @@ body[data-acct-preview]:not(.acct-go) :is(.subbtn, [data-acct-out], [data-acct-s
 .comingbox { border-color: #DCCBFB; background: #FBF9FF; gap: 6px; max-width: 760px; }
 .comingbox { display: flex; flex-direction: column; align-items: flex-start; } .comingbox > * { display: block; }
 #reach-h { scroll-margin-top: 200px; }
+.pilllink.news em { white-space: nowrap; flex: none; }
