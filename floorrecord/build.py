@@ -628,7 +628,8 @@ def main():
                 ahead[i["slug"]]["coming"] = {"how": i["how_label"], "note": i["how_note"], "when": "this week" if w["current"] else "next week", "doc": i["doc"]}
     coming = next((w for w in weeks if w["items"]), None)
     render("upcoming/index.html", "upcoming.html", 1, section="upcoming", weeks=weeks)
-    render("start/index.html", "start.html", 1, section="start")
+    words = read_json(DATA / "words.json", [])  # plain-English definitions, shown on Start Here and findable in search
+    render("start/index.html", "start.html", 1, section="start", words=words)
     if svotes:
         # The Senate posts no weekly list like the House's, so its "coming up" is what is already waiting on it.
         waiting = sorted((m for m in measures.values() if any(st["state"] == "now" and st["label"] == "Senate" for st in m["track"]["steps"])),
@@ -642,7 +643,7 @@ def main():
         spending = {"bills": waiting[:25], "nbills": len(waiting), "noms": [v for v in sorted(open_noms.values(), key=lambda v: v["date"], reverse=True)
                              if (date.fromisoformat(max(x["date"] for x in svotes)) - date.fromisoformat(v["date"])).days <= 14][:12]}
         render("senate/upcoming/index.html", "pending.html", 2, section="upcoming", c="senate/", ch=SENATE, pending=spending)
-        render("senate/start/index.html", "start.html", 2, section="start", c="senate/", ch=SENATE)
+        render("senate/start/index.html", "start.html", 2, section="start", c="senate/", ch=SENATE, words=words)
         render("senate/why/index.html", "why.html", 2, section="why", c="senate/", ch=SENATE)
     contacts = [[p["bioguide"], p["name"], p["state"], p["dist_label"], p["party"], members.get(p["bioguide"], {}).get("url", ""),
                  members.get(p["bioguide"], {}).get("phone", ""), members.get(p["bioguide"], {}).get("contact_form", ""), p.get("district") or 0]
@@ -1100,8 +1101,9 @@ def main():
                 "u": f"{'' if c['chamber'] == 'house' else 'senate/'}committees/#{c['id']}", "k": (c["full"] + " committee").lower()} for c in committees]
     search += [{"t": t["name"], "s": "Topic", "u": f"topics/{t['key']}/", "k": (t["name"] + " topic").lower()}
                for t in all_topics]
-    search.append({"t": "What Co-Signing A Bill Means", "s": "Explained", "u": "about/#cosign",
-                   "k": "what co-signing a bill means co-sign cosign co-signed cosigned co-signing cosigning cosponsor co-sponsor cosponsored signed onto"})
+    for w in words:
+        search.append({"t": f"What \"{w['term']}\" Means", "s": "Explained", "u": f"start/#w-{w['id']}",
+                       "k": f"what {w['term']} means {w.get('also', '')}".lower()})
     write_json(SITE / "search.json", search)
     print(f"Built {len(votes)} vote pages, {len(people)} member pages and {len(measures)} bill pages into {SITE}")
 

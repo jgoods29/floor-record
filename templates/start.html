@@ -58,6 +58,11 @@
 </div>
 </section>
 
+<section class="stack" aria-labelledby="words">
+<div class="stack" style="gap:8px"><h2 class="h2" id="words">Words you will see</h2><p class="plain">Congress has its own vocabulary. Here is what the common terms mean, in plain English.</p></div>
+<dl class="card flush words">{% for w in words %}<div class="word" id="w-{{ w.id }}"><dt>{{ w.term }}</dt><dd>{{ w.means }}</dd></div>{% endfor %}</dl>
+</section>
+
 <section class="stack" aria-labelledby="s5">
 <h2 class="h2" id="s5">5. What can I do with this?</h2>
 <div class="grid steps asks">

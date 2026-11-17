@@ -768,3 +768,9 @@ a.card > .tags { min-height: 26px; align-items: center; }
 .vsgroup[open] .vsopen { font-size: 0; } .vsgroup[open] .vsopen::after { content: "Hide"; font-size: 14px; }
 .vsinner { background: #F7F8FB; border-top: 1px solid var(--line); } .vsinner .vsrow { padding-left: 38px; }
 @media (max-width: 640px) { .vsgroup > summary { grid-template-columns: 1fr 1fr; } .vsgroup > summary > .stack { grid-column: 1 / -1; } .vsinner .vsrow { padding-left: 22px; } }
+
+/* ---- Start Here: words you will see */
+.words { margin: 0; } .word { display: grid; grid-template-columns: 240px 1fr; gap: 8px 32px; padding: 16px 22px; border-top: 1px solid var(--line); scroll-margin-top: 200px; }
+.word:first-child { border-top: 0; } .word dt { font-weight: 700; } .word dd { margin: 0; color: var(--text-2, #3B4A66); }
+.word:target { background: #F7F3FF; }
+@media (max-width: 640px) { .word { grid-template-columns: 1fr; gap: 4px; } }

@@ -1,0 +1,18 @@
+[
+  {"id": "bill", "term": "Bill", "means": "A proposed law. It becomes law only if the House and the Senate both pass it and the President signs it.", "also": "bills law proposed"},
+  {"id": "introduce", "term": "Introduce A Bill", "means": "To formally propose a bill. The member who introduces it is called its sponsor.", "also": "introduced sponsor sponsored"},
+  {"id": "cosign", "term": "Co-Sign A Bill", "means": "To add your name in support of a bill someone else introduced. It is not a vote. The official word is \"cosponsor.\"", "also": "co-sign cosign co-signed cosigned co-signing cosponsor co-sponsor cosponsored signed onto"},
+  {"id": "amendment", "term": "Amendment", "means": "A proposed change to a bill. Each one gets its own vote before the bill itself does.", "also": "amendments change"},
+  {"id": "recorded-vote", "term": "Recorded Vote", "means": "A vote where each member's yes or no is written down by name. Those are the votes this site shows. It is also called a roll call.", "also": "roll call rollcall recorded"},
+  {"id": "taking-up", "term": "Taking Up A Bill", "means": "A Senate vote to start working on a bill. Voting yes means \"let's debate this,\" not \"I support it.\"", "also": "motion to proceed taken up begin work open debate"},
+  {"id": "ending-debate", "term": "Ending Debate", "means": "A Senate vote to stop talking and move toward a final vote. It usually takes 60 of the 100 senators. The official word is \"cloture.\"", "also": "cloture filibuster end debate debate ended 60 votes"},
+  {"id": "final-passage", "term": "Final Passage", "means": "The vote on the bill itself, after the debate and the amendments are done.", "also": "passage passed final vote"},
+  {"id": "setting-aside", "term": "Setting Aside", "means": "A vote to drop a proposal without voting on the proposal itself. The official word is \"tabling.\"", "also": "table tabled tabling set aside motion to table"},
+  {"id": "left-in-committee", "term": "Left In Committee", "means": "Senators voted on whether to pull a measure out of committee and bring it to the full Senate. The vote failed, so the measure went no further.", "also": "discharge motion to discharge committee"},
+  {"id": "confirmation", "term": "Confirmation", "means": "The Senate's vote to approve someone the President picked for a job, such as a judge or a cabinet secretary. The person is called a nominee.", "also": "confirm confirmed nominee nomination nominations"},
+  {"id": "funding-bill", "term": "Funding Bill", "means": "A bill that gives federal agencies the money to operate for a year. The official word is \"appropriations.\"", "also": "appropriations spending bill budget funding"},
+  {"id": "stopgap", "term": "Stopgap Funding Bill", "means": "A short-term funding bill that keeps the government open when the full-year bills are not finished. The official name is a \"continuing resolution.\"", "also": "continuing resolution cr shutdown stopgap"},
+  {"id": "defense-policy-bill", "term": "Defense Policy Bill", "means": "The yearly bill that sets military policy and how much the military is allowed to spend. Its official name is the National Defense Authorization Act.", "also": "ndaa national defense authorization act defense bill"},
+  {"id": "majority-leader", "term": "Majority Leader", "means": "The leader of the party with the most seats in the Senate, chosen by that party's senators. The leader of the other party is the Minority Leader.", "also": "minority leader senate leader party leader"},
+  {"id": "congress", "term": "A Congress", "means": "A two-year term of the House and Senate. This is the 119th Congress, which runs from January 3, 2025 to January 3, 2027.", "also": "119th 120th term session"}
+]
