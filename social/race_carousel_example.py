@@ -131,28 +131,45 @@ VANHOLLEN = ('Race 5: Chris Van Hollen In A Nutshell', 'In A Nutshell', sen('Chr
 
 # ---- 5: key comparisons (the two tables stretch; every row in a table is the same height)
 def vs(label, a, b): return f'<div style="flex: 1; display: grid; grid-template-columns: 1fr 340px 1fr; align-items: center; border-top: 2px solid {LINE}"><div style="{D}; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.02em">{a}</div><div style="font-size: 24px; line-height: 1.2; font-weight: 600; color: {MUTED}; text-align: center">{label}</div><div style="{D}; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.02em; text-align: right">{b}</div></div>'
-def split(what, a, b, n):
+def split(what, a, b, n, about):
     votes = '1 vote' if n == 1 else f'{n} votes'
-    return (f'<div style="flex: 1; display: grid; grid-template-columns: 130px 1fr 130px; align-items: center; gap: 16px; border-top: 2px solid {LINE}"><div style="font-size: 26px; font-weight: 700; line-height: 1">{a}</div>'
-            f'<div style="text-align: center; font-size: 24px; line-height: 1.1"><span style="font-weight: 600">{what}</span> <span style="color: {MUTED}">· {votes}</span></div><div style="font-size: 26px; font-weight: 700; line-height: 1; text-align: right">{b}</div></div>')
+    return (f'<div style="flex: 1; display: grid; grid-template-columns: 90px 1fr 90px; align-items: center; gap: 16px; border-top: 2px solid {LINE}"><div style="font-size: 30px; font-weight: 700; line-height: 1">{a}</div>'
+            f'<div style="display: flex; flex-direction: column; gap: 6px; text-align: center"><div style="font-size: 25px; line-height: 1.15"><span style="font-weight: 700">{what}</span> <span style="color: {MUTED}">· {votes}</span></div><div style="font-size: 20px; line-height: 1.25; color: {T2}">{about}</div></div>'
+            f'<div style="font-size: 30px; font-weight: 700; line-height: 1; text-align: right">{b}</div></div>')
 
 
-SPLITS = [('Blocking Arms Sales To Israel', 'No', 'Yes', 6), ('The 2026 Defense Policy Bill', 'Yes', 'No', 6), ('Overturning An IRS Reporting Rule For Crypto', 'Yes', 'No', 4),
-          ('Permanently Banning Fentanyl-Related Drugs', 'Yes', 'No', 3), ('The Survivor Justice Tax Prevention Act', 'Yes', 'No', 3), ('The College Sports Bill', 'Yes', 'No', 2),
-          ('The ROAD To Housing Act', 'Yes', 'No', 2), ('Luke Lindberg For A Top Agriculture Job', 'Yes', 'No', 2), ('The 2026 Government Funding Bill', 'Yes', 'No', 1),
-          ('The March 2025 Stopgap Funding Bill', 'Yes', 'No', 1), ('Sean Duffy For Transportation Secretary', 'Yes', 'No', 1), ('Cutting The Defense Budget By 10 Percent', 'No', 'Yes', 1),
-          ('Setting Aside A Hemp Change In A Funding Bill', 'No', 'Yes', 1), ('Changing Debt Limit Instructions In The Budget', 'No', 'Yes', 1)]
+SPLITS = [('Blocking Arms Sales To Israel', 'No', 'Yes', 6, 'Six attempts to stop specific weapons sales. All failed.'),
+          ('The 2026 Defense Policy Bill', 'Yes', 'No', 6, 'The yearly bill that sets military policy and spending levels.'),
+          ('Overturning An IRS Reporting Rule For Crypto', 'Yes', 'No', 4, 'Cancels a rule making some crypto platforms report sales to the IRS.'),
+          ('Permanently Banning Fentanyl-Related Drugs', 'Yes', 'No', 3, 'Keeps fentanyl-related substances in the strictest drug category.'),
+          ('The Survivor Justice Tax Prevention Act', 'Yes', 'No', 3, 'Stops taxing most payouts won by survivors of sexual abuse.'),
+          ('The College Sports Bill', 'Yes', 'No', 2, 'National rules on college athletes&rsquo; name and image rights.'),
+          ('The ROAD To Housing Act', 'Yes', 'No', 2, 'A package meant to increase the supply of housing.'),
+          ('Luke Lindberg For A Top Agriculture Job', 'Yes', 'No', 2, 'Nominee for the Agriculture Department&rsquo;s top trade post.'),
+          ('The 2026 Government Funding Bill', 'Yes', 'No', 1, 'Funds federal agencies through September 2026.'),
+          ('The March 2025 Stopgap Funding Bill', 'Yes', 'No', 1, 'Advanced a bill keeping the government open through September 2025.'),
+          ('Sean Duffy For Transportation Secretary', 'Yes', 'No', 1, 'Nominee to run the Department of Transportation.'),
+          ('Cutting The Defense Budget By 10 Percent', 'No', 'Yes', 1, 'Would have moved the money to veterans&rsquo; dental care. Failed, 10 to 88.'),
+          ('Setting Aside A Hemp Change In A Funding Bill', 'No', 'Yes', 1, 'Set aside an attempt to drop a new definition of hemp from the bill.'),
+          ('Changing Debt Limit Instructions In The Budget', 'No', 'Yes', 1, 'A proposed change to the 2025 budget plan. Failed, 5 to 94.')]
 assert sum(x[3] for x in SPLITS) == 34
+COLS = f'<div style="display: grid; grid-template-columns: 90px 1fr 90px; gap: 16px; align-items: end; padding-bottom: 16px; {CAP}; color: {MUTED}"><div style="white-space: nowrap">Schumer</div><div style="text-align: center">The subject · since January 2025</div><div style="display: flex; justify-content: flex-end; white-space: nowrap">Van Hollen</div></div>'
+def tail(text): return f'<div style="border-top: 2px solid {LINE}; padding-top: 24px; font-size: 24px; line-height: 1.2; font-weight: 600; color: {PURPLE}; text-align: center">{text}</div>'
 
 COMPARE = ('Race 6: Where They Split', 'Side By Side', '\n'.join([
     f'<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: {G}px"><div style="display: flex; flex-direction: column; gap: 8px">{h1("Chuck Schumer", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · New York</div></div><div style="display: flex; flex-direction: column; gap: 8px; text-align: right">{h1("Chris Van Hollen", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · Maryland</div></div></div>',
-    f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: 24px {G}px; display: flex; align-items: center; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 84px; line-height: 1; letter-spacing: -0.03em">96%</div><div style="font-size: 27px; line-height: 1.3; font-weight: 500">of the time, they voted the same way. Below is every subject they split on.</div></div>',
-    f'<div style="flex: 1; min-height: 0; display: flex; flex-direction: column"><div style="display: grid; grid-template-columns: 130px 1fr 130px; gap: 16px; align-items: end; padding-bottom: 16px; {CAP}; color: {MUTED}"><div>Schumer</div><div style="text-align: center">The subject · since January 2025</div><div style="display: flex; justify-content: flex-end; white-space: nowrap">Van Hollen</div></div>'
-    + ''.join(split(*x) for x in SPLITS) + '</div>',
+    f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: 24px {G}px; display: flex; align-items: center; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 84px; line-height: 1; letter-spacing: -0.03em">96%</div><div style="font-size: 27px; line-height: 1.3; font-weight: 500">of the time, they voted the same way. Below is every subject they split on:</div></div>',
+    '<div style="flex: 1; min-height: 0; display: flex; flex-direction: column">' + COLS + ''.join(split(*x) for x in SPLITS[:7]) + tail('7 more on the next slide &rarr;') + '</div>',
 ]))
 
-# ---- 7: your turn (numbers are right here: these are steps, done in order)
-ACT = ('Race 7: Check It Yourself', 'Your Turn', '\n'.join([
+COMPARE2 = ('Race 7: Where They Split, Continued', 'Side By Side', '\n'.join([
+    h1('Where They Split: Continued', 62),
+    lede('Seven more subjects where they voted differently.'),
+    '<div style="flex: 1; min-height: 0; display: flex; flex-direction: column">' + COLS + ''.join(split(*x) for x in SPLITS[7:]) + tail('See every one of these votes for yourself at floortherecord.com') + '</div>',
+]))
+
+# ---- 8: your turn (numbers are right here: these are steps, done in order)
+ACT = ('Race 8: Check It Yourself', 'Your Turn', '\n'.join([
     h1('Don&rsquo;t Take Our Word For It', 76),
     lede('Every number in this post comes from the public record. Here is how to check it, and how to look up the people who represent you.'),
     f'<div style="flex: 1; min-height: 0; display: flex; flex-direction: column; border-bottom: 2px solid {LINE}">'
@@ -162,7 +179,7 @@ ACT = ('Race 7: Check It Yourself', 'Your Turn', '\n'.join([
     f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; justify-content: space-between; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 64px; line-height: 1; letter-spacing: -0.02em">floortherecord.com</div><div style="font-size: 28px; line-height: 1.2; font-weight: 600; text-align: right">Link in bio</div></div>',
 ]))
 
-SLIDES = {'RaceHook': HOOK, 'RaceRole': ROLE, 'RaceExplain': EXPLAIN, 'SenSchumer': SCHUMER, 'SenVanHollen': VANHOLLEN, 'Compare': COMPARE, 'RaceAct': ACT}
+SLIDES = {'RaceHook': HOOK, 'RaceRole': ROLE, 'RaceExplain': EXPLAIN, 'SenSchumer': SCHUMER, 'SenVanHollen': VANHOLLEN, 'Compare': COMPARE, 'Compare2': COMPARE2, 'RaceAct': ACT}
 if __name__ == '__main__':
     out = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT
     for k, (t, l, b) in SLIDES.items():

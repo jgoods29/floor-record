@@ -29,10 +29,17 @@
 <div class="card flush">{% for v, pa, pb in mu.spot %}{{ versus(v, pa, pb) }}{% endfor %}</div>
 </section>{% endif %}
 
+{% if mu.groups %}<section class="stack" style="gap:16px" id="by-subject">
+<div class="stack" style="gap:6px"><h2 class="h2">Where They Split: By Subject</h2><p class="plain">The Senate often votes several times on one thing: to start debate, to end it, and to pass it. Here the {{ mu.split|length }} split votes are gathered into {{ mu.groups|length }} subjects. Select one to see each vote behind it.</p></div>
+<div class="card flush">{% for g in mu.groups %}<details class="vsgroup"><summary><span class="stack" style="gap:2px"><span class="strong">{{ g.name }} <span class="muted" style="font-weight:400">· {{ g.rows|length }} {{ 'vote' if g.rows|length == 1 else 'votes' }}</span></span><span class="small muted">{{ g.about }}</span><span class="small vsopen">Show the {{ 'vote' if g.rows|length == 1 else 'votes' }}</span></span>
+<span class="vspos"><span class="small muted">{{ mu.pa.last }}</span>{% if g.mixed %}<span class="said nv">Mixed</span>{% else %}{{ said(g.pa) }}{% endif %}</span><span class="vspos"><span class="small muted">{{ mu.pb.last }}</span>{% if g.mixed %}<span class="said nv">Mixed</span>{% else %}{{ said(g.pb) }}{% endif %}</span></summary>
+<div class="vsinner">{% for v, pa, pb in g.rows %}{{ versus(v, pa, pb) }}{% endfor %}</div></details>{% endfor %}</div>
+</section>{% endif %}
+
 <section class="stack" style="gap:16px">
-<div class="stack" style="gap:6px"><h2 class="h2">Where They Split</h2><p class="plain">{% if mu.split %}The {{ mu.split|length }} {{ 'vote' if mu.split|length == 1 else 'votes' }} where one said yes and the other said no, newest first.{% else %}They have not been on opposite sides of a vote in this Congress.{% endif %}</p></div>
+<div class="stack" style="gap:6px"><h2 class="h2">{% if mu.groups %}Every Split Vote: Newest First{% else %}Where They Split{% endif %}</h2><p class="plain">{% if mu.split %}The {{ mu.split|length }} {{ 'vote' if mu.split|length == 1 else 'votes' }} where one said yes and the other said no, newest first.{% else %}They have not been on opposite sides of a vote in this Congress.{% endif %}</p></div>
 {% if mu.split %}<div class="card flush">{% for v, pa, pb in mu.split %}{{ versus(v, pa, pb) }}{% endfor %}</div>
-{% if mu.split|length > 25 %}<p class="small muted">Showing the 25 most recent of {{ mu.split|length }}.</p>{% endif %}{% endif %}
+{% endif %}
 </section>
 
 <p><a class="btn sm" href="{{ root }}{{ c }}compare/">Compare Any Two {{ "Senators" if c else "Members" }}</a></p>

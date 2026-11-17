@@ -754,6 +754,19 @@ def main():
         pa["last"], pb["last"] = last(pa), last(pb)
         page = dict(mu, pa=pa, pb=pb, sa=st(mu["a"]), sb=st(mu["b"]), both=len(both), same=same, same_pct=100.0 * same / max(1, len(both)),
                     split=[r for r in both if r[1] != r[2]], spot=[r for r in rows if r[0]["id"] in (mu.get("spotlight") or [])])
+        # The same splits gathered by subject (hand-grouped in matchups.json), so six votes on one thing read as one row.
+        by_id, groups = {r[0]["id"]: r for r in page["split"]}, []
+        for g in mu.get("groups") or []:
+            want = set(g["votes"])
+            grs = [r for r in page["split"] if r[0]["id"] in want and by_id.pop(r[0]["id"], None)]  # newest first, like the full list
+            if grs:
+                groups.append({"name": g["name"], "about": g.get("about", ""), "rows": grs, "pa": grs[0][1], "pb": grs[0][2],
+                               "mixed": len({(r[1], r[2]) for r in grs}) > 1})
+        if groups and by_id:
+            rest = [r for r in page["split"] if r[0]["id"] in by_id]
+            groups.append({"name": "Other Votes", "about": "Newer votes that have not been sorted into a subject yet.", "rows": rest, "pa": rest[0][1], "pb": rest[0][2],
+                           "mixed": len({(r[1], r[2]) for r in rest}) > 1})
+        page["groups"] = groups
         render(f"matchups/{mu['slug']}/index.html", "matchup.html", 2, section="matchup", c=pre, ch=ch, mu=page)
         matchups.append({"slug": mu["slug"], "label": mu.get("label") or mu["title"]})
     # ---- in the news: older votes worth resurfacing because the people or bills in them are back in the headlines.

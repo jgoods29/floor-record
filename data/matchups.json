@@ -11,6 +11,126 @@
     "spotlight": [
       "s2025-21"
     ],
-    "until": "2026-12-20"
+    "until": "2026-12-20",
+    "groups": [
+      {
+        "name": "Blocking Arms Sales To Israel",
+        "about": "Six attempts to stop specific weapons sales. All failed.",
+        "votes": [
+          "s2025-165",
+          "s2025-166",
+          "s2025-454",
+          "s2025-455",
+          "s2026-80",
+          "s2026-81"
+        ]
+      },
+      {
+        "name": "The 2026 Defense Policy Bill",
+        "about": "The yearly bill that sets military policy and spending levels.",
+        "votes": [
+          "s2025-500",
+          "s2025-503",
+          "s2025-570",
+          "s2025-646",
+          "s2025-647",
+          "s2025-648"
+        ]
+      },
+      {
+        "name": "Overturning An IRS Reporting Rule For Crypto",
+        "about": "Cancels a rule making some crypto platforms report sales to the IRS.",
+        "votes": [
+          "s2025-101",
+          "s2025-102",
+          "s2025-150",
+          "s2025-151"
+        ]
+      },
+      {
+        "name": "Permanently Banning Fentanyl-Related Drugs",
+        "about": "Keeps fentanyl-related substances in the strictest drug category.",
+        "votes": [
+          "s2025-110",
+          "s2025-124",
+          "s2025-127"
+        ]
+      },
+      {
+        "name": "The Survivor Justice Tax Prevention Act",
+        "about": "Stops taxing most payouts won by survivors of sexual abuse.",
+        "votes": [
+          "s2026-257",
+          "s2026-258",
+          "s2026-264"
+        ]
+      },
+      {
+        "name": "The College Sports Bill",
+        "about": "National rules on college athletes' name and image rights.",
+        "votes": [
+          "s2026-235",
+          "s2026-236"
+        ]
+      },
+      {
+        "name": "The ROAD To Housing Act",
+        "about": "A package meant to increase the supply of housing.",
+        "votes": [
+          "s2026-44",
+          "s2026-45"
+        ]
+      },
+      {
+        "name": "Luke Lindberg For A Top Agriculture Job",
+        "about": "Nominee for the Agriculture Department's top trade post.",
+        "votes": [
+          "s2025-493",
+          "s2025-494"
+        ]
+      },
+      {
+        "name": "The 2026 Government Funding Bill",
+        "about": "Funds federal agencies through September 2026.",
+        "votes": [
+          "s2026-20"
+        ]
+      },
+      {
+        "name": "The March 2025 Stopgap Funding Bill",
+        "about": "Advanced a bill keeping the government open through September 2025.",
+        "votes": [
+          "s2025-128"
+        ]
+      },
+      {
+        "name": "Sean Duffy For Transportation Secretary",
+        "about": "Nominee to run the Department of Transportation.",
+        "votes": [
+          "s2025-21"
+        ]
+      },
+      {
+        "name": "Cutting The Defense Budget By 10 Percent",
+        "about": "Would have moved the money to veterans' dental care. Failed, 10 to 88.",
+        "votes": [
+          "s2025-568"
+        ]
+      },
+      {
+        "name": "Setting Aside A Hemp Change In A Funding Bill",
+        "about": "Set aside an attempt to drop a new definition of hemp from the bill.",
+        "votes": [
+          "s2025-614"
+        ]
+      },
+      {
+        "name": "Changing Debt Limit Instructions In The Budget",
+        "about": "A proposed change to the 2025 budget plan. Failed, 5 to 94.",
+        "votes": [
+          "s2025-179"
+        ]
+      }
+    ]
   }
 ]
