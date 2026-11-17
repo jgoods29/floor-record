@@ -17,6 +17,7 @@ beside their votes on the same topic. No kept/broken verdict. Start with a pilot
 ## Cleaner look
 A design canvas holds a stripped-down mockup and a middle-ground one. Neither was adopted.
 
-## Waiting on a domain
-Accounts, the Monday and Friday emails, the 30-second pop-up and the Subscribe button are built and switched off.
-See `accounts/README.md`.
+## Accounts and emails: live (not parked)
+Accounts, the Monday and Friday emails, the 30-second pop-up and the Subscribe button went live on November 16, 2026,
+when floortherecord.com was connected. Emails send from hello@floortherecord.com. Still open: a postal address must be
+added before any sponsored email, and the free email plan covers about 50 subscribers. See `accounts/README.md`.
