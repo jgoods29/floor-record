@@ -176,7 +176,7 @@ ACT = ('Race 8: Check It Yourself', 'Your Turn', '\n'.join([
     + stepn(1, 'Go To floortherecord.com', 'It is free. You do not need an account.')
     + stepn(2, 'Read How They Voted', 'Every vote, clear and explained.')
     + stepn(3, 'Decide For Yourself', 'We show the record. What it means is up to you.')
-    + stepn(4, 'Subscribe For Free', 'Emails every Monday and Friday, so you never miss a moment.') + '</div>',
+    + stepn(4, 'Subscribe For Free', 'Update emails every Monday and Friday. Easy-peasy.') + '</div>',
     f'<div style="font-size: 22px; line-height: 1.2; color: {MUTED}; text-align: center">Not sure what a term means? &ldquo;Start Here&rdquo; on the site explains it in plain English.</div>',
     f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; justify-content: space-between; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 64px; line-height: 1; letter-spacing: -0.02em">floortherecord.com</div><div style="font-size: 28px; line-height: 1.2; font-weight: 600; text-align: right">Link in bio</div></div>',
 ]))
