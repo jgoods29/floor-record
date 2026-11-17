@@ -110,13 +110,11 @@ def split(what, a, b, n): return f'<div style="flex: 1; display: grid; grid-temp
 
 COMPARE = ('Race 5: Key Comparisons', 'Side By Side', '\n'.join([
     f'<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: {G}px"><div style="display: flex; flex-direction: column; gap: 8px">{h1("Chuck Schumer", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · New York</div></div><div style="display: flex; flex-direction: column; gap: 8px; text-align: right">{h1("Chris Van Hollen", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · Maryland</div></div></div>',
-    '<div style="flex: 4; min-height: 0; display: flex; flex-direction: column">' + vs('In the Senate since', '1999', '2017') + vs('Bills they introduced', '35', '76') + vs('Others&rsquo; bills they backed', '143', '679') + vs('Voted with their party', '98.5%', '100%') + vs('Trump cabinet picks<br>they voted to confirm', '2 of 18', '1 of 18')
-    + f'<div style="font-size: 21px; line-height: 1.2; color: {MUTED}; text-align: center; padding: 12px 0 0 0; border-top: 2px solid {LINE}">Both voted yes on Marco Rubio. Only Schumer voted yes on Sean Duffy.</div></div>',
-    f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: 24px {G}px; display: flex; align-items: center; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 84px; line-height: 1; letter-spacing: -0.03em">96%</div><div style="font-size: 28px; line-height: 1.3; font-weight: 500">of the time, they voted the same way: 871 of the 905 votes where both voted yes or no.</div></div>',
-    f'<div style="flex: 3; min-height: 0; display: flex; flex-direction: column"><div style="{CAP}; color: {MUTED}; padding-bottom: 16px">Topical votes where they split</div>'
+    '<div style="flex: 1; min-height: 0; display: flex; flex-direction: column">' + vs('In the Senate since', '1999', '2017') + vs('Bills they introduced', '35', '76') + vs('Others&rsquo; bills they backed', '143', '679') + vs('Voted with their party', '98.5%', '100%') + '</div>',
+    f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 108px; line-height: 1; letter-spacing: -0.03em">96%</div><div style="font-size: 30px; line-height: 1.3; font-weight: 500">of the time, they voted the same way: 871 of the 905 votes where both voted yes or no.</div></div>',
+    f'<div style="flex: 1; min-height: 0; display: flex; flex-direction: column"><div style="{CAP}; color: {MUTED}; padding-bottom: 16px">Big votes where they split</div>'
     + split('Blocking an arms sale to Israel', 'No', 'Yes', 'Apr 15, 2026 · Failed, 40 to 59') + split('The 2026 government funding bill', 'Yes', 'No', 'Jan 30, 2026 · Passed, 71 to 29')
-    + split('The 2026 defense policy bill', 'Yes', 'No', 'Oct 9, 2025 · Passed, 77 to 20')
-    + f'<div style="border-top: 2px solid {LINE}; padding-top: 16px; font-size: 24px; line-height: 1.2; font-weight: 600; color: {PURPLE}; text-align: center">3 of the 34 votes where they split. See all 34 at floortherecord.com</div></div>',
+    + split('The 2026 defense policy bill', 'Yes', 'No', 'Oct 9, 2025 · Passed, 77 to 20') + split('Sean Duffy for Transportation Secretary', 'Yes', 'No', 'Jan 28, 2025 · Confirmed, 77 to 22') + '</div>',
 ]))
 
 SLIDES = {'RaceHook': HOOK, 'RaceExplain': EXPLAIN, 'SenSchumer': SCHUMER, 'SenVanHollen': VANHOLLEN, 'Compare': COMPARE}
