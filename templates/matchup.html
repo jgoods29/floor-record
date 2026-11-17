@@ -30,10 +30,10 @@
 </section>{% endif %}
 
 {% if mu.groups %}<section class="stack" style="gap:16px" id="by-subject">
-<div class="stack" style="gap:6px"><h2 class="h2">Where They Split: By Subject</h2><p class="plain">The Senate often votes several times on one thing: to start debate, to end it, and to pass it. Here the {{ mu.split|length }} split votes are gathered into {{ mu.groups|length }} subjects. Select one to see each vote behind it.</p></div>
-<div class="card flush">{% for g in mu.groups %}<details class="vsgroup"><summary><span class="stack" style="gap:2px"><span class="strong">{{ g.name }} <span class="muted" style="font-weight:400">· {{ g.rows|length }} {{ 'vote' if g.rows|length == 1 else 'votes' }}</span></span><span class="small muted">{{ g.about }}</span><span class="small vsopen">Show the {{ 'vote' if g.rows|length == 1 else 'votes' }}</span></span>
+<div class="stack" style="gap:6px"><h2 class="h2">Where They Split: By Subject</h2><p class="plain">The Senate often votes several times on one thing: to start debate, to end it, and to pass it. Here the {{ mu.split|length }} split votes are gathered into {{ mu.groups|length }} subjects. Select one to read what is in it and see each vote behind it.</p></div>
+<div class="card flush">{% for g in mu.groups %}<details class="vsgroup"><summary><span class="stack" style="gap:2px"><span class="strong">{{ g.name }} <span class="muted" style="font-weight:400">· {{ g.rows|length }} {{ 'vote' if g.rows|length == 1 else 'votes' }}</span></span><span class="small muted">{{ g.about }}</span><span class="small vsopen">What is in it, and the {{ 'vote' if g.rows|length == 1 else 'votes' }}</span></span>
 <span class="vspos"><span class="small muted">{{ mu.pa.last }}</span>{% if g.mixed %}<span class="said nv">Mixed</span>{% else %}{{ said(g.pa) }}{% endif %}</span><span class="vspos"><span class="small muted">{{ mu.pb.last }}</span>{% if g.mixed %}<span class="said nv">Mixed</span>{% else %}{{ said(g.pb) }}{% endif %}</span></summary>
-<div class="vsinner">{% for v, pa, pb in g.rows %}{{ versus(v, pa, pb) }}{% endfor %}</div></details>{% endfor %}</div>
+<div class="vsinner">{% if g.more %}<div class="vsmore"><p>{{ g.more }}</p>{% if g.bill %}<p><a class="strong" href="{{ root }}{{ c }}bills/{{ g.bill }}/">Read the full bill and its official summary</a></p>{% endif %}</div>{% endif %}{% for v, pa, pb in g.rows %}{{ versus(v, pa, pb) }}{% endfor %}</div></details>{% endfor %}</div>
 </section>{% endif %}
 
 <section class="stack" style="gap:16px">

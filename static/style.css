@@ -774,3 +774,5 @@ a.card > .tags { min-height: 26px; align-items: center; }
 .word:first-child { border-top: 0; } .word dt { font-weight: 700; } .word dd { margin: 0; color: var(--text-2, #3B4A66); }
 .word:target { background: #F7F3FF; }
 @media (max-width: 640px) { .word { grid-template-columns: 1fr; gap: 4px; } }
+.vsmore { padding: 16px 22px 16px 38px; display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid var(--line); max-width: 860px; } .vsmore p { margin: 0; }
+@media (max-width: 640px) { .vsmore { padding-left: 22px; } }

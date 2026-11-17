@@ -23,11 +23,12 @@
           "s2025-455",
           "s2026-80",
           "s2026-81"
-        ]
+        ],
+        "more": "Congress can block a weapons sale to another country by passing a resolution against it. Senators forced votes on six of these, each covering a different sale to Israel. Every vote was on whether to pull the resolution out of committee, and every one failed, so none moved forward."
       },
       {
         "name": "The 2026 Defense Policy Bill",
-        "about": "The yearly bill that sets military policy and spending levels.",
+        "about": "Covers troop levels, weapons buying, military pay and health care.",
         "votes": [
           "s2025-500",
           "s2025-503",
@@ -35,7 +36,9 @@
           "s2025-646",
           "s2025-647",
           "s2025-648"
-        ]
+        ],
+        "more": "This yearly bill sets policy for the military: how many troops, which aircraft, ships and missiles to buy, pay and health care for service members, and construction on bases. It sets spending limits but does not itself provide the money. The six votes were steps along the way, from starting debate to approving the final version.",
+        "bill": "s-2296"
       },
       {
         "name": "Overturning An IRS Reporting Rule For Crypto",
@@ -45,7 +48,9 @@
           "s2025-102",
           "s2025-150",
           "s2025-151"
-        ]
+        ],
+        "more": "In December 2024 the IRS issued a rule requiring decentralized finance platforms to report their customers' digital asset sales. Congress can cancel a recent rule by passing a resolution. The Senate voted on two versions of that resolution, each with one vote to take it up and one to pass it.",
+        "bill": "sjres-3"
       },
       {
         "name": "Permanently Banning Fentanyl-Related Drugs",
@@ -54,7 +59,9 @@
           "s2025-110",
           "s2025-124",
           "s2025-127"
-        ]
+        ],
+        "more": "The HALT Fentanyl Act permanently places fentanyl-related substances, as a class, in Schedule I, the strictest category of controlled drugs. Offenses carry the same penalties as other fentanyl analogues, including mandatory minimum prison terms. It also changes the rules for researchers who study these drugs.",
+        "bill": "s-331"
       },
       {
         "name": "The Survivor Justice Tax Prevention Act",
@@ -63,23 +70,29 @@
           "s2026-257",
           "s2026-258",
           "s2026-264"
-        ]
+        ],
+        "more": "Money won in a lawsuit or settlement is usually taxed unless it is for a physical injury. This bill makes damages for sexual abuse or assault tax-free whether or not there was a visible injury, and puts the burden on the IRS to prove otherwise. Punitive damages are still taxed.",
+        "bill": "hr-2347"
       },
       {
         "name": "The College Sports Bill",
-        "about": "National rules on college athletes' name and image rights.",
+        "about": "Covers athlete pay deals, agent fees, transfers and schools' TV rights.",
         "votes": [
           "s2026-235",
           "s2026-236"
-        ]
+        ],
+        "more": "The Protect College Sports Act sets national rules for athletes' name, image and likeness deals, requires agents to register and caps their fees at 5 percent, and gives athletes one transfer without losing eligibility. It also lets schools and conferences pool and sell media rights, and makes the cap on sharing revenue with athletes permanent.",
+        "bill": "s-4668"
       },
       {
         "name": "The ROAD To Housing Act",
-        "about": "A package meant to increase the supply of housing.",
+        "about": "Covers dozens of changes to federal housing programs and building rules.",
         "votes": [
           "s2026-44",
           "s2026-45"
-        ]
+        ],
+        "more": "The 21st Century ROAD to Housing Act creates and changes a long list of federal housing programs. Among them: support for permitting new kinds of apartment buildings, lighter environmental review for some rural projects, and closer oversight of housing counseling groups.",
+        "bill": "hr-6644"
       },
       {
         "name": "Luke Lindberg For A Top Agriculture Job",
@@ -87,49 +100,61 @@
         "votes": [
           "s2025-493",
           "s2025-494"
-        ]
+        ],
+        "more": "Nominated to be Under Secretary of Agriculture for Trade and Foreign Agricultural Affairs. One vote ended debate on the nomination and the other confirmed him, 78 to 17."
       },
       {
         "name": "The 2026 Government Funding Bill",
-        "about": "Funds federal agencies through September 2026.",
+        "about": "Covers the military, health, education, transportation and housing.",
         "votes": [
           "s2026-20"
-        ]
+        ],
+        "more": "The Consolidated Appropriations Act, 2026 combines 5 of the 12 yearly funding bills. It funds the military and the Labor, Health, Education, Transportation, Housing, Treasury and State departments for the rest of the 2026 budget year, and Homeland Security through February 13, 2026.",
+        "bill": "hr-7148"
       },
       {
         "name": "The March 2025 Stopgap Funding Bill",
         "about": "Advanced a bill keeping the government open through September 2025.",
         "votes": [
           "s2025-128"
-        ]
+        ],
+        "more": "A continuing resolution that funded the government for the rest of the 2025 budget year, mostly at 2024 levels, and avoided a shutdown on March 14, 2025. This was the vote to end debate on it, which needed 60 senators.",
+        "bill": "hr-1968"
       },
       {
         "name": "Sean Duffy For Transportation Secretary",
         "about": "Nominee to run the Department of Transportation.",
         "votes": [
           "s2025-21"
-        ]
+        ],
+        "more": "Nominated to be Secretary of Transportation. The Senate confirmed him 77 to 22."
       },
       {
         "name": "Cutting The Defense Budget By 10 Percent",
         "about": "Would have moved the money to veterans' dental care. Failed, 10 to 88.",
         "votes": [
           "s2025-568"
-        ]
+        ],
+        "more": "An amendment to the defense policy bill. It would have cut the Pentagon budget by 10 percent and used the money to expand dental care for veterans. It failed, 10 to 88.",
+        "bill": "s-2296"
       },
       {
         "name": "Setting Aside A Hemp Change In A Funding Bill",
         "about": "Set aside an attempt to drop a new definition of hemp from the bill.",
         "votes": [
           "s2025-614"
-        ]
+        ],
+        "more": "The bill that ended the government shutdown that began on October 1, 2025 also changed the legal definition of hemp. An amendment tried to take that change out. The Senate voted 76 to 24 to set the amendment aside, which kept the change in the bill.",
+        "bill": "hr-5371"
       },
       {
         "name": "Changing Debt Limit Instructions In The Budget",
         "about": "A proposed change to the 2025 budget plan. Failed, 5 to 94.",
         "votes": [
           "s2025-179"
-        ]
+        ],
+        "more": "An amendment to the 2025 budget plan that would have changed its instructions on the debt limit. It failed, 5 to 94.",
+        "bill": "hconres-14"
       }
     ]
   }

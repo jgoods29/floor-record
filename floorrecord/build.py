@@ -761,7 +761,7 @@ def main():
             want = set(g["votes"])
             grs = [r for r in page["split"] if r[0]["id"] in want and by_id.pop(r[0]["id"], None)]  # newest first, like the full list
             if grs:
-                groups.append({"name": g["name"], "about": g.get("about", ""), "rows": grs, "pa": grs[0][1], "pb": grs[0][2],
+                groups.append({"name": g["name"], "about": g.get("about", ""), "more": g.get("more", ""), "bill": g.get("bill", ""), "rows": grs, "pa": grs[0][1], "pb": grs[0][2],
                                "mixed": len({(r[1], r[2]) for r in grs}) > 1})
         if groups and by_id:
             rest = [r for r in page["split"] if r[0]["id"] in by_id]
