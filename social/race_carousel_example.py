@@ -139,14 +139,14 @@ def split(what, a, b, n, about):
 
 
 SPLITS = [('Blocking Arms Sales To Israel', 'No', 'Yes', 6, 'Six attempts to stop specific weapons sales. All failed.'),
-          ('The 2026 Defense Policy Bill', 'Yes', 'No', 6, 'The yearly bill that sets military policy and spending levels.'),
+          ('The 2026 Defense Policy Bill', 'Yes', 'No', 6, 'Covers troop levels, weapons buying and military construction.'),
           ('Overturning An IRS Reporting Rule For Crypto', 'Yes', 'No', 4, 'Cancels a rule making some crypto platforms report sales to the IRS.'),
-          ('Permanently Banning Fentanyl-Related Drugs', 'Yes', 'No', 3, 'Keeps fentanyl-related substances in the strictest drug category.'),
-          ('The Survivor Justice Tax Prevention Act', 'Yes', 'No', 3, 'Stops taxing most payouts won by survivors of sexual abuse.'),
-          ('The College Sports Bill', 'Yes', 'No', 2, 'National rules on college athletes&rsquo; name and image rights.'),
-          ('The ROAD To Housing Act', 'Yes', 'No', 2, 'A package meant to increase the supply of housing.'),
+          ('Permanently Banning Fentanyl-Related Drugs', 'Yes', 'No', 3, 'Permanently puts fentanyl-related substances in the strictest drug category.'),
+          ('The Survivor Justice Tax Prevention Act', 'Yes', 'No', 3, 'Would stop taxing most payouts won by survivors of sexual abuse.'),
+          ('The College Sports Bill', 'Yes', 'No', 2, 'Covers name and image deals, agent fees, transfers and schools&rsquo; TV rights.'),
+          ('The ROAD To Housing Act', 'Yes', 'No', 2, 'Covers dozens of housing changes, plus rules for community banks.'),
           ('Luke Lindberg For A Top Agriculture Job', 'Yes', 'No', 2, 'Nominee for the Agriculture Department&rsquo;s top trade post.'),
-          ('The 2026 Government Funding Bill', 'Yes', 'No', 1, 'Funds federal agencies through September 2026.'),
+          ('The 2026 Government Funding Bill', 'Yes', 'No', 1, 'Funds the military, health, education, transportation, housing and more.'),
           ('The March 2025 Stopgap Funding Bill', 'Yes', 'No', 1, 'Advanced a bill keeping the government open through September 2025.'),
           ('Sean Duffy For Transportation Secretary', 'Yes', 'No', 1, 'Nominee to run the Department of Transportation.'),
           ('Cutting The Defense Budget By 10 Percent', 'No', 'Yes', 1, 'Would have moved the money to veterans&rsquo; dental care. Failed, 10 to 88.'),
@@ -165,7 +165,7 @@ COMPARE = ('Race 6: Where They Split', 'Side By Side', '\n'.join([
 COMPARE2 = ('Race 7: Where They Split, Continued', 'Side By Side', '\n'.join([
     h1('Where They Split: Continued', 62),
     lede('Seven more subjects where they voted differently.'),
-    '<div style="flex: 1; min-height: 0; display: flex; flex-direction: column">' + COLS + ''.join(split(*x) for x in SPLITS[7:]) + tail('See every one of these votes for yourself at floortherecord.com') + '</div>',
+    '<div style="flex: 1; min-height: 0; display: flex; flex-direction: column">' + COLS + ''.join(split(*x) for x in SPLITS[7:]) + tail('There is more to each of these. See the full bills and votes at floortherecord.com') + '</div>',
 ]))
 
 # ---- 8: your turn (numbers are right here: these are steps, done in order)
