@@ -1,6 +1,10 @@
 {
   "_about": "Wording a person has approved. 'pins' puts votes at the top of the home page for 90 days. 'votes' sets the name, outcome and one-line explanation for a vote, and always wins over AI or automatic wording. 'carried' marks a bill the Senate is using to carry a different, larger package: Senate vote pages on or after 'since' show the note in place of the summary of the original bill, and the bill page shows the note at the top. 'bills' holds a one-sentence and a short summary a person wrote from the bill's text; it replaces the AI summary. 'reviewed' lists bills whose text changed a lot and whose summary a person has checked against the latest text, with the date and what was checked.",
-  "pins": ["2026-317", "2026-320", "2026-307"],
+  "pins": [
+    "2026-317",
+    "2026-320",
+    "2026-307"
+  ],
   "votes": {
     "2026-317": {
       "name": "Hegseth impeachment",
@@ -58,6 +62,10 @@
     "hr-5371": {
       "on": "2026-11-17",
       "checked": "Checked the final text's eight divisions, the January 30, 2026 funding date and the hemp definition change (section 781) against the site's summary and the hemp row on the Schumer Vs. Van Hollen page. They match. The whole text was not read."
+    },
+    "s-1071": {
+      "on": "2026-11-17",
+      "checked": "The House replaced the one-section Cota disinterment bill with the final National Defense Authorization Act for Fiscal Year 2026. Checked the final text's titles (procurement, military personnel, compensation, health care, military construction) against the defense row on the Schumer Vs. Van Hollen page and the three Senate vote pages. They match. The whole text was not read."
     }
   }
 }

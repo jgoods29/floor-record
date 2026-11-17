@@ -63,6 +63,12 @@ Errors are very costly for this project. The owner's rule: read the bill itself 
 - If the text cannot be read, say so and do not publish the description until it has been.
 - Before a social post goes out, check every row in it against the official record and one news source.
 
+### A vote on a step is not a vote on the bill
+Before saying how someone voted on a bill, list every vote they cast on it. Votes to start or end debate are steps.
+If two people split on a step and then voted the same way on passage, the row must say so ("Taking Up The Housing
+Bill", "Both later voted to pass it"). If there has been no final vote, say that. Numbers in a post are a snapshot:
+recount them from the record on the day it goes out.
+
 ## Color
 
 - Red is Republican, blue is Democrat, purple is neutral or unity.
