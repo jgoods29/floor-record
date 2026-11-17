@@ -112,36 +112,43 @@ EXPLAIN = ('Race 3: The Race And The People', 'The Race', '\n'.join([
 
 
 # ---- 3 and 4: each senator in a nutshell (the three boxes share the leftover height equally)
-def tile(num, label, sub): return f'<div style="flex: 1; min-width: 0; {CARD}; display: flex; flex-direction: column; justify-content: center; gap: 8px"><div style="{D}; font-weight: 700; font-size: 76px; line-height: 1; letter-spacing: -0.02em">{num}</div><div style="font-size: 25px; font-weight: 700; line-height: 1.2">{label}</div><div style="font-size: 22px; line-height: 1.2; color: {MUTED}">{sub}</div></div>'
+def tile(num, label, sub): return f'<div style="min-width: 0; {CARD}; display: flex; flex-direction: column; justify-content: center; gap: 4px"><div style="{D}; font-weight: 700; font-size: 58px; line-height: 1; letter-spacing: -0.02em">{num}</div><div style="font-size: 25px; font-weight: 700; line-height: 1.2">{label}</div><div style="font-size: 21px; line-height: 1.2; color: {MUTED}">{sub}</div></div>'
 
 
-def sen(name, initials, seat, since, role, cast, att, missed, bills, cmtes):
-    rows = ''.join(f'<div style="flex: 1; display: flex; align-items: center; font-size: 30px; font-weight: 600; line-height: 1.25; padding: 12px 0; border-top: 2px solid {LINE}">{c}</div>' for c in cmtes)
+def sen(name, initials, seat, since, role, cast, att, missed, bills, cosigned, cmtes):
+    rows = ''.join(f'<div style="flex: 1; display: flex; align-items: center; font-size: 28px; font-weight: 600; line-height: 1.25; padding: 4px 0; border-top: 2px solid {LINE}">{c}</div>' for c in cmtes)
     return '\n'.join([
-        f'<div style="display: flex; gap: {G}px; align-items: center"><div style="width: 168px; height: 168px; border-radius: 50%; background: {TINT}; border: 2px solid {LINE}; box-sizing: border-box; display: flex; align-items: center; justify-content: center; {D}; font-weight: 700; font-size: 62px; color: {MUTED}; flex: none">{initials}</div><div style="display: flex; flex-direction: column; gap: 16px">{h1(name, 76)}<div style="display: flex; gap: 12px; align-items: center; font-size: 30px; line-height: 1; color: {T2}">{badge()}<span>{seat}</span></div><div style="font-size: 26px; line-height: 1; color: {MUTED}">In the Senate since {since} · {role}</div></div></div>',
-        f'<div style="flex: 5 1 68px; display: flex; gap: {G}px">{tile(cast, "votes cast", "since January 2025")}{tile(att, "attendance", f"missed {missed} of 923")}{tile(bills, "bills introduced", "since January 2025")}</div>',
-        f'<div style="flex: 7; min-height: 0; {CARD}; padding-bottom: 12px; display: flex; flex-direction: column"><div style="{CAP}; color: {MUTED}; padding-bottom: {G}px">Committees</div>{rows}</div>',
+        f'<div style="display: flex; gap: {G}px; align-items: center"><div style="width: 152px; height: 152px; border-radius: 50%; background: {TINT}; border: 2px solid {LINE}; box-sizing: border-box; display: flex; align-items: center; justify-content: center; {D}; font-weight: 700; font-size: 56px; color: {MUTED}; flex: none">{initials}</div><div style="display: flex; flex-direction: column; gap: 12px">{h1(name, 72)}<div style="display: flex; gap: 12px; align-items: center; font-size: 30px; line-height: 1; color: {T2}">{badge()}<span>{seat}</span></div><div style="font-size: 26px; line-height: 1; color: {MUTED}">In the Senate since {since} · {role}</div></div></div>',
+        f'<div style="flex: none; display: grid; grid-template-columns: 1fr 1fr; gap: {G}px">{tile(cast, "votes cast", "since January 2025")}{tile(att, "attendance", f"missed {missed} of 923 votes")}{tile(bills, "bills introduced", "since January 2025")}{tile(cosigned, "bills co-signed", "added their name to others&rsquo; bills")}</div>',
+        f'<div style="flex: 1; min-height: 0; {CARD}; padding-bottom: 16px; display: flex; flex-direction: column"><div style="{CAP}; color: {MUTED}; padding-bottom: 24px">Committees</div>{rows}</div>',
         f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: 24px {G}px; display: flex; align-items: center; justify-content: space-between; gap: {G}px; font-size: 28px; line-height: 1.2"><div style="font-weight: 700">Check this record yourself</div><div style="font-weight: 500; flex: none">The last slide shows you how &rarr;</div></div>',
     ])
 
 
-SCHUMER = ('Race 4: Chuck Schumer In A Nutshell', 'In A Nutshell', sen('Chuck Schumer', 'CS', 'New York · Senior senator', '1999', 'Senate Democratic leader', '919', '99.6%', '4', '35', ['Rules and Administration', 'Intelligence (sits in as a party leader)']))
-VANHOLLEN = ('Race 5: Chris Van Hollen In A Nutshell', 'In A Nutshell', sen('Chris Van Hollen', 'CV', 'Maryland · Senior senator', '2017', 'in the House before that', '909', '98.5%', '14', '76', ['Appropriations', 'Budget', 'Banking, Housing, and Urban Affairs', 'Foreign Relations']))
+SCHUMER = ('Race 4: Chuck Schumer In A Nutshell', 'In A Nutshell', sen('Chuck Schumer', 'CS', 'New York · Senior senator', '1999', 'Senate Democratic leader', '919', '99.6%', '4', '35', '143', ['Rules and Administration', 'Intelligence (sits in as a party leader)']))
+VANHOLLEN = ('Race 5: Chris Van Hollen In A Nutshell', 'In A Nutshell', sen('Chris Van Hollen', 'CV', 'Maryland · Senior senator', '2017', 'in the House before that', '909', '98.5%', '14', '76', '679', ['Appropriations', 'Budget', 'Banking, Housing, and Urban Affairs', 'Foreign Relations']))
 
 
 # ---- 5: key comparisons (the two tables stretch; every row in a table is the same height)
 def vs(label, a, b): return f'<div style="flex: 1; display: grid; grid-template-columns: 1fr 340px 1fr; align-items: center; border-top: 2px solid {LINE}"><div style="{D}; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.02em">{a}</div><div style="font-size: 24px; line-height: 1.2; font-weight: 600; color: {MUTED}; text-align: center">{label}</div><div style="{D}; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.02em; text-align: right">{b}</div></div>'
-def split(what, a, b, n): return f'<div style="flex: 1; display: grid; grid-template-columns: 170px 1fr 170px; align-items: center; gap: 16px; border-top: 2px solid {LINE}"><div style="font-size: 30px; font-weight: 700">{a}</div><div style="display: flex; flex-direction: column; gap: 4px; text-align: center"><div style="font-size: 27px; font-weight: 600; line-height: 1.2">{what}</div><div style="font-size: 21px; line-height: 1.2; color: {MUTED}">{n}</div></div><div style="font-size: 30px; font-weight: 700; text-align: right">{b}</div></div>'
+def split(what, a, b, n):
+    votes = '1 vote' if n == 1 else f'{n} votes'
+    return (f'<div style="flex: 1; display: grid; grid-template-columns: 130px 1fr 130px; align-items: center; gap: 16px; border-top: 2px solid {LINE}"><div style="font-size: 26px; font-weight: 700; line-height: 1">{a}</div>'
+            f'<div style="text-align: center; font-size: 24px; line-height: 1.1"><span style="font-weight: 600">{what}</span> <span style="color: {MUTED}">· {votes}</span></div><div style="font-size: 26px; font-weight: 700; line-height: 1; text-align: right">{b}</div></div>')
 
 
-COMPARE = ('Race 6: Key Comparisons', 'Side By Side', '\n'.join([
+SPLITS = [('Blocking arms sales to Israel', 'No', 'Yes', 6), ('The 2026 defense policy bill', 'Yes', 'No', 6), ('Overturning an IRS reporting rule for crypto', 'Yes', 'No', 4),
+          ('Permanently banning fentanyl-related drugs', 'Yes', 'No', 3), ('The Survivor Justice Tax Prevention Act', 'Yes', 'No', 3), ('The college sports bill', 'Yes', 'No', 2),
+          ('The ROAD to Housing Act', 'Yes', 'No', 2), ('Luke Lindberg for a top Agriculture job', 'Yes', 'No', 2), ('The 2026 government funding bill', 'Yes', 'No', 1),
+          ('The March 2025 stopgap funding bill', 'Yes', 'No', 1), ('Sean Duffy for Transportation Secretary', 'Yes', 'No', 1), ('Cutting the defense budget by 10 percent', 'No', 'Yes', 1),
+          ('Setting aside a hemp change in a funding bill', 'No', 'Yes', 1), ('Changing debt limit instructions in the budget', 'No', 'Yes', 1)]
+assert sum(x[3] for x in SPLITS) == 34
+
+COMPARE = ('Race 6: Where They Split', 'Side By Side', '\n'.join([
     f'<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: {G}px"><div style="display: flex; flex-direction: column; gap: 8px">{h1("Chuck Schumer", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · New York</div></div><div style="display: flex; flex-direction: column; gap: 8px; text-align: right">{h1("Chris Van Hollen", 62)}<div style="font-size: 26px; line-height: 1.2; color: {T2}">D · Maryland</div></div></div>',
-    '<div style="flex: 4; min-height: 0; display: flex; flex-direction: column">' + vs('In the Senate since', '1999', '2017') + vs('Bills they introduced', '35', '76') + vs('Bills they co-signed*', '143', '679')
-    + f'<div style="font-size: 21px; line-height: 1.4; color: {MUTED}; text-align: center; padding-top: 16px; border-top: 2px solid {LINE}">Bills are from this Congress only, since January 2025. Not their whole careers.<br>*See what co-signing a bill means at floortherecord.com</div></div>',
-    f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 108px; line-height: 1; letter-spacing: -0.03em">96%</div><div style="font-size: 30px; line-height: 1.3; font-weight: 500">of the time, they voted the same way. Below are four big votes where they did not.</div></div>',
-    f'<div style="flex: 5; min-height: 0; display: flex; flex-direction: column"><div style="display: grid; grid-template-columns: 170px 1fr 170px; gap: 16px; align-items: end; padding-bottom: 16px; {CAP}; color: {MUTED}"><div>Schumer</div><div style="text-align: center">Where they split</div><div style="text-align: right">Van Hollen</div></div>'
-    + split('Blocking an arms sale to Israel', 'No', 'Yes', 'Apr 15, 2026 · Failed, 40 to 59') + split('The 2026 government funding bill', 'Yes', 'No', 'Jan 30, 2026 · Passed, 71 to 29')
-    + split('The 2026 defense policy bill', 'Yes', 'No', 'Oct 9, 2025 · Passed, 77 to 20') + split('Sean Duffy for Transportation Secretary', 'Yes', 'No', 'Jan 28, 2025 · Confirmed, 77 to 22') + '</div>',
+    f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: 24px {G}px; display: flex; align-items: center; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 84px; line-height: 1; letter-spacing: -0.03em">96%</div><div style="font-size: 27px; line-height: 1.3; font-weight: 500">of the time, they voted the same way. Below is every subject they split on.</div></div>',
+    f'<div style="flex: 1; min-height: 0; display: flex; flex-direction: column"><div style="display: grid; grid-template-columns: 130px 1fr 130px; gap: 16px; align-items: end; padding-bottom: 16px; {CAP}; color: {MUTED}"><div>Schumer</div><div style="text-align: center">The subject · since January 2025</div><div style="display: flex; justify-content: flex-end; white-space: nowrap">Van Hollen</div></div>'
+    + ''.join(split(*x) for x in SPLITS) + '</div>',
 ]))
 
 # ---- 7: your turn (numbers are right here: these are steps, done in order)

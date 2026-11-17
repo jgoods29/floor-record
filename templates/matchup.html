@@ -31,7 +31,7 @@
 
 <section class="stack" style="gap:16px">
 <div class="stack" style="gap:6px"><h2 class="h2">Where They Split</h2><p class="plain">{% if mu.split %}The {{ mu.split|length }} {{ 'vote' if mu.split|length == 1 else 'votes' }} where one said yes and the other said no, newest first.{% else %}They have not been on opposite sides of a vote in this Congress.{% endif %}</p></div>
-{% if mu.split %}<div class="card flush">{% for v, pa, pb in mu.split[:25] %}{{ versus(v, pa, pb) }}{% endfor %}</div>
+{% if mu.split %}<div class="card flush">{% for v, pa, pb in mu.split %}{{ versus(v, pa, pb) }}{% endfor %}</div>
 {% if mu.split|length > 25 %}<p class="small muted">Showing the 25 most recent of {{ mu.split|length }}.</p>{% endif %}{% endif %}
 </section>
 
