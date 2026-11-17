@@ -214,10 +214,46 @@
   "one_sentence": "The bill would allow 403(b) retirement plans, which cover certain employees of public schools, charities, and churches, to invest in collective investment trusts and insurance company separate accounts.",
   "short": "The bill would let 403(b) retirement plans invest in collective investment trusts. These are pooled investment assets held by a bank or trust company. The bill would also let these plans invest in insurance company separate accounts. 403(b) plans are retirement plans designed for certain employees of public schools, charities, and churches."
  },
+ "hr-10238": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would require the Small Business Administration to provide cybersecurity information and resources to small businesses, including guidance on a Defense Department certification program for federal contractors.",
+  "short": "The bill directs the Small Business Administration to develop and distribute resources that help small businesses strengthen their cybersecurity and follow best practices. For small businesses seeking federal contracts, the SBA would, working with the Department of Defense and other agencies, provide information on the Cybersecurity Maturity Model Certification (CMMC) program, a cybersecurity framework for Defense contractors. The materials must include certain existing Defense Department resources, and the SBA must report annually to Congress on small businesses that contacted it about cybersecurity."
+ },
  "hr-10326": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The PROOF Act would require states to give the Department of Justice information it needs to investigate or prosecute alleged fraud in certain federally funded programs.",
   "short": "The bill covers programs including Medicaid, the Supplemental Nutrition Assistance Program (SNAP), Temporary Assistance for Needy Families (TANF), certain coronavirus-related federal payments and grants to states, and other programs the Department of Justice identifies as vulnerable to fraud. Federal agencies could use the information obtained only for law enforcement purposes related to fraud, and not for unrelated administrative or commercial purposes. The Department of Justice would have to report annually to Congress on the number of information requests made, the programs involved, and the number of fraud investigations started and convictions obtained using that information."
+ },
+ "hr-10329": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Small Business Administration to publish educational materials helping small businesses recognize and guard against harm from foreign adversary conduct.",
+  "short": "The bill directs the Small Business Administration to publish materials that teach small businesses how foreign adversary conduct, such as cyber intrusions, fraud, intellectual property theft, or forced labor, could harm them. The materials must describe the harmful conduct, identify best practices for protecting sensitive information and supply chains, and provide guidance on cybersecurity and data protection."
+ },
+ "hr-10353": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Small Business Administration to publish quarterly reports on its website about Small Business Investment Companies, including their financing and job effects.",
+  "short": "The bill requires the Small Business Administration (SBA) to post quarterly reports on its website about Small Business Investment Companies (SBICs), which are privately owned, SBA-licensed firms that invest in small businesses. The reports would include items from the SBA's annual report, such as the number of licensed SBICs and the government financing each has received, along with the number of SBIC applicants approved. The reports would also include the number of jobs created or sustained through SBIC investments."
+ },
+ "hr-10355": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Small Business Administration to keep its disaster loan outreach materials accurate, current, and consistent across its disaster field offices.",
+  "short": "The bill directs the Small Business Administration to make sure outreach materials for its disaster loan program, such as press releases and fact sheets, include updated information on eligibility and loan terms. The agency would have to check that materials are current before they are publicly released. It would also review the materials each year to confirm they are consistent across all disaster field operations centers."
+ },
+ "hr-10371": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the SBA's Office of Veterans Business Development to create and carry out policies ensuring the agency meets existing reporting duties on veteran-owned small businesses.",
+  "short": "The bill directs the Office of Veterans Business Development within the Small Business Administration to develop and put in place policies and procedures that ensure compliance with existing reporting requirements for veteran-owned small businesses. Under the bill, those policies must make sure the SBA submits an annual report on the needs of small businesses owned and controlled by veterans, including service-disabled veterans. The reports must also include proposals for improving these businesses' access to government assistance."
+ },
+ "hr-10375": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would expand the SBA 504 loan program with new policy goals, closing flexibilities, and leasing rules for financed buildings, plus an exemption from a credit-availability test for intermediaries.",
+  "short": "The bill expands the Small Business Administration's 504 Loan Program, which provides SBA-backed financing for small business expansion or modernization through certified development company intermediaries. It adds public policy goals for workforce development through work-based training and for revitalizing areas where a disaster has been declared or determined. It also lets intermediaries correct loan document information and reallocate up to 10% of a project's cost to help close loans. Finally, it allows small businesses to lease up to 66% of renovated buildings to other tenants under specified conditions, and exempts intermediaries from showing they cannot obtain credit elsewhere."
  },
  "hr-1039": {
   "model": "claude-haiku-5-5",
@@ -563,6 +599,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would change the federal definition of a tipped employee so that an employee's job duties no longer affect whether they qualify as tipped.",
   "short": "Under current federal law, employers may pay tipped employees less than the federal minimum wage if tips make up the difference, and a worker counts as tipped if they regularly receive more than $30 a month in tips. This bill would broaden the definition of a tipped employee to include any worker who receives tips and other cash wages for a work period at a rate at least equal to the federal minimum wage, regardless of their duties. The work period would be set by the employer."
+ },
+ "hr-2347": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would let people exclude from federal taxable income certain damages received for sexual acts or sexual contact, whether or not there are observable injuries.",
+  "short": "Under current law, damages for personal physical injury or sickness can be excluded from gross income, and the IRS generally requires observable bodily harm to qualify. This bill would allow damages from a judgment, award, or settlement tied to any sexual act or sexual contact to be excluded from gross income, even without medical records or observable injuries. If the judgment, award, or settlement states that the damages are due to such conduct, the IRS would have the burden of proving otherwise in related court proceedings. The bill also requires the IRS to promote public awareness of this exclusion."
  },
  "hr-2400": {
   "basis": "summary",
@@ -1118,6 +1160,12 @@
   "one_sentence": "The bill would require sanctions on foreign persons responsible for online financial scams against U.S. nationals and create a task force to shut down the criminal syndicates behind them.",
   "short": "The bill directs the President to determine whether 43 specified foreign persons, and others responsible for or complicit in online financial scams against U.S. nationals, are subject to sanctions, and to impose applicable sanctions such as blocking property transactions within the United States. It also requires an interagency task force to shut down transnational criminal syndicates that run large scam centers using forced labor of trafficked persons. The task force must submit a strategy to Congress, coordinate its implementation, and report annually for five years, including a list of sanctioned persons. The Department of State is authorized to provide care, shelter, reintegration, and support services for trafficking victims in these scam centers."
  },
+ "hr-5549": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would remove the required end-of-process public hearing for uncontested nuclear plant permits and licenses unless an affected person requests one.",
+  "short": "The bill applies to certain nuclear power plant permits and licenses, such as construction permits and operating licenses. It removes the requirement that the Nuclear Regulatory Commission hold a public hearing at the end of the review when no one whose interests may be affected has requested one. If a hearing is held, the bill directs the Commission to use informal adjudicatory procedures. For uranium enrichment facilities, a hearing would be held only if an affected person requests it."
+ },
  "hr-556": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would bar three federal land agencies from banning or regulating lead ammunition and fishing tackle on federal lands and waters, with some exceptions.",
@@ -1192,6 +1240,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would reauthorize several EPA water quality programs through fiscal year 2031, modify some of them, and restrict certain Clean Water Act funding to nonfederal entities.",
   "short": "The bill extends through fiscal year 2031 several EPA water programs, including the Great Lakes Restoration Initiative, the Long Island Sound Partnership, the Columbia River Basin Restoration Program, the National Estuary Program, and the BEACH Act program. It makes changes to some of these, such as designating the Mississippi Sound as an estuary of national significance and allowing BEACH Act grants to be used to identify sources of contamination at public beaches. It also bars certain Clean Water Act funds for fiscal years 2026 through 2031 from going to nonfederal entities tied to foreign countries of concern, and directs the Government Accountability Office to evaluate and report on specified EPA geographic programs."
+ },
+ "hr-6470": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Congressional Budget Office to give Congress at least two updates to its annual federal spending and revenue projection, one including the economic data used.",
+  "short": "The Increasing Baseline Updates Act would require the Congressional Budget Office to submit at least two updates to its annual baseline, which is a projection of federal spending and revenue under current law, unless the chairs of the congressional budget committees direct otherwise. At least one update would include the economic data used to calculate it. The bill would also ask the President to submit technical budget data to Congress by February 1 each year, where practicable, instead of only as part of the annual budget request."
  },
  "hr-6472": {
   "model": "claude-haiku-5-5",
@@ -1426,6 +1480,12 @@
   "one_sentence": "This bill would place about 847 acres of federal land in San Diego County, California, into trust for the Barona Group of Capitan Grande Band of Mission Indians as part of its reservation.",
   "short": "The bill would take three parcels of federal land in San Diego County, totaling about 847 acres, into trust for the Barona Group of Capitan Grande Band of Mission Indians, making the land part of the Tribe's reservation. One parcel of about 164 acres is managed by the Bureau of Land Management, and two parcels of about 683 acres are managed by the Forest Service, whose administrative jurisdiction would be transferred to the Department of the Interior. The land would remain subject to existing liens, rights-of-way, leases, permits, and easements, would keep public access to roads and trails, and would allow federal employees access for operations and emergencies such as wildfire suppression. The Tribe would have to maintain a fuel break on two of the parcels under Forest Service standards, and gaming would be prohibited on the land."
  },
+ "hr-8552": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Department of Veterans Affairs to raise certain veterans' and survivors' benefit amounts by the same percentage as the Social Security cost-of-living increase effective December 1, 2026.",
+  "short": "The bill directs the Department of Veterans Affairs to increase wartime disability compensation, additional compensation for dependents, the clothing allowance for certain disabled veterans, and dependency and indemnity compensation for surviving spouses and children. Each increase would match the percentage cost-of-living increase in Social Security benefits that takes effect December 1, 2026. The VA would have to publish the increased amounts in the Federal Register. The VA may also make a similar adjustment to disability compensation rates for people who have not received compensation for a service-connected disability or death."
+ },
  "hr-856": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require the Office of Management and Budget to review federal agencies' purchasing rules for lowest-price, technically acceptable contract selections and report whether they create national security risks.",
@@ -1486,6 +1546,12 @@
   "one_sentence": "Requires the Department of Homeland Security to create a department-wide policy protecting sensitive research and development information from unauthorized access, and directs a federal watchdog to review DHS compliance with rules on disclosing research conflicts.",
   "short": "The bill directs the Science and Technology Directorate at the Department of Homeland Security to develop a department-wide policy for safeguarding research and development from unauthorized access or disclosure of sensitive information in related acquisitions. It also requires the Government Accountability Office to report on how well DHS complies with a 2021 presidential memorandum and related guidance requiring certain disclosures about government-funded research, such as conflicts of interest involving foreign governments."
  },
+ "hr-9084": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Department of Energy to publicly post, within 72 hours, information about its authorizations of certain nuclear facilities and related safety actions.",
+  "short": "The bill directs the Department of Energy to post on a public website, within 72 hours, information about agreements to authorize higher-hazard nuclear facilities (Hazard Categories 1, 2, or 3) and any actions taken to change related directives or safety standards. The Department would also have to post preliminary and final documented safety analyses for these facilities. In addition, it would issue an annual report describing its activities to authorize such facilities during the previous year."
+ },
  "hr-915": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would allow the Small Business Administration to fund business software and cloud computing services, including AI-based tools, through its 7(a) loan program.",
@@ -1531,11 +1597,29 @@
   "one_sentence": "The bill would let uranium enrichment facilities be built before the Nuclear Regulatory Commission issues a license, under the same terms that apply to other nuclear fuel facilities.",
   "short": "Under current law, a Nuclear Regulatory Commission license is required before a uranium enrichment facility can be built. This bill would allow construction to begin before that license is issued, treating enrichment facilities as it already treats uranium conversion and fuel fabrication facilities. Such facilities would still need an NRC license to process and handle special nuclear material and source material. The NRC would be required to issue or revise its regulations to carry out the bill within 180 days of enactment."
  },
+ "hr-9613": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would let the Nuclear Regulatory Commission's reactor safeguards advisory committee skip reviewing some license applications and focus its work on specific reactor-safety issues.",
+  "short": "The bill changes how the Advisory Committee on Reactor Safeguards, which advises the Nuclear Regulatory Commission, operates. The committee could decline to review certain license applications for commercial, industrial, medical, or research purposes if they do not raise unique, novel, or noteworthy issues or issues that warrant its review. It would focus on safety-significant, novel reactor design issues not previously acted on, and the committee's membership would reflect a range of relevant technical expertise."
+ },
+ "hr-9614": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would let the Nuclear Regulatory Commission set a career appointee's annual pay up to 10% above the maximum basic pay for an NRC Senior Executive Service position.",
+  "short": "The bill gives the Nuclear Regulatory Commission authority to raise the annual compensation of a career appointee. The pay could be set up to 10% above the maximum annual basic pay rate for a Senior Executive Service position at the NRC. This authority would apply regardless of when the appointee was appointed. The summary is based on draft bill text and may differ from the bill as introduced."
+ },
  "hr-9640": {
   "basis": "summary",
   "model": "claude-haiku-5-5",
   "one_sentence": "Reauthorizes through fiscal year 2031 the USGS Earth Mapping Resources Initiative, which maps U.S. natural resources with a focus on critical minerals, and adds new requirements for contractors and data.",
   "short": "The bill extends the U.S. Geological Survey's Earth Mapping Resources Initiative through fiscal year 2031. The program integrates and modernizes mapping of U.S. natural resources, with a focus on critical minerals such as lithium and titanium. The bill requires contractors to disclose the ownership of the primary contractor and each subcontractor, and directs the USGS to prefer U.S.-owned and controlled entities where practicable, while considering specialized expertise. It also adds data from the USGS 3D Hydrography Program and explicitly allows the initiative's mapping to use modern sensing technologies and data-driven analysis."
+ },
+ "hr-9718": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Small Business Administration's Office of Manufacturing and Trade to create and maintain a webpage that helps small businesses find resources for moving manufacturing back to the United States.",
+  "short": "The bill directs the Office of Manufacturing and Trade within the Small Business Administration to set up and keep up a webpage on onshoring, which means moving manufacturing that U.S. companies do overseas back to domestic production. The webpage must list contact information for relevant SBA offices and partner organizations. It must also include a free tool that helps small businesses identify entities that could assist with bringing their manufacturing capacity to the United States, along with any other information the office considers appropriate."
  },
  "hr-973": {
   "model": "claude-haiku-5-5",
@@ -1962,6 +2046,12 @@
   "one_sentence": "The Secure America Act would provide about $70 billion through fiscal year 2029 to DHS, CBP, and ICE for immigration enforcement, border security, and related activities.",
   "short": "The act provides funding to the Department of Homeland Security, U.S. Customs and Border Protection, and U.S. Immigration and Customs Enforcement through fiscal year 2029. Funds would cover hiring and training Border Patrol and ICE personnel, including child exploitation investigators, and purchasing border screening and surveillance technology. It also funds immigration enforcement activities, including agreements that let state and local agencies perform certain immigration functions. The act is a reconciliation bill, which Congress considers under expedited procedures that limit filibusters and amendments in the Senate."
  },
+ "s-2296": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill sets defense policy and authorizes spending limits for Department of Defense programs, military construction, and certain Department of Energy national security programs for fiscal year 2026.",
+  "short": "The bill sets policies for fiscal year 2026 for Department of Defense programs and activities, military construction, and national security programs of the Department of Energy, and it authorizes the Defense Nuclear Facilities Safety Board. It authorizes appropriations but does not itself provide budget authority, which comes from separate appropriations legislation. Among other provisions, it authorizes procurement of items such as aircraft, ships, and missiles, sets active duty and reserve personnel levels, and requires a strategy on the national security implications of emerging biotechnologies. It also extends the Pacific Deterrence Initiative through fiscal year 2026 and repeals various statutory provisions related to diversity, equity, and inclusion within the Department of Defense, including the position of Chief Diversity Officer."
+ },
  "s-2393": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This act authorizes the Department of Veterans Affairs to carry out a major medical facility project in St. Louis, Missouri, during fiscal year 2026.",
@@ -1982,10 +2072,28 @@
   "one_sentence": "The ARTIST Act would stop states from banning the sale, trade, or possession of marine mammal ivory, bone, or baleen legally made by Alaska Natives into handicrafts and clothing.",
   "short": "The bill, also called Alaska's Right to Ivory Sales and Tradition Act, would prohibit states from banning certain marine mammal products made by Alaska Natives. Covered items include marine mammal ivory, bone, and baleen that are legally produced as authentic Alaska Native handicrafts and clothing. Under the bill, states could not block the interstate commerce, importation, sale, transfer, trade, barter, or possession of these items."
  },
+ "s-2806": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would automatically provide funding at prior-year rates when annual appropriations are not enacted before the fiscal year begins, to prevent a government shutdown.",
+  "short": "If the appropriations bills for a fiscal year have not been enacted before that fiscal year starts, and no continuing appropriations are in effect, this bill would provide funding. The funding would be set at the rate of operations from the prior fiscal year. It would allow programs, projects, and activities funded in the preceding year to continue."
+ },
  "s-284": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill extends the Congressional Award Board, which runs the Congressional Award Program for youth ages 14 to 23, through fiscal year 2028 and removes a requirement for the program's medal metals.",
   "short": "The Congressional Award Program recognizes young people aged 14 to 23 who meet set standards in public service, personal development, and physical fitness. This act reauthorizes the board that administers the program through fiscal year 2028. It also removes the requirement that program medals be made of gold-plated bronze, rhodium-plated bronze, or bronze. The reauthorization is effective as if enacted on October 1, 2023, the date a previous authorization expired."
+ },
+ "s-2882": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would fund most federal agencies at fiscal year 2025 levels through October 31, 2025, or until full-year appropriations are enacted, to avoid a government shutdown.",
+  "short": "The bill provides temporary, or continuing, funding for federal agencies for fiscal year 2026, mostly at fiscal year 2025 levels, through the earlier of October 31, 2025, or enactment of the applicable full appropriations act. It also includes additional funding for the Corporation for Public Broadcasting and security for federal officials. Other provisions permanently extend the expanded premium tax credit for health insurance purchased through exchanges, repeal certain health care provisions from the One Big Beautiful Bill Act, and extend several expiring programs on health care, veterans, homeland security, and agriculture."
+ },
+ "s-3012": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The Shutdown Fairness Act would provide funding so federal workers required to work during a government shutdown are paid while they work rather than after the shutdown ends.",
+  "short": "The bill provides appropriations for federal agencies to pay standard wages, allowances, differentials, and benefits to \"excepted employees\", meaning employees required to work during a government shutdown. Under current law these employees are not paid until the shutdown is over. The bill also includes certain contractors who support federal employees during a shutdown, as well as active-duty members of the Armed Forces, in the definition of excepted employee. Agencies may not use these funds during any period when continuing appropriations are in effect for paying their excepted employees, and the bill would take effect as if enacted on September 30, 2025."
  },
  "s-307": {
   "model": "claude-haiku-5-5",
@@ -2002,10 +2110,28 @@
   "one_sentence": "The HALT Fentanyl Act would permanently place fentanyl-related substances as a class into Schedule I of the Controlled Substances Act and apply the same penalties used for fentanyl analogues.",
   "short": "The act permanently places fentanyl-related substances as a group into Schedule I, the category for drugs with a high potential for abuse and no currently accepted medical use. Offenses involving these substances would face the same quantity thresholds and penalties as those for fentanyl analogues, such as a 10-year mandatory minimum prison term for 100 grams or more. The act also creates a new alternative registration process for certain Schedule I research and changes several research registration rules, including allowing a single registration for related sites in some cases. It further expresses the sense that Congress agrees with a 2018 federal court decision treating butyryl fentanyl as a fentanyl analogue."
  },
+ "s-3385": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would extend for three years, through 2028, temporary expansions of the federal health insurance premium tax credit that lower costs for eligible taxpayers.",
+  "short": "Currently, taxpayers may claim a premium tax credit to help pay for health insurance bought through exchanges, and temporary rules enacted in 2021 and 2022 removed the income cap of 400% of the federal poverty level, lowered the percentages used to calculate the credit, and stopped inflation adjustments to those percentages. This bill would extend those three temporary changes through 2028. Under the bill, the credit would continue to be available regardless of income, with the lower applicable percentages and no inflation adjustment, for three more years."
+ },
+ "s-3386": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would give federal money to some people with bronze or catastrophic marketplace plans for their health savings accounts, change Medicaid and CHIP rules for certain noncitizens, and restrict coverage of gender-transition procedures.",
+  "short": "For 2026 and 2027, the bill would have the Department of Health and Human Services deposit $1,000 or $1,500 a year into health savings accounts for eligible people aged 18 to 64 with bronze or catastrophic plans and income up to 700% of the federal poverty level. Starting in 2027, it would provide funds for cost-sharing reductions for some people with silver plans and allow anyone to enroll in a catastrophic plan. It would also lower the enhanced federal Medicaid matching rate for states that cover certain noncitizens who are not qualified aliens, make coverage during status verification optional, and bar exchange plans and federal Medicaid and CHIP payments from covering gender-transition procedures."
+ },
  "s-356": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill extends and modifies the Secure Rural Schools program, which makes payments to states and counties containing federal land for schools, roads, and related services.",
   "short": "The bill extends the Secure Rural Schools program, under which states and counties with certain federal land can receive payments from the Forest Service or the Bureau of Land Management for schools, roads, and certain other municipal services. It extends these payments through fiscal year 2026 and provides payments that lapsed for fiscal years 2024 and 2025. It also extends, through fiscal year 2028, the authority of counties to start projects using these funds and the authority to start projects proposed by resource advisory committees."
+ },
+ "s-3627": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require colleges that receive federal student aid to inform students about rights and resources for pregnant students who choose to carry a pregnancy to term.",
+  "short": "Colleges and universities that take part in federal student aid programs would have to give prospective and enrolled students information on rights and resources for pregnant students who choose to carry a baby to term. The required information would include a list of campus and community resources for carrying the pregnancy and caring for the baby after birth. It would also cover available accommodations for pregnant students who are parenting, and how to file a discrimination complaint related to the decision to carry a baby to term."
  },
  "s-3971": {
   "model": "claude-haiku-5-5",
@@ -2017,10 +2143,34 @@
   "one_sentence": "This bill extends until June 12, 2026, the authorities in Title VII of the Foreign Intelligence Surveillance Act, which govern collecting foreign intelligence from targets outside the United States.",
   "short": "The bill extends the authorities of Title VII of the Foreign Intelligence Surveillance Act (FISA) until June 12, 2026. Title VII generally covers surveillance and other methods of gathering foreign intelligence directed at targets outside the United States. It includes Section 702, which concerns acquiring communications of non-U.S. persons believed to be outside the United States. Information about U.S. persons may incidentally be collected this way and later searched under certain circumstances."
  },
+ "s-4668": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would set rules for college athletes' name, image, and likeness deals, and let schools and conferences jointly sell certain media rights with limited antitrust protection.",
+  "short": "The bill requires that colleges and athletic associations not block student athletes from signing name, image, or likeness agreements, and it requires athletes to report such compensation above $600. It sets state registration for agents, caps agent fees at 5%, and permits one transfer without losing eligibility, and it makes the House settlement's cap on school revenue sharing with athletes permanent with annual inflation adjustments. It also requires large institutions to keep at least their 2024-25 number of grant-in-aid opportunities for sports that do not generate positive net revenue, with a waiver for financial hardship and a nine-year expiration. Finally, it creates a limited antitrust exemption for schools and conferences that jointly transfer telecast rights to a third party, if at least 75% of Football Bowl Subdivision institutions participate."
+ },
+ "s-4784": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill sets defense policy and authorizes funding and personnel levels for Department of Defense and Department of Energy national security programs for fiscal year 2027.",
+  "short": "The bill sets policies and authorities for fiscal year 2027 for Department of Defense programs, military construction, and certain national security programs of the Department of Energy. It authorizes the procurement of items such as aircraft and ships, sets active duty and reserve personnel strength levels, and addresses military health care, compensation, and defense acquisition and contracting. It also covers defense policy on foreign nations, cyber operations and artificial intelligence, and reviews of materials important to defense industry supply, along with authorizations for specific military construction projects and the National Nuclear Security Administration and Defense Nuclear Facilities Safety Board."
+ },
  "s-5": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The Laken Riley Act would require federal detention of certain non-U.S. nationals arrested for specified crimes and let states sue the federal government over certain immigration enforcement decisions.",
   "short": "The act requires the Department of Homeland Security to detain certain non-U.S. nationals who are unlawfully present and have been charged with, arrested for, convicted of, or admitted to committing offenses such as burglary, theft, shoplifting, assault of a law enforcement officer, or crimes causing death or serious bodily injury. It also allows state governments to seek court orders against the federal government over specified immigration decisions or failures that cause them or their residents harm, including financial harm of more than $100. Covered matters include releasing a non-U.S. national from custody, certain inspection and asylum interview requirements, visa issuance for countries that unreasonably deny or delay acceptance of their nationals, limits on immigration parole, and failing to detain people ordered removed."
+ },
+ "s-5271": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require voters in federal elections to show valid physical photo identification before receiving a ballot, with specified exceptions.",
+  "short": "The bill would bar state and local election officials from giving a federal-election ballot to anyone who does not present valid physical photo identification. Voters without it could cast a provisional ballot, which counts only if they show the required identification, or sign an affidavit citing a religious objection to being photographed, within three days. Non-in-person voting methods would generally require a copy of photo identification or, under certain conditions, the last four digits of a Social Security number with an affidavit. Overseas military voters and certain disabled or elderly voters are exempt, and states must, to the extent practicable, provide public access to devices for making free copies of identification."
+ },
+ "s-6": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require medical staff to give a child born alive after an abortion or attempted abortion the same care given to any other child of that gestational age, and set penalties for failing to do so.",
+  "short": "The bill sets care requirements for a child born alive following an abortion or attempted abortion. A health care practitioner present must provide the same degree of care that would reasonably be given to any other child born alive at that gestational age and must ensure the child is immediately admitted to a hospital. Anyone who knows of a failure to meet these requirements must immediately report it to law enforcement, and violations carry a fine, up to five years in prison, or both. Intentionally killing or attempting to kill a child born alive would be prosecutable as murder, and the mother cannot be criminally prosecuted under the bill, though she may bring a civil action against a practitioner or employee for violations."
  },
  "s-629": {
   "model": "claude-haiku-5-5",
@@ -2032,20 +2182,104 @@
   "one_sentence": "The bill would set deadlines and notice requirements for the Bureau of Indian Affairs when it processes mortgages and related land documents on tribal trust land.",
   "short": "The bill requires the Bureau of Indian Affairs to notify lenders when it receives mortgage or right-of-way documents for tribal trust land, complete a preliminary review within 10 days, and approve or disapprove them within 20 or 30 days depending on the type. It also sets response times for certified title status reports and requires notice of processing delays. The bill gives federal agencies and tribes read-only access to the Bureau's Trust Asset and Accounting Management System, directs the Government Accountability Office to report on digitizing documents, and creates a Realty Ombudsman position within the Bureau's Division of Real Estate Services."
  },
+ "s-9": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would bar federally funded schools from letting people whose biological sex at birth was male take part in athletic programs designated for women or girls.",
+  "short": "The bill generally prohibits school athletic programs from allowing individuals whose biological sex at birth was male to participate in programs designated for women or girls. It would treat such participation as a violation of Title IX, the federal law that bans sex discrimination in federally funded education programs, including public schools and colleges. Under the bill, sex is defined by an individual's reproductive biology and genetics at birth."
+ },
+ "sconres-22": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This concurrent resolution would set Congress's budget framework for federal spending and revenue for fiscal year 2026 and recommended budget levels for fiscal years 2027 through 2035.",
+  "short": "The resolution sets out recommended totals for federal revenues, spending, deficits, and public debt for fiscal year 2026 and for each year from 2027 through 2035. It also covers major categories of government spending and recommended levels for Social Security and Postal Service administrative expenses for budget enforcement in the Senate. The resolution creates reserve funds that allow some committee spending limits to be adjusted for legislation on efficiencies, consolidations, savings, or health savings accounts. It also includes rules for enforcing the budget, such as points of order, treatment of emergency legislation, and the use of Congressional Budget Office cost estimates."
+ },
  "sconres-33": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This concurrent resolution sets the federal budget framework for fiscal year 2026 and budget levels through 2035, and directs four committees to draft reconciliation legislation adding no more than $70 billion to the deficit.",
   "short": "The resolution sets out recommended federal revenue, spending, deficit, and debt levels for fiscal year 2026 and projected levels for fiscal years 2027 through 2035. It instructs the House Homeland Security and Judiciary Committees and the Senate Homeland Security and Governmental Affairs and Judiciary Committees to submit recommendations by May 15, 2026, for legislation that would increase the deficit by no more than $70 billion over those years. It also creates reserve funds for certain reconciliation and immigration and border security legislation and sets budget enforcement rules for both chambers."
+ },
+ "sconres-7": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This concurrent resolution sets Congress's budget for federal fiscal year 2025 and budget levels for fiscal years 2026 through 2034, and instructs committees to write spending and revenue legislation.",
+  "short": "The resolution sets recommended federal revenue, spending, deficit, and debt levels for fiscal year 2025 and projected levels for fiscal years 2026 through 2034. It directs several House and Senate committees to prepare reconciliation legislation that would increase or decrease the deficit by specified amounts, with reports due to the budget committees by March 7, 2025. It also creates reserve funds for certain adjustments and sets procedures for budget enforcement, including treatment of Social Security Administration and U.S. Postal Service administrative expenses."
+ },
+ "sjres-10": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would end the national energy emergency that the President declared in a January 20, 2025 executive order.",
+  "short": "The resolution would terminate the national emergency relating to energy that the President declared on January 20, 2025, in Executive Order 14156. That order said U.S. energy supply and infrastructure are insufficient to meet national needs and defined energy to include oil, natural gas, refined fuels, uranium, coal, biofuels, geothermal heat, hydropower, and critical minerals. The order directed federal agencies to use emergency and other authorities to approve domestic energy development, speed up energy infrastructure projects, and use emergency permitting under certain environmental rules. It also directed the Department of Defense to assess its ability to acquire and transport energy and to use emergency military construction authority to address any vulnerabilities found."
+ },
+ "sjres-104": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The resolution would require the President to remove U.S. armed forces from hostilities against Iran unless Congress has declared war or authorized the use of military force for that purpose.",
+  "short": "The joint resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran that Congress has not authorized, either through a declaration of war or an authorization to use military force. It states that it does not prevent the United States from defending against an attack on the country or on its personnel or facilities in other nations."
  },
  "sjres-11": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This joint resolution would nullify a 2024 Bureau of Ocean Energy Management rule that required archaeological reports for certain offshore oil and gas plans.",
   "short": "The resolution would cancel a Bureau of Ocean Energy Management rule, published September 3, 2024, that required oil and gas lessees and operators to submit an archaeological report with exploration or development plans for the Outer Continental Shelf. An archaeological report identifies material remains of human activity at least 50 years old. If the resolution is enacted, the Bureau would have to reinstate its earlier regulations, which required such a report only when a regional director had reason to believe an archaeological resource may be present in the lease area."
  },
+ "sjres-114": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would require the President to remove U.S. Armed Forces from hostilities within or against Iran that Congress has not authorized.",
+  "short": "The resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran unless Congress has enacted a declaration of war or an authorization to use military force for that purpose. It states that it does not prevent the United States from defending against an attack on the United States or on its personnel or facilities in other nations."
+ },
+ "sjres-116": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The joint resolution would require the President to remove U.S. armed forces from hostilities against Iran that Congress has not authorized.",
+  "short": "The resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran unless Congress has enacted a declaration of war or an authorization for military force for that purpose. It states that it does not prevent the United States from defending against an attack on the United States or on its personnel or facilities in other nations."
+ },
+ "sjres-118": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The resolution would direct the President to remove U.S. Armed Forces from hostilities within or against Iran that Congress has not authorized.",
+  "short": "The resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran unless Congress has enacted a declaration of war or an authorization for the use of military force for that purpose. It states that it does not prevent the United States from defending against an attack on the United States or on its personnel or facilities in other nations."
+ },
+ "sjres-12": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify an Environmental Protection Agency rule on compliance procedures for the federal charge on methane and other emissions from oil and gas operations.",
+  "short": "The measure is a joint resolution of disapproval under the Congressional Review Act that would nullify a Environmental Protection Agency rule published November 18, 2024, titled \"Waste Emissions Charge for Petroleum and Natural Gas Systems: Procedures for Facilitating Compliance, Including Netting and Exemptions.\" The rule sets compliance requirements under the Methane Emissions Reduction Program. Under that program, the EPA collects an annual charge on methane and other greenhouse gas emissions from oil and gas sector entities whose emissions exceed specified waste emissions thresholds."
+ },
+ "sjres-123": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The joint resolution would require the President to remove U.S. armed forces from hostilities against Iran that Congress has not authorized.",
+  "short": "The resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran unless Congress has enacted a declaration of war or an authorization to use military force for that purpose. It states that it does not prevent the United States from defending against an attack on the country or on its personnel or facilities in other nations."
+ },
+ "sjres-124": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would require the President to remove U.S. Armed Forces from hostilities against Cuba unless Congress has declared war or authorized the use of military force for that purpose.",
+  "short": "The resolution directs the President to remove U.S. Armed Forces from hostilities within or against the Republic of Cuba unless Congress has enacted a declaration of war or an authorization for such use of force. It states that it does not prevent the United States from defending itself against an armed attack or the threat of an imminent armed attack. It also states that it does not prevent lawful counternarcotics operations."
+ },
  "sjres-13": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This joint resolution would cancel a 2024 Office of the Comptroller of the Currency rule that changed how proposed bank mergers are reviewed.",
   "short": "The measure would nullify a final rule from the Office of the Comptroller of the Currency, titled \"Business Combinations Under the Bank Merger Act,\" published September 25, 2024. That rule changed procedures for reviewing applications for bank mergers. According to the official summary, the rule removes automatic approvals under an expedited review procedure and discontinues streamlined application forms."
+ },
+ "sjres-138": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would block a proposed U.S. military sale of certain defense articles and services to the Government of Israel.",
+  "short": "The measure is a joint resolution of disapproval, meaning it seeks to stop a specific proposed foreign military sale. According to the Congressional Research Service summary, it prohibits the proposed sale to Israel of certain defense articles and services. The official material provided does not list the specific items, dollar values, or the reasons for the resolution."
+ },
+ "sjres-163": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The resolution would require the President to remove U.S. armed forces from hostilities against Iran unless Congress has declared war or authorized the use of military force for that purpose.",
+  "short": "The joint resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran that have not been authorized by Congress, through a declaration of war or an authorization to use military force. It states that it does not prevent the United States from defending against an attack on the country or on its personnel or facilities in other nations."
+ },
+ "sjres-172": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The joint resolution would require the President to remove U.S. armed forces from hostilities against Iran unless Congress has declared war or authorized the use of military force for that purpose.",
+  "short": "The resolution directs the President to remove U.S. Armed Forces from hostilities within or against Iran that have not been approved by Congress through a declaration of war or an authorization for the use of military force. It states that it does not prevent the United States from defending against an attack on the country or on its personnel or facilities in other nations."
  },
  "sjres-18": {
   "model": "claude-haiku-5-5",
@@ -2056,6 +2290,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This resolution would nullify a Consumer Financial Protection Bureau rule that defines which payment app companies are subject to the Bureau's supervision.",
   "short": "The resolution would disapprove and nullify a final rule the Consumer Financial Protection Bureau published on December 10, 2024. That rule defines \"larger participants\" in the market for general-use digital consumer payment applications, meaning payment apps, that are subject to CFPB supervision. Under the rule, a nonbank company is a larger participant if it handles at least 50 million transactions annually and is not a small business concern."
+ },
+ "sjres-3": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This joint resolution would nullify a December 2024 IRS rule that requires certain digital asset brokers to report gross proceeds from sales to the IRS.",
+  "short": "The joint resolution would cancel a rule issued by the Internal Revenue Service on December 30, 2024, titled \"Gross Proceeds Reporting by Brokers That Regularly Provide Services Effectuating Digital Asset Sales.\" According to the Congressional Research Service summary, the rule generally requires persons carrying out decentralized financial (DeFi) transactions to report certain information about digital asset sales to the IRS. If passed, the resolution would nullify that rule, meaning it would no longer take effect."
  },
  "sjres-31": {
   "model": "claude-haiku-5-5",
