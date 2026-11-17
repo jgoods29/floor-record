@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.287,
+  "kept": 0.743,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -22,11 +28,13 @@
    "parts": [
     [
      "Title I",
-     "LAW-ENFORCEMENT INNOVATE TO DE-ESCALATE"
+     "LAW-ENFORCEMENT INNOVATE TO DE-ESCALATE",
+     ""
     ],
     [
      "Title II",
-     "INNOVATE LESS LETHAL TO DE-ESCALATE TAX MODERNIZATION"
+     "INNOVATE LESS LETHAL TO DE-ESCALATE TAX MODERNIZATION",
+     ""
     ]
    ],
    "sections": 5,

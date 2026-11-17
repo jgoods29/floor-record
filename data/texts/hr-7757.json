@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.527,
+  "kept": 0.759,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,51 +16,63 @@
    "parts": [
     [
      "Title I",
-     "SHIELDING MINORS FROM OBSCENITY"
+     "SHIELDING MINORS FROM OBSCENITY",
+     ""
     ],
     [
      "Title II",
-     "ADDRESSING HARMS TO MINORS ON ONLINE PLATFORMS"
+     "ADDRESSING HARMS TO MINORS ON ONLINE PLATFORMS",
+     ""
     ],
     [
      "Subtitle A",
-     "Kids Online Safety"
+     "Kids Online Safety",
+     ""
     ],
     [
      "Subtitle B",
-     "Safe Messaging for Kids"
+     "Safe Messaging for Kids",
+     ""
     ],
     [
      "Subtitle C",
-     "Stop Profiling Youth and Kids"
+     "Stop Profiling Youth and Kids",
+     ""
     ],
     [
      "Title III",
-     "SOCIAL GAMING PLATFORMS"
+     "SOCIAL GAMING PLATFORMS",
+     ""
     ],
     [
      "Title IV",
-     "ARTIFICIAL INTELLIGENCE CHATBOTS"
+     "ARTIFICIAL INTELLIGENCE CHATBOTS",
+     ""
     ],
     [
      "Title V",
-     "RESEARCH, EDUCATION, AND BEST PRACTICES FOR PROTECTING MINORS"
+     "RESEARCH, EDUCATION, AND BEST PRACTICES FOR PROTECTING MINORS ONLINE",
+     ""
     ],
     [
      "Subtitle A",
-     "Research"
+     "Research",
+     ""
     ],
     [
      "Subtitle B",
-     "Education"
+     "Education PART 1--PROMOTING A SAFE INTERNET FOR MINORS ACT",
+     ""
     ],
     [
      "Subtitle C",
-     "Partnerships and Best Practices"
+     "Partnerships and Best Practices",
+     ""
     ],
     [
      "Title VI",
-     "GENERAL PROVISIONS"
+     "GENERAL PROVISIONS",
+     ""
     ]
    ],
    "sections": 65,
@@ -82,59 +100,73 @@
    "parts": [
     [
      "Title I",
-     "SHIELDING MINORS FROM OBSCENITY"
+     "SHIELDING MINORS FROM OBSCENITY",
+     ""
     ],
     [
      "Title II",
-     "ONLINE PLATFORMS"
+     "ONLINE PLATFORMS",
+     ""
     ],
     [
      "Subtitle A",
-     "Kids Online Safety"
+     "Kids Online Safety",
+     ""
     ],
     [
      "Subtitle B",
-     "Stop Profiling Youth and Kids"
+     "Stop Profiling Youth and Kids",
+     ""
     ],
     [
      "Title III",
-     "SOCIAL GAMING PLATFORMS"
+     "SOCIAL GAMING PLATFORMS",
+     ""
     ],
     [
      "Title IV",
-     "ARTIFICIAL INTELLIGENCE CHATBOTS"
+     "ARTIFICIAL INTELLIGENCE CHATBOTS",
+     ""
     ],
     [
      "Title V",
-     "RESEARCH, EDUCATION, AND BEST PRACTICES FOR PROTECTING MINORS"
+     "RESEARCH, EDUCATION, AND BEST PRACTICES FOR PROTECTING MINORS ONLINE",
+     ""
     ],
     [
      "Subtitle A",
-     "Research"
+     "Research",
+     ""
     ],
     [
      "Subtitle B",
-     "Education"
+     "Education PART 1--PROMOTING A SAFE INTERNET FOR MINORS ACT",
+     ""
     ],
     [
      "Subtitle C",
-     "Partnerships and Best Practices"
+     "Partnerships and Best Practices",
+     ""
     ],
     [
      "Title VI",
-     "KIDS PRIVACY PROTECTIONS"
+     "KIDS PRIVACY PROTECTIONS",
+     ""
     ],
     [
      "Subtitle A",
-     "COPPA 2.0"
+     "COPPA 2.0",
+     ""
     ],
     [
      "Subtitle B",
-     "Data Broker Disclosures"
+     "Data Broker Disclosures",
+     ""
     ],
     [
      "Title VII",
-     "GENERAL PROVISIONS"
+     "GENERAL PROVISIONS",
+     ""
     ]
    ],
    "sections": 63,

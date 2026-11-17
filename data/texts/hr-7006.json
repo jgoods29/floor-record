@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 1.0,
+  "kept": 0.999,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,15 +16,18 @@
    "parts": [
     [
      "Division A",
-     "FINANCIAL SERVICES AND GENERAL GOVERNMENT APPROPRIATIONS"
+     "FINANCIAL SERVICES AND GENERAL GOVERNMENT APPROPRIATIONS ACT, 2026",
+     "A"
     ],
     [
      "Division B",
-     "NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED"
+     "NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED PROGRAMS APPROPRIATIONS ACT, 2026",
+     "B"
     ],
     [
      "Division C",
-     "OTHER MATTERS"
+     "OTHER MATTERS",
+     "C"
     ]
    ],
    "sections": 7,
@@ -41,15 +50,18 @@
    "parts": [
     [
      "Division A",
-     "FINANCIAL SERVICES AND GENERAL GOVERNMENT APPROPRIATIONS"
+     "FINANCIAL SERVICES AND GENERAL GOVERNMENT APPROPRIATIONS ACT, 2026",
+     "A"
     ],
     [
      "Division B",
-     "NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED"
+     "NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED PROGRAMS APPROPRIATIONS ACT, 2026",
+     "B"
     ],
     [
      "Division C",
-     "OTHER MATTERS"
+     "OTHER MATTERS",
+     "C"
     ]
    ],
    "sections": 7,

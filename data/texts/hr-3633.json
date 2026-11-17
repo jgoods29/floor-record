@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.747,
+  "kept": 0.818,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,23 +16,28 @@
    "parts": [
     [
      "Title I",
-     "DEFINITIONS; RULEMAKING; PROVISIONAL REGISTRATION"
+     "DEFINITIONS; RULEMAKING; PROVISIONAL REGISTRATION",
+     ""
     ],
     [
      "Title II",
-     "OFFERS AND SALES OF DIGITAL COMMODITIES"
+     "OFFERS AND SALES OF DIGITAL COMMODITIES",
+     ""
     ],
     [
      "Title III",
-     "REGISTRATION FOR INTERMEDIARIES AT THE SECURITIES AND"
+     "REGISTRATION FOR INTERMEDIARIES AT THE SECURITIES AND EXCHANGE COMMISSION",
+     ""
     ],
     [
      "Title IV",
-     "REGISTRATION FOR DIGITAL COMMODITY INTERMEDIARIES AT THE"
+     "REGISTRATION FOR DIGITAL COMMODITY INTERMEDIARIES AT THE COMMODITY FUTURES TRADING COMMISSION",
+     ""
     ],
     [
      "Title V",
-     "INNOVATION AND TECHNOLOGY IMPROVEMENTS"
+     "INNOVATION AND TECHNOLOGY IMPROVEMENTS",
+     ""
     ]
    ],
    "sections": 53,
@@ -43,27 +54,33 @@
    "parts": [
     [
      "Title I",
-     "DEFINITIONS; RULEMAKING; EXPEDITED REGISTRATION"
+     "DEFINITIONS; RULEMAKING; EXPEDITED REGISTRATION",
+     ""
     ],
     [
      "Title II",
-     "OFFERS AND SALES OF DIGITAL COMMODITIES"
+     "OFFERS AND SALES OF DIGITAL COMMODITIES",
+     ""
     ],
     [
      "Title III",
-     "REGISTRATION FOR INTERMEDIARIES AT THE SECURITIES AND"
+     "REGISTRATION FOR INTERMEDIARIES AT THE SECURITIES AND EXCHANGE COMMISSION",
+     ""
     ],
     [
      "Title IV",
-     "REGISTRATION FOR DIGITAL COMMODITY INTERMEDIARIES AT THE"
+     "REGISTRATION FOR DIGITAL COMMODITY INTERMEDIARIES AT THE COMMODITY FUTURES TRADING COMMISSION",
+     ""
     ],
     [
      "Title V",
-     "INNOVATION AND TECHNOLOGY IMPROVEMENTS"
+     "INNOVATION AND TECHNOLOGY IMPROVEMENTS",
+     ""
     ],
     [
      "Title VI",
-     "ANTI-CBDC SURVEILLANCE STATE ACT"
+     "ANTI-CBDC SURVEILLANCE STATE ACT",
+     ""
     ]
    ],
    "sections": 66,

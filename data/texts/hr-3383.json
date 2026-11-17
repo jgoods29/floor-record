@@ -1,7 +1,13 @@
 {
  "checked": "2026-11-17",
- "compare": null,
- "review": false,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.068,
+  "kept": 0.876,
+  "later": "eh",
+  "verdict": "expanded"
+ },
+ "review": true,
  "versions": [
   {
    "chars": 6193,
@@ -22,15 +28,18 @@
    "parts": [
     [
      "Title I",
-     "EXPANDING ACCESS TO CAPITAL FOR SMALL BUSINESSES"
+     "EXPANDING ACCESS TO CAPITAL FOR SMALL BUSINESSES",
+     ""
     ],
     [
      "Title II",
-     "INCREASING OPPORTUNITIES FOR INVESTORS"
+     "INCREASING OPPORTUNITIES FOR INVESTORS",
+     ""
     ],
     [
      "Title III",
-     "STRENGTHENING PUBLIC MARKETS"
+     "STRENGTHENING PUBLIC MARKETS",
+     ""
     ]
    ],
    "sections": 23,

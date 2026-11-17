@@ -40,43 +40,53 @@
    "parts": [
     [
      "Division A",
-     "CONTINUING APPROPRIATIONS ACT, 2027"
+     "CONTINUING APPROPRIATIONS ACT, 2027",
+     "A"
     ],
     [
      "Division B",
-     "AUTHORIZING EXTENSIONS"
+     "AUTHORIZING EXTENSIONS",
+     "B"
     ],
     [
      "Division C",
-     "SURFACE TRANSPORTATION EXTENSION ACT OF 2026"
+     "SURFACE TRANSPORTATION EXTENSION ACT OF 2026",
+     "C"
     ],
     [
      "Division D",
-     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS"
+     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS",
+     "D"
     ],
     [
      "Title I",
-     "SURFACE TRANSPORTATION PROGRAMS"
+     "SURFACE TRANSPORTATION PROGRAMS",
+     "C"
     ],
     [
      "Title II",
-     "TRUST FUNDS"
+     "TRUST FUNDS",
+     "C"
     ],
     [
      "Title I",
-     "HEALTH CARE MATTERS"
+     "HEALTH CARE MATTERS",
+     "D"
     ],
     [
      "Title II",
-     "BENEFITS"
+     "BENEFITS",
+     "D"
     ],
     [
      "Title III",
-     "HOUSING"
+     "HOUSING",
+     "D"
     ],
     [
      "Title IV",
-     "OTHER MATTERS"
+     "OTHER MATTERS",
+     "D"
     ]
    ],
    "sections": 53,
@@ -96,43 +106,53 @@
    "parts": [
     [
      "Division A",
-     "CONTINUING APPROPRIATIONS ACT, 2027"
+     "CONTINUING APPROPRIATIONS ACT, 2027",
+     "A"
     ],
     [
      "Division B",
-     "AUTHORIZING EXTENSIONS"
+     "AUTHORIZING EXTENSIONS",
+     "B"
     ],
     [
      "Division C",
-     "SURFACE TRANSPORTATION EXTENSION ACT OF 2026"
+     "SURFACE TRANSPORTATION EXTENSION ACT OF 2026",
+     "C"
     ],
     [
      "Division D",
-     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS"
+     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS",
+     "D"
     ],
     [
      "Title I",
-     "SURFACE TRANSPORTATION PROGRAMS"
+     "SURFACE TRANSPORTATION PROGRAMS",
+     "C"
     ],
     [
      "Title II",
-     "TRUST FUNDS"
+     "TRUST FUNDS",
+     "C"
     ],
     [
      "Title I",
-     "HEALTH CARE MATTERS"
+     "HEALTH CARE MATTERS",
+     "D"
     ],
     [
      "Title II",
-     "BENEFITS"
+     "BENEFITS",
+     "D"
     ],
     [
      "Title III",
-     "HOUSING"
+     "HOUSING",
+     "D"
     ],
     [
      "Title IV",
-     "OTHER MATTERS"
+     "OTHER MATTERS",
+     "D"
     ]
    ],
    "sections": 53,

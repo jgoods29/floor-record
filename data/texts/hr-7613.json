@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.462,
+  "kept": 0.628,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,11 +16,13 @@
    "parts": [
     [
      "Title I",
-     "CIVIL AVIATION MATTERS"
+     "CIVIL AVIATION MATTERS",
+     ""
     ],
     [
      "Title II",
-     "DEPARTMENT OF DEFENSE MATTERS"
+     "DEPARTMENT OF DEFENSE MATTERS",
+     ""
     ]
    ],
    "sections": 28,
@@ -31,11 +39,13 @@
    "parts": [
     [
      "Title I",
-     "CIVIL AVIATION MATTERS"
+     "CIVIL AVIATION MATTERS",
+     ""
     ],
     [
      "Title II",
-     "DEPARTMENT OF DEFENSE MATTERS"
+     "DEPARTMENT OF DEFENSE MATTERS",
+     ""
     ]
    ],
    "sections": 37,

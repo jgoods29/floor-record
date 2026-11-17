@@ -1,7 +1,13 @@
 {
  "checked": "2026-11-17",
- "compare": null,
- "review": false,
+ "compare": {
+  "earlier": "is",
+  "from_earlier": 0.105,
+  "kept": 0.292,
+  "later": "es",
+  "verdict": "replaced"
+ },
+ "review": true,
  "versions": [
   {
    "chars": 18200,

@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.997,
+  "kept": 0.991,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,15 +16,18 @@
    "parts": [
     [
      "Title I",
-     "DIPLOMACY AND SUPPORT FOR UKRAINE"
+     "DIPLOMACY AND SUPPORT FOR UKRAINE",
+     ""
     ],
     [
      "Title II",
-     "SECURITY ASSISTANCE"
+     "SECURITY ASSISTANCE",
+     ""
     ],
     [
      "Title III",
-     "SANCTIONS AND EXPORT CONTROLS"
+     "SANCTIONS AND EXPORT CONTROLS",
+     ""
     ]
    ],
    "sections": 40,
@@ -35,15 +44,18 @@
    "parts": [
     [
      "Title I",
-     "DIPLOMACY AND SUPPORT FOR UKRAINE"
+     "DIPLOMACY AND SUPPORT FOR UKRAINE",
+     ""
     ],
     [
      "Title II",
-     "SECURITY ASSISTANCE"
+     "SECURITY ASSISTANCE",
+     ""
     ],
     [
      "Title III",
-     "SANCTIONS AND EXPORT CONTROLS"
+     "SANCTIONS AND EXPORT CONTROLS",
+     ""
     ]
    ],
    "sections": 40,

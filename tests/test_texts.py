@@ -34,7 +34,7 @@ class Texts(unittest.TestCase):
     def test_outline_counts_each_heading_once(self):
         o = texts.outline(texts.plain_text(PAGE.format(ENERGY)))
         self.assertEqual(o["short_titles"], ["Big Energy Act"])
-        self.assertEqual(o["parts"], [["Division A", "PERMITS"], ["Title I", "POWER LINES"]])
+        self.assertEqual(o["parts"], [["Division A", "PERMITS", "A"], ["Title I", "POWER LINES", "A"]])
         self.assertEqual(o["sections"], 2)   # Section 1 and Sec. 101, not the table of contents lines
 
     def test_verdicts(self):
@@ -70,6 +70,19 @@ class Texts(unittest.TestCase):
                 self.assertEqual(again["compare"]["verdict"], "expanded")
             finally:
                 texts.DATA = old
+
+    def test_wrapped_and_repeated_headings(self):
+        text = ("Sec. 1. Short title.\n   DIVISION A--FARMS AND\n      FOOD\n   DIVISION B--HEALTH\n"
+                "      DIVISION A--FARMS AND\n            FOOD\n  TITLE I--MILK\nSEC. 101. MILK.\n words\n"
+                "      DIVISION B--HEALTH\n  TITLE I--CLINICS\nSEC. 201. CLINICS.\n words\n")
+        parts = texts.outline(text)["parts"]
+        self.assertEqual(parts, [["Division A", "FARMS AND FOOD", "A"], ["Division B", "HEALTH", "B"],
+                                 ["Title I", "MILK", "A"], ["Title I", "CLINICS", "B"]])
+
+    def test_one_chamber_compares_introduced_with_passed(self):
+        rec = {"versions": [{"code": "ih", "_text": TAX}, {"code": "eh", "_text": ENERGY}]}
+        texts.review(rec)
+        self.assertEqual((rec["compare"]["earlier"], rec["compare"]["later"], rec["compare"]["verdict"]), ("ih", "eh", "replaced"))
 
     def test_a_list_of_small_changes_is_not_compared(self):
         rec = {"versions": [{"code": "eh", "_text": TAX}, {"code": "eas", "_text": "(1) On page 4, strike lines 15 through 22.", "whole": False}]}

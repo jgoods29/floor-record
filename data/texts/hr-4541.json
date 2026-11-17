@@ -1,7 +1,13 @@
 {
  "checked": "2026-11-17",
- "compare": null,
- "review": false,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.095,
+  "kept": 0.468,
+  "later": "eh",
+  "verdict": "replaced"
+ },
+ "review": true,
  "versions": [
   {
    "chars": 1531,
@@ -22,11 +28,13 @@
    "parts": [
     [
      "Title I",
-     "EARLY ACT REAUTHORIZATION"
+     "EARLY ACT REAUTHORIZATION",
+     ""
     ],
     [
      "Title II",
-     "SCREENS FOR CANCER ACT"
+     "SCREENS FOR CANCER ACT",
+     ""
     ]
    ],
    "sections": 4,

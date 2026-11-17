@@ -1,7 +1,13 @@
 {
  "checked": "2026-11-17",
- "compare": null,
- "review": false,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.001,
+  "kept": 0.692,
+  "later": "eh",
+  "verdict": "expanded"
+ },
+ "review": true,
  "versions": [
   {
    "chars": 2664,
@@ -10,15 +16,18 @@
    "parts": [
     [
      "Title I",
-     "PROCUREMENT"
+     "PROCUREMENT",
+     ""
     ],
     [
      "Title II",
-     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION"
+     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION",
+     ""
     ],
     [
      "Title III",
-     "OPERATION AND MAINTENANCE"
+     "OPERATION AND MAINTENANCE",
+     ""
     ]
    ],
    "sections": 4,
@@ -35,535 +44,703 @@
    "parts": [
     [
      "Division A",
-     "DEPARTMENT OF DEFENSE AUTHORIZATIONS"
+     "DEPARTMENT OF DEFENSE AUTHORIZATIONS",
+     "A"
     ],
     [
      "Title I",
-     "PROCUREMENT"
+     "PROCUREMENT",
+     "A"
     ],
     [
      "Subtitle A",
-     "Authorization of Appropriations"
+     "Authorization of Appropriations",
+     "A"
     ],
     [
      "Subtitle B",
-     "Army Programs"
+     "Army Programs",
+     "A"
     ],
     [
      "Subtitle C",
-     "Navy Programs"
+     "Navy Programs",
+     "A"
     ],
     [
      "Subtitle D",
-     "Air Force Programs"
+     "Air Force Programs",
+     "A"
     ],
     [
      "Subtitle E",
-     "Defense-wide, Joint, and Multiservice Matters"
+     "Defense-wide, Joint, and Multiservice Matters",
+     "A"
     ],
     [
      "Title II",
-     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION"
+     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION",
+     "A"
+    ],
+    [
+     "Subtitle A",
+     "Authorization of Appropriations",
+     "A"
     ],
     [
      "Subtitle B",
-     "Program Requirements, Restrictions, and Limitations"
+     "Program Requirements, Restrictions, and Limitations",
+     "A"
     ],
     [
      "Subtitle C",
-     "Plans, Reports, and Other Matters"
+     "Plans, Reports, and Other Matters",
+     "A"
     ],
     [
      "Title III",
-     "OPERATION AND MAINTENANCE"
+     "OPERATION AND MAINTENANCE",
+     "A"
+    ],
+    [
+     "Subtitle A",
+     "Authorization of Appropriations",
+     "A"
     ],
     [
      "Subtitle B",
-     "Energy and Environment"
+     "Energy and Environment",
+     "A"
     ],
     [
      "Subtitle C",
-     "Logistics and Sustainment"
+     "Logistics and Sustainment",
+     "A"
     ],
     [
      "Subtitle D",
-     "Reports"
+     "Reports",
+     "A"
     ],
     [
      "Subtitle E",
-     "Other Matters"
+     "Other Matters",
+     "A"
     ],
     [
      "Title IV",
-     "MILITARY PERSONNEL AUTHORIZATIONS"
+     "MILITARY PERSONNEL AUTHORIZATIONS",
+     "A"
     ],
     [
      "Subtitle A",
-     "Active Forces"
+     "Active Forces",
+     "A"
     ],
     [
      "Subtitle B",
-     "Reserve Forces"
+     "Reserve Forces",
+     "A"
     ],
     [
      "Subtitle C",
-     "Authorization of Appropriations"
+     "Authorization of Appropriations",
+     "A"
     ],
     [
      "Title V",
-     "MILITARY PERSONNEL POLICY"
+     "MILITARY PERSONNEL POLICY",
+     "A"
     ],
     [
      "Subtitle A",
-     "Officer Policy and Reserve Component Management"
+     "Officer Policy and Reserve Component Management",
+     "A"
     ],
     [
      "Subtitle B",
-     "Recruitment, General Service Authorities and Prohibitions,"
+     "Recruitment, General Service Authorities and Prohibitions,",
+     "A"
     ],
     [
      "Subtitle C",
-     "Member Training"
+     "Member Training",
+     "A"
     ],
     [
      "Subtitle D",
-     "Member Education"
+     "Member Education",
+     "A"
     ],
     [
      "Subtitle E",
-     "Military Justice"
+     "Military Justice",
+     "A"
     ],
     [
      "Subtitle F",
-     "Investigations and Other Legal Matters"
+     "Investigations and Other Legal Matters",
+     "A"
     ],
     [
      "Subtitle G",
-     "Career Transition"
+     "Career Transition",
+     "A"
     ],
     [
      "Subtitle H",
-     "Family Programs, Child Care, and Dependent Education"
+     "Family Programs, Child Care, and Dependent Education",
+     "A"
     ],
     [
      "Subtitle I",
-     "Decorations and Awards"
+     "Decorations and Awards",
+     "A"
     ],
     [
      "Subtitle J",
-     "Other Matters and Miscellaneous Reports"
+     "Other Matters and Miscellaneous Reports",
+     "A"
     ],
     [
      "Subtitle K",
-     "Military Chaplains Modernization Act of 2026"
+     "Military Chaplains Modernization Act of 2026",
+     "A"
     ],
     [
      "Title VI",
-     "MILITARY COMPENSATION AND OTHER BENEFITS"
+     "MILITARY COMPENSATION AND OTHER BENEFITS",
+     "A"
     ],
     [
      "Subtitle A",
-     "Bonus and Incentive Pays"
+     "Bonus and Incentive Pays",
+     "A"
     ],
     [
      "Subtitle B",
-     "Allowances"
+     "Allowances",
+     "A"
     ],
     [
      "Subtitle C",
-     "Leave"
+     "Leave",
+     "A"
     ],
     [
      "Subtitle D",
-     "Family and Survivor Benefits"
+     "Family and Survivor Benefits",
+     "A"
     ],
     [
      "Subtitle E",
-     "Defense Resale Matters"
+     "Defense Resale Matters",
+     "A"
     ],
     [
      "Subtitle F",
-     "Other Benefits, Reports, and Briefings"
+     "Other Benefits, Reports, and Briefings",
+     "A"
     ],
     [
      "Title VII",
-     "HEALTH CARE PROVISIONS"
+     "HEALTH CARE PROVISIONS",
+     "A"
     ],
     [
      "Subtitle A",
-     "TRICARE and Other Health Benefits"
+     "TRICARE and Other Health Benefits",
+     "A"
     ],
     [
      "Subtitle B",
-     "Health Care Administration"
+     "Health Care Administration",
+     "A"
     ],
     [
      "Subtitle C",
-     "Studies, Reports, and Other Matters"
+     "Studies, Reports, and Other Matters",
+     "A"
     ],
     [
      "Title VIII",
-     "ACQUISITION POLICY, ACQUISITION MANAGEMENT, AND RELATED"
+     "ACQUISITION POLICY, ACQUISITION MANAGEMENT, AND RELATED MATTERS",
+     "A"
     ],
     [
      "Subtitle A",
-     "Acquisition Policy and Management"
+     "Acquisition Policy and Management",
+     "A"
     ],
     [
      "Subtitle B",
-     "Amendments to General Contracting Authorities, Procedures,"
+     "Amendments to General Contracting Authorities, Procedures,",
+     "A"
     ],
     [
      "Subtitle C",
-     "Provisions Relating to Acquisition Workforce Development"
+     "Provisions Relating to Acquisition Workforce Development",
+     "A"
     ],
     [
      "Subtitle D",
-     "Intellectual Property Matters"
+     "Intellectual Property Matters",
+     "A"
+    ],
+    [
+     "Subtitle E",
+     "Other Matters",
+     "A"
     ],
     [
      "Title IX",
-     "DEPARTMENT OF DEFENSE ORGANIZATION AND MANAGEMENT"
+     "DEPARTMENT OF DEFENSE ORGANIZATION AND MANAGEMENT",
+     "A"
     ],
     [
      "Title X",
-     "GENERAL PROVISIONS"
+     "GENERAL PROVISIONS",
+     "A"
     ],
     [
      "Subtitle A",
-     "Financial Matters"
+     "Financial Matters",
+     "A"
     ],
     [
      "Subtitle B",
-     "Naval Vessels and Shipyards"
+     "Naval Vessels and Shipyards",
+     "A"
     ],
     [
      "Subtitle C",
-     "Counterterrorism"
+     "Counterterrorism",
+     "A"
     ],
     [
      "Subtitle D",
-     "Miscellaneous Authorities and Limitations"
+     "Miscellaneous Authorities and Limitations",
+     "A"
     ],
     [
      "Subtitle E",
-     "Studies and Reports"
+     "Studies and Reports",
+     "A"
     ],
     [
      "Subtitle F",
-     "Other Matters"
+     "Other Matters",
+     "A"
     ],
     [
      "Title XI",
-     "CIVILIAN PERSONNEL"
+     "CIVILIAN PERSONNEL",
+     "A"
     ],
     [
      "Title XII",
-     "MATTERS RELATING TO FOREIGN NATIONS"
+     "MATTERS RELATING TO FOREIGN NATIONS",
+     "A"
     ],
     [
      "Subtitle A",
-     "Assistance and Training"
+     "Assistance and Training",
+     "A"
     ],
     [
      "Subtitle B",
-     "Matters Relating to the Near and Middle East"
+     "Matters Relating to the Near and Middle East",
+     "A"
     ],
     [
      "Subtitle C",
-     "Matters Relating to Israel"
+     "Matters Relating to Israel",
+     "A"
     ],
     [
      "Subtitle D",
-     "Matters Relating to Europe"
+     "Matters Relating to Europe",
+     "A"
     ],
     [
      "Subtitle E",
-     "Matters Relating to the Indo-Pacific"
+     "Matters Relating to the Indo-Pacific",
+     "A"
     ],
     [
      "Subtitle F",
-     "Reports"
+     "Reports",
+     "A"
     ],
     [
      "Subtitle G",
-     "Other Matters"
+     "Other Matters",
+     "A"
     ],
     [
      "Title XIV",
-     "OTHER AUTHORIZATIONS"
+     "OTHER AUTHORIZATIONS",
+     "A"
     ],
     [
      "Subtitle A",
-     "Military Programs"
+     "Military Programs",
+     "A"
     ],
     [
      "Subtitle B",
-     "Other Matters"
+     "Other Matters",
+     "A"
     ],
     [
      "Title XV",
-     "CYBERSPACE-RELATED MATTERS"
+     "CYBERSPACE-RELATED MATTERS",
+     "A"
     ],
     [
      "Subtitle A",
-     "Cybersecurity"
+     "Cybersecurity",
+     "A"
     ],
     [
      "Subtitle B",
-     "Information Technology and Artificial Intelligence"
+     "Information Technology and Artificial Intelligence",
+     "A"
     ],
     [
      "Subtitle C",
-     "Reports and Other Matters"
+     "Reports and Other Matters",
+     "A"
     ],
     [
      "Title XVI",
-     "SPACE ACTIVITIES, STRATEGIC PROGRAMS, AND INTELLIGENCE"
+     "SPACE ACTIVITIES, STRATEGIC PROGRAMS, AND INTELLIGENCE MATTERS",
+     "A"
     ],
     [
      "Subtitle A",
-     "Space Activities"
+     "Space Activities",
+     "A"
     ],
     [
      "Subtitle B",
-     "Defense Intelligence and Intelligence-Related Activities"
+     "Defense Intelligence and Intelligence-Related Activities",
+     "A"
     ],
     [
      "Subtitle C",
-     "Nuclear Forces"
+     "Nuclear Forces",
+     "A"
     ],
     [
      "Subtitle D",
-     "Missile Defense Programs"
+     "Missile Defense Programs",
+     "A"
+    ],
+    [
+     "Subtitle E",
+     "Other Matters",
+     "A"
     ],
     [
      "Subtitle F",
-     "Matters Relating to Adversary Supply Chains"
+     "Matters Relating to Adversary Supply Chains",
+     "A"
     ],
     [
      "Title XVII",
-     "OTHER DEFENSE MATTERS"
+     "OTHER DEFENSE MATTERS",
+     "A"
     ],
     [
      "Subtitle A",
-     "Miscellaneous Authorities and Limitations"
+     "Miscellaneous Authorities and Limitations",
+     "A"
+    ],
+    [
+     "Subtitle B",
+     "Other Matters",
+     "A"
     ],
     [
      "Subtitle C",
-     "Initiating Biomedical Outcomes to Garner Advancements Into"
+     "Initiating Biomedical Outcomes to Garner Advancements Into",
+     "A"
     ],
     [
      "Subtitle D",
-     "Unidentified Anomalous Phenomena Records Collection At the"
+     "Unidentified Anomalous Phenomena Records Collection At the",
+     "A"
     ],
     [
      "Title XVIII",
-     "REVITALIZATION OF THE DEFENSE INDUSTRIAL BASE"
+     "REVITALIZATION OF THE DEFENSE INDUSTRIAL BASE",
+     "A"
     ],
     [
      "Subtitle A",
-     "Provisions to Protect and Strengthen Supply Chains"
+     "Provisions to Protect and Strengthen Supply Chains",
+     "A"
     ],
     [
      "Subtitle B",
-     "Provisions Relating to Defense Industrial Base"
+     "Provisions Relating to Defense Industrial Base",
+     "A"
     ],
     [
      "Subtitle C",
-     "Organic Industrial Base"
+     "Organic Industrial Base",
+     "A"
     ],
     [
      "Subtitle D",
-     "Small Business Matters"
+     "Small Business Matters",
+     "A"
     ],
     [
      "Subtitle E",
-     "Defense Industrial Base Workforce Matters"
+     "Defense Industrial Base Workforce Matters",
+     "A"
+    ],
+    [
+     "Subtitle F",
+     "Other Matters",
+     "A"
     ],
     [
      "Division B",
-     "MILITARY CONSTRUCTION AUTHORIZATIONS"
+     "MILITARY CONSTRUCTION AUTHORIZATIONS",
+     "B"
     ],
     [
      "Title XXI",
-     "ARMY MILITARY CONSTRUCTION"
+     "ARMY MILITARY CONSTRUCTION",
+     "B"
     ],
     [
      "Title XXII",
-     "NAVY MILITARY CONSTRUCTION"
+     "NAVY MILITARY CONSTRUCTION",
+     "B"
     ],
     [
      "Title XXIII",
-     "AIR FORCE MILITARY CONSTRUCTION"
+     "AIR FORCE MILITARY CONSTRUCTION",
+     "B"
     ],
     [
      "Title XXIV",
-     "DEFENSE AGENCIES MILITARY CONSTRUCTION"
+     "DEFENSE AGENCIES MILITARY CONSTRUCTION",
+     "B"
     ],
     [
      "Title XXV",
-     "INTERNATIONAL PROGRAMS"
+     "INTERNATIONAL PROGRAMS",
+     "B"
     ],
     [
      "Subtitle A",
-     "North Atlantic Treaty Organization Security Investment"
+     "North Atlantic Treaty Organization Security Investment",
+     "B"
     ],
     [
      "Subtitle B",
-     "Host Country In-Kind Contributions"
+     "Host Country In-Kind Contributions",
+     "B"
     ],
     [
      "Title XXVI",
-     "GUARD AND RESERVE FORCES FACILITIES"
+     "GUARD AND RESERVE FORCES FACILITIES",
+     "B"
     ],
     [
      "Title XXVII",
-     "BASE REALIGNMENT AND CLOSURE ACTIVITIES"
+     "BASE REALIGNMENT AND CLOSURE ACTIVITIES",
+     "B"
     ],
     [
      "Title XXVIII",
-     "MILITARY CONSTRUCTION GENERAL PROVISIONS"
+     "MILITARY CONSTRUCTION GENERAL PROVISIONS",
+     "B"
     ],
     [
      "Subtitle A",
-     "Military Construction Programs"
+     "Military Construction Programs",
+     "B"
     ],
     [
      "Subtitle B",
-     "Military Housing Reforms"
+     "Military Housing Reforms",
+     "B"
     ],
     [
      "Subtitle C",
-     "Real Property and Facilities Administration"
+     "Real Property and Facilities Administration",
+     "B"
     ],
     [
      "Subtitle D",
-     "Land Conveyances and Withdrawals"
+     "Land Conveyances and Withdrawals",
+     "B"
     ],
     [
      "Subtitle E",
-     "Pilot Programs"
+     "Pilot Programs",
+     "B"
     ],
     [
      "Subtitle F",
-     "Miscellaneous Authorities"
+     "Miscellaneous Authorities",
+     "B"
     ],
     [
      "Subtitle G",
-     "Reports and Other Matters"
+     "Reports and Other Matters",
+     "B"
     ],
     [
      "Division C",
-     "DEPARTMENT OF ENERGY NATIONAL SECURITY AUTHORIZATIONS AND"
+     "DEPARTMENT OF ENERGY NATIONAL SECURITY AUTHORIZATIONS AND OTHER AUTHORIZATIONS",
+     "C"
     ],
     [
      "Title XXXI",
-     "DEPARTMENT OF ENERGY NATIONAL SECURITY PROGRAMS"
+     "DEPARTMENT OF ENERGY NATIONAL SECURITY PROGRAMS",
+     "C"
     ],
     [
      "Subtitle A",
-     "National Security Programs and Authorizations"
+     "National Security Programs and Authorizations",
+     "C"
     ],
     [
      "Subtitle B",
-     "Program Authorizations, Restrictions, and Limitations"
+     "Program Authorizations, Restrictions, and Limitations",
+     "C"
+    ],
+    [
+     "Subtitle C",
+     "Reports and Other Matters",
+     "C"
     ],
     [
      "Title XXXII",
-     "DEFENSE NUCLEAR FACILITIES SAFETY BOARD"
+     "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+     "C"
     ],
     [
      "Title XXXIV",
-     "NAVAL PETROLEUM RESERVES"
+     "NAVAL PETROLEUM RESERVES",
+     "C"
     ],
     [
      "Title XXXV",
-     "MARITIME ADMINISTRATION"
+     "MARITIME ADMINISTRATION",
+     "C"
     ],
     [
      "Subtitle A",
-     "Maritime Administration"
+     "Maritime Administration",
+     "C"
     ],
     [
      "Subtitle B",
-     "Merchant Marine Academy"
+     "Merchant Marine Academy",
+     "C"
     ],
     [
      "Subtitle C",
-     "Other Matters"
+     "Other Matters",
+     "C"
     ],
     [
      "Subtitle D",
-     "Coast Guard"
+     "Coast Guard",
+     "C"
     ],
     [
      "Subtitle E",
-     "Maritime Workforce and Education"
+     "Maritime Workforce and Education",
+     "C"
     ],
     [
      "Title XXXVI",
-     "SHIPS FOR AMERICA"
+     "SHIPS FOR AMERICA",
+     "C"
     ],
     [
      "Subtitle A",
-     "Oversight and Accountability"
+     "Oversight and Accountability",
+     "C"
     ],
     [
      "Subtitle B",
-     "Maritime Security Trust Fund"
+     "Maritime Security Trust Fund",
+     "C"
     ],
     [
      "Subtitle C",
-     "Sealift Capability"
+     "Sealift Capability",
+     "C"
     ],
     [
      "Subtitle D",
-     "Vessels of the United States in International Commerce"
+     "Vessels of the United States in International Commerce CHAPTER 1--STRATEGIC SEALIFT PROGRAMS",
+     "C"
     ],
     [
      "Subtitle E",
-     "Shipbuilding"
+     "Shipbuilding CHAPTER 1--SHIPBUILDING FINANCIAL INCENTIVES",
+     "C"
     ],
     [
      "Subtitle F",
-     "Workforce Development"
+     "Workforce Development CHAPTER 1--WORKFORCE INCENTIVES",
+     "C"
     ],
     [
      "Division D",
-     "FUNDING TABLES"
+     "FUNDING TABLES",
+     "D"
     ],
     [
      "Title XLI",
-     "PROCUREMENT"
+     "PROCUREMENT",
+     "D"
     ],
     [
      "Title XLII",
-     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION"
+     "RESEARCH, DEVELOPMENT, TEST, AND EVALUATION",
+     "D"
     ],
     [
      "Title XLIII",
-     "OPERATION AND MAINTENANCE"
+     "OPERATION AND MAINTENANCE",
+     "D"
     ],
     [
      "Title XLIV",
-     "MILITARY PERSONNEL"
+     "MILITARY PERSONNEL",
+     "D"
     ],
     [
      "Title XLV",
-     "OTHER AUTHORIZATIONS"
+     "OTHER AUTHORIZATIONS",
+     "D"
     ],
     [
      "Title XLVI",
-     "MILITARY CONSTRUCTION"
+     "MILITARY CONSTRUCTION",
+     "D"
     ],
     [
      "Title XLVII",
-     "DEPARTMENT OF ENERGY NATIONAL SECURITY PROGRAMS"
+     "DEPARTMENT OF ENERGY NATIONAL SECURITY PROGRAMS",
+     "D"
     ],
     [
      "Division E",
-     "SAVE AMERICA ACT"
+     "SAVE AMERICA ACT",
+     "E"
     ]
    ],
    "sections": 1108,

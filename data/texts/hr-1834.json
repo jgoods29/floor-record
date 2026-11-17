@@ -1,7 +1,13 @@
 {
  "checked": "2026-11-17",
- "compare": null,
- "review": false,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.196,
+  "kept": 0.007,
+  "later": "eh",
+  "verdict": "replaced"
+ },
+ "review": true,
  "versions": [
   {
    "chars": 43995,
@@ -10,67 +16,83 @@
    "parts": [
     [
      "Title I",
-     "CONGRESSIONAL TIME CAPSULE"
+     "CONGRESSIONAL TIME CAPSULE",
+     ""
     ],
     [
      "Title II",
-     "FIRE SUPPRESSION COST SHARE AGREEMENTS"
+     "FIRE SUPPRESSION COST SHARE AGREEMENTS",
+     ""
     ],
     [
      "Title III",
-     "UDALL FOUNDATION FUNDING"
+     "UDALL FOUNDATION FUNDING",
+     ""
     ],
     [
      "Title IV",
-     "STRATEGY ON BOKO HARAM"
+     "STRATEGY ON BOKO HARAM",
+     ""
     ],
     [
      "Title V",
-     "VETERANS INTERAGENCY TASK FORCE"
+     "VETERANS INTERAGENCY TASK FORCE",
+     ""
     ],
     [
      "Title VI",
-     "VETERANS PILOT PROGRAM"
+     "VETERANS PILOT PROGRAM",
+     ""
     ],
     [
      "Title VII",
-     "TSA COMMUTING BENEFITS"
+     "TSA COMMUTING BENEFITS",
+     ""
     ],
     [
      "Title VIII",
-     "CHINA FINANCIAL THREAT MITIGATION"
+     "CHINA FINANCIAL THREAT MITIGATION",
+     ""
     ],
     [
      "Title IX",
-     "SERVICEMEMBERS' AND VETERANS' GROUP LIFE INSURANCE"
+     "SERVICEMEMBERS' AND VETERANS' GROUP LIFE INSURANCE",
+     ""
     ],
     [
      "Title X",
-     "RESTORATION OF AMOUNTS TO VETERANS"
+     "RESTORATION OF AMOUNTS TO VETERANS",
+     ""
     ],
     [
      "Title XI",
-     "HEARINGS BY HOUSE COMMITTEES"
+     "HEARINGS BY HOUSE COMMITTEES",
+     ""
     ],
     [
      "Title XII",
-     "CODE OF OFFICIAL CONDUCT"
+     "CODE OF OFFICIAL CONDUCT",
+     ""
     ],
     [
      "Title XIII",
-     "PROHIBITING TRANSFER OF SENSITIVE DATA TO FOREIGN"
+     "PROHIBITING TRANSFER OF SENSITIVE DATA TO FOREIGN ADVERSARIES",
+     ""
     ],
     [
      "Title XIV",
-     "DETERMINATION OF BUDGETARY EFFECTS"
+     "DETERMINATION OF BUDGETARY EFFECTS",
+     ""
     ],
     [
      "Title XV",
-     "DOMESTICALLY MADE UNITED STATES FLAGS"
+     "DOMESTICALLY MADE UNITED STATES FLAGS",
+     ""
     ],
     [
      "Title XVI",
-     "APPROPRIATIONS"
+     "APPROPRIATIONS",
+     ""
     ]
    ],
    "sections": 17,

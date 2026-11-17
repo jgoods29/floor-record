@@ -408,6 +408,10 @@ def main():
     summaries = read_json(DATA / "summaries.json", {})
     ai_votes = read_json(DATA / "ai_votes.json", {})
     editorial = read_json(ROOT / "editorial.json", {})
+    for slug, words in (editorial.get("bills") or {}).items():   # a summary a person wrote from the bill text wins over the AI one
+        summaries[slug] = dict(summaries.get(slug) or {}, basis="person", **{k: words[k] for k in ("one_sentence", "short") if words.get(k)})
+    from .review import flagged, text_view, to_review
+    changed_bills = flagged(DATA, editorial)
     result = compute(votes_raw, members, bills, cfg)
     votes, people = result["votes"], result["people"]
     today = datetime.now(timezone.utc).date().isoformat()
@@ -895,6 +899,7 @@ def main():
             render(f"{pre}bills/index.html", "bills.html", 2 if pre else 1, section="bills", c=pre, ch=ch, act={"topic": "", "key": ""}, bills=mine,
                    facets={"topic": count("topic"), "status": count("status"), "party": count("party"), "origin": count("origin")})
     render("about/index.html", "about.html", 1, section="about")
+    write_json(SITE / "review.json", to_review(DATA, editorial), compact=False)   # bills a person should look at; the morning check reads this
     render("404.html", "404.html", 0, section="")
 
     def chamber_pages(pre, votes, people, members, result, ch):
@@ -906,6 +911,8 @@ def main():
             # A bill the Senate is using to carry a different, larger package: show the approved note, not the summary of the original bill.
             carried = (editorial.get("carried") or {}).get(v["slug"]) or {}
             ctx["note"] = carried.get("note", "") if pre and v["date"] >= carried.get("since", "9999") else ""
+            # The text changed a lot between versions and nobody has checked the summary against the latest one yet.
+            ctx["unchecked"] = bool(v["slug"] in changed_bills and not changed_bills[v["slug"]]["checked"])
             sponsor_id = (bills.get(v["slug"]) or {}).get("sponsor")
             ctx["sponsor"] = people.get(sponsor_id)
             seats = sorted(v["positions"], key=lambda r: (ORDER.get(r[3], 4), {"R": 0, "D": 1}.get(r[1], 2), people[r[0]]["sort"]))
@@ -1087,6 +1094,7 @@ def main():
         for pre, ch in (("", HOUSE), ("senate/", SENATE)) if svotes else (("", HOUSE),):
             render(f"{pre}bills/{m['slug']}/index.html", "bill.html", 3 if pre else 2, section="bills", c=pre, ch=ch, b=m, ai=summaries.get(m["slug"]),
                    note=((editorial.get("carried") or {}).get(m["slug"]) or {}).get("note", ""),
+                   text=text_view(m["slug"]), unchecked=bool(m["slug"] in changed_bills and not changed_bills[m["slug"]]["checked"]),
                    act=act, sponsor=people.get(m["rec"].get("sponsor")))
 
     # ---- leaderboard and search

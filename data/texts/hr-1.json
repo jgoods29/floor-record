@@ -16,139 +16,173 @@
    "parts": [
     [
      "Title I",
-     "COMMITTEE ON AGRICULTURE"
+     "COMMITTEE ON AGRICULTURE",
+     ""
     ],
     [
      "Subtitle A",
-     "Nutrition"
+     "Nutrition",
+     ""
     ],
     [
      "Subtitle B",
-     "Investment in Rural America"
+     "Investment in Rural America",
+     ""
     ],
     [
      "Title II",
-     "COMMITTEE ON ARMED SERVICES"
+     "COMMITTEE ON ARMED SERVICES",
+     ""
     ],
     [
      "Title III",
-     "COMMITTEE ON EDUCATION AND WORKFORCE"
+     "COMMITTEE ON EDUCATION AND WORKFORCE",
+     ""
     ],
     [
      "Subtitle A",
-     "Student Eligibility"
+     "Student Eligibility",
+     ""
     ],
     [
      "Subtitle B",
-     "Loan Limits"
+     "Loan Limits",
+     ""
     ],
     [
      "Subtitle C",
-     "Loan Repayment"
+     "Loan Repayment",
+     ""
     ],
     [
      "Subtitle D",
-     "Pell Grants"
+     "Pell Grants",
+     ""
     ],
     [
      "Subtitle E",
-     "Accountability"
+     "Accountability",
+     ""
     ],
     [
      "Subtitle F",
-     "Regulatory Relief"
+     "Regulatory Relief",
+     ""
     ],
     [
      "Subtitle G",
-     "Limitation on Authority"
+     "Limitation on Authority",
+     ""
     ],
     [
      "Title IV",
-     "ENERGY AND COMMERCE"
+     "ENERGY AND COMMERCE",
+     ""
     ],
     [
      "Subtitle A",
-     "Energy"
+     "Energy",
+     ""
     ],
     [
      "Subtitle B",
-     "Environment"
+     "Environment PART 1--REPEALS AND RESCISSIONS",
+     ""
     ],
     [
      "Subtitle C",
-     "Communications"
+     "Communications PART 1--SPECTRUM AUCTIONS",
+     ""
     ],
     [
      "Subtitle D",
-     "Health"
+     "Health PART 1--MEDICAID",
+     ""
     ],
     [
      "Title V",
-     "COMMITTEE ON FINANCIAL SERVICES"
+     "COMMITTEE ON FINANCIAL SERVICES",
+     ""
     ],
     [
      "Title VI",
-     "COMMITTEE ON HOMELAND SECURITY"
+     "COMMITTEE ON HOMELAND SECURITY",
+     ""
     ],
     [
      "Title VII",
-     "COMMITTEE ON THE JUDICIARY"
+     "COMMITTEE ON THE JUDICIARY",
+     ""
     ],
     [
      "Subtitle A",
-     "Immigration Matters"
+     "Immigration Matters PART 1--IMMIGRATION FEES",
+     ""
     ],
     [
      "Subtitle B",
-     "Regulatory Matters"
+     "Regulatory Matters",
+     ""
     ],
     [
      "Subtitle C",
-     "Other Matters"
+     "Other Matters",
+     ""
     ],
     [
      "Title VIII",
-     "COMMITTEE ON NATURAL RESOURCES"
+     "COMMITTEE ON NATURAL RESOURCES",
+     ""
     ],
     [
      "Subtitle A",
-     "Energy and Mineral Resources"
+     "Energy and Mineral Resources PART 1--OIL AND GAS",
+     ""
     ],
     [
      "Subtitle B",
-     "Water, Wildlife, and Fisheries"
+     "Water, Wildlife, and Fisheries",
+     ""
     ],
     [
      "Subtitle C",
-     "Federal Lands"
+     "Federal Lands",
+     ""
     ],
     [
      "Title IX",
-     "COMMITTEE ON OVERSIGHT AND GOVERNMENT REFORM"
+     "COMMITTEE ON OVERSIGHT AND GOVERNMENT REFORM",
+     ""
     ],
     [
      "Title X",
-     "COMMITTEE ON TRANSPORTATION AND INFRASTRUCTURE"
+     "COMMITTEE ON TRANSPORTATION AND INFRASTRUCTURE",
+     ""
     ],
     [
      "Title XI",
-     "COMMITTEE ON WAYS AND MEANS, ``THE ONE, BIG, BEAUTIFUL BILL''"
+     "COMMITTEE ON WAYS AND MEANS, ``THE ONE, BIG, BEAUTIFUL BILL''",
+     ""
     ],
     [
      "Subtitle A",
-     "Make American Families and Workers Thrive Again"
+     "Make American Families and Workers Thrive Again PART 1--PERMANENTLY PREVENTING TAX HIKES ON AMERICAN FAMILIES AND WORKERS",
+     ""
     ],
     [
      "Subtitle B",
-     "Make Rural America and Main Street Grow Again"
+     "Make Rural America and Main Street Grow Again PART 1--EXTENSION OF TAX CUTS AND JOBS ACT REFORMS FOR RURAL AMERICA AND MAIN STREET",
+     ""
     ],
     [
      "Subtitle C",
-     "Make America Win Again"
+     "Make America Win Again PART 1--WORKING FAMILIES OVER ELITES",
+     ""
     ],
     [
      "Subtitle D",
-     "Increase in Debt Limit"
+     "Increase in Debt Limit",
+     ""
     ]
    ],
    "sections": 334,
@@ -165,155 +199,193 @@
    "parts": [
     [
      "Title I",
-     "COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY"
+     "COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+     ""
     ],
     [
      "Subtitle A",
-     "Nutrition"
+     "Nutrition",
+     ""
     ],
     [
      "Subtitle B",
-     "Forestry"
+     "Forestry",
+     ""
     ],
     [
      "Subtitle C",
-     "Commodities"
+     "Commodities",
+     ""
     ],
     [
      "Subtitle D",
-     "Disaster Assistance Programs"
+     "Disaster Assistance Programs",
+     ""
     ],
     [
      "Subtitle E",
-     "Crop Insurance"
+     "Crop Insurance",
+     ""
     ],
     [
      "Subtitle F",
-     "Additional Investments in Rural America"
+     "Additional Investments in Rural America",
+     ""
     ],
     [
      "Title II",
-     "COMMITTEE ON ARMED SERVICES"
+     "COMMITTEE ON ARMED SERVICES",
+     ""
     ],
     [
      "Title III",
-     "COMMITTEE ON BANKING, HOUSING, AND URBAN AFFAIRS"
+     "COMMITTEE ON BANKING, HOUSING, AND URBAN AFFAIRS",
+     ""
     ],
     [
      "Title IV",
-     "COMMITTEE ON COMMERCE, SCIENCE, AND TRANSPORTATION"
+     "COMMITTEE ON COMMERCE, SCIENCE, AND TRANSPORTATION",
+     ""
     ],
     [
      "Title V",
-     "COMMITTEE ON ENERGY AND NATURAL RESOURCES"
+     "COMMITTEE ON ENERGY AND NATURAL RESOURCES",
+     ""
     ],
     [
      "Subtitle A",
-     "Oil and Gas Leasing"
+     "Oil and Gas Leasing",
+     ""
     ],
     [
      "Subtitle B",
-     "Mining"
+     "Mining",
+     ""
     ],
     [
      "Subtitle C",
-     "Lands"
+     "Lands",
+     ""
     ],
     [
      "Subtitle D",
-     "Energy"
+     "Energy",
+     ""
     ],
     [
      "Subtitle E",
-     "Water"
+     "Water",
+     ""
     ],
     [
      "Title VI",
-     "COMMITTEE ON ENVIRONMENT AND PUBLIC WORKS"
+     "COMMITTEE ON ENVIRONMENT AND PUBLIC WORKS",
+     ""
     ],
     [
      "Title VII",
-     "FINANCE"
+     "FINANCE",
+     ""
     ],
     [
      "Subtitle A",
-     "Tax"
+     "Tax",
+     ""
     ],
     [
      "Subtitle B",
-     "Health"
+     "Health CHAPTER 1--MEDICAID",
+     ""
     ],
     [
      "Subtitle C",
-     "Increase in Debt Limit"
+     "Increase in Debt Limit",
+     ""
     ],
     [
      "Subtitle D",
-     "Unemployment"
+     "Unemployment",
+     ""
     ],
     [
      "Title VIII",
-     "COMMITTEE ON HEALTH, EDUCATION, LABOR, AND PENSIONS"
+     "COMMITTEE ON HEALTH, EDUCATION, LABOR, AND PENSIONS",
+     ""
     ],
     [
      "Subtitle A",
-     "Exemption of Certain Assets"
+     "Exemption of Certain Assets",
+     ""
     ],
     [
      "Subtitle B",
-     "Loan Limits"
+     "Loan Limits",
+     ""
     ],
     [
      "Subtitle C",
-     "Loan Repayment"
+     "Loan Repayment",
+     ""
     ],
     [
      "Subtitle D",
-     "Pell Grants"
+     "Pell Grants",
+     ""
     ],
     [
      "Subtitle E",
-     "Accountability"
+     "Accountability",
+     ""
     ],
     [
      "Subtitle F",
-     "Regulatory Relief"
+     "Regulatory Relief",
+     ""
     ],
     [
      "Subtitle G",
-     "Garden of Heroes"
+     "Garden of Heroes",
+     ""
     ],
     [
      "Subtitle H",
-     "Office of Refugee Resettlement"
+     "Office of Refugee Resettlement",
+     ""
     ],
     [
      "Title IX",
-     "COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS"
+     "COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS",
+     ""
     ],
     [
      "Subtitle A",
-     "Homeland Security Provisions"
+     "Homeland Security Provisions",
+     ""
     ],
     [
      "Subtitle B",
-     "Governmental Affairs Provisions"
+     "Governmental Affairs Provisions",
+     ""
     ],
     [
      "Title X",
-     "COMMITTEE ON THE JUDICIARY"
+     "COMMITTEE ON THE JUDICIARY",
+     ""
     ],
     [
      "Subtitle A",
-     "Immigration and Law Enforcement Matters"
+     "Immigration and Law Enforcement Matters PART I--IMMIGRATION FEES",
+     ""
     ],
     [
      "Subtitle B",
-     "Judiciary Matters"
+     "Judiciary Matters",
+     ""
     ],
     [
      "Subtitle C",
-     "Radiation Exposure Compensation Matters"
+     "Radiation Exposure Compensation Matters",
+     ""
     ]
    ],
    "sections": 309,
@@ -331,155 +403,193 @@
    "parts": [
     [
      "Title I",
-     "COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY"
+     "COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+     ""
     ],
     [
      "Subtitle A",
-     "Nutrition"
+     "Nutrition",
+     ""
     ],
     [
      "Subtitle B",
-     "Forestry"
+     "Forestry",
+     ""
     ],
     [
      "Subtitle C",
-     "Commodities"
+     "Commodities",
+     ""
     ],
     [
      "Subtitle D",
-     "Disaster Assistance Programs"
+     "Disaster Assistance Programs",
+     ""
     ],
     [
      "Subtitle E",
-     "Crop Insurance"
+     "Crop Insurance",
+     ""
     ],
     [
      "Subtitle F",
-     "Additional Investments in Rural America"
+     "Additional Investments in Rural America",
+     ""
     ],
     [
      "Title II",
-     "COMMITTEE ON ARMED SERVICES"
+     "COMMITTEE ON ARMED SERVICES",
+     ""
     ],
     [
      "Title III",
-     "COMMITTEE ON BANKING, HOUSING, AND URBAN AFFAIRS"
+     "COMMITTEE ON BANKING, HOUSING, AND URBAN AFFAIRS",
+     ""
     ],
     [
      "Title IV",
-     "COMMITTEE ON COMMERCE, SCIENCE, AND TRANSPORTATION"
+     "COMMITTEE ON COMMERCE, SCIENCE, AND TRANSPORTATION",
+     ""
     ],
     [
      "Title V",
-     "COMMITTEE ON ENERGY AND NATURAL RESOURCES"
+     "COMMITTEE ON ENERGY AND NATURAL RESOURCES",
+     ""
     ],
     [
      "Subtitle A",
-     "Oil and Gas Leasing"
+     "Oil and Gas Leasing",
+     ""
     ],
     [
      "Subtitle B",
-     "Mining"
+     "Mining",
+     ""
     ],
     [
      "Subtitle C",
-     "Lands"
+     "Lands",
+     ""
     ],
     [
      "Subtitle D",
-     "Energy"
+     "Energy",
+     ""
     ],
     [
      "Subtitle E",
-     "Water"
+     "Water",
+     ""
     ],
     [
      "Title VI",
-     "COMMITTEE ON ENVIRONMENT AND PUBLIC WORKS"
+     "COMMITTEE ON ENVIRONMENT AND PUBLIC WORKS",
+     ""
     ],
     [
      "Title VII",
-     "FINANCE"
+     "FINANCE",
+     ""
     ],
     [
      "Subtitle A",
-     "Tax"
+     "Tax",
+     ""
     ],
     [
      "Subtitle B",
-     "Health"
+     "Health CHAPTER 1--MEDICAID",
+     ""
     ],
     [
      "Subtitle C",
-     "Increase in Debt Limit"
+     "Increase in Debt Limit",
+     ""
     ],
     [
      "Subtitle D",
-     "Unemployment"
+     "Unemployment",
+     ""
     ],
     [
      "Title VIII",
-     "COMMITTEE ON HEALTH, EDUCATION, LABOR, AND PENSIONS"
+     "COMMITTEE ON HEALTH, EDUCATION, LABOR, AND PENSIONS",
+     ""
     ],
     [
      "Subtitle A",
-     "Exemption of Certain Assets"
+     "Exemption of Certain Assets",
+     ""
     ],
     [
      "Subtitle B",
-     "Loan Limits"
+     "Loan Limits",
+     ""
     ],
     [
      "Subtitle C",
-     "Loan Repayment"
+     "Loan Repayment",
+     ""
     ],
     [
      "Subtitle D",
-     "Pell Grants"
+     "Pell Grants",
+     ""
     ],
     [
      "Subtitle E",
-     "Accountability"
+     "Accountability",
+     ""
     ],
     [
      "Subtitle F",
-     "Regulatory Relief"
+     "Regulatory Relief",
+     ""
     ],
     [
      "Subtitle G",
-     "Garden of Heroes"
+     "Garden of Heroes",
+     ""
     ],
     [
      "Subtitle H",
-     "Office of Refugee Resettlement"
+     "Office of Refugee Resettlement",
+     ""
     ],
     [
      "Title IX",
-     "COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS"
+     "COMMITTEE ON HOMELAND SECURITY AND GOVERNMENTAL AFFAIRS",
+     ""
     ],
     [
      "Subtitle A",
-     "Homeland Security Provisions"
+     "Homeland Security Provisions",
+     ""
     ],
     [
      "Subtitle B",
-     "Governmental Affairs Provisions"
+     "Governmental Affairs Provisions",
+     ""
     ],
     [
      "Title X",
-     "COMMITTEE ON THE JUDICIARY"
+     "COMMITTEE ON THE JUDICIARY",
+     ""
     ],
     [
      "Subtitle A",
-     "Immigration and Law Enforcement Matters"
+     "Immigration and Law Enforcement Matters PART I--IMMIGRATION FEES",
+     ""
     ],
     [
      "Subtitle B",
-     "Judiciary Matters"
+     "Judiciary Matters",
+     ""
     ],
     [
      "Subtitle C",
-     "Radiation Exposure Compensation Matters"
+     "Radiation Exposure Compensation Matters",
+     ""
     ]
    ],
    "sections": 310,

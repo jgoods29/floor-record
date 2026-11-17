@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.947,
+  "kept": 0.845,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,87 +16,108 @@
    "parts": [
     [
      "Title I",
-     "COAST GUARD"
+     "COAST GUARD",
+     ""
     ],
     [
      "Subtitle A",
-     "Authorization of Appropriations"
+     "Authorization of Appropriations",
+     ""
     ],
     [
      "Subtitle B",
-     "Accountability"
+     "Accountability",
+     ""
     ],
     [
      "Title II",
-     "ORGANIZATION, AUTHORITIES, ACQUISITION, AND PERSONNEL OF THE"
+     "ORGANIZATION, AUTHORITIES, ACQUISITION, AND PERSONNEL OF THE COAST GUARD",
+     ""
     ],
     [
      "Subtitle A",
-     "Organization"
+     "Organization",
+     ""
     ],
     [
      "Subtitle B",
-     "Authorities"
+     "Authorities",
+     ""
     ],
     [
      "Subtitle C",
-     "Acquisition"
+     "Acquisition",
+     ""
     ],
     [
      "Subtitle D",
-     "Personnel"
+     "Personnel",
+     ""
     ],
     [
      "Subtitle E",
-     "Coast Guard Academy"
+     "Coast Guard Academy",
+     ""
     ],
     [
      "Subtitle F",
-     "Reports and Policies"
+     "Reports and Policies",
+     ""
     ],
     [
      "Title III",
-     "SHIPPING AND NAVIGATION"
+     "SHIPPING AND NAVIGATION",
+     ""
     ],
     [
      "Subtitle A",
-     "Merchant Mariner Credentials"
+     "Merchant Mariner Credentials",
+     ""
     ],
     [
      "Subtitle B",
-     "Vessel Safety"
+     "Vessel Safety",
+     ""
     ],
     [
      "Subtitle C",
-     "Ports"
+     "Ports",
+     ""
     ],
     [
      "Subtitle D",
-     "Matters Involving Autonomous Systems"
+     "Matters Involving Autonomous Systems",
+     ""
     ],
     [
      "Subtitle E",
-     "Other Matters"
+     "Other Matters",
+     ""
     ],
     [
      "Subtitle F",
-     "American Offshore Workers Fairness"
+     "American Offshore Workers Fairness",
+     ""
     ],
     [
      "Title IV",
-     "OIL POLLUTION RESPONSE"
+     "OIL POLLUTION RESPONSE",
+     ""
     ],
     [
      "Title V",
-     "SEXUAL ASSAULT AND SEXUAL HARASSMENT RESPONSE"
+     "SEXUAL ASSAULT AND SEXUAL HARASSMENT RESPONSE",
+     ""
     ],
     [
      "Title VI",
-     "COMPTROLLER GENERAL REPORTS"
+     "COMPTROLLER GENERAL REPORTS",
+     ""
     ],
     [
      "Title VII",
-     "AMENDMENTS"
+     "AMENDMENTS",
+     ""
     ]
    ],
    "sections": 154,
@@ -107,83 +134,103 @@
    "parts": [
     [
      "Title I",
-     "COAST GUARD"
+     "COAST GUARD",
+     ""
     ],
     [
      "Subtitle A",
-     "Authorization of Appropriations"
+     "Authorization of Appropriations",
+     ""
     ],
     [
      "Subtitle B",
-     "Accountability"
+     "Accountability",
+     ""
     ],
     [
      "Title II",
-     "ORGANIZATION, AUTHORITIES, ACQUISITION, AND PERSONNEL OF THE"
+     "ORGANIZATION, AUTHORITIES, ACQUISITION, AND PERSONNEL OF THE COAST GUARD",
+     ""
     ],
     [
      "Subtitle A",
-     "Organization"
+     "Organization",
+     ""
     ],
     [
      "Subtitle B",
-     "Authorities"
+     "Authorities",
+     ""
     ],
     [
      "Subtitle C",
-     "Acquisition"
+     "Acquisition",
+     ""
     ],
     [
      "Subtitle D",
-     "Personnel"
+     "Personnel",
+     ""
     ],
     [
      "Subtitle E",
-     "Coast Guard Academy"
+     "Coast Guard Academy",
+     ""
     ],
     [
      "Subtitle F",
-     "Reports and Policies"
+     "Reports and Policies",
+     ""
     ],
     [
      "Title III",
-     "SHIPPING AND NAVIGATION"
+     "SHIPPING AND NAVIGATION",
+     ""
     ],
     [
      "Subtitle A",
-     "Merchant Mariner Credentials"
+     "Merchant Mariner Credentials",
+     ""
     ],
     [
      "Subtitle B",
-     "Vessel Safety"
+     "Vessel Safety",
+     ""
     ],
     [
      "Subtitle C",
-     "Ports"
+     "Ports",
+     ""
     ],
     [
      "Subtitle D",
-     "Matters Involving Autonomous Systems"
+     "Matters Involving Autonomous Systems",
+     ""
     ],
     [
      "Subtitle E",
-     "Other Matters"
+     "Other Matters",
+     ""
     ],
     [
      "Title IV",
-     "OIL POLLUTION RESPONSE"
+     "OIL POLLUTION RESPONSE",
+     ""
     ],
     [
      "Title V",
-     "SEXUAL ASSAULT AND SEXUAL HARASSMENT RESPONSE"
+     "SEXUAL ASSAULT AND SEXUAL HARASSMENT RESPONSE",
+     ""
     ],
     [
      "Title VI",
-     "COMPTROLLER GENERAL REPORTS"
+     "COMPTROLLER GENERAL REPORTS",
+     ""
     ],
     [
      "Title VII",
-     "AMENDMENTS"
+     "AMENDMENTS",
+     ""
     ]
    ],
    "sections": 147,

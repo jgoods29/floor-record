@@ -50,25 +50,46 @@ def plain_text(page):
     return text.replace("\r", "")
 
 
+def _heading_name(text, m):
+    """A heading's words. Long headings wrap onto more centred lines of capitals; join them."""
+    name = m.group(2).strip()
+    rest = text[m.end():m.end() + 400].split("\n")[1:4]
+    for line in rest:
+        more = line.strip()
+        if not more or more != more.upper() or not re.search(r"[A-Z]{2}", more) or re.match(r"(SEC\.|SECTION\b|TITLE\b|DIVISION\b|SUBTITLE\b)", more):
+            break
+        name += " " + more
+    return " ".join(name.split()).strip(". ")
+
+
 def outline(text):
     """What is in a version: its short titles, its divisions and titles, and how many sections it has."""
-    # The table of contents lists the same headings in lower case ("Sec. 101."); the patterns here match the
-    # capitals used in the bill itself, and a heading that appears twice is kept once.
-    body = text
-    parts = []
-    for m in HEADING.finditer(body):
-        name = " ".join(m.group(2).split()).strip(". ")
+    # The table of contents lists the same headings again; a heading that appears twice is kept once, and the
+    # section pattern matches only the capitals used in the bill itself ("SEC. 101."), not the contents ("Sec. 101.").
+    # A heading is known by where it sits (Division A > Title I > Subtitle B), so "Title I" of two different
+    # divisions are two entries, and the copy in the table of contents is not counted again.
+    found, division, title = {}, "", ""
+    for m in HEADING.finditer(text):
+        name = _heading_name(text, m)
         level, number = m.group(1).split()
-        row = [f"{level.capitalize()} {number}", name[:160]]
-        if name and row not in parts and len(name) > 2:
-            parts.append(row)
-    sections = {m.group(1) for m in SECTION.finditer(body)}
+        level = level.capitalize()
+        if len(name) < 3:
+            continue
+        if level == "Division":
+            division, title, key = number, "", (number,)
+        elif level == "Title":
+            title, key = number, (division, number)
+        else:
+            key = (division, title, "sub", number)
+        found[key] = [f"{level} {number}", name[:200], division]
+    parts = list(found.values())
+    sections = {m.group(1) for m in SECTION.finditer(text)}
     titles = []
     for m in SHORT_TITLE.finditer(text):
         name = " ".join(m.group(1).split())
         if name not in titles and len(name) < 200:
             titles.append(name)
-    return {"chars": len(text), "sections": len(sections), "short_titles": titles[:12], "parts": parts[:400]}
+    return {"chars": len(text), "sections": len(sections), "short_titles": titles[:12], "parts": parts[:600]}
 
 
 def _shingles(text, size=6):
@@ -103,6 +124,9 @@ def review(rec):
     # The final version is the fairest comparison. Before there is one, use the other chamber's version only if it
     # replaced the whole text; a version that lists a few separate changes is not the whole bill.
     other = "enr" if "enr" in have else next((c for c in ("eas", "eah") if c in have and have[c].get("whole")), None)
+    if not other and own in ("eh", "es"):   # only one chamber has acted: compare what it passed with what was introduced
+        first = "ih" if own == "eh" else "is"
+        own, other = (first, own) if first in have else (own, None)
     rec["compare"] = None
     rec["review"] = False
     if own and other and "_text" in have[own] and "_text" in have[other]:
@@ -116,7 +140,7 @@ def review(rec):
     return rec
 
 
-def collect(slug, congress, old=None, get=fetch, save_full=True):
+def collect(slug, congress, old=None, get=fetch, save_full=True, redo_outlines=False):
     """Fetch any versions of one bill that are not on file yet. Returns the record for data/texts/<slug>.json."""
     kind, number = slug.rsplit("-", 1)
     old = old or {}
@@ -128,14 +152,20 @@ def collect(slug, congress, old=None, get=fetch, save_full=True):
             path = DATA / "texts" / "full" / f"{slug}.{code}.txt.gz"
             if path.exists():
                 row["_text"] = gzip.decompress(path.read_bytes()).decode("utf-8")
-            versions.append(row)
-            continue
+                if redo_outlines:
+                    row.update(outline(row["_text"]))
+            if not redo_outlines or path.exists():
+                versions.append(row)
+                continue
+            # a version too long to keep in full: fetch it again to redo its outline
         url = version_url(congress, kind, number, code)
         try:
             text = plain_text(get(url))
         except NotFound:
             continue
         row = {"code": code, "stage": label, "url": url, "full_text": False}
+        if code in known and known[code].get("whole") is not None:
+            row["whole"] = known[code]["whole"]
         row.update(outline(text))
         if code in ("eas", "eah"):
             row["whole"] = bool(re.search(r"strike\s+(?:out\s+)?all\s+after\s+the\s+(?:enacting|resolving)\s+clause", text, re.I))
@@ -179,3 +209,23 @@ def ingest_texts(bills, congress, first=(), log=print, per_run=40, get=fetch):
             flagged.append(f"{slug} ({rec['compare']['verdict']})")
     log(f"Bill texts: {done} bills checked this run" + (f"; a person should look at: {', '.join(flagged)}" if flagged else ""))
     return done
+
+
+def load(slug):
+    """The saved record for one bill, or None."""
+    return read_json(DATA / "texts" / f"{slug}.json")
+
+
+def redo_all(congress, log=print):
+    """Rebuild every outline and comparison from the saved texts (after the outline rules change)."""
+    n = 0
+    for path in sorted((DATA / "texts").glob("*.json")):
+        slug = path.stem
+        old = read_json(path)
+        missing = lambda url: (_ for _ in ()).throw(NotFound(url))
+        long_ones = any(not v.get("full_text") for v in old.get("versions", []))
+        rec = collect(slug, congress, old, get=fetch if long_ones else missing, redo_outlines=True)
+        rec["checked"] = old.get("checked", rec["checked"])
+        write_json(path, rec, compact=False)
+        n += 1
+    log(f"Bill texts: {n} outlines rebuilt")

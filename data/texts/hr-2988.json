@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.934,
+  "kept": 0.972,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,19 +16,23 @@
    "parts": [
     [
      "Division A",
-     "INCREASE RETIREMENT EARNINGS"
+     "INCREASE RETIREMENT EARNINGS",
+     "A"
     ],
     [
      "Division B",
-     "NO DISCRIMINATION IN MY BENEFITS"
+     "NO DISCRIMINATION IN MY BENEFITS",
+     "B"
     ],
     [
      "Division C",
-     "RETIREMENT PROXY PROTECTION"
+     "RETIREMENT PROXY PROTECTION",
+     "C"
     ],
     [
      "Division D",
-     "PROVIDING COMPLETE INFORMATION TO RETIREMENT INVESTORS"
+     "PROVIDING COMPLETE INFORMATION TO RETIREMENT INVESTORS",
+     "D"
     ]
    ],
    "sections": 9,
@@ -43,19 +53,23 @@
    "parts": [
     [
      "Division A",
-     "INCREASE RETIREMENT EARNINGS"
+     "INCREASE RETIREMENT EARNINGS",
+     "A"
     ],
     [
      "Division B",
-     "NO DISCRIMINATION IN MY BENEFITS"
+     "NO DISCRIMINATION IN MY BENEFITS",
+     "B"
     ],
     [
      "Division C",
-     "RETIREMENT PROXY PROTECTION"
+     "RETIREMENT PROXY PROTECTION",
+     "C"
     ],
     [
      "Division D",
-     "PROVIDING COMPLETE INFORMATION TO RETIREMENT INVESTORS"
+     "PROVIDING COMPLETE INFORMATION TO RETIREMENT INVESTORS",
+     "D"
     ]
    ],
    "sections": 10,

@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.855,
+  "kept": 0.904,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,23 +16,28 @@
    "parts": [
     [
      "Title I",
-     "GENERAL PROVISIONS"
+     "GENERAL PROVISIONS",
+     ""
     ],
     [
      "Title II",
-     "STUDIES AND REPORTS"
+     "STUDIES AND REPORTS",
+     ""
     ],
     [
      "Title III",
-     "DEAUTHORIZATIONS AND MODIFICATIONS"
+     "DEAUTHORIZATIONS AND MODIFICATIONS",
+     ""
     ],
     [
      "Title IV",
-     "WATER RESOURCES INFRASTRUCTURE"
+     "WATER RESOURCES INFRASTRUCTURE",
+     ""
     ],
     [
      "Title V",
-     "DAM SAFETY"
+     "DAM SAFETY",
+     ""
     ]
    ],
    "sections": 129,
@@ -43,23 +54,28 @@
    "parts": [
     [
      "Title I",
-     "GENERAL PROVISIONS"
+     "GENERAL PROVISIONS",
+     ""
     ],
     [
      "Title II",
-     "STUDIES AND REPORTS"
+     "STUDIES AND REPORTS",
+     ""
     ],
     [
      "Title III",
-     "DEAUTHORIZATIONS AND MODIFICATIONS"
+     "DEAUTHORIZATIONS AND MODIFICATIONS",
+     ""
     ],
     [
      "Title IV",
-     "WATER RESOURCES INFRASTRUCTURE"
+     "WATER RESOURCES INFRASTRUCTURE",
+     ""
     ],
     [
      "Title V",
-     "DAM SAFETY"
+     "DAM SAFETY",
+     ""
     ]
    ],
    "sections": 137,

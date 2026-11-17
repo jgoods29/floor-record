@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.994,
+  "kept": 0.983,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,11 +16,13 @@
    "parts": [
     [
      "Title I",
-     "UNITED STATES-TAIWAN EXPEDITED DOUBLE-TAX RELIEF ACT"
+     "UNITED STATES-TAIWAN EXPEDITED DOUBLE-TAX RELIEF ACT",
+     ""
     ],
     [
      "Title II",
-     "UNITED STATES-TAIWAN TAX AGREEMENT AUTHORIZATION ACT"
+     "UNITED STATES-TAIWAN TAX AGREEMENT AUTHORIZATION ACT",
+     ""
     ]
    ],
    "sections": 12,
@@ -32,11 +40,13 @@
    "parts": [
     [
      "Title I",
-     "UNITED STATES-TAIWAN EXPEDITED DOUBLE-TAX RELIEF ACT"
+     "UNITED STATES-TAIWAN EXPEDITED DOUBLE-TAX RELIEF ACT",
+     ""
     ],
     [
      "Title II",
-     "UNITED STATES-TAIWAN TAX AGREEMENT AUTHORIZATION ACT"
+     "UNITED STATES-TAIWAN TAX AGREEMENT AUTHORIZATION ACT",
+     ""
     ]
    ],
    "sections": 12,

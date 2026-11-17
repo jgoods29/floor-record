@@ -10,47 +10,58 @@
    "parts": [
     [
      "Division A",
-     "CONTINUING APPROPRIATIONS ACT, 2026"
+     "CONTINUING APPROPRIATIONS ACT, 2026",
+     "A"
     ],
     [
      "Division B",
-     "EXTENSIONS AND OTHER MATTERS"
+     "EXTENSIONS AND OTHER MATTERS",
+     "B"
     ],
     [
      "Title I",
-     "HEALTH"
+     "HEALTH",
+     "B"
     ],
     [
      "Subtitle A",
-     "Public Health Extenders"
+     "Public Health Extenders",
+     "B"
     ],
     [
      "Subtitle B",
-     "Medicare"
+     "Medicare",
+     "B"
     ],
     [
      "Subtitle C",
-     "Human Services"
+     "Human Services",
+     "B"
     ],
     [
      "Subtitle D",
-     "Medicaid"
+     "Medicaid",
+     "B"
     ],
     [
      "Subtitle E",
-     "Other Health Provisions"
+     "Other Health Provisions",
+     "B"
     ],
     [
      "Title II",
-     "VETERANS AFFAIRS"
+     "VETERANS AFFAIRS",
+     "B"
     ],
     [
      "Title III",
-     "MISCELLANEOUS EXTENSIONS"
+     "MISCELLANEOUS EXTENSIONS",
+     "B"
     ],
     [
      "Title IV",
-     "BUDGETARY EFFECTS"
+     "BUDGETARY EFFECTS",
+     "B"
     ]
    ],
    "sections": 54,

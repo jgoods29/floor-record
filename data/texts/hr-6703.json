@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.996,
+  "kept": 0.989,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,11 +16,13 @@
    "parts": [
     [
      "Title I",
-     "IMPROVING HEALTH CARE OPTIONS FOR WORKERS"
+     "IMPROVING HEALTH CARE OPTIONS FOR WORKERS",
+     ""
     ],
     [
      "Title II",
-     "LOWERING HEALTH CARE PREMIUMS FOR EVERYONE"
+     "LOWERING HEALTH CARE PREMIUMS FOR EVERYONE",
+     ""
     ]
    ],
    "sections": 6,
@@ -31,11 +39,13 @@
    "parts": [
     [
      "Title I",
-     "IMPROVING HEALTH CARE OPTIONS FOR WORKERS"
+     "IMPROVING HEALTH CARE OPTIONS FOR WORKERS",
+     ""
     ],
     [
      "Title II",
-     "LOWERING HEALTH CARE PREMIUMS FOR EVERYONE"
+     "LOWERING HEALTH CARE PREMIUMS FOR EVERYONE",
+     ""
     ]
    ],
    "sections": 6,

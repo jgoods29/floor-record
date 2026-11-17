@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "is",
+  "from_earlier": 0.561,
+  "kept": 0.907,
+  "later": "es",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,11 +16,13 @@
    "parts": [
     [
      "Title I",
-     "PROTECTIONS OF STUDENT ATHLETES AND FAIR COMPETITION"
+     "PROTECTIONS OF STUDENT ATHLETES AND FAIR COMPETITION",
+     ""
     ],
     [
      "Title II",
-     "SPORTS BROADCASTING"
+     "SPORTS BROADCASTING",
+     ""
     ]
    ],
    "sections": 33,
@@ -31,15 +39,18 @@
    "parts": [
     [
      "Title I",
-     "PROTECTIONS OF STUDENT ATHLETES AND FAIR COMPETITION"
+     "PROTECTIONS OF STUDENT ATHLETES AND FAIR COMPETITION",
+     ""
     ],
     [
      "Title II",
-     "SPORTS BROADCASTING"
+     "SPORTS BROADCASTING",
+     ""
     ],
     [
      "Title III",
-     "HBCU SPORTS MEDIA AND CONNECTIVITY PROGRAM"
+     "HBCU SPORTS MEDIA AND CONNECTIVITY PROGRAM",
+     ""
     ]
    ],
    "sections": 45,

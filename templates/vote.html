@@ -50,7 +50,7 @@
 <div class="card"><span class="h3">A Yea vote</span><p style="font-size:18px;color:var(--text-2)">was a vote to {{ v.info.yea }}.</p></div>
 <div class="card"><span class="h3">A Nay vote</span><p style="font-size:18px;color:var(--text-2)">was a vote to {{ v.info.nay }}.</p></div>
 </div>
-{% if note %}<div class="card"><span class="label">About this bill</span><p style="font-size:18px;margin-top:8px">{{ note }}</p></div>{% elif ai %}<div class="card"><span class="label">What the measure does · AI-written summary</span><p style="font-size:18px;margin-top:8px">{{ ai.one_sentence }}</p><p class="small muted" style="margin-top:8px">Drafted by AI from the official title and summary. <a href="{{ root }}{{ c }}bills/{{ v.slug }}/">Read more and check the source</a>.</p></div>{% endif %}
+{% if note %}<div class="card"><span class="label">About this bill</span><p style="font-size:18px;margin-top:8px">{{ note }}</p></div>{% elif ai %}<div class="card"><span class="label">What the measure does · AI-written summary</span><p style="font-size:18px;margin-top:8px">{{ ai.one_sentence }}</p><p class="small muted" style="margin-top:8px">Drafted by AI from the official title and summary. <a href="{{ root }}{{ c }}bills/{{ v.slug }}/">Read more and check the source</a>.</p>{% if unchecked %}<p class="small muted" style="margin-top:8px">This bill's text changed a lot between versions, and this summary has not been checked against the latest text yet. <a href="{{ root }}{{ c }}bills/{{ v.slug }}/">See what each version contains</a>.</p>{% endif %}</div>{% endif %}
 </div></section>
 
 <div class="wrap page">

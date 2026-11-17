@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.658,
+  "kept": 0.652,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,35 +16,43 @@
    "parts": [
     [
      "Title I",
-     "NEW BANK FORMATION AND LOCAL COMMUNITY ACCESS"
+     "NEW BANK FORMATION AND LOCAL COMMUNITY ACCESS",
+     ""
     ],
     [
      "Title II",
-     "TAILORING BANK REGULATION"
+     "TAILORING BANK REGULATION",
+     ""
     ],
     [
      "Title III",
-     "FAIR AND TRANSPARENT BANK SUPERVISION"
+     "FAIR AND TRANSPARENT BANK SUPERVISION",
+     ""
     ],
     [
      "Title IV",
-     "REGULATORY ACCOUNTABILITY AND TRANSPARENCY"
+     "REGULATORY ACCOUNTABILITY AND TRANSPARENCY",
+     ""
     ],
     [
      "Title V",
-     "STRENGTHENING LOCAL BANK FUNDING"
+     "STRENGTHENING LOCAL BANK FUNDING",
+     ""
     ],
     [
      "Title VI",
-     "PROMOTING BANK COMPETITION AND MERGER CLARITY"
+     "PROMOTING BANK COMPETITION AND MERGER CLARITY",
+     ""
     ],
     [
      "Title VII",
-     "STRENGTHENING TRANSPARENCY AND INVOLVEMENT IN BANK"
+     "STRENGTHENING TRANSPARENCY AND INVOLVEMENT IN BANK RESOLUTIONS",
+     ""
     ],
     [
      "Title VIII",
-     "FACILITATING INNOVATION AND BANK PARTNERSHIPS"
+     "FACILITATING INNOVATION AND BANK PARTNERSHIPS",
+     ""
     ]
    ],
    "sections": 30,
@@ -55,35 +69,43 @@
    "parts": [
     [
      "Title I",
-     "NEW BANK FORMATION AND LOCAL COMMUNITY ACCESS"
+     "NEW BANK FORMATION AND LOCAL COMMUNITY ACCESS",
+     ""
     ],
     [
      "Title II",
-     "TAILORING BANK REGULATION"
+     "TAILORING BANK REGULATION",
+     ""
     ],
     [
      "Title III",
-     "FAIR AND TRANSPARENT BANK SUPERVISION"
+     "FAIR AND TRANSPARENT BANK SUPERVISION",
+     ""
     ],
     [
      "Title IV",
-     "REGULATORY ACCOUNTABILITY AND TRANSPARENCY"
+     "REGULATORY ACCOUNTABILITY AND TRANSPARENCY",
+     ""
     ],
     [
      "Title V",
-     "STRENGTHENING LOCAL BANK FUNDING"
+     "STRENGTHENING LOCAL BANK FUNDING",
+     ""
     ],
     [
      "Title VI",
-     "PROMOTING BANK COMPETITION AND MERGER CLARITY"
+     "PROMOTING BANK COMPETITION AND MERGER CLARITY",
+     ""
     ],
     [
      "Title VII",
-     "STRENGTHENING TRANSPARENCY AND INVOLVEMENT IN BANK"
+     "STRENGTHENING TRANSPARENCY AND INVOLVEMENT IN BANK RESOLUTIONS",
+     ""
     ],
     [
      "Title VIII",
-     "FACILITATING INNOVATION AND BANK PARTNERSHIPS"
+     "FACILITATING INNOVATION AND BANK PARTNERSHIPS",
+     ""
     ]
    ],
    "sections": 28,

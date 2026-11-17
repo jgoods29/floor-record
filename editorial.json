@@ -1,5 +1,5 @@
 {
-  "_about": "Wording a person has approved. 'pins' puts votes at the top of the home page for 90 days. 'votes' sets the name, outcome and one-line explanation for a vote, and always wins over AI or automatic wording. 'carried' marks a bill the Senate is using to carry a different, larger package: Senate vote pages on or after 'since' show the note in place of the summary of the original bill, and the bill page shows the note at the top.",
+  "_about": "Wording a person has approved. 'pins' puts votes at the top of the home page for 90 days. 'votes' sets the name, outcome and one-line explanation for a vote, and always wins over AI or automatic wording. 'carried' marks a bill the Senate is using to carry a different, larger package: Senate vote pages on or after 'since' show the note in place of the summary of the original bill, and the bill page shows the note at the top. 'bills' holds a one-sentence and a short summary a person wrote from the bill's text; it replaces the AI summary. 'reviewed' lists bills whose text changed a lot and whose summary a person has checked against the latest text, with the date and what was checked.",
   "pins": ["2026-317", "2026-320", "2026-307"],
   "votes": {
     "2026-317": {
@@ -34,6 +34,30 @@
     "hr-2347": {
       "since": "2026-11-09",
       "note": "The Senate is using this House tax bill to carry a much larger energy permitting package, the Bipartisan American Affordability and Jobs Act. Senate votes on H.R. 2347 since November 9, 2026 are steps on that package. The package would change permit and environmental review rules for energy projects and power lines. The summary of the original House bill does not describe it."
+    },
+    "s-1383": {
+      "since": "2026-02-11",
+      "note": "The Senate passed this bill as the Veterans Accessibility Advisory Committee Act. On February 11, 2026 the House replaced all of its text with the SAVE America Act, which would require documentary proof of citizenship to register to vote and photo identification to vote in federal elections. Senate votes on S. 1383 after that date are about the House version."
+    },
+    "s-1318": {
+      "since": "2026-04-29",
+      "note": "The Senate passed this bill as the Fallen Servicemembers Religious Heritage Restoration Act. On April 29, 2026 the House replaced all of its text with a bill on foreign surveillance and a ban on a Federal Reserve digital currency. Senate votes on S. 1318 after that date are about the House version."
+    }
+  },
+  "bills": {
+    "s-1318": {
+      "one_sentence": "As changed by the House, this bill would extend a foreign surveillance law to April 30, 2029, add checks on FBI searches for Americans' information, and bar the Federal Reserve from issuing its own digital currency.",
+      "short": "The Senate passed this bill as the Fallen Servicemembers Religious Heritage Restoration Act, about grave markers for American-Jewish servicemembers buried overseas. On April 29, 2026 the House replaced all of its text. The new text extends Title VII of the Foreign Intelligence Surveillance Act, which includes Section 702, from April 30, 2026 to April 30, 2029. It requires a monthly civil liberties review of FBI searches for Americans' information, requires an attorney to approve those searches, and sets up to 5 years in prison for FBI employees who knowingly and willfully break the search rules. It also bars the Federal Reserve from issuing, testing or developing a central bank digital currency."
+    }
+  },
+  "reviewed": {
+    "s-1383": {
+      "on": "2026-11-17",
+      "checked": "Read the House version in full. It replaces the veterans committee bill with the SAVE America Act: documentary proof of citizenship to register and photo identification to vote in federal elections. The site's summary matches."
+    },
+    "hr-5371": {
+      "on": "2026-11-17",
+      "checked": "Checked the final text's eight divisions, the January 30, 2026 funding date and the hemp definition change (section 781) against the site's summary and the hemp row on the Schumer Vs. Van Hollen page. They match. The whole text was not read."
     }
   }
 }

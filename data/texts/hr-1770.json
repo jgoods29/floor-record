@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.971,
+  "kept": 0.952,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,15 +16,18 @@
    "parts": [
     [
      "Title I",
-     "ARTIFICIAL INTELLIGENCE AND CONSUMER PRODUCT SAFETY"
+     "ARTIFICIAL INTELLIGENCE AND CONSUMER PRODUCT SAFETY",
+     ""
     ],
     [
      "Title II",
-     "BLOCKCHAIN TECHNOLOGY INNOVATION"
+     "BLOCKCHAIN TECHNOLOGY INNOVATION",
+     ""
     ],
     [
      "Title III",
-     "TOKEN TAXONOMY"
+     "TOKEN TAXONOMY",
+     ""
     ]
    ],
    "sections": 9,
@@ -38,15 +47,18 @@
    "parts": [
     [
      "Title I",
-     "ARTIFICIAL INTELLIGENCE AND CONSUMER PRODUCT SAFETY"
+     "ARTIFICIAL INTELLIGENCE AND CONSUMER PRODUCT SAFETY",
+     ""
     ],
     [
      "Title II",
-     "BLOCKCHAIN TECHNOLOGY INNOVATION"
+     "BLOCKCHAIN TECHNOLOGY INNOVATION",
+     ""
     ],
     [
      "Title III",
-     "TOKEN TAXONOMY"
+     "TOKEN TAXONOMY",
+     ""
     ]
    ],
    "sections": 9,

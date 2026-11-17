@@ -16,63 +16,78 @@
    "parts": [
     [
      "Division A",
-     "CONTINUING APPROPRIATIONS ACT, 2026"
+     "CONTINUING APPROPRIATIONS ACT, 2026",
+     "A"
     ],
     [
      "Division B",
-     "MISCELLANEOUS EXTENSIONS"
+     "MISCELLANEOUS EXTENSIONS",
+     "B"
     ],
     [
      "Division C",
-     "HEALTH EXTENDERS"
+     "HEALTH EXTENDERS",
+     "C"
     ],
     [
      "Division D",
-     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS"
+     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS",
+     "D"
     ],
     [
      "Division E",
-     "MISCELLANEOUS"
+     "MISCELLANEOUS",
+     "E"
     ],
     [
      "Title I",
-     "PUBLIC HEALTH EXTENDERS"
+     "PUBLIC HEALTH EXTENDERS",
+     "C"
     ],
     [
      "Title II",
-     "MEDICARE"
+     "MEDICARE",
+     "C"
     ],
     [
      "Title III",
-     "HUMAN SERVICES"
+     "HUMAN SERVICES",
+     "C"
     ],
     [
      "Title IV",
-     "MEDICAID"
+     "MEDICAID",
+     "C"
     ],
     [
      "Title V",
-     "FOOD AND DRUG ADMINISTRATION"
+     "FOOD AND DRUG ADMINISTRATION",
+     "C"
     ],
     [
      "Title VI",
-     "NO SURPRISES ACT IMPLEMENTATION"
+     "NO SURPRISES ACT IMPLEMENTATION",
+     "C"
     ],
     [
      "Title I",
-     "HEALTH CARE MATTERS"
+     "HEALTH CARE MATTERS",
+     "D"
     ],
     [
      "Title II",
-     "BENEFITS"
+     "BENEFITS",
+     "D"
     ],
     [
      "Title III",
-     "HOUSING"
+     "HOUSING",
+     "D"
     ],
     [
      "Title IV",
-     "OTHER MATTERS"
+     "OTHER MATTERS",
+     "D"
     ]
    ],
    "sections": 42,
@@ -91,63 +106,78 @@
    "parts": [
     [
      "Division A",
-     "CONTINUING APPROPRIATIONS ACT, 2026"
+     "CONTINUING APPROPRIATIONS ACT, 2026",
+     "A"
     ],
     [
      "Division B",
-     "MISCELLANEOUS EXTENSIONS"
+     "MISCELLANEOUS EXTENSIONS",
+     "B"
     ],
     [
      "Division C",
-     "HEALTH EXTENDERS"
+     "HEALTH EXTENDERS",
+     "C"
     ],
     [
      "Division D",
-     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS"
+     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS",
+     "D"
     ],
     [
      "Division E",
-     "MISCELLANEOUS"
+     "MISCELLANEOUS",
+     "E"
     ],
     [
      "Title I",
-     "PUBLIC HEALTH EXTENDERS"
+     "PUBLIC HEALTH EXTENDERS",
+     "C"
     ],
     [
      "Title II",
-     "MEDICARE"
+     "MEDICARE",
+     "C"
     ],
     [
      "Title III",
-     "HUMAN SERVICES"
+     "HUMAN SERVICES",
+     "C"
     ],
     [
      "Title IV",
-     "MEDICAID"
+     "MEDICAID",
+     "C"
     ],
     [
      "Title V",
-     "FOOD AND DRUG ADMINISTRATION"
+     "FOOD AND DRUG ADMINISTRATION",
+     "C"
     ],
     [
      "Title VI",
-     "NO SURPRISES ACT IMPLEMENTATION"
+     "NO SURPRISES ACT IMPLEMENTATION",
+     "C"
     ],
     [
      "Title I",
-     "HEALTH CARE MATTERS"
+     "HEALTH CARE MATTERS",
+     "D"
     ],
     [
      "Title II",
-     "BENEFITS"
+     "BENEFITS",
+     "D"
     ],
     [
      "Title III",
-     "HOUSING"
+     "HOUSING",
+     "D"
     ],
     [
      "Title IV",
-     "OTHER MATTERS"
+     "OTHER MATTERS",
+     "D"
     ]
    ],
    "sections": 42,
@@ -166,79 +196,93 @@
    "parts": [
     [
      "Division A",
-     "CONTINUING APPROPRIATONS ACT, 2026"
+     "CONTINUING APPROPRIATIONS ACT, 2026",
+     "A"
     ],
     [
      "Division B",
-     "AGRICULTURE, RURAL DEVELOPMENT, FOOD AND DRUG"
+     "AGRICULTURE, RURAL DEVELOPMENT, FOOD AND DRUG ADMINISTRATION, AND RELATED AGENCY APPROPRIATIONS ACT, 2026",
+     "B"
     ],
     [
      "Division C",
-     "LEGISLATIVE BRANCH APPROPRIATIONS ACT, 2026"
+     "LEGISLATIVE BRANCH APPROPRIATIONS ACT, 2026",
+     "C"
     ],
     [
      "Division D",
-     "MILITARY CONSTRUCTION, VETERANS AFFAIRS, AND RELATED"
+     "MILITARY CONSTRUCTION, VETERANS AFFAIRS, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026",
+     "D"
     ],
     [
      "Division E",
-     "EXTENSION OF AGRICULTURAL PROGRAMS"
+     "EXTENSION OF AGRICULTURAL PROGRAMS",
+     "E"
     ],
     [
      "Division F",
-     "HEALTH EXTENDERS"
+     "HEALTH EXTENDERS",
+     "F"
     ],
     [
      "Division G",
-     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS"
+     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS",
+     "G"
     ],
     [
      "Division H",
-     "MISCELLANEOUS"
-    ],
-    [
-     "Division A",
-     "CONTINUING APPROPRIATIONS ACT, 2026"
+     "MISCELLANEOUS",
+     "H"
     ],
     [
      "Title I",
-     "PUBLIC HEALTH EXTENDERS"
+     "PUBLIC HEALTH EXTENDERS",
+     "F"
     ],
     [
      "Title II",
-     "MEDICARE"
+     "MEDICARE",
+     "F"
     ],
     [
      "Title III",
-     "HUMAN SERVICES"
+     "HUMAN SERVICES",
+     "F"
     ],
     [
      "Title IV",
-     "MEDICAID"
+     "MEDICAID",
+     "F"
     ],
     [
      "Title V",
-     "FOOD AND DRUG ADMINISTRATION"
+     "FOOD AND DRUG ADMINISTRATION",
+     "F"
     ],
     [
      "Title VI",
-     "NO SURPRISES ACT IMPLEMENTATION"
+     "NO SURPRISES ACT IMPLEMENTATION",
+     "F"
     ],
     [
      "Title I",
-     "HEALTH CARE MATTERS"
+     "HEALTH CARE MATTERS",
+     "G"
     ],
     [
      "Title II",
-     "BENEFITS"
+     "BENEFITS",
+     "G"
     ],
     [
      "Title III",
-     "HOUSING"
+     "HOUSING",
+     "G"
     ],
     [
      "Title IV",
-     "OTHER MATTERS"
+     "OTHER MATTERS",
+     "G"
     ]
    ],
    "sections": 62,
@@ -261,79 +305,93 @@
    "parts": [
     [
      "Division A",
-     "CONTINUING APPROPRIATONS ACT, 2026"
+     "CONTINUING APPROPRIATIONS ACT, 2026",
+     "A"
     ],
     [
      "Division B",
-     "AGRICULTURE, RURAL DEVELOPMENT, FOOD AND DRUG"
+     "AGRICULTURE, RURAL DEVELOPMENT, FOOD AND DRUG ADMINISTRATION, AND RELATED AGENCY APPROPRIATIONS ACT, 2026",
+     "B"
     ],
     [
      "Division C",
-     "LEGISLATIVE BRANCH APPROPRIATIONS ACT, 2026"
+     "LEGISLATIVE BRANCH APPROPRIATIONS ACT, 2026",
+     "C"
     ],
     [
      "Division D",
-     "MILITARY CONSTRUCTION, VETERANS AFFAIRS, AND RELATED"
+     "MILITARY CONSTRUCTION, VETERANS AFFAIRS, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026",
+     "D"
     ],
     [
      "Division E",
-     "EXTENSION OF AGRICULTURAL PROGRAMS"
+     "EXTENSION OF AGRICULTURAL PROGRAMS",
+     "E"
     ],
     [
      "Division F",
-     "HEALTH EXTENDERS"
+     "HEALTH EXTENDERS",
+     "F"
     ],
     [
      "Division G",
-     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS"
+     "DEPARTMENT OF VETERANS AFFAIRS EXTENDERS",
+     "G"
     ],
     [
      "Division H",
-     "MISCELLANEOUS"
-    ],
-    [
-     "Division A",
-     "CONTINUING APPROPRIATIONS ACT, 2026"
+     "MISCELLANEOUS",
+     "H"
     ],
     [
      "Title I",
-     "PUBLIC HEALTH EXTENDERS"
+     "PUBLIC HEALTH EXTENDERS",
+     "F"
     ],
     [
      "Title II",
-     "MEDICARE"
+     "MEDICARE",
+     "F"
     ],
     [
      "Title III",
-     "HUMAN SERVICES"
+     "HUMAN SERVICES",
+     "F"
     ],
     [
      "Title IV",
-     "MEDICAID"
+     "MEDICAID",
+     "F"
     ],
     [
      "Title V",
-     "FOOD AND DRUG ADMINISTRATION"
+     "FOOD AND DRUG ADMINISTRATION",
+     "F"
     ],
     [
      "Title VI",
-     "NO SURPRISES ACT IMPLEMENTATION"
+     "NO SURPRISES ACT IMPLEMENTATION",
+     "F"
     ],
     [
      "Title I",
-     "HEALTH CARE MATTERS"
+     "HEALTH CARE MATTERS",
+     "G"
     ],
     [
      "Title II",
-     "BENEFITS"
+     "BENEFITS",
+     "G"
     ],
     [
      "Title III",
-     "HOUSING"
+     "HOUSING",
+     "G"
     ],
     [
      "Title IV",
-     "OTHER MATTERS"
+     "OTHER MATTERS",
+     "G"
     ]
    ],
    "sections": 62,

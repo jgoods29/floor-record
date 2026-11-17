@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.998,
+  "kept": 0.995,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,11 +16,13 @@
    "parts": [
     [
      "Division A",
-     "DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS"
+     "DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS",
+     "A"
     ],
     [
      "Division B",
-     "FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026"
+     "FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026",
+     "B"
     ]
    ],
    "sections": 5,
@@ -33,11 +41,13 @@
    "parts": [
     [
      "Division A",
-     "DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS"
+     "DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS",
+     "A"
     ],
     [
      "Division B",
-     "FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026"
+     "FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026",
+     "B"
     ]
    ],
    "sections": 5,

@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.999,
+  "kept": 0.998,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,51 +16,63 @@
    "parts": [
     [
      "Title I",
-     "OPPORTUNITIES FOR HOUSING"
+     "OPPORTUNITIES FOR HOUSING",
+     ""
     ],
     [
      "Title II",
-     "BUILDING MORE IN AMERICA"
+     "BUILDING MORE IN AMERICA",
+     ""
     ],
     [
      "Title III",
-     "MANUFACTURED HOUSING FOR AMERICA"
+     "MANUFACTURED HOUSING FOR AMERICA",
+     ""
     ],
     [
      "Title IV",
-     "ACCESSING THE AMERICAN DREAM"
+     "ACCESSING THE AMERICAN DREAM",
+     ""
     ],
     [
      "Title V",
-     "PROGRAM REFORM"
+     "PROGRAM REFORM",
+     ""
     ],
     [
      "Title VI",
-     "VETERANS AND HOUSING"
+     "VETERANS AND HOUSING",
+     ""
     ],
     [
      "Title VII",
-     "OVERSIGHT AND ACCOUNTABILITY"
+     "OVERSIGHT AND ACCOUNTABILITY",
+     ""
     ],
     [
      "Title VIII",
-     "ACCOUNTABILITY, COORDINATION, STUDIES, AND REPORTING"
+     "ACCOUNTABILITY, COORDINATION, STUDIES, AND REPORTING",
+     ""
     ],
     [
      "Title IX",
-     "STRENGTHENING COMMUNITY BANKS' ROLE IN HOUSING"
+     "STRENGTHENING COMMUNITY BANKS' ROLE IN HOUSING",
+     ""
     ],
     [
      "Title X",
-     "HOME-OWNERSHIP FOR MAIN STREET AMERICA"
+     "HOME-OWNERSHIP FOR MAIN STREET AMERICA",
+     ""
     ],
     [
      "Title XI",
-     "CENTRAL BANK DIGITAL CURRENCY"
+     "CENTRAL BANK DIGITAL CURRENCY",
+     ""
     ],
     [
      "Title XII",
-     "MISCELLANEOUS"
+     "MISCELLANEOUS",
+     ""
     ]
    ],
    "sections": 57,
@@ -71,51 +89,63 @@
    "parts": [
     [
      "Title I",
-     "OPPORTUNITIES FOR HOUSING"
+     "OPPORTUNITIES FOR HOUSING",
+     ""
     ],
     [
      "Title II",
-     "BUILDING MORE IN AMERICA"
+     "BUILDING MORE IN AMERICA",
+     ""
     ],
     [
      "Title III",
-     "MANUFACTURED HOUSING FOR AMERICA"
+     "MANUFACTURED HOUSING FOR AMERICA",
+     ""
     ],
     [
      "Title IV",
-     "ACCESSING THE AMERICAN DREAM"
+     "ACCESSING THE AMERICAN DREAM",
+     ""
     ],
     [
      "Title V",
-     "PROGRAM REFORM"
+     "PROGRAM REFORM",
+     ""
     ],
     [
      "Title VI",
-     "VETERANS AND HOUSING"
+     "VETERANS AND HOUSING",
+     ""
     ],
     [
      "Title VII",
-     "OVERSIGHT AND ACCOUNTABILITY"
+     "OVERSIGHT AND ACCOUNTABILITY",
+     ""
     ],
     [
      "Title VIII",
-     "ACCOUNTABILITY, COORDINATION, STUDIES, AND REPORTING"
+     "ACCOUNTABILITY, COORDINATION, STUDIES, AND REPORTING",
+     ""
     ],
     [
      "Title IX",
-     "STRENGTHENING COMMUNITY BANKS' ROLE IN HOUSING"
+     "STRENGTHENING COMMUNITY BANKS' ROLE IN HOUSING",
+     ""
     ],
     [
      "Title X",
-     "HOME-OWNERSHIP FOR MAIN STREET AMERICA"
+     "HOME-OWNERSHIP FOR MAIN STREET AMERICA",
+     ""
     ],
     [
      "Title XI",
-     "CENTRAL BANK DIGITAL CURRENCY"
+     "CENTRAL BANK DIGITAL CURRENCY",
+     ""
     ],
     [
      "Title XII",
-     "MISCELLANEOUS"
+     "MISCELLANEOUS",
+     ""
     ]
    ],
    "sections": 57,

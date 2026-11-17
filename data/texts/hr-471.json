@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.983,
+  "kept": 0.982,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,39 +16,48 @@
    "parts": [
     [
      "Title I",
-     "LANDSCAPE-SCALE RESTORATION"
+     "LANDSCAPE-SCALE RESTORATION",
+     ""
     ],
     [
      "Subtitle A",
-     "Addressing Emergency Wildfire Risks in High Priority"
+     "Addressing Emergency Wildfire Risks in High Priority",
+     ""
     ],
     [
      "Subtitle B",
-     "Expanding Collaborative Tools to Reduce Wildfire Risk and"
+     "Expanding Collaborative Tools to Reduce Wildfire Risk and",
+     ""
     ],
     [
      "Subtitle C",
-     "Litigation Reform"
+     "Litigation Reform",
+     ""
     ],
     [
      "Title II",
-     "PROTECTING COMMUNITIES IN THE WILDLAND-URBAN INTERFACE"
+     "PROTECTING COMMUNITIES IN THE WILDLAND-URBAN INTERFACE",
+     ""
     ],
     [
      "Title III",
-     "TRANSPARENCY, TECHNOLOGY, AND PARTNERSHIPS"
+     "TRANSPARENCY, TECHNOLOGY, AND PARTNERSHIPS",
+     ""
     ],
     [
      "Subtitle A",
-     "Transparency and Technology"
+     "Transparency and Technology",
+     ""
     ],
     [
      "Subtitle B",
-     "White Oak Resilience"
+     "White Oak Resilience",
+     ""
     ],
     [
      "Title IV",
-     "ENSURING CASUALTY ASSISTANCE FOR OUR FIREFIGHTERS"
+     "ENSURING CASUALTY ASSISTANCE FOR OUR FIREFIGHTERS",
+     ""
     ]
    ],
    "sections": 44,
@@ -59,39 +74,48 @@
    "parts": [
     [
      "Title I",
-     "LANDSCAPE-SCALE RESTORATION"
+     "LANDSCAPE-SCALE RESTORATION",
+     ""
     ],
     [
      "Subtitle A",
-     "Addressing Emergency Wildfire Risks in High Priority"
+     "Addressing Emergency Wildfire Risks in High Priority",
+     ""
     ],
     [
      "Subtitle B",
-     "Expanding Collaborative Tools to Reduce Wildfire Risk and"
+     "Expanding Collaborative Tools to Reduce Wildfire Risk and",
+     ""
     ],
     [
      "Subtitle C",
-     "Litigation Reform"
+     "Litigation Reform",
+     ""
     ],
     [
      "Title II",
-     "PROTECTING COMMUNITIES IN THE WILDLAND-URBAN INTERFACE"
+     "PROTECTING COMMUNITIES IN THE WILDLAND-URBAN INTERFACE",
+     ""
     ],
     [
      "Title III",
-     "TRANSPARENCY, TECHNOLOGY, AND PARTNERSHIPS"
+     "TRANSPARENCY, TECHNOLOGY, AND PARTNERSHIPS",
+     ""
     ],
     [
      "Subtitle A",
-     "Transparency and Technology"
+     "Transparency and Technology",
+     ""
     ],
     [
      "Subtitle B",
-     "White Oak Resilience"
+     "White Oak Resilience",
+     ""
     ],
     [
      "Title IV",
-     "ENSURING CASUALTY ASSISTANCE FOR OUR FIREFIGHTERS"
+     "ENSURING CASUALTY ASSISTANCE FOR OUR FIREFIGHTERS",
+     ""
     ]
    ],
    "sections": 45,

@@ -1,6 +1,12 @@
 {
  "checked": "2026-11-17",
- "compare": null,
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.801,
+  "kept": 0.971,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -10,219 +16,278 @@
    "parts": [
     [
      "Title I",
-     "COMMODITIES"
+     "COMMODITIES",
+     ""
     ],
     [
      "Title II",
-     "CONSERVATION"
+     "CONSERVATION",
+     ""
     ],
     [
      "Subtitle A",
-     "Definitions"
+     "Definitions",
+     ""
     ],
     [
      "Subtitle B",
-     "Conservation Reserve Program"
+     "Conservation Reserve Program",
+     ""
     ],
     [
      "Subtitle C",
-     "Environmental Quality Incentives Program"
+     "Environmental Quality Incentives Program",
+     ""
     ],
     [
      "Subtitle D",
-     "Conservation Stewardship Program"
+     "Conservation Stewardship Program",
+     ""
     ],
     [
      "Subtitle E",
-     "Other Conservation Programs"
+     "Other Conservation Programs",
+     ""
     ],
     [
      "Subtitle F",
-     "Funding and Administration"
+     "Funding and Administration",
+     ""
     ],
     [
      "Subtitle G",
-     "Agricultural Conservation Easement Program"
+     "Agricultural Conservation Easement Program",
+     ""
     ],
     [
      "Subtitle H",
-     "Forest Conservation Easement Program"
+     "Forest Conservation Easement Program",
+     ""
     ],
     [
      "Subtitle I",
-     "Regional Conservation Partnership Program"
+     "Regional Conservation Partnership Program",
+     ""
     ],
     [
      "Title III",
-     "TRADE"
+     "TRADE",
+     ""
     ],
     [
      "Subtitle A",
-     "Food for Peace Act"
+     "Food for Peace Act",
+     ""
     ],
     [
      "Subtitle B",
-     "Agricultural Trade Act of 1978"
+     "Agricultural Trade Act of 1978",
+     ""
     ],
     [
      "Subtitle C",
-     "Other Agricultural Trade Laws"
+     "Other Agricultural Trade Laws",
+     ""
     ],
     [
      "Title IV",
-     "NUTRITION"
+     "NUTRITION",
+     ""
     ],
     [
      "Subtitle A",
-     "Supplemental Nutrition Assistance Program"
+     "Supplemental Nutrition Assistance Program",
+     ""
     ],
     [
      "Subtitle B",
-     "Commodity Distribution Programs"
+     "Commodity Distribution Programs",
+     ""
     ],
     [
      "Subtitle C",
-     "Miscellaneous"
+     "Miscellaneous",
+     ""
     ],
     [
      "Title V",
-     "CREDIT"
+     "CREDIT",
+     ""
     ],
     [
      "Subtitle A",
-     "Farm Ownership Loans"
+     "Farm Ownership Loans",
+     ""
     ],
     [
      "Subtitle B",
-     "Operating Loans"
+     "Operating Loans",
+     ""
     ],
     [
      "Subtitle C",
-     "Emergency Loans"
+     "Emergency Loans",
+     ""
     ],
     [
      "Subtitle D",
-     "Administrative Provisions"
+     "Administrative Provisions",
+     ""
     ],
     [
      "Subtitle E",
-     "Miscellaneous"
+     "Miscellaneous",
+     ""
     ],
     [
      "Title VI",
-     "RURAL DEVELOPMENT"
+     "RURAL DEVELOPMENT",
+     ""
     ],
     [
      "Subtitle A",
-     "Improving Health Outcomes in Rural America"
+     "Improving Health Outcomes in Rural America",
+     ""
     ],
     [
      "Subtitle B",
-     "Connecting Rural Americans to High Speed Broadband"
+     "Connecting Rural Americans to High Speed Broadband",
+     ""
+    ],
+    [
+     "Subtitle C",
+     "Miscellaneous",
+     ""
     ],
     [
      "Subtitle D",
-     "Additional Amendments to the Consolidated Farm and Rural"
+     "Additional Amendments to the Consolidated Farm and Rural",
+     ""
     ],
     [
      "Subtitle E",
-     "Additional Amendments to the Rural Electrification Act of"
+     "Additional Amendments to the Rural Electrification Act of",
+     ""
     ],
     [
      "Title VII",
-     "RESEARCH, EXTENSION, AND RELATED MATTERS"
+     "RESEARCH, EXTENSION, AND RELATED MATTERS",
+     ""
     ],
     [
      "Subtitle A",
-     "National Agricultural Research, Extension, and Teaching"
+     "National Agricultural Research, Extension, and Teaching",
+     ""
     ],
     [
      "Subtitle B",
-     "Food, Agriculture, Conservation, and Trade Act of 1990"
+     "Food, Agriculture, Conservation, and Trade Act of 1990",
+     ""
     ],
     [
      "Subtitle C",
-     "Agricultural Research, Extension, and Education Reform Act"
+     "Agricultural Research, Extension, and Education Reform Act",
+     ""
     ],
     [
      "Subtitle D",
-     "Food, Conservation, and Energy Act of 2008"
+     "Food, Conservation, and Energy Act of 2008",
+     ""
     ],
     [
      "Subtitle E",
-     "Amendments to Other Laws"
+     "Amendments to Other Laws",
+     ""
     ],
     [
      "Subtitle F",
-     "Other Matters"
+     "Other Matters",
+     ""
     ],
     [
      "Title VIII",
-     "FORESTRY"
+     "FORESTRY",
+     ""
     ],
     [
      "Subtitle A",
-     "Cooperative Forestry Assistance Act of 1978"
+     "Cooperative Forestry Assistance Act of 1978",
+     ""
     ],
     [
      "Subtitle B",
-     "Healthy Forests Restoration Act of 2003"
+     "Healthy Forests Restoration Act of 2003",
+     ""
     ],
     [
      "Subtitle C",
-     "Other Forestry Programs"
+     "Other Forestry Programs",
+     ""
     ],
     [
      "Subtitle D",
-     "Forest Management"
+     "Forest Management PART I--NATIONAL FOREST SYSTEM MANAGEMENT",
+     ""
     ],
     [
      "Subtitle E",
-     "Other Matters"
+     "Other Matters",
+     ""
     ],
     [
      "Title IX",
-     "ENERGY"
+     "ENERGY",
+     ""
     ],
     [
      "Title X",
-     "HORTICULTURE, MARKETING, AND REGULATORY REFORM"
+     "HORTICULTURE, MARKETING, AND REGULATORY REFORM",
+     ""
     ],
     [
      "Subtitle A",
-     "Horticulture"
+     "Horticulture",
+     ""
     ],
     [
      "Subtitle B",
-     "Marketing"
+     "Marketing",
+     ""
     ],
     [
      "Subtitle C",
-     "Regulatory Reform"
+     "Regulatory Reform PART I--FEDERAL INSECTICIDE, FUNGICIDE, AND RODENTICIDE ACT",
+     ""
     ],
     [
      "Title XI",
-     "CROP INSURANCE"
+     "CROP INSURANCE",
+     ""
     ],
     [
      "Title XII",
-     "MISCELLANEOUS PROVISIONS"
+     "MISCELLANEOUS PROVISIONS",
+     ""
     ],
     [
      "Subtitle A",
-     "Livestock and Other Animals"
+     "Livestock and Other Animals PART I--ANIMAL HEALTH AND PRODUCTION",
+     ""
     ],
     [
      "Subtitle B",
-     "Department of Agriculture Reorganization Act of 1994"
+     "Department of Agriculture Reorganization Act of 1994",
+     ""
     ],
     [
      "Subtitle C",
-     "National Security"
+     "National Security",
+     ""
     ],
     [
      "Subtitle D",
-     "Other Miscellaneous Provisions"
+     "Other Miscellaneous Provisions",
+     ""
     ]
    ],
    "sections": 381,
@@ -239,235 +304,298 @@
    "parts": [
     [
      "Title I",
-     "COMMODITIES"
+     "COMMODITIES",
+     ""
     ],
     [
      "Title II",
-     "CONSERVATION"
+     "CONSERVATION",
+     ""
     ],
     [
      "Subtitle A",
-     "Definitions"
+     "Definitions",
+     ""
     ],
     [
      "Subtitle B",
-     "Conservation Reserve Program"
+     "Conservation Reserve Program",
+     ""
     ],
     [
      "Subtitle C",
-     "Environmental Quality Incentives Program"
+     "Environmental Quality Incentives Program",
+     ""
     ],
     [
      "Subtitle D",
-     "Conservation Stewardship Program"
+     "Conservation Stewardship Program",
+     ""
     ],
     [
      "Subtitle E",
-     "Other Conservation Programs"
+     "Other Conservation Programs",
+     ""
     ],
     [
      "Subtitle F",
-     "Funding and Administration"
+     "Funding and Administration",
+     ""
     ],
     [
      "Subtitle G",
-     "Agricultural Conservation Easement Program"
+     "Agricultural Conservation Easement Program",
+     ""
     ],
     [
      "Subtitle H",
-     "Forest Conservation Easement Program"
+     "Forest Conservation Easement Program",
+     ""
     ],
     [
      "Subtitle I",
-     "Regional Conservation Partnership Program"
+     "Regional Conservation Partnership Program",
+     ""
     ],
     [
      "Title III",
-     "TRADE"
+     "TRADE",
+     ""
     ],
     [
      "Subtitle A",
-     "Food for Peace Act"
+     "Food for Peace Act",
+     ""
     ],
     [
      "Subtitle B",
-     "Agricultural Trade Act of 1978"
+     "Agricultural Trade Act of 1978",
+     ""
     ],
     [
      "Subtitle C",
-     "Other Agricultural Trade Laws"
+     "Other Agricultural Trade Laws",
+     ""
     ],
     [
      "Subtitle D",
-     "Other Trade Matters"
+     "Other Trade Matters",
+     ""
     ],
     [
      "Title IV",
-     "NUTRITION"
+     "NUTRITION",
+     ""
     ],
     [
      "Subtitle A",
-     "Supplemental Nutrition Assistance Program"
+     "Supplemental Nutrition Assistance Program",
+     ""
     ],
     [
      "Subtitle B",
-     "Commodity Distribution Programs"
+     "Commodity Distribution Programs",
+     ""
     ],
     [
      "Subtitle C",
-     "Miscellaneous"
+     "Miscellaneous",
+     ""
     ],
     [
      "Title V",
-     "CREDIT"
+     "CREDIT",
+     ""
     ],
     [
      "Subtitle A",
-     "Farm Ownership Loans"
+     "Farm Ownership Loans",
+     ""
     ],
     [
      "Subtitle B",
-     "Operating Loans"
+     "Operating Loans",
+     ""
     ],
     [
      "Subtitle C",
-     "Emergency Loans"
+     "Emergency Loans",
+     ""
     ],
     [
      "Subtitle D",
-     "Administrative Provisions"
+     "Administrative Provisions",
+     ""
     ],
     [
      "Subtitle E",
-     "Miscellaneous"
+     "Miscellaneous",
+     ""
     ],
     [
      "Title VI",
-     "RURAL DEVELOPMENT"
+     "RURAL DEVELOPMENT",
+     ""
     ],
     [
      "Subtitle A",
-     "Improving Health Outcomes in Rural America"
+     "Improving Health Outcomes in Rural America",
+     ""
     ],
     [
      "Subtitle B",
-     "Connecting Rural Americans to High Speed Broadband"
+     "Connecting Rural Americans to High Speed Broadband",
+     ""
+    ],
+    [
+     "Subtitle C",
+     "Miscellaneous",
+     ""
     ],
     [
      "Subtitle D",
-     "Additional Amendments to the Consolidated Farm and Rural"
+     "Additional Amendments to the Consolidated Farm and Rural",
+     ""
     ],
     [
      "Subtitle E",
-     "Additional Amendments to the Rural Electrification Act of"
+     "Additional Amendments to the Rural Electrification Act of",
+     ""
     ],
     [
      "Title VII",
-     "RESEARCH, EXTENSION, AND RELATED MATTERS"
+     "RESEARCH, EXTENSION, AND RELATED MATTERS",
+     ""
     ],
     [
      "Subtitle A",
-     "National Agricultural Research, Extension, and Teaching"
+     "National Agricultural Research, Extension, and Teaching",
+     ""
     ],
     [
      "Subtitle B",
-     "Food, Agriculture, Conservation, and Trade Act of 1990"
+     "Food, Agriculture, Conservation, and Trade Act of 1990",
+     ""
     ],
     [
      "Subtitle C",
-     "Agricultural Research, Extension, and Education Reform Act"
+     "Agricultural Research, Extension, and Education Reform Act",
+     ""
     ],
     [
      "Subtitle D",
-     "Food, Conservation, and Energy Act of 2008"
+     "Food, Conservation, and Energy Act of 2008",
+     ""
     ],
     [
      "Subtitle E",
-     "Amendments to Other Laws"
+     "Amendments to Other Laws",
+     ""
     ],
     [
      "Subtitle F",
-     "Other Matters"
+     "Other Matters",
+     ""
     ],
     [
      "Title VIII",
-     "FORESTRY"
+     "FORESTRY",
+     ""
     ],
     [
      "Subtitle A",
-     "Cooperative Forestry Assistance Act of 1978"
+     "Cooperative Forestry Assistance Act of 1978",
+     ""
     ],
     [
      "Subtitle B",
-     "Healthy Forests Restoration Act of 2003"
+     "Healthy Forests Restoration Act of 2003",
+     ""
     ],
     [
      "Subtitle C",
-     "Other Forestry Programs"
+     "Other Forestry Programs",
+     ""
     ],
     [
      "Subtitle D",
-     "Forest Management"
+     "Forest Management PART I--NATIONAL FOREST SYSTEM MANAGEMENT",
+     ""
     ],
     [
      "Subtitle E",
-     "Other Matters"
+     "Other Matters",
+     ""
     ],
     [
      "Subtitle F",
-     "White Oak Resilience"
+     "White Oak Resilience",
+     ""
     ],
     [
      "Subtitle G",
-     "Save Our Sequoias"
+     "Save Our Sequoias",
+     ""
     ],
     [
      "Title IX",
-     "ENERGY"
+     "ENERGY",
+     ""
     ],
     [
      "Title X",
-     "HORTICULTURE, MARKETING, AND REGULATORY REFORM"
+     "HORTICULTURE, MARKETING, AND REGULATORY REFORM",
+     ""
     ],
     [
      "Subtitle A",
-     "Horticulture"
+     "Horticulture",
+     ""
     ],
     [
      "Subtitle B",
-     "Marketing"
+     "Marketing",
+     ""
     ],
     [
      "Subtitle C",
-     "Regulatory Reform"
+     "Regulatory Reform PART I--FEDERAL INSECTICIDE, FUNGICIDE, AND RODENTICIDE ACT",
+     ""
     ],
     [
      "Title XI",
-     "CROP INSURANCE"
+     "CROP INSURANCE",
+     ""
     ],
     [
      "Title XII",
-     "MISCELLANEOUS PROVISIONS"
+     "MISCELLANEOUS PROVISIONS",
+     ""
     ],
     [
      "Subtitle A",
-     "Livestock and Other Animals"
+     "Livestock and Other Animals PART I--ANIMAL HEALTH AND PRODUCTION",
+     ""
     ],
     [
      "Subtitle B",
-     "Department of Agriculture Reorganization Act of 1994"
+     "Department of Agriculture Reorganization Act of 1994",
+     ""
     ],
     [
      "Subtitle C",
-     "National Security"
+     "National Security",
+     ""
     ],
     [
      "Subtitle D",
-     "Other Miscellaneous Provisions"
+     "Other Miscellaneous Provisions",
+     ""
     ],
     [
      "Subtitle E",
-     "United States Grain Standards Reauthorization"
+     "United States Grain Standards Reauthorization",
+     ""
     ]
    ],
    "sections": 457,

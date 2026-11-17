@@ -20,9 +20,22 @@
 <div class="stack" style="flex:999 1 560px;min-width:0">
 {% if note %}<section class="card stack" style="gap:12px"><h2 class="label">Good to know</h2><p style="max-width:680px">{{ note }}</p></section>{% endif %}
 {% if ai %}
-<section class="card tint stack" style="gap:12px"><h2 class="label">In one sentence · AI-written</h2><p style="font-size:20px;line-height:1.4;font-weight:500">{{ ai.one_sentence }}</p></section>
-<section class="card stack" style="gap:12px"><h2 class="h3">The short version <span class="tag proc" style="vertical-align:middle">AI-written</span></h2><p style="max-width:680px">{{ ai.short }}</p>
-<p class="small muted">{% if ai.basis == 'title' %}Drafted by AI from the bill's official title only, because the Library of Congress has not published a summary yet. It can contain mistakes, and it will be redone when the official summary appears.{% else %}Drafted by AI from the official title and the Congressional Research Service summary, then shown as-is. It can contain mistakes. The official summary is below so you can compare.{% endif %}</p></section>
+<section class="card tint stack" style="gap:12px"><h2 class="label">In one sentence{% if ai.basis != 'person' %} · AI-written{% endif %}</h2><p style="font-size:20px;line-height:1.4;font-weight:500">{{ ai.one_sentence }}</p></section>
+<section class="card stack" style="gap:12px"><h2 class="h3">The short version{% if ai.basis != 'person' %} <span class="tag proc" style="vertical-align:middle">AI-written</span>{% endif %}</h2><p style="max-width:680px">{{ ai.short }}</p>
+<p class="small muted">{% if ai.basis == 'person' %}Written from the text of the bill and checked by a person.{% else %}{% if ai.basis == 'title' %}Drafted by AI from the bill's official title only, because the Library of Congress has not published a summary yet. It can contain mistakes, and it will be redone when the official summary appears.{% else %}Drafted by AI from the official title and the Congressional Research Service summary, then shown as-is. It can contain mistakes. The official summary is below so you can compare.{% endif %}{% endif %}{% if unchecked %} This bill's text changed a lot between versions, and this summary has not been checked against the latest text yet.{% endif %}</p></section>
+{% endif %}
+{% if text and text.latest.sections %}
+<section class="card stack" style="gap:12px"><h2 class="h3">What is actually in it</h2>
+<p style="max-width:680px">The latest text, {{ text.latest.stage[0]|lower }}{{ text.latest.stage[1:] }}, has {{ "{:,}".format(text.latest.sections) }} section{{ "" if text.latest.sections == 1 else "s" }}{% if text.parts %} in {{ text.parts|length }} {{ text.level }}{{ "" if text.parts|length == 1 else "s" }}{% if text.inside %}, which hold {{ text.inside }} smaller parts called titles{% endif %}{% endif %}.</p>
+{% if text.parts %}<div class="stack" style="gap:8px">{% for p in text.parts[:12] %}<span><strong>{{ p.label }}:</strong> {{ p.name }}</span>{% endfor %}</div>
+{% if text.parts|length > 12 %}<details class="sumrest"><summary>Show all {{ text.parts|length }} {{ text.level }}s</summary><div class="stack" style="gap:8px">{% for p in text.parts[12:] %}<span><strong>{{ p.label }}:</strong> {{ p.name }}</span>{% endfor %}</div></details>{% endif %}{% endif %}
+<p class="small muted">Counted from the text printed by the Government Publishing Office. <a href="{{ text.latest.url }}" rel="noopener">Read the full text</a>.</p></section>
+{% endif %}
+{% if text and text.steps %}
+<section class="card stack" style="gap:12px"><h2 class="h3">How the text changed</h2>
+{% if text.verdict == 'replaced' %}<p style="max-width:680px">Most of the text was replaced along the way. {% if text.share < 1 %}Almost none{% else %}Only {{ text.share }}%{% endif %} of the later text was in the earlier version.</p>
+{% elif text.verdict == 'expanded' %}<p style="max-width:680px">The bill grew along the way. The earlier text is still inside it, but {% if text.share < 1 %}almost none{% else %}only {{ text.share }}%{% endif %} of the later text was in the earlier version.</p>{% endif %}
+<div class="stack" style="gap:8px">{% for s in text.steps %}<span><strong>{{ s.stage }}:</strong> {% if s.partial %}a list of separate changes, not a full text{% else %}{{ s.name or "no short title" }} · {{ "{:,}".format(s.sections) }} section{{ "" if s.sections == 1 else "s" }}{% endif %}</span>{% endfor %}</div></section>
 {% endif %}
 {% if b.rec.official_summary %}
 <section class="card stack" style="gap:12px"><h2 class="h3">The full official summary</h2>{% set sp = b.rec.official_summary|sumparts %}<p style="max-width:680px">{{ sp[0] }}</p>{% if sp[1] %}<details class="sumrest"><summary>Show the whole summary</summary><p style="max-width:680px">{{ sp[1] }}</p>{% if sp[2] %}<p class="small muted">This summary is very long. <a href="{{ b.congress_url }}">Read all of it on Congress.gov</a>.</p>{% endif %}</details>{% endif %}<p class="small muted">Written by the Congressional Research Service, a non-partisan office of the Library of Congress.</p></section>
