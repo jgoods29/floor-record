@@ -3,7 +3,7 @@
 {% macro share(a, b, la, lb) %}{% set tot = (a + b) or 1 %}<div class="sharebar" role="img" aria-label="{{ a }} {{ la }}, {{ b }} {{ lb }}"><span style="flex:{{ a }}" title="{{ a }} {{ la }}"></span><span class="rest" style="flex:{{ b }}" title="{{ b }} {{ lb }}"></span></div>
 <div class="sharekey"><span><strong>{{ a|comma }}</strong> {{ la }} ({{ (100 * a / tot)|round|int }}%)</span><span><strong>{{ b|comma }}</strong> {{ lb }} ({{ (100 * b / tot)|round|int }}%)</span></div>{% endmacro %}
 {% block main %}
-<div class="wrap page start" style="gap:64px">
+<div class="wrap page start">
 <div class="stack" style="max-width:780px">
 <span class="label purple">The big picture · {{ term.name }}, {{ term.start }} to {{ term.end }}</span>
 <h1 class="h1">Everything, from 30,000 feet</h1>

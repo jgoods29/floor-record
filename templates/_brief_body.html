@@ -1,4 +1,4 @@
-<section class="stack" aria-labelledby="happened-h" style="gap:18px">
+<section class="stack" aria-labelledby="happened-h" style="gap:20px">
 <h2 class="h2" id="happened-h">What Happened</h2>
 <ol class="brieflist">{% for v in brief.picks %}
 <li><a class="card briefitem" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/">
@@ -14,7 +14,7 @@
 <p class="small muted" style="margin:0">How these are picked: the closest votes of the week first, then the most recent, from both the House and the Senate. Nobody hand-picks them. {{ brief.total }} real votes were held this week; <a href="{{ root }}votes/">see them all</a>.</p>
 </section>
 
-{% if brief.coming %}<section class="stack" aria-labelledby="next-h" style="gap:18px">
+{% if brief.coming %}<section class="stack" aria-labelledby="next-h" style="gap:20px">
 <div class="row between" style="align-items:baseline"><h2 class="h2" id="next-h">What Is Next</h2><a class="small" href="{{ root }}upcoming/">Everything coming up</a></div>
 <div class="grid">{% for i in brief.coming %}<a class="card stack" href="{{ root }}upcoming/" style="gap:6px"><span class="small strong muted">House · {{ i.how_label }}</span><span class="h3 clamp3">{{ i.name }}</span><span class="small muted">{{ i.label }}{% if i.topic %} · {{ i.topic }}{% endif %}</span></a>{% endfor %}</div>
 <p class="small muted" style="margin:0">A vote that has not happened yet is the one you can still change. <a href="{{ root }}upcoming/">See how to speak up</a>.</p>
@@ -22,11 +22,11 @@
 
 <section class="card stack briefyours" aria-labelledby="three-h" data-brief-three style="gap:16px">
 <div class="stack" style="gap:4px"><h2 class="h2" id="three-h">What Your Three Did</h2><p class="muted" style="margin:0" data-brief-lede>Three people speak for you in Congress. Type your ZIP code to see what they did this week.</p></div>
-<form class="row" data-brief-zip style="align-items:flex-end;gap:10px"><label class="fieldset" for="brief-zip">Your ZIP code<input class="field" id="brief-zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5 digits" style="width:160px"></label><button class="btn" type="submit">Show Me</button></form>
+<form class="row" data-brief-zip style="align-items:flex-end;gap:12px"><label class="fieldset" for="brief-zip">Your ZIP code<input class="field" id="brief-zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="5 digits" style="width:160px"></label><button class="btn" type="submit">Show Me</button></form>
 <div data-brief-out></div>
 </section>
 
-<section class="stack center" aria-labelledby="dig-h" style="gap:18px">
+<section class="stack center" aria-labelledby="dig-h" style="gap:20px">
 <h2 class="h2" id="dig-h">Want To Dig Deeper?</h2>
 <div class="search big" data-search>
 <label class="sr" for="home-search">Search for your ZIP code, a member, a state, a bill or a topic</label>

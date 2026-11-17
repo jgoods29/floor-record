@@ -1,7 +1,7 @@
 {% extends "base.html" %}{% import "_m.html" as m with context %}
 {% block title %}House members · {{ site.site_name }}{% endblock %}
 {% block main %}
-<div class="wrap page" style="gap:40px">
+<div class="wrap page">
 <div class="stack" style="gap:16px">
 <h1 class="h1">{{ "Senators" if c else "Members" }}</h1>
 <p class="lede">{% if c %}Everyone who has voted in the U.S. Senate this Congress, listed by state. Every state has two senators. Select a name to see how they vote.{% else %}Everyone who has voted in the U.S. House this Congress, listed by state and district. Select a name to see how they vote.{% endif %}</p>

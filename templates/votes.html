@@ -21,8 +21,9 @@
 <span class="row nums" style="gap:8px 14px;align-items:baseline;margin-top:auto"><span class="big mix" style="font-size:40px;{{ v.mix.yea.style }}">{{ v.totals.yea }}</span><span class="big mix" style="font-size:40px;{{ v.mix.nay.style }}">{{ v.totals.nay }}</span></span>
 </a>{% endfor %}</div>
 </section>
-<h2 class="h2">Every vote</h2>
+{% set everyhead = true %}
 {% endif %}
-<div class="card flush rows" id="vote-rows">{% for v in votes %}{{ m.vrow(v, root) }}{% endfor %}</div>
+<section class="stack">{% if everyhead %}<h2 class="h2">Every vote</h2>{% endif %}
+<div class="card flush rows" id="vote-rows">{% for v in votes %}{{ m.vrow(v, root) }}{% endfor %}</div></section>
 </div>
 {% endblock %}

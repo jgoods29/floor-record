@@ -1,13 +1,13 @@
 {% extends "base.html" %}{% import "_m.html" as m with context %}
 {% block title %}The {{ ch.name }} · {{ site.site_name }}{% endblock %}
 {% block main %}
-<div class="wrap page start" style="gap:56px">
+<div class="wrap page start">
 <div class="stack" style="max-width:780px">
 <div class="eyebrow"><span>U.S. {{ ch.full }}</span><span aria-hidden="true">·</span><span>{{ span }}</span></div>
 <h1 class="h1">The {{ ch.name }}</h1>
 <p class="lede">{% if c %}100 senators, two from every state, no matter how big or small the state is. They vote on bills, and they alone vote on the President's picks for judges and top jobs.{% else %}435 voting members, each speaking for one district, an area of a state. States with more people get more members. Every one of them is up for election every two years.{% endif %}</p>
 <p class="note">Everything on these pages is about the {{ ch.name }} only. Use the switch at the top to go to the {{ "House" if c else "Senate" }}.</p>
-<div class="search big" data-search style="margin-top:6px">
+<div class="search big" data-search style="margin-top:12px">
 <label class="sr" for="chamber-search">Search for {{ "a senator, a state or a bill" if c else "your ZIP code, a member, a state or a bill" }}</label>
 <input id="chamber-search" type="search" placeholder="{{ "Senator, state or bill" if c else "ZIP code, name, state or bill" }}" autocomplete="off">
 <div class="results" role="listbox" aria-label="Search results"></div>

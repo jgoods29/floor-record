@@ -30,7 +30,7 @@
 {% endif %}
 
 {% if coming %}
-<section class="stack" aria-labelledby="coming-h" style="gap:18px">
+<section class="stack" aria-labelledby="coming-h" style="gap:20px">
 <div class="center" style="gap:8px"><h2 class="h2" id="coming-h">Coming up for a vote</h2>
 <p class="muted" style="font-size:18px;max-width:620px">Bills the House may vote on {{ 'this week' if coming.current else 'next week' }}. The best time to speak up is before the vote.</p></div>
 <div class="card flush rows">{% for i in coming['items'][:4] %}<div class="uprow">
@@ -41,8 +41,8 @@
 </section>
 {% endif %}
 
-<section class="stack" aria-labelledby="how-h" style="gap:28px">
-<div class="center" style="gap:10px"><h2 class="h2" id="how-h">How to use this site</h2>
+<section class="stack" aria-labelledby="how-h" style="gap:32px">
+<div class="center" style="gap:12px"><h2 class="h2" id="how-h">How to use this site</h2>
 <p class="muted" style="font-size:18px;max-width:620px">{{ site.site_name }} is a free, non-partisan record of what members of Congress do, not what they say. Three steps get you there.</p></div>
 <div class="grid steps">
 <a class="card step" href="{{ root }}members/"><span class="num">1</span><span class="h3">Find your representative</span><span>Type your ZIP code in the search box above and we will show you who represents you. You can also search a name or browse by state.</span><span class="go">Browse members</span></a>

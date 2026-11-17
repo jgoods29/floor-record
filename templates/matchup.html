@@ -3,7 +3,7 @@
 {% macro said(pos) %}<span class="said {{ pos }}">{{ {'yea': 'Yes', 'nay': 'No', 'present': 'Present'}.get(pos, 'Did not vote') }}</span>{% endmacro %}
 {% macro versus(v, pa, pb) %}<div class="vsrow"><div class="stack" style="gap:2px"><a class="strong" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/">{{ v.info.name }}</a><span class="small muted">{{ v.date|nicedate }} · {{ v.info.outcome }}, {{ v.totals.yea }} to {{ v.totals.nay }}</span></div><div class="vspos"><span class="small muted">{{ mu.pa.last }}</span>{{ said(pa) }}</div><div class="vspos"><span class="small muted">{{ mu.pb.last }}</span>{{ said(pb) }}</div></div>{% endmacro %}
 {% block main %}
-<div class="wrap page start" style="gap:48px">
+<div class="wrap page start">
 <div class="stack" style="max-width:800px">
 <span class="label purple">{{ mu.kicker or "In The News" }}</span>
 <h1 class="h1">{{ mu.title }}</h1>
@@ -12,7 +12,7 @@
 </div>
 
 <section class="grid" aria-label="The two members">{% for p, st in ((mu.pa, mu.sa), (mu.pb, mu.sb)) %}
-<a class="card stack" href="{{ root }}{{ c }}members/{{ p.bioguide }}/" style="gap:6px"><span class="row" style="gap:10px">{{ m.badge(p.party) }}<span class="h3">{{ p.name }}</span></span>
+<a class="card stack" href="{{ root }}{{ c }}members/{{ p.bioguide }}/" style="gap:6px"><span class="row" style="gap:12px">{{ m.badge(p.party) }}<span class="h3">{{ p.name }}</span></span>
 <span class="muted">{{ p.seat }}</span>
 <span>Missed <strong>{{ st.missed }}</strong> of {{ st.total|comma }} votes ({{ '%.1f'|format(st.missed_pct) }}%)</span>
 <span class="go">Full record</span></a>{% endfor %}

@@ -16,10 +16,10 @@
 {% if b.title != b.name %}<p class="fine" style="font-size:14px;max-width:760px">Official title: {{ b.title }}</p>{% endif %}
 </div>
 
-<div class="row" style="align-items:flex-start;gap:28px">
+<div class="row" style="align-items:flex-start;gap:32px">
 <div class="stack" style="flex:999 1 560px;min-width:0">
 {% if ai %}
-<section class="card tint stack" style="gap:10px"><h2 class="label">In one sentence · AI-written</h2><p style="font-size:20px;line-height:1.4;font-weight:500">{{ ai.one_sentence }}</p></section>
+<section class="card tint stack" style="gap:12px"><h2 class="label">In one sentence · AI-written</h2><p style="font-size:20px;line-height:1.4;font-weight:500">{{ ai.one_sentence }}</p></section>
 <section class="card stack" style="gap:12px"><h2 class="h3">The short version</h2><p style="max-width:680px">{{ ai.short }}</p>
 <p class="small muted">{% if ai.basis == 'title' %}Drafted by AI from the bill's official title only, because the Library of Congress has not published a summary yet. It can contain mistakes, and it will be redone when the official summary appears.{% else %}Drafted by AI from the official title and the Congressional Research Service summary, then shown as-is. It can contain mistakes. The official summary is below so you can compare.{% endif %}</p></section>
 {% endif %}

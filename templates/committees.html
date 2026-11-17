@@ -2,8 +2,8 @@
 {% block title %}{{ ch.name }} committees · {{ site.site_name }}{% endblock %}
 {% macro who(r, tag='') %}{% if r %}{% if tag %}<span class="role {{ 'chair' if tag == 'Chair' else '' }}">{{ tag }}</span> {% endif %}{% if r.id %}<a href="{{ root }}{{ r.pre }}members/{{ r.id }}/">{{ r.name }}</a>{% else %}{{ r.name }}{% endif %}{% if r.party %} {{ m.badge(r.party, true) }}{% endif %}{% else %}<span class="muted">Not listed</span>{% endif %}{% endmacro %}
 {% block main %}
-<div class="wrap page" style="gap:36px">
-<div class="stack" style="gap:14px;max-width:780px">
+<div class="wrap page">
+<div class="stack" style="gap:16px;max-width:780px">
 <h1 class="h1">Committees</h1>
 <p class="lede">Most of the {{ ch.name }}'s work happens in committees. Each one handles a subject, like farming, taxes or the military, and reviews bills before the full {{ ch.name }} votes on them. Most bills never make it out.{% if c %} Senate committees also question the President's picks for judges and top jobs before the full Senate votes on them.{% endif %}</p>
 <p class="newline">Each committee has a <strong>chair</strong> from the majority party, who decides which bills get a hearing, and a <strong>ranking member</strong>, the top member from the minority party. Most split their work further into <strong>subcommittees</strong>.</p>

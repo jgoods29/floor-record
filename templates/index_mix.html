@@ -24,7 +24,7 @@
 <a class="small" href="{{ root }}topics/">All topics</a>
 </section>{% endif %}
 
-<section class="stack" aria-labelledby="thirty-h" style="gap:18px">
+<section class="stack" aria-labelledby="thirty-h" style="gap:20px">
 <div class="row between" style="align-items:baseline;gap:8px 20px"><h2 class="h1 thirty" id="thirty-h">Congress In 30 Seconds</h2><span class="small strong muted">{{ brief.from|nicedate }} to {{ brief.to|nicedate }}</span></div>
 <ol class="brieflist tight">{% for v in brief.picks[:3] %}
 <li><a class="card briefitem" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/">

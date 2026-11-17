@@ -13,7 +13,7 @@
 <button class="btn" type="button" data-party="R" aria-pressed="false">Republicans</button>
 <button class="btn" type="button" data-party="D" aria-pressed="false">Democrats</button>
 </div>
-<div class="row" style="gap:10px">
+<div class="row" style="gap:12px">
 <label class="sr" for="lb-state">State</label><select class="field" id="lb-state" style="width:auto"><option value="">All states</option>{% for code, name in state_list %}<option value="{{ code }}">{{ name }}</option>{% endfor %}</select>
 <label class="sr" for="lb-name">Name</label><input class="field" id="lb-name" type="search" placeholder="Find a {{ ch.member if c else 'member' }}">
 </div>
