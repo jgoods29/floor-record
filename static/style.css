@@ -776,3 +776,4 @@ a.card > .tags { min-height: 26px; align-items: center; }
 @media (max-width: 640px) { .word { grid-template-columns: 1fr; gap: 4px; } }
 .vsmore { padding: 16px 22px 16px 38px; display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid var(--line); max-width: 860px; } .vsmore p { margin: 0; }
 @media (max-width: 640px) { .vsmore { padding-left: 22px; } }
+.sumrest > summary { color: var(--purple); font-weight: 600; padding: 0; } .sumrest[open] > summary { margin-bottom: 12px; }

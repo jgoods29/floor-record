@@ -474,6 +474,18 @@ def main():
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]),
                       trim_blocks=True, lstrip_blocks=True)
+    def sumparts(text, first=1200, most=9000):
+        """Split a long official summary at a sentence end: (shown, behind a 'read the rest' toggle, was it cut short)."""
+        text = text or ""
+        if len(text) <= first + 300:
+            return text, "", False
+        cut = text.rfind(". ", 0, first) + 1 or first
+        rest, capped = text[cut:].strip(), False
+        if len(rest) > most:
+            end = rest.rfind(". ", 0, most) + 1 or most
+            rest, capped = rest[:end], True
+        return text[:cut], rest, capped
+    env.filters["sumparts"] = sumparts
     env.filters.update(nicedate=nicedate, comma=lambda n: f"{n:,}", capfirst=capfirst,
                        times=lambda n: "once" if n == 1 else f"{n:,} times",
                        lcfirst=lambda t: t)  # outcomes keep their capitals after a colon

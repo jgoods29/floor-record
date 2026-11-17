@@ -24,7 +24,7 @@
 <p class="small muted">{% if ai.basis == 'title' %}Drafted by AI from the bill's official title only, because the Library of Congress has not published a summary yet. It can contain mistakes, and it will be redone when the official summary appears.{% else %}Drafted by AI from the official title and the Congressional Research Service summary, then shown as-is. It can contain mistakes. The official summary is below so you can compare.{% endif %}</p></section>
 {% endif %}
 {% if b.rec.official_summary %}
-<section class="card stack" style="gap:12px"><h2 class="h3">Official summary</h2><p style="max-width:680px">{{ b.rec.official_summary|truncate(1800) }}</p><p class="small muted">Written by the Congressional Research Service, a non-partisan office of the Library of Congress.</p></section>
+<section class="card stack" style="gap:12px"><h2 class="h3">Official summary</h2>{% set sp = b.rec.official_summary|sumparts %}<p style="max-width:680px">{{ sp[0] }}</p>{% if sp[1] %}<details class="sumrest"><summary>Read the rest of the summary</summary><p style="max-width:680px">{{ sp[1] }}</p>{% if sp[2] %}<p class="small muted">This summary is very long. <a href="{{ b.congress_url }}">Read all of it on Congress.gov</a>.</p>{% endif %}</details>{% endif %}<p class="small muted">Written by the Congressional Research Service, a non-partisan office of the Library of Congress.</p></section>
 {% elif not ai %}
 <section class="card stack" style="gap:12px"><h2 class="h3">What it is</h2><p style="max-width:680px">{{ b.title }}</p><p class="small muted">A plain-English summary has not been added yet. <a href="{{ b.congress_url }}">Read the full text on Congress.gov</a>.</p></section>
 {% endif %}
