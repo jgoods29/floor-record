@@ -57,7 +57,7 @@ LOG2 = logslide('Jeffries 4: Game Log, Continued', 'Member Stats', '9 Splits: Co
     + lrow('5/14/26', 'Cashless Bail Reporting Act', 'Would have the Attorney General list, each year, places that release people charged with certain crimes without cash bail.', 'Yes', '96&ndash;114', shade=True)
     + lrow('7/14/26', 'Sunshine Protection Act', 'Would make daylight saving time permanent.', 'No', '114&ndash;95')
     + lrow('7/15/26', 'Massie Amendment On Aid To Israel', 'Would have barred a State Department funding bill&rsquo;s money from going to Israel and cut $3.3 billion in military aid.', 'No', '103&ndash;98', shade=True, res='Failed'),
-    'An amendment vote is a vote on changing a bill, not the final vote on the bill itself.')
+    'Since January 2025<br>See full details and terminology at floortherecord.com')
 
 def crow(yr, title, sub): return f'<div style="flex: 1; display: flex; align-items: center; gap: {G}px; border-top: 2px solid {LINE}"><div style="width: 170px; flex: none; {NUM}; font-size: 44px; color: {PURPLE}">{yr}</div><div style="display: flex; flex-direction: column; gap: 6px"><div style="{D}; font-weight: 700; font-size: 38px; line-height: 1.05; letter-spacing: -0.02em">{title}</div><div style="font-size: 30px; line-height: 1.25; color: {T2}">{sub}</div></div></div>'
 CAREER = ('Jeffries 5: Career', 'Member Stats', '\n'.join([
@@ -79,7 +79,12 @@ ACT = ('Jeffries 6: Look Up Your Own', 'Your Turn', '\n'.join([
     + stepn(3, 'Read Their Record', 'Votes cast, votes missed, and how often they vote with their party.') + '</div>',
     f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; align-items: center; justify-content: space-between; gap: {G}px"><div style="{D}; font-weight: 700; font-size: 64px; line-height: 1; letter-spacing: -0.02em">floortherecord.com</div><div style="font-size: 30px; line-height: 1.2; font-weight: 600; text-align: right">Link in bio</div></div>',
 ]))
-SLIDES = {'JeffCard': CARD1, 'JeffSplits': SPLITS, 'JeffLog': LOG, 'JeffLog2': LOG2, 'JeffCareer': CAREER, 'JeffAct': ACT}
+HOOK = ('Stat Card 1: Who Is Hakeem Jeffries', 'In The News',
+        f'<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: {G}px">'
+        f'<div style="{D}; font-weight: 700; font-size: 150px; line-height: 0.98; letter-spacing: -0.03em"><div style="color: {INK}">Who Is</div><div style="color: {PURPLE}">Hakeem<br>Jeffries?</div></div>'
+        f'<p style="margin: 0; font-size: 38px; line-height: 1.3; color: {T2}">House Democrats just nominated him for Speaker.<br>Swipe to see his record, by the numbers.</p>'
+        f'<div style="display: flex; align-items: center; gap: 16px; {CAPS}; font-size: 26px; color: {PURPLE}">Swipe For His Stat Sheet<span style="font-size: 34px; line-height: 1">&rarr;</span></div></div>')
+SLIDES = {'JeffHook': HOOK, 'JeffCard': CARD1, 'JeffSplits': SPLITS, 'JeffLog': LOG, 'JeffLog2': LOG2, 'JeffCareer': CAREER, 'JeffAct': ACT}
 if __name__ == '__main__':
     out = pathlib.Path(sys.argv[1])
     for k, (t, l, b) in SLIDES.items(): (out / f'{k}.dc.html').write_text(page(t, l, b))
