@@ -3641,6 +3641,12 @@
   "plain": "The House passed a bill, 365 to 36, requiring the monument honoring Thomas Paine, author of Common Sense, to be placed in a area of the National Mall reserved for works of major historical significance to the nation.",
   "v": 2
  },
+ "2026-326": {
+  "model": "claude-haiku-5-5",
+  "name": "Earth MRI Reauthorization Act",
+  "plain": "The House voted 396 to 14 to pass a bill extending a U.S. Geological Survey program that maps natural resources, with a focus on critical minerals such as lithium and titanium, through 2031. The bill also requires contractors to disclose their ownership and gives preference to U.S.-owned firms where practical.",
+  "v": 2
+ },
  "2026-33": {
   "model": "claude-haiku-5-5",
   "name": "AI for Main Street Act",
@@ -6639,6 +6645,24 @@
   "model": "claude-haiku-5-5",
   "name": "Ending debate on the Survivor Justice Tax Prevention Act",
   "plain": "The Senate voted to end debate on the Survivor Justice Tax Prevention Act, so it can move ahead, with 70 in favor and 27 opposed. The bill would exclude from federal income tax certain damages from sexual acts or sexual contact, and shift the burden of proof to the IRS in related tax disputes.",
+  "v": 1
+ },
+ "s2026-266": {
+  "model": "claude-haiku-5-5",
+  "name": "Setting aside a budget rule for a sexual-damages tax bill",
+  "plain": "The Senate voted 70 to 26 to set aside a budget rule that had been raised against the Survivor Justice Tax Prevention Act, so the bill could move forward. The bill would exclude certain damages from sexual acts or contact from federal income tax, even without observable injuries.",
+  "v": 1
+ },
+ "s2026-267": {
+  "model": "claude-haiku-5-5",
+  "name": "Substitute version of the Survivor Justice Tax Prevention Act",
+  "plain": "The Senate agreed to replace the bill's text with a new version, 69 to 27. The bill would let people exclude from taxable income damages from a sexual act or contact, even without medical records or visible injuries, and would place the burden of proof on the IRS in disputes over whether such damages are tax-exempt.",
+  "v": 1
+ },
+ "s2026-268": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending debate on a tax exclusion for damages from sexual misconduct",
+  "plain": "The Senate voted 65 to 31 to end debate and move ahead on a measure that would exclude from federal income tax certain damages received because of sexual acts or contact, even without observable injuries, and require the IRS to prove otherwise in court when a judgment says so. The 60 votes needed were reached.",
   "v": 1
  },
  "s2026-35": {
