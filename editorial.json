@@ -66,6 +66,10 @@
     "s-1071": {
       "on": "2026-11-17",
       "checked": "The House replaced the one-section Cota disinterment bill with the final National Defense Authorization Act for Fiscal Year 2026. Checked the final text's titles (procurement, military personnel, compensation, health care, military construction) against the defense row on the Schumer Vs. Van Hollen page and the three Senate vote pages. They match. The whole text was not read."
+    },
+    "hr-2347": {
+      "on": "2026-11-18",
+      "checked": "Saved and read the table of contents and the key sections of the text the Senate is debating: Senate Amendment 6883, printed in the Congressional Record of November 10, 2026, pages S5471 to S5520 (data/texts/full/hr-2347.samdt6883.txt.gz). It has three divisions: environmental review and permitting (NEPA, Clean Water Act, Endangered Species Act, nuclear licensing), energy (power lines, geothermal, hydropower, offshore energy, mining mill sites, historic preservation), and the original Survivor Justice Tax Prevention Act as Division C. Checked the permit deadlines, the 150-day limit on lawsuits, and Division C against the Schumer Vs. Van Hollen row. They match. The whole 499,000 characters were not read word for word."
     }
   }
 }

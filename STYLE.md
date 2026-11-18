@@ -65,6 +65,13 @@ Errors are very costly for this project. The owner's rule: read the bill itself 
 - If the text cannot be read, say so and do not publish the description until it has been.
 - Before a social post goes out, check every row in it against the official record and one news source.
 
+### Check three times before anything goes out
+Owner's rule from November 18, 2026: "check, double check, and triple check everything." For every bill, vote, or number:
+1. Read the text that was actually voted on. If a bill was amended, that is the amended text or the amendment itself, not the first version and not the official summary, which often describes the first version.
+2. Check every vote and count against the House or Senate roll call.
+3. Check the description against one news source.
+If any of the three cannot be done, say so plainly and do not publish that item. A correction after publishing costs more trust than a delay.
+
 ### A vote on a step is not a vote on the bill
 Before saying how someone voted on a bill, list every vote they cast on it. Votes to start or end debate are steps.
 If two people split on a step and then voted the same way on passage, the row must say so ("Taking Up The Housing
