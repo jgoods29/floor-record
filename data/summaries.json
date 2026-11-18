@@ -1852,6 +1852,12 @@
   "one_sentence": "This resolution sets the rules for House floor consideration of H.R. 1013, a bill about 403(b) retirement plans and federal securities laws.",
   "short": "The measure is a procedural resolution that provides for the House to consider H.R. 1013. According to the official title, the underlying bill would amend federal securities laws to enhance 403(b) plans, which are retirement savings plans for certain employees. The available official material does not describe the specific provisions of those changes."
  },
+ "hres-1665": {
+  "basis": "title",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This resolution sets the terms for House floor debate on two bills, one concerning how the Fair Labor Standards Act defines employees for direct sellers and real estate agents, and one concerning the franchise business model.",
+  "short": "The measure is a procedural resolution that provides for the House to consider H.R. 3495 and H.R. 5267. Based on the official title, H.R. 3495 would clarify the definition of employee under the Fair Labor Standards Act as it relates to direct sellers and real estate agents. H.R. 5267 is described in the title only as a bill to preserve the franchise business model. No official summary of the provisions is available, so the specific changes each bill would make cannot be described here."
+ },
  "hres-177": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This House resolution sets procedural rules for floor debate on three joint resolutions that would disapprove of federal agency rules on appliance energy standards, rubber tire manufacturing emissions, and marine archaeological resources.",
