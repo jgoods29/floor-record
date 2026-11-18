@@ -39,7 +39,7 @@ YEAR = ('Shutdown 4: What The Bill Did, Part 2', 'The Bill · Part 2', '\n'.join
     h1('It Funded Three Areas Through September 2026', 62),
     lede('Congress writes 12 funding bills a year. This bill carried three of them in full.'),
     f'<div style="flex: 1; min-height: 0; display: flex; flex-direction: column; border-bottom: 2px solid {LINE}">'
-    + duty('Agriculture And Food', 'Includes $107.5 billion for food assistance (SNAP) and $8.2 billion for WIC, food aid for mothers, infants, and young children.')
+    + duty('Agriculture And Food', 'Includes $107.5 billion for food assistance (SNAP) and $8.2 billion for WIC (food aid for mothers, infants, and young children).')
     + duty('Veterans And Military Construction', 'Funds the Department of Veterans Affairs and construction on military bases, such as housing for military families.')
     + duty('Congress Itself', 'Funds the House, the Senate, the Capitol Police, and the Library of Congress.')
     + duty('Plus: Farm Programs', 'Extended programs from the 2018 farm law through September 2026.') + '</div>',

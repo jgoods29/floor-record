@@ -28,6 +28,7 @@ Measure before publishing; do not judge spacing by eye alone.
 - Rows that sit side by side in two cards line up: give each row `flex: 1` instead of padding with blank lines.
 - Numbers are for steps only: things done in order ("1 Go to the site, 2 Type your ZIP"). For a list of
   facts or duties, use a short purple dash, never a number, because a number implies a sequence.
+- **Readable on a phone.** A 1080 wide slide is shown at about a third of its size. On social slides, body text is at least 30px, small labels and footers at least 24px, row titles 42px. Fix a stray last word with a planned line break. `social/bigger.py` applies these sizes.
 - **Use the Oxford comma.** In a list of three or more, put a comma before "and" or "or": "the House, the Senate, and the President". Owner's rule from November 18, 2026, for everything new. Existing pages get it as they are next edited.
 - Break big headlines on purpose with `<br>` so no single word is left alone on a line.
 - Before publishing, render a plain-HTML copy with Inter and Inter Tight loaded and measure: every gap 32,
