@@ -3629,6 +3629,18 @@
   "plain": "The House voted 392 to 18 to pass the Major Richard Star Act. It would let veterans with combat-related disabilities receive their full retirement pay alongside their disability compensation, without a reduction.",
   "v": 2
  },
+ "2026-324": {
+  "model": "claude-haiku-5-5",
+  "name": "Barona Band Land Transfer Act",
+  "plain": "The House passed a bill, 398 to 0, that would place about 847 acres of federal land in San Diego County, California, into trust for the Barona Group of Capitan Grande Band of Mission Indians as part of its reservation. The bill also bans gaming on that land and keeps existing public access and firefighting access rights in place.",
+  "v": 2
+ },
+ "2026-325": {
+  "model": "claude-haiku-5-5",
+  "name": "Thomas Paine Monument on the National Mall",
+  "plain": "The House passed a bill, 365 to 36, requiring the monument honoring Thomas Paine, author of Common Sense, to be placed in a area of the National Mall reserved for works of major historical significance to the nation.",
+  "v": 2
+ },
  "2026-33": {
   "model": "claude-haiku-5-5",
   "name": "AI for Main Street Act",

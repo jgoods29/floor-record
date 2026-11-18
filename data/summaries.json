@@ -1592,6 +1592,12 @@
   "one_sentence": "The bill would give statutory authority to a National Fraud Enforcement Division in the Department of Justice that investigates and prosecutes fraud against taxpayer dollars and taxpayer-funded programs.",
   "short": "The bill would provide legal authority for the National Fraud Enforcement Division within the Department of Justice. The division would investigate and prosecute fraud against taxpayer dollars and taxpayer-funded programs. According to the summary, the division was established by the Department of Justice in April 2026, and the bill would put its existence into law."
  },
+ "hr-9600": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "Requires the authorized monument honoring Thomas Paine to be placed in Area 1 of the National Mall, which is reserved for commemorative works of preeminent historical significance.",
+  "short": "The bill requires the already-authorized monument to Thomas Paine to be located in Area 1 of the National Mall. Area 1 is the part of the Mall reserved for commemorative works of preeminent and lasting historical significance to the United States. Paine was a philosopher and writer whose pamphlet \"Common Sense\" advocated American independence from Great Britain."
+ },
  "hr-9612": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would let uranium enrichment facilities be built before the Nuclear Regulatory Commission issues a license, under the same terms that apply to other nuclear fuel facilities.",
