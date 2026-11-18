@@ -46,7 +46,7 @@ YEAR = ('Shutdown 4: What The Bill Did, Part 2', 'The Bill · Part 2', '\n'.join
 ]))
 
 ALSO = ('Shutdown 5: What The Bill Did, Part 3', 'The Bill · Part 3', '\n'.join([
-    h1('What Else Was In It', 76),
+    h1('Some Of What Else Was In It', 68),
     f'<div style="flex: 1; min-height: 0; display: flex; flex-direction: column; border-bottom: 2px solid {LINE}">'
     + duty('A Tighter Definition Of Hemp', 'Limits THC in hemp products. One part started November 12, 2026. Congress moved the rest to December 11, 2026.')
     + duty('Lawsuits Over Senators&rsquo; Phone Records', 'Let senators sue for $500,000 if their records were taken without notice. Congress later repealed it.')
