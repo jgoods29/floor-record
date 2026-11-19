@@ -6671,6 +6671,12 @@
   "plain": "The Senate voted 65 to 31 to end debate and move ahead on a measure that would exclude from federal income tax certain damages received because of sexual acts or contact, even without observable injuries, and require the IRS to prove otherwise in court when a judgment says so. The 60 votes needed were reached.",
   "v": 1
  },
+ "s2026-269": {
+  "model": "claude-haiku-5-5",
+  "name": "Ending U.S. military action against Iran",
+  "plain": "The Senate voted 48 to 51 against a non-binding request asking the President to remove U.S. armed forces from hostilities with Iran, unless Congress has authorized the action. Forces needed to defend the U.S., an ally, or a partner from imminent attack would not be covered.",
+  "v": 1
+ },
  "s2026-35": {
   "model": "claude-haiku-5-5",
   "name": "Senate vote on IRS corporate minimum tax rule for partnerships",
