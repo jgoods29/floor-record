@@ -1,6 +1,12 @@
 {
- "checked": "2026-11-17",
- "compare": null,
+ "checked": "2026-11-19",
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.393,
+  "kept": 0.503,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -14,6 +20,18 @@
    ],
    "stage": "As introduced in the House",
    "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8483ih/html/BILLS-119hr8483ih.htm"
+  },
+  {
+   "chars": 7406,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Barona Group of Capitan Grande Band of Mission Indians Land Transfer Act of 2026"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8483eh/html/BILLS-119hr8483eh.htm"
   }
  ]
 }
