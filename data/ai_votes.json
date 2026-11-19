@@ -3647,6 +3647,12 @@
   "plain": "The House voted 396 to 14 to pass a bill extending a U.S. Geological Survey program that maps natural resources, with a focus on critical minerals such as lithium and titanium, through 2031. The bill also requires contractors to disclose their ownership and gives preference to U.S.-owned firms where practical.",
   "v": 2
  },
+ "2026-327": {
+  "model": "claude-haiku-5-5",
+  "name": "Preventive Health Savings Act",
+  "plain": "The House passed the Preventive Health Savings Act 401 to 0. The bill asks the Congressional Budget Office to estimate whether proposed laws would reduce government spending through preventive health care, and to include those estimates in its reports as a supplementary figure.",
+  "v": 2
+ },
  "2026-33": {
   "model": "claude-haiku-5-5",
   "name": "AI for Main Street Act",
