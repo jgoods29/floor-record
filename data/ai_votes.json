@@ -6677,6 +6677,12 @@
   "plain": "The Senate voted 48 to 51 against a non-binding request asking the President to remove U.S. armed forces from hostilities with Iran, unless Congress has authorized the action. Forces needed to defend the U.S., an ally, or a partner from imminent attack would not be covered.",
   "v": 1
  },
+ "s2026-270": {
+  "model": "claude-haiku-5-5",
+  "name": "Tax exclusion for damages from sexual misconduct",
+  "plain": "The Senate voted 62 to 33 to pass the Survivor Justice Tax Prevention Act, which would let people exclude from taxable income certain damages awarded for sexual acts or contact, even without observable injuries, and would place the burden of proof on the IRS if a judgment states the damages stem from such conduct.",
+  "v": 1
+ },
  "s2026-35": {
   "model": "claude-haiku-5-5",
   "name": "Senate vote on IRS corporate minimum tax rule for partnerships",
