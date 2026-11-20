@@ -78,6 +78,8 @@ If two people split on a step and then voted the same way on passage, the row mu
 Bill", "Both later voted to pass it"). If there has been no final vote, say that. Numbers in a post are a snapshot:
 recount them from the record on the day it goes out.
 
+**No email goes out without the owner seeing it first.** Automatic sending is off (November 19, 2026). For each Monday and Friday email: build the sample (`python -m floorrecord.newsletter --edition friday --dry out/ --rep <id> --state <ST>`), check every item against the roll call and the text voted on, and show the owner a picture of it. Send it by hand from the Actions tab only after the owner says go. The first Friday draft called the Senate's energy permitting bill a sexual-misconduct tax bill, because the bill number was reused to carry the larger package: read what was actually voted on.
+
 ## Color
 
 - Red is Republican, blue is Democrat, purple is neutral or unity.

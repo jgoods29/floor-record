@@ -31,13 +31,29 @@
     },
     "s2026-264": {
       "name": "Energy permitting bill: vote to end debate on the package",
-      "plain": "The Senate voted 70 to 27 to end debate on an amendment that would replace the text of H.R. 2347, a House tax bill, with a large energy permitting package called the Bipartisan American Affordability and Jobs Act. The package would change permit and environmental review rules for energy projects and power lines."
+      "plain": "The Senate voted 70 to 27 to end debate on a large energy permitting package, offered as a replacement for the text of H.R. 2347, a House tax bill. The 60 votes needed were reached."
+    },
+    "s2026-266": {
+      "name": "Energy permitting bill: setting aside budget rules",
+      "plain": "The Senate voted 70 to 26 to set aside budget rules for H.R. 2347, a House tax bill carrying a large energy permitting package, so it could move forward. The 60 votes needed were reached."
+    },
+    "s2026-267": {
+      "name": "Energy permitting bill: adding the package",
+      "plain": "The Senate voted 69 to 27 to replace the text of H.R. 2347, a House tax bill, with a large energy permitting package called the Bipartisan American Affordability and Jobs Act. The package changes permit and environmental review rules for energy projects and power lines. It keeps the original tax bill as its last part."
+    },
+    "s2026-268": {
+      "name": "Energy permitting bill: vote to end debate",
+      "plain": "The Senate voted 65 to 31 to end debate on H.R. 2347, a House tax bill, after its text was replaced with a large energy permitting package. The 60 votes needed were reached."
+    },
+    "s2026-270": {
+      "name": "Energy permitting bill",
+      "plain": "The Senate voted 62 to 33 to pass the Bipartisan American Affordability and Jobs Act, a large energy permitting package carried in H.R. 2347, a House tax bill. It sets deadlines for federal permits and environmental reviews, limits the time to file many lawsuits against them, and changes rules for power lines and other energy projects. It also keeps the original tax bill, which would stop taxing most payouts won by survivors of sexual abuse. The bill now goes to the House."
     }
   },
   "carried": {
     "hr-2347": {
       "since": "2026-11-09",
-      "note": "The Senate is using this House tax bill to carry a much larger energy permitting package, the Bipartisan American Affordability and Jobs Act. Senate votes on H.R. 2347 since November 9, 2026 are steps on that package. The package would change permit and environmental review rules for energy projects and power lines. The summary of the original House bill does not describe it."
+      "note": "The Senate used this House tax bill to carry a much larger energy permitting package, the Bipartisan American Affordability and Jobs Act. Senate votes on H.R. 2347 since November 9, 2026 are votes on that package. On November 18, 2026, the Senate replaced the bill's text with the package, and on November 19 it passed the bill, 62 to 33. The package changes permit and environmental review rules for energy projects and power lines, and keeps the original tax bill as its last part. The summary of the original House bill does not describe it."
     },
     "s-1383": {
       "since": "2026-02-11",

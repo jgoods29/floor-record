@@ -142,7 +142,7 @@ SPLITS = [('Blocking Arms Sales To Israel', 'No', 'Yes', 6, 'Six attempts to sto
           ('The 2026 Defense Policy Bill', 'Yes', 'No', 6, 'Covers troop levels, weapons buying and military construction.'),
           ('Overturning An IRS Reporting Rule For Crypto', 'Yes', 'No', 4, 'Cancels a rule making some crypto platforms report sales to the IRS.'),
           ('Permanently Banning Fentanyl-Related Drugs', 'Yes', 'No', 3, 'Permanently puts fentanyl-related substances in the strictest drug category.'),
-          ('Advancing The Energy Permitting Bill', 'Yes', 'No', 3, 'Would change permit rules for energy projects. No final vote yet.'),
+          ('The Energy Permitting Bill', 'Yes', 'No', 7, 'Changes permit rules for energy projects. Schumer voted to pass it. Van Hollen voted no.'),
           ('Taking Up The College Sports Bill', 'Yes', 'No', 2, 'Votes to start debate on rules for college sports. Both later voted against it.'),
           ('Taking Up The Housing Bill', 'Yes', 'No', 2, 'Votes to start debate on a wide housing bill. Both later voted to pass it.'),
           ('Luke Lindberg For A Top Agriculture Job', 'Yes', 'No', 2, 'Nominee for the Agriculture Department&rsquo;s top trade post.'),
