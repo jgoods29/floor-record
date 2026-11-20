@@ -41,7 +41,7 @@ B1 = ('Permitting 3: Faster Decisions', 'What It Does · A', '\n'.join([
 ]))
 B2 = ('Permitting 4: Fewer Ways To Undo A Permit', 'What It Does · B', '\n'.join([
     h1('B: Fewer Ways To Undo A Permit', 70),
-    LIST([change(f'Deadline To Sue: <span style="color: {PURPLE}">150 Days</span>', 'A lawsuit challenging a permit must be filed within 150 days.'),
+    LIST([change(f'Deadline To Sue: <span style="color: {PURPLE}">150 Days</span>', 'A lawsuit over a permit&rsquo;s environmental review must be filed within 150 days.'),
           change(f'Courts: <span style="color: {PURPLE}">Fix It, Not Cancel It</span>', 'In most cases, a court that finds a flaw in an environmental review must send the permit back to be fixed.'),
           change(f'Agencies: <span style="color: {PURPLE}">Approved Stays Approved</span>', 'Limits when an agency can take back or change a permit once a project is fully approved.')]),
 ]))
@@ -50,7 +50,7 @@ B3 = ('Permitting 5: New Rules For The Power Grid', 'What It Does · C', '\n'.jo
     LIST([change('Data Centers Pay Their Own Way', 'Says data centers should pay the full cost of the power lines built to serve them, not other customers.'),
           change('Long-Distance Power Lines', 'Changes how federal regulators approve and plan lines that cross state lines.'),
           change('Geothermal, Hydropower, And Nuclear', 'New permit and licensing rules for each.')]),
-    f'<div style="{CARD}; background: #F7F3FF; display: flex; flex-direction: column; gap: 16px"><div style="{CAP}; color: {PURPLE}">Why the record calls it a tax bill</div><div style="font-size: 30px; line-height: 1.32">The Senate put this package inside H.R. 2347, a House bill to stop taxing payouts won by survivors of sexual abuse. That bill is still in it, as the last part.</div></div>',
+    f'<div style="{CARD}; background: #F7F3FF; display: flex; flex-direction: column; gap: 16px"><div style="{CAP}; color: {PURPLE}">Why the record calls it a tax bill</div><div style="font-size: 30px; line-height: 1.32">The Senate put this package inside H.R. 2347, a House bill to stop taxing most payouts won by survivors of sexual abuse. That bill is still in it, as the last part.</div></div>',
 ]))
 def tile(n, label): return f'<div style="flex: 1; {CARD}; padding: 24px; display: flex; flex-direction: column; gap: 10px"><div style="{D}; font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.02em; color: {PURPLE}; white-space: nowrap">{n}</div><div style="font-size: 25px; line-height: 1.25; color: {T2}">{label}</div></div>'
 VOTE = ('Permitting 6: How The Senate Voted', 'The Vote', '\n'.join([
