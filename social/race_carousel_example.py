@@ -152,7 +152,7 @@ SPLITS = [('Blocking Arms Sales To Israel', 'No', 'Yes', 6, 'Six attempts to sto
           ('Cutting The Defense Budget By 10 Percent', 'No', 'Yes', 1, 'Would have moved the money to veterans&rsquo; dental care. Failed, 10 to 88.'),
           ('Setting Aside A Hemp Change In A Funding Bill', 'No', 'Yes', 1, 'Set aside an attempt to drop a new definition of hemp from the bill.'),
           ('Changing Debt Limit Instructions In The Budget', 'No', 'Yes', 1, 'A proposed change to the 2025 budget plan. Failed, 5 to 94.')]
-assert sum(x[3] for x in SPLITS) == 34
+assert sum(x[3] for x in SPLITS) == 38   # 34 when the post went out on November 17, 2026; four more energy permitting votes since
 COLS = f'<div style="display: grid; grid-template-columns: 90px 1fr 90px; gap: 16px; align-items: end; padding-bottom: 16px; {CAP}; color: {MUTED}"><div style="white-space: nowrap">Schumer</div><div style="text-align: center">The subject · since January 2025</div><div style="display: flex; justify-content: flex-end; white-space: nowrap">Van Hollen</div></div>'
 def tail(text): return f'<div style="border-top: 2px solid {LINE}; padding-top: 24px; font-size: 24px; line-height: 1.2; font-weight: 600; color: {PURPLE}; text-align: center">{text}</div>'
 
