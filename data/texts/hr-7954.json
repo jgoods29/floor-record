@@ -1,6 +1,12 @@
 {
- "checked": "2026-11-17",
- "compare": null,
+ "checked": "2026-11-20",
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.974,
+  "kept": 0.954,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -14,6 +20,18 @@
    ],
    "stage": "As introduced in the House",
    "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7954ih/html/BILLS-119hr7954ih.htm"
+  },
+  {
+   "chars": 10231,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 9,
+   "short_titles": [
+    "Don Young Doug LaMalfa Indian Buffalo Management Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7954eh/html/BILLS-119hr7954eh.htm"
   }
  ]
 }

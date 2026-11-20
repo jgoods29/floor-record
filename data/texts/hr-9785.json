@@ -1,6 +1,12 @@
 {
- "checked": "2026-11-17",
- "compare": null,
+ "checked": "2026-11-20",
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.864,
+  "kept": 0.809,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -33,6 +39,37 @@
    ],
    "stage": "As introduced in the House",
    "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9785ih/html/BILLS-119hr9785ih.htm"
+  },
+  {
+   "chars": 11464,
+   "code": "eh",
+   "full_text": true,
+   "parts": [
+    [
+     "Title I",
+     "WESTERN DAKOTA REGIONAL WATER SYSTEM FEASIBILITY STUDY ACT",
+     ""
+    ],
+    [
+     "Title II",
+     "LEWIS AND CLARK REGIONAL WATER SYSTEM EXPANSION FEASIBILITY STUDY",
+     ""
+    ],
+    [
+     "Title III",
+     "DAKOTA MAINSTEM WATER SUPPLY PROJECT FEASIBILITY STUDY",
+     ""
+    ]
+   ],
+   "sections": 10,
+   "short_titles": [
+    "South Dakota Water Feasibility Studies Act",
+    "Western Dakota Regional Water System Feasibility Study Act",
+    "Lewis and Clark Regional Water System Expansion Feasibility Study Act",
+    "Dakota Mainstem Water Supply Project Feasibility Study Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9785eh/html/BILLS-119hr9785eh.htm"
   }
  ]
 }

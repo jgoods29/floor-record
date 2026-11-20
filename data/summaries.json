@@ -214,6 +214,12 @@
   "one_sentence": "The bill would allow 403(b) retirement plans, which cover certain employees of public schools, charities, and churches, to invest in collective investment trusts and insurance company separate accounts.",
   "short": "The bill would let 403(b) retirement plans invest in collective investment trusts. These are pooled investment assets held by a bank or trust company. The bill would also let these plans invest in insurance company separate accounts. 403(b) plans are retirement plans designed for certain employees of public schools, charities, and churches."
  },
+ "hr-10136": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would transfer the Crossett Experimental Forest and related land and facilities from the U.S. Forest Service to the State of Arkansas, if the state requests it.",
+  "short": "Upon Arkansas's request, the Forest Service would convey the Crossett Experimental Forest, the R.R. Reynolds Research Natural Area, and associated facilities to the state, which would designate them the Crossett Experimental State Forest. To keep the land, Arkansas would have to use it for forest research, education, and demonstration consistent with the forest's historic research mission, in coordination with the University of Arkansas at Monticello and the University of Arkansas Division of Agriculture, including giving the universities reasonable access. The transfer would be made without payment, by quitclaim deed, and subject to valid existing rights, with Arkansas paying the conveyance costs."
+ },
  "hr-10238": {
   "basis": "summary",
   "model": "claude-haiku-5-5",
@@ -1323,10 +1329,10 @@
   "short": "The bill includes five of the twelve regular fiscal year 2026 spending bills, covering agencies such as the Defense, Labor, Health and Human Services, Education, Transportation, Housing and Urban Development, and State Departments, along with Treasury, the Executive Office of the President, and the judiciary. It provides temporary funding for the Department of Homeland Security through February 13, 2026, or until a full Homeland Security spending act is enacted, generally at fiscal year 2025 levels. The bill also extends a range of expiring programs and authorities, including the National Flood Insurance Program, the Temporary Assistance for Needy Families program, trade preferences for Haiti and sub-Saharan Africa, and several cybersecurity and health care provisions."
  },
  "hr-7254": {
-  "basis": "title",
+  "basis": "summary",
   "model": "claude-haiku-5-5",
-  "one_sentence": "Would direct the Secretary of the Interior to study whether the Bay Area Ridge Trail could be designated a national scenic trail under the National Trails System Act.",
-  "short": "The bill amends the National Trails System Act. It would require the Secretary of the Interior to conduct a feasibility study on designating the Bay Area Ridge National Scenic Trail. The official title also notes other purposes, but the available materials do not describe them."
+  "one_sentence": "The bill would direct the Department of the Interior to study whether the Bay Area Ridge Trail, a roughly 550-mile trail in California's San Francisco Bay Area, could be designated a national scenic trail.",
+  "short": "The bill amends the National Trails System Act to require the Department of the Interior to study whether the Bay Area Ridge Trail should be designated a national scenic trail. The trail runs approximately 550 miles through the San Francisco Bay Area of California. The study must be completed no later than three years after the bill is enacted."
  },
  "hr-736": {
   "model": "claude-haiku-5-5",
@@ -1398,6 +1404,12 @@
   "one_sentence": "The bill would require the Education Department to set up a fraud detection system for FAFSA applications and require colleges to verify flagged applicants' identities before disbursing federal aid.",
   "short": "Starting October 1, 2026, the Department of Education would use an identity fraud detection system to review each FAFSA application and flag those showing reasonable suspicion of identity fraud. Flagged applicants and the colleges listed on their applications would be notified that additional identity verification is required. Colleges could not disburse federal student aid to a flagged applicant until the college verifies that person's identity in person or by live video, and the Department would set guidelines for these procedures."
  },
+ "hr-7934": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require federal agencies to publish a searchable online database of information about certain settlements they enter into.",
+  "short": "Federal agencies would have to publish a searchable online database covering certain settlement agreements, including a copy of each agreement, the date it was signed, alleged statutory violations, attorneys' fees, payments to or from the government, and its projected duration. The database would generally cover settlements requiring at least $10 million in payments, those involving a special master or monitor, or those involving state, county, or local governments, as well as other criteria set by the Office of Management and Budget. Several types of agreements, such as those tied to federal personnel actions, non-prosecution agreements or plea bargains, and Internal Revenue Code matters, would be excluded. The bill would also apply, to the extent practicable, to covered settlements entered into on or after January 1, 2015, that remain in effect when the law is enacted, and the Office of Management and Budget would issue implementing guidance."
+ },
  "hr-7954": {
   "basis": "summary",
   "model": "claude-haiku-5-5",
@@ -1423,6 +1435,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The SPUR Act would require federal agencies to report on their annual small business contracting scorecards how many small businesses in specified ownership categories received a prime contract for the first time.",
   "short": "The bill would add a reporting requirement to federal agencies' annual small business contracting scorecards. Agencies would count the number of small businesses receiving a prime contract for the first time. The count would cover businesses owned and controlled by service-disabled veterans, qualified HUBZone small businesses, businesses owned and controlled by socially and economically disadvantaged individuals, and businesses owned and controlled by women."
+ },
+ "hr-8195": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Fish and Wildlife Service, working with regional flyway councils, to create and update regional management plans for double-crested cormorant populations.",
+  "short": "The bill directs the U.S. Fish and Wildlife Service to coordinate with the four Regional Flyway Councils to develop regional frameworks for managing double-crested cormorants, a native North American waterbird. Each framework must aim to keep breeding populations at a level that supports conservation, set rules on capturing or hunting the birds, and consider documented effects such as impacts on fisheries. The agency would survey populations every five years, update the frameworks on the same schedule, and report to Congress on the feasibility of issuing hunting licenses for cormorant management. These requirements end on January 1, 2034."
  },
  "hr-825": {
   "model": "claude-haiku-5-5",
@@ -1567,6 +1585,12 @@
   "one_sentence": "This bill extends certain foreign intelligence surveillance authorities under Title VII of the Foreign Intelligence Surveillance Act until July 2, 2026.",
   "short": "The bill extends the authorities of Title VII of the Foreign Intelligence Surveillance Act (FISA) until July 2, 2026. Title VII generally covers methods of collecting foreign intelligence information directed at targets outside the United States. It includes Section 702, which concerns acquiring communications of non-U.S. persons believed to be outside the United States. Information about U.S. persons may be incidentally collected under this authority and later searched under certain circumstances."
  },
+ "hr-9269": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would renew for seven years the African American Civil Rights Network, a National Park Service program that designates sites and educational resources tied to the civil rights movement.",
+  "short": "The bill reauthorizes the African American Civil Rights Network for seven years. The network is a National Park Service program that designates historical sites and educational resources connected to the African American civil rights movement. The program expired on January 8, 2025, and the bill would restore it. Designated locations and resources may use the network logo and receive technical support from the National Park Service."
+ },
  "hr-9340": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill asks state utility regulators and nonregulated utilities to consider a standard making large data-center-type customers pay the full added cost of power upgrades needed to serve them.",
@@ -1636,6 +1660,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill would fund most federal agencies at FY2026 levels through December 4, 2026, or until full FY2027 appropriations are enacted, preventing a shutdown on October 1, 2026.",
   "short": "The bill is a continuing resolution that keeps most federal programs funded at fiscal year 2026 levels, with exceptions for items such as WIC, Small Business Administration loans, the FEMA Disaster Relief Fund, the Indian Health Service, and wildfire suppression. It also extends several expiring programs and authorities, including the National Flood Insurance Program, the TANF program, the livestock mandatory price reporting program, and a freeze on cost-of-living adjustments for Members of Congress. The bill would apply until the earlier of December 4, 2026, or enactment of the relevant FY2027 appropriations act."
+ },
+ "hr-9785": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill directs the Department of the Interior to study whether projects supplying municipal, rural, and industrial water from the Missouri River in four states are feasible.",
+  "short": "The bill requires the Department of the Interior to study the feasibility of building projects that would supply municipal, rural, and industrial water from the Missouri River in Iowa, Minnesota, Nebraska, and South Dakota. The studies would cover three named water systems: the Western Dakota Regional Water System, the Lewis and Clark Regional Water System, Inc., and the Dakota Mainstem Regional Water System. The bill concerns feasibility studies only and does not itself authorize construction."
  },
  "hr-980": {
   "model": "claude-haiku-5-5",

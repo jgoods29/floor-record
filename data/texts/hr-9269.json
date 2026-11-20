@@ -1,6 +1,12 @@
 {
- "checked": "2026-11-17",
- "compare": null,
+ "checked": "2026-11-20",
+ "compare": {
+  "earlier": "ih",
+  "from_earlier": 0.719,
+  "kept": 0.561,
+  "later": "eh",
+  "verdict": "similar"
+ },
  "review": false,
  "versions": [
   {
@@ -14,6 +20,18 @@
    ],
    "stage": "As introduced in the House",
    "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9269ih/html/BILLS-119hr9269ih.htm"
+  },
+  {
+   "chars": 1505,
+   "code": "eh",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Renewing the African American Civil Rights Network Act"
+   ],
+   "stage": "As passed by the House",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9269eh/html/BILLS-119hr9269eh.htm"
   }
  ]
 }
