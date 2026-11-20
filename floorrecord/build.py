@@ -137,7 +137,7 @@ def bill_status(action):
 PASS_Q = re.compile(r"on passage|suspend the rules and (pass|agree)|agreeing to the (concurrent |joint )?resolution|concur", re.I)
 
 
-def bill_track(kind, rec, mvotes=(), scheduled=False, svotes=()):
+def bill_track(kind, rec, mvotes=(), scheduled=False, svotes=(), changed=False):
     """Where a measure stands, as steps for the chevron tracker. Worked out from the latest official
     action and from the House votes on file, so it is a guide: the official record has the last word."""
     a = (rec.get("latest_action") or "").lower()
@@ -163,7 +163,7 @@ def bill_track(kind, rec, mvotes=(), scheduled=False, svotes=()):
     senate_passed = senate == "passed" or "passed senate" in a or "passed/agreed to in senate" in a
     in_senate = senate_passed or bool(svotes) or any(w in a for w in ("received in the senate", "senate legislative calendar", "cloture",
                                                        "in senate", "senator ")) or ("read twice" in a and house_first)
-    stop, note = None, ""
+    stop, note, back = None, "", False
     if "became public law" in a or "became private law" in a:
         done = len(labels)
     elif "vetoed" in a:
@@ -172,6 +172,18 @@ def bill_track(kind, rec, mvotes=(), scheduled=False, svotes=()):
         done = 4
     elif house_first:
         done = 4 if senate_passed and (house == "passed" or in_senate) else 3 if (house == "passed" or in_senate) else None
+        # A bill the Senate changed has not passed both chambers: the House must agree to the Senate's
+        # version first. Known from an amendment the Senate adopted by recorded vote, from the official
+        # action, or from a note in editorial.json ("carried"). Cleared once the House votes on the Senate's version.
+        if done == 4 and labels[-1] == "Law":
+            passed_on = max((v["date"] for v in svotes if v["info"]["kind"] == "passage"), default="")
+            adopted = any(v["info"]["kind"] == "amendment" and re.match(r"adopted|agreed|added|passed", v["info"]["outcome"] or "", re.I) for v in svotes)
+            changed = changed or adopted or "with an amendment" in a or "with amendments" in a
+            agreed = any(v["date"] >= passed_on and re.search(r"senate amendment", v.get("question") or "", re.I)
+                         and (v.get("result") or "").lower().startswith(("passed", "agreed")) for v in mvotes) or "senate amendment" in a and "agreed" in a
+            if changed and not agreed:
+                labels.insert(4, "House Again")
+                back = True
     else:
         done = 4 if house == "passed" and senate_passed else 3 if (senate_passed or mvotes or scheduled or "received in the house" in a or "held at the desk" in a) else None
     if done is None:
@@ -201,6 +213,8 @@ def bill_track(kind, rec, mvotes=(), scheduled=False, svotes=()):
                 "Law": "Signed. Becoming law."}.get(here, f"Waiting on a vote in the {here}.")
         if done >= 3 and here in ("House", "Senate"):
             text = f"Passed the {labels[2]}. Now it is the {here}'s turn."
+        if back:
+            text = "The Senate passed a changed version. The House must agree to it before it goes to the President."
     return {"steps": steps, "text": text}
 
 
@@ -563,7 +577,7 @@ def main():
         m["name"] = title_case(short_name(m["title"], m["label"]))
         m["topic"] = " · ".join(m["allvotes"][0]["topics"]) if m["allvotes"] else topic_name(m["rec"].get("policy_area", ""))
         m["kind_name"], m["kind_note"] = KIND_NAMES[m["kind"]]
-        m["track"] = bill_track(m["kind"], m["rec"], m["votes"], scheduled=scheduled, svotes=m["svotes"])
+        m["track"] = bill_track(m["kind"], m["rec"], m["votes"], scheduled=scheduled, svotes=m["svotes"], changed=m["slug"] in (editorial.get("carried") or {}))
         # ---- what the Bills page can be filtered by: where it stands, who introduced it, where it started
         steps = m["track"]["steps"]
         now = next((st["label"] for st in steps if st["state"] == "now"), "")
