@@ -1125,6 +1125,12 @@
   "one_sentence": "The bill would require pretrial and post-conviction detention for certain violent and dangerous crimes in the District of Columbia, and require cash bail for release on certain public safety or order crimes.",
   "short": "Under current District of Columbia law, judges generally decide whether a defendant can be released before trial based on the risks the defendant poses. This bill would require defendants charged with a crime of violence or a dangerous crime to be detained while awaiting trial, and would bar release on certain public safety or order crimes without a secured appearance bond, meaning money or property that can be forfeited. It would also require detention after conviction, pending sentencing or appeal, for people convicted of crimes of violence or dangerous crimes."
  },
+ "hr-5267": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would limit when franchisors count as joint employers of their franchisees' workers under federal labor laws, requiring direct and immediate control over employment terms.",
+  "short": "The bill states that, under the National Labor Relations Act and the Fair Labor Standards Act, a franchisor is a joint employer of a franchisee's employees only if it regularly exercises direct and immediate control over their terms of employment, such as regularly hiring or firing them. It gives statutory backing to a 2020 National Labor Relations Board rule, which treats an entity as a joint employer only if it exercises substantial, direct, and immediate control over essential terms like wages, hours, hiring, discharge, discipline, supervision, and direction. The bill also specifies that a franchisor setting a franchisee's operating hours does not by itself meet this standard. The same standard would apply under the Fair Labor Standards Act."
+ },
  "hr-530": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The ACES Act would require the Department of Veterans Affairs to arrange a study by the National Academies on cancer rates and deaths among veterans who regularly flew as aircrew in fixed-wing aircraft.",
