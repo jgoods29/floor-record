@@ -18,7 +18,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 from .common import SITE, config, read_json
@@ -115,11 +115,18 @@ def stat(num, label, bg, fg):
 def build_email(edition, data, people, site, acct, unsub="{{unsub}}"):
     """One finished email: (subject, html). `people` is the reader's representative (if known) and two senators."""
     friday = edition == "friday"
+    when = f"{date.today().strftime('%A, %B')} {date.today().day}"
     week, coming = data.get("week", []), data.get("upcoming", [])
     parts = []
     if friday:
         top = sorted(week, key=lambda v: (not v["close"], -date.fromisoformat(v["date"]).toordinal()))[:6]
         title, kicker = "How They Voted", "The week in Congress, in plain English."
+        # Sent after the week it covers (held for the owner's check, or a recess): say so in the heading.
+        if week:
+            last = max(date.fromisoformat(v["date"]) for v in week)
+            monday = last - timedelta(days=last.weekday())
+            if date.today() > monday + timedelta(days=5):
+                kicker, when = "Last week in Congress, in plain English.", f"Week Of {monday.strftime('%B')} {monday.day}"
         passed = sum(1 for v in week if v["outcome"] in GOOD)
         parts.append(f'<tr><td style="padding:22px 27px 0 27px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>'
                      f'{stat(len(week), "Real Votes", PTINT, PURPLE)}{stat(passed, "Went Through", "#E8F3EC", GREEN)}{stat(sum(1 for v in week if v["close"]), "Close Calls", "#FBEAEA", NO)}</tr></table></td></tr>')
@@ -159,9 +166,9 @@ def build_email(edition, data, people, site, acct, unsub="{{unsub}}"):
             f'<tr><td bgcolor="{INK}" style="background:{INK};padding:26px 32px 28px 32px"><table role="presentation" cellpadding="0" cellspacing="0"><tr>{squares}<td style="padding-left:6px;font-size:15px;font-weight:700;color:#fff">{e(name)}</td></tr></table>'
             f'<div style="font-size:36px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-top:16px;color:#fff">{title}</div>'
             f'<div style="font-size:16px;color:#C9D1E0;margin-top:8px">{e(kicker)}</div>'
-            f'<div style="font-size:13px;color:#9FB0CC;margin-top:10px">{date.today().strftime("%A, %B")} {date.today().day}</div></td></tr>'
+            f'<div style="font-size:13px;color:#9FB0CC;margin-top:10px">{e(when)}</div></td></tr>'
             + "".join(parts) + foot + "</table></td></tr></table></body></html>")
-    return f"{title}: {date.today().strftime('%B')} {date.today().day}", body
+    return f"{title}: {when.split(', ')[-1]}", body
 
 
 def people_for(sub, reps, sens):
