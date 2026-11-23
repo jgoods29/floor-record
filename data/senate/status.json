@@ -1,1 +1,1 @@
-{"checked":"2026-11-22","error":"","new_this_run":0,"ok":true,"sessions":{"2025":{"listed":659,"on_file":659},"2026":{"listed":279,"on_file":279}}}
+{"checked":"2026-11-23","error":"Could not fetch https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_1.xml: HTTP Error 403: Forbidden","new_this_run":0,"ok":false,"sessions":{}}
