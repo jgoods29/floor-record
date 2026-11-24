@@ -1,0 +1,37 @@
+{
+ "checked": "2026-11-24",
+ "compare": {
+  "earlier": "is",
+  "from_earlier": 0.938,
+  "kept": 0.882,
+  "later": "es",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 3720,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Diversity Jurisdiction Inflation Adjustment Act"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s4850is/html/BILLS-119s4850is.htm"
+  },
+  {
+   "chars": 3721,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Diversity Jurisdiction Inflation Adjustment Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s4850es/html/BILLS-119s4850es.htm"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "checked": "2026-11-24",
+ "compare": {
+  "earlier": "is",
+  "from_earlier": 0.284,
+  "kept": 0.331,
+  "later": "es",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 4214,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Women and Lung Cancer Research and Preventive Services Act of 2025"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1157is/html/BILLS-119s1157is.htm"
+  },
+  {
+   "chars": 4716,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Women and Lung Cancer Research and Preventive Services Act of 2025"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1157es/html/BILLS-119s1157es.htm"
+  }
+ ]
+}

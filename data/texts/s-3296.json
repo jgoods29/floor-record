@@ -1,0 +1,37 @@
+{
+ "checked": "2026-11-24",
+ "compare": {
+  "earlier": "is",
+  "from_earlier": 0.904,
+  "kept": 0.83,
+  "later": "es",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 3371,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Improving Access to Workers' Compensation for Injured Federal Workers Act of 2025"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s3296is/html/BILLS-119s3296is.htm"
+  },
+  {
+   "chars": 3360,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "Improving Access to Workers' Compensation for Injured Federal Workers Act of 2025"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s3296es/html/BILLS-119s3296es.htm"
+  }
+ ]
+}

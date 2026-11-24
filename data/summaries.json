@@ -416,6 +416,12 @@
   "one_sentence": "The bill would require the Department of Homeland Security to report to Congress on its efforts to prevent, deter, and respond to vehicular terrorism, meaning terrorism carried out using automobiles.",
   "short": "The Department of Homeland Security would submit a report to Congress, prepared with the Transportation Security Administration and the Cybersecurity and Infrastructure Security Agency, on preventing and responding to vehicular terrorism. The report would cover current and emerging threats, higher-risk locations such as airports and government facilities, coordination with law enforcement agencies, and recommendations for technologies to detect and mitigate such attacks. The full report would be classified, but an unclassified executive summary would be published on the department's website, and the department would also brief Congress on its findings."
  },
+ "hr-1628": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would award a Congressional Gold Medal to the 761st Tank Battalion for its World War II service and then place the medal in the National Museum of African American History and Culture.",
+  "short": "The bill provides for a Congressional Gold Medal to be awarded to the 761st Tank Battalion, recognizing its role in the success of Allied forces in Europe during World War II. The medal honors the battalion as the first Black soldiers to serve in an American armored unit in war. After the award, the medal would be given to the National Museum of African American History and Culture for display and research."
+ },
  "hr-164": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The POWER Act of 2025 would let electric utilities receiving emergency power restoration aid also carry out cost-effective hazard mitigation work alongside that restoration.",
@@ -430,6 +436,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would place about 40 acres of land in Oglala Lakota County, South Dakota, into restricted status for two Sioux tribes to be kept as a memorial and sacred site.",
   "short": "The act directs the Department of the Interior to complete the steps needed to place roughly 40 acres in Oglala Lakota County, South Dakota, into restricted fee status for the Oglala Sioux Tribe and the Cheyenne River Sioux Tribe. Restricted fee status means the land stays tribally owned but cannot be sold, transferred, or encumbered, such as by liens or leases. The land must be held and maintained as a memorial and sacred site under a 2022 covenant between the two tribes. The act also prohibits commercial development and gaming activity on the land."
+ },
+ "hr-1669": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill extends through fiscal year 2030 a federal program that trains health care and social service providers to identify and support people who have experienced or are at risk of human trafficking.",
+  "short": "The bill reauthorizes the Stop, Observe, Ask, and Respond (SOAR) to Health and Wellness Training Program through fiscal year 2030. The program is administered by the National Human Trafficking Training and Technical Assistance Center within the Department of Health and Human Services. It provides training for health care and social service providers on how to recognize and support people who have experienced or are at risk of human trafficking."
  },
  "hr-1676": {
   "model": "claude-haiku-5-5",
@@ -763,6 +775,12 @@
   "one_sentence": "The bill would require the U.S. Postal Service to designate a single, unique ZIP Code for each of 74 listed communities across the United States.",
   "short": "The bill directs the U.S. Postal Service to give each of 74 named communities its own single, unique ZIP Code. The communities are located in many states, including California, Colorado, Florida, Indiana, Texas, and Wisconsin. The official summary lists the communities but does not describe any further details of how the designations would be carried out."
  },
+ "hr-3100": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The CHILD Act of 2026 would let care-providing businesses and organizations request national criminal history background checks on additional categories of people, including contractors and individuals they license or certify.",
+  "short": "Current federal law lets businesses and organizations that provide care or care placement for children, the elderly, or people with disabilities request national criminal history background checks on certain individuals. A 2018 law narrowed who counts as a covered individual to employees, volunteers, owners, and operators. This bill would restore authority to check contractors and individuals licensed or certified by these organizations, along with employees and volunteers of contracted entities, when they have, may have, or seek access to those vulnerable groups."
+ },
  "hr-3106": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would require the Department of Homeland Security to run an exercise simulating a terrorist attack during extreme cold weather and report its findings to Congress.",
@@ -853,6 +871,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill would create federal crimes for fleeing from Border Patrol or certain other law enforcement officers in a motor vehicle within 100 miles of the U.S. border.",
   "short": "The measure establishes new federal criminal offenses for operating a motor vehicle within 100 miles of the U.S. border while fleeing from a U.S. Border Patrol agent or from a federal, state, or local officer actively assisting or under Border Patrol command. It sets criminal penalties for these offenses, including a mandatory minimum prison term when the offense results in death or serious bodily injury. A non-U.S. national who is convicted of or admits to committing such an offense would be inadmissible, deportable, and ineligible for immigration relief, including asylum."
+ },
+ "hr-3514": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would set new rules for how Medicare Advantage plans handle prior authorization, the approval step before certain care is covered, including electronic processes, public reporting, and timeliness standards.",
+  "short": "Medicare Advantage plans would be required to run an electronic prior authorization program that meets specified standards. Each year, plans would submit to the Centers for Medicare & Medicaid Services (CMS) information such as the percentage of requests approved and the average response time, which CMS would publish. CMS would also set other quality and timeliness standards for prior authorization decisions, and CMS and the Office of the National Coordinator for Health Information Technology would publish a report analyzing the data, the feasibility of real-time decisions, and the impact of artificial intelligence-based decisions on patient access."
  },
  "hr-359": {
   "model": "claude-haiku-5-5",
@@ -2064,6 +2088,12 @@
   "one_sentence": "The bill would set policies and authorize funding and personnel levels for Department of Defense, Department of Energy national security, State Department, Coast Guard, and Intelligence Community programs for fiscal year 2026.",
   "short": "The National Defense Authorization Act for Fiscal Year 2026 sets policies and authorities for defense and national security programs for fiscal year 2026. It authorizes procurement of items such as aircraft, ships, and missiles, sets active duty and reserve personnel levels, and covers military health care and compensation. It also includes provisions on defense acquisitions, relations with countries including Israel, Ukraine, and in the Indo-Pacific, cyber operations and artificial intelligence, military construction, and Coast Guard and State Department matters."
  },
+ "s-1157": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require the Department of Health and Human Services to conduct an interagency review aimed at advancing lung cancer research, prevention, and awareness for women and underserved populations.",
+  "short": "The bill directs the Department of Health and Human Services to carry out an interagency review of lung cancer efforts focused on women and underserved populations. The review must assess existing research and current knowledge gaps, and identify opportunities for collaborative research into the causes of lung cancer and into prevention, screening, diagnosis, and treatment. It must also provide recommendations for a national lung cancer screening strategy and a public education campaign."
+ },
  "s-1318": {
   "model": "claude-haiku-5-5",
   "one_sentence": "The provided material describes a bill about foreign intelligence surveillance and central bank digital currency, but it does not match the stated title, so the measure's actual purpose cannot be confirmed from it.",
@@ -2088,6 +2118,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The bill renames the Anahuac National Wildlife Refuge in Anahuac, Texas, as the Jocelyn Nungaray National Wildlife Refuge.",
   "short": "The Jocelyn Nungaray National Wildlife Refuge Act would rename the Anahuac National Wildlife Refuge, located in Anahuac, Texas, as the Jocelyn Nungaray National Wildlife Refuge. The act would give statutory authority to Executive Order 14229, which had already made the same name change. The summary provided does not describe any other changes to the refuge."
+ },
+ "s-162": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would require states to create family partnership plans to improve foster care stability and kinship placements, and would require federal reporting on foster and adoptive families.",
+  "short": "The bill requires state child welfare plans to include a family partnership plan aimed at making foster care placements more stable, increasing the number of children placed with kin, and matching the makeup of foster and adoptive families to the needs of children in or entering foster care. It also requires the Children's Bureau of the Administration for Children and Families to include in its annual report state information on the number, demographics, and characteristics of foster and adoptive families. The report must also summarize challenges in recruiting foster and adoptive parents and in serving as one."
  },
  "s-2": {
   "model": "claude-haiku-5-5",
@@ -2186,6 +2222,12 @@
   "one_sentence": "The bill would extend and modify federal programs that give competitive research and development awards to small businesses, adding security risk reviews and other changes.",
   "short": "The act reauthorizes the Small Business Innovation Research and Small Business Technology Transfer programs through fiscal year 2031, which fund research projects by domestic small businesses that could be commercialized. It requires federal agencies to evaluate the security risks of applicants, and to explain the basis if an application is denied for security reasons. It also caps how many proposals a small business may submit per fiscal year and expands training for contracting staff on commercialization awards, and it creates additional Phase II awards for critical technology areas for businesses that show effective technology and receive matching funds."
  },
+ "s-4394": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The bill would direct the Department of Justice to develop or identify leadership training curricula for command-level police personnel and certify programs that teach them.",
+  "short": "The bill directs the Department of Justice to create or identify training curricula for command-level law enforcement personnel, covering topics such as leadership, critical incident response, risk management, officer wellness, data-driven policing, and building community trust. In developing these curricula, the Department must consult with state and local law enforcement agencies, police organizations, universities, and other entities. The Department must also set up a process for certifying training programs that include these curricula, and the Government Accountability Office must review and report on that process."
+ },
  "s-4465": {
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill extends until June 12, 2026, the authorities in Title VII of the Foreign Intelligence Surveillance Act, which govern collecting foreign intelligence from targets outside the United States.",
@@ -2202,6 +2244,18 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "This bill sets defense policy and authorizes funding and personnel levels for Department of Defense and Department of Energy national security programs for fiscal year 2027.",
   "short": "The bill sets policies and authorities for fiscal year 2027 for Department of Defense programs, military construction, and certain national security programs of the Department of Energy. It authorizes the procurement of items such as aircraft and ships, sets active duty and reserve personnel strength levels, and addresses military health care, compensation, and defense acquisition and contracting. It also covers defense policy on foreign nations, cyber operations and artificial intelligence, and reviews of materials important to defense industry supply, along with authorizations for specific military construction projects and the National Nuclear Security Administration and Defense Nuclear Facilities Safety Board."
+ },
+ "s-4850": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "This bill would raise the minimum amount in controversy for federal diversity jurisdiction from $75,000 to $150,000 and adjust it for inflation every 10 years starting in 2030.",
+  "short": "Federal courts can hear certain civil cases between parties from different states when the money at stake is above a set minimum. Under current law that minimum is $75,000. This bill would raise it to $150,000 and adjust it for inflation every 10 years beginning in 2030."
+ },
+ "s-494": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "The National Plan for Epilepsy Act would direct the Department of Health and Human Services to create a national plan to prevent, diagnose, treat, and cure epilepsy.",
+  "short": "The bill requires HHS to establish a National Plan for Epilepsy and coordinate epilepsy research and services across federal agencies, including by soliciting public comments. It directs HHS to form an Advisory Council on Epilepsy Research, Care, and Services, which must report every two years on federally funded efforts. HHS must also report annually to Congress with recommended actions based on its assessment of national progress on epilepsy. These requirements end on December 31, 2035."
  },
  "s-5": {
   "model": "claude-haiku-5-5",
@@ -2224,6 +2278,12 @@
   "model": "claude-haiku-5-5",
   "one_sentence": "The act expands and revises federal emergency conservation and forest restoration payment programs for farmers and private forest owners hit by natural disasters.",
   "short": "The act changes the Emergency Conservation Program and the Emergency Forest Restoration Program, which help agricultural producers and owners of forest land pay for repairs after natural disasters. It allows advance payments for replacing, repairing, or restoring farmland and conservation structures, and for emergency work on private nonindustrial forest land, and gives recipients 180 days to spend the funds instead of 60. It also extends eligibility to certain wildfire damage, including fires not caused naturally that spread through natural causes and fires caused by the federal government."
+ },
+ "s-645": {
+  "basis": "summary",
+  "model": "claude-haiku-5-5",
+  "one_sentence": "Would award a Congressional Gold Medal to recognize the individuals and communities that supported the North Platte Canteen in Nebraska during World War II.",
+  "short": "The bill provides for a Congressional Gold Medal to honor the people and communities who gave financial and other support to the North Platte Canteen in North Platte, Nebraska, during World War II. The official summary describes only this award and does not list further details such as the medal's design or funding."
  },
  "s-723": {
   "model": "claude-haiku-5-5",

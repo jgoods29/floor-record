@@ -1,0 +1,37 @@
+{
+ "checked": "2026-11-24",
+ "compare": {
+  "earlier": "is",
+  "from_earlier": 0.956,
+  "kept": 0.931,
+  "later": "es",
+  "verdict": "similar"
+ },
+ "review": false,
+ "versions": [
+  {
+   "chars": 8416,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Recruiting Families Using Data Act of 2025"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s162is/html/BILLS-119s162is.htm"
+  },
+  {
+   "chars": 8413,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "Recruiting Families Using Data Act of 2025"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s162es/html/BILLS-119s162es.htm"
+  }
+ ]
+}

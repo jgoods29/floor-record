@@ -1,0 +1,37 @@
+{
+ "checked": "2026-11-24",
+ "compare": {
+  "earlier": "is",
+  "from_earlier": 0.195,
+  "kept": 0.087,
+  "later": "es",
+  "verdict": "replaced"
+ },
+ "review": true,
+ "versions": [
+  {
+   "chars": 12832,
+   "code": "is",
+   "full_text": true,
+   "parts": [],
+   "sections": 3,
+   "short_titles": [
+    "National Plan for Epilepsy Act"
+   ],
+   "stage": "As introduced in the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s494is/html/BILLS-119s494is.htm"
+  },
+  {
+   "chars": 5518,
+   "code": "es",
+   "full_text": true,
+   "parts": [],
+   "sections": 2,
+   "short_titles": [
+    "National Plan for Epilepsy Act"
+   ],
+   "stage": "As passed by the Senate",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-119s494es/html/BILLS-119s494es.htm"
+  }
+ ]
+}
