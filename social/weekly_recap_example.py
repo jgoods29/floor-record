@@ -24,7 +24,7 @@ def score(title, tag, yes, no, verdict, name, line, extra=''):
         f'<div style="display: flex; gap: 14px"><span style="{CAP}; color: #FFFFFF; background: {INK}; border-radius: 999px; padding: 10px 22px">{verdict}</span></div></div>',
         f'<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid {LINE}; padding-top: {G}px"><div style="{D}; font-weight: 700; font-size: 54px; line-height: 1.04; letter-spacing: -0.02em">{name}</div><div style="font-size: 34px; line-height: 1.3; color: {T2}">{line}</div>{extra}</div>',
     ]))
-def blk(label, body, grow=1): return f'<div style="flex: {grow} 1 0; display: flex; flex-direction: column; gap: 20px; border-top: 2px solid {LINE}; padding-top: {G}px"><div style="{CAP}; color: {PURPLE}; font-size: 26px">{label}</div><div style="font-size: 45px; line-height: 1.26; color: {INK}">{body}</div></div>'
+def blk(label, body, grow=1): return f'<div style="flex: {grow} 1 0; display: flex; flex-direction: column; gap: 20px; border-top: 2px solid {LINE}; padding-top: {G}px"><div style="{CAP}; color: {PURPLE}; font-size: 28px">{label}</div><div style="font-size: 45px; line-height: 1.26; color: {INK}">{body}</div></div>'
 def pt(t): return f'<div style="display: flex; gap: 16px"><span style="color: {PURPLE}; font-weight: 700">&ndash;</span><span>{t}</span></div>'
 def story(title, tag, yes, no, verdict, name, what, means):
     return (title, tag, '\n'.join([
@@ -58,9 +58,17 @@ ACT = ('Recap 7: How Did Yours Vote', 'Your Turn', '\n'.join([
     f'<div style="border-radius: 28px; background: {PURPLE}; color: #FFFFFF; padding: {G}px; display: flex; flex-direction: column; gap: 14px"><div style="font-size: 30px; line-height: 1.2; font-weight: 600">Look up your representative and senators</div><div style="{D}; font-weight: 700; font-size: 64px; line-height: 1; letter-spacing: -0.02em">floortherecord.com</div></div>',
 ]))
 def crisp(html):
-    """Heavier and darker text, so it stays sharp when someone zooms in on Instagram (which stores posts 1080 pixels wide)."""
-    return (html.replace('color: #14213D; font-family: Inter, sans-serif;', 'color: #14213D; font-family: Inter, sans-serif; font-weight: 500;')
-                .replace('#3B4A66', '#1F2A44').replace('#5A6473', '#3B4558'))
+    """Make every slide hold up when someone zooms in on Instagram, which stores posts 1080 pixels wide:
+    one near-navy text color (no greys), medium weight for large sentences, semibold for anything 34px or smaller."""
+    import re
+    html = (html.replace('color: #14213D; font-family: Inter, sans-serif;', 'color: #14213D; font-family: Inter, sans-serif; font-weight: 500;')
+                .replace('#3B4A66', '#14213D').replace('#5A6473', '#2A3550'))
+    def small(m):
+        st = m.group(1); z = re.search(r'font-size: (\d+)px', st)
+        if z and int(z.group(1)) <= 34 and 'font-weight' not in st: st += '; font-weight: 600'
+        if z and int(z.group(1)) <= 26: st = st.replace('font-weight: 500', 'font-weight: 600')
+        return f'style="{st}"'
+    return re.sub(r'style="([^"]*)"', small, html)
 SLIDES = {'RecapHook': HOOK, 'RecapBig': BIG, 'RecapClose': CLOSE, 'RecapShut': SHUT, 'RecapBench': BENCH, 'RecapRest': REST, 'RecapAct': ACT}
 if __name__ == '__main__':
     out = pathlib.Path(sys.argv[1])
