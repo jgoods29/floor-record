@@ -38,7 +38,7 @@ MOVED = ('Thanksgiving 3: In 1939 The President Moved It', '1939', '\n'.join([
     f'<div style="font-size: 36px; line-height: 1.26">Franklin Roosevelt wanted a longer Christmas shopping season.</div>',
     cal(),
     f'<div style="flex: 1; min-height: 0; display: flex; align-items: center; gap: 24px">{key(PURPLE, False, "About Half The States", "Used the new date")}{key(INK, True, "About Half", "Kept the old date")}</div>',
-    f'<div style="font-size: 36px; line-height: 1.26; font-weight: 600">America had two Thanksgivings, in 1939 and again in 1940.</div>',
+    f'<div style="font-size: 36px; line-height: 1.26; font-weight: 600">America had two Thanksgivings,<br>in 1939 and again in 1940.</div>',
     SRC,
 ]))
 SETTLED = ('Thanksgiving 4: In 1941 Congress Settled It', '1941', '\n'.join([
