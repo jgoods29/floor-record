@@ -4,7 +4,7 @@ import json, sys, pathlib
 from playwright.sync_api import sync_playwright
 from PIL import Image
 import io
-PAIRS = [(401,0),(62,33),(48,51),(51,46),(52,46),(49,43),(49,41),(398,0),(396,14),(365,36)]
+PAIRS = [(32,16),(401,0),(62,33),(48,51),(51,46),(52,46),(49,43),(49,41),(398,0),(396,14),(365,36)]
 PX = 400
 faces = "@font-face{font-family:\"Inter Tight\";font-weight:700;src:url(node_modules/@fontsource/inter-tight/files/inter-tight-latin-700-normal.woff2) format('woff2')}"
 def html(y, n):
