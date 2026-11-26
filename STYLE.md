@@ -78,6 +78,13 @@ If two people split on a step and then voted the same way on passage, the row mu
 Bill", "Both later voted to pass it"). If there has been no final vote, say that. Numbers in a post are a snapshot:
 recount them from the record on the day it goes out.
 
+**Checks come before the files, not after the owner asks.** Nothing is handed over as ready to post until the checks are done. On Thanksgiving 2026 a slide put "32 states and 16 states" under a 1939 calendar; the counts were real but belonged to 1940, and it was only caught when the owner asked "are you positive?" after the download was sent. The rules that came out of it:
+
+- **A number keeps its label.** Every number or date goes on a slide with the same what, where, and when the source gives it. If the source does not say which year or which vote a number belongs to, find a source that does, or leave the number out.
+- **Two sources for anything outside the record.** Roll calls and bill text stand on their own. History, biography, schedules, and anything from one web page need a second, independent source that agrees. Two pages that copy each other count as one.
+- **A claims list ships with every post.** With the slides, give the owner a short list: each claim, where it comes from, and whether it is confirmed, summarized in our words, or not checked. Anything not checked is said so up front, and the post is called a draft until the list is clean.
+- **Same-day posts get no shortcut.** If there is no time to check a claim, cut the claim, not the check.
+
 **No email goes out without the owner seeing it first.** Automatic sending is off (November 19, 2026). For each Monday and Friday email: build the sample (`python -m floorrecord.newsletter --edition friday --dry out/ --rep <id> --state <ST>`), check every item against the roll call and the text voted on, and show the owner a picture of it. Send it by hand from the Actions tab only after the owner says go. The first Friday draft called the Senate's energy permitting bill a sexual-misconduct tax bill, because the bill number was reused to carry the larger package: read what was actually voted on.
 
 ## Color
