@@ -94,5 +94,4 @@ recount them from the record on the day it goes out.
 
 ## Maps And Charts Of Votes (November 27, 2026)
 - Party is always the color: red is Republican, blue is Democrat, grey is Independent. Never use purple for Yea or Nay; readers take purple to mean agreement between the parties.
-- The vote is how strong the color is: full color voted Yea, light color voted Nay, an empty outline did not vote. On the page, do not use words like "solid" or "faded"; show the colored squares next to "Voted Yea" and "Voted Nay".
-- Purple on a vote map means one thing only: a member who voted differently from most of their party.
+- How to show Yea and Nay on a map is not settled. Full and light shades of the party colors were tried and the owner found them confusing. Show the owner a picture before any vote map goes live.
