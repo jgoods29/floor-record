@@ -178,6 +178,17 @@ def state_map(v, people):
     return tiles
 
 
+def home_map(people, speople):
+    """The home page map: for each state, the people seated for it now. Senators first, then the House by district."""
+    tiles = []
+    for st, (r, c) in STATE_GRID.items():
+        sens = sorted((p for p in speople.values() if p["state"] == st and not p["left"]), key=lambda p: (p.get("rank") != "senior", p["sort"]))
+        reps = sorted((p for p in people.values() if p["state"] == st and not p["left"]), key=lambda p: (p.get("district") or 0, p["sort"]))
+        if sens or reps:
+            tiles.append({"st": st, "name": STATES.get(st, st), "row": r + 1, "col": c + 1, "sens": sens, "reps": reps})
+    return tiles
+
+
 def bill_track(kind, rec, mvotes=(), scheduled=False, svotes=(), changed=False):
     """Where a measure stands, as steps for the chevron tracker. Worked out from the latest official
     action and from the House votes on file, so it is a guide: the official record has the last word."""
@@ -877,7 +888,7 @@ def main():
             for v in sorted(wk, key=lambda v: v["margin"]) if v["id"] in asks][:5]
     home_mode = os.environ.get("FLOORRECORD_HOME") or cfg.get("home")
     home_template = {"brief": "index_brief.html", "play": "index_play.html" if play else "index_brief.html", "mix": "index_mix.html"}.get(home_mode, "index.html")
-    render("index.html", home_template, 0, brief=brief, play=play, matchups=matchups, section="home", act={"topic": "", "key": ""}, news=news, trending=trending, since=since, featured=featured, coming=coming,
+    render("index.html", home_template, 0, brief=brief, play=play, matchups=matchups, section="home", hmap=home_map(people, speople), news=news, trending=trending, since=since, featured=featured, coming=coming,
            mytopics=[[t["key"], t["name"]] for t in all_topics],
            has_topics=bool(all_topics), examples=cfg.get("search_examples") or ["Texas", "Farm Bill", "Taxes"])
     render("votes/index.html", "votes.html", 1, section="votes", act={"topic": "", "key": ""}, votes=newest, featured=featured,

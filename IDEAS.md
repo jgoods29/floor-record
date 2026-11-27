@@ -31,3 +31,8 @@ Restore point: the branch `before-redesign-2026-11-27` is the site exactly as it
 - Next: the same answer-first pattern on member, bill and home pages.
 - Next: a "Career" tab on member pages (offices held, work before politics, education). Every entry must come from the Biographical Directory of Congress or the legislators dataset and follow the two-source rule in STYLE.md. Do not publish entries written from memory.
 - Idea: a "find your members" map on the home page using the same tile layout.
+
+### Home page simplified (November 27, 2026)
+- Home went from about 410 visible words to about 260. One sentence under the headline, three latest votes with the result on the right, a "Find Your Members" state map (press a state, see its senators and House members), five Trending pills at most, Your Page, the promise.
+- Taken off the home page only: the "Speak Up" box (still on vote, bill, and topic pages) and the one-line description under each vote.
+- The vote list is titled "Latest From Congress", not "This Week", because in a week with no votes it shows the last week that had them.

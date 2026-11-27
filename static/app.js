@@ -323,6 +323,21 @@
   if (location.hash.indexOf('#voted-') === 0) { var opened = document.getElementById(location.hash.slice(1)); if (opened) { opened.open = true; var up = opened.parentNode; while (up && up !== document) { if (up.tagName === 'DETAILS') up.open = true; up = up.parentNode; } } }
 
   // ---- vote page: the state map. Press a state to see its members; the buttons recolor the squares.
+  var hmap = document.getElementById('home-map');
+  if (hmap) {
+    var hpanel = document.getElementById('hm-panel');
+    each(hmap.querySelectorAll('.smap-tile'), function (t) {
+      var b = t.querySelector('button'), tpl = t.querySelector('template'); if (!b || !tpl) return;
+      b.addEventListener('click', function () {
+        var was = t.classList.contains('on');
+        each(hmap.querySelectorAll('.smap-tile'), function (o) { o.classList.remove('on'); var ob = o.querySelector('button'); if (ob) ob.setAttribute('aria-expanded', 'false'); });
+        if (was) { hpanel.hidden = true; return; }
+        t.classList.add('on'); b.setAttribute('aria-expanded', 'true');
+        hpanel.innerHTML = tpl.innerHTML; hpanel.hidden = false;
+        if (hpanel.getBoundingClientRect().top > window.innerHeight - 120) hpanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+  }
   var smap = document.getElementById('state-map');
   if (smap) {
     var closeTips = function (keep) { each(smap.querySelectorAll('.smap-tile'), function (t) { if (t === keep) return; t.classList.remove('on'); var tip = t.querySelector('.smap-tip'); if (tip) tip.hidden = true; var b = t.querySelector('button'); if (b) b.setAttribute('aria-expanded', 'false'); }); };
