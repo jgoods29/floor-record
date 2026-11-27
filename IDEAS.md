@@ -21,3 +21,13 @@ A design canvas holds a stripped-down mockup and a middle-ground one. Neither wa
 Accounts, the Monday and Friday emails, the 30-second pop-up and the Subscribe button went live on November 16, 2026,
 when floortherecord.com was connected. Emails send from hello@floortherecord.com. Still open: a postal address must be
 added before any sponsored email, and the free email plan covers about 50 subscribers. See `accounts/README.md`.
+
+
+## Redesign, November 2026 (owner approved the mockups on November 27)
+
+Restore point: the branch `before-redesign-2026-11-27` is the site exactly as it was before any of this. To go back, restore the changed files from that branch (`git checkout before-redesign-2026-11-27 -- templates static floorrecord/build.py`) and push.
+
+- Done: vote pages lead with the result, the score and one sentence, then a state tile map, then "The Details" (everything else, in sections that open). About half as many words show at first; nothing was removed.
+- Next: the same answer-first pattern on member, bill and home pages.
+- Next: a "Career" tab on member pages (offices held, work before politics, education). Every entry must come from the Biographical Directory of Congress or the legislators dataset and follow the two-source rule in STYLE.md. Do not publish entries written from memory.
+- Idea: a "find your members" map on the home page using the same tile layout.
