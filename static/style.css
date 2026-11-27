@@ -806,7 +806,10 @@ a.vfact:hover { border-color: var(--purple); }
 .sq2 { display: flex; gap: 3px; }
 .sbar { display: flex; width: 76%; height: 9px; border-radius: 5px; overflow: hidden; gap: 1px; } .sbar i { display: block; min-width: 0; }
 .scount { font-size: 11px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; color: var(--text-2); }
-.v-yea { background: var(--purple); } .v-nay { background: var(--ink); } .v-nv { background: #fff; box-shadow: inset 0 0 0 2px var(--nay); }
+/* party is the color, the vote is how strong it is: solid for Yea, faded for Nay. Purple is kept for crossing party lines. */
+.v-yea, .v-yea.p-I { background: #5A6473; } .v-nay, .v-nay.p-I { background: #CDD3DC; } .v-nv { background: #fff; box-shadow: inset 0 0 0 1.5px var(--nay); }
+.v-yea.p-R { background: var(--rep); } .v-yea.p-D { background: var(--dem); } .v-nay.p-R { background: #EFB9B5; } .v-nay.p-D { background: #B4C8EC; }
+.smap-key .sq + .sq { margin-left: -6px; }
 .smap[data-view="party"] .smap-grid .sq.p-R, .sq.p-R.key, .k-party .p-R { background: var(--rep); box-shadow: none; }
 .smap[data-view="party"] .smap-grid .sq.p-D, .k-party .p-D { background: var(--dem); box-shadow: none; }
 .smap[data-view="party"] .smap-grid .sq.p-I, .k-party .p-I { background: var(--ind); box-shadow: none; }
