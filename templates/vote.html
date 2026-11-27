@@ -3,58 +3,59 @@
 {% block desc %}{{ v.date|nicedate }}: {{ v.info.name }}, {{ v.info.outcome|lcfirst }}, {{ v.totals.yea }} to {{ v.totals.nay }}.{% endblock %}
 {% block source %}Every number on this page comes from the official {{ ch.name }} record of {{ ch.roll }} {{ v.roll }}, taken {{ v.date|nicedate }}{% if v.time %} at {{ v.time }} ET{% endif %}. <a href="{{ v.source }}">Check it against the Clerk's record</a>.{% endblock %}
 {% block main %}
-<div class="wrap page vp" style="padding-bottom: 56px">
+<div class="wrap page" style="padding-bottom: 56px">
+<div class="stack">
 <div class="eyebrow"><a href="{{ root }}{{ c }}votes/" style="text-decoration:none;color:inherit">Votes</a><span aria-hidden="true">·</span><span>{{ ch.full }}</span><span aria-hidden="true">·</span><span>{{ v.date|nicedate }}</span></div>
+<h1 class="h1">{{ v.info.name }}{% if v.kind == 'standard' %}: {{ v.info.outcome|lcfirst }}{% endif %}</h1>
+{% if v.info.plain %}<p class="lede">{{ v.info.plain }}</p>{% endif %}
+{% set tg %}{{ m.tags(v) }}{% if v.info.source == 'ai' %}<span class="tag proc">Headline written by AI</span>{% endif %}{% endset %}{% if tg|trim %}<div class="tags">{{ tg }}</div>{% endif %}
+<p class="fine" style="font-size:14px">{% if bill %}<a href="{{ root }}{{ c }}bills/{{ v.slug }}/">{{ bill.label }}</a> · {% endif %}{{ v.question }} · {{ ch.roll }} {{ v.roll }}{% if v.info.title and v.info.title != v.info.name %} · Official title: {{ v.info.title }}{% endif %}{% if sponsor %} · Sponsored by <a href="{{ root }}{{ c }}members/{{ sponsor.bioguide }}/">Rep. {{ sponsor.name }}</a>{% endif %}</p>
+</div>
+
+<div class="card flush">
+<div class="card-head">
+<div class="stack" style="gap:8px">
+<div class="row" style="gap:12px"><span class="label">Official result</span><span class="pill">{{ v.result }}{% if v.info.result_note %}*{% endif %}</span>{% if v.info.two_thirds %}<span class="tag soft">Needed two-thirds</span>{% endif %}</div>
+{% if v.info.result_note %}<p class="small" style="color:var(--text-2);max-width:520px">* {{ v.info.result_note }}</p>{% endif %}
+</div>
+<a class="small strong" href="{{ v.source }}">Official record: {{ ch.clerk }}, {{ ch.roll }} {{ v.roll }}{% if v.time %}, {{ v.time }} ET{% endif %}</a>
+</div>
+<div class="card-body">
 {% if v.kind == 'standard' %}
-{# ---- the answer first: what it was, what happened, the score, one sentence #}
-<div class="vhero">
-<div class="stack" style="gap:14px"><div class="row" style="gap:10px;flex-wrap:wrap"><span class="vpill">{{ v.info.outcome }}</span>{% if v.info.two_thirds %}<span class="tag soft">Needed two-thirds</span>{% endif %}{% if v.info.source == 'ai' %}<span class="tag proc">Headline written by AI</span>{% endif %}</div>
-<h1 class="h1">{{ v.info.name }}</h1></div>
-<div class="vscore" aria-label="{{ v.totals.yea }} Yea to {{ v.totals.nay }} Nay"><a class="y" href="#voted-yea" data-open="voted-yea" aria-label="{{ v.totals.yea }} voted Yea. See who.">{{ v.totals.yea }}</a><i aria-hidden="true"></i><a href="#voted-nay" data-open="voted-nay" aria-label="{{ v.totals.nay }} voted Nay. See who.">{{ v.totals.nay }}</a><span class="vscore-k"><span>Yea</span><span>Nay</span></span></div>
+<div class="score split3">
+<div><a class="big xl numlink mix" style="{{ v.mix.yea.style }}" href="#voted-yea" data-open="voted-yea" aria-label="{{ v.totals.yea }} voted Yea. See who.">{{ v.totals.yea }}</a><div class="name">Yea</div><div class="muted" style="font-size:16px">{{ v.info.yea|capfirst }}</div>
+<div class="who-line">{{ v.mix.yea.text }}</div>
+<div class="seats" aria-hidden="true">{% for party, who in seats.yea %}<span class="seat {{ party }}" title="{{ who }}"></span>{% endfor %}</div></div>
+<div><a class="big xl numlink mix" style="{{ v.mix.nay.style }}" href="#voted-nay" data-open="voted-nay" aria-label="{{ v.totals.nay }} voted Nay. See who.">{{ v.totals.nay }}</a><div class="name">Nay</div><div class="muted" style="font-size:16px">{{ v.info.nay|capfirst }}</div>
+<div class="who-line">{{ v.mix.nay.text }}</div>
+<div class="seats" aria-hidden="true">{% for party, who in seats.nay %}<span class="seat {{ party }}" title="{{ who }}"></span>{% endfor %}</div></div>
+<div>{% if v.totals.nv %}<a class="big md numlink mix" style="{{ v.mix.nv.style }}" href="#voted-nv" data-open="voted-nv" aria-label="{{ v.totals.nv }} did not vote. See who.">{{ v.totals.nv }}</a>{% else %}<div class="big md dim">0</div>{% endif %}<div class="name">Did not vote</div><div class="muted{% if not v.totals.present %} spacer{% endif %}" style="font-size:16px">{% if v.totals.present %}{{ v.totals.present }} voted present{% else %}&nbsp;{% endif %}</div>
+<div class="who-line">{{ v.mix.nv.text }}</div>
+<div class="seats" aria-hidden="true">{% for party, who in seats.nv %}<span class="seat out {{ party }}" title="{{ who }}"></span>{% endfor %}</div></div>
 </div>
-{% if v.info.plain %}<p class="vone">{{ v.info.plain|lead }}</p>{% endif %}
-<div class="vfacts">
-{% for kind, text in v.tags %}<div class="vfact"><b>{{ text|title }}</b></div>{% endfor %}
-{% if v.totals.nv %}<a class="vfact" href="#voted-nv" data-open="voted-nv"><b>{{ v.totals.nv }} Did Not Vote</b><span>{{ v.mix.nv.text }}</span></a>{% endif %}
-{% if bill %}<a class="vfact next" href="{{ root }}{{ c }}bills/{{ v.slug }}/"><b>{{ bill.label }}: What Is Next</b><span>{{ bill.track.text }}</span></a>{% endif %}
-</div>
-
-{% if smap %}
-{# ---- the map: every state the same size, one square per member #}
-<section class="card flush smap" data-view="vote" id="state-map">
-<div class="card-head"><h2 class="h3">How Each State Voted</h2>
-<div class="seg" role="group" aria-label="Show on the map"><button type="button" class="on" data-map-view="vote">Everyone</button><button type="button" data-map-view="crossed">Crossed Party Lines</button></div></div>
-<div class="smap-body">
-<div class="smap-grid{% if not c %} many{% endif %}">
-{% for t in smap %}<div class="smap-tile" style="grid-row:{{ t.row }};grid-column:{{ t.col }}"><button type="button" aria-expanded="false" aria-label="{{ t.name }}: {{ t.n.yea }} Yea, {{ t.n.nay }} Nay{% if t.n.nv %}, {{ t.n.nv }} did not vote{% endif %}"><b>{{ t.st }}</b>
-{% if t.members|length <= 2 %}<span class="sq2">{% for mm in t.members %}<i class="sq v-{{ mm.side }} p-{{ mm.party }}{% if mm.broke %} br{% endif %}"></i>{% endfor %}</span>
-{% else %}<span class="sbar" aria-hidden="true">{% for side in ('yea', 'nay') %}{% for pp in ('R', 'D', 'I') %}{% set k = t.members|selectattr('side', 'equalto', side)|selectattr('party', 'equalto', pp)|list|length %}{% if k %}<i class="v-{{ side }} p-{{ pp }}" style="flex:{{ k }}"></i>{% endif %}{% endfor %}{% endfor %}{% if t.n.nv %}<i class="v-nv" style="flex:{{ t.n.nv }}"></i>{% endif %}</span><span class="scount">{{ t.n.yea }}&ndash;{{ t.n.nay }}</span>{% endif %}</button>
-<div class="smap-tip" hidden><strong>{{ t.name }}</strong>
-{% if t.members|length <= 6 %}{% for mm in t.members %}<a href="{{ root }}{{ c }}members/{{ mm.p.bioguide }}/"><i class="sq v-{{ mm.side }} p-{{ mm.party }}"></i><span>{{ mm.p.name }} ({{ mm.party }}): {{ {'yea': 'Yea', 'nay': 'Nay', 'nv': 'Did not vote'}[mm.side] }}{% if mm.broke %} <em>crossed party lines</em>{% endif %}</span></a>{% endfor %}
-{% else %}{% for side, word in (('yea', 'Yea'), ('nay', 'Nay')) %}{% if t.n[side] %}<span>{{ word }}: {% set parts = [] %}{% for pp, pname in (('R', 'Republican'), ('D', 'Democrat'), ('I', 'Independent')) %}{% set k = t.members|selectattr('side', 'equalto', side)|selectattr('party', 'equalto', pp)|list|length %}{% if k %}{% set _ = parts.append(k ~ ' ' ~ pname ~ ('' if k == 1 else 's')) %}{% endif %}{% endfor %}{{ parts|join(', ') }}</span>{% endif %}{% endfor %}{% if t.n.nv %}<span>{{ t.n.nv }} did not vote</span>{% endif %}{% if t.broke %}<span>{{ t.broke }} crossed party lines</span>{% endif %}{% endif %}</div></div>
-{% endfor %}</div>
-<div class="smap-key">
-<div class="k-vote"><span><i class="sq v-yea p-R"></i><i class="sq v-yea p-D"></i>Voted Yea <b>{{ v.totals.yea }}</b></span><span><i class="sq v-nay p-R"></i><i class="sq v-nay p-D"></i>Voted Nay <b>{{ v.totals.nay }}</b></span>{% if v.totals.nv %}<span><i class="sq v-nv"></i>Did Not Vote <b>{{ v.totals.nv }}</b></span>{% endif %}</div>
-<div class="k-crossed"><span><i class="sq br"></i>Voted differently from most of their party <b>{{ breakers|length }}</b></span></div>
-<p>Red is Republican{% if v.by_party.get('I') %}, Blue is Democrat, and Grey is Independent{% else %} and Blue is Democrat{% endif %}. {% if c %}Each state has one square per senator.{% else %}Each bar shows how a state&rsquo;s representatives split, with Yea first.{% endif %} Press a state to see who voted which way.</p></div>
-</div></section>
+<div class="legend"><span>Select a number to see who voted that way. Each square is one member.</span><span><i class="seat R"></i>Republican</span><span><i class="seat D"></i>Democrat</span>{% if v.by_party.get('I') %}<span><i class="seat I"></i>Independent</span>{% endif %}{% if v.mix.yea.mixed or v.mix.nay.mixed or v.mix.nv.mixed %}<span><i class="seat mixkey"></i>A purple number is a close mix of parties</span>{% endif %}<span>A red or blue number means most of those votes came from that party.</span></div>
+{% else %}
+<p class="lede">This was a special roll call (such as a quorum call or the election of the Speaker). It is listed for the record but is not counted in any member's statistics.</p>
 {% endif %}
+{% if not v.tally_matches %}<p class="note">The individual votes we counted do not add up to the Clerk's official totals for this roll call. The totals shown are the official ones.</p>{% endif %}
+</div>
+</div>
+</div>
 
-{# ---- everything else, one press away. Nothing is removed. #}
-<section class="card flush vdet">
-<div class="card-head"><h2 class="h3">The Details</h2><span class="small muted">Press any line to open it</span></div>
-{% set more = v.info.plain|rest %}
-{% if more or note or ai %}<details class="vd"><summary><b>{% if bill %}What It Does{% else %}More About It{% endif %}</b><span>{{ (note or more or ai.one_sentence)|truncate(96) }}</span></summary><div class="vd-body">
-{% if v.info.plain %}<p class="vp-p">{{ v.info.plain }}</p>{% endif %}
-{% if note %}<div class="card"><span class="label">About this bill</span><p style="font-size:18px;margin-top:8px">{{ note }}</p></div>{% elif ai %}<div class="card"><span class="label">What the measure does · AI-written summary</span><p style="font-size:18px;margin-top:8px">{{ ai.one_sentence }}</p><p class="small muted" style="margin-top:8px">Drafted by AI from the official title and summary. <a href="{{ root }}{{ c }}bills/{{ v.slug }}/">Read more and check the source</a>.</p>{% if unchecked %}<p class="small muted" style="margin-top:8px">This bill's text changed a lot between versions, and this summary has not been checked against the latest text yet. <a href="{{ root }}{{ c }}bills/{{ v.slug }}/">See what each version contains</a>.</p>{% endif %}</div>{% endif %}
-</div></details>{% endif %}
-<details class="vd"><summary><b>What A Yea Or Nay Meant</b><span>Yea was a vote to {{ v.info.yea }}. Nay was a vote to {{ v.info.nay }}.</span></summary><div class="vd-body">
-<p class="vp-p">{{ v.info.what }}</p>
+{% if v.kind == 'standard' %}
+<section class="band"><div class="wrap stack" style="gap:32px">
+<div class="stack" style="gap:16px"><h2 class="label" style="color: var(--accent)">What this vote meant</h2>
+<p class="h2" style="font-weight:600; max-width: 880px; text-wrap: pretty">{{ v.info.what }}</p></div>
 <div class="grid two">
 <div class="card"><span class="h3">A Yea vote</span><p style="font-size:18px;color:var(--text-2)">was a vote to {{ v.info.yea }}.</p></div>
 <div class="card"><span class="h3">A Nay vote</span><p style="font-size:18px;color:var(--text-2)">was a vote to {{ v.info.nay }}.</p></div>
-</div></div></details>
-<details class="vd"><summary><b>How Each Party Voted</b><span>Yea: {{ v.mix.yea.text }}. Nay: {{ v.mix.nay.text }}.</span></summary><div class="vd-body">
+</div>
+{% if note %}<div class="card"><span class="label">About this bill</span><p style="font-size:18px;margin-top:8px">{{ note }}</p></div>{% elif ai %}<div class="card"><span class="label">What the measure does · AI-written summary</span><p style="font-size:18px;margin-top:8px">{{ ai.one_sentence }}</p><p class="small muted" style="margin-top:8px">Drafted by AI from the official title and summary. <a href="{{ root }}{{ c }}bills/{{ v.slug }}/">Read more and check the source</a>.</p>{% if unchecked %}<p class="small muted" style="margin-top:8px">This bill's text changed a lot between versions, and this summary has not been checked against the latest text yet. <a href="{{ root }}{{ c }}bills/{{ v.slug }}/">See what each version contains</a>.</p>{% endif %}</div>{% endif %}
+</div></section>
+
+<div class="wrap page">
+<section class="stack">
+<h2 class="h2">How each party voted</h2>
 <div class="grid">{% for pc in parties %}
 <div class="card stack" style="gap:20px">
 <span class="row strong" style="gap:12px;font-size:18px">{{ m.badge(pc.code) }}{{ pc.name }}</span>
@@ -62,9 +63,11 @@
 <span class="bar pc-{{ pc.code }}" aria-hidden="true"><span style="flex: {{ pc.yea }}"></span><span class="n" style="flex: {{ pc.nay }}"></span><span class="x" style="flex: {{ pc.nv + pc.present }}"></span></span>
 <span class="small muted">{% if pc.nv %}<a href="#voted-nv" data-open="voted-nv" data-only="{{ pc.code }}" data-only-name="{{ pc.name }}">{{ pc.nv }} did not vote</a>{% else %}Everyone voted{% endif %}{% if pc.present %} · {{ pc.present }} present{% endif %}</span>
 </div>{% endfor %}</div>
-</div></details>
-<details class="vd"><summary><b>{% if not breakers %}No One Broke With Their Party{% elif breakers|length == 1 %}One Member Broke With Their Party{% else %}{{ breakers|length }} Members Broke With Their Party{% endif %}</b><span>Members who voted differently from most of their own party.</span></summary><div class="vd-body stack">
-{% if not breakers %}<p class="vp-p">Every member who voted went the same way as most of their party.</p>{% endif %}
+</section>
+
+<section class="stack">
+<div class="stack" style="gap:12px"><h2 class="h2">{% if not breakers %}No one broke with their party{% elif breakers|length == 1 %}One member broke with their party{% else %}{{ breakers|length }} members broke with their party{% endif %}</h2>
+<p class="muted" style="font-size:18px;max-width:640px">Members who voted differently from most of their own party.</p></div>
 {% if breakers|length and breakers|length <= 6 %}
 {% for b in breakers %}
 <a class="card tint" href="{{ root }}{{ c }}members/{{ b.p.bioguide }}/" style="flex-direction:row;flex-wrap:wrap;gap:20px 32px;align-items:center">
@@ -77,22 +80,22 @@
 <div class="grid two">{% for group in breaker_groups %}<div class="card stack" style="gap:12px"><span class="row strong" style="gap:12px">{{ m.badge(group.code) }}{{ group.people|length }} {{ group.name }}s voted {{ m.vword(group.vote) }}</span>
 <div class="chips">{% for p in group.people %}<a class="chip" href="{{ root }}{{ c }}members/{{ p.bioguide }}/">{{ p.name }} <span class="small muted">{{ p.seat }}</span></a>{% endfor %}</div></div>{% endfor %}</div>
 {% endif %}
-</div></details>
-{% if absent_groups %}<details class="vd"><summary><b>{{ v.totals.nv }} {{ 'Member' if v.totals.nv == 1 else 'Members' }} Did Not Vote</b><span>{{ v.mix.nv.text }}</span></summary><div class="vd-body stack">
+</section>
+
+{% if absent_groups %}
+<section class="stack">
+<h2 class="h2">{{ v.totals.nv }} {{ 'member' if v.totals.nv == 1 else 'members' }} did not vote</h2>
 {% for group in absent_groups %}<div class="stack" style="gap:16px"><h3 class="row strong" style="gap:12px;font-size:17px">{{ m.badge(group.code) }}{{ group.people|length }} {{ group.name }}{{ '' if group.people|length == 1 else 's' }}</h3>
 <div class="chips">{% for p in group.people %}<a class="chip" href="{{ root }}{{ c }}members/{{ p.bioguide }}/">{{ p.name }} <span class="small muted">{{ p.seat }}</span></a>{% endfor %}</div></div>{% endfor %}
-</div></details>{% endif %}
-<details class="vd" id="roll-call"><summary><b>How Every Member Voted</b><span>The full roll call, by name.</span></summary><div class="vd-body">
+</section>
+{% endif %}
+
+<section class="stack" id="roll-call">
+<h2 class="h2">Full roll call</h2>
+<div class="card">
 <p class="rollnote hide" id="roll-note"><span></span> <button type="button" class="linkish" id="roll-all">Show everyone</button></p>
 {% for group in roll_groups %}<details id="voted-{{ group.key }}"{% if loop.first and group.people|length < 40 %} open{% endif %}><summary>{{ group.title }} (<span data-count>{{ group.people|length }}</span>)</summary>
-<div class="cols">{% for p, party in group.people %}<span data-p="{{ party }}"><a href="{{ root }}{{ c }}members/{{ p.bioguide }}/">{{ p.name }}</a><span class="muted">{{ party }}-{{ p.state }}</span></span>{% endfor %}</div></details>{% endfor %}</div></details>
-<details class="vd"><summary><b>The Official Record</b><span>{{ ch.clerk }}, {{ ch.roll }} {{ v.roll }}: {{ v.result }}</span></summary><div class="vd-body stack" style="gap:12px">
-<div class="row" style="gap:12px;flex-wrap:wrap"><span class="label">Official result</span><span class="pill">{{ v.result }}{% if v.info.result_note %}*{% endif %}</span></div>
-{% if v.info.result_note %}<p class="small" style="color:var(--text-2);max-width:520px">* {{ v.info.result_note }}</p>{% endif %}
-<p class="vp-p">{% if bill %}<a href="{{ root }}{{ c }}bills/{{ v.slug }}/">{{ bill.label }}</a> · {% endif %}{{ v.question }} · {{ ch.roll }} {{ v.roll }}{% if v.info.title and v.info.title != v.info.name %} · Official title: {{ v.info.title }}{% endif %}{% if sponsor %} · Sponsored by <a href="{{ root }}{{ c }}members/{{ sponsor.bioguide }}/">Rep. {{ sponsor.name }}</a>{% endif %}</p>
-<a class="small strong" href="{{ v.source }}">Official record: {{ ch.clerk }}, {{ ch.roll }} {{ v.roll }}{% if v.time %}, {{ v.time }} ET{% endif %}</a>
-{% if not v.tally_matches %}<p class="note">The individual votes we counted do not add up to the Clerk's official totals for this roll call. The totals shown are the official ones.</p>{% endif %}
-</div></details>
+<div class="cols">{% for p, party in group.people %}<span data-p="{{ party }}"><a href="{{ root }}{{ c }}members/{{ p.bioguide }}/">{{ p.name }}</a><span class="muted">{{ party }}-{{ p.state }}</span></span>{% endfor %}</div></details>{% endfor %}</div>
 </section>
 
 {% if bill %}
@@ -102,11 +105,6 @@
 <a class="card" href="{{ root }}{{ c }}votes/" style="min-height:200px"><span class="label" style="color:var(--accent)">More votes</span><span class="h2">All {{ ch.name }} votes</span><span style="color:var(--text-2)">Browse every recorded vote, newest first.</span><span class="go">See the list</span></a>
 </section>
 {% endif %}
-{% else %}
-<h1 class="h1">{{ v.info.name }}</h1>
-{% if v.info.plain %}<p class="lede">{{ v.info.plain }}</p>{% endif %}
-<p class="lede">This was a special roll call (such as a quorum call or the election of the Speaker). It is listed for the record but is not counted in any member's statistics.</p>
-<p class="fine" style="font-size:14px">{{ v.question }} · {{ ch.roll }} {{ v.roll }} · <a href="{{ v.source }}">Official record: {{ ch.clerk }}</a></p>
-{% endif %}
 </div>
+{% endif %}
 {% endblock %}

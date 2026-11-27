@@ -314,45 +314,12 @@
       e.preventDefault();
       rollFilter(link.getAttribute('data-only') || '', link.getAttribute('data-only-name') || '');
       each(document.querySelectorAll('details[id^="voted-"]'), function (d) { d.open = d === target; });
-      var holder = target.parentNode; while (holder && holder !== document) { if (holder.tagName === 'DETAILS') holder.open = true; holder = holder.parentNode; }
       bringToTop(target);
       if (history.replaceState) history.replaceState(null, '', '#' + target.id);
     });
   });
   if (rollAll) rollAll.addEventListener('click', function () { rollFilter('', ''); });
-  if (location.hash.indexOf('#voted-') === 0) { var opened = document.getElementById(location.hash.slice(1)); if (opened) { opened.open = true; var up = opened.parentNode; while (up && up !== document) { if (up.tagName === 'DETAILS') up.open = true; up = up.parentNode; } } }
-
-  // ---- vote page: the state map. Press a state to see its members; the buttons recolor the squares.
-  var hmap = document.getElementById('home-map');
-  if (hmap) {
-    var hpanel = document.getElementById('hm-panel');
-    each(hmap.querySelectorAll('.smap-tile'), function (t) {
-      var b = t.querySelector('button'), tpl = t.querySelector('template'); if (!b || !tpl) return;
-      b.addEventListener('click', function () {
-        var was = t.classList.contains('on');
-        each(hmap.querySelectorAll('.smap-tile'), function (o) { o.classList.remove('on'); var ob = o.querySelector('button'); if (ob) ob.setAttribute('aria-expanded', 'false'); });
-        if (was) { hpanel.hidden = true; return; }
-        t.classList.add('on'); b.setAttribute('aria-expanded', 'true');
-        hpanel.innerHTML = tpl.innerHTML; hpanel.hidden = false;
-        if (hpanel.getBoundingClientRect().top > window.innerHeight - 120) hpanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
-    });
-  }
-  var smap = document.getElementById('state-map');
-  if (smap) {
-    var closeTips = function (keep) { each(smap.querySelectorAll('.smap-tile'), function (t) { if (t === keep) return; t.classList.remove('on'); var tip = t.querySelector('.smap-tip'); if (tip) tip.hidden = true; var b = t.querySelector('button'); if (b) b.setAttribute('aria-expanded', 'false'); }); };
-    each(smap.querySelectorAll('.smap-tile'), function (t) {
-      var col = parseInt(t.style.gridColumn, 10); if (col <= 2) t.classList.add('left'); if (col >= 10) t.classList.add('right');
-      var b = t.querySelector('button'), tip = t.querySelector('.smap-tip'); if (!b || !tip) return;
-      b.addEventListener('click', function (e) { e.stopPropagation(); var open = tip.hidden; closeTips(t); tip.hidden = !open; t.classList.toggle('on', open); b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
-      tip.addEventListener('click', function (e) { e.stopPropagation(); });
-    });
-    document.addEventListener('click', function () { closeTips(null); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeTips(null); });
-    each(smap.querySelectorAll('[data-map-view]'), function (btn) {
-      btn.addEventListener('click', function () { smap.setAttribute('data-view', btn.getAttribute('data-map-view')); each(smap.querySelectorAll('[data-map-view]'), function (o) { o.classList.toggle('on', o === btn); }); });
-    });
-  }
+  if (location.hash.indexOf('#voted-') === 0) { var opened = document.getElementById(location.hash.slice(1)); if (opened) opened.open = true; }
 
   // ---- tabs
   each(document.querySelectorAll('[data-tab]'), function (btn) {

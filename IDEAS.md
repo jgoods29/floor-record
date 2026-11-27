@@ -36,3 +36,8 @@ Restore point: the branch `before-redesign-2026-11-27` is the site exactly as it
 - Home went from about 410 visible words to about 260. One sentence under the headline, three latest votes with the result on the right, a "Find Your Members" state map (press a state, see its senators and House members), five Trending pills at most, Your Page, the promise.
 - Taken off the home page only: the "Speak Up" box (still on vote, bill, and topic pages) and the one-line description under each vote.
 - The vote list is titled "Latest From Congress", not "This Week", because in a week with no votes it shows the last week that had them.
+
+### Redesign paused (November 27, 2026)
+- The owner found the new vote page map too confusing (first purple for Yea, then full and light party colors for Yea and Nay). The whole site, home page included, was put back to the version from before the redesign.
+- The redesign is saved, not lost: branch `redesign-2026-11-27-paused`. To bring it back: `git checkout redesign-2026-11-27-paused -- templates static floorrecord/build.py` and push.
+- Before trying again: show the owner a picture first and get a yes. The map's colors need a clearer idea. People expect red and blue, and one glance must tell them who voted Yea and who voted Nay.

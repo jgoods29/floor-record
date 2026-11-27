@@ -4,54 +4,43 @@
 
 <section class="center">
 <h1 class="h1">See how your representative <span class="hl">actually</span> votes</h1>
-<p class="lede" style="margin-top:-8px">Every vote in Congress, in plain English, straight from the official record.</p>
+<p class="lede point">They work for you. Here's what they've been doing.</p>
+<p class="lede" style="font-size:18px;margin-top:-8px">Every vote in Congress, explained in plain English and taken straight from the official record.</p>
 <div class="search big" data-search>
 <label class="sr" for="home-search">Search for your ZIP code, a member, a state, a bill or a topic</label>
 <input id="home-search" type="search" placeholder="ZIP code, name, state, bill or topic" autocomplete="off">
 <div class="results" role="listbox" aria-label="Search results"></div>
 </div>
-<p class="tries"><span class="muted">Try</span>{% for word in examples %}<button type="button" class="linkish" data-example="{{ word }}">{{ word }}</button>{% endfor %}<a class="linkish hm-new" href="{{ root }}{{ c }}start/">New Here? Start With The Basics</a></p>
+<p class="tries"><span class="muted">Try</span>{% for word in examples %}<button type="button" class="linkish" data-example="{{ word }}">{{ word }}</button>{% endfor %}</p>
+<a class="pilllink newhere" href="{{ root }}{{ c }}start/"><b>New to all this?</b> Start Here: Congress in Two Minutes<span aria-hidden="true">→</span></a>
 </section>
 
-<section class="stack" aria-labelledby="thirty-h" style="gap:16px">
-<div class="row between" style="align-items:baseline;gap:8px 20px"><h2 class="h2" id="thirty-h">Latest From Congress</h2><a class="small strong" href="{{ root }}votes/">All {{ brief.total }} Votes</a></div>
-<ol class="brieflist tight hm-week">{% for v in brief.picks[:3] %}
+{% if featured or trending or matchups or news %}<section class="trendrow" aria-labelledby="trending-h">
+<h2 class="label" id="trending-h">Trending</h2>
+{% for x in matchups %}<a class="pilllink news" href="{{ root }}matchups/{{ x.slug }}/"><em>In the news</em>{{ x.label }}</a>{% endfor %}
+{% for n in news %}<a class="pilllink news" href="{{ root }}{{ n.v.pre }}votes/{{ n.v.id }}/"><em>In the news</em>{{ n.label }}</a>{% endfor %}
+{% for v in featured[:3] %}<a class="pilllink hot" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/"><i aria-hidden="true"></i>{{ v.f_name }}: {{ v.info.outcome }}</a>{% endfor %}
+{% for t in trending[:4] %}<a class="pilllink" href="{{ root }}topics/{{ t.key }}/">{{ t.name }}</a>{% endfor %}
+<a class="small" href="{{ root }}topics/">All topics</a>
+</section>{% endif %}
+
+<section class="stack" aria-labelledby="thirty-h" style="gap:20px">
+<div class="row between" style="align-items:baseline;gap:8px 20px"><h2 class="h1 thirty" id="thirty-h">Congress In 30 Seconds</h2><span class="small strong muted">{{ brief.from|nicedate }} to {{ brief.to|nicedate }}</span></div>
+<ol class="brieflist tight">{% for v in brief.picks[:3] %}
 <li><a class="card briefitem" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/">
-<span class="stack" style="gap:4px;min-width:0">
-<span class="briefline">{{ v.briefname }}</span>
+<span class="briefnum" aria-hidden="true">{{ loop.index }}</span>
+<span class="stack" style="gap:4px">
+<span class="briefline">{{ v.briefname }}: {{ v.info.outcome }}, {{ v.totals.yea }} to {{ v.totals.nay }}</span>
+{% if v.briefsub %}<span class="briefsub">{{ v.briefsub }}</span>{% endif %}
 <span class="small muted">{{ v.chamber }} · {{ v.date|nicedate }}{% if v.briefclose %} · Close vote{% endif %}</span>
 </span>
-<span class="hm-res"><b>{{ v.info.outcome }}</b><span>{{ v.totals.yea }} to {{ v.totals.nay }}</span></span>
 </a></li>{% endfor %}</ol>
 {% if not brief.picks %}<p class="card muted" style="font-size:18px">Congress held no votes on real questions this week. It was likely out of session.</p>{% endif %}
-<p class="small muted" style="margin:0">{{ brief.from|nicedate }} to {{ brief.to|nicedate }}. The closest votes first. Nobody hand-picks them.{% if brief.coming %} <a href="{{ root }}upcoming/">What is coming up next</a>{% endif %}</p>
+<p class="small muted" style="margin:0">The closest votes of the week first, then the most recent. Nobody hand-picks them. <a href="{{ root }}votes/">See all {{ brief.total }} from this week</a>{% if brief.coming %} · <a href="{{ root }}upcoming/">What is coming up next</a>{% endif %}</p>
 </section>
 
-{% if hmap %}<section class="card flush hm-map" id="home-map" aria-labelledby="hmap-h">
-<div class="hm-maphead"><h2 class="h2" id="hmap-h">Find Your Members</h2><p class="muted" style="margin:0">Press your state.</p></div>
-<div class="smap-grid" role="list">{% for t in hmap %}<div class="smap-tile" role="listitem" style="grid-row:{{ t.row }};grid-column:{{ t.col }}">
-<button type="button" aria-expanded="false" aria-controls="hm-panel" data-hm="{{ t.st }}" aria-label="{{ t.name }}"><b>{{ t.st }}</b><span class="hm-dots" aria-hidden="true">{% for p in t.sens %}<i class="p-{{ p.party if p.party in ('R', 'D') else 'I' }}"></i>{% endfor %}</span></button>
-<template>
-<h3 class="h3 keepcase">{{ t.name }}</h3>
-<div class="hm-cols"><div><span class="label">Senate</span><ul>{% for p in t.sens %}<li><i class="pdot p-{{ p.party if p.party in ('R', 'D') else 'I' }}" aria-hidden="true"></i><a href="{{ root }}senate/members/{{ p.bioguide }}/">{{ p.name }}</a> <span class="small muted">{{ p.party }}</span></li>{% endfor %}</ul></div>
-<div><span class="label">House</span><ul class="hm-reps">{% for p in t.reps %}<li><i class="pdot p-{{ p.party if p.party in ('R', 'D') else 'I' }}" aria-hidden="true"></i><a href="{{ root }}members/{{ p.bioguide }}/">{{ p.name }}</a> <span class="small muted">{{ p.party }} · {{ p.dist_label }}</span></li>{% endfor %}</ul></div></div>
-</template>
-</div>{% endfor %}</div>
-<p class="small muted hm-key"><i class="pdot p-R"></i>Republican <i class="pdot p-D"></i>Democrat <i class="pdot p-I"></i>Independent. The dots are each state's two senators.</p>
-<div class="hm-panel" id="hm-panel" aria-live="polite" hidden></div>
-</section>{% endif %}
-
-{% if featured or trending or matchups or news %}<section class="trendrow" aria-labelledby="trending-h" style="margin-top:0">
-<h2 class="label" id="trending-h">Trending</h2>
-{% set shown = namespace(n=0) %}
-{% for x in matchups[:1] %}<a class="pilllink news" href="{{ root }}matchups/{{ x.slug }}/"><em>In the news</em>{{ x.label }}</a>{% set shown.n = shown.n + 1 %}{% endfor %}
-{% for n in news[:1] %}<a class="pilllink news" href="{{ root }}{{ n.v.pre }}votes/{{ n.v.id }}/"><em>In the news</em>{{ n.label }}</a>{% set shown.n = shown.n + 1 %}{% endfor %}
-{% for v in featured[:2] %}<a class="pilllink hot" href="{{ root }}{{ v.pre }}votes/{{ v.id }}/"><i aria-hidden="true"></i>{{ v.f_name }}: {{ v.info.outcome }}</a>{% endfor %}
-<a class="pilllink" href="{{ root }}topics/">All Topics</a>
-</section>{% endif %}
-
 <a class="card youcard" href="{{ root }}you/"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 20 20" width="26" height="26"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 17c.8-3.3 3.4-5 6.500-5s5.700 1.700 6.500 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-<span class="stack" style="gap:2px"><span class="h3">Your Page</span><span class="muted">Your three members and your topics, in one place.</span></span><span class="go">{{ "Open" }} Your Page</span></a>
+<span class="stack" style="gap:2px"><span class="h3">Your Page</span><span class="muted">Your representative, your two senators and the topics you care about, all in one place.</span></span><span class="go">{{ "Open" }} Your Page</span></a>
 
 {% if play %}<section class="play" data-play='{{ play|tojson }}' aria-labelledby="play-h" style="max-width:none;padding-top:0">
 <div class="stack" style="gap:6px"><h2 class="h2" id="play-h">How Would You Vote?</h2>
