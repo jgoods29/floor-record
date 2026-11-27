@@ -137,6 +137,47 @@ def bill_status(action):
 PASS_Q = re.compile(r"on passage|suspend the rules and (pass|agree)|agreeing to the (concurrent |joint )?resolution|concur", re.I)
 
 
+_NOT_AN_END = re.compile(r"(?:\b(?:H\.R|S|H|U\.S|No|Sen|Rep|Res|St|Mr|Mrs|Ms|Dr|Jr|Sr|Inc|Co|vs|[A-Z])|\b[A-Z]\.[A-Z])$")
+
+
+def lead_rest(text):
+    """Split a plain-English summary into its first sentence and the rest, so a page can lead with one line.
+    A period ends the sentence only when a space and a capital follow and it is not an abbreviation (H.R. 2347, U.S., a middle initial)."""
+    text = (text or "").strip()
+    for m in re.finditer(r"[.?!](?=\s+[A-Z0-9\u201c\"])", text):
+        if not _NOT_AN_END.search(text[:m.start()]):
+            return text[:m.end()], text[m.end():].strip()
+    return text, ""
+
+
+# A tile map of the states: every state the same size, so small ones are as easy to press as big ones. (row, column)
+STATE_GRID = {"AK": (0, 0), "ME": (0, 10), "VT": (1, 9), "NH": (1, 10),
+              "WA": (2, 0), "ID": (2, 1), "MT": (2, 2), "ND": (2, 3), "MN": (2, 4), "IL": (2, 5), "WI": (2, 6), "MI": (2, 7), "NY": (2, 8), "RI": (2, 9), "MA": (2, 10),
+              "OR": (3, 0), "NV": (3, 1), "WY": (3, 2), "SD": (3, 3), "IA": (3, 4), "IN": (3, 5), "OH": (3, 6), "PA": (3, 7), "NJ": (3, 8), "CT": (3, 9),
+              "CA": (4, 0), "UT": (4, 1), "CO": (4, 2), "NE": (4, 3), "MO": (4, 4), "KY": (4, 5), "WV": (4, 6), "VA": (4, 7), "MD": (4, 8), "DE": (4, 9),
+              "AZ": (5, 1), "NM": (5, 2), "KS": (5, 3), "AR": (5, 4), "TN": (5, 5), "NC": (5, 6), "SC": (5, 7),
+              "OK": (6, 3), "LA": (6, 4), "MS": (6, 5), "AL": (6, 6), "GA": (6, 7), "HI": (7, 0), "TX": (7, 3), "FL": (7, 8)}
+
+
+def state_map(v, people):
+    """How each state voted on one roll call: its members, their votes, and who broke with their party.
+    States only; delegates from D.C. and the territories are counted in the roll call below the map."""
+    by = defaultdict(list)
+    broke = set(v["breakers"])
+    for bio, party, state, pos in v["positions"]:
+        if state in STATE_GRID:
+            side = pos if pos in ("yea", "nay") else "nv"
+            by[state].append({"p": people[bio], "party": party if party in ("R", "D") else "I", "side": side, "broke": bio in broke})
+    tiles = []
+    for st, (r, c) in STATE_GRID.items():
+        ms = sorted(by.get(st, []), key=lambda m: m["p"]["sort"])
+        if not ms:
+            continue
+        n = {k: sum(1 for m in ms if m["side"] == k) for k in ("yea", "nay", "nv")}
+        tiles.append({"st": st, "name": STATES.get(st, st), "row": r + 1, "col": c + 1, "members": ms, "n": n, "broke": sum(1 for m in ms if m["broke"])})
+    return tiles
+
+
 def bill_track(kind, rec, mvotes=(), scheduled=False, svotes=(), changed=False):
     """Where a measure stands, as steps for the chevron tracker. Worked out from the latest official
     action and from the House votes on file, so it is a guide: the official record has the last word."""
@@ -505,6 +546,8 @@ def main():
             rest, capped = rest[:end], True
         return text[:cut], rest, capped
     env.filters["sumparts"] = sumparts
+    env.filters["lead"] = lambda t: lead_rest(t)[0]
+    env.filters["rest"] = lambda t: lead_rest(t)[1]
     env.filters.update(nicedate=nicedate, comma=lambda n: f"{n:,}", capfirst=capfirst,
                        times=lambda n: "once" if n == 1 else f"{n:,} times",
                        lcfirst=lambda t: t)  # outcomes keep their capitals after a colon
@@ -965,6 +1008,7 @@ def main():
             ctx["roll_groups"] = [{"title": titles.get(k, k.replace("other:", "Voted for ")), "people": roll[k],
                                    "key": k if k in ORDER else f"other-{i}"}
                                   for i, k in enumerate(sorted(roll, key=lambda k: ORDER.get(k, 4)))]
+            ctx["smap"] = state_map(v, people) if v["kind"] == "standard" else []
             ctx["act"] = {"topic": v["topics"][0], "key": v["topic_keys"][0]} if v["topics"] else {"topic": "", "key": ""}
             render(f"{pre}votes/{v['id']}/index.html", "vote.html", 2 + deep, c=pre, ch=ch, **ctx)
 
